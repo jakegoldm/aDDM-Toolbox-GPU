@@ -1,0 +1,242 @@
+\hypertarget{classdetail_1_1exception}{}\doxysection{detail\+::exception Class Reference}
+\label{classdetail_1_1exception}\index{detail::exception@{detail::exception}}
+
+
+general exception of the \mbox{\hyperlink{classbasic__json}{basic\+\_\+json}} class  
+
+
+
+
+{\ttfamily \#include $<$json.\+hpp$>$}
+
+
+
+Inheritance diagram for detail\+::exception\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classdetail_1_1exception__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for detail\+::exception\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classdetail_1_1exception__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \mbox{\hyperlink{classdetail_1_1exception_a7a50109c734c69d4521730a898be08f9}{what}} () const noexcept override
+\begin{DoxyCompactList}\small\item\em returns the explanatory string \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{classdetail_1_1exception_a63b819fbb2ef34df9dad1e309207fa24}{id}}
+\begin{DoxyCompactList}\small\item\em the id of the exception \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdetail_1_1exception_a528d6bc77e88490bbb84cde2222b7ff0}{exception}} (int id\+\_\+, const char $\ast$what\+\_\+arg)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{classdetail_1_1exception_a8f1eb56b9964c8dd84d89d0da98d883b}{name}} (const std\+::string \&ename, int id\+\_\+)
+\item 
+static std\+::string \mbox{\hyperlink{classdetail_1_1exception_a6b4a786b5c1c25dd3edaceb1bf2d5120}{diagnostics}} (std\+::nullptr\+\_\+t)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type $>$ }\\static std\+::string \mbox{\hyperlink{classdetail_1_1exception_af3739c53fe56a1712754d13dfa561f80}{diagnostics}} (const Basic\+Json\+Type $\ast$leaf\+\_\+element)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+general exception of the \mbox{\hyperlink{classbasic__json}{basic\+\_\+json}} class 
+
+\begin{DoxySeeAlso}{See also}
+\href{https://json.nlohmann.me/api/basic_json/exception/}{\texttt{ https\+://json.\+nlohmann.\+me/api/basic\+\_\+json/exception/}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 4304 of file json.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdetail_1_1exception_a528d6bc77e88490bbb84cde2222b7ff0}\label{classdetail_1_1exception_a528d6bc77e88490bbb84cde2222b7ff0}} 
+\index{detail::exception@{detail::exception}!exception@{exception}}
+\index{exception@{exception}!detail::exception@{detail::exception}}
+\doxysubsubsection{\texorpdfstring{exception()}{exception()}}
+{\footnotesize\ttfamily detail\+::exception\+::exception (\begin{DoxyParamCaption}\item[{int}]{id\+\_\+,  }\item[{const char $\ast$}]{what\+\_\+arg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 4318 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4318 : \mbox{\hyperlink{classdetail_1_1exception_a63b819fbb2ef34df9dad1e309207fa24}{id}}(id\_), m(what\_arg) \{\} \textcolor{comment}{// NOLINT(bugprone-\/throw-\/keyword-\/missing)}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classdetail_1_1exception_af3739c53fe56a1712754d13dfa561f80}\label{classdetail_1_1exception_af3739c53fe56a1712754d13dfa561f80}} 
+\index{detail::exception@{detail::exception}!diagnostics@{diagnostics}}
+\index{diagnostics@{diagnostics}!detail::exception@{detail::exception}}
+\doxysubsubsection{\texorpdfstring{diagnostics()}{diagnostics()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+static std\+::string detail\+::exception\+::diagnostics (\begin{DoxyParamCaption}\item[{const Basic\+Json\+Type $\ast$}]{leaf\+\_\+element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 4331 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4332     \{}
+\DoxyCodeLine{4333 \textcolor{preprocessor}{\#if JSON\_DIAGNOSTICS}}
+\DoxyCodeLine{4334         std::vector<std::string> tokens;}
+\DoxyCodeLine{4335         \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}* current = leaf\_element; current != \textcolor{keyword}{nullptr} \&\& current-\/>m\_parent != \textcolor{keyword}{nullptr}; current = current-\/>m\_parent)}
+\DoxyCodeLine{4336         \{}
+\DoxyCodeLine{4337             \textcolor{keywordflow}{switch} (current-\/>m\_parent-\/>type())}
+\DoxyCodeLine{4338             \{}
+\DoxyCodeLine{4339                 \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632af1f713c9e000f5d3f280adbd124df4f5}{value\_t::array}}:}
+\DoxyCodeLine{4340                 \{}
+\DoxyCodeLine{4341                     \textcolor{keywordflow}{for} (std::size\_t i = 0; i < current-\/>m\_parent-\/>m\_data.m\_value.array-\/>size(); ++i)}
+\DoxyCodeLine{4342                     \{}
+\DoxyCodeLine{4343                         \textcolor{keywordflow}{if} (\&current-\/>m\_parent-\/>m\_data.m\_value.array-\/>operator[](i) == current)}
+\DoxyCodeLine{4344                         \{}
+\DoxyCodeLine{4345                             tokens.emplace\_back(\mbox{\hyperlink{json_8hpp_a5b9ca6dc52cf4226c68d67f895b2a1d4}{std::to\_string}}(i));}
+\DoxyCodeLine{4346                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{4347                         \}}
+\DoxyCodeLine{4348                     \}}
+\DoxyCodeLine{4349                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{4350                 \}}
+\DoxyCodeLine{4351 }
+\DoxyCodeLine{4352                 \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632aa8cfde6331bd59eb2ac96f8911c4b666}{value\_t::object}}:}
+\DoxyCodeLine{4353                 \{}
+\DoxyCodeLine{4354                     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& element : *current-\/>m\_parent-\/>m\_data.m\_value.object)}
+\DoxyCodeLine{4355                     \{}
+\DoxyCodeLine{4356                         \textcolor{keywordflow}{if} (\&element.second == current)}
+\DoxyCodeLine{4357                         \{}
+\DoxyCodeLine{4358                             tokens.emplace\_back(element.first.c\_str());}
+\DoxyCodeLine{4359                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{4360                         \}}
+\DoxyCodeLine{4361                     \}}
+\DoxyCodeLine{4362                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{4363                 \}}
+\DoxyCodeLine{4364 }
+\DoxyCodeLine{4365                 \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632a37a6259cc0c1dae299a7866489dff0bd}{value\_t::null}}: \textcolor{comment}{// LCOV\_EXCL\_LINE}}
+\DoxyCodeLine{4366                 \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632ab45cffe084dd3d20d928bee85e7b0f21}{value\_t::string}}: \textcolor{comment}{// LCOV\_EXCL\_LINE}}
+\DoxyCodeLine{4367                 \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632a84e2c64f38f78ba3ea5c905ab5a2da27}{value\_t::boolean}}: \textcolor{comment}{// LCOV\_EXCL\_LINE}}
+\DoxyCodeLine{4368                 \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632a5763da164f8659d94a56e29df64b4bcc}{value\_t::number\_integer}}: \textcolor{comment}{// LCOV\_EXCL\_LINE}}
+\DoxyCodeLine{4369                 \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632adce7cc8ec29055c4158828921f2f265e}{value\_t::number\_unsigned}}: \textcolor{comment}{// LCOV\_EXCL\_LINE}}
+\DoxyCodeLine{4370                 \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632ad9966ecb59667235a57b4b999a649eef}{value\_t::number\_float}}: \textcolor{comment}{// LCOV\_EXCL\_LINE}}
+\DoxyCodeLine{4371                 \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632a9d7183f16acce70658f686ae7f1a4d20}{value\_t::binary}}: \textcolor{comment}{// LCOV\_EXCL\_LINE}}
+\DoxyCodeLine{4372                 \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632a94708897ec9db8647dfe695714c98e46}{value\_t::discarded}}: \textcolor{comment}{// LCOV\_EXCL\_LINE}}
+\DoxyCodeLine{4373                 \textcolor{keywordflow}{default}:   \textcolor{comment}{// LCOV\_EXCL\_LINE}}
+\DoxyCodeLine{4374                     \textcolor{keywordflow}{break}; \textcolor{comment}{// LCOV\_EXCL\_LINE}}
+\DoxyCodeLine{4375             \}}
+\DoxyCodeLine{4376         \}}
+\DoxyCodeLine{4377 }
+\DoxyCodeLine{4378         \textcolor{keywordflow}{if} (tokens.empty())}
+\DoxyCodeLine{4379         \{}
+\DoxyCodeLine{4380             \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{4381         \}}
+\DoxyCodeLine{4382 }
+\DoxyCodeLine{4383         \textcolor{keyword}{auto} str = std::accumulate(tokens.rbegin(), tokens.rend(), std::string\{\},}
+\DoxyCodeLine{4384                                    [](\textcolor{keyword}{const} std::string \& a, \textcolor{keyword}{const} std::string \& b)}
+\DoxyCodeLine{4385         \{}
+\DoxyCodeLine{4386             return concat(a, \textcolor{stringliteral}{'/'}, detail::escape(b));}
+\DoxyCodeLine{4387         \});}
+\DoxyCodeLine{4388         \textcolor{keywordflow}{return} \mbox{\hyperlink{namespacedetail_a266fb3d4bf633ad6c506434cc91164da}{concat}}(\textcolor{charliteral}{'('}, str, \textcolor{stringliteral}{"{}) "{}});}
+\DoxyCodeLine{4389 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{4390         \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{void}\textcolor{keyword}{>}(leaf\_element);}
+\DoxyCodeLine{4391         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{4392 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{4393     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classdetail_1_1exception_a6b4a786b5c1c25dd3edaceb1bf2d5120}\label{classdetail_1_1exception_a6b4a786b5c1c25dd3edaceb1bf2d5120}} 
+\index{detail::exception@{detail::exception}!diagnostics@{diagnostics}}
+\index{diagnostics@{diagnostics}!detail::exception@{detail::exception}}
+\doxysubsubsection{\texorpdfstring{diagnostics()}{diagnostics()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static std\+::string detail\+::exception\+::diagnostics (\begin{DoxyParamCaption}\item[{std\+::nullptr\+\_\+t}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 4325 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4326     \{}
+\DoxyCodeLine{4327         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{4328     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classdetail_1_1exception_a8f1eb56b9964c8dd84d89d0da98d883b}\label{classdetail_1_1exception_a8f1eb56b9964c8dd84d89d0da98d883b}} 
+\index{detail::exception@{detail::exception}!name@{name}}
+\index{name@{name}!detail::exception@{detail::exception}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily static std\+::string detail\+::exception\+::name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ename,  }\item[{int}]{id\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 4320 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4321     \{}
+\DoxyCodeLine{4322         \textcolor{keywordflow}{return} \mbox{\hyperlink{namespacedetail_a266fb3d4bf633ad6c506434cc91164da}{concat}}(\textcolor{stringliteral}{"{}[json.exception."{}}, ename, \textcolor{charliteral}{'.'}, \mbox{\hyperlink{json_8hpp_a5b9ca6dc52cf4226c68d67f895b2a1d4}{std::to\_string}}(id\_), \textcolor{stringliteral}{"{}] "{}});}
+\DoxyCodeLine{4323     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classdetail_1_1exception_a7a50109c734c69d4521730a898be08f9}\label{classdetail_1_1exception_a7a50109c734c69d4521730a898be08f9}} 
+\index{detail::exception@{detail::exception}!what@{what}}
+\index{what@{what}!detail::exception@{detail::exception}}
+\doxysubsubsection{\texorpdfstring{what()}{what()}}
+{\footnotesize\ttfamily const char$\ast$ detail\+::exception\+::what (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [noexcept]}}
+
+
+
+returns the explanatory string 
+
+
+
+Definition at line 4308 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4309     \{}
+\DoxyCodeLine{4310         \textcolor{keywordflow}{return} m.what();}
+\DoxyCodeLine{4311     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classdetail_1_1exception_a63b819fbb2ef34df9dad1e309207fa24}\label{classdetail_1_1exception_a63b819fbb2ef34df9dad1e309207fa24}} 
+\index{detail::exception@{detail::exception}!id@{id}}
+\index{id@{id}!detail::exception@{detail::exception}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily const int detail\+::exception\+::id}
+
+
+
+the id of the exception 
+
+
+
+Definition at line 4314 of file json.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/nlohmann/\mbox{\hyperlink{json_8hpp}{json.\+hpp}}\end{DoxyCompactItemize}

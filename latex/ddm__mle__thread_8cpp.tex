@@ -1,0 +1,160 @@
+\hypertarget{ddm__mle__thread_8cpp}{}\doxysection{src/ddm\+\_\+mle\+\_\+thread.cpp File Reference}
+\label{ddm__mle__thread_8cpp}\index{src/ddm\_mle\_thread.cpp@{src/ddm\_mle\_thread.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include \char`\"{}../include/ddm.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/util.\+h\char`\"{}}\newline
+Include dependency graph for ddm\+\_\+mle\+\_\+thread.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ddm__mle__thread_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{ddm__mle__thread_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ float $>$ \mbox{\hyperlink{ddm__mle__thread_8cpp_a800d6969137d46bac6c127a9f70b7e51}{rangeD}} = \{0.\+003, 0.\+004, 0.\+005, 0.\+006, 0.\+007, 0.\+008, 0.\+009\}
+\item 
+std\+::vector$<$ float $>$ \mbox{\hyperlink{ddm__mle__thread_8cpp_a347dbb7726ce6ea89520f5980d686dd8}{range\+Sigma}} = \{0.\+03, 0.\+04, 0.\+05, 0.\+06, 0.\+07, 0.\+08, 0.\+09\}
+\item 
+int \mbox{\hyperlink{ddm__mle__thread_8cpp_a7ae0aa3d3c3bd4dc2fd68df5f46bb05f}{barrier}} = 1
+\item 
+int \mbox{\hyperlink{ddm__mle__thread_8cpp_a66ae2c9a86cab7b4970ecc123c799c45}{value\+Left}} = 3
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ddm__mle__thread_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{ddm__mle__thread_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{ddm\_mle\_thread.cpp@{ddm\_mle\_thread.cpp}!main@{main}}
+\index{main@{main}!ddm\_mle\_thread.cpp@{ddm\_mle\_thread.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 20 of file ddm\+\_\+mle\+\_\+thread.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{20            \{}
+\DoxyCodeLine{21     std::vector<DDMTrial> trials; }
+\DoxyCodeLine{22     std::vector<DDM> ddms;}
+\DoxyCodeLine{23     std::ifstream file(\textcolor{stringliteral}{"{}results/ddm\_simulations.csv"{}});}
+\DoxyCodeLine{24     std::string line;}
+\DoxyCodeLine{25     std::getline(file, line);}
+\DoxyCodeLine{26     \textcolor{keywordtype}{int} choice; }
+\DoxyCodeLine{27     \textcolor{keywordtype}{int} RT; }
+\DoxyCodeLine{28     \textcolor{keywordtype}{int} valDiff;}
+\DoxyCodeLine{29     \textcolor{keywordflow}{while} (std::getline(file, line)) \{}
+\DoxyCodeLine{30         std::stringstream ss(line);}
+\DoxyCodeLine{31         std::string field;}
+\DoxyCodeLine{32         std::getline(ss, field, \textcolor{charliteral}{','});}
+\DoxyCodeLine{33         choice = std::stoi(field);}
+\DoxyCodeLine{34         std::getline(ss, field, \textcolor{charliteral}{','});}
+\DoxyCodeLine{35         RT = std::stoi(field);}
+\DoxyCodeLine{36         std::getline(ss, field, \textcolor{charliteral}{','});}
+\DoxyCodeLine{37         valDiff = std::stoi(field);}
+\DoxyCodeLine{38         \mbox{\hyperlink{class_d_d_m_trial}{DDMTrial}} dt = \mbox{\hyperlink{class_d_d_m_trial}{DDMTrial}}(RT, choice, \mbox{\hyperlink{ddm__mle__thread_8cpp_a66ae2c9a86cab7b4970ecc123c799c45}{valueLeft}}, \mbox{\hyperlink{ddm__mle__thread_8cpp_a66ae2c9a86cab7b4970ecc123c799c45}{valueLeft}} -\/ valDiff);}
+\DoxyCodeLine{39         trials.push\_back(dt);}
+\DoxyCodeLine{40     \}}
+\DoxyCodeLine{41     file.close();}
+\DoxyCodeLine{42     std::cout << \textcolor{stringliteral}{"{}Counted "{}} << trials.size() << \textcolor{stringliteral}{"{} trials."{}} << std::endl;}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{float} \mbox{\hyperlink{addm__nll_8cpp_a3fbbd8a3959e76a2bc3455d3bade52dc}{d}} : \mbox{\hyperlink{ddm__mle__thread_8cpp_a800d6969137d46bac6c127a9f70b7e51}{rangeD}}) \{}
+\DoxyCodeLine{45         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{float} \mbox{\hyperlink{addm__nll_8cpp_ae11aeeb83e22b5b7f1e6b4347eb1daa6}{sigma}} : \mbox{\hyperlink{ddm__mle__thread_8cpp_a347dbb7726ce6ea89520f5980d686dd8}{rangeSigma}}) \{}
+\DoxyCodeLine{46             ddms.push\_back(\mbox{\hyperlink{class_d_d_m}{DDM}}(\mbox{\hyperlink{addm__nll_8cpp_a3fbbd8a3959e76a2bc3455d3bade52dc}{d}}, \mbox{\hyperlink{addm__nll_8cpp_ae11aeeb83e22b5b7f1e6b4347eb1daa6}{sigma}}, \mbox{\hyperlink{ddm__mle__thread_8cpp_a7ae0aa3d3c3bd4dc2fd68df5f46bb05f}{barrier}}));}
+\DoxyCodeLine{47         \}}
+\DoxyCodeLine{48     \}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50     std::ofstream \mbox{\hyperlink{test_8cpp_ae3c7e522825338c52b9d66891f9642a5}{fp}};}
+\DoxyCodeLine{51     \mbox{\hyperlink{test_8cpp_ae3c7e522825338c52b9d66891f9642a5}{fp}}.open(\textcolor{stringliteral}{"{}results/ddm\_mle.csv"{}});}
+\DoxyCodeLine{52     \mbox{\hyperlink{test_8cpp_ae3c7e522825338c52b9d66891f9642a5}{fp}} << \textcolor{stringliteral}{"{}d,sigma,NLL\(\backslash\)n"{}};}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54     \textcolor{keywordtype}{double} minNLL = \_\_DBL\_MAX\_\_;}
+\DoxyCodeLine{55     \textcolor{keywordtype}{double} minD = 0; }
+\DoxyCodeLine{56     \textcolor{keywordtype}{double} minSigma = 0; }
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58     \textcolor{keyword}{auto} start = high\_resolution\_clock::now();}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60     \textcolor{keywordflow}{for} (\mbox{\hyperlink{class_d_d_m}{DDM}} ddm : ddms) \{}
+\DoxyCodeLine{61         std::cout << \textcolor{stringliteral}{"{}Testing combination d="{}} << ddm.d << \textcolor{stringliteral}{"{} sigma="{}} << ddm.sigma << std::endl;}
+\DoxyCodeLine{62         \textcolor{keywordtype}{double} NLL = \mbox{\hyperlink{ddm_8h_ac42a77bf862f9427fc29a3869525b76e}{DDMParallelNLL}}(ddm, trials);}
+\DoxyCodeLine{63         std::cout << \textcolor{stringliteral}{"{}NLL="{}} << NLL << std::endl;}
+\DoxyCodeLine{64         \textcolor{keywordflow}{if} (NLL < minNLL) \{}
+\DoxyCodeLine{65             minNLL = NLL;}
+\DoxyCodeLine{66             minD = ddm.d;}
+\DoxyCodeLine{67             minSigma = ddm.sigma;}
+\DoxyCodeLine{68         \}}
+\DoxyCodeLine{69         \mbox{\hyperlink{test_8cpp_ae3c7e522825338c52b9d66891f9642a5}{fp}} << ddm.d << \textcolor{stringliteral}{"{},"{}} << ddm.sigma << \textcolor{stringliteral}{"{},"{}} << NLL << \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{70     \}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72     \textcolor{keyword}{auto} stop = high\_resolution\_clock::now();}
+\DoxyCodeLine{73     \textcolor{keyword}{auto} duration = duration\_cast<seconds>(stop -\/ start);}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75     \mbox{\hyperlink{test_8cpp_ae3c7e522825338c52b9d66891f9642a5}{fp}}.close(); }
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77     std::cout << }
+\DoxyCodeLine{78     \textcolor{stringliteral}{"{}  Optimal Parameters  \(\backslash\)n"{}} << }
+\DoxyCodeLine{79     \textcolor{stringliteral}{"{}======================\(\backslash\)n"{}} <<}
+\DoxyCodeLine{80     \textcolor{stringliteral}{"{}d      : "{}} << minD << \textcolor{stringliteral}{"{}\(\backslash\)n"{}} << }
+\DoxyCodeLine{81     \textcolor{stringliteral}{"{}sigma  : "{}} << minSigma << \textcolor{stringliteral}{"{}\(\backslash\)n"{}} << }
+\DoxyCodeLine{82     \textcolor{stringliteral}{"{}NLL    : "{}} << minNLL << \textcolor{stringliteral}{"{}\(\backslash\)n"{}} << }
+\DoxyCodeLine{83     \textcolor{stringliteral}{"{}time   : "{}} << duration.count() << std::endl;}
+\DoxyCodeLine{84 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{ddm__mle__thread_8cpp_a7ae0aa3d3c3bd4dc2fd68df5f46bb05f}\label{ddm__mle__thread_8cpp_a7ae0aa3d3c3bd4dc2fd68df5f46bb05f}} 
+\index{ddm\_mle\_thread.cpp@{ddm\_mle\_thread.cpp}!barrier@{barrier}}
+\index{barrier@{barrier}!ddm\_mle\_thread.cpp@{ddm\_mle\_thread.cpp}}
+\doxysubsubsection{\texorpdfstring{barrier}{barrier}}
+{\footnotesize\ttfamily int barrier = 1}
+
+
+
+Definition at line 17 of file ddm\+\_\+mle\+\_\+thread.\+cpp.
+
+\mbox{\Hypertarget{ddm__mle__thread_8cpp_a800d6969137d46bac6c127a9f70b7e51}\label{ddm__mle__thread_8cpp_a800d6969137d46bac6c127a9f70b7e51}} 
+\index{ddm\_mle\_thread.cpp@{ddm\_mle\_thread.cpp}!rangeD@{rangeD}}
+\index{rangeD@{rangeD}!ddm\_mle\_thread.cpp@{ddm\_mle\_thread.cpp}}
+\doxysubsubsection{\texorpdfstring{rangeD}{rangeD}}
+{\footnotesize\ttfamily std\+::vector$<$float$>$ rangeD = \{0.\+003, 0.\+004, 0.\+005, 0.\+006, 0.\+007, 0.\+008, 0.\+009\}}
+
+
+
+Definition at line 14 of file ddm\+\_\+mle\+\_\+thread.\+cpp.
+
+\mbox{\Hypertarget{ddm__mle__thread_8cpp_a347dbb7726ce6ea89520f5980d686dd8}\label{ddm__mle__thread_8cpp_a347dbb7726ce6ea89520f5980d686dd8}} 
+\index{ddm\_mle\_thread.cpp@{ddm\_mle\_thread.cpp}!rangeSigma@{rangeSigma}}
+\index{rangeSigma@{rangeSigma}!ddm\_mle\_thread.cpp@{ddm\_mle\_thread.cpp}}
+\doxysubsubsection{\texorpdfstring{rangeSigma}{rangeSigma}}
+{\footnotesize\ttfamily std\+::vector$<$float$>$ range\+Sigma = \{0.\+03, 0.\+04, 0.\+05, 0.\+06, 0.\+07, 0.\+08, 0.\+09\}}
+
+
+
+Definition at line 15 of file ddm\+\_\+mle\+\_\+thread.\+cpp.
+
+\mbox{\Hypertarget{ddm__mle__thread_8cpp_a66ae2c9a86cab7b4970ecc123c799c45}\label{ddm__mle__thread_8cpp_a66ae2c9a86cab7b4970ecc123c799c45}} 
+\index{ddm\_mle\_thread.cpp@{ddm\_mle\_thread.cpp}!valueLeft@{valueLeft}}
+\index{valueLeft@{valueLeft}!ddm\_mle\_thread.cpp@{ddm\_mle\_thread.cpp}}
+\doxysubsubsection{\texorpdfstring{valueLeft}{valueLeft}}
+{\footnotesize\ttfamily int value\+Left = 3}
+
+
+
+Definition at line 18 of file ddm\+\_\+mle\+\_\+thread.\+cpp.
+

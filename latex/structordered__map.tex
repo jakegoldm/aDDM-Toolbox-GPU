@@ -1,0 +1,876 @@
+\hypertarget{structordered__map}{}\doxysection{ordered\+\_\+map$<$ Key, T, Ignored\+Less, Allocator $>$ Struct Template Reference}
+\label{structordered__map}\index{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}}
+
+
+a minimal map-\/like container that preserves insertion order  
+
+
+
+
+{\ttfamily \#include $<$json.\+hpp$>$}
+
+
+
+Inheritance diagram for ordered\+\_\+map$<$ Key, T, Ignored\+Less, Allocator $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structordered__map__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ordered\+\_\+map$<$ Key, T, Ignored\+Less, Allocator $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structordered__map__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{structordered__map_abe63d891859a3d0b156933d5b44ac85f}{key\+\_\+type}} = Key
+\item 
+using \mbox{\hyperlink{structordered__map_a50a68289ec9c8554e5bbb7d0a2128c33}{mapped\+\_\+type}} = T
+\item 
+using \mbox{\hyperlink{structordered__map_a18acd5b0134d2e378160031996ed3ddc}{Container}} = std\+::vector$<$ std\+::pair$<$ const Key, T $>$, Allocator $>$
+\item 
+using \mbox{\hyperlink{structordered__map_a57c27034b40422a4b37ab8f4f60b9f14}{iterator}} = typename Container\+::iterator
+\item 
+using \mbox{\hyperlink{structordered__map_aeb48abad4ceb24e60002c6220d8b18b4}{const\+\_\+iterator}} = typename Container\+::const\+\_\+iterator
+\item 
+using \mbox{\hyperlink{structordered__map_a832acce07db0bec6c73675b35ad399c2}{size\+\_\+type}} = typename Container\+::size\+\_\+type
+\item 
+using \mbox{\hyperlink{structordered__map_a49a3a4f4eb960dcbcc15fd2692f18a91}{value\+\_\+type}} = typename Container\+::value\+\_\+type
+\item 
+using \mbox{\hyperlink{structordered__map_a4bbf207217197f997a9f3da8f149368b}{key\+\_\+compare}} = std\+::equal\+\_\+to$<$ Key $>$
+\item 
+{\footnotesize template$<$typename Input\+It $>$ }\\using \mbox{\hyperlink{structordered__map_ac4f0c38634f809b72b8d2f31ca12cf80}{require\+\_\+input\+\_\+iter}} = typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ typename std\+::iterator\+\_\+traits$<$ Input\+It $>$\+::iterator\+\_\+category, std\+::input\+\_\+iterator\+\_\+tag $>$\+::value $>$\+::type
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structordered__map_a8c8eed38b72bca336d07eac3a9ffbd1f}{ordered\+\_\+map}} () noexcept(noexcept(\mbox{\hyperlink{structordered__map_a18acd5b0134d2e378160031996ed3ddc}{Container}}()))
+\item 
+\mbox{\hyperlink{structordered__map_a50b6eea717a66fb6241bbd2e0246849f}{ordered\+\_\+map}} (const Allocator \&alloc) noexcept(noexcept(\mbox{\hyperlink{structordered__map_a18acd5b0134d2e378160031996ed3ddc}{Container}}(alloc)))
+\item 
+{\footnotesize template$<$class It $>$ }\\\mbox{\hyperlink{structordered__map_ac0fa192a94f9d4bba7ae4fc3eedd583f}{ordered\+\_\+map}} (It first, It last, const Allocator \&alloc=Allocator())
+\item 
+\mbox{\hyperlink{structordered__map_ab57d658b6e341a80a7a882c0d5cf38e0}{ordered\+\_\+map}} (std\+::initializer\+\_\+list$<$ \mbox{\hyperlink{structordered__map_a49a3a4f4eb960dcbcc15fd2692f18a91}{value\+\_\+type}} $>$ init, const Allocator \&alloc=Allocator())
+\item 
+std\+::pair$<$ \mbox{\hyperlink{structordered__map_a57c27034b40422a4b37ab8f4f60b9f14}{iterator}}, bool $>$ \mbox{\hyperlink{structordered__map_a8ab9d18a0de258c21224ff3adfbd2372}{emplace}} (const \mbox{\hyperlink{structordered__map_abe63d891859a3d0b156933d5b44ac85f}{key\+\_\+type}} \&key, T \&\&t)
+\item 
+{\footnotesize template$<$class Key\+Type , detail\+::enable\+\_\+if\+\_\+t$<$ detail\+::is\+\_\+usable\+\_\+as\+\_\+key\+\_\+type$<$ key\+\_\+compare, key\+\_\+type, Key\+Type $>$\+::value, int $>$  = 0$>$ }\\std\+::pair$<$ \mbox{\hyperlink{structordered__map_a57c27034b40422a4b37ab8f4f60b9f14}{iterator}}, bool $>$ \mbox{\hyperlink{structordered__map_a2d2dea5d96368cda502b84eb35c0c2ca}{emplace}} (Key\+Type \&\&key, T \&\&t)
+\item 
+T \& \mbox{\hyperlink{structordered__map_a907f9ef3e4899bcd5d6a99b50011af76}{operator\mbox{[}$\,$\mbox{]}}} (const \mbox{\hyperlink{structordered__map_abe63d891859a3d0b156933d5b44ac85f}{key\+\_\+type}} \&key)
+\item 
+{\footnotesize template$<$class Key\+Type , detail\+::enable\+\_\+if\+\_\+t$<$ detail\+::is\+\_\+usable\+\_\+as\+\_\+key\+\_\+type$<$ key\+\_\+compare, key\+\_\+type, Key\+Type $>$\+::value, int $>$  = 0$>$ }\\T \& \mbox{\hyperlink{structordered__map_a5bb8fc73d6dd1ca67e99f84d05b14573}{operator\mbox{[}$\,$\mbox{]}}} (Key\+Type \&\&key)
+\item 
+const T \& \mbox{\hyperlink{structordered__map_a1b0345845b86b6addcbc674632cff015}{operator\mbox{[}$\,$\mbox{]}}} (const \mbox{\hyperlink{structordered__map_abe63d891859a3d0b156933d5b44ac85f}{key\+\_\+type}} \&key) const
+\item 
+{\footnotesize template$<$class Key\+Type , detail\+::enable\+\_\+if\+\_\+t$<$ detail\+::is\+\_\+usable\+\_\+as\+\_\+key\+\_\+type$<$ key\+\_\+compare, key\+\_\+type, Key\+Type $>$\+::value, int $>$  = 0$>$ }\\const T \& \mbox{\hyperlink{structordered__map_af33685904d09d86cb4eae096a0d9888d}{operator\mbox{[}$\,$\mbox{]}}} (Key\+Type \&\&key) const
+\item 
+T \& \mbox{\hyperlink{structordered__map_a67d741fe8d5de525c6f2d54e2df7560d}{at}} (const \mbox{\hyperlink{structordered__map_abe63d891859a3d0b156933d5b44ac85f}{key\+\_\+type}} \&key)
+\item 
+{\footnotesize template$<$class Key\+Type , detail\+::enable\+\_\+if\+\_\+t$<$ detail\+::is\+\_\+usable\+\_\+as\+\_\+key\+\_\+type$<$ key\+\_\+compare, key\+\_\+type, Key\+Type $>$\+::value, int $>$  = 0$>$ }\\T \& \mbox{\hyperlink{structordered__map_adf5f8cdb111b15781b97a53d28d7d4de}{at}} (Key\+Type \&\&key)
+\item 
+const T \& \mbox{\hyperlink{structordered__map_a0f910d98ca05ef14d39830c702944e71}{at}} (const \mbox{\hyperlink{structordered__map_abe63d891859a3d0b156933d5b44ac85f}{key\+\_\+type}} \&key) const
+\item 
+{\footnotesize template$<$class Key\+Type , detail\+::enable\+\_\+if\+\_\+t$<$ detail\+::is\+\_\+usable\+\_\+as\+\_\+key\+\_\+type$<$ key\+\_\+compare, key\+\_\+type, Key\+Type $>$\+::value, int $>$  = 0$>$ }\\const T \& \mbox{\hyperlink{structordered__map_a862c08ae6034e0e3a80bd3b9916ad697}{at}} (Key\+Type \&\&key) const
+\item 
+\mbox{\hyperlink{structordered__map_a832acce07db0bec6c73675b35ad399c2}{size\+\_\+type}} \mbox{\hyperlink{structordered__map_aaa50926fc8df543dbe294859db97514e}{erase}} (const \mbox{\hyperlink{structordered__map_abe63d891859a3d0b156933d5b44ac85f}{key\+\_\+type}} \&key)
+\item 
+{\footnotesize template$<$class Key\+Type , detail\+::enable\+\_\+if\+\_\+t$<$ detail\+::is\+\_\+usable\+\_\+as\+\_\+key\+\_\+type$<$ key\+\_\+compare, key\+\_\+type, Key\+Type $>$\+::value, int $>$  = 0$>$ }\\\mbox{\hyperlink{structordered__map_a832acce07db0bec6c73675b35ad399c2}{size\+\_\+type}} \mbox{\hyperlink{structordered__map_a7d72919fabb5f477e69add51877e415f}{erase}} (Key\+Type \&\&key)
+\item 
+\mbox{\hyperlink{structordered__map_a57c27034b40422a4b37ab8f4f60b9f14}{iterator}} \mbox{\hyperlink{structordered__map_a4c3baa0920e81bd651ea01b9d735951b}{erase}} (\mbox{\hyperlink{structordered__map_a57c27034b40422a4b37ab8f4f60b9f14}{iterator}} pos)
+\item 
+\mbox{\hyperlink{structordered__map_a57c27034b40422a4b37ab8f4f60b9f14}{iterator}} \mbox{\hyperlink{structordered__map_a6945910b941f51c9a81250d99ae34441}{erase}} (\mbox{\hyperlink{structordered__map_a57c27034b40422a4b37ab8f4f60b9f14}{iterator}} first, \mbox{\hyperlink{structordered__map_a57c27034b40422a4b37ab8f4f60b9f14}{iterator}} last)
+\item 
+\mbox{\hyperlink{structordered__map_a832acce07db0bec6c73675b35ad399c2}{size\+\_\+type}} \mbox{\hyperlink{structordered__map_a94ced73a996cf385aa68b6aae1f85dfe}{count}} (const \mbox{\hyperlink{structordered__map_abe63d891859a3d0b156933d5b44ac85f}{key\+\_\+type}} \&key) const
+\item 
+{\footnotesize template$<$class Key\+Type , detail\+::enable\+\_\+if\+\_\+t$<$ detail\+::is\+\_\+usable\+\_\+as\+\_\+key\+\_\+type$<$ key\+\_\+compare, key\+\_\+type, Key\+Type $>$\+::value, int $>$  = 0$>$ }\\\mbox{\hyperlink{structordered__map_a832acce07db0bec6c73675b35ad399c2}{size\+\_\+type}} \mbox{\hyperlink{structordered__map_abd35ff8bb3cfe4b8951f382fdfb617e5}{count}} (Key\+Type \&\&key) const
+\item 
+\mbox{\hyperlink{structordered__map_a57c27034b40422a4b37ab8f4f60b9f14}{iterator}} \mbox{\hyperlink{structordered__map_a67c6dfc6bc7817980067b40db5c252a4}{find}} (const \mbox{\hyperlink{structordered__map_abe63d891859a3d0b156933d5b44ac85f}{key\+\_\+type}} \&key)
+\item 
+{\footnotesize template$<$class Key\+Type , detail\+::enable\+\_\+if\+\_\+t$<$ detail\+::is\+\_\+usable\+\_\+as\+\_\+key\+\_\+type$<$ key\+\_\+compare, key\+\_\+type, Key\+Type $>$\+::value, int $>$  = 0$>$ }\\\mbox{\hyperlink{structordered__map_a57c27034b40422a4b37ab8f4f60b9f14}{iterator}} \mbox{\hyperlink{structordered__map_ad3072ca1fdc7dd9f88d5d043deab9639}{find}} (Key\+Type \&\&key)
+\item 
+\mbox{\hyperlink{structordered__map_aeb48abad4ceb24e60002c6220d8b18b4}{const\+\_\+iterator}} \mbox{\hyperlink{structordered__map_a73a21fcebe6f068cd2226c5586ac93d7}{find}} (const \mbox{\hyperlink{structordered__map_abe63d891859a3d0b156933d5b44ac85f}{key\+\_\+type}} \&key) const
+\item 
+std\+::pair$<$ \mbox{\hyperlink{structordered__map_a57c27034b40422a4b37ab8f4f60b9f14}{iterator}}, bool $>$ \mbox{\hyperlink{structordered__map_aaba9ddea7c2f582c417ec504ad20961c}{insert}} (\mbox{\hyperlink{structordered__map_a49a3a4f4eb960dcbcc15fd2692f18a91}{value\+\_\+type}} \&\&value)
+\item 
+std\+::pair$<$ \mbox{\hyperlink{structordered__map_a57c27034b40422a4b37ab8f4f60b9f14}{iterator}}, bool $>$ \mbox{\hyperlink{structordered__map_a7c77f6d3fbd8f693c5a9ad25244c14de}{insert}} (const \mbox{\hyperlink{structordered__map_a49a3a4f4eb960dcbcc15fd2692f18a91}{value\+\_\+type}} \&value)
+\item 
+{\footnotesize template$<$typename Input\+It , typename  = require\+\_\+input\+\_\+iter$<$\+Input\+It$>$$>$ }\\void \mbox{\hyperlink{structordered__map_a8e19c1dfa836a39b16b0ce259447a61a}{insert}} (Input\+It first, Input\+It last)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class Key, class T, class Ignored\+Less = std\+::less$<$\+Key$>$, class Allocator = std\+::allocator$<$std\+::pair$<$const Key, T$>$$>$$>$\newline
+struct ordered\+\_\+map$<$ Key, T, Ignored\+Less, Allocator $>$}
+
+a minimal map-\/like container that preserves insertion order 
+
+\begin{DoxySeeAlso}{See also}
+\href{https://json.nlohmann.me/api/ordered_map/}{\texttt{ https\+://json.\+nlohmann.\+me/api/ordered\+\_\+map/}}
+\end{DoxySeeAlso}
+\mbox{\hyperlink{structordered__map}{ordered\+\_\+map}}\+: a minimal map-\/like container that preserves insertion order for use within nlohmann\+::basic\+\_\+json$<$ordered\+\_\+map$>$ 
+
+Definition at line 18947 of file json.\+hpp.
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{structordered__map_aeb48abad4ceb24e60002c6220d8b18b4}\label{structordered__map_aeb48abad4ceb24e60002c6220d8b18b4}} 
+\index{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}!const\_iterator@{const\_iterator}}
+\index{const\_iterator@{const\_iterator}!ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}}
+\doxysubsubsection{\texorpdfstring{const\_iterator}{const\_iterator}}
+{\footnotesize\ttfamily template$<$class Key , class T , class Ignored\+Less  = std\+::less$<$\+Key$>$, class Allocator  = std\+::allocator$<$std\+::pair$<$const Key, T$>$$>$$>$ \\
+using \mbox{\hyperlink{structordered__map}{ordered\+\_\+map}}$<$ Key, T, Ignored\+Less, Allocator $>$\+::\mbox{\hyperlink{structordered__map_aeb48abad4ceb24e60002c6220d8b18b4}{const\+\_\+iterator}} =  typename Container\+::const\+\_\+iterator}
+
+
+
+Definition at line 18953 of file json.\+hpp.
+
+\mbox{\Hypertarget{structordered__map_a18acd5b0134d2e378160031996ed3ddc}\label{structordered__map_a18acd5b0134d2e378160031996ed3ddc}} 
+\index{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}!Container@{Container}}
+\index{Container@{Container}!ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}}
+\doxysubsubsection{\texorpdfstring{Container}{Container}}
+{\footnotesize\ttfamily template$<$class Key , class T , class Ignored\+Less  = std\+::less$<$\+Key$>$, class Allocator  = std\+::allocator$<$std\+::pair$<$const Key, T$>$$>$$>$ \\
+using \mbox{\hyperlink{structordered__map}{ordered\+\_\+map}}$<$ Key, T, Ignored\+Less, Allocator $>$\+::\mbox{\hyperlink{structordered__map_a18acd5b0134d2e378160031996ed3ddc}{Container}} =  std\+::vector$<$std\+::pair$<$const Key, T$>$, Allocator$>$}
+
+
+
+Definition at line 18951 of file json.\+hpp.
+
+\mbox{\Hypertarget{structordered__map_a57c27034b40422a4b37ab8f4f60b9f14}\label{structordered__map_a57c27034b40422a4b37ab8f4f60b9f14}} 
+\index{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}!iterator@{iterator}}
+\index{iterator@{iterator}!ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}}
+\doxysubsubsection{\texorpdfstring{iterator}{iterator}}
+{\footnotesize\ttfamily template$<$class Key , class T , class Ignored\+Less  = std\+::less$<$\+Key$>$, class Allocator  = std\+::allocator$<$std\+::pair$<$const Key, T$>$$>$$>$ \\
+using \mbox{\hyperlink{structordered__map}{ordered\+\_\+map}}$<$ Key, T, Ignored\+Less, Allocator $>$\+::\mbox{\hyperlink{structordered__map_a57c27034b40422a4b37ab8f4f60b9f14}{iterator}} =  typename Container\+::iterator}
+
+
+
+Definition at line 18952 of file json.\+hpp.
+
+\mbox{\Hypertarget{structordered__map_a4bbf207217197f997a9f3da8f149368b}\label{structordered__map_a4bbf207217197f997a9f3da8f149368b}} 
+\index{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}!key\_compare@{key\_compare}}
+\index{key\_compare@{key\_compare}!ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}}
+\doxysubsubsection{\texorpdfstring{key\_compare}{key\_compare}}
+{\footnotesize\ttfamily template$<$class Key , class T , class Ignored\+Less  = std\+::less$<$\+Key$>$, class Allocator  = std\+::allocator$<$std\+::pair$<$const Key, T$>$$>$$>$ \\
+using \mbox{\hyperlink{structordered__map}{ordered\+\_\+map}}$<$ Key, T, Ignored\+Less, Allocator $>$\+::\mbox{\hyperlink{structordered__map_a4bbf207217197f997a9f3da8f149368b}{key\+\_\+compare}} =  std\+::equal\+\_\+to$<$Key$>$}
+
+
+
+Definition at line 18959 of file json.\+hpp.
+
+\mbox{\Hypertarget{structordered__map_abe63d891859a3d0b156933d5b44ac85f}\label{structordered__map_abe63d891859a3d0b156933d5b44ac85f}} 
+\index{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}!key\_type@{key\_type}}
+\index{key\_type@{key\_type}!ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}}
+\doxysubsubsection{\texorpdfstring{key\_type}{key\_type}}
+{\footnotesize\ttfamily template$<$class Key , class T , class Ignored\+Less  = std\+::less$<$\+Key$>$, class Allocator  = std\+::allocator$<$std\+::pair$<$const Key, T$>$$>$$>$ \\
+using \mbox{\hyperlink{structordered__map}{ordered\+\_\+map}}$<$ Key, T, Ignored\+Less, Allocator $>$\+::\mbox{\hyperlink{structordered__map_abe63d891859a3d0b156933d5b44ac85f}{key\+\_\+type}} =  Key}
+
+
+
+Definition at line 18949 of file json.\+hpp.
+
+\mbox{\Hypertarget{structordered__map_a50a68289ec9c8554e5bbb7d0a2128c33}\label{structordered__map_a50a68289ec9c8554e5bbb7d0a2128c33}} 
+\index{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}!mapped\_type@{mapped\_type}}
+\index{mapped\_type@{mapped\_type}!ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}}
+\doxysubsubsection{\texorpdfstring{mapped\_type}{mapped\_type}}
+{\footnotesize\ttfamily template$<$class Key , class T , class Ignored\+Less  = std\+::less$<$\+Key$>$, class Allocator  = std\+::allocator$<$std\+::pair$<$const Key, T$>$$>$$>$ \\
+using \mbox{\hyperlink{structordered__map}{ordered\+\_\+map}}$<$ Key, T, Ignored\+Less, Allocator $>$\+::\mbox{\hyperlink{structordered__map_a50a68289ec9c8554e5bbb7d0a2128c33}{mapped\+\_\+type}} =  T}
+
+
+
+Definition at line 18950 of file json.\+hpp.
+
+\mbox{\Hypertarget{structordered__map_ac4f0c38634f809b72b8d2f31ca12cf80}\label{structordered__map_ac4f0c38634f809b72b8d2f31ca12cf80}} 
+\index{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}!require\_input\_iter@{require\_input\_iter}}
+\index{require\_input\_iter@{require\_input\_iter}!ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}}
+\doxysubsubsection{\texorpdfstring{require\_input\_iter}{require\_input\_iter}}
+{\footnotesize\ttfamily template$<$class Key , class T , class Ignored\+Less  = std\+::less$<$\+Key$>$, class Allocator  = std\+::allocator$<$std\+::pair$<$const Key, T$>$$>$$>$ \\
+template$<$typename Input\+It $>$ \\
+using \mbox{\hyperlink{structordered__map}{ordered\+\_\+map}}$<$ Key, T, Ignored\+Less, Allocator $>$\+::\mbox{\hyperlink{structordered__map_ac4f0c38634f809b72b8d2f31ca12cf80}{require\+\_\+input\+\_\+iter}} =  typename std\+::enable\+\_\+if$<$std\+::is\+\_\+convertible$<$typename std\+::iterator\+\_\+traits$<$Input\+It$>$\+::iterator\+\_\+category, std\+::input\+\_\+iterator\+\_\+tag$>$\+::value$>$\+::type}
+
+
+
+Definition at line 19261 of file json.\+hpp.
+
+\mbox{\Hypertarget{structordered__map_a832acce07db0bec6c73675b35ad399c2}\label{structordered__map_a832acce07db0bec6c73675b35ad399c2}} 
+\index{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}!size\_type@{size\_type}}
+\index{size\_type@{size\_type}!ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}}
+\doxysubsubsection{\texorpdfstring{size\_type}{size\_type}}
+{\footnotesize\ttfamily template$<$class Key , class T , class Ignored\+Less  = std\+::less$<$\+Key$>$, class Allocator  = std\+::allocator$<$std\+::pair$<$const Key, T$>$$>$$>$ \\
+using \mbox{\hyperlink{structordered__map}{ordered\+\_\+map}}$<$ Key, T, Ignored\+Less, Allocator $>$\+::\mbox{\hyperlink{structordered__map_a832acce07db0bec6c73675b35ad399c2}{size\+\_\+type}} =  typename Container\+::size\+\_\+type}
+
+
+
+Definition at line 18954 of file json.\+hpp.
+
+\mbox{\Hypertarget{structordered__map_a49a3a4f4eb960dcbcc15fd2692f18a91}\label{structordered__map_a49a3a4f4eb960dcbcc15fd2692f18a91}} 
+\index{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}!value\_type@{value\_type}}
+\index{value\_type@{value\_type}!ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}}
+\doxysubsubsection{\texorpdfstring{value\_type}{value\_type}}
+{\footnotesize\ttfamily template$<$class Key , class T , class Ignored\+Less  = std\+::less$<$\+Key$>$, class Allocator  = std\+::allocator$<$std\+::pair$<$const Key, T$>$$>$$>$ \\
+using \mbox{\hyperlink{structordered__map}{ordered\+\_\+map}}$<$ Key, T, Ignored\+Less, Allocator $>$\+::\mbox{\hyperlink{structordered__map_a49a3a4f4eb960dcbcc15fd2692f18a91}{value\+\_\+type}} =  typename Container\+::value\+\_\+type}
+
+
+
+Definition at line 18955 of file json.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structordered__map_a8c8eed38b72bca336d07eac3a9ffbd1f}\label{structordered__map_a8c8eed38b72bca336d07eac3a9ffbd1f}} 
+\index{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}!ordered\_map@{ordered\_map}}
+\index{ordered\_map@{ordered\_map}!ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}}
+\doxysubsubsection{\texorpdfstring{ordered\_map()}{ordered\_map()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$class Key , class T , class Ignored\+Less  = std\+::less$<$\+Key$>$, class Allocator  = std\+::allocator$<$std\+::pair$<$const Key, T$>$$>$$>$ \\
+\mbox{\hyperlink{structordered__map}{ordered\+\_\+map}}$<$ Key, T, Ignored\+Less, Allocator $>$\+::\mbox{\hyperlink{structordered__map}{ordered\+\_\+map}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 18964 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{18964 : \mbox{\hyperlink{structordered__map_a18acd5b0134d2e378160031996ed3ddc}{Container}}\{\} \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structordered__map_a50b6eea717a66fb6241bbd2e0246849f}\label{structordered__map_a50b6eea717a66fb6241bbd2e0246849f}} 
+\index{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}!ordered\_map@{ordered\_map}}
+\index{ordered\_map@{ordered\_map}!ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}}
+\doxysubsubsection{\texorpdfstring{ordered\_map()}{ordered\_map()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$class Key , class T , class Ignored\+Less  = std\+::less$<$\+Key$>$, class Allocator  = std\+::allocator$<$std\+::pair$<$const Key, T$>$$>$$>$ \\
+\mbox{\hyperlink{structordered__map}{ordered\+\_\+map}}$<$ Key, T, Ignored\+Less, Allocator $>$\+::\mbox{\hyperlink{structordered__map}{ordered\+\_\+map}} (\begin{DoxyParamCaption}\item[{const Allocator \&}]{alloc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 18965 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{18965 : \mbox{\hyperlink{structordered__map_a18acd5b0134d2e378160031996ed3ddc}{Container}}\{alloc\} \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structordered__map_ac0fa192a94f9d4bba7ae4fc3eedd583f}\label{structordered__map_ac0fa192a94f9d4bba7ae4fc3eedd583f}} 
+\index{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}!ordered\_map@{ordered\_map}}
+\index{ordered\_map@{ordered\_map}!ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}}
+\doxysubsubsection{\texorpdfstring{ordered\_map()}{ordered\_map()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$class Key , class T , class Ignored\+Less  = std\+::less$<$\+Key$>$, class Allocator  = std\+::allocator$<$std\+::pair$<$const Key, T$>$$>$$>$ \\
+template$<$class It $>$ \\
+\mbox{\hyperlink{structordered__map}{ordered\+\_\+map}}$<$ Key, T, Ignored\+Less, Allocator $>$\+::\mbox{\hyperlink{structordered__map}{ordered\+\_\+map}} (\begin{DoxyParamCaption}\item[{It}]{first,  }\item[{It}]{last,  }\item[{const Allocator \&}]{alloc = {\ttfamily Allocator()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 18967 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{18968         : \mbox{\hyperlink{structordered__map_a18acd5b0134d2e378160031996ed3ddc}{Container}}\{first, last, alloc\} \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structordered__map_ab57d658b6e341a80a7a882c0d5cf38e0}\label{structordered__map_ab57d658b6e341a80a7a882c0d5cf38e0}} 
+\index{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}!ordered\_map@{ordered\_map}}
+\index{ordered\_map@{ordered\_map}!ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}}
+\doxysubsubsection{\texorpdfstring{ordered\_map()}{ordered\_map()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$class Key , class T , class Ignored\+Less  = std\+::less$<$\+Key$>$, class Allocator  = std\+::allocator$<$std\+::pair$<$const Key, T$>$$>$$>$ \\
+\mbox{\hyperlink{structordered__map}{ordered\+\_\+map}}$<$ Key, T, Ignored\+Less, Allocator $>$\+::\mbox{\hyperlink{structordered__map}{ordered\+\_\+map}} (\begin{DoxyParamCaption}\item[{std\+::initializer\+\_\+list$<$ \mbox{\hyperlink{structordered__map_a49a3a4f4eb960dcbcc15fd2692f18a91}{value\+\_\+type}} $>$}]{init,  }\item[{const Allocator \&}]{alloc = {\ttfamily Allocator()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 18969 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{18970         : \mbox{\hyperlink{structordered__map_a18acd5b0134d2e378160031996ed3ddc}{Container}}\{init, alloc\} \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structordered__map_a67d741fe8d5de525c6f2d54e2df7560d}\label{structordered__map_a67d741fe8d5de525c6f2d54e2df7560d}} 
+\index{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}!at@{at}}
+\index{at@{at}!ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$class Key , class T , class Ignored\+Less  = std\+::less$<$\+Key$>$, class Allocator  = std\+::allocator$<$std\+::pair$<$const Key, T$>$$>$$>$ \\
+T\& \mbox{\hyperlink{structordered__map}{ordered\+\_\+map}}$<$ Key, T, Ignored\+Less, Allocator $>$\+::at (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structordered__map_abe63d891859a3d0b156933d5b44ac85f}{key\+\_\+type}} \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 19024 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{19025     \{}
+\DoxyCodeLine{19026         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = this-\/>begin(); it != this-\/>end(); ++it)}
+\DoxyCodeLine{19027         \{}
+\DoxyCodeLine{19028             \textcolor{keywordflow}{if} (m\_compare(it-\/>first, key))}
+\DoxyCodeLine{19029             \{}
+\DoxyCodeLine{19030                 \textcolor{keywordflow}{return} it-\/>second;}
+\DoxyCodeLine{19031             \}}
+\DoxyCodeLine{19032         \}}
+\DoxyCodeLine{19033 }
+\DoxyCodeLine{19034         \mbox{\hyperlink{json_8hpp_a6c274f6db2e65c1b66c7d41b06ad690f}{JSON\_THROW}}(std::out\_of\_range(\textcolor{stringliteral}{"{}key not found"{}}));}
+\DoxyCodeLine{19035     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structordered__map_a0f910d98ca05ef14d39830c702944e71}\label{structordered__map_a0f910d98ca05ef14d39830c702944e71}} 
+\index{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}!at@{at}}
+\index{at@{at}!ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$class Key , class T , class Ignored\+Less  = std\+::less$<$\+Key$>$, class Allocator  = std\+::allocator$<$std\+::pair$<$const Key, T$>$$>$$>$ \\
+const T\& \mbox{\hyperlink{structordered__map}{ordered\+\_\+map}}$<$ Key, T, Ignored\+Less, Allocator $>$\+::at (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structordered__map_abe63d891859a3d0b156933d5b44ac85f}{key\+\_\+type}} \&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 19052 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{19053     \{}
+\DoxyCodeLine{19054         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = this-\/>begin(); it != this-\/>end(); ++it)}
+\DoxyCodeLine{19055         \{}
+\DoxyCodeLine{19056             \textcolor{keywordflow}{if} (m\_compare(it-\/>first, key))}
+\DoxyCodeLine{19057             \{}
+\DoxyCodeLine{19058                 \textcolor{keywordflow}{return} it-\/>second;}
+\DoxyCodeLine{19059             \}}
+\DoxyCodeLine{19060         \}}
+\DoxyCodeLine{19061 }
+\DoxyCodeLine{19062         \mbox{\hyperlink{json_8hpp_a6c274f6db2e65c1b66c7d41b06ad690f}{JSON\_THROW}}(std::out\_of\_range(\textcolor{stringliteral}{"{}key not found"{}}));}
+\DoxyCodeLine{19063     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structordered__map_adf5f8cdb111b15781b97a53d28d7d4de}\label{structordered__map_adf5f8cdb111b15781b97a53d28d7d4de}} 
+\index{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}!at@{at}}
+\index{at@{at}!ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$class Key , class T , class Ignored\+Less  = std\+::less$<$\+Key$>$, class Allocator  = std\+::allocator$<$std\+::pair$<$const Key, T$>$$>$$>$ \\
+template$<$class Key\+Type , detail\+::enable\+\_\+if\+\_\+t$<$ detail\+::is\+\_\+usable\+\_\+as\+\_\+key\+\_\+type$<$ key\+\_\+compare, key\+\_\+type, Key\+Type $>$\+::value, int $>$  = 0$>$ \\
+T\& \mbox{\hyperlink{structordered__map}{ordered\+\_\+map}}$<$ Key, T, Ignored\+Less, Allocator $>$\+::at (\begin{DoxyParamCaption}\item[{Key\+Type \&\&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 19039 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{19040     \{}
+\DoxyCodeLine{19041         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = this-\/>begin(); it != this-\/>end(); ++it)}
+\DoxyCodeLine{19042         \{}
+\DoxyCodeLine{19043             \textcolor{keywordflow}{if} (m\_compare(it-\/>first, key))}
+\DoxyCodeLine{19044             \{}
+\DoxyCodeLine{19045                 \textcolor{keywordflow}{return} it-\/>second;}
+\DoxyCodeLine{19046             \}}
+\DoxyCodeLine{19047         \}}
+\DoxyCodeLine{19048 }
+\DoxyCodeLine{19049         \mbox{\hyperlink{json_8hpp_a6c274f6db2e65c1b66c7d41b06ad690f}{JSON\_THROW}}(std::out\_of\_range(\textcolor{stringliteral}{"{}key not found"{}}));}
+\DoxyCodeLine{19050     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structordered__map_a862c08ae6034e0e3a80bd3b9916ad697}\label{structordered__map_a862c08ae6034e0e3a80bd3b9916ad697}} 
+\index{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}!at@{at}}
+\index{at@{at}!ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$class Key , class T , class Ignored\+Less  = std\+::less$<$\+Key$>$, class Allocator  = std\+::allocator$<$std\+::pair$<$const Key, T$>$$>$$>$ \\
+template$<$class Key\+Type , detail\+::enable\+\_\+if\+\_\+t$<$ detail\+::is\+\_\+usable\+\_\+as\+\_\+key\+\_\+type$<$ key\+\_\+compare, key\+\_\+type, Key\+Type $>$\+::value, int $>$  = 0$>$ \\
+const T\& \mbox{\hyperlink{structordered__map}{ordered\+\_\+map}}$<$ Key, T, Ignored\+Less, Allocator $>$\+::at (\begin{DoxyParamCaption}\item[{Key\+Type \&\&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 19067 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{19068     \{}
+\DoxyCodeLine{19069         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = this-\/>begin(); it != this-\/>end(); ++it)}
+\DoxyCodeLine{19070         \{}
+\DoxyCodeLine{19071             \textcolor{keywordflow}{if} (m\_compare(it-\/>first, key))}
+\DoxyCodeLine{19072             \{}
+\DoxyCodeLine{19073                 \textcolor{keywordflow}{return} it-\/>second;}
+\DoxyCodeLine{19074             \}}
+\DoxyCodeLine{19075         \}}
+\DoxyCodeLine{19076 }
+\DoxyCodeLine{19077         \mbox{\hyperlink{json_8hpp_a6c274f6db2e65c1b66c7d41b06ad690f}{JSON\_THROW}}(std::out\_of\_range(\textcolor{stringliteral}{"{}key not found"{}}));}
+\DoxyCodeLine{19078     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structordered__map_a94ced73a996cf385aa68b6aae1f85dfe}\label{structordered__map_a94ced73a996cf385aa68b6aae1f85dfe}} 
+\index{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}!count@{count}}
+\index{count@{count}!ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}}
+\doxysubsubsection{\texorpdfstring{count()}{count()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class Key , class T , class Ignored\+Less  = std\+::less$<$\+Key$>$, class Allocator  = std\+::allocator$<$std\+::pair$<$const Key, T$>$$>$$>$ \\
+\mbox{\hyperlink{structordered__map_a832acce07db0bec6c73675b35ad399c2}{size\+\_\+type}} \mbox{\hyperlink{structordered__map}{ordered\+\_\+map}}$<$ Key, T, Ignored\+Less, Allocator $>$\+::count (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structordered__map_abe63d891859a3d0b156933d5b44ac85f}{key\+\_\+type}} \&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 19178 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{19179     \{}
+\DoxyCodeLine{19180         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = this-\/>begin(); it != this-\/>end(); ++it)}
+\DoxyCodeLine{19181         \{}
+\DoxyCodeLine{19182             \textcolor{keywordflow}{if} (m\_compare(it-\/>first, key))}
+\DoxyCodeLine{19183             \{}
+\DoxyCodeLine{19184                 \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{19185             \}}
+\DoxyCodeLine{19186         \}}
+\DoxyCodeLine{19187         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{19188     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structordered__map_abd35ff8bb3cfe4b8951f382fdfb617e5}\label{structordered__map_abd35ff8bb3cfe4b8951f382fdfb617e5}} 
+\index{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}!count@{count}}
+\index{count@{count}!ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}}
+\doxysubsubsection{\texorpdfstring{count()}{count()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class Key , class T , class Ignored\+Less  = std\+::less$<$\+Key$>$, class Allocator  = std\+::allocator$<$std\+::pair$<$const Key, T$>$$>$$>$ \\
+template$<$class Key\+Type , detail\+::enable\+\_\+if\+\_\+t$<$ detail\+::is\+\_\+usable\+\_\+as\+\_\+key\+\_\+type$<$ key\+\_\+compare, key\+\_\+type, Key\+Type $>$\+::value, int $>$  = 0$>$ \\
+\mbox{\hyperlink{structordered__map_a832acce07db0bec6c73675b35ad399c2}{size\+\_\+type}} \mbox{\hyperlink{structordered__map}{ordered\+\_\+map}}$<$ Key, T, Ignored\+Less, Allocator $>$\+::count (\begin{DoxyParamCaption}\item[{Key\+Type \&\&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 19192 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{19193     \{}
+\DoxyCodeLine{19194         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = this-\/>begin(); it != this-\/>end(); ++it)}
+\DoxyCodeLine{19195         \{}
+\DoxyCodeLine{19196             \textcolor{keywordflow}{if} (m\_compare(it-\/>first, key))}
+\DoxyCodeLine{19197             \{}
+\DoxyCodeLine{19198                 \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{19199             \}}
+\DoxyCodeLine{19200         \}}
+\DoxyCodeLine{19201         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{19202     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structordered__map_a8ab9d18a0de258c21224ff3adfbd2372}\label{structordered__map_a8ab9d18a0de258c21224ff3adfbd2372}} 
+\index{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}!emplace@{emplace}}
+\index{emplace@{emplace}!ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}}
+\doxysubsubsection{\texorpdfstring{emplace()}{emplace()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class Key , class T , class Ignored\+Less  = std\+::less$<$\+Key$>$, class Allocator  = std\+::allocator$<$std\+::pair$<$const Key, T$>$$>$$>$ \\
+std\+::pair$<$\mbox{\hyperlink{structordered__map_a57c27034b40422a4b37ab8f4f60b9f14}{iterator}}, bool$>$ \mbox{\hyperlink{structordered__map}{ordered\+\_\+map}}$<$ Key, T, Ignored\+Less, Allocator $>$\+::emplace (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structordered__map_abe63d891859a3d0b156933d5b44ac85f}{key\+\_\+type}} \&}]{key,  }\item[{T \&\&}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 18972 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{18973     \{}
+\DoxyCodeLine{18974         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = this-\/>begin(); it != this-\/>end(); ++it)}
+\DoxyCodeLine{18975         \{}
+\DoxyCodeLine{18976             \textcolor{keywordflow}{if} (m\_compare(it-\/>first, key))}
+\DoxyCodeLine{18977             \{}
+\DoxyCodeLine{18978                 \textcolor{keywordflow}{return} \{it, \textcolor{keyword}{false}\};}
+\DoxyCodeLine{18979             \}}
+\DoxyCodeLine{18980         \}}
+\DoxyCodeLine{18981         Container::emplace\_back(key, std::forward<T>(t));}
+\DoxyCodeLine{18982         \textcolor{keywordflow}{return} \{std::prev(this-\/>end()), \textcolor{keyword}{true}\};}
+\DoxyCodeLine{18983     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structordered__map_a2d2dea5d96368cda502b84eb35c0c2ca}\label{structordered__map_a2d2dea5d96368cda502b84eb35c0c2ca}} 
+\index{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}!emplace@{emplace}}
+\index{emplace@{emplace}!ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}}
+\doxysubsubsection{\texorpdfstring{emplace()}{emplace()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class Key , class T , class Ignored\+Less  = std\+::less$<$\+Key$>$, class Allocator  = std\+::allocator$<$std\+::pair$<$const Key, T$>$$>$$>$ \\
+template$<$class Key\+Type , detail\+::enable\+\_\+if\+\_\+t$<$ detail\+::is\+\_\+usable\+\_\+as\+\_\+key\+\_\+type$<$ key\+\_\+compare, key\+\_\+type, Key\+Type $>$\+::value, int $>$  = 0$>$ \\
+std\+::pair$<$\mbox{\hyperlink{structordered__map_a57c27034b40422a4b37ab8f4f60b9f14}{iterator}}, bool$>$ \mbox{\hyperlink{structordered__map}{ordered\+\_\+map}}$<$ Key, T, Ignored\+Less, Allocator $>$\+::emplace (\begin{DoxyParamCaption}\item[{Key\+Type \&\&}]{key,  }\item[{T \&\&}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 18987 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{18988     \{}
+\DoxyCodeLine{18989         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = this-\/>begin(); it != this-\/>end(); ++it)}
+\DoxyCodeLine{18990         \{}
+\DoxyCodeLine{18991             \textcolor{keywordflow}{if} (m\_compare(it-\/>first, key))}
+\DoxyCodeLine{18992             \{}
+\DoxyCodeLine{18993                 \textcolor{keywordflow}{return} \{it, \textcolor{keyword}{false}\};}
+\DoxyCodeLine{18994             \}}
+\DoxyCodeLine{18995         \}}
+\DoxyCodeLine{18996         Container::emplace\_back(std::forward<KeyType>(key), std::forward<T>(t));}
+\DoxyCodeLine{18997         \textcolor{keywordflow}{return} \{std::prev(this-\/>end()), \textcolor{keyword}{true}\};}
+\DoxyCodeLine{18998     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structordered__map_aaa50926fc8df543dbe294859db97514e}\label{structordered__map_aaa50926fc8df543dbe294859db97514e}} 
+\index{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}!erase@{erase}}
+\index{erase@{erase}!ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}}
+\doxysubsubsection{\texorpdfstring{erase()}{erase()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$class Key , class T , class Ignored\+Less  = std\+::less$<$\+Key$>$, class Allocator  = std\+::allocator$<$std\+::pair$<$const Key, T$>$$>$$>$ \\
+\mbox{\hyperlink{structordered__map_a832acce07db0bec6c73675b35ad399c2}{size\+\_\+type}} \mbox{\hyperlink{structordered__map}{ordered\+\_\+map}}$<$ Key, T, Ignored\+Less, Allocator $>$\+::erase (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structordered__map_abe63d891859a3d0b156933d5b44ac85f}{key\+\_\+type}} \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 19080 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{19081     \{}
+\DoxyCodeLine{19082         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = this-\/>begin(); it != this-\/>end(); ++it)}
+\DoxyCodeLine{19083         \{}
+\DoxyCodeLine{19084             \textcolor{keywordflow}{if} (m\_compare(it-\/>first, key))}
+\DoxyCodeLine{19085             \{}
+\DoxyCodeLine{19086                 \textcolor{comment}{// Since we cannot move const Keys, re-\/construct them in place}}
+\DoxyCodeLine{19087                 \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} next = it; ++next != this-\/>end(); ++it)}
+\DoxyCodeLine{19088                 \{}
+\DoxyCodeLine{19089                     it-\/>\string~value\_type(); \textcolor{comment}{// Destroy but keep allocation}}
+\DoxyCodeLine{19090                     \textcolor{keyword}{new} (\&*it) \mbox{\hyperlink{structordered__map_a49a3a4f4eb960dcbcc15fd2692f18a91}{value\_type}}\{std::move(*next)\};}
+\DoxyCodeLine{19091                 \}}
+\DoxyCodeLine{19092                 Container::pop\_back();}
+\DoxyCodeLine{19093                 \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{19094             \}}
+\DoxyCodeLine{19095         \}}
+\DoxyCodeLine{19096         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{19097     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structordered__map_a6945910b941f51c9a81250d99ae34441}\label{structordered__map_a6945910b941f51c9a81250d99ae34441}} 
+\index{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}!erase@{erase}}
+\index{erase@{erase}!ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}}
+\doxysubsubsection{\texorpdfstring{erase()}{erase()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$class Key , class T , class Ignored\+Less  = std\+::less$<$\+Key$>$, class Allocator  = std\+::allocator$<$std\+::pair$<$const Key, T$>$$>$$>$ \\
+\mbox{\hyperlink{structordered__map_a57c27034b40422a4b37ab8f4f60b9f14}{iterator}} \mbox{\hyperlink{structordered__map}{ordered\+\_\+map}}$<$ Key, T, Ignored\+Less, Allocator $>$\+::erase (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structordered__map_a57c27034b40422a4b37ab8f4f60b9f14}{iterator}}}]{first,  }\item[{\mbox{\hyperlink{structordered__map_a57c27034b40422a4b37ab8f4f60b9f14}{iterator}}}]{last }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 19125 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{19126     \{}
+\DoxyCodeLine{19127         \textcolor{keywordflow}{if} (first == last)}
+\DoxyCodeLine{19128         \{}
+\DoxyCodeLine{19129             \textcolor{keywordflow}{return} first;}
+\DoxyCodeLine{19130         \}}
+\DoxyCodeLine{19131 }
+\DoxyCodeLine{19132         \textcolor{keyword}{const} \textcolor{keyword}{auto} elements\_affected = std::distance(first, last);}
+\DoxyCodeLine{19133         \textcolor{keyword}{const} \textcolor{keyword}{auto} offset = std::distance(Container::begin(), first);}
+\DoxyCodeLine{19134 }
+\DoxyCodeLine{19135         \textcolor{comment}{// This is the start situation. We need to delete elements\_affected}}
+\DoxyCodeLine{19136         \textcolor{comment}{// elements (3 in this example: e, f, g), and need to return an}}
+\DoxyCodeLine{19137         \textcolor{comment}{// iterator past the last deleted element (h in this example).}}
+\DoxyCodeLine{19138         \textcolor{comment}{// Note that offset is the distance from the start of the vector}}
+\DoxyCodeLine{19139         \textcolor{comment}{// to first. We will need this later.}}
+\DoxyCodeLine{19140 }
+\DoxyCodeLine{19141         \textcolor{comment}{// [ a, b, c, d, e, f, g, h, i, j ]}}
+\DoxyCodeLine{19142         \textcolor{comment}{//               \string^        \string^}}
+\DoxyCodeLine{19143         \textcolor{comment}{//             first    last}}
+\DoxyCodeLine{19144 }
+\DoxyCodeLine{19145         \textcolor{comment}{// Since we cannot move const Keys, we re-\/construct them in place.}}
+\DoxyCodeLine{19146         \textcolor{comment}{// We start at first and re-\/construct (viz. copy) the elements from}}
+\DoxyCodeLine{19147         \textcolor{comment}{// the back of the vector. Example for first iteration:}}
+\DoxyCodeLine{19148 }
+\DoxyCodeLine{19149         \textcolor{comment}{//               ,-\/-\/-\/-\/-\/-\/-\/-\/.}}
+\DoxyCodeLine{19150         \textcolor{comment}{//               v        |   destroy e and re-\/construct with h}}
+\DoxyCodeLine{19151         \textcolor{comment}{// [ a, b, c, d, e, f, g, h, i, j ]}}
+\DoxyCodeLine{19152         \textcolor{comment}{//               \string^        \string^}}
+\DoxyCodeLine{19153         \textcolor{comment}{//               it       it + elements\_affected}}
+\DoxyCodeLine{19154 }
+\DoxyCodeLine{19155         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = first; std::next(it, elements\_affected) != Container::end(); ++it)}
+\DoxyCodeLine{19156         \{}
+\DoxyCodeLine{19157             it-\/>\string~value\_type(); \textcolor{comment}{// destroy but keep allocation}}
+\DoxyCodeLine{19158             \textcolor{keyword}{new} (\&*it) \mbox{\hyperlink{structordered__map_a49a3a4f4eb960dcbcc15fd2692f18a91}{value\_type}}\{std::move(*std::next(it, elements\_affected))\}; \textcolor{comment}{// "{}move"{} next element to it}}
+\DoxyCodeLine{19159         \}}
+\DoxyCodeLine{19160 }
+\DoxyCodeLine{19161         \textcolor{comment}{// [ a, b, c, d, h, i, j, h, i, j ]}}
+\DoxyCodeLine{19162         \textcolor{comment}{//               \string^        \string^}}
+\DoxyCodeLine{19163         \textcolor{comment}{//             first    last}}
+\DoxyCodeLine{19164 }
+\DoxyCodeLine{19165         \textcolor{comment}{// remove the unneeded elements at the end of the vector}}
+\DoxyCodeLine{19166         Container::resize(this-\/>size() -\/ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{structordered__map_a832acce07db0bec6c73675b35ad399c2}{size\_type}}\textcolor{keyword}{>}(elements\_affected));}
+\DoxyCodeLine{19167 }
+\DoxyCodeLine{19168         \textcolor{comment}{// [ a, b, c, d, h, i, j ]}}
+\DoxyCodeLine{19169         \textcolor{comment}{//               \string^        \string^}}
+\DoxyCodeLine{19170         \textcolor{comment}{//             first    last}}
+\DoxyCodeLine{19171 }
+\DoxyCodeLine{19172         \textcolor{comment}{// first is now pointing past the last deleted element, but we cannot}}
+\DoxyCodeLine{19173         \textcolor{comment}{// use this iterator, because it may have been invalidated by the}}
+\DoxyCodeLine{19174         \textcolor{comment}{// resize call. Instead, we can return begin() + offset.}}
+\DoxyCodeLine{19175         \textcolor{keywordflow}{return} Container::begin() + offset;}
+\DoxyCodeLine{19176     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structordered__map_a4c3baa0920e81bd651ea01b9d735951b}\label{structordered__map_a4c3baa0920e81bd651ea01b9d735951b}} 
+\index{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}!erase@{erase}}
+\index{erase@{erase}!ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}}
+\doxysubsubsection{\texorpdfstring{erase()}{erase()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$class Key , class T , class Ignored\+Less  = std\+::less$<$\+Key$>$, class Allocator  = std\+::allocator$<$std\+::pair$<$const Key, T$>$$>$$>$ \\
+\mbox{\hyperlink{structordered__map_a57c27034b40422a4b37ab8f4f60b9f14}{iterator}} \mbox{\hyperlink{structordered__map}{ordered\+\_\+map}}$<$ Key, T, Ignored\+Less, Allocator $>$\+::erase (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structordered__map_a57c27034b40422a4b37ab8f4f60b9f14}{iterator}}}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 19120 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{19121     \{}
+\DoxyCodeLine{19122         \textcolor{keywordflow}{return} \mbox{\hyperlink{structordered__map_aaa50926fc8df543dbe294859db97514e}{erase}}(pos, std::next(pos));}
+\DoxyCodeLine{19123     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structordered__map_a7d72919fabb5f477e69add51877e415f}\label{structordered__map_a7d72919fabb5f477e69add51877e415f}} 
+\index{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}!erase@{erase}}
+\index{erase@{erase}!ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}}
+\doxysubsubsection{\texorpdfstring{erase()}{erase()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$class Key , class T , class Ignored\+Less  = std\+::less$<$\+Key$>$, class Allocator  = std\+::allocator$<$std\+::pair$<$const Key, T$>$$>$$>$ \\
+template$<$class Key\+Type , detail\+::enable\+\_\+if\+\_\+t$<$ detail\+::is\+\_\+usable\+\_\+as\+\_\+key\+\_\+type$<$ key\+\_\+compare, key\+\_\+type, Key\+Type $>$\+::value, int $>$  = 0$>$ \\
+\mbox{\hyperlink{structordered__map_a832acce07db0bec6c73675b35ad399c2}{size\+\_\+type}} \mbox{\hyperlink{structordered__map}{ordered\+\_\+map}}$<$ Key, T, Ignored\+Less, Allocator $>$\+::erase (\begin{DoxyParamCaption}\item[{Key\+Type \&\&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 19101 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{19102     \{}
+\DoxyCodeLine{19103         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = this-\/>begin(); it != this-\/>end(); ++it)}
+\DoxyCodeLine{19104         \{}
+\DoxyCodeLine{19105             \textcolor{keywordflow}{if} (m\_compare(it-\/>first, key))}
+\DoxyCodeLine{19106             \{}
+\DoxyCodeLine{19107                 \textcolor{comment}{// Since we cannot move const Keys, re-\/construct them in place}}
+\DoxyCodeLine{19108                 \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} next = it; ++next != this-\/>end(); ++it)}
+\DoxyCodeLine{19109                 \{}
+\DoxyCodeLine{19110                     it-\/>\string~value\_type(); \textcolor{comment}{// Destroy but keep allocation}}
+\DoxyCodeLine{19111                     \textcolor{keyword}{new} (\&*it) \mbox{\hyperlink{structordered__map_a49a3a4f4eb960dcbcc15fd2692f18a91}{value\_type}}\{std::move(*next)\};}
+\DoxyCodeLine{19112                 \}}
+\DoxyCodeLine{19113                 Container::pop\_back();}
+\DoxyCodeLine{19114                 \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{19115             \}}
+\DoxyCodeLine{19116         \}}
+\DoxyCodeLine{19117         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{19118     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structordered__map_a67c6dfc6bc7817980067b40db5c252a4}\label{structordered__map_a67c6dfc6bc7817980067b40db5c252a4}} 
+\index{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}!find@{find}}
+\index{find@{find}!ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$class Key , class T , class Ignored\+Less  = std\+::less$<$\+Key$>$, class Allocator  = std\+::allocator$<$std\+::pair$<$const Key, T$>$$>$$>$ \\
+\mbox{\hyperlink{structordered__map_a57c27034b40422a4b37ab8f4f60b9f14}{iterator}} \mbox{\hyperlink{structordered__map}{ordered\+\_\+map}}$<$ Key, T, Ignored\+Less, Allocator $>$\+::find (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structordered__map_abe63d891859a3d0b156933d5b44ac85f}{key\+\_\+type}} \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 19204 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{19205     \{}
+\DoxyCodeLine{19206         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = this-\/>begin(); it != this-\/>end(); ++it)}
+\DoxyCodeLine{19207         \{}
+\DoxyCodeLine{19208             \textcolor{keywordflow}{if} (m\_compare(it-\/>first, key))}
+\DoxyCodeLine{19209             \{}
+\DoxyCodeLine{19210                 \textcolor{keywordflow}{return} it;}
+\DoxyCodeLine{19211             \}}
+\DoxyCodeLine{19212         \}}
+\DoxyCodeLine{19213         \textcolor{keywordflow}{return} Container::end();}
+\DoxyCodeLine{19214     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structordered__map_a73a21fcebe6f068cd2226c5586ac93d7}\label{structordered__map_a73a21fcebe6f068cd2226c5586ac93d7}} 
+\index{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}!find@{find}}
+\index{find@{find}!ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$class Key , class T , class Ignored\+Less  = std\+::less$<$\+Key$>$, class Allocator  = std\+::allocator$<$std\+::pair$<$const Key, T$>$$>$$>$ \\
+\mbox{\hyperlink{structordered__map_aeb48abad4ceb24e60002c6220d8b18b4}{const\+\_\+iterator}} \mbox{\hyperlink{structordered__map}{ordered\+\_\+map}}$<$ Key, T, Ignored\+Less, Allocator $>$\+::find (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structordered__map_abe63d891859a3d0b156933d5b44ac85f}{key\+\_\+type}} \&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 19230 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{19231     \{}
+\DoxyCodeLine{19232         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = this-\/>begin(); it != this-\/>end(); ++it)}
+\DoxyCodeLine{19233         \{}
+\DoxyCodeLine{19234             \textcolor{keywordflow}{if} (m\_compare(it-\/>first, key))}
+\DoxyCodeLine{19235             \{}
+\DoxyCodeLine{19236                 \textcolor{keywordflow}{return} it;}
+\DoxyCodeLine{19237             \}}
+\DoxyCodeLine{19238         \}}
+\DoxyCodeLine{19239         \textcolor{keywordflow}{return} Container::end();}
+\DoxyCodeLine{19240     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structordered__map_ad3072ca1fdc7dd9f88d5d043deab9639}\label{structordered__map_ad3072ca1fdc7dd9f88d5d043deab9639}} 
+\index{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}!find@{find}}
+\index{find@{find}!ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$class Key , class T , class Ignored\+Less  = std\+::less$<$\+Key$>$, class Allocator  = std\+::allocator$<$std\+::pair$<$const Key, T$>$$>$$>$ \\
+template$<$class Key\+Type , detail\+::enable\+\_\+if\+\_\+t$<$ detail\+::is\+\_\+usable\+\_\+as\+\_\+key\+\_\+type$<$ key\+\_\+compare, key\+\_\+type, Key\+Type $>$\+::value, int $>$  = 0$>$ \\
+\mbox{\hyperlink{structordered__map_a57c27034b40422a4b37ab8f4f60b9f14}{iterator}} \mbox{\hyperlink{structordered__map}{ordered\+\_\+map}}$<$ Key, T, Ignored\+Less, Allocator $>$\+::find (\begin{DoxyParamCaption}\item[{Key\+Type \&\&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 19218 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{19219     \{}
+\DoxyCodeLine{19220         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = this-\/>begin(); it != this-\/>end(); ++it)}
+\DoxyCodeLine{19221         \{}
+\DoxyCodeLine{19222             \textcolor{keywordflow}{if} (m\_compare(it-\/>first, key))}
+\DoxyCodeLine{19223             \{}
+\DoxyCodeLine{19224                 \textcolor{keywordflow}{return} it;}
+\DoxyCodeLine{19225             \}}
+\DoxyCodeLine{19226         \}}
+\DoxyCodeLine{19227         \textcolor{keywordflow}{return} Container::end();}
+\DoxyCodeLine{19228     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structordered__map_a7c77f6d3fbd8f693c5a9ad25244c14de}\label{structordered__map_a7c77f6d3fbd8f693c5a9ad25244c14de}} 
+\index{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}!insert@{insert}}
+\index{insert@{insert}!ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$class Key , class T , class Ignored\+Less  = std\+::less$<$\+Key$>$, class Allocator  = std\+::allocator$<$std\+::pair$<$const Key, T$>$$>$$>$ \\
+std\+::pair$<$\mbox{\hyperlink{structordered__map_a57c27034b40422a4b37ab8f4f60b9f14}{iterator}}, bool$>$ \mbox{\hyperlink{structordered__map}{ordered\+\_\+map}}$<$ Key, T, Ignored\+Less, Allocator $>$\+::insert (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structordered__map_a49a3a4f4eb960dcbcc15fd2692f18a91}{value\+\_\+type}} \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 19247 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{19248     \{}
+\DoxyCodeLine{19249         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = this-\/>begin(); it != this-\/>end(); ++it)}
+\DoxyCodeLine{19250         \{}
+\DoxyCodeLine{19251             \textcolor{keywordflow}{if} (m\_compare(it-\/>first, \mbox{\hyperlink{namespacedetail_a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804}{value}}.first))}
+\DoxyCodeLine{19252             \{}
+\DoxyCodeLine{19253                 \textcolor{keywordflow}{return} \{it, \textcolor{keyword}{false}\};}
+\DoxyCodeLine{19254             \}}
+\DoxyCodeLine{19255         \}}
+\DoxyCodeLine{19256         Container::push\_back(value);}
+\DoxyCodeLine{19257         \textcolor{keywordflow}{return} \{-\/-\/this-\/>end(), \textcolor{keyword}{true}\};}
+\DoxyCodeLine{19258     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structordered__map_a8e19c1dfa836a39b16b0ce259447a61a}\label{structordered__map_a8e19c1dfa836a39b16b0ce259447a61a}} 
+\index{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}!insert@{insert}}
+\index{insert@{insert}!ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$class Key , class T , class Ignored\+Less  = std\+::less$<$\+Key$>$, class Allocator  = std\+::allocator$<$std\+::pair$<$const Key, T$>$$>$$>$ \\
+template$<$typename Input\+It , typename  = require\+\_\+input\+\_\+iter$<$\+Input\+It$>$$>$ \\
+void \mbox{\hyperlink{structordered__map}{ordered\+\_\+map}}$<$ Key, T, Ignored\+Less, Allocator $>$\+::insert (\begin{DoxyParamCaption}\item[{Input\+It}]{first,  }\item[{Input\+It}]{last }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 19265 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{19266     \{}
+\DoxyCodeLine{19267         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = first; it != last; ++it)}
+\DoxyCodeLine{19268         \{}
+\DoxyCodeLine{19269             \mbox{\hyperlink{structordered__map_aaba9ddea7c2f582c417ec504ad20961c}{insert}}(*it);}
+\DoxyCodeLine{19270         \}}
+\DoxyCodeLine{19271     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structordered__map_aaba9ddea7c2f582c417ec504ad20961c}\label{structordered__map_aaba9ddea7c2f582c417ec504ad20961c}} 
+\index{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}!insert@{insert}}
+\index{insert@{insert}!ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$class Key , class T , class Ignored\+Less  = std\+::less$<$\+Key$>$, class Allocator  = std\+::allocator$<$std\+::pair$<$const Key, T$>$$>$$>$ \\
+std\+::pair$<$\mbox{\hyperlink{structordered__map_a57c27034b40422a4b37ab8f4f60b9f14}{iterator}}, bool$>$ \mbox{\hyperlink{structordered__map}{ordered\+\_\+map}}$<$ Key, T, Ignored\+Less, Allocator $>$\+::insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structordered__map_a49a3a4f4eb960dcbcc15fd2692f18a91}{value\+\_\+type}} \&\&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 19242 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{19243     \{}
+\DoxyCodeLine{19244         \textcolor{keywordflow}{return} \mbox{\hyperlink{structordered__map_a8ab9d18a0de258c21224ff3adfbd2372}{emplace}}(\mbox{\hyperlink{namespacedetail_a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804}{value}}.first, std::move(\mbox{\hyperlink{namespacedetail_a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804}{value}}.second));}
+\DoxyCodeLine{19245     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structordered__map_a907f9ef3e4899bcd5d6a99b50011af76}\label{structordered__map_a907f9ef3e4899bcd5d6a99b50011af76}} 
+\index{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$class Key , class T , class Ignored\+Less  = std\+::less$<$\+Key$>$, class Allocator  = std\+::allocator$<$std\+::pair$<$const Key, T$>$$>$$>$ \\
+T\& \mbox{\hyperlink{structordered__map}{ordered\+\_\+map}}$<$ Key, T, Ignored\+Less, Allocator $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structordered__map_abe63d891859a3d0b156933d5b44ac85f}{key\+\_\+type}} \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 19000 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{19001     \{}
+\DoxyCodeLine{19002         \textcolor{keywordflow}{return} \mbox{\hyperlink{structordered__map_a8ab9d18a0de258c21224ff3adfbd2372}{emplace}}(key, T\{\}).first-\/>second;}
+\DoxyCodeLine{19003     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structordered__map_a1b0345845b86b6addcbc674632cff015}\label{structordered__map_a1b0345845b86b6addcbc674632cff015}} 
+\index{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$class Key , class T , class Ignored\+Less  = std\+::less$<$\+Key$>$, class Allocator  = std\+::allocator$<$std\+::pair$<$const Key, T$>$$>$$>$ \\
+const T\& \mbox{\hyperlink{structordered__map}{ordered\+\_\+map}}$<$ Key, T, Ignored\+Less, Allocator $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structordered__map_abe63d891859a3d0b156933d5b44ac85f}{key\+\_\+type}} \&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 19012 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{19013     \{}
+\DoxyCodeLine{19014         \textcolor{keywordflow}{return} \mbox{\hyperlink{structordered__map_a67d741fe8d5de525c6f2d54e2df7560d}{at}}(key);}
+\DoxyCodeLine{19015     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structordered__map_a5bb8fc73d6dd1ca67e99f84d05b14573}\label{structordered__map_a5bb8fc73d6dd1ca67e99f84d05b14573}} 
+\index{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$class Key , class T , class Ignored\+Less  = std\+::less$<$\+Key$>$, class Allocator  = std\+::allocator$<$std\+::pair$<$const Key, T$>$$>$$>$ \\
+template$<$class Key\+Type , detail\+::enable\+\_\+if\+\_\+t$<$ detail\+::is\+\_\+usable\+\_\+as\+\_\+key\+\_\+type$<$ key\+\_\+compare, key\+\_\+type, Key\+Type $>$\+::value, int $>$  = 0$>$ \\
+T\& \mbox{\hyperlink{structordered__map}{ordered\+\_\+map}}$<$ Key, T, Ignored\+Less, Allocator $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{Key\+Type \&\&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 19007 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{19008     \{}
+\DoxyCodeLine{19009         \textcolor{keywordflow}{return} \mbox{\hyperlink{structordered__map_a8ab9d18a0de258c21224ff3adfbd2372}{emplace}}(std::forward<KeyType>(key), T\{\}).first-\/>second;}
+\DoxyCodeLine{19010     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structordered__map_af33685904d09d86cb4eae096a0d9888d}\label{structordered__map_af33685904d09d86cb4eae096a0d9888d}} 
+\index{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$@{ordered\_map$<$ Key, T, IgnoredLess, Allocator $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$class Key , class T , class Ignored\+Less  = std\+::less$<$\+Key$>$, class Allocator  = std\+::allocator$<$std\+::pair$<$const Key, T$>$$>$$>$ \\
+template$<$class Key\+Type , detail\+::enable\+\_\+if\+\_\+t$<$ detail\+::is\+\_\+usable\+\_\+as\+\_\+key\+\_\+type$<$ key\+\_\+compare, key\+\_\+type, Key\+Type $>$\+::value, int $>$  = 0$>$ \\
+const T\& \mbox{\hyperlink{structordered__map}{ordered\+\_\+map}}$<$ Key, T, Ignored\+Less, Allocator $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{Key\+Type \&\&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 19019 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{19020     \{}
+\DoxyCodeLine{19021         \textcolor{keywordflow}{return} \mbox{\hyperlink{structordered__map_a67d741fe8d5de525c6f2d54e2df7560d}{at}}(std::forward<KeyType>(key));}
+\DoxyCodeLine{19022     \}}
+
+\end{DoxyCode}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/nlohmann/\mbox{\hyperlink{json_8hpp}{json.\+hpp}}\end{DoxyCompactItemize}

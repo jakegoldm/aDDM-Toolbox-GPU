@@ -1,0 +1,268 @@
+\hypertarget{structdetail_1_1dtoa__impl_1_1diyfp}{}\doxysection{detail\+::dtoa\+\_\+impl\+::diyfp Struct Reference}
+\label{structdetail_1_1dtoa__impl_1_1diyfp}\index{detail::dtoa\_impl::diyfp@{detail::dtoa\_impl::diyfp}}
+
+
+{\ttfamily \#include $<$json.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+constexpr \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp_a7c8377d2b931fcb3088d54c41b99c53b}{diyfp}} (std\+::uint64\+\_\+t f\+\_\+, int e\+\_\+) noexcept
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp}{diyfp}} \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp_a75142bace0b78b1e1433b1d35a7ff252}{sub}} (const \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp}{diyfp}} \&x, const \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp}{diyfp}} \&y) noexcept
+\begin{DoxyCompactList}\small\item\em returns x -\/ y \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp}{diyfp}} \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp_a046c61f2c13411677eedfb5b9b7a8226}{mul}} (const \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp}{diyfp}} \&x, const \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp}{diyfp}} \&y) noexcept
+\begin{DoxyCompactList}\small\item\em returns x $\ast$ y \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp}{diyfp}} \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp_a5bad735c2cb50b194938a8a89b82f6ed}{normalize}} (\mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp}{diyfp}} x) noexcept
+\begin{DoxyCompactList}\small\item\em normalize x such that the significand is $>$= 2$^\wedge$(q-\/1) \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp}{diyfp}} \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp_a5a9ce83c6c1663c9aaac7ffd9009b971}{normalize\+\_\+to}} (const \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp}{diyfp}} \&x, const int target\+\_\+exponent) noexcept
+\begin{DoxyCompactList}\small\item\em normalize x such that the result has the exponent E \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::uint64\+\_\+t \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp_ae1518119517cb69d79aa64ffb93c8375}{f}} = 0
+\item 
+int \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp_ae2b59fab8dee9ef0192eb6b568fa7314}{e}} = 0
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr int \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp_a80cf8cc846a7bf96362d3b11886994e3}{k\+Precision}} = 64
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 16878 of file json.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structdetail_1_1dtoa__impl_1_1diyfp_a7c8377d2b931fcb3088d54c41b99c53b}\label{structdetail_1_1dtoa__impl_1_1diyfp_a7c8377d2b931fcb3088d54c41b99c53b}} 
+\index{detail::dtoa\_impl::diyfp@{detail::dtoa\_impl::diyfp}!diyfp@{diyfp}}
+\index{diyfp@{diyfp}!detail::dtoa\_impl::diyfp@{detail::dtoa\_impl::diyfp}}
+\doxysubsubsection{\texorpdfstring{diyfp()}{diyfp()}}
+{\footnotesize\ttfamily constexpr detail\+::dtoa\+\_\+impl\+::diyfp\+::diyfp (\begin{DoxyParamCaption}\item[{std\+::uint64\+\_\+t}]{f\+\_\+,  }\item[{int}]{e\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 16885 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{16885 : \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp_ae1518119517cb69d79aa64ffb93c8375}{f}}(f\_), \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp_ae2b59fab8dee9ef0192eb6b568fa7314}{e}}(e\_) \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structdetail_1_1dtoa__impl_1_1diyfp_a046c61f2c13411677eedfb5b9b7a8226}\label{structdetail_1_1dtoa__impl_1_1diyfp_a046c61f2c13411677eedfb5b9b7a8226}} 
+\index{detail::dtoa\_impl::diyfp@{detail::dtoa\_impl::diyfp}!mul@{mul}}
+\index{mul@{mul}!detail::dtoa\_impl::diyfp@{detail::dtoa\_impl::diyfp}}
+\doxysubsubsection{\texorpdfstring{mul()}{mul()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp}{diyfp}} detail\+::dtoa\+\_\+impl\+::diyfp\+::mul (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp}{diyfp}} \&}]{x,  }\item[{const \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp}{diyfp}} \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+returns x $\ast$ y 
+
+\begin{DoxyNote}{Note}
+The result is rounded. (Only the upper q bits are returned.) 
+\end{DoxyNote}
+
+
+Definition at line 16903 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{16904     \{}
+\DoxyCodeLine{16905         static\_assert(\mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp_a80cf8cc846a7bf96362d3b11886994e3}{kPrecision}} == 64, \textcolor{stringliteral}{"{}internal error"{}});}
+\DoxyCodeLine{16906 }
+\DoxyCodeLine{16907         \textcolor{comment}{// Computes:}}
+\DoxyCodeLine{16908         \textcolor{comment}{//  f = round((x.f * y.f) / 2\string^q)}}
+\DoxyCodeLine{16909         \textcolor{comment}{//  e = x.e + y.e + q}}
+\DoxyCodeLine{16910 }
+\DoxyCodeLine{16911         \textcolor{comment}{// Emulate the 64-\/bit * 64-\/bit multiplication:}}
+\DoxyCodeLine{16912         \textcolor{comment}{//}}
+\DoxyCodeLine{16913         \textcolor{comment}{// p = u * v}}
+\DoxyCodeLine{16914         \textcolor{comment}{//   = (u\_lo + 2\string^32 u\_hi) (v\_lo + 2\string^32 v\_hi)}}
+\DoxyCodeLine{16915         \textcolor{comment}{//   = (u\_lo v\_lo         ) + 2\string^32 ((u\_lo v\_hi         ) + (u\_hi v\_lo         )) + 2\string^64 (u\_hi v\_hi         )}}
+\DoxyCodeLine{16916         \textcolor{comment}{//   = (p0                ) + 2\string^32 ((p1                ) + (p2                )) + 2\string^64 (p3                )}}
+\DoxyCodeLine{16917         \textcolor{comment}{//   = (p0\_lo + 2\string^32 p0\_hi) + 2\string^32 ((p1\_lo + 2\string^32 p1\_hi) + (p2\_lo + 2\string^32 p2\_hi)) + 2\string^64 (p3                )}}
+\DoxyCodeLine{16918         \textcolor{comment}{//   = (p0\_lo             ) + 2\string^32 (p0\_hi + p1\_lo + p2\_lo                      ) + 2\string^64 (p1\_hi + p2\_hi + p3)}}
+\DoxyCodeLine{16919         \textcolor{comment}{//   = (p0\_lo             ) + 2\string^32 (Q                                          ) + 2\string^64 (H                 )}}
+\DoxyCodeLine{16920         \textcolor{comment}{//   = (p0\_lo             ) + 2\string^32 (Q\_lo + 2\string^32 Q\_hi                           ) + 2\string^64 (H                 )}}
+\DoxyCodeLine{16921         \textcolor{comment}{//}}
+\DoxyCodeLine{16922         \textcolor{comment}{// (Since Q might be larger than 2\string^32 -\/ 1)}}
+\DoxyCodeLine{16923         \textcolor{comment}{//}}
+\DoxyCodeLine{16924         \textcolor{comment}{//   = (p0\_lo + 2\string^32 Q\_lo) + 2\string^64 (Q\_hi + H)}}
+\DoxyCodeLine{16925         \textcolor{comment}{//}}
+\DoxyCodeLine{16926         \textcolor{comment}{// (Q\_hi + H does not overflow a 64-\/bit int)}}
+\DoxyCodeLine{16927         \textcolor{comment}{//}}
+\DoxyCodeLine{16928         \textcolor{comment}{//   = p\_lo + 2\string^64 p\_hi}}
+\DoxyCodeLine{16929 }
+\DoxyCodeLine{16930         \textcolor{keyword}{const} std::uint64\_t u\_lo = x.f \& 0xFFFFFFFFu;}
+\DoxyCodeLine{16931         \textcolor{keyword}{const} std::uint64\_t u\_hi = x.f >> 32u;}
+\DoxyCodeLine{16932         \textcolor{keyword}{const} std::uint64\_t v\_lo = y.f \& 0xFFFFFFFFu;}
+\DoxyCodeLine{16933         \textcolor{keyword}{const} std::uint64\_t v\_hi = y.f >> 32u;}
+\DoxyCodeLine{16934 }
+\DoxyCodeLine{16935         \textcolor{keyword}{const} std::uint64\_t p0 = u\_lo * v\_lo;}
+\DoxyCodeLine{16936         \textcolor{keyword}{const} std::uint64\_t p1 = u\_lo * v\_hi;}
+\DoxyCodeLine{16937         \textcolor{keyword}{const} std::uint64\_t p2 = u\_hi * v\_lo;}
+\DoxyCodeLine{16938         \textcolor{keyword}{const} std::uint64\_t p3 = u\_hi * v\_hi;}
+\DoxyCodeLine{16939 }
+\DoxyCodeLine{16940         \textcolor{keyword}{const} std::uint64\_t p0\_hi = p0 >> 32u;}
+\DoxyCodeLine{16941         \textcolor{keyword}{const} std::uint64\_t p1\_lo = p1 \& 0xFFFFFFFFu;}
+\DoxyCodeLine{16942         \textcolor{keyword}{const} std::uint64\_t p1\_hi = p1 >> 32u;}
+\DoxyCodeLine{16943         \textcolor{keyword}{const} std::uint64\_t p2\_lo = p2 \& 0xFFFFFFFFu;}
+\DoxyCodeLine{16944         \textcolor{keyword}{const} std::uint64\_t p2\_hi = p2 >> 32u;}
+\DoxyCodeLine{16945 }
+\DoxyCodeLine{16946         std::uint64\_t Q = p0\_hi + p1\_lo + p2\_lo;}
+\DoxyCodeLine{16947 }
+\DoxyCodeLine{16948         \textcolor{comment}{// The full product might now be computed as}}
+\DoxyCodeLine{16949         \textcolor{comment}{//}}
+\DoxyCodeLine{16950         \textcolor{comment}{// p\_hi = p3 + p2\_hi + p1\_hi + (Q >> 32)}}
+\DoxyCodeLine{16951         \textcolor{comment}{// p\_lo = p0\_lo + (Q << 32)}}
+\DoxyCodeLine{16952         \textcolor{comment}{//}}
+\DoxyCodeLine{16953         \textcolor{comment}{// But in this particular case here, the full p\_lo is not required.}}
+\DoxyCodeLine{16954         \textcolor{comment}{// Effectively we only need to add the highest bit in p\_lo to p\_hi (and}}
+\DoxyCodeLine{16955         \textcolor{comment}{// Q\_hi + 1 does not overflow).}}
+\DoxyCodeLine{16956 }
+\DoxyCodeLine{16957         Q += std::uint64\_t\{1\} << (64u -\/ 32u -\/ 1u); \textcolor{comment}{// round, ties up}}
+\DoxyCodeLine{16958 }
+\DoxyCodeLine{16959         \textcolor{keyword}{const} std::uint64\_t h = p3 + p2\_hi + p1\_hi + (Q >> 32u);}
+\DoxyCodeLine{16960 }
+\DoxyCodeLine{16961         \textcolor{keywordflow}{return} \{h, x.e + y.e + 64\};}
+\DoxyCodeLine{16962     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structdetail_1_1dtoa__impl_1_1diyfp_a5bad735c2cb50b194938a8a89b82f6ed}\label{structdetail_1_1dtoa__impl_1_1diyfp_a5bad735c2cb50b194938a8a89b82f6ed}} 
+\index{detail::dtoa\_impl::diyfp@{detail::dtoa\_impl::diyfp}!normalize@{normalize}}
+\index{normalize@{normalize}!detail::dtoa\_impl::diyfp@{detail::dtoa\_impl::diyfp}}
+\doxysubsubsection{\texorpdfstring{normalize()}{normalize()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp}{diyfp}} detail\+::dtoa\+\_\+impl\+::diyfp\+::normalize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp}{diyfp}}}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+normalize x such that the significand is $>$= 2$^\wedge$(q-\/1) 
+
+\begin{DoxyPrecond}{Precondition}
+x.\+f != 0 
+\end{DoxyPrecond}
+
+
+Definition at line 16968 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{16969     \{}
+\DoxyCodeLine{16970         \mbox{\hyperlink{json_8hpp_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(x.f != 0);}
+\DoxyCodeLine{16971 }
+\DoxyCodeLine{16972         \textcolor{keywordflow}{while} ((x.f >> 63u) == 0)}
+\DoxyCodeLine{16973         \{}
+\DoxyCodeLine{16974             x.f <<= 1u;}
+\DoxyCodeLine{16975             x.e-\/-\/;}
+\DoxyCodeLine{16976         \}}
+\DoxyCodeLine{16977 }
+\DoxyCodeLine{16978         \textcolor{keywordflow}{return} x;}
+\DoxyCodeLine{16979     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structdetail_1_1dtoa__impl_1_1diyfp_a5a9ce83c6c1663c9aaac7ffd9009b971}\label{structdetail_1_1dtoa__impl_1_1diyfp_a5a9ce83c6c1663c9aaac7ffd9009b971}} 
+\index{detail::dtoa\_impl::diyfp@{detail::dtoa\_impl::diyfp}!normalize\_to@{normalize\_to}}
+\index{normalize\_to@{normalize\_to}!detail::dtoa\_impl::diyfp@{detail::dtoa\_impl::diyfp}}
+\doxysubsubsection{\texorpdfstring{normalize\_to()}{normalize\_to()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp}{diyfp}} detail\+::dtoa\+\_\+impl\+::diyfp\+::normalize\+\_\+to (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp}{diyfp}} \&}]{x,  }\item[{const int}]{target\+\_\+exponent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+normalize x such that the result has the exponent E 
+
+\begin{DoxyPrecond}{Precondition}
+e $>$= x.\+e and the upper e -\/ x.\+e bits of x.\+f must be zero. 
+\end{DoxyPrecond}
+
+
+Definition at line 16985 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{16986     \{}
+\DoxyCodeLine{16987         \textcolor{keyword}{const} \textcolor{keywordtype}{int} delta = x.e -\/ target\_exponent;}
+\DoxyCodeLine{16988 }
+\DoxyCodeLine{16989         \mbox{\hyperlink{json_8hpp_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(delta >= 0);}
+\DoxyCodeLine{16990         \mbox{\hyperlink{json_8hpp_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(((x.f << delta) >> delta) == x.f);}
+\DoxyCodeLine{16991 }
+\DoxyCodeLine{16992         \textcolor{keywordflow}{return} \{x.f << delta, target\_exponent\};}
+\DoxyCodeLine{16993     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structdetail_1_1dtoa__impl_1_1diyfp_a75142bace0b78b1e1433b1d35a7ff252}\label{structdetail_1_1dtoa__impl_1_1diyfp_a75142bace0b78b1e1433b1d35a7ff252}} 
+\index{detail::dtoa\_impl::diyfp@{detail::dtoa\_impl::diyfp}!sub@{sub}}
+\index{sub@{sub}!detail::dtoa\_impl::diyfp@{detail::dtoa\_impl::diyfp}}
+\doxysubsubsection{\texorpdfstring{sub()}{sub()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp}{diyfp}} detail\+::dtoa\+\_\+impl\+::diyfp\+::sub (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp}{diyfp}} \&}]{x,  }\item[{const \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp}{diyfp}} \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+returns x -\/ y 
+
+\begin{DoxyPrecond}{Precondition}
+x.\+e == y.\+e and x.\+f $>$= y.\+f 
+\end{DoxyPrecond}
+
+
+Definition at line 16891 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{16892     \{}
+\DoxyCodeLine{16893         \mbox{\hyperlink{json_8hpp_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(x.e == y.e);}
+\DoxyCodeLine{16894         \mbox{\hyperlink{json_8hpp_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(x.f >= y.f);}
+\DoxyCodeLine{16895 }
+\DoxyCodeLine{16896         \textcolor{keywordflow}{return} \{x.f -\/ y.f, x.e\};}
+\DoxyCodeLine{16897     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structdetail_1_1dtoa__impl_1_1diyfp_ae2b59fab8dee9ef0192eb6b568fa7314}\label{structdetail_1_1dtoa__impl_1_1diyfp_ae2b59fab8dee9ef0192eb6b568fa7314}} 
+\index{detail::dtoa\_impl::diyfp@{detail::dtoa\_impl::diyfp}!e@{e}}
+\index{e@{e}!detail::dtoa\_impl::diyfp@{detail::dtoa\_impl::diyfp}}
+\doxysubsubsection{\texorpdfstring{e}{e}}
+{\footnotesize\ttfamily int detail\+::dtoa\+\_\+impl\+::diyfp\+::e = 0}
+
+
+
+Definition at line 16883 of file json.\+hpp.
+
+\mbox{\Hypertarget{structdetail_1_1dtoa__impl_1_1diyfp_ae1518119517cb69d79aa64ffb93c8375}\label{structdetail_1_1dtoa__impl_1_1diyfp_ae1518119517cb69d79aa64ffb93c8375}} 
+\index{detail::dtoa\_impl::diyfp@{detail::dtoa\_impl::diyfp}!f@{f}}
+\index{f@{f}!detail::dtoa\_impl::diyfp@{detail::dtoa\_impl::diyfp}}
+\doxysubsubsection{\texorpdfstring{f}{f}}
+{\footnotesize\ttfamily std\+::uint64\+\_\+t detail\+::dtoa\+\_\+impl\+::diyfp\+::f = 0}
+
+
+
+Definition at line 16882 of file json.\+hpp.
+
+\mbox{\Hypertarget{structdetail_1_1dtoa__impl_1_1diyfp_a80cf8cc846a7bf96362d3b11886994e3}\label{structdetail_1_1dtoa__impl_1_1diyfp_a80cf8cc846a7bf96362d3b11886994e3}} 
+\index{detail::dtoa\_impl::diyfp@{detail::dtoa\_impl::diyfp}!kPrecision@{kPrecision}}
+\index{kPrecision@{kPrecision}!detail::dtoa\_impl::diyfp@{detail::dtoa\_impl::diyfp}}
+\doxysubsubsection{\texorpdfstring{kPrecision}{kPrecision}}
+{\footnotesize\ttfamily constexpr int detail\+::dtoa\+\_\+impl\+::diyfp\+::k\+Precision = 64\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line 16880 of file json.\+hpp.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/nlohmann/\mbox{\hyperlink{json_8hpp}{json.\+hpp}}\end{DoxyCompactItemize}

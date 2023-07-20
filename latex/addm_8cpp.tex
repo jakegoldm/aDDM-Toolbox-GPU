@@ -1,0 +1,71 @@
+\hypertarget{addm_8cpp}{}\doxysection{lib/addm.cpp File Reference}
+\label{addm_8cpp}\index{lib/addm.cpp@{lib/addm.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include \char`\"{}nlohmann/json.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ddm.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}util.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}addm.\+h\char`\"{}}\newline
+Include dependency graph for addm.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{addm_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{addm_8cpp_af2186cd8aff37cd7fa28ad2dcb706094}{a\+DDMParallel\+NLL}} (\mbox{\hyperlink{classa_d_d_m}{a\+DDM}} addm, std\+::vector$<$ \mbox{\hyperlink{classa_d_d_m_trial}{a\+DDMTrial}} $>$ trials)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{addm_8cpp_af2186cd8aff37cd7fa28ad2dcb706094}\label{addm_8cpp_af2186cd8aff37cd7fa28ad2dcb706094}} 
+\index{addm.cpp@{addm.cpp}!aDDMParallelNLL@{aDDMParallelNLL}}
+\index{aDDMParallelNLL@{aDDMParallelNLL}!addm.cpp@{addm.cpp}}
+\doxysubsubsection{\texorpdfstring{aDDMParallelNLL()}{aDDMParallelNLL()}}
+{\footnotesize\ttfamily double a\+DDMParallel\+NLL (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classa_d_d_m}{a\+DDM}}}]{addm,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classa_d_d_m_trial}{a\+DDMTrial}} $>$}]{trials }\end{DoxyParamCaption})}
+
+
+
+Definition at line 496 of file addm.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{496                                                                \{}
+\DoxyCodeLine{497     \textcolor{keywordtype}{double} NLL = 0; }
+\DoxyCodeLine{498 }
+\DoxyCodeLine{499     \textcolor{comment}{// \#ifndef \_\_NVCC\_\_}}
+\DoxyCodeLine{500         \mbox{\hyperlink{class_b_s_1_1thread__pool}{BS::thread\_pool}} pool;}
+\DoxyCodeLine{501         \mbox{\hyperlink{class_b_s_1_1multi__future}{BS::multi\_future<double>}} futs = pool.\mbox{\hyperlink{class_b_s_1_1thread__pool_a7567b2d637a74178f069265f969649c8}{parallelize\_loop}}(}
+\DoxyCodeLine{502             0, trials.size(), }
+\DoxyCodeLine{503             [\&addm, \&trials](\textcolor{keyword}{const} \textcolor{keywordtype}{int} a, \textcolor{keyword}{const} \textcolor{keywordtype}{int} b) \{}
+\DoxyCodeLine{504                 double block\_total = 0; }
+\DoxyCodeLine{505                 for (int i = a; i < b; ++i) \{}
+\DoxyCodeLine{506                     block\_total += -\/log(}
+\DoxyCodeLine{507                         addm.getTrialLikelihood(trials[i])}
+\DoxyCodeLine{508                     );}
+\DoxyCodeLine{509                 \}}
+\DoxyCodeLine{510                 \textcolor{keywordflow}{return} block\_total;}
+\DoxyCodeLine{511             \}}
+\DoxyCodeLine{512         );}
+\DoxyCodeLine{513         std::vector<double> totals = futs.\mbox{\hyperlink{class_b_s_1_1multi__future_abc4a07d29c078263b60ae785b7330880}{get}}();}
+\DoxyCodeLine{514         \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keywordtype}{double} t : totals) \{}
+\DoxyCodeLine{515             NLL += t; }
+\DoxyCodeLine{516         \}}
+\DoxyCodeLine{517     \textcolor{comment}{// \#endif }}
+\DoxyCodeLine{518 }
+\DoxyCodeLine{519     \textcolor{keywordflow}{return} NLL;}
+\DoxyCodeLine{520 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,212 @@
+\hypertarget{test_8cpp}{}\doxysection{src/test.cpp File Reference}
+\label{test_8cpp}\index{src/test.cpp@{src/test.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include \char`\"{}../include/addm.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/util.\+h\char`\"{}}\newline
+Include dependency graph for test.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{test_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classa_d_d_m_trial}{a\+DDMTrial}} $>$ \mbox{\hyperlink{test_8cpp_ad0fc0d7084e1eeb26080018b62228f2a}{simulate\+Dataset}} (float \mbox{\hyperlink{ddm__simulate_8cpp_a3fbbd8a3959e76a2bc3455d3bade52dc}{d}}, float \mbox{\hyperlink{ddm__simulate_8cpp_ae11aeeb83e22b5b7f1e6b4347eb1daa6}{sigma}}, float \mbox{\hyperlink{addm__simulate_8cpp_aadfc5c227ca658a29a59a0ce6fc15792}{theta}}, float \mbox{\hyperlink{test_8cpp_a377f3934c5a610474f63e322c88173ec}{barrier}}, \mbox{\hyperlink{class_fixation_data}{Fixation\+Data}} fixation\+Data)
+\item 
+void \mbox{\hyperlink{test_8cpp_ac06b150d453d1ec6004488ccd794d9b2}{test\+MLEfull\+Grid}} (\mbox{\hyperlink{class_fixation_data}{Fixation\+Data}} fixation\+Data)
+\item 
+int \mbox{\hyperlink{test_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{test_8cpp_a7722c8ecbb62d99aee7ce68b1752f337}{N}} = 1000
+\item 
+float \mbox{\hyperlink{test_8cpp_a377f3934c5a610474f63e322c88173ec}{barrier}} = 1.\+0
+\item 
+std\+::ofstream \mbox{\hyperlink{test_8cpp_ae3c7e522825338c52b9d66891f9642a5}{fp}}
+\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{test_8cpp_a918c56381f398e42c3dc1d018b0016bd}{val\+Diffs}} = \{-\/3, -\/2, -\/1, 0, 1, 2, 3\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{test_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{test_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{test.cpp@{test.cpp}!main@{main}}
+\index{main@{main}!test.cpp@{test.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 95 of file test.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{95            \{}
+\DoxyCodeLine{96     srand(time(NULL));}
+\DoxyCodeLine{97     }
+\DoxyCodeLine{98     \mbox{\hyperlink{test_8cpp_ae3c7e522825338c52b9d66891f9642a5}{fp}}.open(\textcolor{stringliteral}{"{}results/test\_addm.csv"{}});}
+\DoxyCodeLine{99     \mbox{\hyperlink{test_8cpp_ae3c7e522825338c52b9d66891f9642a5}{fp}} << \textcolor{stringliteral}{"{}test,correctness,time\(\backslash\)n"{}};}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101     std::cout << \textcolor{stringliteral}{"{}reading data..."{}} << std::endl;}
+\DoxyCodeLine{102     std::map<int, std::vector<aDDMTrial>> \mbox{\hyperlink{namespaceaddm__mle_a45bb5f22de01ea20f39252f7d611df77}{data}} = \mbox{\hyperlink{util_8h_acf31c53f3a21ed9929f7f07404cabfbc}{loadDataFromCSV}}(\textcolor{stringliteral}{"{}data/expdata.csv"{}}, \textcolor{stringliteral}{"{}data/fixations.csv"{}});}
+\DoxyCodeLine{103     \mbox{\hyperlink{class_fixation_data}{FixationData}} fixationData = \mbox{\hyperlink{util_8h_abb29e340656c842d23ef148cc1652d1d}{getEmpiricalDistributions}}(\mbox{\hyperlink{namespaceaddm__mle_a45bb5f22de01ea20f39252f7d611df77}{data}});}
+\DoxyCodeLine{104     \mbox{\hyperlink{test_8cpp_ac06b150d453d1ec6004488ccd794d9b2}{testMLEfullGrid}}(fixationData);}
+\DoxyCodeLine{105 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{test_8cpp_ad0fc0d7084e1eeb26080018b62228f2a}\label{test_8cpp_ad0fc0d7084e1eeb26080018b62228f2a}} 
+\index{test.cpp@{test.cpp}!simulateDataset@{simulateDataset}}
+\index{simulateDataset@{simulateDataset}!test.cpp@{test.cpp}}
+\doxysubsubsection{\texorpdfstring{simulateDataset()}{simulateDataset()}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classa_d_d_m_trial}{a\+DDMTrial}}$>$ simulate\+Dataset (\begin{DoxyParamCaption}\item[{float}]{d,  }\item[{float}]{sigma,  }\item[{float}]{theta,  }\item[{float}]{barrier,  }\item[{\mbox{\hyperlink{class_fixation_data}{Fixation\+Data}}}]{fixation\+Data }\end{DoxyParamCaption})}
+
+
+
+Definition at line 19 of file test.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{19                                                                                                                   \{}
+\DoxyCodeLine{20     std::vector<aDDMTrial> outputs; }
+\DoxyCodeLine{21     \mbox{\hyperlink{classa_d_d_m}{aDDM}} addm = \mbox{\hyperlink{classa_d_d_m}{aDDM}}(\mbox{\hyperlink{addm__nll_8cpp_a3fbbd8a3959e76a2bc3455d3bade52dc}{d}}, \mbox{\hyperlink{addm__nll_8cpp_ae11aeeb83e22b5b7f1e6b4347eb1daa6}{sigma}}, \mbox{\hyperlink{addm__nll_8cpp_aadfc5c227ca658a29a59a0ce6fc15792}{theta}}, \mbox{\hyperlink{test_8cpp_a377f3934c5a610474f63e322c88173ec}{barrier}});}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{test_8cpp_a7722c8ecbb62d99aee7ce68b1752f337}{N}}; i++) \{}
+\DoxyCodeLine{24         std::mt19937 generator(std::random\_device\{\}());}
+\DoxyCodeLine{25         std::uniform\_int\_distribution<std::size\_t> distribution(0, \mbox{\hyperlink{test_8cpp_a918c56381f398e42c3dc1d018b0016bd}{valDiffs}}.size() -\/ 1);}
+\DoxyCodeLine{26         \textcolor{keywordtype}{int} rIDX = distribution(generator);}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28         \textcolor{keywordtype}{int} valDiff = \mbox{\hyperlink{test_8cpp_a918c56381f398e42c3dc1d018b0016bd}{valDiffs}}.at(rIDX);}
+\DoxyCodeLine{29         \textcolor{keywordtype}{int} \mbox{\hyperlink{addm__mle_8cpp_a66ae2c9a86cab7b4970ecc123c799c45}{valueLeft}} = 3;}
+\DoxyCodeLine{30         \textcolor{keywordtype}{int} valueRight = \mbox{\hyperlink{addm__mle_8cpp_a66ae2c9a86cab7b4970ecc123c799c45}{valueLeft}} -\/ valDiff;}
+\DoxyCodeLine{31         \mbox{\hyperlink{classa_d_d_m_trial}{aDDMTrial}} adt = addm.\mbox{\hyperlink{classa_d_d_m_ac9cc21a00f8516e23a0e3b15f913999b}{simulateTrial}}(\mbox{\hyperlink{addm__mle_8cpp_a66ae2c9a86cab7b4970ecc123c799c45}{valueLeft}}, valueRight, fixationData);}
+\DoxyCodeLine{32         outputs.push\_back(adt);}
+\DoxyCodeLine{33     \}   }
+\DoxyCodeLine{34     \textcolor{keywordflow}{return} outputs; }
+\DoxyCodeLine{35 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{test_8cpp_ac06b150d453d1ec6004488ccd794d9b2}\label{test_8cpp_ac06b150d453d1ec6004488ccd794d9b2}} 
+\index{test.cpp@{test.cpp}!testMLEfullGrid@{testMLEfullGrid}}
+\index{testMLEfullGrid@{testMLEfullGrid}!test.cpp@{test.cpp}}
+\doxysubsubsection{\texorpdfstring{testMLEfullGrid()}{testMLEfullGrid()}}
+{\footnotesize\ttfamily void test\+MLEfull\+Grid (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_fixation_data}{Fixation\+Data}}}]{fixation\+Data }\end{DoxyParamCaption})}
+
+
+
+Definition at line 37 of file test.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{37                                                 \{}
+\DoxyCodeLine{38     std::vector<float> \mbox{\hyperlink{addm__mle_8cpp_a800d6969137d46bac6c127a9f70b7e51}{rangeD}} = \{0.005, 0.006, 0.007\};}
+\DoxyCodeLine{39     std::vector<float> \mbox{\hyperlink{addm__mle_8cpp_a347dbb7726ce6ea89520f5980d686dd8}{rangeSigma}} = \{0.05, 0.06, 0.07\};}
+\DoxyCodeLine{40     std::vector<float> \mbox{\hyperlink{addm__mle_8cpp_ad2aa7a364e6ed4961ee3bb151d523d2c}{rangeTheta}} = \{0.5, 0.6, 0.7\};}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42     std::vector<aDDM> testModels;}
+\DoxyCodeLine{43     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{float} \mbox{\hyperlink{addm__nll_8cpp_a3fbbd8a3959e76a2bc3455d3bade52dc}{d}} : \mbox{\hyperlink{addm__mle_8cpp_a800d6969137d46bac6c127a9f70b7e51}{rangeD}}) \{}
+\DoxyCodeLine{44         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{float} \mbox{\hyperlink{addm__nll_8cpp_ae11aeeb83e22b5b7f1e6b4347eb1daa6}{sigma}} : \mbox{\hyperlink{addm__mle_8cpp_a347dbb7726ce6ea89520f5980d686dd8}{rangeSigma}}) \{}
+\DoxyCodeLine{45             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{float} \mbox{\hyperlink{addm__nll_8cpp_aadfc5c227ca658a29a59a0ce6fc15792}{theta}} : \mbox{\hyperlink{addm__mle_8cpp_ad2aa7a364e6ed4961ee3bb151d523d2c}{rangeTheta}}) \{}
+\DoxyCodeLine{46                 testModels.push\_back(\mbox{\hyperlink{classa_d_d_m}{aDDM}}(\mbox{\hyperlink{addm__nll_8cpp_a3fbbd8a3959e76a2bc3455d3bade52dc}{d}}, \mbox{\hyperlink{addm__nll_8cpp_ae11aeeb83e22b5b7f1e6b4347eb1daa6}{sigma}}, \mbox{\hyperlink{addm__nll_8cpp_aadfc5c227ca658a29a59a0ce6fc15792}{theta}}, \mbox{\hyperlink{test_8cpp_a377f3934c5a610474f63e322c88173ec}{barrier}}));}
+\DoxyCodeLine{47             \}}
+\DoxyCodeLine{48         \}}
+\DoxyCodeLine{49     \}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{float} \mbox{\hyperlink{addm__nll_8cpp_a3fbbd8a3959e76a2bc3455d3bade52dc}{d}} : \mbox{\hyperlink{addm__mle_8cpp_a800d6969137d46bac6c127a9f70b7e51}{rangeD}}) \{}
+\DoxyCodeLine{52         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{float} \mbox{\hyperlink{addm__nll_8cpp_ae11aeeb83e22b5b7f1e6b4347eb1daa6}{sigma}} : \mbox{\hyperlink{addm__mle_8cpp_a347dbb7726ce6ea89520f5980d686dd8}{rangeSigma}}) \{}
+\DoxyCodeLine{53             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{float} \mbox{\hyperlink{addm__nll_8cpp_aadfc5c227ca658a29a59a0ce6fc15792}{theta}} : \mbox{\hyperlink{addm__mle_8cpp_ad2aa7a364e6ed4961ee3bb151d523d2c}{rangeTheta}}) \{}
+\DoxyCodeLine{54                 std::cout << \textcolor{stringliteral}{"{}Testing d="{}} << \mbox{\hyperlink{addm__nll_8cpp_a3fbbd8a3959e76a2bc3455d3bade52dc}{d}} << \textcolor{stringliteral}{"{} sigma="{}} << \mbox{\hyperlink{addm__nll_8cpp_ae11aeeb83e22b5b7f1e6b4347eb1daa6}{sigma}} << \textcolor{stringliteral}{"{} theta="{}} << \mbox{\hyperlink{addm__nll_8cpp_aadfc5c227ca658a29a59a0ce6fc15792}{theta}} << std::endl;}
+\DoxyCodeLine{55                 std::vector<aDDMTrial> dataset = \mbox{\hyperlink{test_8cpp_ad0fc0d7084e1eeb26080018b62228f2a}{simulateDataset}}(\mbox{\hyperlink{addm__nll_8cpp_a3fbbd8a3959e76a2bc3455d3bade52dc}{d}}, \mbox{\hyperlink{addm__nll_8cpp_ae11aeeb83e22b5b7f1e6b4347eb1daa6}{sigma}}, \mbox{\hyperlink{addm__nll_8cpp_aadfc5c227ca658a29a59a0ce6fc15792}{theta}}, \mbox{\hyperlink{test_8cpp_a377f3934c5a610474f63e322c88173ec}{barrier}}, fixationData);}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57                 \textcolor{keywordtype}{double} minNLL = \_\_DBL\_MAX\_\_;}
+\DoxyCodeLine{58                 \textcolor{keywordtype}{float} minD = 0; }
+\DoxyCodeLine{59                 \textcolor{keywordtype}{float} minSigma = 0; }
+\DoxyCodeLine{60                 \textcolor{keywordtype}{float} minTheta = 0;}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62                 \textcolor{keyword}{auto} start = high\_resolution\_clock::now();}
+\DoxyCodeLine{63                 \textcolor{keywordflow}{for} (\mbox{\hyperlink{classa_d_d_m}{aDDM}} addm : testModels) \{}
+\DoxyCodeLine{64                     \textcolor{keywordtype}{double} NLL = 0; }
+\DoxyCodeLine{65                     \textcolor{keywordflow}{for} (\mbox{\hyperlink{classa_d_d_m_trial}{aDDMTrial}} adt : dataset) \{}
+\DoxyCodeLine{66                         \textcolor{keywordtype}{double} prob = addm.getTrialLikelihood(adt);}
+\DoxyCodeLine{67                         NLL += -\/log(prob);}
+\DoxyCodeLine{68                     \}}
+\DoxyCodeLine{69                     \textcolor{keywordflow}{if} (NLL < minNLL) \{}
+\DoxyCodeLine{70                         minNLL = NLL;}
+\DoxyCodeLine{71                         minD = addm.d;}
+\DoxyCodeLine{72                         minSigma = addm.sigma;}
+\DoxyCodeLine{73                         minTheta = addm.theta;}
+\DoxyCodeLine{74                     \}}
+\DoxyCodeLine{75                 \}}
+\DoxyCodeLine{76                 \textcolor{keyword}{auto} stop = high\_resolution\_clock::now();}
+\DoxyCodeLine{77                 \textcolor{keyword}{auto} duration = duration\_cast<seconds>(stop -\/ start);}
+\DoxyCodeLine{78                 std::cout << \textcolor{stringliteral}{"{}Time: "{}} << duration.count() << std::endl;}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80                 \mbox{\hyperlink{test_8cpp_ae3c7e522825338c52b9d66891f9642a5}{fp}} << \textcolor{stringliteral}{"{}d="{}} << \mbox{\hyperlink{addm__nll_8cpp_a3fbbd8a3959e76a2bc3455d3bade52dc}{d}} << \textcolor{stringliteral}{"{} sigma="{}} << \mbox{\hyperlink{addm__nll_8cpp_ae11aeeb83e22b5b7f1e6b4347eb1daa6}{sigma}} << \textcolor{stringliteral}{"{} theta="{}} << \mbox{\hyperlink{addm__nll_8cpp_aadfc5c227ca658a29a59a0ce6fc15792}{theta}} << \textcolor{stringliteral}{"{},"{}};}
+\DoxyCodeLine{81                 \textcolor{keywordflow}{if} (minD == \mbox{\hyperlink{addm__nll_8cpp_a3fbbd8a3959e76a2bc3455d3bade52dc}{d}} \&\& minSigma == \mbox{\hyperlink{addm__nll_8cpp_ae11aeeb83e22b5b7f1e6b4347eb1daa6}{sigma}} \&\& minTheta == \mbox{\hyperlink{addm__nll_8cpp_aadfc5c227ca658a29a59a0ce6fc15792}{theta}}) \{}
+\DoxyCodeLine{82                     \mbox{\hyperlink{test_8cpp_ae3c7e522825338c52b9d66891f9642a5}{fp}} << 1 << \textcolor{stringliteral}{"{},"{}};}
+\DoxyCodeLine{83                     std::cout << \textcolor{stringliteral}{"{}Test passed"{}} << std::endl;}
+\DoxyCodeLine{84                 \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{85                     \mbox{\hyperlink{test_8cpp_ae3c7e522825338c52b9d66891f9642a5}{fp}} << 0 << \textcolor{stringliteral}{"{},"{}};}
+\DoxyCodeLine{86                     std::cout << \textcolor{stringliteral}{"{}Test failed"{}} << std::endl;}
+\DoxyCodeLine{87                     std::cout << \textcolor{stringliteral}{"{}    Selected: d="{}} << minD << \textcolor{stringliteral}{"{} sigma="{}} << minSigma << \textcolor{stringliteral}{"{} theta="{}} << minTheta << std::endl;}
+\DoxyCodeLine{88                 \}}
+\DoxyCodeLine{89                 \mbox{\hyperlink{test_8cpp_ae3c7e522825338c52b9d66891f9642a5}{fp}} << duration.count() << std::endl;}
+\DoxyCodeLine{90             \}}
+\DoxyCodeLine{91         \}}
+\DoxyCodeLine{92     \}}
+\DoxyCodeLine{93 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{test_8cpp_a377f3934c5a610474f63e322c88173ec}\label{test_8cpp_a377f3934c5a610474f63e322c88173ec}} 
+\index{test.cpp@{test.cpp}!barrier@{barrier}}
+\index{barrier@{barrier}!test.cpp@{test.cpp}}
+\doxysubsubsection{\texorpdfstring{barrier}{barrier}}
+{\footnotesize\ttfamily float barrier = 1.\+0}
+
+
+
+Definition at line 14 of file test.\+cpp.
+
+\mbox{\Hypertarget{test_8cpp_ae3c7e522825338c52b9d66891f9642a5}\label{test_8cpp_ae3c7e522825338c52b9d66891f9642a5}} 
+\index{test.cpp@{test.cpp}!fp@{fp}}
+\index{fp@{fp}!test.cpp@{test.cpp}}
+\doxysubsubsection{\texorpdfstring{fp}{fp}}
+{\footnotesize\ttfamily std\+::ofstream fp}
+
+
+
+Definition at line 15 of file test.\+cpp.
+
+\mbox{\Hypertarget{test_8cpp_a7722c8ecbb62d99aee7ce68b1752f337}\label{test_8cpp_a7722c8ecbb62d99aee7ce68b1752f337}} 
+\index{test.cpp@{test.cpp}!N@{N}}
+\index{N@{N}!test.cpp@{test.cpp}}
+\doxysubsubsection{\texorpdfstring{N}{N}}
+{\footnotesize\ttfamily int N = 1000}
+
+
+
+Definition at line 13 of file test.\+cpp.
+
+\mbox{\Hypertarget{test_8cpp_a918c56381f398e42c3dc1d018b0016bd}\label{test_8cpp_a918c56381f398e42c3dc1d018b0016bd}} 
+\index{test.cpp@{test.cpp}!valDiffs@{valDiffs}}
+\index{valDiffs@{valDiffs}!test.cpp@{test.cpp}}
+\doxysubsubsection{\texorpdfstring{valDiffs}{valDiffs}}
+{\footnotesize\ttfamily std\+::vector$<$int$>$ val\+Diffs = \{-\/3, -\/2, -\/1, 0, 1, 2, 3\}}
+
+
+
+Definition at line 17 of file test.\+cpp.
+

@@ -1,0 +1,96 @@
+\hypertarget{structdetail_1_1wide__string__input__helper_3_01_base_input_adapter_00_012_01_4}{}\doxysection{detail\+::wide\+\_\+string\+\_\+input\+\_\+helper$<$ Base\+Input\+Adapter, 2 $>$ Struct Template Reference}
+\label{structdetail_1_1wide__string__input__helper_3_01_base_input_adapter_00_012_01_4}\index{detail::wide\_string\_input\_helper$<$ BaseInputAdapter, 2 $>$@{detail::wide\_string\_input\_helper$<$ BaseInputAdapter, 2 $>$}}
+
+
+{\ttfamily \#include $<$json.\+hpp$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{structdetail_1_1wide__string__input__helper_3_01_base_input_adapter_00_012_01_4_a025830a052f1397980d280036df5a9a9}{fill\+\_\+buffer}} (Base\+Input\+Adapter \&input, std\+::array$<$ std\+::char\+\_\+traits$<$ char $>$\+::int\+\_\+type, 4 $>$ \&utf8\+\_\+bytes, size\+\_\+t \&utf8\+\_\+bytes\+\_\+index, size\+\_\+t \&utf8\+\_\+bytes\+\_\+filled)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Base\+Input\+Adapter$>$\newline
+struct detail\+::wide\+\_\+string\+\_\+input\+\_\+helper$<$ Base\+Input\+Adapter, 2 $>$}
+
+
+
+Definition at line 6309 of file json.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structdetail_1_1wide__string__input__helper_3_01_base_input_adapter_00_012_01_4_a025830a052f1397980d280036df5a9a9}\label{structdetail_1_1wide__string__input__helper_3_01_base_input_adapter_00_012_01_4_a025830a052f1397980d280036df5a9a9}} 
+\index{detail::wide\_string\_input\_helper$<$ BaseInputAdapter, 2 $>$@{detail::wide\_string\_input\_helper$<$ BaseInputAdapter, 2 $>$}!fill\_buffer@{fill\_buffer}}
+\index{fill\_buffer@{fill\_buffer}!detail::wide\_string\_input\_helper$<$ BaseInputAdapter, 2 $>$@{detail::wide\_string\_input\_helper$<$ BaseInputAdapter, 2 $>$}}
+\doxysubsubsection{\texorpdfstring{fill\_buffer()}{fill\_buffer()}}
+{\footnotesize\ttfamily template$<$typename Base\+Input\+Adapter $>$ \\
+static void \mbox{\hyperlink{structdetail_1_1wide__string__input__helper}{detail\+::wide\+\_\+string\+\_\+input\+\_\+helper}}$<$ Base\+Input\+Adapter, 2 $>$\+::fill\+\_\+buffer (\begin{DoxyParamCaption}\item[{Base\+Input\+Adapter \&}]{input,  }\item[{std\+::array$<$ std\+::char\+\_\+traits$<$ char $>$\+::int\+\_\+type, 4 $>$ \&}]{utf8\+\_\+bytes,  }\item[{size\+\_\+t \&}]{utf8\+\_\+bytes\+\_\+index,  }\item[{size\+\_\+t \&}]{utf8\+\_\+bytes\+\_\+filled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line 6312 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{6316     \{}
+\DoxyCodeLine{6317         utf8\_bytes\_index = 0;}
+\DoxyCodeLine{6318 }
+\DoxyCodeLine{6319         \textcolor{keywordflow}{if} (\mbox{\hyperlink{json_8hpp_a8df7de76ab3c9445f46f6994ec205bcd}{JSON\_HEDLEY\_UNLIKELY}}(input.empty()))}
+\DoxyCodeLine{6320         \{}
+\DoxyCodeLine{6321             utf8\_bytes[0] = std::char\_traits<char>::eof();}
+\DoxyCodeLine{6322             utf8\_bytes\_filled = 1;}
+\DoxyCodeLine{6323         \}}
+\DoxyCodeLine{6324         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{6325         \{}
+\DoxyCodeLine{6326             \textcolor{comment}{// get the current character}}
+\DoxyCodeLine{6327             \textcolor{keyword}{const} \textcolor{keyword}{auto} wc = input.get\_character();}
+\DoxyCodeLine{6328 }
+\DoxyCodeLine{6329             \textcolor{comment}{// UTF-\/16 to UTF-\/8 encoding}}
+\DoxyCodeLine{6330             \textcolor{keywordflow}{if} (wc < 0x80)}
+\DoxyCodeLine{6331             \{}
+\DoxyCodeLine{6332                 utf8\_bytes[0] = \textcolor{keyword}{static\_cast<}std::char\_traits<char>::int\_type\textcolor{keyword}{>}(wc);}
+\DoxyCodeLine{6333                 utf8\_bytes\_filled = 1;}
+\DoxyCodeLine{6334             \}}
+\DoxyCodeLine{6335             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wc <= 0x7FF)}
+\DoxyCodeLine{6336             \{}
+\DoxyCodeLine{6337                 utf8\_bytes[0] = \textcolor{keyword}{static\_cast<}std::char\_traits<char>::int\_type\textcolor{keyword}{>}(0xC0u | ((\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\textcolor{keyword}{>}(wc) >> 6u)));}
+\DoxyCodeLine{6338                 utf8\_bytes[1] = \textcolor{keyword}{static\_cast<}std::char\_traits<char>::int\_type\textcolor{keyword}{>}(0x80u | (\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\textcolor{keyword}{>}(wc) \& 0x3Fu));}
+\DoxyCodeLine{6339                 utf8\_bytes\_filled = 2;}
+\DoxyCodeLine{6340             \}}
+\DoxyCodeLine{6341             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (0xD800 > wc || wc >= 0xE000)}
+\DoxyCodeLine{6342             \{}
+\DoxyCodeLine{6343                 utf8\_bytes[0] = \textcolor{keyword}{static\_cast<}std::char\_traits<char>::int\_type\textcolor{keyword}{>}(0xE0u | ((\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\textcolor{keyword}{>}(wc) >> 12u)));}
+\DoxyCodeLine{6344                 utf8\_bytes[1] = \textcolor{keyword}{static\_cast<}std::char\_traits<char>::int\_type\textcolor{keyword}{>}(0x80u | ((\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\textcolor{keyword}{>}(wc) >> 6u) \& 0x3Fu));}
+\DoxyCodeLine{6345                 utf8\_bytes[2] = \textcolor{keyword}{static\_cast<}std::char\_traits<char>::int\_type\textcolor{keyword}{>}(0x80u | (\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\textcolor{keyword}{>}(wc) \& 0x3Fu));}
+\DoxyCodeLine{6346                 utf8\_bytes\_filled = 3;}
+\DoxyCodeLine{6347             \}}
+\DoxyCodeLine{6348             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{6349             \{}
+\DoxyCodeLine{6350                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{json_8hpp_a8df7de76ab3c9445f46f6994ec205bcd}{JSON\_HEDLEY\_UNLIKELY}}(!input.empty()))}
+\DoxyCodeLine{6351                 \{}
+\DoxyCodeLine{6352                     \textcolor{keyword}{const} \textcolor{keyword}{auto} wc2 = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\textcolor{keyword}{>}(input.get\_character());}
+\DoxyCodeLine{6353                     \textcolor{keyword}{const} \textcolor{keyword}{auto} charcode = 0x10000u + (((\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\textcolor{keyword}{>}(wc) \& 0x3FFu) << 10u) | (wc2 \& 0x3FFu));}
+\DoxyCodeLine{6354                     utf8\_bytes[0] = \textcolor{keyword}{static\_cast<}std::char\_traits<char>::int\_type\textcolor{keyword}{>}(0xF0u | (charcode >> 18u));}
+\DoxyCodeLine{6355                     utf8\_bytes[1] = \textcolor{keyword}{static\_cast<}std::char\_traits<char>::int\_type\textcolor{keyword}{>}(0x80u | ((charcode >> 12u) \& 0x3Fu));}
+\DoxyCodeLine{6356                     utf8\_bytes[2] = \textcolor{keyword}{static\_cast<}std::char\_traits<char>::int\_type\textcolor{keyword}{>}(0x80u | ((charcode >> 6u) \& 0x3Fu));}
+\DoxyCodeLine{6357                     utf8\_bytes[3] = \textcolor{keyword}{static\_cast<}std::char\_traits<char>::int\_type\textcolor{keyword}{>}(0x80u | (charcode \& 0x3Fu));}
+\DoxyCodeLine{6358                     utf8\_bytes\_filled = 4;}
+\DoxyCodeLine{6359                 \}}
+\DoxyCodeLine{6360                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{6361                 \{}
+\DoxyCodeLine{6362                     utf8\_bytes[0] = \textcolor{keyword}{static\_cast<}std::char\_traits<char>::int\_type\textcolor{keyword}{>}(wc);}
+\DoxyCodeLine{6363                     utf8\_bytes\_filled = 1;}
+\DoxyCodeLine{6364                 \}}
+\DoxyCodeLine{6365             \}}
+\DoxyCodeLine{6366         \}}
+\DoxyCodeLine{6367     \}}
+
+\end{DoxyCode}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/nlohmann/\mbox{\hyperlink{json_8hpp}{json.\+hpp}}\end{DoxyCompactItemize}

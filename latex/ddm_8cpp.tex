@@ -1,0 +1,93 @@
+\hypertarget{ddm_8cpp}{}\doxysection{lib/ddm.cpp File Reference}
+\label{ddm_8cpp}\index{lib/ddm.cpp@{lib/ddm.cpp}}
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$cstddef$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include \char`\"{}nlohmann/json.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}util.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ddm.\+h\char`\"{}}\newline
+Include dependency graph for ddm.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ddm_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{ddm_8cpp_ac42a77bf862f9427fc29a3869525b76e}{DDMParallel\+NLL}} (\mbox{\hyperlink{class_d_d_m}{DDM}} ddm, std\+::vector$<$ \mbox{\hyperlink{class_d_d_m_trial}{DDMTrial}} $>$ trials)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{ddm_8cpp_ac34cf3b3215db72eab8926917db0da7d}{restrict\+Space}} = true
+\item 
+bool \mbox{\hyperlink{ddm_8cpp_a07f2098d9ced32b0b2e75dded17de056}{use\+GPU}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ddm_8cpp_ac42a77bf862f9427fc29a3869525b76e}\label{ddm_8cpp_ac42a77bf862f9427fc29a3869525b76e}} 
+\index{ddm.cpp@{ddm.cpp}!DDMParallelNLL@{DDMParallelNLL}}
+\index{DDMParallelNLL@{DDMParallelNLL}!ddm.cpp@{ddm.cpp}}
+\doxysubsubsection{\texorpdfstring{DDMParallelNLL()}{DDMParallelNLL()}}
+{\footnotesize\ttfamily double DDMParallel\+NLL (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_d_d_m}{DDM}}}]{ddm,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_d_d_m_trial}{DDMTrial}} $>$}]{trials }\end{DoxyParamCaption})}
+
+
+
+Definition at line 355 of file ddm.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{355                                                            \{}
+\DoxyCodeLine{356     \textcolor{keywordtype}{double} NLL = 0;}
+\DoxyCodeLine{357     \mbox{\hyperlink{class_b_s_1_1thread__pool}{BS::thread\_pool}} pool;}
+\DoxyCodeLine{358     \mbox{\hyperlink{class_b_s_1_1multi__future}{BS::multi\_future<double>}} futs = pool.\mbox{\hyperlink{class_b_s_1_1thread__pool_a7567b2d637a74178f069265f969649c8}{parallelize\_loop}}(}
+\DoxyCodeLine{359         0, trials.size(), }
+\DoxyCodeLine{360         [\&ddm, \&trials](\textcolor{keyword}{const} \textcolor{keywordtype}{int} a, \textcolor{keyword}{const} \textcolor{keywordtype}{int} b) \{}
+\DoxyCodeLine{361             double block\_total = 0; }
+\DoxyCodeLine{362             for (int i = a; i < b; ++i) \{}
+\DoxyCodeLine{363                 block\_total += -\/log(}
+\DoxyCodeLine{364                     ddm.getTrialLikelihood(trials[i])}
+\DoxyCodeLine{365                 );}
+\DoxyCodeLine{366             \}}
+\DoxyCodeLine{367             \textcolor{keywordflow}{return} block\_total;}
+\DoxyCodeLine{368         \}}
+\DoxyCodeLine{369     );}
+\DoxyCodeLine{370     std::vector<double> totals = futs.\mbox{\hyperlink{class_b_s_1_1multi__future_abc4a07d29c078263b60ae785b7330880}{get}}();}
+\DoxyCodeLine{371     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keywordtype}{double} t : totals) \{}
+\DoxyCodeLine{372         NLL += t; }
+\DoxyCodeLine{373     \}}
+\DoxyCodeLine{374     \textcolor{keywordflow}{return} NLL;}
+\DoxyCodeLine{375 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{ddm_8cpp_ac34cf3b3215db72eab8926917db0da7d}\label{ddm_8cpp_ac34cf3b3215db72eab8926917db0da7d}} 
+\index{ddm.cpp@{ddm.cpp}!restrictSpace@{restrictSpace}}
+\index{restrictSpace@{restrictSpace}!ddm.cpp@{ddm.cpp}}
+\doxysubsubsection{\texorpdfstring{restrictSpace}{restrictSpace}}
+{\footnotesize\ttfamily bool restrict\+Space = true}
+
+
+
+Definition at line 15 of file ddm.\+cpp.
+
+\mbox{\Hypertarget{ddm_8cpp_a07f2098d9ced32b0b2e75dded17de056}\label{ddm_8cpp_a07f2098d9ced32b0b2e75dded17de056}} 
+\index{ddm.cpp@{ddm.cpp}!useGPU@{useGPU}}
+\index{useGPU@{useGPU}!ddm.cpp@{ddm.cpp}}
+\doxysubsubsection{\texorpdfstring{useGPU}{useGPU}}
+{\footnotesize\ttfamily bool use\+GPU = false}
+
+
+
+Definition at line 21 of file ddm.\+cpp.
+

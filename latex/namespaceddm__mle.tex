@@ -1,0 +1,63 @@
+\hypertarget{namespaceddm__mle}{}\doxysection{ddm\+\_\+mle Namespace Reference}
+\label{namespaceddm__mle}\index{ddm\_mle@{ddm\_mle}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespaceddm__mle_a27836c16627e571be007d2102d232293}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceddm__mle_a27836c16627e571be007d2102d232293}\label{namespaceddm__mle_a27836c16627e571be007d2102d232293}} 
+\index{ddm\_mle@{ddm\_mle}!main@{main}}
+\index{main@{main}!ddm\_mle@{ddm\_mle}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily def ddm\+\_\+mle.\+main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 7 of file ddm\+\_\+mle.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{7 \textcolor{keyword}{def }\mbox{\hyperlink{namespaceddm__mle_a27836c16627e571be007d2102d232293}{main}}():}
+\DoxyCodeLine{8     data = pd.read\_csv(\textcolor{stringliteral}{"{}results/ddm\_mle.csv"{}})}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10     \textcolor{comment}{\# Create a pivot table to reshape the data}}
+\DoxyCodeLine{11     pivot\_table = pd.pivot\_table(data, values=\textcolor{stringliteral}{'NLL'}, index=\textcolor{stringliteral}{'sigma'}, columns=\textcolor{stringliteral}{'d'})}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13     \textcolor{comment}{\# Convert the pivot table to a numpy array}}
+\DoxyCodeLine{14     heatmap\_data = pivot\_table.values}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16     \textcolor{comment}{\# Create the heatmap}}
+\DoxyCodeLine{17     \_, ax = plt.subplots()}
+\DoxyCodeLine{18     im = ax.imshow(heatmap\_data, cmap=\textcolor{stringliteral}{'cividis'}, aspect=\textcolor{stringliteral}{'auto'}, vmax=6500)}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20     xlabs = set()}
+\DoxyCodeLine{21     \textcolor{keywordflow}{for} row \textcolor{keywordflow}{in} data[\textcolor{stringliteral}{'d'}]:}
+\DoxyCodeLine{22         xlabs.add(row)}
+\DoxyCodeLine{23     xlabs = list(xlabs)}
+\DoxyCodeLine{24     xlabs.reverse()}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26     ylabs = set()}
+\DoxyCodeLine{27     \textcolor{keywordflow}{for} row \textcolor{keywordflow}{in} data[\textcolor{stringliteral}{'sigma'}]:}
+\DoxyCodeLine{28         ylabs.add(row)}
+\DoxyCodeLine{29     ylabs = list(ylabs)}
+\DoxyCodeLine{30     ylabs.sort()}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32     ax.set\_xticks(np.arange(len(xlabs)), labels=xlabs)}
+\DoxyCodeLine{33     ax.set\_yticks(np.arange(len(ylabs)), labels=ylabs)}
+\DoxyCodeLine{34     \_ = ax.figure.colorbar(im, ax=ax)}
+\DoxyCodeLine{35     ax.set\_xlabel(\textcolor{stringliteral}{'d'})}
+\DoxyCodeLine{36     ax.set\_ylabel(\textcolor{stringliteral}{'sigma'})}
+\DoxyCodeLine{37     ax.set\_title(\textcolor{stringliteral}{'NLL Heatmap'})}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39     \textcolor{keywordflow}{if} (len(sys.argv) > 1 \textcolor{keywordflow}{and} \textcolor{stringliteral}{"{}save"{}} \textcolor{keywordflow}{in} sys.argv):}
+\DoxyCodeLine{40         currTime = datetime.now().strftime(\textcolor{stringliteral}{u"{}\%Y-\/\%m-\/\%d\_\%H:\%M:\%S"{}})}
+\DoxyCodeLine{41         plt.savefig(\textcolor{stringliteral}{"{}imgs/ddm\_mle\_"{}} + currTime + \textcolor{stringliteral}{"{}.png"{}})}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     plt.show()}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 }
+
+\end{DoxyCode}

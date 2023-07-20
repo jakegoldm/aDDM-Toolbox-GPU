@@ -1,0 +1,489 @@
+\hypertarget{class_d_d_m}{}\doxysection{DDM Class Reference}
+\label{class_d_d_m}\index{DDM@{DDM}}
+
+
+{\ttfamily \#include $<$ddm.\+h$>$}
+
+
+
+Inheritance diagram for DDM\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=127pt]{class_d_d_m__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_d_m_af8079400de69cdcec8414c9083884558}{DDM}} (float \mbox{\hyperlink{class_d_d_m_a15511d3cf0f7deb5de073dcdfd09bcc6}{d}}, float \mbox{\hyperlink{class_d_d_m_a17570a6c2378cdb363437f39a5fa3f00}{sigma}}, float \mbox{\hyperlink{class_d_d_m_a0293f051d7889ee014fb55c4939e4783}{barrier}}, unsigned int \mbox{\hyperlink{class_d_d_m_a0821be8a65988df0004b4d9f4239a020}{non\+Decision\+Time}}=0, float \mbox{\hyperlink{class_d_d_m_a0cecc28e691846bce6dccb02f34aef07}{bias}}=0)
+\item 
+\mbox{\hyperlink{class_d_d_m_a5c65c29756565b1a6a9ca6605fa1c003}{DDM}} ()
+\item 
+double \mbox{\hyperlink{class_d_d_m_a025072ab3fd16dee3a0b0f57c7585a06}{get\+Trial\+Likelihood}} (\mbox{\hyperlink{class_d_d_m_trial}{DDMTrial}} trial, bool debug=false, int time\+Step=10, float approx\+State\+Step=0.\+1)
+\item 
+\mbox{\hyperlink{class_d_d_m_trial}{DDMTrial}} \mbox{\hyperlink{class_d_d_m_a6a1471b7df53bbb107df7bf954f6d7a6}{simulate\+Trial}} (int Value\+Left, int Value\+Right, int time\+Step=10)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_d_d_m_a15511d3cf0f7deb5de073dcdfd09bcc6}{d}}
+\item 
+float \mbox{\hyperlink{class_d_d_m_a17570a6c2378cdb363437f39a5fa3f00}{sigma}}
+\item 
+float \mbox{\hyperlink{class_d_d_m_a0293f051d7889ee014fb55c4939e4783}{barrier}}
+\item 
+unsigned int \mbox{\hyperlink{class_d_d_m_a0821be8a65988df0004b4d9f4239a020}{non\+Decision\+Time}}
+\item 
+float \mbox{\hyperlink{class_d_d_m_a0cecc28e691846bce6dccb02f34aef07}{bias}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 21 of file ddm.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_d_d_m_af8079400de69cdcec8414c9083884558}\label{class_d_d_m_af8079400de69cdcec8414c9083884558}} 
+\index{DDM@{DDM}!DDM@{DDM}}
+\index{DDM@{DDM}!DDM@{DDM}}
+\doxysubsubsection{\texorpdfstring{DDM()}{DDM()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily DDM\+::\+DDM (\begin{DoxyParamCaption}\item[{float}]{d,  }\item[{float}]{sigma,  }\item[{float}]{barrier,  }\item[{unsigned int}]{non\+Decision\+Time = {\ttfamily 0},  }\item[{float}]{bias = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 31 of file ddm.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{31                                                                                       \{}
+\DoxyCodeLine{32     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_d_d_m_a0293f051d7889ee014fb55c4939e4783}{barrier}} <= 0) \{}
+\DoxyCodeLine{33         \textcolor{keywordflow}{throw} std::invalid\_argument(\textcolor{stringliteral}{"{}barrier parameter must be larger than 0."{}});}
+\DoxyCodeLine{34     \}}
+\DoxyCodeLine{35     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_d_d_m_a0cecc28e691846bce6dccb02f34aef07}{bias}} >= \mbox{\hyperlink{class_d_d_m_a0293f051d7889ee014fb55c4939e4783}{barrier}}) \{}
+\DoxyCodeLine{36         \textcolor{keywordflow}{throw} std::invalid\_argument(\textcolor{stringliteral}{"{}bias parameter must be smaller than barrier parameter."{}});}
+\DoxyCodeLine{37     \}}
+\DoxyCodeLine{38     this-\/>\mbox{\hyperlink{class_d_d_m_a15511d3cf0f7deb5de073dcdfd09bcc6}{d}} = \mbox{\hyperlink{class_d_d_m_a15511d3cf0f7deb5de073dcdfd09bcc6}{d}};}
+\DoxyCodeLine{39     this-\/>\mbox{\hyperlink{class_d_d_m_a17570a6c2378cdb363437f39a5fa3f00}{sigma}} = \mbox{\hyperlink{class_d_d_m_a17570a6c2378cdb363437f39a5fa3f00}{sigma}}; }
+\DoxyCodeLine{40     this-\/>\mbox{\hyperlink{class_d_d_m_a0293f051d7889ee014fb55c4939e4783}{barrier}} = \mbox{\hyperlink{class_d_d_m_a0293f051d7889ee014fb55c4939e4783}{barrier}}; }
+\DoxyCodeLine{41     this-\/>\mbox{\hyperlink{class_d_d_m_a0821be8a65988df0004b4d9f4239a020}{nonDecisionTime}} = \mbox{\hyperlink{class_d_d_m_a0821be8a65988df0004b4d9f4239a020}{nonDecisionTime}};}
+\DoxyCodeLine{42     this-\/>\mbox{\hyperlink{class_d_d_m_a0cecc28e691846bce6dccb02f34aef07}{bias}} = \mbox{\hyperlink{class_d_d_m_a0cecc28e691846bce6dccb02f34aef07}{bias}};            }
+\DoxyCodeLine{43 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_d_d_m_a5c65c29756565b1a6a9ca6605fa1c003}\label{class_d_d_m_a5c65c29756565b1a6a9ca6605fa1c003}} 
+\index{DDM@{DDM}!DDM@{DDM}}
+\index{DDM@{DDM}!DDM@{DDM}}
+\doxysubsubsection{\texorpdfstring{DDM()}{DDM()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily DDM\+::\+DDM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 32 of file ddm.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{32 \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_d_d_m_a025072ab3fd16dee3a0b0f57c7585a06}\label{class_d_d_m_a025072ab3fd16dee3a0b0f57c7585a06}} 
+\index{DDM@{DDM}!getTrialLikelihood@{getTrialLikelihood}}
+\index{getTrialLikelihood@{getTrialLikelihood}!DDM@{DDM}}
+\doxysubsubsection{\texorpdfstring{getTrialLikelihood()}{getTrialLikelihood()}}
+{\footnotesize\ttfamily double DDM\+::get\+Trial\+Likelihood (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_d_d_m_trial}{DDMTrial}}}]{trial,  }\item[{bool}]{debug = {\ttfamily false},  }\item[{int}]{time\+Step = {\ttfamily 10},  }\item[{float}]{approx\+State\+Step = {\ttfamily 0.1} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 45 of file ddm.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{45                                                                                               \{}
+\DoxyCodeLine{46     \textcolor{keywordtype}{int} numTimeSteps = trial.\mbox{\hyperlink{class_d_d_m_trial_a1fed499f6f800dcf08331b0f08d4570b}{RT}} / timeStep;}
+\DoxyCodeLine{47     \textcolor{keywordflow}{if} (numTimeSteps < 1) \{}
+\DoxyCodeLine{48         \textcolor{keywordflow}{throw} std::invalid\_argument(\textcolor{stringliteral}{"{}trial response time is smaller than time step."{}});}
+\DoxyCodeLine{49     \}}
+\DoxyCodeLine{50     \textcolor{keywordflow}{if} (debug) \{}
+\DoxyCodeLine{51         std::cout << std::setprecision(6) << std::fixed;}
+\DoxyCodeLine{52     \}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54     std::vector<float> barrierUp(numTimeSteps);}
+\DoxyCodeLine{55     std::fill(barrierUp.begin(), barrierUp.end(), this-\/>barrier);}
+\DoxyCodeLine{56     std::vector<float> barrierDown(numTimeSteps);}
+\DoxyCodeLine{57     std::fill(barrierDown.begin(), barrierDown.end(), -\/this-\/>barrier);}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 1; i < numTimeSteps; i++) \{}
+\DoxyCodeLine{60         barrierUp.at(i) = this-\/>\mbox{\hyperlink{class_d_d_m_a0293f051d7889ee014fb55c4939e4783}{barrier}} / (1 + (\mbox{\hyperlink{util_8h_ae307adc0568237d1e5bc8802f60f67bf}{DECAY}} * i));}
+\DoxyCodeLine{61         barrierDown.at(i) = -\/this-\/>\mbox{\hyperlink{class_d_d_m_a0293f051d7889ee014fb55c4939e4783}{barrier}} / (1 + (\mbox{\hyperlink{util_8h_ae307adc0568237d1e5bc8802f60f67bf}{DECAY}} * i));}
+\DoxyCodeLine{62     \}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64     \textcolor{keywordtype}{int} halfNumStateBins = ceil(this-\/>\mbox{\hyperlink{class_d_d_m_a0293f051d7889ee014fb55c4939e4783}{barrier}} / approxStateStep);}
+\DoxyCodeLine{65     \textcolor{keywordtype}{float} stateStep = this-\/>\mbox{\hyperlink{class_d_d_m_a0293f051d7889ee014fb55c4939e4783}{barrier}} / (halfNumStateBins + 0.5);}
+\DoxyCodeLine{66     std::vector<float> states;}
+\DoxyCodeLine{67     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{float} ss = barrierDown.at(0) + (stateStep / 2); ss <= barrierUp.at(0) -\/ (stateStep / 2); ss += stateStep) \{}
+\DoxyCodeLine{68         states.push\_back(ss);}
+\DoxyCodeLine{69     \}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71     \textcolor{keywordflow}{if} (debug) \{}
+\DoxyCodeLine{72         std::cout << \textcolor{stringliteral}{"{}STATES"{}} << std::endl;}
+\DoxyCodeLine{73         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{float} s : states) \{}
+\DoxyCodeLine{74             std::cout << s << \textcolor{stringliteral}{"{} "{}} << std::endl;}
+\DoxyCodeLine{75         \}}
+\DoxyCodeLine{76         std::cout << \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/"{}} << std::endl;}
+\DoxyCodeLine{77     \}}
+\DoxyCodeLine{78     }
+\DoxyCodeLine{79     \textcolor{comment}{// Get index of state corresponding to the bias}}
+\DoxyCodeLine{80     \textcolor{keywordtype}{float} biasStateVal = MAXFLOAT;}
+\DoxyCodeLine{81     \textcolor{keywordtype}{int} biasState = 0;}
+\DoxyCodeLine{82     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < states.size(); i++) \{}
+\DoxyCodeLine{83         \textcolor{keywordtype}{float} r = abs(states.at(i) -\/ this-\/>bias);}
+\DoxyCodeLine{84         \textcolor{keywordflow}{if} (r < biasStateVal) \{}
+\DoxyCodeLine{85             biasState = i;}
+\DoxyCodeLine{86             biasStateVal = r;}
+\DoxyCodeLine{87         \}}
+\DoxyCodeLine{88     \}}
+\DoxyCodeLine{89     }
+\DoxyCodeLine{90     \textcolor{comment}{// Initialize an empty probability state grid}}
+\DoxyCodeLine{91     std::vector<std::vector<double>> prStates; \textcolor{comment}{// prStates[state][timeStep]}}
+\DoxyCodeLine{92     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < states.size(); i++) \{}
+\DoxyCodeLine{93         prStates.push\_back(\{\});}
+\DoxyCodeLine{94         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < numTimeSteps; j++) \{}
+\DoxyCodeLine{95             prStates.at(i).push\_back(0);}
+\DoxyCodeLine{96         \}}
+\DoxyCodeLine{97     \}}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99     \textcolor{comment}{// Initialize vectors corresponding to the probability of crossing the }}
+\DoxyCodeLine{100     \textcolor{comment}{// top or bottom barriers at each timestep. }}
+\DoxyCodeLine{101     std::vector<double> probUpCrossing; }
+\DoxyCodeLine{102     std::vector<double> probDownCrossing;}
+\DoxyCodeLine{103     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < numTimeSteps; i++) \{}
+\DoxyCodeLine{104         probUpCrossing.push\_back(0);}
+\DoxyCodeLine{105         probDownCrossing.push\_back(0);}
+\DoxyCodeLine{106     \}}
+\DoxyCodeLine{107     prStates.at(biasState).at(0) = 1; }
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109     \textcolor{comment}{// Initialize a change matrix where each value at (i, j) }}
+\DoxyCodeLine{110     \textcolor{comment}{// indicates the difference between states[i] and states[j] }}
+\DoxyCodeLine{111     std::vector<std::vector<float>> changeMatrix(states.size(), std::vector<float>(states.size())); }
+\DoxyCodeLine{112     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < states.size(); i++) \{}
+\DoxyCodeLine{113         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} j = 0; j < states.size(); j++) \{}
+\DoxyCodeLine{114             changeMatrix[i][j] = states[i] -\/ states[j];}
+\DoxyCodeLine{115         \}}
+\DoxyCodeLine{116     \}}
+\DoxyCodeLine{117     \textcolor{keywordflow}{if} (debug) \{}
+\DoxyCodeLine{118         printMatrix<float>(changeMatrix, \textcolor{stringliteral}{"{}CHANGE MATRIX"{}});}
+\DoxyCodeLine{119     \}}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121     \textcolor{comment}{// Distance from every state to the top barrier at each timestep}}
+\DoxyCodeLine{122     std::vector<std::vector<float>> changeUp(states.size(), std::vector<float>(numTimeSteps));}
+\DoxyCodeLine{123     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < states.size(); i++) \{}
+\DoxyCodeLine{124         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} j = 0; j < numTimeSteps; j++) \{}
+\DoxyCodeLine{125             changeUp[i][j] = barrierUp[j] -\/ states[i];}
+\DoxyCodeLine{126         \}}
+\DoxyCodeLine{127     \}}
+\DoxyCodeLine{128     \textcolor{keywordflow}{if} (debug) \{}
+\DoxyCodeLine{129         printMatrix<float>(changeUp, \textcolor{stringliteral}{"{}CHANGE UP"{}});}
+\DoxyCodeLine{130     \}}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133     \textcolor{comment}{// Distance from every state to the bottom barrier at each timestep}}
+\DoxyCodeLine{134     std::vector<std::vector<float>> changeDown(states.size(), std::vector<float>(numTimeSteps));}
+\DoxyCodeLine{135     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < states.size(); i++) \{}
+\DoxyCodeLine{136         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} j = 0; j < numTimeSteps; j++) \{}
+\DoxyCodeLine{137             changeDown[i][j] = barrierDown[j] -\/ states[i];}
+\DoxyCodeLine{138         \}}
+\DoxyCodeLine{139     \}}
+\DoxyCodeLine{140     \textcolor{keywordflow}{if} (debug) \{}
+\DoxyCodeLine{141         printMatrix<float>(changeDown, \textcolor{stringliteral}{"{}CHANGE DOWN"{}});}
+\DoxyCodeLine{142     \}}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144     \textcolor{keywordtype}{int} elapsedNDT = 0;}
+\DoxyCodeLine{145     \textcolor{keywordtype}{bool} recomputePDCM = \textcolor{keyword}{true}; }
+\DoxyCodeLine{146     \textcolor{keywordtype}{float} prevMean = 0; }
+\DoxyCodeLine{147     std::vector<std::vector<double>> probDistChangeMatrix(states.size(), std::vector<double>(states.size()));}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} time = 1; time < numTimeSteps; time++) \{}
+\DoxyCodeLine{150         \textcolor{keywordflow}{if} (debug) \{}
+\DoxyCodeLine{151             std::cout << \textcolor{stringliteral}{"{}============"{}} << std::endl;}
+\DoxyCodeLine{152             std::cout << \textcolor{stringliteral}{"{}TIMESTEP "{}} << time << std::endl;}
+\DoxyCodeLine{153             std::cout << \textcolor{stringliteral}{"{}============"{}} << std::endl;}
+\DoxyCodeLine{154         \}}
+\DoxyCodeLine{155         \textcolor{keywordtype}{float} mean;}
+\DoxyCodeLine{156         \textcolor{keywordflow}{if} (elapsedNDT < this-\/>\mbox{\hyperlink{class_d_d_m_a0821be8a65988df0004b4d9f4239a020}{nonDecisionTime}} / timeStep) \{}
+\DoxyCodeLine{157             mean = 0;}
+\DoxyCodeLine{158             elapsedNDT += 1;}
+\DoxyCodeLine{159         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{160             mean = this-\/>\mbox{\hyperlink{class_d_d_m_a15511d3cf0f7deb5de073dcdfd09bcc6}{d}} * (trial.\mbox{\hyperlink{class_d_d_m_trial_ae949e54554e10660f73878a07a95d14d}{valueLeft}} -\/ trial.\mbox{\hyperlink{class_d_d_m_trial_a9e1a0900b92b8d16fb3bd49894c9dc2c}{valueRight}});}
+\DoxyCodeLine{161         \}}
+\DoxyCodeLine{162         \textcolor{keywordflow}{if} (debug) \{}
+\DoxyCodeLine{163             std::cout << \textcolor{stringliteral}{"{}mean: "{}} << mean << std::endl;}
+\DoxyCodeLine{164         \}}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166         \textcolor{keywordflow}{if} (mean != prevMean) \{}
+\DoxyCodeLine{167             recomputePDCM = \textcolor{keyword}{true}; }
+\DoxyCodeLine{168         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{169             recomputePDCM = \textcolor{keyword}{false}; }
+\DoxyCodeLine{170         \}}
+\DoxyCodeLine{171         }
+\DoxyCodeLine{172         \textcolor{comment}{// Compute the likelihood of each change in the matrix using a probability density function with parameters mean and sigma. }}
+\DoxyCodeLine{173         \textcolor{comment}{// Only necessary when: }}
+\DoxyCodeLine{174         \textcolor{comment}{//     -\/mean of the normal distribution has changed}}
+\DoxyCodeLine{175         \textcolor{comment}{//     -\/first timestep }}
+\DoxyCodeLine{176         \textcolor{comment}{//     -\/restricting space}}
+\DoxyCodeLine{177         \textcolor{keywordflow}{if} (recomputePDCM || time == 1 || \mbox{\hyperlink{ddm_8cpp_ac34cf3b3215db72eab8926917db0da7d}{restrictSpace}}) \{}
+\DoxyCodeLine{178             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < states.size(); i++) \{}
+\DoxyCodeLine{179                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} j = 0; j < states.size(); j++) \{}
+\DoxyCodeLine{180                     \textcolor{keywordtype}{float} x = changeMatrix[i][j];}
+\DoxyCodeLine{181                     probDistChangeMatrix[i][j] = \mbox{\hyperlink{util_8h_a3c70684bbd5c18365b967d158305e919}{probabilityDensityFunction}}(mean, this-\/>\mbox{\hyperlink{class_d_d_m_a17570a6c2378cdb363437f39a5fa3f00}{sigma}}, x);}
+\DoxyCodeLine{182                 \}}
+\DoxyCodeLine{183             \} }
+\DoxyCodeLine{184         \}}
+\DoxyCodeLine{185         }
+\DoxyCodeLine{186         \textcolor{keywordflow}{if} (debug) \{}
+\DoxyCodeLine{187             printMatrix<double>(probDistChangeMatrix, \textcolor{stringliteral}{"{}PROBABILITY CHANGE MATRIX"{}});}
+\DoxyCodeLine{188         \}}
+\DoxyCodeLine{189 }
+\DoxyCodeLine{190         \textcolor{comment}{// Fetch the probability states for the previous timeStep}}
+\DoxyCodeLine{191         std::vector<double> prTimeSlice(states.size());}
+\DoxyCodeLine{192         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < states.size(); i++) \{}
+\DoxyCodeLine{193             prTimeSlice[i] = prStates[i][time -\/ 1];}
+\DoxyCodeLine{194         \}}
+\DoxyCodeLine{195 }
+\DoxyCodeLine{196         \textcolor{keywordflow}{if} (debug) \{}
+\DoxyCodeLine{197             std::cout << \textcolor{stringliteral}{"{}PREV TIME SLICE"{}} << std::endl; }
+\DoxyCodeLine{198             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{double} \mbox{\hyperlink{class_d_d_m_a15511d3cf0f7deb5de073dcdfd09bcc6}{d}} : prTimeSlice) \{}
+\DoxyCodeLine{199                 std::cout << \mbox{\hyperlink{class_d_d_m_a15511d3cf0f7deb5de073dcdfd09bcc6}{d}} << std::endl; }
+\DoxyCodeLine{200             \}}
+\DoxyCodeLine{201         \}}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{203         \textcolor{comment}{// Compute the dot product between the change matrix and previous timeStep's probabilities}}
+\DoxyCodeLine{204         std::vector<double> prStatesNew(states.size()); }
+\DoxyCodeLine{205         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < states.size(); i++) \{}
+\DoxyCodeLine{206             \textcolor{keywordtype}{double} row\_sum = 0;}
+\DoxyCodeLine{207             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} j = 0; j < states.size(); j++) \{}
+\DoxyCodeLine{208                 row\_sum += stateStep * probDistChangeMatrix[i][j] * prTimeSlice[j];}
+\DoxyCodeLine{209             \}}
+\DoxyCodeLine{210             prStatesNew[i] = row\_sum;}
+\DoxyCodeLine{211         \}}
+\DoxyCodeLine{212         \textcolor{comment}{// Check for states that are now out-\/of-\/bounds based on decay}}
+\DoxyCodeLine{213         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < states.size(); i++) \{}
+\DoxyCodeLine{214             \textcolor{keywordflow}{if} (states[i] > barrierUp[time] || states[i] < barrierDown[time]) \{}
+\DoxyCodeLine{215                 prStatesNew[i] = 0;}
+\DoxyCodeLine{216             \}}
+\DoxyCodeLine{217         \}}
+\DoxyCodeLine{218         \textcolor{keywordflow}{if} (debug) \{}
+\DoxyCodeLine{219             std::cout << \textcolor{stringliteral}{"{}PR STATES NEW"{}} << std::endl;}
+\DoxyCodeLine{220             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{double} \mbox{\hyperlink{class_d_d_m_a15511d3cf0f7deb5de073dcdfd09bcc6}{d}} : prStatesNew) \{}
+\DoxyCodeLine{221                 std::cout << \mbox{\hyperlink{class_d_d_m_a15511d3cf0f7deb5de073dcdfd09bcc6}{d}} << std::endl;}
+\DoxyCodeLine{222             \}}
+\DoxyCodeLine{223             std::cout << \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/"{}} << std::endl;}
+\DoxyCodeLine{224         \}}
+\DoxyCodeLine{225         }
+\DoxyCodeLine{226         std::vector<float> currChangeUp;}
+\DoxyCodeLine{227         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} s : changeUp) \{}
+\DoxyCodeLine{228             currChangeUp.push\_back(s.at(time));}
+\DoxyCodeLine{229         \}}
+\DoxyCodeLine{230         std::vector<double> changeUpCDFs;}
+\DoxyCodeLine{231         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < currChangeUp.size(); i++) \{}
+\DoxyCodeLine{232             \textcolor{keywordtype}{float} x = currChangeUp[i];}
+\DoxyCodeLine{233             changeUpCDFs.push\_back(}
+\DoxyCodeLine{234                 1 -\/ \mbox{\hyperlink{util_8h_ab0c2fb4c0b02fabb15eeab9d6f73e5ab}{cumulativeDensityFunction}}(mean, this-\/>\mbox{\hyperlink{class_d_d_m_a17570a6c2378cdb363437f39a5fa3f00}{sigma}}, x)}
+\DoxyCodeLine{235             );}
+\DoxyCodeLine{236         \}}
+\DoxyCodeLine{237         \textcolor{keywordflow}{if} (debug) \{}
+\DoxyCodeLine{238             std::cout << \textcolor{stringliteral}{"{}CURR CHANGE UP CDFs"{}} << std::endl; }
+\DoxyCodeLine{239             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{float} f : changeUpCDFs) \{}
+\DoxyCodeLine{240                 std::cout << f << std::endl;}
+\DoxyCodeLine{241             \}}
+\DoxyCodeLine{242             std::cout << \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/"{}} << std::endl;}
+\DoxyCodeLine{243         \}}
+\DoxyCodeLine{244         assert(changeUpCDFs.size() == prTimeSlice.size());}
+\DoxyCodeLine{245         \textcolor{keywordtype}{double} tempUpCross = 0;}
+\DoxyCodeLine{246         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < prTimeSlice.size(); i++) \{}
+\DoxyCodeLine{247             tempUpCross += changeUpCDFs[i] * prTimeSlice[i];}
+\DoxyCodeLine{248         \}}
+\DoxyCodeLine{249         \textcolor{keywordflow}{if} (debug) \{}
+\DoxyCodeLine{250             std::cout << \textcolor{stringliteral}{"{}temp up cross: "{}} << tempUpCross << std::endl; }
+\DoxyCodeLine{251         \}}
+\DoxyCodeLine{252 }
+\DoxyCodeLine{253         std::vector<float> currChangeDown;}
+\DoxyCodeLine{254         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} s: changeDown) \{}
+\DoxyCodeLine{255             currChangeDown.push\_back(s.at(time));}
+\DoxyCodeLine{256         \}}
+\DoxyCodeLine{257         std::vector<double> changeDownCDFs;}
+\DoxyCodeLine{258         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < currChangeDown.size(); i++) \{}
+\DoxyCodeLine{259             \textcolor{keywordtype}{float} x = currChangeDown[i];}
+\DoxyCodeLine{260             changeDownCDFs.push\_back(}
+\DoxyCodeLine{261                 \mbox{\hyperlink{util_8h_ab0c2fb4c0b02fabb15eeab9d6f73e5ab}{cumulativeDensityFunction}}(0, 1, (x -\/ mean) / this-\/>\mbox{\hyperlink{class_d_d_m_a17570a6c2378cdb363437f39a5fa3f00}{sigma}})}
+\DoxyCodeLine{262             );}
+\DoxyCodeLine{263         \}}
+\DoxyCodeLine{264         assert(changeDownCDFs.size() == prTimeSlice.size());}
+\DoxyCodeLine{265         \textcolor{keywordtype}{double} tempDownCross = 0;}
+\DoxyCodeLine{266         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < prTimeSlice.size(); i++) \{}
+\DoxyCodeLine{267             tempDownCross += changeDownCDFs[i] * prTimeSlice[i];}
+\DoxyCodeLine{268         \}}
+\DoxyCodeLine{269         \textcolor{keywordflow}{if} (debug) \{}
+\DoxyCodeLine{270             std::cout << \textcolor{stringliteral}{"{}temp down cross: "{}} << tempDownCross << std::endl; }
+\DoxyCodeLine{271         \}}
+\DoxyCodeLine{272 }
+\DoxyCodeLine{273         \textcolor{keywordtype}{double} sumIn = 0; }
+\DoxyCodeLine{274         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{double} prob : prTimeSlice) \{}
+\DoxyCodeLine{275             sumIn += prob;}
+\DoxyCodeLine{276         \}}
+\DoxyCodeLine{277         \textcolor{keywordtype}{double} sumCurrent = tempUpCross + tempDownCross;}
+\DoxyCodeLine{278         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{double} prob : prStatesNew) \{}
+\DoxyCodeLine{279             sumCurrent += prob;}
+\DoxyCodeLine{280         \}}
+\DoxyCodeLine{281         \textcolor{keywordtype}{double} normFactor = sumIn / sumCurrent;}
+\DoxyCodeLine{282 }
+\DoxyCodeLine{283         \textcolor{keywordflow}{if} (debug) \{}
+\DoxyCodeLine{284             std::cout << \textcolor{stringliteral}{"{}norm factor "{}} << normFactor << std::endl; }
+\DoxyCodeLine{285         \}}
+\DoxyCodeLine{286         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < prStatesNew.size(); i++) \{}
+\DoxyCodeLine{287             prStatesNew[i] *= normFactor;}
+\DoxyCodeLine{288         \}}
+\DoxyCodeLine{289         tempUpCross *= normFactor;}
+\DoxyCodeLine{290         tempDownCross *= normFactor;}
+\DoxyCodeLine{291         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < prStates.size(); i++) \{}
+\DoxyCodeLine{292             prStates[i][time] = prStatesNew[i];}
+\DoxyCodeLine{293         \}}
+\DoxyCodeLine{294         probUpCrossing[time] = tempUpCross;}
+\DoxyCodeLine{295         probDownCrossing[time] = tempDownCross;}
+\DoxyCodeLine{296 }
+\DoxyCodeLine{297         prevMean = mean; }
+\DoxyCodeLine{298     \}}
+\DoxyCodeLine{299 }
+\DoxyCodeLine{300     \textcolor{keywordtype}{double} likelihood = 0; }
+\DoxyCodeLine{301     \textcolor{keywordflow}{if} (trial.\mbox{\hyperlink{class_d_d_m_trial_a941813496795b5c0f16d068444abf483}{choice}} == -\/1) \{}
+\DoxyCodeLine{302         \textcolor{keywordflow}{if} (probUpCrossing[probUpCrossing.size() -\/ 1] > 0) \{}
+\DoxyCodeLine{303             likelihood = probUpCrossing[probUpCrossing.size() -\/ 1];}
+\DoxyCodeLine{304         \} }
+\DoxyCodeLine{305     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (trial.\mbox{\hyperlink{class_d_d_m_trial_a941813496795b5c0f16d068444abf483}{choice}} == 1) \{}
+\DoxyCodeLine{306         \textcolor{keywordflow}{if} (probDownCrossing[probDownCrossing.size() -\/ 1] > 0) \{}
+\DoxyCodeLine{307             likelihood = probDownCrossing[probDownCrossing.size() -\/ 1];}
+\DoxyCodeLine{308         \}}
+\DoxyCodeLine{309     \}    }
+\DoxyCodeLine{310     assert(likelihood < 1);}
+\DoxyCodeLine{311     \textcolor{keywordflow}{return} likelihood;}
+\DoxyCodeLine{312 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_d_d_m_a6a1471b7df53bbb107df7bf954f6d7a6}\label{class_d_d_m_a6a1471b7df53bbb107df7bf954f6d7a6}} 
+\index{DDM@{DDM}!simulateTrial@{simulateTrial}}
+\index{simulateTrial@{simulateTrial}!DDM@{DDM}}
+\doxysubsubsection{\texorpdfstring{simulateTrial()}{simulateTrial()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_d_d_m_trial}{DDMTrial}} DDM\+::simulate\+Trial (\begin{DoxyParamCaption}\item[{int}]{Value\+Left,  }\item[{int}]{Value\+Right,  }\item[{int}]{time\+Step = {\ttfamily 10} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 315 of file ddm.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{315                                                                        \{}
+\DoxyCodeLine{316     \textcolor{keywordtype}{float} RDV = this-\/>\mbox{\hyperlink{class_d_d_m_a0cecc28e691846bce6dccb02f34aef07}{bias}};}
+\DoxyCodeLine{317     \textcolor{keywordtype}{int} time = 0;}
+\DoxyCodeLine{318     \textcolor{keywordtype}{int} elapsedNDT = 0;}
+\DoxyCodeLine{319     \textcolor{keywordtype}{int} RT;}
+\DoxyCodeLine{320     \textcolor{keywordtype}{int} choice;}
+\DoxyCodeLine{321     \textcolor{keywordtype}{float} mean;}
+\DoxyCodeLine{322     std::vector<float>RDVs = \{RDV\};}
+\DoxyCodeLine{323     std::random\_device rd;}
+\DoxyCodeLine{324     std::mt19937 gen(rd()); }
+\DoxyCodeLine{325 }
+\DoxyCodeLine{326     \textcolor{keywordflow}{while} (\textcolor{keyword}{true}) \{}
+\DoxyCodeLine{327         \textcolor{keywordflow}{if} (RDV >= this-\/>\mbox{\hyperlink{class_d_d_m_a0293f051d7889ee014fb55c4939e4783}{barrier}} || RDV <= -\/this-\/>\mbox{\hyperlink{class_d_d_m_a0293f051d7889ee014fb55c4939e4783}{barrier}}) \{}
+\DoxyCodeLine{328             RT = time * timeStep;}
+\DoxyCodeLine{329             \textcolor{keywordflow}{if} (RDV >= this-\/>barrier) \{}
+\DoxyCodeLine{330                 choice = -\/1;}
+\DoxyCodeLine{331             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{332                 choice = 1;}
+\DoxyCodeLine{333             \}}
+\DoxyCodeLine{334             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{335         \}}
+\DoxyCodeLine{336         \textcolor{keywordflow}{if} (elapsedNDT < this-\/>\mbox{\hyperlink{class_d_d_m_a0821be8a65988df0004b4d9f4239a020}{nonDecisionTime}} / timeStep) \{}
+\DoxyCodeLine{337             mean = 0;}
+\DoxyCodeLine{338             elapsedNDT += 1;}
+\DoxyCodeLine{339         \}}
+\DoxyCodeLine{340         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{341             mean = this-\/>\mbox{\hyperlink{class_d_d_m_a15511d3cf0f7deb5de073dcdfd09bcc6}{d}} * (ValueLeft -\/ ValueRight);}
+\DoxyCodeLine{342         \}}
+\DoxyCodeLine{343         std::normal\_distribution<float> dist(mean, this-\/>\mbox{\hyperlink{class_d_d_m_a17570a6c2378cdb363437f39a5fa3f00}{sigma}});}
+\DoxyCodeLine{344         \textcolor{keywordtype}{float} inc = dist(gen);}
+\DoxyCodeLine{345         RDV += inc;}
+\DoxyCodeLine{346         RDVs.push\_back(RDV);}
+\DoxyCodeLine{347         time += 1;}
+\DoxyCodeLine{348     \}}
+\DoxyCodeLine{349     \mbox{\hyperlink{class_d_d_m_trial}{DDMTrial}} trial = \mbox{\hyperlink{class_d_d_m_trial}{DDMTrial}}(RT, choice, ValueLeft, ValueRight);}
+\DoxyCodeLine{350     trial.\mbox{\hyperlink{class_d_d_m_trial_aa2f7a89ec8820e74e6fa9af95222a8d7}{RDVs}} = RDVs;}
+\DoxyCodeLine{351     trial.\mbox{\hyperlink{class_d_d_m_trial_a6fd7d06bba895acb5cf3627343915aac}{timeStep}} = timeStep;}
+\DoxyCodeLine{352     \textcolor{keywordflow}{return} trial;}
+\DoxyCodeLine{353 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_d_d_m_a0293f051d7889ee014fb55c4939e4783}\label{class_d_d_m_a0293f051d7889ee014fb55c4939e4783}} 
+\index{DDM@{DDM}!barrier@{barrier}}
+\index{barrier@{barrier}!DDM@{DDM}}
+\doxysubsubsection{\texorpdfstring{barrier}{barrier}}
+{\footnotesize\ttfamily float DDM\+::barrier}
+
+
+
+Definition at line 26 of file ddm.\+h.
+
+\mbox{\Hypertarget{class_d_d_m_a0cecc28e691846bce6dccb02f34aef07}\label{class_d_d_m_a0cecc28e691846bce6dccb02f34aef07}} 
+\index{DDM@{DDM}!bias@{bias}}
+\index{bias@{bias}!DDM@{DDM}}
+\doxysubsubsection{\texorpdfstring{bias}{bias}}
+{\footnotesize\ttfamily float DDM\+::bias}
+
+
+
+Definition at line 28 of file ddm.\+h.
+
+\mbox{\Hypertarget{class_d_d_m_a15511d3cf0f7deb5de073dcdfd09bcc6}\label{class_d_d_m_a15511d3cf0f7deb5de073dcdfd09bcc6}} 
+\index{DDM@{DDM}!d@{d}}
+\index{d@{d}!DDM@{DDM}}
+\doxysubsubsection{\texorpdfstring{d}{d}}
+{\footnotesize\ttfamily float DDM\+::d}
+
+
+
+Definition at line 24 of file ddm.\+h.
+
+\mbox{\Hypertarget{class_d_d_m_a0821be8a65988df0004b4d9f4239a020}\label{class_d_d_m_a0821be8a65988df0004b4d9f4239a020}} 
+\index{DDM@{DDM}!nonDecisionTime@{nonDecisionTime}}
+\index{nonDecisionTime@{nonDecisionTime}!DDM@{DDM}}
+\doxysubsubsection{\texorpdfstring{nonDecisionTime}{nonDecisionTime}}
+{\footnotesize\ttfamily unsigned int DDM\+::non\+Decision\+Time}
+
+
+
+Definition at line 27 of file ddm.\+h.
+
+\mbox{\Hypertarget{class_d_d_m_a17570a6c2378cdb363437f39a5fa3f00}\label{class_d_d_m_a17570a6c2378cdb363437f39a5fa3f00}} 
+\index{DDM@{DDM}!sigma@{sigma}}
+\index{sigma@{sigma}!DDM@{DDM}}
+\doxysubsubsection{\texorpdfstring{sigma}{sigma}}
+{\footnotesize\ttfamily float DDM\+::sigma}
+
+
+
+Definition at line 25 of file ddm.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{ddm_8h}{ddm.\+h}}\item 
+lib/\mbox{\hyperlink{ddm_8cpp}{ddm.\+cpp}}\end{DoxyCompactItemize}

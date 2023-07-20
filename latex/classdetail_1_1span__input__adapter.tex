@@ -1,0 +1,82 @@
+\hypertarget{classdetail_1_1span__input__adapter}{}\doxysection{detail\+::span\+\_\+input\+\_\+adapter Class Reference}
+\label{classdetail_1_1span__input__adapter}\index{detail::span\_input\_adapter@{detail::span\_input\_adapter}}
+
+
+{\ttfamily \#include $<$json.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename CharT , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+pointer$<$ Char\+T $>$\+::value \&\&std\+::is\+\_\+integral$<$ typename std\+::remove\+\_\+pointer$<$ Char\+T $>$\+::type $>$\+::value \&\&sizeof(typename std\+::remove\+\_\+pointer$<$ Char\+T $>$\+::type)==1, int $>$\+::type  = 0$>$ }\\\mbox{\hyperlink{classdetail_1_1span__input__adapter_a100cb2415f6ad4fb60e3848569ed20dc}{span\+\_\+input\+\_\+adapter}} (CharT b, std\+::size\+\_\+t l)
+\item 
+{\footnotesize template$<$class Iterator\+Type , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+same$<$ typename iterator\+\_\+traits$<$ Iterator\+Type $>$\+::iterator\+\_\+category, std\+::random\+\_\+access\+\_\+iterator\+\_\+tag $>$\+::value, int $>$\+::type  = 0$>$ }\\\mbox{\hyperlink{classdetail_1_1span__input__adapter_a8f3a694242ffd71722d292ffa9156e79}{span\+\_\+input\+\_\+adapter}} (Iterator\+Type first, Iterator\+Type last)
+\item 
+\mbox{\hyperlink{namespacedetail_a809ec57ce6ae319867de3f432b84d2e0}{contiguous\+\_\+bytes\+\_\+input\+\_\+adapter}} \&\& \mbox{\hyperlink{classdetail_1_1span__input__adapter_af0ab348e01ae00da4067cba95d0beb64}{get}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 6538 of file json.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdetail_1_1span__input__adapter_a100cb2415f6ad4fb60e3848569ed20dc}\label{classdetail_1_1span__input__adapter_a100cb2415f6ad4fb60e3848569ed20dc}} 
+\index{detail::span\_input\_adapter@{detail::span\_input\_adapter}!span\_input\_adapter@{span\_input\_adapter}}
+\index{span\_input\_adapter@{span\_input\_adapter}!detail::span\_input\_adapter@{detail::span\_input\_adapter}}
+\doxysubsubsection{\texorpdfstring{span\_input\_adapter()}{span\_input\_adapter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename CharT , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+pointer$<$ Char\+T $>$\+::value \&\&std\+::is\+\_\+integral$<$ typename std\+::remove\+\_\+pointer$<$ Char\+T $>$\+::type $>$\+::value \&\&sizeof(typename std\+::remove\+\_\+pointer$<$ Char\+T $>$\+::type)==1, int $>$\+::type  = 0$>$ \\
+detail\+::span\+\_\+input\+\_\+adapter\+::span\+\_\+input\+\_\+adapter (\begin{DoxyParamCaption}\item[{CharT}]{b,  }\item[{std\+::size\+\_\+t}]{l }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 6547 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{6548         : ia(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(b), \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(b) + l) \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classdetail_1_1span__input__adapter_a8f3a694242ffd71722d292ffa9156e79}\label{classdetail_1_1span__input__adapter_a8f3a694242ffd71722d292ffa9156e79}} 
+\index{detail::span\_input\_adapter@{detail::span\_input\_adapter}!span\_input\_adapter@{span\_input\_adapter}}
+\index{span\_input\_adapter@{span\_input\_adapter}!detail::span\_input\_adapter@{detail::span\_input\_adapter}}
+\doxysubsubsection{\texorpdfstring{span\_input\_adapter()}{span\_input\_adapter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class Iterator\+Type , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+same$<$ typename iterator\+\_\+traits$<$ Iterator\+Type $>$\+::iterator\+\_\+category, std\+::random\+\_\+access\+\_\+iterator\+\_\+tag $>$\+::value, int $>$\+::type  = 0$>$ \\
+detail\+::span\+\_\+input\+\_\+adapter\+::span\+\_\+input\+\_\+adapter (\begin{DoxyParamCaption}\item[{Iterator\+Type}]{first,  }\item[{Iterator\+Type}]{last }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 6554 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{6555         : ia(\mbox{\hyperlink{namespacedetail_a94ba526ee2dcd8db43be52cb621c1de3}{input\_adapter}}(first, last)) \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classdetail_1_1span__input__adapter_af0ab348e01ae00da4067cba95d0beb64}\label{classdetail_1_1span__input__adapter_af0ab348e01ae00da4067cba95d0beb64}} 
+\index{detail::span\_input\_adapter@{detail::span\_input\_adapter}!get@{get}}
+\index{get@{get}!detail::span\_input\_adapter@{detail::span\_input\_adapter}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacedetail_a809ec57ce6ae319867de3f432b84d2e0}{contiguous\+\_\+bytes\+\_\+input\+\_\+adapter}}\&\& detail\+::span\+\_\+input\+\_\+adapter\+::get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 6557 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{6558     \{}
+\DoxyCodeLine{6559         \textcolor{keywordflow}{return} std::move(ia); \textcolor{comment}{// NOLINT(hicpp-\/move-\/const-\/arg,performance-\/move-\/const-\/arg)}}
+\DoxyCodeLine{6560     \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/nlohmann/\mbox{\hyperlink{json_8hpp}{json.\+hpp}}\end{DoxyCompactItemize}

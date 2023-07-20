@@ -1,0 +1,47 @@
+\hypertarget{structdetail_1_1external__constructor_3_01value__t_1_1number__integer_01_4}{}\doxysection{detail\+::external\+\_\+constructor$<$ value\+\_\+t\+::number\+\_\+integer $>$ Struct Reference}
+\label{structdetail_1_1external__constructor_3_01value__t_1_1number__integer_01_4}\index{detail::external\_constructor$<$ value\_t::number\_integer $>$@{detail::external\_constructor$<$ value\_t::number\_integer $>$}}
+
+
+{\ttfamily \#include $<$json.\+hpp$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type $>$ }\\static void \mbox{\hyperlink{structdetail_1_1external__constructor_3_01value__t_1_1number__integer_01_4_a1f695d898af799e2e86cf862e95b8b71}{construct}} (Basic\+Json\+Type \&j, typename Basic\+Json\+Type\+::number\+\_\+integer\+\_\+t val) noexcept
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 5449 of file json.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structdetail_1_1external__constructor_3_01value__t_1_1number__integer_01_4_a1f695d898af799e2e86cf862e95b8b71}\label{structdetail_1_1external__constructor_3_01value__t_1_1number__integer_01_4_a1f695d898af799e2e86cf862e95b8b71}} 
+\index{detail::external\_constructor$<$ value\_t::number\_integer $>$@{detail::external\_constructor$<$ value\_t::number\_integer $>$}!construct@{construct}}
+\index{construct@{construct}!detail::external\_constructor$<$ value\_t::number\_integer $>$@{detail::external\_constructor$<$ value\_t::number\_integer $>$}}
+\doxysubsubsection{\texorpdfstring{construct()}{construct()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+static void \mbox{\hyperlink{structdetail_1_1external__constructor}{detail\+::external\+\_\+constructor}}$<$ \mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632a5763da164f8659d94a56e29df64b4bcc}{value\+\_\+t\+::number\+\_\+integer}} $>$\+::construct (\begin{DoxyParamCaption}\item[{Basic\+Json\+Type \&}]{j,  }\item[{typename Basic\+Json\+Type\+::number\+\_\+integer\+\_\+t}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 5452 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{5453     \{}
+\DoxyCodeLine{5454         j.m\_data.m\_value.destroy(j.m\_data.m\_type);}
+\DoxyCodeLine{5455         j.m\_data.m\_type = \mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632a5763da164f8659d94a56e29df64b4bcc}{value\_t::number\_integer}};}
+\DoxyCodeLine{5456         j.m\_data.m\_value = val;}
+\DoxyCodeLine{5457         j.assert\_invariant();}
+\DoxyCodeLine{5458     \}}
+
+\end{DoxyCode}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/nlohmann/\mbox{\hyperlink{json_8hpp}{json.\+hpp}}\end{DoxyCompactItemize}

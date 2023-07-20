@@ -1,0 +1,882 @@
+\hypertarget{classdetail_1_1serializer}{}\doxysection{detail\+::serializer$<$ Basic\+Json\+Type $>$ Class Template Reference}
+\label{classdetail_1_1serializer}\index{detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}}
+
+
+{\ttfamily \#include $<$json.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdetail_1_1serializer_a3d025f3aa1e8661554858b8aaab08c3b}{serializer}} (\mbox{\hyperlink{namespacedetail_a160eb5d333fe01b259af32d3d4798a7b}{output\+\_\+adapter\+\_\+t}}$<$ char $>$ s, const char ichar, \mbox{\hyperlink{namespacedetail_abe7cfa1fd8fa706ff4392bff9d1a8298}{error\+\_\+handler\+\_\+t}} error\+\_\+handler\+\_\+=\mbox{\hyperlink{namespacedetail_abe7cfa1fd8fa706ff4392bff9d1a8298a2133fd717402a7966ee88d06f9e0b792}{error\+\_\+handler\+\_\+t\+::strict}})
+\item 
+\mbox{\hyperlink{classdetail_1_1serializer_aee27a802605bff8959928c98c2d81e8f}{serializer}} (const \mbox{\hyperlink{classdetail_1_1serializer}{serializer}} \&)=delete
+\item 
+\mbox{\hyperlink{classdetail_1_1serializer}{serializer}} \& \mbox{\hyperlink{classdetail_1_1serializer_a8e880742faf02f6a513239c6441cb5af}{operator=}} (const \mbox{\hyperlink{classdetail_1_1serializer}{serializer}} \&)=delete
+\item 
+\mbox{\hyperlink{classdetail_1_1serializer_af84deb8c14f27012063e02ce6b7a9c86}{serializer}} (\mbox{\hyperlink{classdetail_1_1serializer}{serializer}} \&\&)=delete
+\item 
+\mbox{\hyperlink{classdetail_1_1serializer}{serializer}} \& \mbox{\hyperlink{classdetail_1_1serializer_a01d644f10c6d827d1a0e3c23b609902a}{operator=}} (\mbox{\hyperlink{classdetail_1_1serializer}{serializer}} \&\&)=delete
+\item 
+\mbox{\hyperlink{classdetail_1_1serializer_a6da545edc260d2582353b5cd58964a20}{$\sim$serializer}} ()=default
+\item 
+void \mbox{\hyperlink{classdetail_1_1serializer_ae73c1bac64bcc810923b9f1261af8b09}{dump}} (const Basic\+Json\+Type \&val, const bool pretty\+\_\+print, const bool \mbox{\hyperlink{classdetail_1_1serializer_a414071fcc39c97fa8e64455a222d8d08}{ensure\+\_\+ascii}}, const unsigned int indent\+\_\+step, const unsigned int current\+\_\+indent=0)
+\begin{DoxyCompactList}\small\item\em internal implementation of the serialization function \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classdetail_1_1serializer_a491abc2de2affbc9c3490bde110b7f07}{for}} (std\+::size\+\_\+t i=0;i$<$ s.\+size();++i)
+\item 
+\mbox{\hyperlink{classdetail_1_1serializer_a167710da81ad08541c61bc5640d15688}{if}} (\mbox{\hyperlink{json_8hpp_a355f2770653ff7bdd5c74b204b5a3ad0}{JSON\+\_\+\+HEDLEY\+\_\+\+LIKELY}}(\mbox{\hyperlink{classdetail_1_1serializer_a2db3d61cfc616f83763b6d4a03d0d772}{state}}==UTF8\+\_\+\+ACCEPT))
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{json_8hpp_a2cf645f34610e7f7d6e09ab88a2ab917}{JSON\+\_\+\+PRIVATE\+\_\+\+UNLESS\+\_\+\+TESTED}} \mbox{\hyperlink{classdetail_1_1serializer_aae0aca92f2f35e72aac9c7d22e01312b}{\+\_\+\+\_\+pad0\+\_\+\+\_\+}}\+: void dump\+\_\+escaped(const string\+\_\+t\& s
+\item 
+\mbox{\hyperlink{json_8hpp_a2cf645f34610e7f7d6e09ab88a2ab917}{JSON\+\_\+\+PRIVATE\+\_\+\+UNLESS\+\_\+\+TESTED}} const bool \mbox{\hyperlink{classdetail_1_1serializer_a414071fcc39c97fa8e64455a222d8d08}{ensure\+\_\+ascii}}
+\item 
+std\+::uint8\+\_\+t \mbox{\hyperlink{classdetail_1_1serializer_a2db3d61cfc616f83763b6d4a03d0d772}{state}} = UTF8\+\_\+\+ACCEPT
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{classdetail_1_1serializer_ae08644483db303ce3d1580332ff0a458}{bytes}} = 0
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{classdetail_1_1serializer_a3c23eca4cc58a835a0a08ff580dcaae0}{bytes\+\_\+after\+\_\+last\+\_\+accept}} = 0
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{classdetail_1_1serializer_a44a05646a5ac7caec54f97ba17cb893b}{undumped\+\_\+chars}} = 0
+\item 
+\mbox{\hyperlink{classdetail_1_1serializer_a1cef7f1e504d729887dc828910497cd2}{else}}
+\item 
+std\+::array$<$ char, 64 $>$ \mbox{\hyperlink{classdetail_1_1serializer_ace18a55b8304310fee309d31e54a3e27}{number\+\_\+buffer}} \{\{\}\}
+\begin{DoxyCompactList}\small\item\em a (hopefully) large enough character buffer \end{DoxyCompactList}\item 
+const std\+::lconv $\ast$ \mbox{\hyperlink{classdetail_1_1serializer_a80ca90565eec446d377ab65a023297ab}{loc}} = nullptr
+\begin{DoxyCompactList}\small\item\em the locale \end{DoxyCompactList}\item 
+const char \mbox{\hyperlink{classdetail_1_1serializer_a5b75b99511362e4e5d011c8a961e96bb}{thousands\+\_\+sep}} = \textquotesingle{}\textbackslash{}0\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em the locale\textquotesingle{}s thousand separator character \end{DoxyCompactList}\item 
+const char \mbox{\hyperlink{classdetail_1_1serializer_a5f01fcbf64cb1e5f36d8853ebcd96412}{decimal\+\_\+point}} = \textquotesingle{}\textbackslash{}0\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em the locale\textquotesingle{}s decimal point character \end{DoxyCompactList}\item 
+std\+::array$<$ char, 512 $>$ \mbox{\hyperlink{classdetail_1_1serializer_a27a61728ed0fbc65de009286531a6e70}{string\+\_\+buffer}} \{\{\}\}
+\begin{DoxyCompactList}\small\item\em string buffer \end{DoxyCompactList}\item 
+const char \mbox{\hyperlink{classdetail_1_1serializer_acf6f783e3299d8b18ce4b5d9746f39f6}{indent\+\_\+char}}
+\begin{DoxyCompactList}\small\item\em the indentation character \end{DoxyCompactList}\item 
+string\+\_\+t \mbox{\hyperlink{classdetail_1_1serializer_a7f6f1d36859514ab42984deb28d2521e}{indent\+\_\+string}}
+\begin{DoxyCompactList}\small\item\em the indentation string \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{namespacedetail_abe7cfa1fd8fa706ff4392bff9d1a8298}{error\+\_\+handler\+\_\+t}} \mbox{\hyperlink{classdetail_1_1serializer_a79d25c7416dd71a0db8b10988ec360f7}{error\+\_\+handler}}
+\begin{DoxyCompactList}\small\item\em error\+\_\+handler how to react on decoding errors \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Basic\+Json\+Type$>$\newline
+class detail\+::serializer$<$ Basic\+Json\+Type $>$}
+
+
+
+Definition at line 17973 of file json.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdetail_1_1serializer_a3d025f3aa1e8661554858b8aaab08c3b}\label{classdetail_1_1serializer_a3d025f3aa1e8661554858b8aaab08c3b}} 
+\index{detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}!serializer@{serializer}}
+\index{serializer@{serializer}!detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{serializer()}{serializer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+\mbox{\hyperlink{classdetail_1_1serializer}{detail\+::serializer}}$<$ Basic\+Json\+Type $>$\+::\mbox{\hyperlink{classdetail_1_1serializer}{serializer}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacedetail_a160eb5d333fe01b259af32d3d4798a7b}{output\+\_\+adapter\+\_\+t}}$<$ char $>$}]{s,  }\item[{const char}]{ichar,  }\item[{\mbox{\hyperlink{namespacedetail_abe7cfa1fd8fa706ff4392bff9d1a8298}{error\+\_\+handler\+\_\+t}}}]{error\+\_\+handler\+\_\+ = {\ttfamily \mbox{\hyperlink{namespacedetail_abe7cfa1fd8fa706ff4392bff9d1a8298a2133fd717402a7966ee88d06f9e0b792}{error\+\_\+handler\+\_\+t\+::strict}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em s} & output stream to serialize to \\
+\hline
+\mbox{\texttt{ in}}  & {\em ichar} & indentation character to use \\
+\hline
+\mbox{\texttt{ in}}  & {\em error\+\_\+handler\+\_\+} & how to react on decoding errors \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 17989 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{17991         : o(std::move(s))}
+\DoxyCodeLine{17992         , \mbox{\hyperlink{classdetail_1_1serializer_a80ca90565eec446d377ab65a023297ab}{loc}}(std::localeconv())}
+\DoxyCodeLine{17993         , \mbox{\hyperlink{classdetail_1_1serializer_a5b75b99511362e4e5d011c8a961e96bb}{thousands\_sep}}(\mbox{\hyperlink{classdetail_1_1serializer_a80ca90565eec446d377ab65a023297ab}{loc}}-\/>thousands\_sep == \textcolor{keyword}{nullptr} ? \textcolor{charliteral}{'\(\backslash\)0'} : std::char\_traits<char>::to\_char\_type(* (\mbox{\hyperlink{classdetail_1_1serializer_a80ca90565eec446d377ab65a023297ab}{loc}}-\/>thousands\_sep)))}
+\DoxyCodeLine{17994         , \mbox{\hyperlink{classdetail_1_1serializer_a5f01fcbf64cb1e5f36d8853ebcd96412}{decimal\_point}}(\mbox{\hyperlink{classdetail_1_1serializer_a80ca90565eec446d377ab65a023297ab}{loc}}-\/>decimal\_point == \textcolor{keyword}{nullptr} ? \textcolor{charliteral}{'\(\backslash\)0'} : std::char\_traits<char>::to\_char\_type(* (\mbox{\hyperlink{classdetail_1_1serializer_a80ca90565eec446d377ab65a023297ab}{loc}}-\/>decimal\_point)))}
+\DoxyCodeLine{17995         , \mbox{\hyperlink{classdetail_1_1serializer_acf6f783e3299d8b18ce4b5d9746f39f6}{indent\_char}}(ichar)}
+\DoxyCodeLine{17996         , \mbox{\hyperlink{classdetail_1_1serializer_a7f6f1d36859514ab42984deb28d2521e}{indent\_string}}(512, \mbox{\hyperlink{classdetail_1_1serializer_acf6f783e3299d8b18ce4b5d9746f39f6}{indent\_char}})}
+\DoxyCodeLine{17997         , \mbox{\hyperlink{classdetail_1_1serializer_a79d25c7416dd71a0db8b10988ec360f7}{error\_handler}}(error\_handler\_)}
+\DoxyCodeLine{17998     \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classdetail_1_1serializer_aee27a802605bff8959928c98c2d81e8f}\label{classdetail_1_1serializer_aee27a802605bff8959928c98c2d81e8f}} 
+\index{detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}!serializer@{serializer}}
+\index{serializer@{serializer}!detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{serializer()}{serializer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+\mbox{\hyperlink{classdetail_1_1serializer}{detail\+::serializer}}$<$ Basic\+Json\+Type $>$\+::\mbox{\hyperlink{classdetail_1_1serializer}{serializer}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classdetail_1_1serializer}{serializer}}$<$ Basic\+Json\+Type $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classdetail_1_1serializer_af84deb8c14f27012063e02ce6b7a9c86}\label{classdetail_1_1serializer_af84deb8c14f27012063e02ce6b7a9c86}} 
+\index{detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}!serializer@{serializer}}
+\index{serializer@{serializer}!detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{serializer()}{serializer()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+\mbox{\hyperlink{classdetail_1_1serializer}{detail\+::serializer}}$<$ Basic\+Json\+Type $>$\+::\mbox{\hyperlink{classdetail_1_1serializer}{serializer}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdetail_1_1serializer}{serializer}}$<$ Basic\+Json\+Type $>$ \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classdetail_1_1serializer_a6da545edc260d2582353b5cd58964a20}\label{classdetail_1_1serializer_a6da545edc260d2582353b5cd58964a20}} 
+\index{detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}!````~serializer@{$\sim$serializer}}
+\index{````~serializer@{$\sim$serializer}!detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$serializer()}{~serializer()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+\mbox{\hyperlink{classdetail_1_1serializer}{detail\+::serializer}}$<$ Basic\+Json\+Type $>$\+::$\sim$\mbox{\hyperlink{classdetail_1_1serializer}{serializer}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classdetail_1_1serializer_ae73c1bac64bcc810923b9f1261af8b09}\label{classdetail_1_1serializer_ae73c1bac64bcc810923b9f1261af8b09}} 
+\index{detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}!dump@{dump}}
+\index{dump@{dump}!detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{dump()}{dump()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+void \mbox{\hyperlink{classdetail_1_1serializer}{detail\+::serializer}}$<$ Basic\+Json\+Type $>$\+::dump (\begin{DoxyParamCaption}\item[{const Basic\+Json\+Type \&}]{val,  }\item[{const bool}]{pretty\+\_\+print,  }\item[{const bool}]{ensure\+\_\+ascii,  }\item[{const unsigned int}]{indent\+\_\+step,  }\item[{const unsigned int}]{current\+\_\+indent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+internal implementation of the serialization function 
+
+This function is called by the public member function dump and organizes the serialization internally. The indentation level is propagated as additional parameter. In case of arrays and objects, the function is called recursively.
+
+
+\begin{DoxyItemize}
+\item strings and object keys are escaped using {\ttfamily escape\+\_\+string()}
+\item integer numbers are converted implicitly via {\ttfamily operator$<$$<$}
+\item floating-\/point numbers are converted to a string using {\ttfamily \char`\"{}\%g\char`\"{}} format
+\item binary values are serialized as objects containing the subtype and the byte array
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em val} & value to serialize \\
+\hline
+\mbox{\texttt{ in}}  & {\em pretty\+\_\+print} & whether the output shall be pretty-\/printed \\
+\hline
+\mbox{\texttt{ in}}  & {\em ensure\+\_\+ascii} & If {\itshape ensure\+\_\+ascii} is true, all non-\/\+ASCII characters in the output are escaped with {\ttfamily \textbackslash{}u\+XXXX} sequences, and the result consists of ASCII characters only. \\
+\hline
+\mbox{\texttt{ in}}  & {\em indent\+\_\+step} & the indent level \\
+\hline
+\mbox{\texttt{ in}}  & {\em current\+\_\+indent} & the current indent level (only used internally) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 18029 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{18034     \{}
+\DoxyCodeLine{18035         \textcolor{keywordflow}{switch} (val.m\_data.m\_type)}
+\DoxyCodeLine{18036         \{}
+\DoxyCodeLine{18037             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632aa8cfde6331bd59eb2ac96f8911c4b666}{value\_t::object}}:}
+\DoxyCodeLine{18038             \{}
+\DoxyCodeLine{18039                 \textcolor{keywordflow}{if} (val.m\_data.m\_value.object-\/>empty())}
+\DoxyCodeLine{18040                 \{}
+\DoxyCodeLine{18041                     o-\/>write\_characters(\textcolor{stringliteral}{"{}\{\}"{}}, 2);}
+\DoxyCodeLine{18042                     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{18043                 \}}
+\DoxyCodeLine{18044 }
+\DoxyCodeLine{18045                 \textcolor{keywordflow}{if} (pretty\_print)}
+\DoxyCodeLine{18046                 \{}
+\DoxyCodeLine{18047                     o-\/>write\_characters(\textcolor{stringliteral}{"{}\{\(\backslash\)n"{}}, 2);}
+\DoxyCodeLine{18048 }
+\DoxyCodeLine{18049                     \textcolor{comment}{// variable to hold indentation for recursive calls}}
+\DoxyCodeLine{18050                     \textcolor{keyword}{const} \textcolor{keyword}{auto} new\_indent = current\_indent + indent\_step;}
+\DoxyCodeLine{18051                     \textcolor{keywordflow}{if} (\mbox{\hyperlink{json_8hpp_a8df7de76ab3c9445f46f6994ec205bcd}{JSON\_HEDLEY\_UNLIKELY}}(\mbox{\hyperlink{classdetail_1_1serializer_a7f6f1d36859514ab42984deb28d2521e}{indent\_string}}.size() < new\_indent))}
+\DoxyCodeLine{18052                     \{}
+\DoxyCodeLine{18053                         \mbox{\hyperlink{classdetail_1_1serializer_a7f6f1d36859514ab42984deb28d2521e}{indent\_string}}.resize(\mbox{\hyperlink{classdetail_1_1serializer_a7f6f1d36859514ab42984deb28d2521e}{indent\_string}}.size() * 2, \textcolor{charliteral}{' '});}
+\DoxyCodeLine{18054                     \}}
+\DoxyCodeLine{18055 }
+\DoxyCodeLine{18056                     \textcolor{comment}{// first n-\/1 elements}}
+\DoxyCodeLine{18057                     \textcolor{keyword}{auto} i = val.m\_data.m\_value.object-\/>cbegin();}
+\DoxyCodeLine{18058                     \textcolor{keywordflow}{for} (std::size\_t cnt = 0; cnt < val.m\_data.m\_value.object-\/>size() -\/ 1; ++cnt, ++i)}
+\DoxyCodeLine{18059                     \{}
+\DoxyCodeLine{18060                         o-\/>write\_characters(\mbox{\hyperlink{classdetail_1_1serializer_a7f6f1d36859514ab42984deb28d2521e}{indent\_string}}.c\_str(), new\_indent);}
+\DoxyCodeLine{18061                         o-\/>write\_character(\textcolor{charliteral}{'\(\backslash\)"{}'});}
+\DoxyCodeLine{18062                         dump\_escaped(i-\/>first, \mbox{\hyperlink{classdetail_1_1serializer_a414071fcc39c97fa8e64455a222d8d08}{ensure\_ascii}});}
+\DoxyCodeLine{18063                         o-\/>write\_characters(\textcolor{stringliteral}{"{}\(\backslash\)"{}: "{}}, 3);}
+\DoxyCodeLine{18064                         \mbox{\hyperlink{classdetail_1_1serializer_ae73c1bac64bcc810923b9f1261af8b09}{dump}}(i-\/>second, \textcolor{keyword}{true}, \mbox{\hyperlink{classdetail_1_1serializer_a414071fcc39c97fa8e64455a222d8d08}{ensure\_ascii}}, indent\_step, new\_indent);}
+\DoxyCodeLine{18065                         o-\/>write\_characters(\textcolor{stringliteral}{"{},\(\backslash\)n"{}}, 2);}
+\DoxyCodeLine{18066                     \}}
+\DoxyCodeLine{18067 }
+\DoxyCodeLine{18068                     \textcolor{comment}{// last element}}
+\DoxyCodeLine{18069                     \mbox{\hyperlink{json_8hpp_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(i != val.m\_data.m\_value.object-\/>cend());}
+\DoxyCodeLine{18070                     \mbox{\hyperlink{json_8hpp_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(std::next(i) == val.m\_data.m\_value.object-\/>cend());}
+\DoxyCodeLine{18071                     o-\/>write\_characters(\mbox{\hyperlink{classdetail_1_1serializer_a7f6f1d36859514ab42984deb28d2521e}{indent\_string}}.c\_str(), new\_indent);}
+\DoxyCodeLine{18072                     o-\/>write\_character(\textcolor{charliteral}{'\(\backslash\)"{}'});}
+\DoxyCodeLine{18073                     dump\_escaped(i-\/>first, \mbox{\hyperlink{classdetail_1_1serializer_a414071fcc39c97fa8e64455a222d8d08}{ensure\_ascii}});}
+\DoxyCodeLine{18074                     o-\/>write\_characters(\textcolor{stringliteral}{"{}\(\backslash\)"{}: "{}}, 3);}
+\DoxyCodeLine{18075                     \mbox{\hyperlink{classdetail_1_1serializer_ae73c1bac64bcc810923b9f1261af8b09}{dump}}(i-\/>second, \textcolor{keyword}{true}, \mbox{\hyperlink{classdetail_1_1serializer_a414071fcc39c97fa8e64455a222d8d08}{ensure\_ascii}}, indent\_step, new\_indent);}
+\DoxyCodeLine{18076 }
+\DoxyCodeLine{18077                     o-\/>write\_character(\textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{18078                     o-\/>write\_characters(\mbox{\hyperlink{classdetail_1_1serializer_a7f6f1d36859514ab42984deb28d2521e}{indent\_string}}.c\_str(), current\_indent);}
+\DoxyCodeLine{18079                     o-\/>write\_character(\textcolor{charliteral}{'\}'});}
+\DoxyCodeLine{18080                 \}}
+\DoxyCodeLine{18081                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{18082                 \{}
+\DoxyCodeLine{18083                     o-\/>write\_character(\textcolor{charliteral}{'\{'});}
+\DoxyCodeLine{18084 }
+\DoxyCodeLine{18085                     \textcolor{comment}{// first n-\/1 elements}}
+\DoxyCodeLine{18086                     \textcolor{keyword}{auto} i = val.m\_data.m\_value.object-\/>cbegin();}
+\DoxyCodeLine{18087                     \textcolor{keywordflow}{for} (std::size\_t cnt = 0; cnt < val.m\_data.m\_value.object-\/>size() -\/ 1; ++cnt, ++i)}
+\DoxyCodeLine{18088                     \{}
+\DoxyCodeLine{18089                         o-\/>write\_character(\textcolor{charliteral}{'\(\backslash\)"{}'});}
+\DoxyCodeLine{18090                         dump\_escaped(i-\/>first, \mbox{\hyperlink{classdetail_1_1serializer_a414071fcc39c97fa8e64455a222d8d08}{ensure\_ascii}});}
+\DoxyCodeLine{18091                         o-\/>write\_characters(\textcolor{stringliteral}{"{}\(\backslash\)"{}:"{}}, 2);}
+\DoxyCodeLine{18092                         \mbox{\hyperlink{classdetail_1_1serializer_ae73c1bac64bcc810923b9f1261af8b09}{dump}}(i-\/>second, \textcolor{keyword}{false}, \mbox{\hyperlink{classdetail_1_1serializer_a414071fcc39c97fa8e64455a222d8d08}{ensure\_ascii}}, indent\_step, current\_indent);}
+\DoxyCodeLine{18093                         o-\/>write\_character(\textcolor{charliteral}{','});}
+\DoxyCodeLine{18094                     \}}
+\DoxyCodeLine{18095 }
+\DoxyCodeLine{18096                     \textcolor{comment}{// last element}}
+\DoxyCodeLine{18097                     \mbox{\hyperlink{json_8hpp_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(i != val.m\_data.m\_value.object-\/>cend());}
+\DoxyCodeLine{18098                     \mbox{\hyperlink{json_8hpp_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(std::next(i) == val.m\_data.m\_value.object-\/>cend());}
+\DoxyCodeLine{18099                     o-\/>write\_character(\textcolor{charliteral}{'\(\backslash\)"{}'});}
+\DoxyCodeLine{18100                     dump\_escaped(i-\/>first, \mbox{\hyperlink{classdetail_1_1serializer_a414071fcc39c97fa8e64455a222d8d08}{ensure\_ascii}});}
+\DoxyCodeLine{18101                     o-\/>write\_characters(\textcolor{stringliteral}{"{}\(\backslash\)"{}:"{}}, 2);}
+\DoxyCodeLine{18102                     \mbox{\hyperlink{classdetail_1_1serializer_ae73c1bac64bcc810923b9f1261af8b09}{dump}}(i-\/>second, \textcolor{keyword}{false}, \mbox{\hyperlink{classdetail_1_1serializer_a414071fcc39c97fa8e64455a222d8d08}{ensure\_ascii}}, indent\_step, current\_indent);}
+\DoxyCodeLine{18103 }
+\DoxyCodeLine{18104                     o-\/>write\_character(\textcolor{charliteral}{'\}'});}
+\DoxyCodeLine{18105                 \}}
+\DoxyCodeLine{18106 }
+\DoxyCodeLine{18107                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{18108             \}}
+\DoxyCodeLine{18109 }
+\DoxyCodeLine{18110             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632af1f713c9e000f5d3f280adbd124df4f5}{value\_t::array}}:}
+\DoxyCodeLine{18111             \{}
+\DoxyCodeLine{18112                 \textcolor{keywordflow}{if} (val.m\_data.m\_value.array-\/>empty())}
+\DoxyCodeLine{18113                 \{}
+\DoxyCodeLine{18114                     o-\/>write\_characters(\textcolor{stringliteral}{"{}[]"{}}, 2);}
+\DoxyCodeLine{18115                     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{18116                 \}}
+\DoxyCodeLine{18117 }
+\DoxyCodeLine{18118                 \textcolor{keywordflow}{if} (pretty\_print)}
+\DoxyCodeLine{18119                 \{}
+\DoxyCodeLine{18120                     o-\/>write\_characters(\textcolor{stringliteral}{"{}[\(\backslash\)n"{}}, 2);}
+\DoxyCodeLine{18121 }
+\DoxyCodeLine{18122                     \textcolor{comment}{// variable to hold indentation for recursive calls}}
+\DoxyCodeLine{18123                     \textcolor{keyword}{const} \textcolor{keyword}{auto} new\_indent = current\_indent + indent\_step;}
+\DoxyCodeLine{18124                     \textcolor{keywordflow}{if} (\mbox{\hyperlink{json_8hpp_a8df7de76ab3c9445f46f6994ec205bcd}{JSON\_HEDLEY\_UNLIKELY}}(\mbox{\hyperlink{classdetail_1_1serializer_a7f6f1d36859514ab42984deb28d2521e}{indent\_string}}.size() < new\_indent))}
+\DoxyCodeLine{18125                     \{}
+\DoxyCodeLine{18126                         \mbox{\hyperlink{classdetail_1_1serializer_a7f6f1d36859514ab42984deb28d2521e}{indent\_string}}.resize(\mbox{\hyperlink{classdetail_1_1serializer_a7f6f1d36859514ab42984deb28d2521e}{indent\_string}}.size() * 2, \textcolor{charliteral}{' '});}
+\DoxyCodeLine{18127                     \}}
+\DoxyCodeLine{18128 }
+\DoxyCodeLine{18129                     \textcolor{comment}{// first n-\/1 elements}}
+\DoxyCodeLine{18130                     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} i = val.m\_data.m\_value.array-\/>cbegin();}
+\DoxyCodeLine{18131                             i != val.m\_data.m\_value.array-\/>cend() -\/ 1; ++i)}
+\DoxyCodeLine{18132                     \{}
+\DoxyCodeLine{18133                         o-\/>write\_characters(\mbox{\hyperlink{classdetail_1_1serializer_a7f6f1d36859514ab42984deb28d2521e}{indent\_string}}.c\_str(), new\_indent);}
+\DoxyCodeLine{18134                         \mbox{\hyperlink{classdetail_1_1serializer_ae73c1bac64bcc810923b9f1261af8b09}{dump}}(*i, \textcolor{keyword}{true}, \mbox{\hyperlink{classdetail_1_1serializer_a414071fcc39c97fa8e64455a222d8d08}{ensure\_ascii}}, indent\_step, new\_indent);}
+\DoxyCodeLine{18135                         o-\/>write\_characters(\textcolor{stringliteral}{"{},\(\backslash\)n"{}}, 2);}
+\DoxyCodeLine{18136                     \}}
+\DoxyCodeLine{18137 }
+\DoxyCodeLine{18138                     \textcolor{comment}{// last element}}
+\DoxyCodeLine{18139                     \mbox{\hyperlink{json_8hpp_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(!val.m\_data.m\_value.array-\/>empty());}
+\DoxyCodeLine{18140                     o-\/>write\_characters(\mbox{\hyperlink{classdetail_1_1serializer_a7f6f1d36859514ab42984deb28d2521e}{indent\_string}}.c\_str(), new\_indent);}
+\DoxyCodeLine{18141                     \mbox{\hyperlink{classdetail_1_1serializer_ae73c1bac64bcc810923b9f1261af8b09}{dump}}(val.m\_data.m\_value.array-\/>back(), \textcolor{keyword}{true}, \mbox{\hyperlink{classdetail_1_1serializer_a414071fcc39c97fa8e64455a222d8d08}{ensure\_ascii}}, indent\_step, new\_indent);}
+\DoxyCodeLine{18142 }
+\DoxyCodeLine{18143                     o-\/>write\_character(\textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{18144                     o-\/>write\_characters(\mbox{\hyperlink{classdetail_1_1serializer_a7f6f1d36859514ab42984deb28d2521e}{indent\_string}}.c\_str(), current\_indent);}
+\DoxyCodeLine{18145                     o-\/>write\_character(\textcolor{charliteral}{']'});}
+\DoxyCodeLine{18146                 \}}
+\DoxyCodeLine{18147                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{18148                 \{}
+\DoxyCodeLine{18149                     o-\/>write\_character(\textcolor{charliteral}{'['});}
+\DoxyCodeLine{18150 }
+\DoxyCodeLine{18151                     \textcolor{comment}{// first n-\/1 elements}}
+\DoxyCodeLine{18152                     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} i = val.m\_data.m\_value.array-\/>cbegin();}
+\DoxyCodeLine{18153                             i != val.m\_data.m\_value.array-\/>cend() -\/ 1; ++i)}
+\DoxyCodeLine{18154                     \{}
+\DoxyCodeLine{18155                         \mbox{\hyperlink{classdetail_1_1serializer_ae73c1bac64bcc810923b9f1261af8b09}{dump}}(*i, \textcolor{keyword}{false}, \mbox{\hyperlink{classdetail_1_1serializer_a414071fcc39c97fa8e64455a222d8d08}{ensure\_ascii}}, indent\_step, current\_indent);}
+\DoxyCodeLine{18156                         o-\/>write\_character(\textcolor{charliteral}{','});}
+\DoxyCodeLine{18157                     \}}
+\DoxyCodeLine{18158 }
+\DoxyCodeLine{18159                     \textcolor{comment}{// last element}}
+\DoxyCodeLine{18160                     \mbox{\hyperlink{json_8hpp_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(!val.m\_data.m\_value.array-\/>empty());}
+\DoxyCodeLine{18161                     \mbox{\hyperlink{classdetail_1_1serializer_ae73c1bac64bcc810923b9f1261af8b09}{dump}}(val.m\_data.m\_value.array-\/>back(), \textcolor{keyword}{false}, \mbox{\hyperlink{classdetail_1_1serializer_a414071fcc39c97fa8e64455a222d8d08}{ensure\_ascii}}, indent\_step, current\_indent);}
+\DoxyCodeLine{18162 }
+\DoxyCodeLine{18163                     o-\/>write\_character(\textcolor{charliteral}{']'});}
+\DoxyCodeLine{18164                 \}}
+\DoxyCodeLine{18165 }
+\DoxyCodeLine{18166                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{18167             \}}
+\DoxyCodeLine{18168 }
+\DoxyCodeLine{18169             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632ab45cffe084dd3d20d928bee85e7b0f21}{value\_t::string}}:}
+\DoxyCodeLine{18170             \{}
+\DoxyCodeLine{18171                 o-\/>write\_character(\textcolor{charliteral}{'\(\backslash\)"{}'});}
+\DoxyCodeLine{18172                 dump\_escaped(*val.m\_data.m\_value.string, \mbox{\hyperlink{classdetail_1_1serializer_a414071fcc39c97fa8e64455a222d8d08}{ensure\_ascii}});}
+\DoxyCodeLine{18173                 o-\/>write\_character(\textcolor{charliteral}{'\(\backslash\)"{}'});}
+\DoxyCodeLine{18174                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{18175             \}}
+\DoxyCodeLine{18176 }
+\DoxyCodeLine{18177             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632a9d7183f16acce70658f686ae7f1a4d20}{value\_t::binary}}:}
+\DoxyCodeLine{18178             \{}
+\DoxyCodeLine{18179                 \textcolor{keywordflow}{if} (pretty\_print)}
+\DoxyCodeLine{18180                 \{}
+\DoxyCodeLine{18181                     o-\/>write\_characters(\textcolor{stringliteral}{"{}\{\(\backslash\)n"{}}, 2);}
+\DoxyCodeLine{18182 }
+\DoxyCodeLine{18183                     \textcolor{comment}{// variable to hold indentation for recursive calls}}
+\DoxyCodeLine{18184                     \textcolor{keyword}{const} \textcolor{keyword}{auto} new\_indent = current\_indent + indent\_step;}
+\DoxyCodeLine{18185                     \textcolor{keywordflow}{if} (\mbox{\hyperlink{json_8hpp_a8df7de76ab3c9445f46f6994ec205bcd}{JSON\_HEDLEY\_UNLIKELY}}(\mbox{\hyperlink{classdetail_1_1serializer_a7f6f1d36859514ab42984deb28d2521e}{indent\_string}}.size() < new\_indent))}
+\DoxyCodeLine{18186                     \{}
+\DoxyCodeLine{18187                         \mbox{\hyperlink{classdetail_1_1serializer_a7f6f1d36859514ab42984deb28d2521e}{indent\_string}}.resize(\mbox{\hyperlink{classdetail_1_1serializer_a7f6f1d36859514ab42984deb28d2521e}{indent\_string}}.size() * 2, \textcolor{charliteral}{' '});}
+\DoxyCodeLine{18188                     \}}
+\DoxyCodeLine{18189 }
+\DoxyCodeLine{18190                     o-\/>write\_characters(\mbox{\hyperlink{classdetail_1_1serializer_a7f6f1d36859514ab42984deb28d2521e}{indent\_string}}.c\_str(), new\_indent);}
+\DoxyCodeLine{18191 }
+\DoxyCodeLine{18192                     o-\/>write\_characters(\textcolor{stringliteral}{"{}\(\backslash\)"{}bytes\(\backslash\)"{}: ["{}}, 10);}
+\DoxyCodeLine{18193 }
+\DoxyCodeLine{18194                     \textcolor{keywordflow}{if} (!val.m\_data.m\_value.binary-\/>empty())}
+\DoxyCodeLine{18195                     \{}
+\DoxyCodeLine{18196                         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} i = val.m\_data.m\_value.binary-\/>cbegin();}
+\DoxyCodeLine{18197                                 i != val.m\_data.m\_value.binary-\/>cend() -\/ 1; ++i)}
+\DoxyCodeLine{18198                         \{}
+\DoxyCodeLine{18199                             dump\_integer(*i);}
+\DoxyCodeLine{18200                             o-\/>write\_characters(\textcolor{stringliteral}{"{}, "{}}, 2);}
+\DoxyCodeLine{18201                         \}}
+\DoxyCodeLine{18202                         dump\_integer(val.m\_data.m\_value.binary-\/>back());}
+\DoxyCodeLine{18203                     \}}
+\DoxyCodeLine{18204 }
+\DoxyCodeLine{18205                     o-\/>write\_characters(\textcolor{stringliteral}{"{}],\(\backslash\)n"{}}, 3);}
+\DoxyCodeLine{18206                     o-\/>write\_characters(\mbox{\hyperlink{classdetail_1_1serializer_a7f6f1d36859514ab42984deb28d2521e}{indent\_string}}.c\_str(), new\_indent);}
+\DoxyCodeLine{18207 }
+\DoxyCodeLine{18208                     o-\/>write\_characters(\textcolor{stringliteral}{"{}\(\backslash\)"{}subtype\(\backslash\)"{}: "{}}, 11);}
+\DoxyCodeLine{18209                     \textcolor{keywordflow}{if} (val.m\_data.m\_value.binary-\/>has\_subtype())}
+\DoxyCodeLine{18210                     \{}
+\DoxyCodeLine{18211                         dump\_integer(val.m\_data.m\_value.binary-\/>subtype());}
+\DoxyCodeLine{18212                     \}}
+\DoxyCodeLine{18213                     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{18214                     \{}
+\DoxyCodeLine{18215                         o-\/>write\_characters(\textcolor{stringliteral}{"{}null"{}}, 4);}
+\DoxyCodeLine{18216                     \}}
+\DoxyCodeLine{18217                     o-\/>write\_character(\textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{18218                     o-\/>write\_characters(\mbox{\hyperlink{classdetail_1_1serializer_a7f6f1d36859514ab42984deb28d2521e}{indent\_string}}.c\_str(), current\_indent);}
+\DoxyCodeLine{18219                     o-\/>write\_character(\textcolor{charliteral}{'\}'});}
+\DoxyCodeLine{18220                 \}}
+\DoxyCodeLine{18221                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{18222                 \{}
+\DoxyCodeLine{18223                     o-\/>write\_characters(\textcolor{stringliteral}{"{}\{\(\backslash\)"{}bytes\(\backslash\)"{}:["{}}, 10);}
+\DoxyCodeLine{18224 }
+\DoxyCodeLine{18225                     \textcolor{keywordflow}{if} (!val.m\_data.m\_value.binary-\/>empty())}
+\DoxyCodeLine{18226                     \{}
+\DoxyCodeLine{18227                         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} i = val.m\_data.m\_value.binary-\/>cbegin();}
+\DoxyCodeLine{18228                                 i != val.m\_data.m\_value.binary-\/>cend() -\/ 1; ++i)}
+\DoxyCodeLine{18229                         \{}
+\DoxyCodeLine{18230                             dump\_integer(*i);}
+\DoxyCodeLine{18231                             o-\/>write\_character(\textcolor{charliteral}{','});}
+\DoxyCodeLine{18232                         \}}
+\DoxyCodeLine{18233                         dump\_integer(val.m\_data.m\_value.binary-\/>back());}
+\DoxyCodeLine{18234                     \}}
+\DoxyCodeLine{18235 }
+\DoxyCodeLine{18236                     o-\/>write\_characters(\textcolor{stringliteral}{"{}],\(\backslash\)"{}subtype\(\backslash\)"{}:"{}}, 12);}
+\DoxyCodeLine{18237                     \textcolor{keywordflow}{if} (val.m\_data.m\_value.binary-\/>has\_subtype())}
+\DoxyCodeLine{18238                     \{}
+\DoxyCodeLine{18239                         dump\_integer(val.m\_data.m\_value.binary-\/>subtype());}
+\DoxyCodeLine{18240                         o-\/>write\_character(\textcolor{charliteral}{'\}'});}
+\DoxyCodeLine{18241                     \}}
+\DoxyCodeLine{18242                     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{18243                     \{}
+\DoxyCodeLine{18244                         o-\/>write\_characters(\textcolor{stringliteral}{"{}null\}"{}}, 5);}
+\DoxyCodeLine{18245                     \}}
+\DoxyCodeLine{18246                 \}}
+\DoxyCodeLine{18247                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{18248             \}}
+\DoxyCodeLine{18249 }
+\DoxyCodeLine{18250             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632a84e2c64f38f78ba3ea5c905ab5a2da27}{value\_t::boolean}}:}
+\DoxyCodeLine{18251             \{}
+\DoxyCodeLine{18252                 \textcolor{keywordflow}{if} (val.m\_data.m\_value.boolean)}
+\DoxyCodeLine{18253                 \{}
+\DoxyCodeLine{18254                     o-\/>write\_characters(\textcolor{stringliteral}{"{}true"{}}, 4);}
+\DoxyCodeLine{18255                 \}}
+\DoxyCodeLine{18256                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{18257                 \{}
+\DoxyCodeLine{18258                     o-\/>write\_characters(\textcolor{stringliteral}{"{}false"{}}, 5);}
+\DoxyCodeLine{18259                 \}}
+\DoxyCodeLine{18260                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{18261             \}}
+\DoxyCodeLine{18262 }
+\DoxyCodeLine{18263             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632a5763da164f8659d94a56e29df64b4bcc}{value\_t::number\_integer}}:}
+\DoxyCodeLine{18264             \{}
+\DoxyCodeLine{18265                 dump\_integer(val.m\_data.m\_value.number\_integer);}
+\DoxyCodeLine{18266                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{18267             \}}
+\DoxyCodeLine{18268 }
+\DoxyCodeLine{18269             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632adce7cc8ec29055c4158828921f2f265e}{value\_t::number\_unsigned}}:}
+\DoxyCodeLine{18270             \{}
+\DoxyCodeLine{18271                 dump\_integer(val.m\_data.m\_value.number\_unsigned);}
+\DoxyCodeLine{18272                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{18273             \}}
+\DoxyCodeLine{18274 }
+\DoxyCodeLine{18275             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632ad9966ecb59667235a57b4b999a649eef}{value\_t::number\_float}}:}
+\DoxyCodeLine{18276             \{}
+\DoxyCodeLine{18277                 dump\_float(val.m\_data.m\_value.number\_float);}
+\DoxyCodeLine{18278                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{18279             \}}
+\DoxyCodeLine{18280 }
+\DoxyCodeLine{18281             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632a94708897ec9db8647dfe695714c98e46}{value\_t::discarded}}:}
+\DoxyCodeLine{18282             \{}
+\DoxyCodeLine{18283                 o-\/>write\_characters(\textcolor{stringliteral}{"{}<discarded>"{}}, 11);}
+\DoxyCodeLine{18284                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{18285             \}}
+\DoxyCodeLine{18286 }
+\DoxyCodeLine{18287             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632a37a6259cc0c1dae299a7866489dff0bd}{value\_t::null}}:}
+\DoxyCodeLine{18288             \{}
+\DoxyCodeLine{18289                 o-\/>write\_characters(\textcolor{stringliteral}{"{}null"{}}, 4);}
+\DoxyCodeLine{18290                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{18291             \}}
+\DoxyCodeLine{18292 }
+\DoxyCodeLine{18293             \textcolor{keywordflow}{default}:            \textcolor{comment}{// LCOV\_EXCL\_LINE}}
+\DoxyCodeLine{18294                 \mbox{\hyperlink{json_8hpp_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(\textcolor{keyword}{false}); \textcolor{comment}{// NOLINT(cert-\/dcl03-\/c,hicpp-\/static-\/assert,misc-\/static-\/assert) LCOV\_EXCL\_LINE}}
+\DoxyCodeLine{18295         \}}
+\DoxyCodeLine{18296     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classdetail_1_1serializer_a491abc2de2affbc9c3490bde110b7f07}\label{classdetail_1_1serializer_a491abc2de2affbc9c3490bde110b7f07}} 
+\index{detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}!for@{for}}
+\index{for@{for}!detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{for()}{for()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+\mbox{\hyperlink{classdetail_1_1serializer}{detail\+::serializer}}$<$ Basic\+Json\+Type $>$\+::for (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 18323 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{18324         \{}
+\DoxyCodeLine{18325             \textcolor{keyword}{const} \textcolor{keyword}{auto} \textcolor{keywordtype}{byte} = \textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}(s[i]);}
+\DoxyCodeLine{18326 }
+\DoxyCodeLine{18327             \textcolor{keywordflow}{switch} (decode(\mbox{\hyperlink{classdetail_1_1serializer_a2db3d61cfc616f83763b6d4a03d0d772}{state}}, codepoint, \textcolor{keywordtype}{byte}))}
+\DoxyCodeLine{18328             \{}
+\DoxyCodeLine{18329                 \textcolor{keywordflow}{case} UTF8\_ACCEPT:  \textcolor{comment}{// decode found a new code point}}
+\DoxyCodeLine{18330                 \{}
+\DoxyCodeLine{18331                     \textcolor{keywordflow}{switch} (codepoint)}
+\DoxyCodeLine{18332                     \{}
+\DoxyCodeLine{18333                         \textcolor{keywordflow}{case} 0x08: \textcolor{comment}{// backspace}}
+\DoxyCodeLine{18334                         \{}
+\DoxyCodeLine{18335                             \mbox{\hyperlink{classdetail_1_1serializer_a27a61728ed0fbc65de009286531a6e70}{string\_buffer}}[\mbox{\hyperlink{classdetail_1_1serializer_ae08644483db303ce3d1580332ff0a458}{bytes}}++] = \textcolor{charliteral}{'\(\backslash\)\(\backslash\)'};}
+\DoxyCodeLine{18336                             \mbox{\hyperlink{classdetail_1_1serializer_a27a61728ed0fbc65de009286531a6e70}{string\_buffer}}[\mbox{\hyperlink{classdetail_1_1serializer_ae08644483db303ce3d1580332ff0a458}{bytes}}++] = \textcolor{charliteral}{'b'};}
+\DoxyCodeLine{18337                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{18338                         \}}
+\DoxyCodeLine{18339 }
+\DoxyCodeLine{18340                         \textcolor{keywordflow}{case} 0x09: \textcolor{comment}{// horizontal tab}}
+\DoxyCodeLine{18341                         \{}
+\DoxyCodeLine{18342                             \mbox{\hyperlink{classdetail_1_1serializer_a27a61728ed0fbc65de009286531a6e70}{string\_buffer}}[\mbox{\hyperlink{classdetail_1_1serializer_ae08644483db303ce3d1580332ff0a458}{bytes}}++] = \textcolor{charliteral}{'\(\backslash\)\(\backslash\)'};}
+\DoxyCodeLine{18343                             \mbox{\hyperlink{classdetail_1_1serializer_a27a61728ed0fbc65de009286531a6e70}{string\_buffer}}[\mbox{\hyperlink{classdetail_1_1serializer_ae08644483db303ce3d1580332ff0a458}{bytes}}++] = \textcolor{charliteral}{'t'};}
+\DoxyCodeLine{18344                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{18345                         \}}
+\DoxyCodeLine{18346 }
+\DoxyCodeLine{18347                         \textcolor{keywordflow}{case} 0x0A: \textcolor{comment}{// newline}}
+\DoxyCodeLine{18348                         \{}
+\DoxyCodeLine{18349                             \mbox{\hyperlink{classdetail_1_1serializer_a27a61728ed0fbc65de009286531a6e70}{string\_buffer}}[\mbox{\hyperlink{classdetail_1_1serializer_ae08644483db303ce3d1580332ff0a458}{bytes}}++] = \textcolor{charliteral}{'\(\backslash\)\(\backslash\)'};}
+\DoxyCodeLine{18350                             \mbox{\hyperlink{classdetail_1_1serializer_a27a61728ed0fbc65de009286531a6e70}{string\_buffer}}[\mbox{\hyperlink{classdetail_1_1serializer_ae08644483db303ce3d1580332ff0a458}{bytes}}++] = \textcolor{charliteral}{'n'};}
+\DoxyCodeLine{18351                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{18352                         \}}
+\DoxyCodeLine{18353 }
+\DoxyCodeLine{18354                         \textcolor{keywordflow}{case} 0x0C: \textcolor{comment}{// formfeed}}
+\DoxyCodeLine{18355                         \{}
+\DoxyCodeLine{18356                             \mbox{\hyperlink{classdetail_1_1serializer_a27a61728ed0fbc65de009286531a6e70}{string\_buffer}}[\mbox{\hyperlink{classdetail_1_1serializer_ae08644483db303ce3d1580332ff0a458}{bytes}}++] = \textcolor{charliteral}{'\(\backslash\)\(\backslash\)'};}
+\DoxyCodeLine{18357                             \mbox{\hyperlink{classdetail_1_1serializer_a27a61728ed0fbc65de009286531a6e70}{string\_buffer}}[\mbox{\hyperlink{classdetail_1_1serializer_ae08644483db303ce3d1580332ff0a458}{bytes}}++] = \textcolor{charliteral}{'f'};}
+\DoxyCodeLine{18358                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{18359                         \}}
+\DoxyCodeLine{18360 }
+\DoxyCodeLine{18361                         \textcolor{keywordflow}{case} 0x0D: \textcolor{comment}{// carriage return}}
+\DoxyCodeLine{18362                         \{}
+\DoxyCodeLine{18363                             \mbox{\hyperlink{classdetail_1_1serializer_a27a61728ed0fbc65de009286531a6e70}{string\_buffer}}[\mbox{\hyperlink{classdetail_1_1serializer_ae08644483db303ce3d1580332ff0a458}{bytes}}++] = \textcolor{charliteral}{'\(\backslash\)\(\backslash\)'};}
+\DoxyCodeLine{18364                             \mbox{\hyperlink{classdetail_1_1serializer_a27a61728ed0fbc65de009286531a6e70}{string\_buffer}}[\mbox{\hyperlink{classdetail_1_1serializer_ae08644483db303ce3d1580332ff0a458}{bytes}}++] = \textcolor{charliteral}{'r'};}
+\DoxyCodeLine{18365                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{18366                         \}}
+\DoxyCodeLine{18367 }
+\DoxyCodeLine{18368                         \textcolor{keywordflow}{case} 0x22: \textcolor{comment}{// quotation mark}}
+\DoxyCodeLine{18369                         \{}
+\DoxyCodeLine{18370                             \mbox{\hyperlink{classdetail_1_1serializer_a27a61728ed0fbc65de009286531a6e70}{string\_buffer}}[\mbox{\hyperlink{classdetail_1_1serializer_ae08644483db303ce3d1580332ff0a458}{bytes}}++] = \textcolor{charliteral}{'\(\backslash\)\(\backslash\)'};}
+\DoxyCodeLine{18371                             \mbox{\hyperlink{classdetail_1_1serializer_a27a61728ed0fbc65de009286531a6e70}{string\_buffer}}[\mbox{\hyperlink{classdetail_1_1serializer_ae08644483db303ce3d1580332ff0a458}{bytes}}++] = \textcolor{charliteral}{'\(\backslash\)"{}'};}
+\DoxyCodeLine{18372                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{18373                         \}}
+\DoxyCodeLine{18374 }
+\DoxyCodeLine{18375                         \textcolor{keywordflow}{case} 0x5C: \textcolor{comment}{// reverse solidus}}
+\DoxyCodeLine{18376                         \{}
+\DoxyCodeLine{18377                             \mbox{\hyperlink{classdetail_1_1serializer_a27a61728ed0fbc65de009286531a6e70}{string\_buffer}}[\mbox{\hyperlink{classdetail_1_1serializer_ae08644483db303ce3d1580332ff0a458}{bytes}}++] = \textcolor{charliteral}{'\(\backslash\)\(\backslash\)'};}
+\DoxyCodeLine{18378                             \mbox{\hyperlink{classdetail_1_1serializer_a27a61728ed0fbc65de009286531a6e70}{string\_buffer}}[\mbox{\hyperlink{classdetail_1_1serializer_ae08644483db303ce3d1580332ff0a458}{bytes}}++] = \textcolor{charliteral}{'\(\backslash\)\(\backslash\)'};}
+\DoxyCodeLine{18379                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{18380                         \}}
+\DoxyCodeLine{18381 }
+\DoxyCodeLine{18382                         \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{18383                         \{}
+\DoxyCodeLine{18384                             \textcolor{comment}{// escape control characters (0x00..0x1F) or, if}}
+\DoxyCodeLine{18385                             \textcolor{comment}{// ensure\_ascii parameter is used, non-\/ASCII characters}}
+\DoxyCodeLine{18386                             \textcolor{keywordflow}{if} ((codepoint <= 0x1F) || (\mbox{\hyperlink{classdetail_1_1serializer_a414071fcc39c97fa8e64455a222d8d08}{ensure\_ascii}} \&\& (codepoint >= 0x7F)))}
+\DoxyCodeLine{18387                             \{}
+\DoxyCodeLine{18388                                 \textcolor{keywordflow}{if} (codepoint <= 0xFFFF)}
+\DoxyCodeLine{18389                                 \{}
+\DoxyCodeLine{18390                                     \textcolor{comment}{// NOLINTNEXTLINE(cppcoreguidelines-\/pro-\/type-\/vararg,hicpp-\/vararg)}}
+\DoxyCodeLine{18391                                     \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{void}\textcolor{keyword}{>}((std::snprintf)(\mbox{\hyperlink{classdetail_1_1serializer_a27a61728ed0fbc65de009286531a6e70}{string\_buffer}}.data() + \mbox{\hyperlink{classdetail_1_1serializer_ae08644483db303ce3d1580332ff0a458}{bytes}}, 7, \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)u\%04x"{}},}
+\DoxyCodeLine{18392                                                                       \textcolor{keyword}{static\_cast<}std::uint16\_t\textcolor{keyword}{>}(codepoint)));}
+\DoxyCodeLine{18393                                     \mbox{\hyperlink{classdetail_1_1serializer_ae08644483db303ce3d1580332ff0a458}{bytes}} += 6;}
+\DoxyCodeLine{18394                                 \}}
+\DoxyCodeLine{18395                                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{18396                                 \{}
+\DoxyCodeLine{18397                                     \textcolor{comment}{// NOLINTNEXTLINE(cppcoreguidelines-\/pro-\/type-\/vararg,hicpp-\/vararg)}}
+\DoxyCodeLine{18398                                     \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{void}\textcolor{keyword}{>}((std::snprintf)(\mbox{\hyperlink{classdetail_1_1serializer_a27a61728ed0fbc65de009286531a6e70}{string\_buffer}}.data() + \mbox{\hyperlink{classdetail_1_1serializer_ae08644483db303ce3d1580332ff0a458}{bytes}}, 13, \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)u\%04x\(\backslash\)\(\backslash\)u\%04x"{}},}
+\DoxyCodeLine{18399                                                                       \textcolor{keyword}{static\_cast<}std::uint16\_t\textcolor{keyword}{>}(0xD7C0u + (codepoint >> 10u)),}
+\DoxyCodeLine{18400                                                                       \textcolor{keyword}{static\_cast<}std::uint16\_t\textcolor{keyword}{>}(0xDC00u + (codepoint \& 0x3FFu))));}
+\DoxyCodeLine{18401                                     \mbox{\hyperlink{classdetail_1_1serializer_ae08644483db303ce3d1580332ff0a458}{bytes}} += 12;}
+\DoxyCodeLine{18402                                 \}}
+\DoxyCodeLine{18403                             \}}
+\DoxyCodeLine{18404                             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{18405                             \{}
+\DoxyCodeLine{18406                                 \textcolor{comment}{// copy byte to buffer (all previous bytes}}
+\DoxyCodeLine{18407                                 \textcolor{comment}{// been copied have in default case above)}}
+\DoxyCodeLine{18408                                 \mbox{\hyperlink{classdetail_1_1serializer_a27a61728ed0fbc65de009286531a6e70}{string\_buffer}}[\mbox{\hyperlink{classdetail_1_1serializer_ae08644483db303ce3d1580332ff0a458}{bytes}}++] = s[i];}
+\DoxyCodeLine{18409                             \}}
+\DoxyCodeLine{18410                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{18411                         \}}
+\DoxyCodeLine{18412                     \}}
+\DoxyCodeLine{18413 }
+\DoxyCodeLine{18414                     \textcolor{comment}{// write buffer and reset index; there must be 13 bytes}}
+\DoxyCodeLine{18415                     \textcolor{comment}{// left, as this is the maximal number of bytes to be}}
+\DoxyCodeLine{18416                     \textcolor{comment}{// written ("{}\(\backslash\)uxxxx\(\backslash\)uxxxx\(\backslash\)0"{}) for one code point}}
+\DoxyCodeLine{18417                     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classdetail_1_1serializer_a27a61728ed0fbc65de009286531a6e70}{string\_buffer}}.size() -\/ \mbox{\hyperlink{classdetail_1_1serializer_ae08644483db303ce3d1580332ff0a458}{bytes}} < 13)}
+\DoxyCodeLine{18418                     \{}
+\DoxyCodeLine{18419                         o-\/>write\_characters(\mbox{\hyperlink{classdetail_1_1serializer_a27a61728ed0fbc65de009286531a6e70}{string\_buffer}}.data(), \mbox{\hyperlink{classdetail_1_1serializer_ae08644483db303ce3d1580332ff0a458}{bytes}});}
+\DoxyCodeLine{18420                         \mbox{\hyperlink{classdetail_1_1serializer_ae08644483db303ce3d1580332ff0a458}{bytes}} = 0;}
+\DoxyCodeLine{18421                     \}}
+\DoxyCodeLine{18422 }
+\DoxyCodeLine{18423                     \textcolor{comment}{// remember the byte position of this accept}}
+\DoxyCodeLine{18424                     \mbox{\hyperlink{classdetail_1_1serializer_a3c23eca4cc58a835a0a08ff580dcaae0}{bytes\_after\_last\_accept}} = \mbox{\hyperlink{classdetail_1_1serializer_ae08644483db303ce3d1580332ff0a458}{bytes}};}
+\DoxyCodeLine{18425                     \mbox{\hyperlink{classdetail_1_1serializer_a44a05646a5ac7caec54f97ba17cb893b}{undumped\_chars}} = 0;}
+\DoxyCodeLine{18426                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{18427                 \}}
+\DoxyCodeLine{18428 }
+\DoxyCodeLine{18429                 \textcolor{keywordflow}{case} UTF8\_REJECT:  \textcolor{comment}{// decode found invalid UTF-\/8 byte}}
+\DoxyCodeLine{18430                 \{}
+\DoxyCodeLine{18431                     \textcolor{keywordflow}{switch} (\mbox{\hyperlink{classdetail_1_1serializer_a79d25c7416dd71a0db8b10988ec360f7}{error\_handler}})}
+\DoxyCodeLine{18432                     \{}
+\DoxyCodeLine{18433                         \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacedetail_abe7cfa1fd8fa706ff4392bff9d1a8298a2133fd717402a7966ee88d06f9e0b792}{error\_handler\_t::strict}}:}
+\DoxyCodeLine{18434                         \{}
+\DoxyCodeLine{18435                             \mbox{\hyperlink{json_8hpp_a6c274f6db2e65c1b66c7d41b06ad690f}{JSON\_THROW}}(\mbox{\hyperlink{classdetail_1_1type__error_a2d25372628cf1e09ec67718f4bc42762}{type\_error::create}}(316, \mbox{\hyperlink{namespacedetail_a266fb3d4bf633ad6c506434cc91164da}{concat}}(\textcolor{stringliteral}{"{}invalid UTF-\/8 byte at index "{}}, \mbox{\hyperlink{json_8hpp_a5b9ca6dc52cf4226c68d67f895b2a1d4}{std::to\_string}}(i), \textcolor{stringliteral}{"{}: 0x"{}}, hex\_bytes(\textcolor{keywordtype}{byte} | 0)), \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{18436                         \}}
+\DoxyCodeLine{18437 }
+\DoxyCodeLine{18438                         \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacedetail_abe7cfa1fd8fa706ff4392bff9d1a8298a567bc1d268f135496de3d5b946b691f3}{error\_handler\_t::ignore}}:}
+\DoxyCodeLine{18439                         \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacedetail_abe7cfa1fd8fa706ff4392bff9d1a8298a9dde360102c103867bd2f45872f1129c}{error\_handler\_t::replace}}:}
+\DoxyCodeLine{18440                         \{}
+\DoxyCodeLine{18441                             \textcolor{comment}{// in case we saw this character the first time, we}}
+\DoxyCodeLine{18442                             \textcolor{comment}{// would like to read it again, because the byte}}
+\DoxyCodeLine{18443                             \textcolor{comment}{// may be OK for itself, but just not OK for the}}
+\DoxyCodeLine{18444                             \textcolor{comment}{// previous sequence}}
+\DoxyCodeLine{18445                             \textcolor{keywordflow}{if} (\mbox{\hyperlink{classdetail_1_1serializer_a44a05646a5ac7caec54f97ba17cb893b}{undumped\_chars}} > 0)}
+\DoxyCodeLine{18446                             \{}
+\DoxyCodeLine{18447                                 -\/-\/i;}
+\DoxyCodeLine{18448                             \}}
+\DoxyCodeLine{18449 }
+\DoxyCodeLine{18450                             \textcolor{comment}{// reset length buffer to the last accepted index;}}
+\DoxyCodeLine{18451                             \textcolor{comment}{// thus removing/ignoring the invalid characters}}
+\DoxyCodeLine{18452                             \mbox{\hyperlink{classdetail_1_1serializer_ae08644483db303ce3d1580332ff0a458}{bytes}} = \mbox{\hyperlink{classdetail_1_1serializer_a3c23eca4cc58a835a0a08ff580dcaae0}{bytes\_after\_last\_accept}};}
+\DoxyCodeLine{18453 }
+\DoxyCodeLine{18454                             \textcolor{keywordflow}{if} (\mbox{\hyperlink{classdetail_1_1serializer_a79d25c7416dd71a0db8b10988ec360f7}{error\_handler}} == \mbox{\hyperlink{namespacedetail_abe7cfa1fd8fa706ff4392bff9d1a8298a9dde360102c103867bd2f45872f1129c}{error\_handler\_t::replace}})}
+\DoxyCodeLine{18455                             \{}
+\DoxyCodeLine{18456                                 \textcolor{comment}{// add a replacement character}}
+\DoxyCodeLine{18457                                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{classdetail_1_1serializer_a414071fcc39c97fa8e64455a222d8d08}{ensure\_ascii}})}
+\DoxyCodeLine{18458                                 \{}
+\DoxyCodeLine{18459                                     \mbox{\hyperlink{classdetail_1_1serializer_a27a61728ed0fbc65de009286531a6e70}{string\_buffer}}[\mbox{\hyperlink{classdetail_1_1serializer_ae08644483db303ce3d1580332ff0a458}{bytes}}++] = \textcolor{charliteral}{'\(\backslash\)\(\backslash\)'};}
+\DoxyCodeLine{18460                                     \mbox{\hyperlink{classdetail_1_1serializer_a27a61728ed0fbc65de009286531a6e70}{string\_buffer}}[\mbox{\hyperlink{classdetail_1_1serializer_ae08644483db303ce3d1580332ff0a458}{bytes}}++] = \textcolor{charliteral}{'u'};}
+\DoxyCodeLine{18461                                     \mbox{\hyperlink{classdetail_1_1serializer_a27a61728ed0fbc65de009286531a6e70}{string\_buffer}}[\mbox{\hyperlink{classdetail_1_1serializer_ae08644483db303ce3d1580332ff0a458}{bytes}}++] = \textcolor{charliteral}{'f'};}
+\DoxyCodeLine{18462                                     \mbox{\hyperlink{classdetail_1_1serializer_a27a61728ed0fbc65de009286531a6e70}{string\_buffer}}[\mbox{\hyperlink{classdetail_1_1serializer_ae08644483db303ce3d1580332ff0a458}{bytes}}++] = \textcolor{charliteral}{'f'};}
+\DoxyCodeLine{18463                                     \mbox{\hyperlink{classdetail_1_1serializer_a27a61728ed0fbc65de009286531a6e70}{string\_buffer}}[\mbox{\hyperlink{classdetail_1_1serializer_ae08644483db303ce3d1580332ff0a458}{bytes}}++] = \textcolor{charliteral}{'f'};}
+\DoxyCodeLine{18464                                     \mbox{\hyperlink{classdetail_1_1serializer_a27a61728ed0fbc65de009286531a6e70}{string\_buffer}}[\mbox{\hyperlink{classdetail_1_1serializer_ae08644483db303ce3d1580332ff0a458}{bytes}}++] = \textcolor{charliteral}{'d'};}
+\DoxyCodeLine{18465                                 \}}
+\DoxyCodeLine{18466                                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{18467                                 \{}
+\DoxyCodeLine{18468                                     \mbox{\hyperlink{classdetail_1_1serializer_a27a61728ed0fbc65de009286531a6e70}{string\_buffer}}[\mbox{\hyperlink{classdetail_1_1serializer_ae08644483db303ce3d1580332ff0a458}{bytes}}++] = \mbox{\hyperlink{classdetail_1_1binary__writer_a2822d4a58bbb0dc2198686da430e8906}{detail::binary\_writer<BasicJsonType, char>::to\_char\_type}}(\textcolor{stringliteral}{'\(\backslash\)xEF'});}
+\DoxyCodeLine{18469                                     \mbox{\hyperlink{classdetail_1_1serializer_a27a61728ed0fbc65de009286531a6e70}{string\_buffer}}[\mbox{\hyperlink{classdetail_1_1serializer_ae08644483db303ce3d1580332ff0a458}{bytes}}++] = \mbox{\hyperlink{classdetail_1_1binary__writer_a2822d4a58bbb0dc2198686da430e8906}{detail::binary\_writer<BasicJsonType, char>::to\_char\_type}}(\textcolor{stringliteral}{'\(\backslash\)xBF'});}
+\DoxyCodeLine{18470                                     \mbox{\hyperlink{classdetail_1_1serializer_a27a61728ed0fbc65de009286531a6e70}{string\_buffer}}[\mbox{\hyperlink{classdetail_1_1serializer_ae08644483db303ce3d1580332ff0a458}{bytes}}++] = \mbox{\hyperlink{classdetail_1_1binary__writer_a2822d4a58bbb0dc2198686da430e8906}{detail::binary\_writer<BasicJsonType, char>::to\_char\_type}}(\textcolor{stringliteral}{'\(\backslash\)xBD'});}
+\DoxyCodeLine{18471                                 \}}
+\DoxyCodeLine{18472 }
+\DoxyCodeLine{18473                                 \textcolor{comment}{// write buffer and reset index; there must be 13 bytes}}
+\DoxyCodeLine{18474                                 \textcolor{comment}{// left, as this is the maximal number of bytes to be}}
+\DoxyCodeLine{18475                                 \textcolor{comment}{// written ("{}\(\backslash\)uxxxx\(\backslash\)uxxxx\(\backslash\)0"{}) for one code point}}
+\DoxyCodeLine{18476                                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{classdetail_1_1serializer_a27a61728ed0fbc65de009286531a6e70}{string\_buffer}}.size() -\/ \mbox{\hyperlink{classdetail_1_1serializer_ae08644483db303ce3d1580332ff0a458}{bytes}} < 13)}
+\DoxyCodeLine{18477                                 \{}
+\DoxyCodeLine{18478                                     o-\/>write\_characters(\mbox{\hyperlink{classdetail_1_1serializer_a27a61728ed0fbc65de009286531a6e70}{string\_buffer}}.data(), \mbox{\hyperlink{classdetail_1_1serializer_ae08644483db303ce3d1580332ff0a458}{bytes}});}
+\DoxyCodeLine{18479                                     \mbox{\hyperlink{classdetail_1_1serializer_ae08644483db303ce3d1580332ff0a458}{bytes}} = 0;}
+\DoxyCodeLine{18480                                 \}}
+\DoxyCodeLine{18481 }
+\DoxyCodeLine{18482                                 \mbox{\hyperlink{classdetail_1_1serializer_a3c23eca4cc58a835a0a08ff580dcaae0}{bytes\_after\_last\_accept}} = \mbox{\hyperlink{classdetail_1_1serializer_ae08644483db303ce3d1580332ff0a458}{bytes}};}
+\DoxyCodeLine{18483                             \}}
+\DoxyCodeLine{18484 }
+\DoxyCodeLine{18485                             \mbox{\hyperlink{classdetail_1_1serializer_a44a05646a5ac7caec54f97ba17cb893b}{undumped\_chars}} = 0;}
+\DoxyCodeLine{18486 }
+\DoxyCodeLine{18487                             \textcolor{comment}{// continue processing the string}}
+\DoxyCodeLine{18488                             \mbox{\hyperlink{classdetail_1_1serializer_a2db3d61cfc616f83763b6d4a03d0d772}{state}} = UTF8\_ACCEPT;}
+\DoxyCodeLine{18489                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{18490                         \}}
+\DoxyCodeLine{18491 }
+\DoxyCodeLine{18492                         \textcolor{keywordflow}{default}:            \textcolor{comment}{// LCOV\_EXCL\_LINE}}
+\DoxyCodeLine{18493                             \mbox{\hyperlink{json_8hpp_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(\textcolor{keyword}{false}); \textcolor{comment}{// NOLINT(cert-\/dcl03-\/c,hicpp-\/static-\/assert,misc-\/static-\/assert) LCOV\_EXCL\_LINE}}
+\DoxyCodeLine{18494                     \}}
+\DoxyCodeLine{18495                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{18496                 \}}
+\DoxyCodeLine{18497 }
+\DoxyCodeLine{18498                 \textcolor{keywordflow}{default}:  \textcolor{comment}{// decode found yet incomplete multi-\/byte code point}}
+\DoxyCodeLine{18499                 \{}
+\DoxyCodeLine{18500                     \textcolor{keywordflow}{if} (!\mbox{\hyperlink{classdetail_1_1serializer_a414071fcc39c97fa8e64455a222d8d08}{ensure\_ascii}})}
+\DoxyCodeLine{18501                     \{}
+\DoxyCodeLine{18502                         \textcolor{comment}{// code point will not be escaped -\/ copy byte to buffer}}
+\DoxyCodeLine{18503                         \mbox{\hyperlink{classdetail_1_1serializer_a27a61728ed0fbc65de009286531a6e70}{string\_buffer}}[\mbox{\hyperlink{classdetail_1_1serializer_ae08644483db303ce3d1580332ff0a458}{bytes}}++] = s[i];}
+\DoxyCodeLine{18504                     \}}
+\DoxyCodeLine{18505                     ++\mbox{\hyperlink{classdetail_1_1serializer_a44a05646a5ac7caec54f97ba17cb893b}{undumped\_chars}};}
+\DoxyCodeLine{18506                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{18507                 \}}
+\DoxyCodeLine{18508             \}}
+\DoxyCodeLine{18509         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classdetail_1_1serializer_a167710da81ad08541c61bc5640d15688}\label{classdetail_1_1serializer_a167710da81ad08541c61bc5640d15688}} 
+\index{detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}!if@{if}}
+\index{if@{if}!detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{if()}{if()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+\mbox{\hyperlink{classdetail_1_1serializer}{detail\+::serializer}}$<$ Basic\+Json\+Type $>$\+::if (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{json_8hpp_a355f2770653ff7bdd5c74b204b5a3ad0}{JSON\+\_\+\+HEDLEY\+\_\+\+LIKELY}}(\mbox{\hyperlink{classdetail_1_1serializer_a2db3d61cfc616f83763b6d4a03d0d772}{state}}==UTF8\+\_\+\+ACCEPT)}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 18512 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{18513         \{}
+\DoxyCodeLine{18514             \textcolor{comment}{// write buffer}}
+\DoxyCodeLine{18515             \textcolor{keywordflow}{if} (\mbox{\hyperlink{classdetail_1_1serializer_ae08644483db303ce3d1580332ff0a458}{bytes}} > 0)}
+\DoxyCodeLine{18516             \{}
+\DoxyCodeLine{18517                 o-\/>write\_characters(\mbox{\hyperlink{classdetail_1_1serializer_a27a61728ed0fbc65de009286531a6e70}{string\_buffer}}.data(), \mbox{\hyperlink{classdetail_1_1serializer_ae08644483db303ce3d1580332ff0a458}{bytes}});}
+\DoxyCodeLine{18518             \}}
+\DoxyCodeLine{18519         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classdetail_1_1serializer_a8e880742faf02f6a513239c6441cb5af}\label{classdetail_1_1serializer_a8e880742faf02f6a513239c6441cb5af}} 
+\index{detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+\mbox{\hyperlink{classdetail_1_1serializer}{serializer}}\& \mbox{\hyperlink{classdetail_1_1serializer}{detail\+::serializer}}$<$ Basic\+Json\+Type $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classdetail_1_1serializer}{serializer}}$<$ Basic\+Json\+Type $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classdetail_1_1serializer_a01d644f10c6d827d1a0e3c23b609902a}\label{classdetail_1_1serializer_a01d644f10c6d827d1a0e3c23b609902a}} 
+\index{detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+\mbox{\hyperlink{classdetail_1_1serializer}{serializer}}\& \mbox{\hyperlink{classdetail_1_1serializer}{detail\+::serializer}}$<$ Basic\+Json\+Type $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdetail_1_1serializer}{serializer}}$<$ Basic\+Json\+Type $>$ \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classdetail_1_1serializer_aae0aca92f2f35e72aac9c7d22e01312b}\label{classdetail_1_1serializer_aae0aca92f2f35e72aac9c7d22e01312b}} 
+\index{detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}!\_\_pad0\_\_@{\_\_pad0\_\_}}
+\index{\_\_pad0\_\_@{\_\_pad0\_\_}!detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{\_\_pad0\_\_}{\_\_pad0\_\_}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+\mbox{\hyperlink{json_8hpp_a2cf645f34610e7f7d6e09ab88a2ab917}{JSON\+\_\+\+PRIVATE\+\_\+\+UNLESS\+\_\+\+TESTED}} \mbox{\hyperlink{classdetail_1_1serializer}{detail\+::serializer}}$<$ Basic\+Json\+Type $>$\+::\+\_\+\+\_\+pad0\+\_\+\+\_\+}
+
+
+
+Definition at line 18298 of file json.\+hpp.
+
+\mbox{\Hypertarget{classdetail_1_1serializer_ae08644483db303ce3d1580332ff0a458}\label{classdetail_1_1serializer_ae08644483db303ce3d1580332ff0a458}} 
+\index{detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}!bytes@{bytes}}
+\index{bytes@{bytes}!detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{bytes}{bytes}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+std\+::size\+\_\+t \mbox{\hyperlink{classdetail_1_1serializer}{detail\+::serializer}}$<$ Basic\+Json\+Type $>$\+::bytes = 0}
+
+
+
+Definition at line 18317 of file json.\+hpp.
+
+\mbox{\Hypertarget{classdetail_1_1serializer_a3c23eca4cc58a835a0a08ff580dcaae0}\label{classdetail_1_1serializer_a3c23eca4cc58a835a0a08ff580dcaae0}} 
+\index{detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}!bytes\_after\_last\_accept@{bytes\_after\_last\_accept}}
+\index{bytes\_after\_last\_accept@{bytes\_after\_last\_accept}!detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{bytes\_after\_last\_accept}{bytes\_after\_last\_accept}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+std\+::size\+\_\+t \mbox{\hyperlink{classdetail_1_1serializer}{detail\+::serializer}}$<$ Basic\+Json\+Type $>$\+::bytes\+\_\+after\+\_\+last\+\_\+accept = 0}
+
+
+
+Definition at line 18320 of file json.\+hpp.
+
+\mbox{\Hypertarget{classdetail_1_1serializer_a5f01fcbf64cb1e5f36d8853ebcd96412}\label{classdetail_1_1serializer_a5f01fcbf64cb1e5f36d8853ebcd96412}} 
+\index{detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}!decimal\_point@{decimal\_point}}
+\index{decimal\_point@{decimal\_point}!detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{decimal\_point}{decimal\_point}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+const char \mbox{\hyperlink{classdetail_1_1serializer}{detail\+::serializer}}$<$ Basic\+Json\+Type $>$\+::decimal\+\_\+point = \textquotesingle{}\textbackslash{}0\textquotesingle{}}
+
+
+
+the locale\textquotesingle{}s decimal point character 
+
+
+
+Definition at line 18895 of file json.\+hpp.
+
+\mbox{\Hypertarget{classdetail_1_1serializer_a1cef7f1e504d729887dc828910497cd2}\label{classdetail_1_1serializer_a1cef7f1e504d729887dc828910497cd2}} 
+\index{detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}!else@{else}}
+\index{else@{else}!detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{else}{else}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+\mbox{\hyperlink{classdetail_1_1serializer}{detail\+::serializer}}$<$ Basic\+Json\+Type $>$\+::else}
+
+
+
+Definition at line 18520 of file json.\+hpp.
+
+\mbox{\Hypertarget{classdetail_1_1serializer_a414071fcc39c97fa8e64455a222d8d08}\label{classdetail_1_1serializer_a414071fcc39c97fa8e64455a222d8d08}} 
+\index{detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}!ensure\_ascii@{ensure\_ascii}}
+\index{ensure\_ascii@{ensure\_ascii}!detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{ensure\_ascii}{ensure\_ascii}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+\mbox{\hyperlink{json_8hpp_a2cf645f34610e7f7d6e09ab88a2ab917}{JSON\+\_\+\+PRIVATE\+\_\+\+UNLESS\+\_\+\+TESTED}} const bool \mbox{\hyperlink{classdetail_1_1serializer}{detail\+::serializer}}$<$ Basic\+Json\+Type $>$\+::ensure\+\_\+ascii}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{        std::uint32\_t codepoint\{\}}
+
+\end{DoxyCode}
+
+
+Definition at line 18313 of file json.\+hpp.
+
+\mbox{\Hypertarget{classdetail_1_1serializer_a79d25c7416dd71a0db8b10988ec360f7}\label{classdetail_1_1serializer_a79d25c7416dd71a0db8b10988ec360f7}} 
+\index{detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}!error\_handler@{error\_handler}}
+\index{error\_handler@{error\_handler}!detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{error\_handler}{error\_handler}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+const \mbox{\hyperlink{namespacedetail_abe7cfa1fd8fa706ff4392bff9d1a8298}{error\+\_\+handler\+\_\+t}} \mbox{\hyperlink{classdetail_1_1serializer}{detail\+::serializer}}$<$ Basic\+Json\+Type $>$\+::error\+\_\+handler}
+
+
+
+error\+\_\+handler how to react on decoding errors 
+
+
+
+Definition at line 18906 of file json.\+hpp.
+
+\mbox{\Hypertarget{classdetail_1_1serializer_acf6f783e3299d8b18ce4b5d9746f39f6}\label{classdetail_1_1serializer_acf6f783e3299d8b18ce4b5d9746f39f6}} 
+\index{detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}!indent\_char@{indent\_char}}
+\index{indent\_char@{indent\_char}!detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{indent\_char}{indent\_char}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+const char \mbox{\hyperlink{classdetail_1_1serializer}{detail\+::serializer}}$<$ Basic\+Json\+Type $>$\+::indent\+\_\+char}
+
+
+
+the indentation character 
+
+
+
+Definition at line 18901 of file json.\+hpp.
+
+\mbox{\Hypertarget{classdetail_1_1serializer_a7f6f1d36859514ab42984deb28d2521e}\label{classdetail_1_1serializer_a7f6f1d36859514ab42984deb28d2521e}} 
+\index{detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}!indent\_string@{indent\_string}}
+\index{indent\_string@{indent\_string}!detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{indent\_string}{indent\_string}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+string\+\_\+t \mbox{\hyperlink{classdetail_1_1serializer}{detail\+::serializer}}$<$ Basic\+Json\+Type $>$\+::indent\+\_\+string}
+
+
+
+the indentation string 
+
+
+
+Definition at line 18903 of file json.\+hpp.
+
+\mbox{\Hypertarget{classdetail_1_1serializer_a80ca90565eec446d377ab65a023297ab}\label{classdetail_1_1serializer_a80ca90565eec446d377ab65a023297ab}} 
+\index{detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}!loc@{loc}}
+\index{loc@{loc}!detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{loc}{loc}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+const std\+::lconv$\ast$ \mbox{\hyperlink{classdetail_1_1serializer}{detail\+::serializer}}$<$ Basic\+Json\+Type $>$\+::loc = nullptr}
+
+
+
+the locale 
+
+
+
+Definition at line 18891 of file json.\+hpp.
+
+\mbox{\Hypertarget{classdetail_1_1serializer_ace18a55b8304310fee309d31e54a3e27}\label{classdetail_1_1serializer_ace18a55b8304310fee309d31e54a3e27}} 
+\index{detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}!number\_buffer@{number\_buffer}}
+\index{number\_buffer@{number\_buffer}!detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{number\_buffer}{number\_buffer}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+std\+::array$<$char, 64$>$ \mbox{\hyperlink{classdetail_1_1serializer}{detail\+::serializer}}$<$ Basic\+Json\+Type $>$\+::number\+\_\+buffer \{\{\}\}}
+
+
+
+a (hopefully) large enough character buffer 
+
+
+
+Definition at line 18888 of file json.\+hpp.
+
+\mbox{\Hypertarget{classdetail_1_1serializer_a2db3d61cfc616f83763b6d4a03d0d772}\label{classdetail_1_1serializer_a2db3d61cfc616f83763b6d4a03d0d772}} 
+\index{detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}!state@{state}}
+\index{state@{state}!detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+std\+::uint8\+\_\+t \mbox{\hyperlink{classdetail_1_1serializer}{detail\+::serializer}}$<$ Basic\+Json\+Type $>$\+::state = UTF8\+\_\+\+ACCEPT}
+
+
+
+Definition at line 18316 of file json.\+hpp.
+
+\mbox{\Hypertarget{classdetail_1_1serializer_a27a61728ed0fbc65de009286531a6e70}\label{classdetail_1_1serializer_a27a61728ed0fbc65de009286531a6e70}} 
+\index{detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}!string\_buffer@{string\_buffer}}
+\index{string\_buffer@{string\_buffer}!detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{string\_buffer}{string\_buffer}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+std\+::array$<$char, 512$>$ \mbox{\hyperlink{classdetail_1_1serializer}{detail\+::serializer}}$<$ Basic\+Json\+Type $>$\+::string\+\_\+buffer \{\{\}\}}
+
+
+
+string buffer 
+
+
+
+Definition at line 18898 of file json.\+hpp.
+
+\mbox{\Hypertarget{classdetail_1_1serializer_a5b75b99511362e4e5d011c8a961e96bb}\label{classdetail_1_1serializer_a5b75b99511362e4e5d011c8a961e96bb}} 
+\index{detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}!thousands\_sep@{thousands\_sep}}
+\index{thousands\_sep@{thousands\_sep}!detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{thousands\_sep}{thousands\_sep}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+const char \mbox{\hyperlink{classdetail_1_1serializer}{detail\+::serializer}}$<$ Basic\+Json\+Type $>$\+::thousands\+\_\+sep = \textquotesingle{}\textbackslash{}0\textquotesingle{}}
+
+
+
+the locale\textquotesingle{}s thousand separator character 
+
+
+
+Definition at line 18893 of file json.\+hpp.
+
+\mbox{\Hypertarget{classdetail_1_1serializer_a44a05646a5ac7caec54f97ba17cb893b}\label{classdetail_1_1serializer_a44a05646a5ac7caec54f97ba17cb893b}} 
+\index{detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}!undumped\_chars@{undumped\_chars}}
+\index{undumped\_chars@{undumped\_chars}!detail::serializer$<$ BasicJsonType $>$@{detail::serializer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{undumped\_chars}{undumped\_chars}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+std\+::size\+\_\+t \mbox{\hyperlink{classdetail_1_1serializer}{detail\+::serializer}}$<$ Basic\+Json\+Type $>$\+::undumped\+\_\+chars = 0}
+
+
+
+Definition at line 18321 of file json.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/nlohmann/\mbox{\hyperlink{json_8hpp}{json.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,78 @@
+\hypertarget{namespacevd__dists}{}\doxysection{vd\+\_\+dists Namespace Reference}
+\label{namespacevd__dists}\index{vd\_dists@{vd\_dists}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacevd__dists_a4d9858992a91523e62bfd6917d1531ea}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacevd__dists_a4d9858992a91523e62bfd6917d1531ea}\label{namespacevd__dists_a4d9858992a91523e62bfd6917d1531ea}} 
+\index{vd\_dists@{vd\_dists}!main@{main}}
+\index{main@{main}!vd\_dists@{vd\_dists}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily def vd\+\_\+dists.\+main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 8 of file vd\+\_\+dists.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{8 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevd__dists_a4d9858992a91523e62bfd6917d1531ea}{main}}():}
+\DoxyCodeLine{9     val\_diff\_to\_rts: Dict[int, List[int]] = \{\}}
+\DoxyCodeLine{10     choice\_to\_rts: Dict[int, List[int]] = \{-\/1 : list(), 1 : list()\}}
+\DoxyCodeLine{11     addm = \textcolor{keyword}{False}}
+\DoxyCodeLine{12     \textcolor{keywordflow}{if} (len(sys.argv) > 1 \textcolor{keywordflow}{and} sys.argv[1] == \textcolor{stringliteral}{"{}addm"{}}):}
+\DoxyCodeLine{13         addm = \textcolor{keyword}{True}}
+\DoxyCodeLine{14         df = pd.read\_csv(\textcolor{stringliteral}{"{}results/addm\_simulations.csv"{}})}
+\DoxyCodeLine{15     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{16         df = pd.read\_csv(\textcolor{stringliteral}{"{}results/ddm\_simulations.csv"{}})}
+\DoxyCodeLine{17     df = df.reset\_index()}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19     \textcolor{keywordflow}{for} \_, row \textcolor{keywordflow}{in} df.iterrows():}
+\DoxyCodeLine{20         choice = row[\textcolor{stringliteral}{'choice'}]}
+\DoxyCodeLine{21         rt = row[\textcolor{stringliteral}{'RT'}]}
+\DoxyCodeLine{22         val\_diff = row[\textcolor{stringliteral}{'valDiff'}]}
+\DoxyCodeLine{23         \textcolor{keywordflow}{if} val\_diff \textcolor{keywordflow}{in} val\_diff\_to\_rts:}
+\DoxyCodeLine{24             val\_diff\_to\_rts[val\_diff].append(rt)}
+\DoxyCodeLine{25         \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{26             val\_diff\_to\_rts[val\_diff] = [rt]}
+\DoxyCodeLine{27         \textcolor{keywordflow}{if} choice \textcolor{keywordflow}{in} choice\_to\_rts:}
+\DoxyCodeLine{28             choice\_to\_rts[choice].append(rt)}
+\DoxyCodeLine{29         \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{30             choice\_to\_rts[choice] = [rt]}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32     keys = list(val\_diff\_to\_rts.keys())}
+\DoxyCodeLine{33     keys.sort()}
+\DoxyCodeLine{34     val\_diff\_to\_rts = \{i : val\_diff\_to\_rts[i] \textcolor{keywordflow}{for} i \textcolor{keywordflow}{in} keys\}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     fig, axs = plt.subplots(7)}
+\DoxyCodeLine{37     plt.rcParams[\textcolor{stringliteral}{'axes.titley'}] = 1.0}
+\DoxyCodeLine{38     plt.rcParams[\textcolor{stringliteral}{'axes.titlepad'}] = -\/14}
+\DoxyCodeLine{39     i = 0}
+\DoxyCodeLine{40     \textcolor{keywordflow}{for} vd, rts \textcolor{keywordflow}{in} val\_diff\_to\_rts.items():}
+\DoxyCodeLine{41         mean = np.mean(rts)}
+\DoxyCodeLine{42         axs[i].hist(rts, label=vd, bins=range(0, 5000, 100))}
+\DoxyCodeLine{43         axs[i].set\_title(f\textcolor{stringliteral}{"{}value difference=\{vd\}"{}})}
+\DoxyCodeLine{44         axs[i].set\_ylim([0, 30])}
+\DoxyCodeLine{45         axs[i].axvline(mean, color=\textcolor{stringliteral}{"{}red"{}})}
+\DoxyCodeLine{46         i+= 1}
+\DoxyCodeLine{47     axs[6].set\_xlabel(\textcolor{stringliteral}{"{}Reaction Time (ms)"{}})}
+\DoxyCodeLine{48     axs[3].set\_ylabel(\textcolor{stringliteral}{'Count'})}
+\DoxyCodeLine{49     fig.set\_figwidth(18)}
+\DoxyCodeLine{50     fig.set\_figheight(15)}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52     \textcolor{keywordflow}{if} (len(sys.argv) > 1 \textcolor{keywordflow}{and} \textcolor{stringliteral}{"{}save"{}} \textcolor{keywordflow}{in} sys.argv):}
+\DoxyCodeLine{53         currTime = datetime.now().strftime(\textcolor{stringliteral}{u"{}\%Y-\/\%m-\/\%d\_\%H:\%M:\%S"{}})}
+\DoxyCodeLine{54         \textcolor{keywordflow}{if} addm:}
+\DoxyCodeLine{55             plt.suptitle(\textcolor{stringliteral}{"{}aDDM Reaction Time Distribution for Value Differences"{}})   }
+\DoxyCodeLine{56             plt.savefig(\textcolor{stringliteral}{"{}imgs/addm\_rt\_dist\_"{}} + currTime + \textcolor{stringliteral}{"{}.png"{}})}
+\DoxyCodeLine{57         \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{58             plt.suptitle(\textcolor{stringliteral}{"{}DDM Reaction Time Distribution for Value Differences"{}})  }
+\DoxyCodeLine{59             plt.savefig(\textcolor{stringliteral}{"{}imgs/ddm\_rt\_dist\_"{}} + currTime + \textcolor{stringliteral}{"{}.png"{}})}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61    }
+
+\end{DoxyCode}
