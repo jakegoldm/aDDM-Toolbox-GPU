@@ -1,0 +1,64 @@
+\doxysection{addm\+\_\+mle.\+py}
+\hypertarget{addm__mle_8py_source}{}\label{addm__mle_8py_source}\index{python/addm\_mle.py@{python/addm\_mle.py}}
+\mbox{\hyperlink{addm__mle_8py}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00001}\mbox{\hyperlink{namespaceaddm__mle}{00001}}\ \textcolor{keyword}{import}\ matplotlib.pyplot\ \textcolor{keyword}{as}\ plt}
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00002}00002\ \textcolor{keyword}{import}\ numpy\ \textcolor{keyword}{as}\ np}
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00003}00003\ \textcolor{keyword}{import}\ pandas\ \textcolor{keyword}{as}\ pd}
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00004}00004\ \textcolor{keyword}{import}\ sys}
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00006}00006\ \textcolor{keyword}{from}\ datetime\ \textcolor{keyword}{import}\ datetime}
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00008}\mbox{\hyperlink{namespaceaddm__mle_a095be02cae4ce618668331b22f14a8d6}{00008}}\ df\ =\ pd.read\_csv(\textcolor{stringliteral}{"{}results/addm\_mle.csv"{}})}
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00009}\mbox{\hyperlink{namespaceaddm__mle_ad75d1486255474caede0d713427d2219}{00009}}\ thetas\ =\ df[\textcolor{stringliteral}{'theta'}].unique()}
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00011}\mbox{\hyperlink{namespaceaddm__mle_acf54bbc05d86c3191c6f6fa3da2cf6c9}{00011}}\ num\_thetas\ =\ len(thetas)}
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00012}\mbox{\hyperlink{namespaceaddm__mle_a3a1efeb460010b70b6a262dda538c7e0}{00012}}\ num\_cols\ =\ 2\ \ \textcolor{comment}{\#\ Number\ of\ columns\ in\ the\ subplot\ grid}}
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00013}\mbox{\hyperlink{namespaceaddm__mle_a14afbc2880f5461164f13ae5c1998f99}{00013}}\ num\_rows\ =\ (num\_thetas\ -\/\ 1)\ //\ num\_cols\ +\ 1\ \ \textcolor{comment}{\#\ Number\ of\ rows\ in\ the\ subplot\ grid}}
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00015}\mbox{\hyperlink{namespaceaddm__mle_a0b9cf6d4ed6304d656f26b8bd43c250c}{00015}}\ fig,\ axes\ =\ plt.subplots(num\_rows,\ num\_cols,\ figsize=(12,\ 9))}
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00017}00017\ \textcolor{keywordflow}{for}\ i,\ theta\ \textcolor{keywordflow}{in}\ enumerate(thetas):}
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00018}\mbox{\hyperlink{namespaceaddm__mle_a45bb5f22de01ea20f39252f7d611df77}{00018}}\ \ \ \ \ data\ =\ df[df[\textcolor{stringliteral}{'theta'}]\ ==\ theta]}
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00020}\mbox{\hyperlink{namespaceaddm__mle_aafb31476985ae384e1a5d172fcf3011a}{00020}}\ \ \ \ \ row\ =\ i\ //\ num\_cols}
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00021}\mbox{\hyperlink{namespaceaddm__mle_ae9f158a3d920db8b7197f2c836a45786}{00021}}\ \ \ \ \ col\ =\ i\ \%\ num\_cols}
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00022}\mbox{\hyperlink{namespaceaddm__mle_af00017da88aaf1b5ec6d37a5500c85db}{00022}}\ \ \ \ \ ax\ =\ axes[row,\ col]\ \textcolor{keywordflow}{if}\ num\_rows\ >\ 1\ \textcolor{keywordflow}{else}\ axes[col]}
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00024}\mbox{\hyperlink{namespaceaddm__mle_a5fb1fa222b49251d1c185556e53ec761}{00024}}\ \ \ \ \ heatmap\ =\ ax.imshow(}
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00025}00025\ \ \ \ \ \ \ \ \ np.reshape(data[\textcolor{stringliteral}{'NLL'}],\ (-\/1,\ len(data[\textcolor{stringliteral}{'d'}].unique()))),}
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00026}00026\ \ \ \ \ \ \ \ \ cmap=\textcolor{stringliteral}{'plasma'},}
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00027}00027\ \ \ \ \ \ \ \ \ extent=[0,\ len(data[\textcolor{stringliteral}{'d'}].unique())\ -\/\ 1,\ 0,\ len(data[\textcolor{stringliteral}{'sigma'}].unique())\ -\/\ 1],}
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00028}00028\ \ \ \ \ \ \ \ \ origin=\textcolor{stringliteral}{'lower'},}
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00029}00029\ \ \ \ \ \ \ \ \ aspect=\textcolor{stringliteral}{'auto'},}
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00030}00030\ \ \ \ \ \ \ \ \ vmax=6200}
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00031}00031\ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00032}00032\ \ \ \ \ ax.set\_title(f\textcolor{stringliteral}{'Theta\ =\ \{theta\}'})}
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00033}00033\ \ \ \ \ ax.set\_xlabel(\textcolor{stringliteral}{'d'})}
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00034}00034\ \ \ \ \ ax.set\_ylabel(\textcolor{stringliteral}{'sigma'})}
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00036}00036\ \ \ \ \ ax.set\_xticks(np.arange(len(data[\textcolor{stringliteral}{'d'}].unique())))}
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00037}00037\ \ \ \ \ ax.set\_xticklabels(data[\textcolor{stringliteral}{'d'}].unique()[::-\/1])}
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00038}00038\ \ \ \ \ ax.set\_yticks(np.arange(len(data[\textcolor{stringliteral}{'sigma'}].unique())))}
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00039}00039\ \ \ \ \ ax.set\_yticklabels(data[\textcolor{stringliteral}{'sigma'}].unique()[::-\/1])}
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00041}00041\ \ \ \ \ fig.colorbar(heatmap,\ ax=ax)}
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00043}\mbox{\hyperlink{namespaceaddm__mle_a25fca0cbbec6a115e2a6870b0d85875b}{00043}}\ min\_nll\_idx\ =\ df[\textcolor{stringliteral}{'NLL'}].idxmin()}
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00044}\mbox{\hyperlink{namespaceaddm__mle_a53e92352795005fd1fc73be01ffb047a}{00044}}\ min\_d\ =\ df.loc[min\_nll\_idx,\ \textcolor{stringliteral}{'d'}]}
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00045}\mbox{\hyperlink{namespaceaddm__mle_a4f98a94fe07bb4b01279b1eb6c92ae9e}{00045}}\ min\_sigma\ =\ df.loc[min\_nll\_idx,\ \textcolor{stringliteral}{'sigma'}]}
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00046}\mbox{\hyperlink{namespaceaddm__mle_aa49d989d55f6d647dfa251e3024b1af4}{00046}}\ min\_theta\ =\ df.loc[min\_nll\_idx,\ \textcolor{stringliteral}{'theta'}]}
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00048}\mbox{\hyperlink{namespaceaddm__mle_a3af2cf0d52e02ef4390e2755371c5f2a}{00048}}\ annotation\ =\ f\textcolor{stringliteral}{'Min\ NLL:\ d=\{min\_d\},\ sigma=\{min\_sigma\},\ theta=\{min\_theta\}'}}
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00049}\mbox{\hyperlink{namespaceaddm__mle_a1b3f900de987c7c919b1dd7449cc3f40}{00049}}\ fig.text(0.5,\ 0.02,\ annotation,\ ha=\textcolor{stringliteral}{'center'},\ va=\textcolor{stringliteral}{'center'},\ fontsize=12)}
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00051}00051\ fig.tight\_layout()}
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00053}00053\ \textcolor{keywordflow}{if}\ (len(sys.argv)\ >\ 1\ \textcolor{keywordflow}{and}\ \textcolor{stringliteral}{"{}save"{}}\ \textcolor{keywordflow}{in}\ sys.argv):}
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00054}\mbox{\hyperlink{namespaceaddm__mle_a094c30732cafd75f4442c3ee00922563}{00054}}\ \ \ \ \ currTime\ =\ datetime.now().strftime(\textcolor{stringliteral}{u"{}\%Y-\/\%m-\/\%d\_\%H:\%M:\%S"{}})}
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00055}00055\ \ \ \ \ plt.savefig(\textcolor{stringliteral}{"{}imgs/addm\_mle\_"{}}\ +\ currTime\ +\ \textcolor{stringliteral}{"{}.png"{}})}
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00057}00057\ plt.show()}
+\DoxyCodeLine{\Hypertarget{addm__mle_8py_source_l00058}00058\ }
+
+\end{DoxyCode}

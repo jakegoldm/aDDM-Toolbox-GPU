@@ -1,0 +1,50 @@
+\doxysection{rdv\+\_\+time Namespace Reference}
+\hypertarget{namespacerdv__time}{}\label{namespacerdv__time}\index{rdv\_time@{rdv\_time}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacerdv__time_aa848eded64f45985c06ec49888621fee}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacerdv__time_aa848eded64f45985c06ec49888621fee}\label{namespacerdv__time_aa848eded64f45985c06ec49888621fee} 
+\index{rdv\_time@{rdv\_time}!main@{main}}
+\index{main@{main}!rdv\_time@{rdv\_time}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily rdv\+\_\+time.\+main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{rdv__time_8py_source_l00007}{7}} of file \mbox{\hyperlink{rdv__time_8py_source}{rdv\+\_\+time.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00007\ \textcolor{keyword}{def\ }\mbox{\hyperlink{addm__mle_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}():}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{with}\ open(\textcolor{stringliteral}{'results/data.json'})\ \textcolor{keyword}{as}\ file:}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ data\ =\ json.load(file)}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ rdvs\ =\ data[\textcolor{stringliteral}{"{}RDVs"{}}]}
+\DoxyCodeLine{00012\ \ \ \ \ x\ =\ np.arange(len(rdvs))\ *\ data[\textcolor{stringliteral}{"{}timeStep"{}}]}
+\DoxyCodeLine{00013\ \ \ \ \ plt.plot(x,\ rdvs,\ label=\textcolor{stringliteral}{"{}RDVs"{}})\ \ \ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ barrier\ =\ float(data[\textcolor{stringliteral}{"{}barrier"{}}])}
+\DoxyCodeLine{00016\ \ \ \ \ bias\ =\ float(data[\textcolor{stringliteral}{"{}bias"{}}])}
+\DoxyCodeLine{00017\ \ \ \ \ plt.axhline(barrier,\ color=\textcolor{stringliteral}{"{}grey"{}})}
+\DoxyCodeLine{00018\ \ \ \ \ plt.axhline(-\/barrier,\ color=\textcolor{stringliteral}{"{}grey"{}})}
+\DoxyCodeLine{00019\ \ \ \ \ plt.axhline(bias,\ color=\textcolor{stringliteral}{"{}grey"{}})}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ plt.text(0,\ -\/barrier\ *\ 0.95,\ f\textcolor{stringliteral}{"{}d:\ \{round(data['d'],\ 3)\}\(\backslash\)n"{}}\(\backslash\)}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ f\textcolor{stringliteral}{"{}RT:\ \{data['RT']\}\(\backslash\)nsigma:\ \{round(data['sigma'],\ 3)\}"{}})}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ plt.xlabel(\textcolor{stringliteral}{"{}Time\ (ms)"{}})}
+\DoxyCodeLine{00025\ \ \ \ \ plt.ylabel(\textcolor{stringliteral}{"{}RDV"{}})}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordflow}{if}\ (len(sys.argv)\ >\ 1\ \textcolor{keywordflow}{and}\ \textcolor{stringliteral}{"{}save"{}}\ \textcolor{keywordflow}{in}\ sys.argv):}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ currTime\ =\ datetime.now().strftime(\textcolor{stringliteral}{u"{}\%Y-\/\%m-\/\%d\_\%H:\%M:\%S"{}})}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ plt.savefig(\textcolor{stringliteral}{"{}imgs/rdv\_time\_"{}}\ +\ currTime\ +\ \textcolor{stringliteral}{"{}.png"{}})}
+\DoxyCodeLine{00030\ \ \ \ \ }
+\DoxyCodeLine{00031\ \ \ \ \ plt.show()}
+\DoxyCodeLine{00032\ }
+
+\end{DoxyCode}

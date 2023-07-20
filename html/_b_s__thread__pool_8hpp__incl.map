@@ -1,0 +1,29 @@
+<map id="include/bshoshany/BS_thread_pool.hpp" name="include/bshoshany/BS_thread_pool.hpp">
+<area shape="rect" id="Node000001" title="BS::thread_pool: a fast, lightweight, and easy&#45;to&#45;use C++17 thread pool library. This header file con..." alt="" coords="574,5,724,46"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,94,66,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="573,35,356,56,220,73,81,97,80,91,220,68,355,51,573,30"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="90,94,216,120"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="574,42,231,96,230,91,573,36"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="240,94,316,120"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="574,45,331,96,330,91,573,40"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="341,94,418,120"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="582,49,433,93,431,88,581,44"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="442,94,496,120"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="605,49,511,90,509,85,603,44"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="520,94,591,120"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="627,48,582,86,579,82,624,44"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="615,94,683,120"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="652,46,652,79,646,79,646,46"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="706,94,762,120"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="672,44,712,82,709,86,668,48"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="786,94,842,120"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="691,44,777,85,775,90,689,49"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="867,94,924,120"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="711,44,854,89,852,95,710,49"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="948,94,1030,120"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="725,42,934,90,933,95,724,47"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="1054,94,1105,120"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="725,34,867,56,1040,91,1039,96,866,62,724,40"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="1130,94,1187,120"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="725,32,899,54,1115,91,1114,97,898,59,724,37"/>
+</map>

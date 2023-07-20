@@ -1,0 +1,230 @@
+\doxysection{detail\+::exception Class Reference}
+\hypertarget{classdetail_1_1exception}{}\label{classdetail_1_1exception}\index{detail::exception@{detail::exception}}
+
+
+general exception of the \doxylink{classbasic__json}{basic\+\_\+json} class  
+
+
+
+
+{\ttfamily \#include $<$json.\+hpp$>$}
+
+
+
+Inheritance diagram for detail\+::exception\+:
+% FIG 0
+
+
+Collaboration diagram for detail\+::exception\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classdetail_1_1exception_ae75d7315f5f2d85958da6d961375caf0}{what}} () const noexcept override
+\begin{DoxyCompactList}\small\item\em returns the explanatory string \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{classdetail_1_1exception_a63b819fbb2ef34df9dad1e309207fa24}{id}}
+\begin{DoxyCompactList}\small\item\em the id of the exception \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdetail_1_1exception_a528d6bc77e88490bbb84cde2222b7ff0}{exception}} (int id\+\_\+, const char \texorpdfstring{$\ast$}{*}what\+\_\+arg)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{classdetail_1_1exception_a8f1eb56b9964c8dd84d89d0da98d883b}{name}} (const std\+::string \&ename, int id\+\_\+)
+\item 
+static std\+::string \mbox{\hyperlink{classdetail_1_1exception_a6b4a786b5c1c25dd3edaceb1bf2d5120}{diagnostics}} (std\+::nullptr\+\_\+t)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type $>$ }\\static std\+::string \mbox{\hyperlink{classdetail_1_1exception_af3739c53fe56a1712754d13dfa561f80}{diagnostics}} (const Basic\+Json\+Type \texorpdfstring{$\ast$}{*}leaf\+\_\+element)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+general exception of the \doxylink{classbasic__json}{basic\+\_\+json} class 
+
+\begin{DoxySeeAlso}{See also}
+\href{https://json.nlohmann.me/api/basic_json/exception/}{\texttt{ https\+://json.\+nlohmann.\+me/api/basic\+\_\+json/exception/}} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{json_8hpp_source_l04304}{4304}} of file \mbox{\hyperlink{json_8hpp_source}{json.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classdetail_1_1exception_a528d6bc77e88490bbb84cde2222b7ff0}\label{classdetail_1_1exception_a528d6bc77e88490bbb84cde2222b7ff0} 
+\index{detail::exception@{detail::exception}!exception@{exception}}
+\index{exception@{exception}!detail::exception@{detail::exception}}
+\doxysubsubsection{\texorpdfstring{exception()}{exception()}}
+{\footnotesize\ttfamily detail\+::exception\+::exception (\begin{DoxyParamCaption}\item[{int}]{id\+\_\+,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{what\+\_\+arg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{json_8hpp_source_l04318}{4318}} of file \mbox{\hyperlink{json_8hpp_source}{json.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{04318\ :\ \mbox{\hyperlink{classdetail_1_1exception_a63b819fbb2ef34df9dad1e309207fa24}{id}}(id\_),\ m(what\_arg)\ \{\}\ \textcolor{comment}{//\ NOLINT(bugprone-\/throw-\/keyword-\/missing)}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classdetail_1_1exception_af3739c53fe56a1712754d13dfa561f80}\label{classdetail_1_1exception_af3739c53fe56a1712754d13dfa561f80} 
+\index{detail::exception@{detail::exception}!diagnostics@{diagnostics}}
+\index{diagnostics@{diagnostics}!detail::exception@{detail::exception}}
+\doxysubsubsection{\texorpdfstring{diagnostics()}{diagnostics()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+static std\+::string detail\+::exception\+::diagnostics (\begin{DoxyParamCaption}\item[{const Basic\+Json\+Type \texorpdfstring{$\ast$}{*}}]{leaf\+\_\+element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{json_8hpp_source_l04331}{4331}} of file \mbox{\hyperlink{json_8hpp_source}{json.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{04332\ \ \ \ \ \{}
+\DoxyCodeLine{04333\ \textcolor{preprocessor}{\#if\ JSON\_DIAGNOSTICS}}
+\DoxyCodeLine{04334\ \ \ \ \ \ \ \ \ std::vector<std::string>\ tokens;}
+\DoxyCodeLine{04335\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}*\ current\ =\ leaf\_element;\ current\ !=\ \textcolor{keyword}{nullptr}\ \&\&\ current-\/>m\_parent\ !=\ \textcolor{keyword}{nullptr};\ current\ =\ current-\/>m\_parent)}
+\DoxyCodeLine{04336\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{04337\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (current-\/>m\_parent-\/>type())}
+\DoxyCodeLine{04338\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{04339\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632af1f713c9e000f5d3f280adbd124df4f5}{value\_t::array}}:}
+\DoxyCodeLine{04340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{04341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i\ =\ 0;\ i\ <\ current-\/>m\_parent-\/>m\_data.m\_value.array-\/>size();\ ++i)}
+\DoxyCodeLine{04342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{04343\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\&current-\/>m\_parent-\/>m\_data.m\_value.array-\/>operator[](i)\ ==\ current)}
+\DoxyCodeLine{04344\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{04345\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tokens.emplace\_back(std::to\_string(i));}
+\DoxyCodeLine{04346\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{04347\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{04348\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{04349\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{04350\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{04351\ }
+\DoxyCodeLine{04352\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632aa8cfde6331bd59eb2ac96f8911c4b666}{value\_t::object}}:}
+\DoxyCodeLine{04353\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{04354\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ element\ :\ *current-\/>m\_parent-\/>m\_data.m\_value.\mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632aa8cfde6331bd59eb2ac96f8911c4b666}{object}})}
+\DoxyCodeLine{04355\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{04356\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\&element.second\ ==\ current)}
+\DoxyCodeLine{04357\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{04358\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tokens.emplace\_back(element.first.c\_str());}
+\DoxyCodeLine{04359\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{04360\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{04361\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{04362\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{04363\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{04364\ }
+\DoxyCodeLine{04365\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632a37a6259cc0c1dae299a7866489dff0bd}{value\_t::null}}:\ \textcolor{comment}{//\ LCOV\_EXCL\_LINE}}
+\DoxyCodeLine{04366\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632ab45cffe084dd3d20d928bee85e7b0f21}{value\_t::string}}:\ \textcolor{comment}{//\ LCOV\_EXCL\_LINE}}
+\DoxyCodeLine{04367\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632a84e2c64f38f78ba3ea5c905ab5a2da27}{value\_t::boolean}}:\ \textcolor{comment}{//\ LCOV\_EXCL\_LINE}}
+\DoxyCodeLine{04368\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632a5763da164f8659d94a56e29df64b4bcc}{value\_t::number\_integer}}:\ \textcolor{comment}{//\ LCOV\_EXCL\_LINE}}
+\DoxyCodeLine{04369\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632adce7cc8ec29055c4158828921f2f265e}{value\_t::number\_unsigned}}:\ \textcolor{comment}{//\ LCOV\_EXCL\_LINE}}
+\DoxyCodeLine{04370\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632ad9966ecb59667235a57b4b999a649eef}{value\_t::number\_float}}:\ \textcolor{comment}{//\ LCOV\_EXCL\_LINE}}
+\DoxyCodeLine{04371\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632a9d7183f16acce70658f686ae7f1a4d20}{value\_t::binary}}:\ \textcolor{comment}{//\ LCOV\_EXCL\_LINE}}
+\DoxyCodeLine{04372\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632a94708897ec9db8647dfe695714c98e46}{value\_t::discarded}}:\ \textcolor{comment}{//\ LCOV\_EXCL\_LINE}}
+\DoxyCodeLine{04373\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:\ \ \ \textcolor{comment}{//\ LCOV\_EXCL\_LINE}}
+\DoxyCodeLine{04374\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};\ \textcolor{comment}{//\ LCOV\_EXCL\_LINE}}
+\DoxyCodeLine{04375\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{04376\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{04377\ }
+\DoxyCodeLine{04378\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tokens.empty())}
+\DoxyCodeLine{04379\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{04380\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{04381\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{04382\ }
+\DoxyCodeLine{04383\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ str\ =\ std::accumulate(tokens.rbegin(),\ tokens.rend(),\ std::string\{\},}
+\DoxyCodeLine{04384\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [](\textcolor{keyword}{const}\ std::string\ \&\ a,\ \textcolor{keyword}{const}\ std::string\ \&\ b)}
+\DoxyCodeLine{04385\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{04386\ \ \ \ \ \ \ \ \ \ \ \ \ return\ concat(a,\ \textcolor{stringliteral}{'/'},\ detail::escape(b));}
+\DoxyCodeLine{04387\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{04388\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacedetail_a266fb3d4bf633ad6c506434cc91164da}{concat}}(\textcolor{charliteral}{'('},\ str,\ \textcolor{stringliteral}{"{})\ "{}});}
+\DoxyCodeLine{04389\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{04390\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{void}\textcolor{keyword}{>}(leaf\_element);}
+\DoxyCodeLine{04391\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{04392\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{04393\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classdetail_1_1exception_a6b4a786b5c1c25dd3edaceb1bf2d5120}\label{classdetail_1_1exception_a6b4a786b5c1c25dd3edaceb1bf2d5120} 
+\index{detail::exception@{detail::exception}!diagnostics@{diagnostics}}
+\index{diagnostics@{diagnostics}!detail::exception@{detail::exception}}
+\doxysubsubsection{\texorpdfstring{diagnostics()}{diagnostics()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static std\+::string detail\+::exception\+::diagnostics (\begin{DoxyParamCaption}\item[{std\+::nullptr\+\_\+t}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{json_8hpp_source_l04325}{4325}} of file \mbox{\hyperlink{json_8hpp_source}{json.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{04326\ \ \ \ \ \{}
+\DoxyCodeLine{04327\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{04328\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classdetail_1_1exception_a8f1eb56b9964c8dd84d89d0da98d883b}\label{classdetail_1_1exception_a8f1eb56b9964c8dd84d89d0da98d883b} 
+\index{detail::exception@{detail::exception}!name@{name}}
+\index{name@{name}!detail::exception@{detail::exception}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily static std\+::string detail\+::exception\+::name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ename,  }\item[{int}]{id\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{json_8hpp_source_l04320}{4320}} of file \mbox{\hyperlink{json_8hpp_source}{json.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{04321\ \ \ \ \ \{}
+\DoxyCodeLine{04322\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacedetail_a266fb3d4bf633ad6c506434cc91164da}{concat}}(\textcolor{stringliteral}{"{}[json.exception."{}},\ ename,\ \textcolor{charliteral}{'.'},\ std::to\_string(id\_),\ \textcolor{stringliteral}{"{}]\ "{}});}
+\DoxyCodeLine{04323\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classdetail_1_1exception_ae75d7315f5f2d85958da6d961375caf0}\label{classdetail_1_1exception_ae75d7315f5f2d85958da6d961375caf0} 
+\index{detail::exception@{detail::exception}!what@{what}}
+\index{what@{what}!detail::exception@{detail::exception}}
+\doxysubsubsection{\texorpdfstring{what()}{what()}}
+{\footnotesize\ttfamily const char \texorpdfstring{$\ast$}{*} detail\+::exception\+::what (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [noexcept]}}
+
+
+
+returns the explanatory string 
+
+
+
+Definition at line \mbox{\hyperlink{json_8hpp_source_l04308}{4308}} of file \mbox{\hyperlink{json_8hpp_source}{json.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{04309\ \ \ \ \ \{}
+\DoxyCodeLine{04310\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m.what();}
+\DoxyCodeLine{04311\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classdetail_1_1exception_a63b819fbb2ef34df9dad1e309207fa24}\label{classdetail_1_1exception_a63b819fbb2ef34df9dad1e309207fa24} 
+\index{detail::exception@{detail::exception}!id@{id}}
+\index{id@{id}!detail::exception@{detail::exception}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily const int detail\+::exception\+::id}
+
+
+
+the id of the exception 
+
+
+
+Definition at line \mbox{\hyperlink{json_8hpp_source_l04314}{4314}} of file \mbox{\hyperlink{json_8hpp_source}{json.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/nlohmann/\mbox{\hyperlink{json_8hpp}{json.\+hpp}}\end{DoxyCompactItemize}

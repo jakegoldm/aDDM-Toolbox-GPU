@@ -1,0 +1,72 @@
+\doxysection{addm.\+h}
+\hypertarget{addm_8h_source}{}\label{addm_8h_source}\index{include/addm.h@{include/addm.h}}
+\mbox{\hyperlink{addm_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ ADDM\_H}}
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ ADDM\_H}}
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ddm_8h}{ddm.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00009}00009\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespacestd}{std}};}
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00011}\mbox{\hyperlink{addm_8h_ac73e0abca434ac872480feb6a7cf4c56}{00011}}\ \textcolor{keyword}{using\ }\mbox{\hyperlink{addm_8h_ac73e0abca434ac872480feb6a7cf4c56}{fixDists}}\ =\ map<int,\ vector<float>>;}
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00013}\mbox{\hyperlink{class_fixation_data}{00013}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_fixation_data}{FixationData}}\ \{}
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00016}\mbox{\hyperlink{class_fixation_data_abae78ac11b072c59b1821d2b2d05eeae}{00016}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_fixation_data_abae78ac11b072c59b1821d2b2d05eeae}{fixDistType}};}
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00017}\mbox{\hyperlink{class_fixation_data_ac94f66e2c75130b416982631f76580b8}{00017}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_fixation_data_ac94f66e2c75130b416982631f76580b8}{probFixLeftFirst}};}
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00018}\mbox{\hyperlink{class_fixation_data_a07031fd2270b2693fecfb8121d246a74}{00018}}\ \ \ \ \ \ \ \ \ vector<int>\ \mbox{\hyperlink{class_fixation_data_a07031fd2270b2693fecfb8121d246a74}{latencies}};}
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00019}\mbox{\hyperlink{class_fixation_data_a10bd0c29fb903e681b6376d832c4d55c}{00019}}\ \ \ \ \ \ \ \ \ vector<int>\ \mbox{\hyperlink{class_fixation_data_a10bd0c29fb903e681b6376d832c4d55c}{transitions}};}
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00020}\mbox{\hyperlink{class_fixation_data_a47d55cea6c6a1ecaef33baa5e9a0f60c}{00020}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{addm_8h_ac73e0abca434ac872480feb6a7cf4c56}{fixDists}}\ \mbox{\hyperlink{class_fixation_data_a47d55cea6c6a1ecaef33baa5e9a0f60c}{fixations}};}
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00022}00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_fixation_data}{FixationData}}(}
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_fixation_data_ac94f66e2c75130b416982631f76580b8}{probFixLeftFirst}},\ vector<int>\ \mbox{\hyperlink{class_fixation_data_a07031fd2270b2693fecfb8121d246a74}{latencies}},\ }
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ vector<int>\ \mbox{\hyperlink{class_fixation_data_a10bd0c29fb903e681b6376d832c4d55c}{transitions}},\ \mbox{\hyperlink{addm_8h_ac73e0abca434ac872480feb6a7cf4c56}{fixDists}}\ \mbox{\hyperlink{class_fixation_data_a47d55cea6c6a1ecaef33baa5e9a0f60c}{fixations}},\ }
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_fixation_data_abae78ac11b072c59b1821d2b2d05eeae}{fixDistType}}}
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00026}00026\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00027}00027\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00029}\mbox{\hyperlink{classa_d_d_m_trial}{00029}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classa_d_d_m_trial}{aDDMTrial}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_d_d_m_trial}{DDMTrial}}\ \{}
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00031}00031\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00032}\mbox{\hyperlink{classa_d_d_m_trial_a8b7e649ce0fded823e1191c2f9675cf2}{00032}}\ \ \ \ \ \ \ \ \ vector<int>\ \mbox{\hyperlink{classa_d_d_m_trial_a8b7e649ce0fded823e1191c2f9675cf2}{fixItem}};}
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00033}\mbox{\hyperlink{classa_d_d_m_trial_adf04171bada997ac559e29629524da2f}{00033}}\ \ \ \ \ \ \ \ \ vector<int>\ \mbox{\hyperlink{classa_d_d_m_trial_adf04171bada997ac559e29629524da2f}{fixTime}};}
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00034}\mbox{\hyperlink{classa_d_d_m_trial_abd71cbec989e9c2e08ab0c516c829283}{00034}}\ \ \ \ \ \ \ \ \ vector<float>\ \mbox{\hyperlink{classa_d_d_m_trial_abd71cbec989e9c2e08ab0c516c829283}{fixRDV}};}
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00035}\mbox{\hyperlink{classa_d_d_m_trial_ae0e6788d10a1c67884727fe58b6b4953}{00035}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classa_d_d_m_trial_ae0e6788d10a1c67884727fe58b6b4953}{uninterruptedLastFixTime}};}
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00036}\mbox{\hyperlink{classa_d_d_m_trial_afb1868d3ccccaca0d1f32c4fff6399c3}{00036}}\ \ \ \ \ \ \ \ \ std::vector<float>\mbox{\hyperlink{classa_d_d_m_trial_afb1868d3ccccaca0d1f32c4fff6399c3}{RDVs}};}
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00038}\mbox{\hyperlink{classa_d_d_m_trial_aa10527b5851a8395529eff1e8ad86adc}{00038}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classa_d_d_m_trial_aa10527b5851a8395529eff1e8ad86adc}{aDDMTrial}}(}
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_d_d_m_trial_a1fed499f6f800dcf08331b0f08d4570b}{RT}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_d_d_m_trial_a941813496795b5c0f16d068444abf483}{choice}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_d_d_m_trial_ae949e54554e10660f73878a07a95d14d}{valueLeft}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_d_d_m_trial_a9e1a0900b92b8d16fb3bd49894c9dc2c}{valueRight}},\ }
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ vector<int>\ \mbox{\hyperlink{classa_d_d_m_trial_a8b7e649ce0fded823e1191c2f9675cf2}{fixItem}}=\{\},\ vector<int>\ \mbox{\hyperlink{classa_d_d_m_trial_adf04171bada997ac559e29629524da2f}{fixTime}}=\{\},\ }
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ vector<float>\ \mbox{\hyperlink{classa_d_d_m_trial_abd71cbec989e9c2e08ab0c516c829283}{fixRDV}}=\{\},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classa_d_d_m_trial_ae0e6788d10a1c67884727fe58b6b4953}{uninterruptedLastFixTime}}=0);}
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00043}\mbox{\hyperlink{classa_d_d_m_trial_ae406a1f1ae278a292421caedafda67a2}{00043}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classa_d_d_m_trial_ae406a1f1ae278a292421caedafda67a2}{aDDMTrial}}()\ \{\};}
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00044}00044\ \};}
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00046}\mbox{\hyperlink{classa_d_d_m}{00046}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classa_d_d_m}{aDDM}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_d_d_m}{DDM}}\ \{}
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00047}00047\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00048}00048\ \ \ \ \ \textcolor{keyword}{public}:\ }
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00049}\mbox{\hyperlink{classa_d_d_m_a9c6c014066b0930baaa665b06dec9bb3}{00049}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classa_d_d_m_a9c6c014066b0930baaa665b06dec9bb3}{theta}};}
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00063}00063\ \ \ \ \ \mbox{\hyperlink{classa_d_d_m}{aDDM}}(}
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_d_d_m_a15511d3cf0f7deb5de073dcdfd09bcc6}{d}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_d_d_m_a17570a6c2378cdb363437f39a5fa3f00}{sigma}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classa_d_d_m_a9c6c014066b0930baaa665b06dec9bb3}{theta}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_d_d_m_a0293f051d7889ee014fb55c4939e4783}{barrier}},\ }
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_d_d_m_a0821be8a65988df0004b4d9f4239a020}{nonDecisionTime}}=0,\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_d_d_m_a0cecc28e691846bce6dccb02f34aef07}{bias}}=0}
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00066}00066\ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00077}00077\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classa_d_d_m_a9ccee0abe15711f09f8eee0a782f3e06}{getTrialLikelihood}}(\mbox{\hyperlink{classa_d_d_m_trial}{aDDMTrial}}\ trial,\ \textcolor{keywordtype}{bool}\ debug=\textcolor{keyword}{false},\ \textcolor{keywordtype}{int}\ timeStep=10,\ \textcolor{keywordtype}{float}\ approxStateStep=0.1);}
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00091}00091\ \ \ \ \ \mbox{\hyperlink{classa_d_d_m_trial}{aDDMTrial}}\ \mbox{\hyperlink{classa_d_d_m_ac9cc21a00f8516e23a0e3b15f913999b}{simulateTrial}}(}
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00092}00092\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{addm__mle_8cpp_a66ae2c9a86cab7b4970ecc123c799c45}{valueLeft}},\ \textcolor{keywordtype}{int}\ valueRight,\ \mbox{\hyperlink{class_fixation_data}{FixationData}}\ fixationData,\ \textcolor{keywordtype}{int}\ timeStep=10,\ }
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00093}00093\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ numFixDists=3,\ \mbox{\hyperlink{addm_8h_ac73e0abca434ac872480feb6a7cf4c56}{fixDists}}\ fixationDist=\{\},\ vector<int>\ timeBins=\{\}}
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00094}00094\ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00095}00095\ \};}
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00097}00097\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{addm_8h_af2186cd8aff37cd7fa28ad2dcb706094}{aDDMParallelNLL}}(\mbox{\hyperlink{classa_d_d_m}{aDDM}}\ addm,\ std::vector<aDDMTrial>\ trials);}
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{addm_8h_source_l00099}00099\ \textcolor{preprocessor}{\#endif\ }}
+
+\end{DoxyCode}

@@ -1,0 +1,81 @@
+\doxysection{util.\+h}
+\hypertarget{util_8h_source}{}\label{util_8h_source}\index{include/util.h@{include/util.h}}
+\mbox{\hyperlink{util_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ UTIL\_H}}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ UTIL\_H}}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{addm_8h}{addm.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00009}00009\ \textcolor{comment}{//\ \#ifndef\ \_\_NVCC\_\_}}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00010}00010\ \textcolor{preprocessor}{\#\ \ \ include\ "{}\mbox{\hyperlink{_b_s__thread__pool_8hpp}{bshoshany/BS\_thread\_pool.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00011}00011\ \textcolor{comment}{//\ \#endif}}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00013}00013\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{util_8h_ac02944cc493358b6ef201270bd229165}{SEED}};}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00014}00014\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{util_8h_ae307adc0568237d1e5bc8802f60f67bf}{DECAY}};}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00015}00015\ \textcolor{keyword}{extern}\ vector<string>\ \mbox{\hyperlink{util_8h_a99cfa00f5e7249d86df14b3f97b01d5e}{validFixDistTypes}};}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00017}\mbox{\hyperlink{struct_e_x_p_entry}{00017}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_e_x_p_entry}{EXPEntry}}\ \{}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00018}\mbox{\hyperlink{struct_e_x_p_entry_afb41b06a848405f031240bb472b90e41}{00018}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_e_x_p_entry_afb41b06a848405f031240bb472b90e41}{parcode}};}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00019}\mbox{\hyperlink{struct_e_x_p_entry_a814ce5db190d0a0bfc140ae67000b256}{00019}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_e_x_p_entry_a814ce5db190d0a0bfc140ae67000b256}{trial}};}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00020}\mbox{\hyperlink{struct_e_x_p_entry_a43a1a290bc02f8660c5d8e9a1c408992}{00020}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_e_x_p_entry_a43a1a290bc02f8660c5d8e9a1c408992}{rt}};}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00021}\mbox{\hyperlink{struct_e_x_p_entry_aeb120a3e1894866365dc659974ff76b9}{00021}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_e_x_p_entry_aeb120a3e1894866365dc659974ff76b9}{choice}};}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00022}\mbox{\hyperlink{struct_e_x_p_entry_abcf10cc3581a6e312b50b9be551a14fa}{00022}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_e_x_p_entry_abcf10cc3581a6e312b50b9be551a14fa}{item\_left}};}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00023}\mbox{\hyperlink{struct_e_x_p_entry_a4e121c1ea9c09c74a77598892b92722a}{00023}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_e_x_p_entry_a4e121c1ea9c09c74a77598892b92722a}{item\_right}};}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00024}\mbox{\hyperlink{struct_e_x_p_entry_affa94941751e5821849cfb5ce67e99bb}{00024}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_e_x_p_entry_affa94941751e5821849cfb5ce67e99bb}{valid}};}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00025}00025\ \};}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00027}\mbox{\hyperlink{struct_f_i_x_entry}{00027}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_f_i_x_entry}{FIXEntry}}\ \{}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00028}\mbox{\hyperlink{struct_f_i_x_entry_ad84feb6101d45d8e0185f4c5d7d6eda6}{00028}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_f_i_x_entry_ad84feb6101d45d8e0185f4c5d7d6eda6}{parcode}};}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00029}\mbox{\hyperlink{struct_f_i_x_entry_a223c8eadacc1167257c090ee15583a86}{00029}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_f_i_x_entry_a223c8eadacc1167257c090ee15583a86}{trial}};}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00030}\mbox{\hyperlink{struct_f_i_x_entry_ab8dae621fb7d2e1d5138e169052c8204}{00030}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_f_i_x_entry_ab8dae621fb7d2e1d5138e169052c8204}{fix\_item}};}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00031}\mbox{\hyperlink{struct_f_i_x_entry_ac3914d30819086524963758e3738052c}{00031}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_f_i_x_entry_ac3914d30819086524963758e3738052c}{fix\_time}};}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00032}00032\ \};}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00034}00034\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{util_8h_a3c70684bbd5c18365b967d158305e919}{probabilityDensityFunction}}(\textcolor{keywordtype}{float}\ mean,\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{addm__nll_8cpp_ae11aeeb83e22b5b7f1e6b4347eb1daa6}{sigma}},\ \textcolor{keywordtype}{float}\ x);}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00036}00036\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{util_8h_ab0c2fb4c0b02fabb15eeab9d6f73e5ab}{cumulativeDensityFunction}}(\textcolor{keywordtype}{float}\ mean,\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{addm__nll_8cpp_ae11aeeb83e22b5b7f1e6b4347eb1daa6}{sigma}},\ \textcolor{keywordtype}{float}\ x);}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00038}00038\ std::map<int,\ std::vector<aDDMTrial>>\ \mbox{\hyperlink{util_8h_a78fc1c7aadc9bd3f08e29b796632b49b}{loadDataFromCSV}}(}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00039}00039\ \ \ \ \ std::string\ expDataFilename,}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00040}00040\ \ \ \ \ std::string\ fixDataFilename);}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00042}00042\ \mbox{\hyperlink{class_fixation_data}{FixationData}}\ \mbox{\hyperlink{util_8h_a35c0510fda1855a7e52a89070c757152}{getEmpiricalDistributions}}(}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00043}00043\ \ \ \ \ std::map<\textcolor{keywordtype}{int},\ std::vector<aDDMTrial>>\ data,\ }
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00044}00044\ \ \ \ \ \textcolor{keywordtype}{int}\ timeStep=10,\ \textcolor{keywordtype}{int}\ MaxFixTime=3000,}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00045}00045\ \ \ \ \ \textcolor{keywordtype}{int}\ numFixDists=3,\ std::string\ fixDistType=\textcolor{stringliteral}{"{}simple"{}},}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00046}00046\ \ \ \ \ std::vector<int>\ valueDiffs=\{-\/3,-\/2,-\/1,0,1,2,3\},}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00047}00047\ \ \ \ \ std::vector<int>\ subjectIDs=\{\},}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00048}00048\ \ \ \ \ \textcolor{keywordtype}{bool}\ useOddTrials=\textcolor{keyword}{true},\ }
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00049}00049\ \ \ \ \ \textcolor{keywordtype}{bool}\ useEvenTrials=\textcolor{keyword}{true},\ }
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00050}00050\ \ \ \ \ \textcolor{keywordtype}{bool}\ useCisTrials=\textcolor{keyword}{true},\ }
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00051}00051\ \ \ \ \ \textcolor{keywordtype}{bool}\ useTransTrials=true}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00052}00052\ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00054}00054\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{util_8h_ab19bb96bad214677bb8f87ab5691d713}{DDMexportData}}(\mbox{\hyperlink{class_d_d_m}{DDM}}\ ddm,\ \mbox{\hyperlink{class_d_d_m_trial}{DDMTrial}}\ dt);}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00056}00056\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{util_8h_a97aa8641a43699dcdbb5a052c14cfee1}{aDDMexportData}}(\mbox{\hyperlink{classa_d_d_m}{aDDM}}\ addm,\ \mbox{\hyperlink{classa_d_d_m_trial}{aDDMTrial}}\ adt);}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00058}00058\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>\ }
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00059}\mbox{\hyperlink{util_8h_a81800961a300ff0d4bdaaa7ee2e97ff8}{00059}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{util_8h_a81800961a300ff0d4bdaaa7ee2e97ff8}{printMatrix}}(std::vector<std::vector<T>>\ mat,\ std::string\ name)\ \{}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00060}00060\ \ \ \ \ std::cout\ <<\ name\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00061}00061\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ row\ :\ mat)\ \{}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ f\ :\ row)\ \{}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ f;}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (f\ >=\ 0\ \&\&\ f\ <\ 10)\ \{}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ \ "{}};}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00069}00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00070}00070\ \ \ \ \ \ \ \ \ std::cout\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00071}00071\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00072}00072\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00073}00073\ \}}
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{util_8h_source_l00075}00075\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

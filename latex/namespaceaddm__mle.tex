@@ -1,0 +1,284 @@
+\doxysection{addm\+\_\+mle Namespace Reference}
+\hypertarget{namespaceaddm__mle}{}\label{namespaceaddm__mle}\index{addm\_mle@{addm\_mle}}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceaddm__mle_a095be02cae4ce618668331b22f14a8d6}{df}} = pd.\+read\+\_\+csv(\"{}results/addm\+\_\+mle.\+csv\"{})
+\item 
+\mbox{\hyperlink{namespaceaddm__mle_ad75d1486255474caede0d713427d2219}{thetas}} = \mbox{\hyperlink{namespaceaddm__mle_a095be02cae4ce618668331b22f14a8d6}{df}}\mbox{[}\textquotesingle{}\mbox{\hyperlink{addm__nll_8cpp_aadfc5c227ca658a29a59a0ce6fc15792}{theta}}\textquotesingle{}\mbox{]}.unique()
+\item 
+\mbox{\hyperlink{namespaceaddm__mle_acf54bbc05d86c3191c6f6fa3da2cf6c9}{num\+\_\+thetas}} = len(\mbox{\hyperlink{namespaceaddm__mle_ad75d1486255474caede0d713427d2219}{thetas}})
+\item 
+int \mbox{\hyperlink{namespaceaddm__mle_a3a1efeb460010b70b6a262dda538c7e0}{num\+\_\+cols}} = 2
+\item 
+tuple \mbox{\hyperlink{namespaceaddm__mle_a14afbc2880f5461164f13ae5c1998f99}{num\+\_\+rows}} = (\mbox{\hyperlink{namespaceaddm__mle_acf54bbc05d86c3191c6f6fa3da2cf6c9}{num\+\_\+thetas}} -\/ 1) // \mbox{\hyperlink{namespaceaddm__mle_a3a1efeb460010b70b6a262dda538c7e0}{num\+\_\+cols}} + 1
+\item 
+\mbox{\hyperlink{namespaceaddm__mle_ae6cacf56fe287c7a2fb29208b1c32333}{fig}}
+\item 
+\mbox{\hyperlink{namespaceaddm__mle_a0b9cf6d4ed6304d656f26b8bd43c250c}{axes}}
+\item 
+\mbox{\hyperlink{namespaceaddm__mle_a852250ff1a87f9191f5ade86af41a427}{figsize}}
+\item 
+\mbox{\hyperlink{namespaceaddm__mle_a45bb5f22de01ea20f39252f7d611df77}{data}} = \mbox{\hyperlink{namespaceaddm__mle_a095be02cae4ce618668331b22f14a8d6}{df}}\mbox{[}\mbox{\hyperlink{namespaceaddm__mle_a095be02cae4ce618668331b22f14a8d6}{df}}\mbox{[}\textquotesingle{}\mbox{\hyperlink{addm__nll_8cpp_aadfc5c227ca658a29a59a0ce6fc15792}{theta}}\textquotesingle{}\mbox{]} == \mbox{\hyperlink{addm__nll_8cpp_aadfc5c227ca658a29a59a0ce6fc15792}{theta}}\mbox{]}
+\item 
+int \mbox{\hyperlink{namespaceaddm__mle_aafb31476985ae384e1a5d172fcf3011a}{row}} = i // \mbox{\hyperlink{namespaceaddm__mle_a3a1efeb460010b70b6a262dda538c7e0}{num\+\_\+cols}}
+\item 
+int \mbox{\hyperlink{namespaceaddm__mle_ae9f158a3d920db8b7197f2c836a45786}{col}} = i \% \mbox{\hyperlink{namespaceaddm__mle_a3a1efeb460010b70b6a262dda538c7e0}{num\+\_\+cols}}
+\item 
+tuple \mbox{\hyperlink{namespaceaddm__mle_af00017da88aaf1b5ec6d37a5500c85db}{ax}} = \mbox{\hyperlink{namespaceaddm__mle_a0b9cf6d4ed6304d656f26b8bd43c250c}{axes}}\mbox{[}\mbox{\hyperlink{namespaceaddm__mle_aafb31476985ae384e1a5d172fcf3011a}{row}}, \mbox{\hyperlink{namespaceaddm__mle_ae9f158a3d920db8b7197f2c836a45786}{col}}\mbox{]} if \mbox{\hyperlink{namespaceaddm__mle_a14afbc2880f5461164f13ae5c1998f99}{num\+\_\+rows}} $>$ 1 else \mbox{\hyperlink{namespaceaddm__mle_a0b9cf6d4ed6304d656f26b8bd43c250c}{axes}}\mbox{[}\mbox{\hyperlink{namespaceaddm__mle_ae9f158a3d920db8b7197f2c836a45786}{col}}\mbox{]}
+\item 
+tuple \mbox{\hyperlink{namespaceaddm__mle_a5fb1fa222b49251d1c185556e53ec761}{heatmap}}
+\item 
+\mbox{\hyperlink{namespaceaddm__mle_a25fca0cbbec6a115e2a6870b0d85875b}{min\+\_\+nll\+\_\+idx}} = \mbox{\hyperlink{namespaceaddm__mle_a095be02cae4ce618668331b22f14a8d6}{df}}\mbox{[}\textquotesingle{}NLL\textquotesingle{}\mbox{]}.idxmin()
+\item 
+\mbox{\hyperlink{namespaceaddm__mle_a53e92352795005fd1fc73be01ffb047a}{min\+\_\+d}} = df.\+loc\mbox{[}\mbox{\hyperlink{namespaceaddm__mle_a25fca0cbbec6a115e2a6870b0d85875b}{min\+\_\+nll\+\_\+idx}}, \textquotesingle{}\mbox{\hyperlink{addm__nll_8cpp_a3fbbd8a3959e76a2bc3455d3bade52dc}{d}}\textquotesingle{}\mbox{]}
+\item 
+\mbox{\hyperlink{namespaceaddm__mle_a4f98a94fe07bb4b01279b1eb6c92ae9e}{min\+\_\+sigma}} = df.\+loc\mbox{[}\mbox{\hyperlink{namespaceaddm__mle_a25fca0cbbec6a115e2a6870b0d85875b}{min\+\_\+nll\+\_\+idx}}, \textquotesingle{}\mbox{\hyperlink{addm__nll_8cpp_ae11aeeb83e22b5b7f1e6b4347eb1daa6}{sigma}}\textquotesingle{}\mbox{]}
+\item 
+\mbox{\hyperlink{namespaceaddm__mle_aa49d989d55f6d647dfa251e3024b1af4}{min\+\_\+theta}} = df.\+loc\mbox{[}\mbox{\hyperlink{namespaceaddm__mle_a25fca0cbbec6a115e2a6870b0d85875b}{min\+\_\+nll\+\_\+idx}}, \textquotesingle{}\mbox{\hyperlink{addm__nll_8cpp_aadfc5c227ca658a29a59a0ce6fc15792}{theta}}\textquotesingle{}\mbox{]}
+\item 
+str \mbox{\hyperlink{namespaceaddm__mle_a3af2cf0d52e02ef4390e2755371c5f2a}{annotation}} = f\textquotesingle{}Min NLL\+: \mbox{\hyperlink{addm__nll_8cpp_a3fbbd8a3959e76a2bc3455d3bade52dc}{d}}=\{\mbox{\hyperlink{namespaceaddm__mle_a53e92352795005fd1fc73be01ffb047a}{min\+\_\+d}}\}, \mbox{\hyperlink{addm__nll_8cpp_ae11aeeb83e22b5b7f1e6b4347eb1daa6}{sigma}}=\{\mbox{\hyperlink{namespaceaddm__mle_a4f98a94fe07bb4b01279b1eb6c92ae9e}{min\+\_\+sigma}}\}, \mbox{\hyperlink{addm__nll_8cpp_aadfc5c227ca658a29a59a0ce6fc15792}{theta}}=\{\mbox{\hyperlink{namespaceaddm__mle_aa49d989d55f6d647dfa251e3024b1af4}{min\+\_\+theta}}\}\textquotesingle{}
+\item 
+\mbox{\hyperlink{namespaceaddm__mle_aff87812c27ea02828864099e099c5b35}{ha}}
+\item 
+\mbox{\hyperlink{namespaceaddm__mle_ae34b7b30cf1930cfe0be86598c5650f3}{va}}
+\item 
+\mbox{\hyperlink{namespaceaddm__mle_a1b3f900de987c7c919b1dd7449cc3f40}{fontsize}}
+\item 
+\mbox{\hyperlink{namespaceaddm__mle_a094c30732cafd75f4442c3ee00922563}{curr\+Time}} = datetime.\+now().strftime(u\"{}\%Y-\/\%m-\/\%d\+\_\+\%H\+:\%M\+:\%S\"{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespaceaddm__mle_a3af2cf0d52e02ef4390e2755371c5f2a}\label{namespaceaddm__mle_a3af2cf0d52e02ef4390e2755371c5f2a} 
+\index{addm\_mle@{addm\_mle}!annotation@{annotation}}
+\index{annotation@{annotation}!addm\_mle@{addm\_mle}}
+\doxysubsubsection{\texorpdfstring{annotation}{annotation}}
+{\footnotesize\ttfamily addm\+\_\+mle.\+annotation = f\textquotesingle{}Min NLL\+: \mbox{\hyperlink{addm__nll_8cpp_a3fbbd8a3959e76a2bc3455d3bade52dc}{d}}=\{\mbox{\hyperlink{namespaceaddm__mle_a53e92352795005fd1fc73be01ffb047a}{min\+\_\+d}}\}, \mbox{\hyperlink{addm__nll_8cpp_ae11aeeb83e22b5b7f1e6b4347eb1daa6}{sigma}}=\{\mbox{\hyperlink{namespaceaddm__mle_a4f98a94fe07bb4b01279b1eb6c92ae9e}{min\+\_\+sigma}}\}, \mbox{\hyperlink{addm__nll_8cpp_aadfc5c227ca658a29a59a0ce6fc15792}{theta}}=\{\mbox{\hyperlink{namespaceaddm__mle_aa49d989d55f6d647dfa251e3024b1af4}{min\+\_\+theta}}\}\textquotesingle{}}
+
+
+
+Definition at line \mbox{\hyperlink{addm__mle_8py_source_l00048}{48}} of file \mbox{\hyperlink{addm__mle_8py_source}{addm\+\_\+mle.\+py}}.
+
+\Hypertarget{namespaceaddm__mle_af00017da88aaf1b5ec6d37a5500c85db}\label{namespaceaddm__mle_af00017da88aaf1b5ec6d37a5500c85db} 
+\index{addm\_mle@{addm\_mle}!ax@{ax}}
+\index{ax@{ax}!addm\_mle@{addm\_mle}}
+\doxysubsubsection{\texorpdfstring{ax}{ax}}
+{\footnotesize\ttfamily addm\+\_\+mle.\+ax = \mbox{\hyperlink{namespaceaddm__mle_a0b9cf6d4ed6304d656f26b8bd43c250c}{axes}}\mbox{[}\mbox{\hyperlink{namespaceaddm__mle_aafb31476985ae384e1a5d172fcf3011a}{row}}, \mbox{\hyperlink{namespaceaddm__mle_ae9f158a3d920db8b7197f2c836a45786}{col}}\mbox{]} if \mbox{\hyperlink{namespaceaddm__mle_a14afbc2880f5461164f13ae5c1998f99}{num\+\_\+rows}} $>$ 1 else \mbox{\hyperlink{namespaceaddm__mle_a0b9cf6d4ed6304d656f26b8bd43c250c}{axes}}\mbox{[}\mbox{\hyperlink{namespaceaddm__mle_ae9f158a3d920db8b7197f2c836a45786}{col}}\mbox{]}}
+
+
+
+Definition at line \mbox{\hyperlink{addm__mle_8py_source_l00022}{22}} of file \mbox{\hyperlink{addm__mle_8py_source}{addm\+\_\+mle.\+py}}.
+
+\Hypertarget{namespaceaddm__mle_a0b9cf6d4ed6304d656f26b8bd43c250c}\label{namespaceaddm__mle_a0b9cf6d4ed6304d656f26b8bd43c250c} 
+\index{addm\_mle@{addm\_mle}!axes@{axes}}
+\index{axes@{axes}!addm\_mle@{addm\_mle}}
+\doxysubsubsection{\texorpdfstring{axes}{axes}}
+{\footnotesize\ttfamily addm\+\_\+mle.\+axes}
+
+
+
+Definition at line \mbox{\hyperlink{addm__mle_8py_source_l00015}{15}} of file \mbox{\hyperlink{addm__mle_8py_source}{addm\+\_\+mle.\+py}}.
+
+\Hypertarget{namespaceaddm__mle_ae9f158a3d920db8b7197f2c836a45786}\label{namespaceaddm__mle_ae9f158a3d920db8b7197f2c836a45786} 
+\index{addm\_mle@{addm\_mle}!col@{col}}
+\index{col@{col}!addm\_mle@{addm\_mle}}
+\doxysubsubsection{\texorpdfstring{col}{col}}
+{\footnotesize\ttfamily int addm\+\_\+mle.\+col = i \% \mbox{\hyperlink{namespaceaddm__mle_a3a1efeb460010b70b6a262dda538c7e0}{num\+\_\+cols}}}
+
+
+
+Definition at line \mbox{\hyperlink{addm__mle_8py_source_l00021}{21}} of file \mbox{\hyperlink{addm__mle_8py_source}{addm\+\_\+mle.\+py}}.
+
+\Hypertarget{namespaceaddm__mle_a094c30732cafd75f4442c3ee00922563}\label{namespaceaddm__mle_a094c30732cafd75f4442c3ee00922563} 
+\index{addm\_mle@{addm\_mle}!currTime@{currTime}}
+\index{currTime@{currTime}!addm\_mle@{addm\_mle}}
+\doxysubsubsection{\texorpdfstring{currTime}{currTime}}
+{\footnotesize\ttfamily addm\+\_\+mle.\+curr\+Time = datetime.\+now().strftime(u\"{}\%Y-\/\%m-\/\%d\+\_\+\%H\+:\%M\+:\%S\"{})}
+
+
+
+Definition at line \mbox{\hyperlink{addm__mle_8py_source_l00054}{54}} of file \mbox{\hyperlink{addm__mle_8py_source}{addm\+\_\+mle.\+py}}.
+
+\Hypertarget{namespaceaddm__mle_a45bb5f22de01ea20f39252f7d611df77}\label{namespaceaddm__mle_a45bb5f22de01ea20f39252f7d611df77} 
+\index{addm\_mle@{addm\_mle}!data@{data}}
+\index{data@{data}!addm\_mle@{addm\_mle}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily addm\+\_\+mle.\+data = \mbox{\hyperlink{namespaceaddm__mle_a095be02cae4ce618668331b22f14a8d6}{df}}\mbox{[}\mbox{\hyperlink{namespaceaddm__mle_a095be02cae4ce618668331b22f14a8d6}{df}}\mbox{[}\textquotesingle{}\mbox{\hyperlink{addm__nll_8cpp_aadfc5c227ca658a29a59a0ce6fc15792}{theta}}\textquotesingle{}\mbox{]} == \mbox{\hyperlink{addm__nll_8cpp_aadfc5c227ca658a29a59a0ce6fc15792}{theta}}\mbox{]}}
+
+
+
+Definition at line \mbox{\hyperlink{addm__mle_8py_source_l00018}{18}} of file \mbox{\hyperlink{addm__mle_8py_source}{addm\+\_\+mle.\+py}}.
+
+\Hypertarget{namespaceaddm__mle_a095be02cae4ce618668331b22f14a8d6}\label{namespaceaddm__mle_a095be02cae4ce618668331b22f14a8d6} 
+\index{addm\_mle@{addm\_mle}!df@{df}}
+\index{df@{df}!addm\_mle@{addm\_mle}}
+\doxysubsubsection{\texorpdfstring{df}{df}}
+{\footnotesize\ttfamily addm\+\_\+mle.\+df = pd.\+read\+\_\+csv(\"{}results/addm\+\_\+mle.\+csv\"{})}
+
+
+
+Definition at line \mbox{\hyperlink{addm__mle_8py_source_l00008}{8}} of file \mbox{\hyperlink{addm__mle_8py_source}{addm\+\_\+mle.\+py}}.
+
+\Hypertarget{namespaceaddm__mle_ae6cacf56fe287c7a2fb29208b1c32333}\label{namespaceaddm__mle_ae6cacf56fe287c7a2fb29208b1c32333} 
+\index{addm\_mle@{addm\_mle}!fig@{fig}}
+\index{fig@{fig}!addm\_mle@{addm\_mle}}
+\doxysubsubsection{\texorpdfstring{fig}{fig}}
+{\footnotesize\ttfamily addm\+\_\+mle.\+fig}
+
+
+
+Definition at line \mbox{\hyperlink{addm__mle_8py_source_l00015}{15}} of file \mbox{\hyperlink{addm__mle_8py_source}{addm\+\_\+mle.\+py}}.
+
+\Hypertarget{namespaceaddm__mle_a852250ff1a87f9191f5ade86af41a427}\label{namespaceaddm__mle_a852250ff1a87f9191f5ade86af41a427} 
+\index{addm\_mle@{addm\_mle}!figsize@{figsize}}
+\index{figsize@{figsize}!addm\_mle@{addm\_mle}}
+\doxysubsubsection{\texorpdfstring{figsize}{figsize}}
+{\footnotesize\ttfamily addm\+\_\+mle.\+figsize}
+
+
+
+Definition at line \mbox{\hyperlink{addm__mle_8py_source_l00015}{15}} of file \mbox{\hyperlink{addm__mle_8py_source}{addm\+\_\+mle.\+py}}.
+
+\Hypertarget{namespaceaddm__mle_a1b3f900de987c7c919b1dd7449cc3f40}\label{namespaceaddm__mle_a1b3f900de987c7c919b1dd7449cc3f40} 
+\index{addm\_mle@{addm\_mle}!fontsize@{fontsize}}
+\index{fontsize@{fontsize}!addm\_mle@{addm\_mle}}
+\doxysubsubsection{\texorpdfstring{fontsize}{fontsize}}
+{\footnotesize\ttfamily addm\+\_\+mle.\+fontsize}
+
+
+
+Definition at line \mbox{\hyperlink{addm__mle_8py_source_l00049}{49}} of file \mbox{\hyperlink{addm__mle_8py_source}{addm\+\_\+mle.\+py}}.
+
+\Hypertarget{namespaceaddm__mle_aff87812c27ea02828864099e099c5b35}\label{namespaceaddm__mle_aff87812c27ea02828864099e099c5b35} 
+\index{addm\_mle@{addm\_mle}!ha@{ha}}
+\index{ha@{ha}!addm\_mle@{addm\_mle}}
+\doxysubsubsection{\texorpdfstring{ha}{ha}}
+{\footnotesize\ttfamily addm\+\_\+mle.\+ha}
+
+
+
+Definition at line \mbox{\hyperlink{addm__mle_8py_source_l00049}{49}} of file \mbox{\hyperlink{addm__mle_8py_source}{addm\+\_\+mle.\+py}}.
+
+\Hypertarget{namespaceaddm__mle_a5fb1fa222b49251d1c185556e53ec761}\label{namespaceaddm__mle_a5fb1fa222b49251d1c185556e53ec761} 
+\index{addm\_mle@{addm\_mle}!heatmap@{heatmap}}
+\index{heatmap@{heatmap}!addm\_mle@{addm\_mle}}
+\doxysubsubsection{\texorpdfstring{heatmap}{heatmap}}
+{\footnotesize\ttfamily addm\+\_\+mle.\+heatmap}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ ax.imshow(}
+\DoxyCodeLine{00002\ \ \ \ \ \ \ \ \ np.reshape(data[\textcolor{stringliteral}{'NLL'}],\ (-\/1,\ len(data[\textcolor{stringliteral}{'d'}].unique()))),}
+\DoxyCodeLine{00003\ \ \ \ \ \ \ \ \ cmap=\textcolor{stringliteral}{'plasma'},}
+\DoxyCodeLine{00004\ \ \ \ \ \ \ \ \ extent=[0,\ len(data[\textcolor{stringliteral}{'d'}].unique())\ -\/\ 1,\ 0,\ len(data[\textcolor{stringliteral}{'sigma'}].unique())\ -\/\ 1],}
+\DoxyCodeLine{00005\ \ \ \ \ \ \ \ \ origin=\textcolor{stringliteral}{'lower'},}
+\DoxyCodeLine{00006\ \ \ \ \ \ \ \ \ aspect=\textcolor{stringliteral}{'auto'},}
+\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ vmax=6200}
+\DoxyCodeLine{00008\ \ \ \ \ )}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{addm__mle_8py_source_l00024}{24}} of file \mbox{\hyperlink{addm__mle_8py_source}{addm\+\_\+mle.\+py}}.
+
+\Hypertarget{namespaceaddm__mle_a53e92352795005fd1fc73be01ffb047a}\label{namespaceaddm__mle_a53e92352795005fd1fc73be01ffb047a} 
+\index{addm\_mle@{addm\_mle}!min\_d@{min\_d}}
+\index{min\_d@{min\_d}!addm\_mle@{addm\_mle}}
+\doxysubsubsection{\texorpdfstring{min\_d}{min\_d}}
+{\footnotesize\ttfamily addm\+\_\+mle.\+min\+\_\+d = df.\+loc\mbox{[}\mbox{\hyperlink{namespaceaddm__mle_a25fca0cbbec6a115e2a6870b0d85875b}{min\+\_\+nll\+\_\+idx}}, \textquotesingle{}\mbox{\hyperlink{addm__nll_8cpp_a3fbbd8a3959e76a2bc3455d3bade52dc}{d}}\textquotesingle{}\mbox{]}}
+
+
+
+Definition at line \mbox{\hyperlink{addm__mle_8py_source_l00044}{44}} of file \mbox{\hyperlink{addm__mle_8py_source}{addm\+\_\+mle.\+py}}.
+
+\Hypertarget{namespaceaddm__mle_a25fca0cbbec6a115e2a6870b0d85875b}\label{namespaceaddm__mle_a25fca0cbbec6a115e2a6870b0d85875b} 
+\index{addm\_mle@{addm\_mle}!min\_nll\_idx@{min\_nll\_idx}}
+\index{min\_nll\_idx@{min\_nll\_idx}!addm\_mle@{addm\_mle}}
+\doxysubsubsection{\texorpdfstring{min\_nll\_idx}{min\_nll\_idx}}
+{\footnotesize\ttfamily addm\+\_\+mle.\+min\+\_\+nll\+\_\+idx = \mbox{\hyperlink{namespaceaddm__mle_a095be02cae4ce618668331b22f14a8d6}{df}}\mbox{[}\textquotesingle{}NLL\textquotesingle{}\mbox{]}.idxmin()}
+
+
+
+Definition at line \mbox{\hyperlink{addm__mle_8py_source_l00043}{43}} of file \mbox{\hyperlink{addm__mle_8py_source}{addm\+\_\+mle.\+py}}.
+
+\Hypertarget{namespaceaddm__mle_a4f98a94fe07bb4b01279b1eb6c92ae9e}\label{namespaceaddm__mle_a4f98a94fe07bb4b01279b1eb6c92ae9e} 
+\index{addm\_mle@{addm\_mle}!min\_sigma@{min\_sigma}}
+\index{min\_sigma@{min\_sigma}!addm\_mle@{addm\_mle}}
+\doxysubsubsection{\texorpdfstring{min\_sigma}{min\_sigma}}
+{\footnotesize\ttfamily addm\+\_\+mle.\+min\+\_\+sigma = df.\+loc\mbox{[}\mbox{\hyperlink{namespaceaddm__mle_a25fca0cbbec6a115e2a6870b0d85875b}{min\+\_\+nll\+\_\+idx}}, \textquotesingle{}\mbox{\hyperlink{addm__nll_8cpp_ae11aeeb83e22b5b7f1e6b4347eb1daa6}{sigma}}\textquotesingle{}\mbox{]}}
+
+
+
+Definition at line \mbox{\hyperlink{addm__mle_8py_source_l00045}{45}} of file \mbox{\hyperlink{addm__mle_8py_source}{addm\+\_\+mle.\+py}}.
+
+\Hypertarget{namespaceaddm__mle_aa49d989d55f6d647dfa251e3024b1af4}\label{namespaceaddm__mle_aa49d989d55f6d647dfa251e3024b1af4} 
+\index{addm\_mle@{addm\_mle}!min\_theta@{min\_theta}}
+\index{min\_theta@{min\_theta}!addm\_mle@{addm\_mle}}
+\doxysubsubsection{\texorpdfstring{min\_theta}{min\_theta}}
+{\footnotesize\ttfamily addm\+\_\+mle.\+min\+\_\+theta = df.\+loc\mbox{[}\mbox{\hyperlink{namespaceaddm__mle_a25fca0cbbec6a115e2a6870b0d85875b}{min\+\_\+nll\+\_\+idx}}, \textquotesingle{}\mbox{\hyperlink{addm__nll_8cpp_aadfc5c227ca658a29a59a0ce6fc15792}{theta}}\textquotesingle{}\mbox{]}}
+
+
+
+Definition at line \mbox{\hyperlink{addm__mle_8py_source_l00046}{46}} of file \mbox{\hyperlink{addm__mle_8py_source}{addm\+\_\+mle.\+py}}.
+
+\Hypertarget{namespaceaddm__mle_a3a1efeb460010b70b6a262dda538c7e0}\label{namespaceaddm__mle_a3a1efeb460010b70b6a262dda538c7e0} 
+\index{addm\_mle@{addm\_mle}!num\_cols@{num\_cols}}
+\index{num\_cols@{num\_cols}!addm\_mle@{addm\_mle}}
+\doxysubsubsection{\texorpdfstring{num\_cols}{num\_cols}}
+{\footnotesize\ttfamily addm\+\_\+mle.\+num\+\_\+cols = 2}
+
+
+
+Definition at line \mbox{\hyperlink{addm__mle_8py_source_l00012}{12}} of file \mbox{\hyperlink{addm__mle_8py_source}{addm\+\_\+mle.\+py}}.
+
+\Hypertarget{namespaceaddm__mle_a14afbc2880f5461164f13ae5c1998f99}\label{namespaceaddm__mle_a14afbc2880f5461164f13ae5c1998f99} 
+\index{addm\_mle@{addm\_mle}!num\_rows@{num\_rows}}
+\index{num\_rows@{num\_rows}!addm\_mle@{addm\_mle}}
+\doxysubsubsection{\texorpdfstring{num\_rows}{num\_rows}}
+{\footnotesize\ttfamily addm\+\_\+mle.\+num\+\_\+rows = (\mbox{\hyperlink{namespaceaddm__mle_acf54bbc05d86c3191c6f6fa3da2cf6c9}{num\+\_\+thetas}} -\/ 1) // \mbox{\hyperlink{namespaceaddm__mle_a3a1efeb460010b70b6a262dda538c7e0}{num\+\_\+cols}} + 1}
+
+
+
+Definition at line \mbox{\hyperlink{addm__mle_8py_source_l00013}{13}} of file \mbox{\hyperlink{addm__mle_8py_source}{addm\+\_\+mle.\+py}}.
+
+\Hypertarget{namespaceaddm__mle_acf54bbc05d86c3191c6f6fa3da2cf6c9}\label{namespaceaddm__mle_acf54bbc05d86c3191c6f6fa3da2cf6c9} 
+\index{addm\_mle@{addm\_mle}!num\_thetas@{num\_thetas}}
+\index{num\_thetas@{num\_thetas}!addm\_mle@{addm\_mle}}
+\doxysubsubsection{\texorpdfstring{num\_thetas}{num\_thetas}}
+{\footnotesize\ttfamily addm\+\_\+mle.\+num\+\_\+thetas = len(\mbox{\hyperlink{namespaceaddm__mle_ad75d1486255474caede0d713427d2219}{thetas}})}
+
+
+
+Definition at line \mbox{\hyperlink{addm__mle_8py_source_l00011}{11}} of file \mbox{\hyperlink{addm__mle_8py_source}{addm\+\_\+mle.\+py}}.
+
+\Hypertarget{namespaceaddm__mle_aafb31476985ae384e1a5d172fcf3011a}\label{namespaceaddm__mle_aafb31476985ae384e1a5d172fcf3011a} 
+\index{addm\_mle@{addm\_mle}!row@{row}}
+\index{row@{row}!addm\_mle@{addm\_mle}}
+\doxysubsubsection{\texorpdfstring{row}{row}}
+{\footnotesize\ttfamily int addm\+\_\+mle.\+row = i // \mbox{\hyperlink{namespaceaddm__mle_a3a1efeb460010b70b6a262dda538c7e0}{num\+\_\+cols}}}
+
+
+
+Definition at line \mbox{\hyperlink{addm__mle_8py_source_l00020}{20}} of file \mbox{\hyperlink{addm__mle_8py_source}{addm\+\_\+mle.\+py}}.
+
+\Hypertarget{namespaceaddm__mle_ad75d1486255474caede0d713427d2219}\label{namespaceaddm__mle_ad75d1486255474caede0d713427d2219} 
+\index{addm\_mle@{addm\_mle}!thetas@{thetas}}
+\index{thetas@{thetas}!addm\_mle@{addm\_mle}}
+\doxysubsubsection{\texorpdfstring{thetas}{thetas}}
+{\footnotesize\ttfamily addm\+\_\+mle.\+thetas = \mbox{\hyperlink{namespaceaddm__mle_a095be02cae4ce618668331b22f14a8d6}{df}}\mbox{[}\textquotesingle{}\mbox{\hyperlink{addm__nll_8cpp_aadfc5c227ca658a29a59a0ce6fc15792}{theta}}\textquotesingle{}\mbox{]}.unique()}
+
+
+
+Definition at line \mbox{\hyperlink{addm__mle_8py_source_l00009}{9}} of file \mbox{\hyperlink{addm__mle_8py_source}{addm\+\_\+mle.\+py}}.
+
+\Hypertarget{namespaceaddm__mle_ae34b7b30cf1930cfe0be86598c5650f3}\label{namespaceaddm__mle_ae34b7b30cf1930cfe0be86598c5650f3} 
+\index{addm\_mle@{addm\_mle}!va@{va}}
+\index{va@{va}!addm\_mle@{addm\_mle}}
+\doxysubsubsection{\texorpdfstring{va}{va}}
+{\footnotesize\ttfamily addm\+\_\+mle.\+va}
+
+
+
+Definition at line \mbox{\hyperlink{addm__mle_8py_source_l00049}{49}} of file \mbox{\hyperlink{addm__mle_8py_source}{addm\+\_\+mle.\+py}}.
+

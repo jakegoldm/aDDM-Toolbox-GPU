@@ -1,0 +1,230 @@
+\doxysection{detail\+::lexer\+\_\+base\texorpdfstring{$<$}{<} Basic\+Json\+Type \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classdetail_1_1lexer__base}{}\label{classdetail_1_1lexer__base}\index{detail::lexer\_base$<$ BasicJsonType $>$@{detail::lexer\_base$<$ BasicJsonType $>$}}
+
+
+{\ttfamily \#include $<$json.\+hpp$>$}
+
+
+
+Inheritance diagram for detail\+::lexer\+\_\+base\texorpdfstring{$<$}{<} Basic\+Json\+Type \texorpdfstring{$>$}{>}\+:
+% FIG 0
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540}{token\+\_\+type}} \{ \newline
+\mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a42dd1a73d072bb6bf3f494f22b15db8e}{uninitialized}}
+, \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a85cc1a37b0aaa52de40e72f0ed4e0c0d}{literal\+\_\+true}}
+, \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540afab1694b1b3937a079f4625fe0b6108b}{literal\+\_\+false}}
+, \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540ab7ae4c0e46d86f884677768160b26e9e}{literal\+\_\+null}}
+, \newline
+\mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a2b490e8bf366b4cbe3ebd99b26ce15ce}{value\+\_\+string}}
+, \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540aaf1f040fcd2f674d2e5893d7a731078f}{value\+\_\+unsigned}}
+, \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a5064b6655d88a50ae16665cf7751c0ee}{value\+\_\+integer}}
+, \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a0d2671a6f81efb91e77f6ac3bdb11443}{value\+\_\+float}}
+, \newline
+\mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a16c226b4425b68560fea322b46dabe01}{begin\+\_\+array}}
+, \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a9a9ffd53b6869d4eca271b1ed5b57fe8}{begin\+\_\+object}}
+, \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a2f3e68e7f111a1e5c7728742b3ca2b7f}{end\+\_\+array}}
+, \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a7d5b4427866814de4d8f132721d59c87}{end\+\_\+object}}
+, \newline
+\mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540acc3c64f8ae08c00de1b33f19a4d2913a}{name\+\_\+separator}}
+, \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a745373036100d7392ad62c617cab59af}{value\+\_\+separator}}
+, \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a456e19aeafa334241c7ff3f589547f9d}{parse\+\_\+error}}
+, \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540aca11f56dd477c09e06583dbdcda0985f}{end\+\_\+of\+\_\+input}}
+, \newline
+\mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540ad2a8e6f6721cccec0b466301dd9495a5}{literal\+\_\+or\+\_\+value}}
+ \}
+\begin{DoxyCompactList}\small\item\em token types for the parser \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{json_8hpp_a5f2aaec3b681d0a72f7d6e90b70cdcd1}{JSON\+\_\+\+HEDLEY\+\_\+\+RETURNS\+\_\+\+NON\+\_\+\+NULL}} static \mbox{\hyperlink{json_8hpp_a0d17bf1a54fc45a04ced6d3aa86a96e3}{JSON\+\_\+\+HEDLEY\+\_\+\+CONST}} const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classdetail_1_1lexer__base_aadef66e89ad828e5f69479c85887fa6d}{token\+\_\+type\+\_\+name}} (const \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540}{token\+\_\+type}} t) noexcept
+\begin{DoxyCompactList}\small\item\em return name of values of type token\+\_\+type (only used for errors) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Basic\+Json\+Type$>$\newline
+class detail\+::lexer\+\_\+base$<$ Basic\+Json\+Type $>$}
+
+
+Definition at line \mbox{\hyperlink{json_8hpp_source_l07339}{7339}} of file \mbox{\hyperlink{json_8hpp_source}{json.\+hpp}}.
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540}\label{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540} 
+\index{detail::lexer\_base$<$ BasicJsonType $>$@{detail::lexer\_base$<$ BasicJsonType $>$}!token\_type@{token\_type}}
+\index{token\_type@{token\_type}!detail::lexer\_base$<$ BasicJsonType $>$@{detail::lexer\_base$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{token\_type}{token\_type}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+enum class \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540}{detail\+::lexer\+\_\+base\+::token\+\_\+type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+token types for the parser 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{uninitialized@{uninitialized}!detail::lexer\_base$<$ BasicJsonType $>$@{detail::lexer\_base$<$ BasicJsonType $>$}}\index{detail::lexer\_base$<$ BasicJsonType $>$@{detail::lexer\_base$<$ BasicJsonType $>$}!uninitialized@{uninitialized}}}\Hypertarget{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a42dd1a73d072bb6bf3f494f22b15db8e}\label{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a42dd1a73d072bb6bf3f494f22b15db8e} 
+uninitialized&indicating the scanner is uninitialized \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{literal\_true@{literal\_true}!detail::lexer\_base$<$ BasicJsonType $>$@{detail::lexer\_base$<$ BasicJsonType $>$}}\index{detail::lexer\_base$<$ BasicJsonType $>$@{detail::lexer\_base$<$ BasicJsonType $>$}!literal\_true@{literal\_true}}}\Hypertarget{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a85cc1a37b0aaa52de40e72f0ed4e0c0d}\label{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a85cc1a37b0aaa52de40e72f0ed4e0c0d} 
+literal\+\_\+true&the {\ttfamily true} literal \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{literal\_false@{literal\_false}!detail::lexer\_base$<$ BasicJsonType $>$@{detail::lexer\_base$<$ BasicJsonType $>$}}\index{detail::lexer\_base$<$ BasicJsonType $>$@{detail::lexer\_base$<$ BasicJsonType $>$}!literal\_false@{literal\_false}}}\Hypertarget{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540afab1694b1b3937a079f4625fe0b6108b}\label{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540afab1694b1b3937a079f4625fe0b6108b} 
+literal\+\_\+false&the {\ttfamily false} literal \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{literal\_null@{literal\_null}!detail::lexer\_base$<$ BasicJsonType $>$@{detail::lexer\_base$<$ BasicJsonType $>$}}\index{detail::lexer\_base$<$ BasicJsonType $>$@{detail::lexer\_base$<$ BasicJsonType $>$}!literal\_null@{literal\_null}}}\Hypertarget{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540ab7ae4c0e46d86f884677768160b26e9e}\label{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540ab7ae4c0e46d86f884677768160b26e9e} 
+literal\+\_\+null&the {\ttfamily null} literal \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{value\_string@{value\_string}!detail::lexer\_base$<$ BasicJsonType $>$@{detail::lexer\_base$<$ BasicJsonType $>$}}\index{detail::lexer\_base$<$ BasicJsonType $>$@{detail::lexer\_base$<$ BasicJsonType $>$}!value\_string@{value\_string}}}\Hypertarget{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a2b490e8bf366b4cbe3ebd99b26ce15ce}\label{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a2b490e8bf366b4cbe3ebd99b26ce15ce} 
+value\+\_\+string&a string -- use get\+\_\+string() for actual value \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{value\_unsigned@{value\_unsigned}!detail::lexer\_base$<$ BasicJsonType $>$@{detail::lexer\_base$<$ BasicJsonType $>$}}\index{detail::lexer\_base$<$ BasicJsonType $>$@{detail::lexer\_base$<$ BasicJsonType $>$}!value\_unsigned@{value\_unsigned}}}\Hypertarget{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540aaf1f040fcd2f674d2e5893d7a731078f}\label{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540aaf1f040fcd2f674d2e5893d7a731078f} 
+value\+\_\+unsigned&an unsigned integer -- use get\+\_\+number\+\_\+unsigned() for actual value \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{value\_integer@{value\_integer}!detail::lexer\_base$<$ BasicJsonType $>$@{detail::lexer\_base$<$ BasicJsonType $>$}}\index{detail::lexer\_base$<$ BasicJsonType $>$@{detail::lexer\_base$<$ BasicJsonType $>$}!value\_integer@{value\_integer}}}\Hypertarget{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a5064b6655d88a50ae16665cf7751c0ee}\label{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a5064b6655d88a50ae16665cf7751c0ee} 
+value\+\_\+integer&a signed integer -- use get\+\_\+number\+\_\+integer() for actual value \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{value\_float@{value\_float}!detail::lexer\_base$<$ BasicJsonType $>$@{detail::lexer\_base$<$ BasicJsonType $>$}}\index{detail::lexer\_base$<$ BasicJsonType $>$@{detail::lexer\_base$<$ BasicJsonType $>$}!value\_float@{value\_float}}}\Hypertarget{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a0d2671a6f81efb91e77f6ac3bdb11443}\label{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a0d2671a6f81efb91e77f6ac3bdb11443} 
+value\+\_\+float&an floating point number -- use get\+\_\+number\+\_\+float() for actual value \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{begin\_array@{begin\_array}!detail::lexer\_base$<$ BasicJsonType $>$@{detail::lexer\_base$<$ BasicJsonType $>$}}\index{detail::lexer\_base$<$ BasicJsonType $>$@{detail::lexer\_base$<$ BasicJsonType $>$}!begin\_array@{begin\_array}}}\Hypertarget{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a16c226b4425b68560fea322b46dabe01}\label{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a16c226b4425b68560fea322b46dabe01} 
+begin\+\_\+array&the character for array begin {\ttfamily \mbox{[}} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{begin\_object@{begin\_object}!detail::lexer\_base$<$ BasicJsonType $>$@{detail::lexer\_base$<$ BasicJsonType $>$}}\index{detail::lexer\_base$<$ BasicJsonType $>$@{detail::lexer\_base$<$ BasicJsonType $>$}!begin\_object@{begin\_object}}}\Hypertarget{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a9a9ffd53b6869d4eca271b1ed5b57fe8}\label{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a9a9ffd53b6869d4eca271b1ed5b57fe8} 
+begin\+\_\+object&the character for object begin {\ttfamily \{} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{end\_array@{end\_array}!detail::lexer\_base$<$ BasicJsonType $>$@{detail::lexer\_base$<$ BasicJsonType $>$}}\index{detail::lexer\_base$<$ BasicJsonType $>$@{detail::lexer\_base$<$ BasicJsonType $>$}!end\_array@{end\_array}}}\Hypertarget{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a2f3e68e7f111a1e5c7728742b3ca2b7f}\label{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a2f3e68e7f111a1e5c7728742b3ca2b7f} 
+end\+\_\+array&the character for array end {\ttfamily \mbox{]}} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{end\_object@{end\_object}!detail::lexer\_base$<$ BasicJsonType $>$@{detail::lexer\_base$<$ BasicJsonType $>$}}\index{detail::lexer\_base$<$ BasicJsonType $>$@{detail::lexer\_base$<$ BasicJsonType $>$}!end\_object@{end\_object}}}\Hypertarget{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a7d5b4427866814de4d8f132721d59c87}\label{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a7d5b4427866814de4d8f132721d59c87} 
+end\+\_\+object&the character for object end {\ttfamily \}} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{name\_separator@{name\_separator}!detail::lexer\_base$<$ BasicJsonType $>$@{detail::lexer\_base$<$ BasicJsonType $>$}}\index{detail::lexer\_base$<$ BasicJsonType $>$@{detail::lexer\_base$<$ BasicJsonType $>$}!name\_separator@{name\_separator}}}\Hypertarget{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540acc3c64f8ae08c00de1b33f19a4d2913a}\label{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540acc3c64f8ae08c00de1b33f19a4d2913a} 
+name\+\_\+separator&the name separator {\ttfamily \+:} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{value\_separator@{value\_separator}!detail::lexer\_base$<$ BasicJsonType $>$@{detail::lexer\_base$<$ BasicJsonType $>$}}\index{detail::lexer\_base$<$ BasicJsonType $>$@{detail::lexer\_base$<$ BasicJsonType $>$}!value\_separator@{value\_separator}}}\Hypertarget{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a745373036100d7392ad62c617cab59af}\label{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a745373036100d7392ad62c617cab59af} 
+value\+\_\+separator&the value separator {\ttfamily ,} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{parse\_error@{parse\_error}!detail::lexer\_base$<$ BasicJsonType $>$@{detail::lexer\_base$<$ BasicJsonType $>$}}\index{detail::lexer\_base$<$ BasicJsonType $>$@{detail::lexer\_base$<$ BasicJsonType $>$}!parse\_error@{parse\_error}}}\Hypertarget{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a456e19aeafa334241c7ff3f589547f9d}\label{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a456e19aeafa334241c7ff3f589547f9d} 
+parse\+\_\+error&indicating a parse error \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{end\_of\_input@{end\_of\_input}!detail::lexer\_base$<$ BasicJsonType $>$@{detail::lexer\_base$<$ BasicJsonType $>$}}\index{detail::lexer\_base$<$ BasicJsonType $>$@{detail::lexer\_base$<$ BasicJsonType $>$}!end\_of\_input@{end\_of\_input}}}\Hypertarget{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540aca11f56dd477c09e06583dbdcda0985f}\label{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540aca11f56dd477c09e06583dbdcda0985f} 
+end\+\_\+of\+\_\+input&indicating the end of the input buffer \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{literal\_or\_value@{literal\_or\_value}!detail::lexer\_base$<$ BasicJsonType $>$@{detail::lexer\_base$<$ BasicJsonType $>$}}\index{detail::lexer\_base$<$ BasicJsonType $>$@{detail::lexer\_base$<$ BasicJsonType $>$}!literal\_or\_value@{literal\_or\_value}}}\Hypertarget{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540ad2a8e6f6721cccec0b466301dd9495a5}\label{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540ad2a8e6f6721cccec0b466301dd9495a5} 
+literal\+\_\+or\+\_\+value&a literal or the begin of a value (only for diagnostics) \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{json_8hpp_source_l07343}{7343}} of file \mbox{\hyperlink{json_8hpp_source}{json.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{07344\ \ \ \ \ \{}
+\DoxyCodeLine{07345\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a42dd1a73d072bb6bf3f494f22b15db8e}{uninitialized}},\ \ \ \ }
+\DoxyCodeLine{07346\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a85cc1a37b0aaa52de40e72f0ed4e0c0d}{literal\_true}},\ \ \ \ \ }
+\DoxyCodeLine{07347\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540afab1694b1b3937a079f4625fe0b6108b}{literal\_false}},\ \ \ \ }
+\DoxyCodeLine{07348\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540ab7ae4c0e46d86f884677768160b26e9e}{literal\_null}},\ \ \ \ \ }
+\DoxyCodeLine{07349\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a2b490e8bf366b4cbe3ebd99b26ce15ce}{value\_string}},\ \ \ \ \ }
+\DoxyCodeLine{07350\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540aaf1f040fcd2f674d2e5893d7a731078f}{value\_unsigned}},\ \ \ }
+\DoxyCodeLine{07351\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a5064b6655d88a50ae16665cf7751c0ee}{value\_integer}},\ \ \ \ }
+\DoxyCodeLine{07352\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a0d2671a6f81efb91e77f6ac3bdb11443}{value\_float}},\ \ \ \ \ \ }
+\DoxyCodeLine{07353\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a16c226b4425b68560fea322b46dabe01}{begin\_array}},\ \ \ \ \ \ }
+\DoxyCodeLine{07354\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a9a9ffd53b6869d4eca271b1ed5b57fe8}{begin\_object}},\ \ \ \ \ }
+\DoxyCodeLine{07355\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a2f3e68e7f111a1e5c7728742b3ca2b7f}{end\_array}},\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{07356\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a7d5b4427866814de4d8f132721d59c87}{end\_object}},\ \ \ \ \ \ \ }
+\DoxyCodeLine{07357\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540acc3c64f8ae08c00de1b33f19a4d2913a}{name\_separator}},\ \ \ }
+\DoxyCodeLine{07358\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a745373036100d7392ad62c617cab59af}{value\_separator}},\ \ }
+\DoxyCodeLine{07359\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a456e19aeafa334241c7ff3f589547f9d}{parse\_error}},\ \ \ \ \ \ }
+\DoxyCodeLine{07360\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540aca11f56dd477c09e06583dbdcda0985f}{end\_of\_input}},\ \ \ \ \ }
+\DoxyCodeLine{07361\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540ad2a8e6f6721cccec0b466301dd9495a5}{literal\_or\_value}}\ \ }
+\DoxyCodeLine{07362\ \ \ \ \ \};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classdetail_1_1lexer__base_aadef66e89ad828e5f69479c85887fa6d}\label{classdetail_1_1lexer__base_aadef66e89ad828e5f69479c85887fa6d} 
+\index{detail::lexer\_base$<$ BasicJsonType $>$@{detail::lexer\_base$<$ BasicJsonType $>$}!token\_type\_name@{token\_type\_name}}
+\index{token\_type\_name@{token\_type\_name}!detail::lexer\_base$<$ BasicJsonType $>$@{detail::lexer\_base$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{token\_type\_name()}{token\_type\_name()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+\mbox{\hyperlink{json_8hpp_a5f2aaec3b681d0a72f7d6e90b70cdcd1}{JSON\+\_\+\+HEDLEY\+\_\+\+RETURNS\+\_\+\+NON\+\_\+\+NULL}} static \mbox{\hyperlink{json_8hpp_a0d17bf1a54fc45a04ced6d3aa86a96e3}{JSON\+\_\+\+HEDLEY\+\_\+\+CONST}} const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classdetail_1_1lexer__base}{detail\+::lexer\+\_\+base}}$<$ Basic\+Json\+Type $>$\+::token\+\_\+type\+\_\+name (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540}{token\+\_\+type}}}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+return name of values of type token\+\_\+type (only used for errors) 
+
+
+
+Definition at line \mbox{\hyperlink{json_8hpp_source_l07367}{7367}} of file \mbox{\hyperlink{json_8hpp_source}{json.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{07368\ \ \ \ \ \{}
+\DoxyCodeLine{07369\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (t)}
+\DoxyCodeLine{07370\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{07371\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a42dd1a73d072bb6bf3f494f22b15db8e}{token\_type::uninitialized}}:}
+\DoxyCodeLine{07372\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}<uninitialized>"{}};}
+\DoxyCodeLine{07373\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a85cc1a37b0aaa52de40e72f0ed4e0c0d}{token\_type::literal\_true}}:}
+\DoxyCodeLine{07374\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}true\ literal"{}};}
+\DoxyCodeLine{07375\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540afab1694b1b3937a079f4625fe0b6108b}{token\_type::literal\_false}}:}
+\DoxyCodeLine{07376\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}false\ literal"{}};}
+\DoxyCodeLine{07377\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540ab7ae4c0e46d86f884677768160b26e9e}{token\_type::literal\_null}}:}
+\DoxyCodeLine{07378\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}null\ literal"{}};}
+\DoxyCodeLine{07379\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a2b490e8bf366b4cbe3ebd99b26ce15ce}{token\_type::value\_string}}:}
+\DoxyCodeLine{07380\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}string\ literal"{}};}
+\DoxyCodeLine{07381\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540aaf1f040fcd2f674d2e5893d7a731078f}{token\_type::value\_unsigned}}:}
+\DoxyCodeLine{07382\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a5064b6655d88a50ae16665cf7751c0ee}{token\_type::value\_integer}}:}
+\DoxyCodeLine{07383\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a0d2671a6f81efb91e77f6ac3bdb11443}{token\_type::value\_float}}:}
+\DoxyCodeLine{07384\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}number\ literal"{}};}
+\DoxyCodeLine{07385\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a16c226b4425b68560fea322b46dabe01}{token\_type::begin\_array}}:}
+\DoxyCodeLine{07386\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}'['"{}};}
+\DoxyCodeLine{07387\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a9a9ffd53b6869d4eca271b1ed5b57fe8}{token\_type::begin\_object}}:}
+\DoxyCodeLine{07388\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}'\{'"{}};}
+\DoxyCodeLine{07389\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a2f3e68e7f111a1e5c7728742b3ca2b7f}{token\_type::end\_array}}:}
+\DoxyCodeLine{07390\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}']'"{}};}
+\DoxyCodeLine{07391\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a7d5b4427866814de4d8f132721d59c87}{token\_type::end\_object}}:}
+\DoxyCodeLine{07392\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}'\}'"{}};}
+\DoxyCodeLine{07393\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540acc3c64f8ae08c00de1b33f19a4d2913a}{token\_type::name\_separator}}:}
+\DoxyCodeLine{07394\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}':'"{}};}
+\DoxyCodeLine{07395\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a745373036100d7392ad62c617cab59af}{token\_type::value\_separator}}:}
+\DoxyCodeLine{07396\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}','"{}};}
+\DoxyCodeLine{07397\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540a456e19aeafa334241c7ff3f589547f9d}{token\_type::parse\_error}}:}
+\DoxyCodeLine{07398\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}<parse\ error>"{}};}
+\DoxyCodeLine{07399\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540aca11f56dd477c09e06583dbdcda0985f}{token\_type::end\_of\_input}}:}
+\DoxyCodeLine{07400\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}end\ of\ input"{}};}
+\DoxyCodeLine{07401\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classdetail_1_1lexer__base_add65fa7a85aa15052963809fbcc04540ad2a8e6f6721cccec0b466301dd9495a5}{token\_type::literal\_or\_value}}:}
+\DoxyCodeLine{07402\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}'[',\ '\{',\ or\ a\ literal"{}};}
+\DoxyCodeLine{07403\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ LCOV\_EXCL\_START}}
+\DoxyCodeLine{07404\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:\ \textcolor{comment}{//\ catch\ non-\/enum\ values}}
+\DoxyCodeLine{07405\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}unknown\ token"{}};}
+\DoxyCodeLine{07406\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ LCOV\_EXCL\_STOP}}
+\DoxyCodeLine{07407\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{07408\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/nlohmann/\mbox{\hyperlink{json_8hpp}{json.\+hpp}}\end{DoxyCompactItemize}

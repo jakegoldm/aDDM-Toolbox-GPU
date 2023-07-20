@@ -1,0 +1,71 @@
+\doxysection{lib/addm.cpp File Reference}
+\hypertarget{addm_8cpp}{}\label{addm_8cpp}\index{lib/addm.cpp@{lib/addm.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include \"{}nlohmann/json.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}ddm.\+h\"{}}\newline
+{\ttfamily \#include \"{}util.\+h\"{}}\newline
+{\ttfamily \#include \"{}addm.\+h\"{}}\newline
+Include dependency graph for addm.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{addm_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{addm_8cpp_af2186cd8aff37cd7fa28ad2dcb706094}{a\+DDMParallel\+NLL}} (\mbox{\hyperlink{classa_d_d_m}{a\+DDM}} addm, std\+::vector$<$ \mbox{\hyperlink{classa_d_d_m_trial}{a\+DDMTrial}} $>$ trials)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{addm_8cpp_af2186cd8aff37cd7fa28ad2dcb706094}\label{addm_8cpp_af2186cd8aff37cd7fa28ad2dcb706094} 
+\index{addm.cpp@{addm.cpp}!aDDMParallelNLL@{aDDMParallelNLL}}
+\index{aDDMParallelNLL@{aDDMParallelNLL}!addm.cpp@{addm.cpp}}
+\doxysubsubsection{\texorpdfstring{aDDMParallelNLL()}{aDDMParallelNLL()}}
+{\footnotesize\ttfamily double a\+DDMParallel\+NLL (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classa_d_d_m}{a\+DDM}}}]{addm,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classa_d_d_m_trial}{a\+DDMTrial}} $>$}]{trials }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{addm_8cpp_source_l00496}{496}} of file \mbox{\hyperlink{addm_8cpp_source}{addm.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00496\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00497\ \ \ \ \ \textcolor{keywordtype}{double}\ NLL\ =\ 0;\ }
+\DoxyCodeLine{00498\ }
+\DoxyCodeLine{00499\ \ \ \ \ \textcolor{comment}{//\ \#ifndef\ \_\_NVCC\_\_}}
+\DoxyCodeLine{00500\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_b_s_1_1thread__pool}{BS::thread\_pool}}\ pool;}
+\DoxyCodeLine{00501\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_b_s_1_1multi__future}{BS::multi\_future<double>}}\ futs\ =\ pool.\mbox{\hyperlink{class_b_s_1_1thread__pool_ab63b1085ad48295d7f653cbb36a286be}{parallelize\_loop}}(}
+\DoxyCodeLine{00502\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ trials.size(),\ }
+\DoxyCodeLine{00503\ \ \ \ \ \ \ \ \ \ \ \ \ [\&addm,\ \&trials](\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ a,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ b)\ \{}
+\DoxyCodeLine{00504\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ double\ block\_total\ =\ 0;\ }
+\DoxyCodeLine{00505\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ for\ (int\ i\ =\ a;\ i\ <\ b;\ ++i)\ \{}
+\DoxyCodeLine{00506\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ block\_total\ +=\ -\/log(}
+\DoxyCodeLine{00507\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ addm.getTrialLikelihood(trials[i])}
+\DoxyCodeLine{00508\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00509\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00510\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ block\_total;}
+\DoxyCodeLine{00511\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00512\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00513\ \ \ \ \ \ \ \ \ std::vector<double>\ totals\ =\ futs.get();}
+\DoxyCodeLine{00514\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ t\ :\ totals)\ \{}
+\DoxyCodeLine{00515\ \ \ \ \ \ \ \ \ \ \ \ \ NLL\ +=\ t;\ }
+\DoxyCodeLine{00516\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00517\ \ \ \ \ \textcolor{comment}{//\ \#endif\ }}
+\DoxyCodeLine{00518\ }
+\DoxyCodeLine{00519\ \ \ \ \ \textcolor{keywordflow}{return}\ NLL;}
+\DoxyCodeLine{00520\ \}}
+
+\end{DoxyCode}

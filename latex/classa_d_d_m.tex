@@ -1,0 +1,635 @@
+\doxysection{a\+DDM Class Reference}
+\hypertarget{classa_d_d_m}{}\label{classa_d_d_m}\index{aDDM@{aDDM}}
+
+
+{\ttfamily \#include $<$addm.\+h$>$}
+
+
+
+Inheritance diagram for a\+DDM\+:
+% FIG 0
+
+
+Collaboration diagram for a\+DDM\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classa_d_d_m_ad9ecaeec702acd80c74d483ca653524d}{a\+DDM}} (float \mbox{\hyperlink{class_d_d_m_a15511d3cf0f7deb5de073dcdfd09bcc6}{d}}, float \mbox{\hyperlink{class_d_d_m_a17570a6c2378cdb363437f39a5fa3f00}{sigma}}, float \mbox{\hyperlink{classa_d_d_m_a9c6c014066b0930baaa665b06dec9bb3}{theta}}, float \mbox{\hyperlink{class_d_d_m_a0293f051d7889ee014fb55c4939e4783}{barrier}}, unsigned int \mbox{\hyperlink{class_d_d_m_a0821be8a65988df0004b4d9f4239a020}{non\+Decision\+Time}}=0, float \mbox{\hyperlink{class_d_d_m_a0cecc28e691846bce6dccb02f34aef07}{bias}}=0)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{classa_d_d_m}{a\+DDM} object. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classa_d_d_m_a9ccee0abe15711f09f8eee0a782f3e06}{get\+Trial\+Likelihood}} (\mbox{\hyperlink{classa_d_d_m_trial}{a\+DDMTrial}} trial, bool debug=false, int time\+Step=10, float approx\+State\+Step=0.\+1)
+\begin{DoxyCompactList}\small\item\em Compute the likelihood of the data for a single trial given \doxylink{classa_d_d_m}{a\+DDM} Parameters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classa_d_d_m_trial}{a\+DDMTrial}} \mbox{\hyperlink{classa_d_d_m_ac9cc21a00f8516e23a0e3b15f913999b}{simulate\+Trial}} (int \mbox{\hyperlink{addm__mle_8cpp_a66ae2c9a86cab7b4970ecc123c799c45}{value\+Left}}, int value\+Right, \mbox{\hyperlink{class_fixation_data}{Fixation\+Data}} fixation\+Data, int time\+Step=10, int num\+Fix\+Dists=3, \mbox{\hyperlink{addm_8h_ac73e0abca434ac872480feb6a7cf4c56}{fix\+Dists}} fixation\+Dist=\{\}, vector$<$ int $>$ time\+Bins=\{\})
+\begin{DoxyCompactList}\small\item\em Generate simulated fixations provided item values and empirical fixation data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_d_d_m}{DDM}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_d_m_af8079400de69cdcec8414c9083884558}{DDM}} (float \mbox{\hyperlink{class_d_d_m_a15511d3cf0f7deb5de073dcdfd09bcc6}{d}}, float \mbox{\hyperlink{class_d_d_m_a17570a6c2378cdb363437f39a5fa3f00}{sigma}}, float \mbox{\hyperlink{class_d_d_m_a0293f051d7889ee014fb55c4939e4783}{barrier}}, unsigned int \mbox{\hyperlink{class_d_d_m_a0821be8a65988df0004b4d9f4239a020}{non\+Decision\+Time}}=0, float \mbox{\hyperlink{class_d_d_m_a0cecc28e691846bce6dccb02f34aef07}{bias}}=0)
+\item 
+\mbox{\hyperlink{class_d_d_m_a5c65c29756565b1a6a9ca6605fa1c003}{DDM}} ()
+\item 
+double \mbox{\hyperlink{class_d_d_m_a025072ab3fd16dee3a0b0f57c7585a06}{get\+Trial\+Likelihood}} (\mbox{\hyperlink{class_d_d_m_trial}{DDMTrial}} trial, bool debug=false, int time\+Step=10, float approx\+State\+Step=0.\+1)
+\item 
+\mbox{\hyperlink{class_d_d_m_trial}{DDMTrial}} \mbox{\hyperlink{class_d_d_m_a6a1471b7df53bbb107df7bf954f6d7a6}{simulate\+Trial}} (int Value\+Left, int Value\+Right, int time\+Step=10)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{classa_d_d_m_a9c6c014066b0930baaa665b06dec9bb3}{theta}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_d_d_m}{DDM}}}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_d_d_m_a15511d3cf0f7deb5de073dcdfd09bcc6}{d}}
+\item 
+float \mbox{\hyperlink{class_d_d_m_a17570a6c2378cdb363437f39a5fa3f00}{sigma}}
+\item 
+float \mbox{\hyperlink{class_d_d_m_a0293f051d7889ee014fb55c4939e4783}{barrier}}
+\item 
+unsigned int \mbox{\hyperlink{class_d_d_m_a0821be8a65988df0004b4d9f4239a020}{non\+Decision\+Time}}
+\item 
+float \mbox{\hyperlink{class_d_d_m_a0cecc28e691846bce6dccb02f34aef07}{bias}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{addm_8h_source_l00046}{46}} of file \mbox{\hyperlink{addm_8h_source}{addm.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classa_d_d_m_ad9ecaeec702acd80c74d483ca653524d}\label{classa_d_d_m_ad9ecaeec702acd80c74d483ca653524d} 
+\index{aDDM@{aDDM}!aDDM@{aDDM}}
+\index{aDDM@{aDDM}!aDDM@{aDDM}}
+\doxysubsubsection{\texorpdfstring{aDDM()}{aDDM()}}
+{\footnotesize\ttfamily a\+DDM\+::a\+DDM (\begin{DoxyParamCaption}\item[{float}]{d,  }\item[{float}]{sigma,  }\item[{float}]{theta,  }\item[{float}]{barrier,  }\item[{unsigned int}]{non\+Decision\+Time = {\ttfamily 0},  }\item[{float}]{bias = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Construct a new \doxylink{classa_d_d_m}{a\+DDM} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & drift rate. \\
+\hline
+{\em sigma} & noise or standard deviation for the normal distribution. \\
+\hline
+{\em theta} & ranges on \mbox{[}0,1\mbox{]} and indicates level of attentional bias. \\
+\hline
+{\em barrier} & positive magnitude of the signal thresholds. \\
+\hline
+{\em non\+Decision\+Time} & amount of time in milliseconds in which only noise is added to the decision variable. \\
+\hline
+{\em bias} & corresponds to the initial value of the decision variable. Must be smaller than barrier. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{addm_8cpp_source_l00042}{42}} of file \mbox{\hyperlink{addm_8cpp_source}{addm.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ }
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{class_d_d_m_a5c65c29756565b1a6a9ca6605fa1c003}{DDM}}(\mbox{\hyperlink{class_d_d_m_a15511d3cf0f7deb5de073dcdfd09bcc6}{d}},\ \mbox{\hyperlink{class_d_d_m_a17570a6c2378cdb363437f39a5fa3f00}{sigma}},\ \mbox{\hyperlink{class_d_d_m_a0293f051d7889ee014fb55c4939e4783}{barrier}},\ \mbox{\hyperlink{class_d_d_m_a0821be8a65988df0004b4d9f4239a020}{nonDecisionTime}},\ \mbox{\hyperlink{class_d_d_m_a0cecc28e691846bce6dccb02f34aef07}{bias}})\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classa_d_d_m_a9c6c014066b0930baaa665b06dec9bb3}{theta}}\ =\ \mbox{\hyperlink{classa_d_d_m_a9c6c014066b0930baaa665b06dec9bb3}{theta}};}
+\DoxyCodeLine{00046\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classa_d_d_m_a9ccee0abe15711f09f8eee0a782f3e06}\label{classa_d_d_m_a9ccee0abe15711f09f8eee0a782f3e06} 
+\index{aDDM@{aDDM}!getTrialLikelihood@{getTrialLikelihood}}
+\index{getTrialLikelihood@{getTrialLikelihood}!aDDM@{aDDM}}
+\doxysubsubsection{\texorpdfstring{getTrialLikelihood()}{getTrialLikelihood()}}
+{\footnotesize\ttfamily double a\+DDM\+::get\+Trial\+Likelihood (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classa_d_d_m_trial}{a\+DDMTrial}}}]{trial,  }\item[{bool}]{debug = {\ttfamily false},  }\item[{int}]{time\+Step = {\ttfamily 10},  }\item[{float}]{approx\+State\+Step = {\ttfamily 0.1} }\end{DoxyParamCaption})}
+
+
+
+Compute the likelihood of the data for a single trial given \doxylink{classa_d_d_m}{a\+DDM} Parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em trial} & \doxylink{classa_d_d_m_trial}{a\+DDMTrial} object. \\
+\hline
+{\em debug} & True if state variables should be printed for debugging purposes \\
+\hline
+{\em time\+Step} & value in milliseconds used for binning the time axis. \\
+\hline
+{\em approxstate\+Step} & used for binning the RDV axis. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double representing the likelihood for the given trial. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{addm_8cpp_source_l00048}{48}} of file \mbox{\hyperlink{addm_8cpp_source}{addm.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordflow}{if}\ (debug)\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ std::cout\ <<\ std::setprecision(6)\ <<\ std::fixed;}
+\DoxyCodeLine{00051\ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \ \ std::vector<int>\ correctedFixItem\ =\ trial.\mbox{\hyperlink{classa_d_d_m_trial_a8b7e649ce0fded823e1191c2f9675cf2}{fixItem}};}
+\DoxyCodeLine{00053\ \ \ \ \ std::vector<int>\ correctedFixTime\ =\ trial.\mbox{\hyperlink{classa_d_d_m_trial_adf04171bada997ac559e29629524da2f}{fixTime}};}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{class_d_d_m_a0821be8a65988df0004b4d9f4239a020}{nonDecisionTime}}\ >\ 0)\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ remainingNDT\ =\ this-\/>\mbox{\hyperlink{class_d_d_m_a0821be8a65988df0004b4d9f4239a020}{nonDecisionTime}};}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ assert(trial.\mbox{\hyperlink{classa_d_d_m_trial_a8b7e649ce0fded823e1191c2f9675cf2}{fixItem}}.size()\ ==\ trial.\mbox{\hyperlink{classa_d_d_m_trial_adf04171bada997ac559e29629524da2f}{fixTime}}.size());}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ trial.\mbox{\hyperlink{classa_d_d_m_trial_a8b7e649ce0fded823e1191c2f9675cf2}{fixItem}}.size();\ i++)\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ fItem\ =\ trial.\mbox{\hyperlink{classa_d_d_m_trial_a8b7e649ce0fded823e1191c2f9675cf2}{fixItem}}[i];}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ fTime\ =\ trial.\mbox{\hyperlink{classa_d_d_m_trial_adf04171bada997ac559e29629524da2f}{fixTime}}[i];}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (remainingNDT\ >\ 0)\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ correctedFixItem.push\_back(0);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ correctedFixTime.push\_back(min(remainingNDT,\ fTime));}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ correctedFixItem.push\_back(fItem);}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ correctedFixTime.push\_back(max(fTime\ -\/\ remainingNDT,\ 0));}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ correctedFixItem.push\_back(fItem);}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ correctedFixTime.push\_back(fTime);}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00070\ \ \ \ \ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordflow}{if}\ (debug)\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}CFI"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ :\ correctedFixItem)\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ i\ <<\ std::endl;}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}CFT"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ t\ :\ correctedFixTime)\ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ t\ <<\ std::endl;}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00083\ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \ \ \ \ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{int}\ numTimeSteps\ =\ 0;}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ fTime\ :\ correctedFixTime)\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ numTimeSteps\ +=\ fTime\ /\ timeStep;}
+\DoxyCodeLine{00088\ \ \ \ \ \}}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordflow}{if}\ (numTimeSteps\ <\ 1)\ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Trial\ response\ time\ is\ smaller\ than\ time\ step"{}});}
+\DoxyCodeLine{00091\ \ \ \ \ \}}
+\DoxyCodeLine{00092\ \ \ \ \ numTimeSteps++;}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ std::vector<float>\ barrierUp(numTimeSteps);}
+\DoxyCodeLine{00095\ \ \ \ \ std::fill(barrierUp.begin(),\ barrierUp.end(),\ this-\/>barrier);}
+\DoxyCodeLine{00096\ \ \ \ \ std::vector<float>\ barrierDown(numTimeSteps);}
+\DoxyCodeLine{00097\ \ \ \ \ std::fill(barrierDown.begin(),\ barrierDown.end(),\ -\/this-\/>barrier);}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <\ numTimeSteps;\ i++)\ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ barrierUp.at(i)\ =\ this-\/>\mbox{\hyperlink{class_d_d_m_a0293f051d7889ee014fb55c4939e4783}{barrier}}\ /\ (1\ +\ (\mbox{\hyperlink{util_8h_ae307adc0568237d1e5bc8802f60f67bf}{DECAY}}\ *\ i));}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ barrierDown.at(i)\ =\ -\/this-\/>\mbox{\hyperlink{class_d_d_m_a0293f051d7889ee014fb55c4939e4783}{barrier}}\ /\ (1\ +\ (\mbox{\hyperlink{util_8h_ae307adc0568237d1e5bc8802f60f67bf}{DECAY}}\ *\ i));}
+\DoxyCodeLine{00101\ \ \ \ \ \}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{int}\ halfNumStateBins\ =\ ceil(this-\/>\mbox{\hyperlink{class_d_d_m_a0293f051d7889ee014fb55c4939e4783}{barrier}}\ /\ approxStateStep);\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{float}\ stateStep\ =\ this-\/>\mbox{\hyperlink{class_d_d_m_a0293f051d7889ee014fb55c4939e4783}{barrier}}\ /\ (halfNumStateBins\ +\ 0.5);}
+\DoxyCodeLine{00105\ \ \ \ \ std::vector<float>\ states;}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{float}\ ss\ =\ barrierDown.at(0)\ +\ (stateStep\ /\ 2);\ ss\ <=\ barrierUp.at(0)\ -\/\ (stateStep\ /\ 2);\ ss\ +=\ stateStep)\ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ states.push\_back(ss);}
+\DoxyCodeLine{00108\ \ \ \ \ \}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{float}\ biasStateVal\ =\ MAXFLOAT;}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{int}\ biasState\ =\ 0;}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ states.size();\ i++)\ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ r\ =\ abs(states.at(i)\ -\/\ this-\/>bias);}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (r\ <\ biasStateVal)\ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ biasState\ =\ i;}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ biasStateVal\ =\ r;}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00118\ \ \ \ \ \}}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{comment}{//\ Initialize\ an\ empty\ probability\ state\ grid}}
+\DoxyCodeLine{00121\ \ \ \ \ std::vector<std::vector<double>>\ prStates;\ \textcolor{comment}{//\ prStates[state][timeStep]}}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ states.size();\ i++)\ \{}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ prStates.push\_back(\{\});}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ numTimeSteps;\ j++)\ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ prStates.at(i).push\_back(0);}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00127\ \ \ \ \ \}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{comment}{//\ Initialize\ vectors\ corresponding\ to\ the\ probability\ of\ crossing\ the\ }}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{comment}{//\ top\ or\ bottom\ barriers\ at\ each\ timestep.\ }}
+\DoxyCodeLine{00131\ \ \ \ \ std::vector<double>\ probUpCrossing;\ }
+\DoxyCodeLine{00132\ \ \ \ \ std::vector<double>\ probDownCrossing;}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ numTimeSteps;\ i++)\ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ probUpCrossing.push\_back(0);}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ probDownCrossing.push\_back(0);}
+\DoxyCodeLine{00136\ \ \ \ \ \}}
+\DoxyCodeLine{00137\ \ \ \ \ prStates.at(biasState).at(0)\ =\ 1;\ }
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordtype}{int}\ time\ =\ 1;}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{comment}{//\ Initialize\ a\ change\ matrix\ where\ each\ value\ at\ (i,\ j)\ }}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{comment}{//\ indicates\ the\ difference\ between\ states[i]\ and\ states[j]\ }}
+\DoxyCodeLine{00143\ \ \ \ \ std::vector<std::vector<float>>\ changeMatrix(states.size(),\ std::vector<float>(states.size()));\ }
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ states.size();\ i++)\ \{}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ states.size();\ j++)\ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ changeMatrix[i][j]\ =\ states[i]\ -\/\ states[j];}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00148\ \ \ \ \ \}}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordflow}{if}\ (debug)\ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ printMatrix<float>(changeMatrix,\ \textcolor{stringliteral}{"{}CHANGE\ MATRIX"{}});}
+\DoxyCodeLine{00151\ \ \ \ \ \}}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{comment}{//\ Distance\ from\ every\ state\ to\ the\ top\ barrier\ at\ each\ timestep}}
+\DoxyCodeLine{00154\ \ \ \ \ std::vector<std::vector<float>>\ changeUp(states.size(),\ std::vector<float>(numTimeSteps));}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ states.size();\ i++)\ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ numTimeSteps;\ j++)\ \{}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ changeUp[i][j]\ =\ barrierUp[j]\ -\/\ states[i];}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00159\ \ \ \ \ \}}
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordflow}{if}\ (debug)\ \{}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ printMatrix<float>(changeUp,\ \textcolor{stringliteral}{"{}CHANGE\ UP"{}});}
+\DoxyCodeLine{00162\ \ \ \ \ \}}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{comment}{//\ Distance\ from\ every\ state\ to\ the\ bottom\ barrier\ at\ each\ timestep}}
+\DoxyCodeLine{00166\ \ \ \ \ std::vector<std::vector<float>>\ changeDown(states.size(),\ std::vector<float>(numTimeSteps));}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ states.size();\ i++)\ \{}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ numTimeSteps;\ j++)\ \{}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ changeDown[i][j]\ =\ barrierDown[j]\ -\/\ states[i];}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00171\ \ \ \ \ \}}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordflow}{if}\ (debug)\ \{}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ printMatrix<float>(changeDown,\ \textcolor{stringliteral}{"{}CHANGE\ DOWN"{}});}
+\DoxyCodeLine{00174\ \ \ \ \ \}}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \ \ \ \ assert(correctedFixItem.size()\ ==\ correctedFixTime.size());}
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ correctedFixItem.size();\ i++)\ \{}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ fItem\ =\ correctedFixItem[i];}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ fTime\ =\ correctedFixTime[i];}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (debug)\ \{}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}============"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}fItem\ "{}}\ <<\ i\ <<\ \textcolor{stringliteral}{"{}:\ "{}}\ <<\ fItem\ <<\ std::endl;}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}fTime\ "{}}\ <<\ i\ <<\ \textcolor{stringliteral}{"{}:\ "{}}\ <<\ fTime\ <<\ std::endl;}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}============"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ mean;}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (fItem\ ==\ 1)\ \{}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ mean\ =\ this-\/>\mbox{\hyperlink{class_d_d_m_a15511d3cf0f7deb5de073dcdfd09bcc6}{d}}\ *\ (trial.\mbox{\hyperlink{class_d_d_m_trial_ae949e54554e10660f73878a07a95d14d}{valueLeft}}\ -\/\ (this-\/>\mbox{\hyperlink{classa_d_d_m_a9c6c014066b0930baaa665b06dec9bb3}{theta}}\ *\ trial.\mbox{\hyperlink{class_d_d_m_trial_a9e1a0900b92b8d16fb3bd49894c9dc2c}{valueRight}}));}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (fItem\ ==\ 2)\ \{}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ mean\ =\ this-\/>\mbox{\hyperlink{class_d_d_m_a15511d3cf0f7deb5de073dcdfd09bcc6}{d}}\ *\ ((this-\/>\mbox{\hyperlink{classa_d_d_m_a9c6c014066b0930baaa665b06dec9bb3}{theta}}\ *\ trial.\mbox{\hyperlink{class_d_d_m_trial_ae949e54554e10660f73878a07a95d14d}{valueLeft}})\ -\/\ trial.\mbox{\hyperlink{class_d_d_m_trial_a9e1a0900b92b8d16fb3bd49894c9dc2c}{valueRight}});}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ mean\ =\ 0;\ }
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ t\ =\ 0;\ t\ <\ fTime\ /\ timeStep;\ t++)\ \{}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ the\ likelihood\ of\ each\ change\ in\ the\ matrix\ using\ a\ probability\ density\ function\ with\ parameters\ mean\ and\ sigma.\ }}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::vector<double>>\ probDistChangeMatrix(states.size(),\ std::vector<double>(states.size()));}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ states.size();\ i++)\ \{}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ states.size();\ j++)\ \{}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ x\ =\ changeMatrix[i][j];}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ probDistChangeMatrix[i][j]\ =\ \mbox{\hyperlink{util_8h_a3c70684bbd5c18365b967d158305e919}{probabilityDensityFunction}}(mean,\ this-\/>\mbox{\hyperlink{class_d_d_m_a17570a6c2378cdb363437f39a5fa3f00}{sigma}},\ x);}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (debug)\ \{}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printMatrix<double>(probDistChangeMatrix,\ \textcolor{stringliteral}{"{}PROBABILITY\ CHANGE\ MATRIX"{}});}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Fetch\ the\ probability\ states\ for\ the\ previous\ timeStep}}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<double>\ prTimeSlice(states.size());}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ states.size();\ i++)\ \{}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ prTimeSlice[i]\ =\ prStates[i][time\ -\/\ 1];}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ the\ dot\ product\ between\ the\ change\ matrix\ and\ previous\ timeStep's\ probabilities}}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<double>\ prStatesNew(states.size());}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ states.size();\ i++)\ \{}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ row\_sum\ =\ 0;\ }
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ states.size();\ j++)\ \{}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ row\_sum\ +=\ stateStep\ *\ probDistChangeMatrix[i][j]\ *\ prTimeSlice[j];}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ prStatesNew[i]\ =\ row\_sum;}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ for\ states\ that\ are\ now\ out-\/of-\/bounds\ based\ on\ decay}}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ states.size();\ i++)\ \{}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (states[i]\ >\ barrierUp[time]\ ||\ states[i]\ <\ barrierDown[time])\ \{}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ prStatesNew[i]\ =\ 0;}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (debug)\ \{}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}PR\ STATES\ NEW"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_d_d_m_a15511d3cf0f7deb5de073dcdfd09bcc6}{d}}\ :\ prStatesNew)\ \{}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \mbox{\hyperlink{class_d_d_m_a15511d3cf0f7deb5de073dcdfd09bcc6}{d}}\ <<\ std::endl;}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<float>\ currChangeUp;}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ s\ :\ changeUp)\ \{}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currChangeUp.push\_back(s.at(time));}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<double>\ changeUpCDFs;}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ currChangeUp.size();\ i++)\ \{}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ x\ =\ currChangeUp[i];}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ changeUpCDFs.push\_back(}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1\ -\/\ \mbox{\hyperlink{util_8h_ab0c2fb4c0b02fabb15eeab9d6f73e5ab}{cumulativeDensityFunction}}(mean,\ this-\/>\mbox{\hyperlink{class_d_d_m_a17570a6c2378cdb363437f39a5fa3f00}{sigma}},\ x)}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ assert(changeUpCDFs.size()\ ==\ prTimeSlice.size());}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ tempUpCross\ =\ 0;}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ prTimeSlice.size();\ i++)\ \{}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tempUpCross\ +=\ changeUpCDFs[i]\ *\ prTimeSlice[i];}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00258\ }
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<float>\ currChangeDown;}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ s:\ changeDown)\ \{}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currChangeDown.push\_back(s.at(time));}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<double>\ changeDownCDFs;}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ currChangeDown.size();\ i++)\ \{}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ x\ =\ currChangeDown[i];}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ changeDownCDFs.push\_back(}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{util_8h_ab0c2fb4c0b02fabb15eeab9d6f73e5ab}{cumulativeDensityFunction}}(mean,\ this-\/>\mbox{\hyperlink{class_d_d_m_a17570a6c2378cdb363437f39a5fa3f00}{sigma}},\ x)}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ assert(changeDownCDFs.size()\ ==\ prTimeSlice.size());}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ tempDownCross\ =\ 0;}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ prTimeSlice.size();\ i++)\ \{}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tempDownCross\ +=\ changeDownCDFs[i]\ *\ prTimeSlice[i];}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ sumIn\ =\ 0;\ }
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{double}\ prob\ :\ prTimeSlice)\ \{}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sumIn\ +=\ prob;\ }
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ sumCurrent\ =\ tempUpCross\ +\ tempDownCross;\ }
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{double}\ prob\ :\ prStatesNew)\ \{}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sumCurrent\ +=\ prob;}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ normFactor\ =\ sumIn\ /\ sumCurrent;\ }
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ prStatesNew.size();\ i++)\ \{}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ prStatesNew[i]\ *=\ normFactor;}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ tempUpCross\ *=\ normFactor;}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ tempDownCross\ *=\ normFactor;\ }
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ prStates.size();\ i++)\ \{}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ prStates[i][time]\ =\ prStatesNew[i];}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \ \ probUpCrossing[time]\ =\ tempUpCross;\ }
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ probDownCrossing[time]\ =\ tempDownCross;}
+\DoxyCodeLine{00295\ }
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \ \ \ \ time++;}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00298\ \ \ \ \ \}}
+\DoxyCodeLine{00299\ \ \ \ \ \textcolor{keywordtype}{double}\ likelihood\ =\ 0;}
+\DoxyCodeLine{00300\ \ \ \ \ \textcolor{keywordflow}{if}\ (trial.\mbox{\hyperlink{class_d_d_m_trial_a941813496795b5c0f16d068444abf483}{choice}}\ ==\ -\/1)\ \{}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (probUpCrossing[probUpCrossing.size()\ -\/\ 1]\ >\ 0)\ \{}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \ \ \ \ likelihood\ =\ probUpCrossing[probUpCrossing.size()\ -\/\ 1];}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00304\ \ \ \ \ \}}
+\DoxyCodeLine{00305\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (trial.\mbox{\hyperlink{class_d_d_m_trial_a941813496795b5c0f16d068444abf483}{choice}}\ ==\ 1)\ \{}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (probDownCrossing[probDownCrossing.size()\ -\/\ 1]\ >\ 0)\ \{}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \ \ \ \ likelihood\ =\ probDownCrossing[probDownCrossing.size()\ -\/\ 1];}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00309\ \ \ \ \ \}}
+\DoxyCodeLine{00310\ \ \ \ \ \textcolor{keywordflow}{return}\ likelihood;}
+\DoxyCodeLine{00311\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classa_d_d_m_ac9cc21a00f8516e23a0e3b15f913999b}\label{classa_d_d_m_ac9cc21a00f8516e23a0e3b15f913999b} 
+\index{aDDM@{aDDM}!simulateTrial@{simulateTrial}}
+\index{simulateTrial@{simulateTrial}!aDDM@{aDDM}}
+\doxysubsubsection{\texorpdfstring{simulateTrial()}{simulateTrial()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classa_d_d_m_trial}{a\+DDMTrial}} a\+DDM\+::simulate\+Trial (\begin{DoxyParamCaption}\item[{int}]{value\+Left,  }\item[{int}]{value\+Right,  }\item[{\mbox{\hyperlink{class_fixation_data}{Fixation\+Data}}}]{fixation\+Data,  }\item[{int}]{time\+Step = {\ttfamily 10},  }\item[{int}]{num\+Fix\+Dists = {\ttfamily 3},  }\item[{\mbox{\hyperlink{addm_8h_ac73e0abca434ac872480feb6a7cf4c56}{fix\+Dists}}}]{fixation\+Dist = {\ttfamily \{\}},  }\item[{vector$<$ int $>$}]{time\+Bins = {\ttfamily \{\}} }\end{DoxyParamCaption})}
+
+
+
+Generate simulated fixations provided item values and empirical fixation data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value\+Left} & value of the left item \\
+\hline
+{\em value\+Right} & value of the right item \\
+\hline
+{\em fixation\+Data} & instance of a \doxylink{class_fixation_data}{Fixation\+Data} object containing empirical fixation data \\
+\hline
+{\em time\+Step} & value of in milliseconds used for binning time axis. \\
+\hline
+{\em num\+Fix\+Dists} & number of expected fixations in a given trial \\
+\hline
+{\em fixation\+Dist} & distribution of the fixation data being used \\
+\hline
+{\em time\+Bins} & predetermined time bins as used in the fixation\+Dist \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classa_d_d_m_trial}{a\+DDMTrial} resulting from the simulation 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{addm_8cpp_source_l00313}{313}} of file \mbox{\hyperlink{addm_8cpp_source}{addm.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00316\ }
+\DoxyCodeLine{00317\ \ \ \ \ srand(time(NULL));}
+\DoxyCodeLine{00318\ }
+\DoxyCodeLine{00319\ \ \ \ \ std::map<int,\ int>\ fixUnfixValueDiffs;}
+\DoxyCodeLine{00320\ \ \ \ \ fixUnfixValueDiffs.insert(\{1,\ \mbox{\hyperlink{addm__mle_8cpp_a66ae2c9a86cab7b4970ecc123c799c45}{valueLeft}}\ -\/\ valueRight\});}
+\DoxyCodeLine{00321\ \ \ \ \ fixUnfixValueDiffs.insert(\{2,\ valueRight\ -\/\ \mbox{\hyperlink{addm__mle_8cpp_a66ae2c9a86cab7b4970ecc123c799c45}{valueLeft}}\});}
+\DoxyCodeLine{00322\ \ \ \ \ std::vector<int>\ fixItem;}
+\DoxyCodeLine{00323\ \ \ \ \ std::vector<int>\ fixTime;}
+\DoxyCodeLine{00324\ \ \ \ \ std::vector<float>\ fixRDV;}
+\DoxyCodeLine{00325\ }
+\DoxyCodeLine{00326\ \ \ \ \ std::random\_device\ rd;}
+\DoxyCodeLine{00327\ \ \ \ \ \textcolor{comment}{//\ std::mt19937\ gen(SEED);}}
+\DoxyCodeLine{00328\ \ \ \ \ std::mt19937\ gen(rd());\ }
+\DoxyCodeLine{00329\ }
+\DoxyCodeLine{00330\ \ \ \ \ \textcolor{keywordtype}{float}\ RDV\ =\ this-\/>\mbox{\hyperlink{class_d_d_m_a0cecc28e691846bce6dccb02f34aef07}{bias}};}
+\DoxyCodeLine{00331\ \ \ \ \ \textcolor{keywordtype}{int}\ time\ =\ 0;}
+\DoxyCodeLine{00332\ \ \ \ \ \textcolor{keywordtype}{int}\ choice;\ }
+\DoxyCodeLine{00333\ \ \ \ \ \textcolor{keywordtype}{int}\ uninterruptedLastFixTime;}
+\DoxyCodeLine{00334\ \ \ \ \ \textcolor{keywordtype}{int}\ RT;}
+\DoxyCodeLine{00335\ }
+\DoxyCodeLine{00336\ \ \ \ \ std::vector<float>RDVs\ =\ \{RDV\};}
+\DoxyCodeLine{00337\ }
+\DoxyCodeLine{00338\ \ \ \ \ std::uniform\_int\_distribution<std::size\_t>\ ludist(0,\ fixationData.\mbox{\hyperlink{class_fixation_data_a07031fd2270b2693fecfb8121d246a74}{latencies}}.size()\ -\/\ 1);}
+\DoxyCodeLine{00339\ \ \ \ \ \textcolor{keywordtype}{int}\ rIDX\ =\ ludist(gen);}
+\DoxyCodeLine{00340\ \ \ \ \ \textcolor{keywordtype}{int}\ latency\ =\ fixationData.\mbox{\hyperlink{class_fixation_data_a07031fd2270b2693fecfb8121d246a74}{latencies}}.at(rIDX);}
+\DoxyCodeLine{00341\ \ \ \ \ \textcolor{keywordtype}{int}\ remainingNDT\ =\ this-\/>\mbox{\hyperlink{class_d_d_m_a0821be8a65988df0004b4d9f4239a020}{nonDecisionTime}}\ -\/\ latency;}
+\DoxyCodeLine{00342\ }
+\DoxyCodeLine{00343\ \ \ \ \ \textcolor{comment}{//\ std::mt19937\ gen(SEED);}}
+\DoxyCodeLine{00344\ }
+\DoxyCodeLine{00345\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ t\ =\ 0;\ t\ <\ latency\ /\ timeStep;\ t++)\ \{}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ std::normal\_distribution<float>\ ndist(0,\ this-\/>\mbox{\hyperlink{class_d_d_m_a17570a6c2378cdb363437f39a5fa3f00}{sigma}});}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ inc\ =\ ndist(gen);}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ RDV\ +=\ inc;}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ RDVs.push\_back(RDV);}
+\DoxyCodeLine{00350\ }
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(RDV\ >=\ this-\/>\mbox{\hyperlink{class_d_d_m_a0293f051d7889ee014fb55c4939e4783}{barrier}}\ ||\ RDV\ <=\ -\/this-\/>\mbox{\hyperlink{class_d_d_m_a0293f051d7889ee014fb55c4939e4783}{barrier}})\ \{}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (RDV\ >=\ this-\/>barrier)\ \{}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ choice\ =\ -\/1;}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ choice\ =\ 1;\ }
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \ \ \ \ fixRDV.push\_back(RDV);}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \ \ \ \ fixItem.push\_back(0);}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ dt\ =\ (t\ +\ 1)\ *\ timeStep;}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \ \ \ \ fixTime.push\_back(dt);}
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \ \ \ \ time\ +=\ dt;}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \ \ \ \ RT\ =\ time;}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \ \ \ \ uninterruptedLastFixTime\ =\ latency;}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classa_d_d_m_trial}{aDDMTrial}}(}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RT,\ choice,\ \mbox{\hyperlink{addm__mle_8cpp_a66ae2c9a86cab7b4970ecc123c799c45}{valueLeft}},\ valueRight,\ }
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fixItem,\ fixTime,\ fixRDV,\ uninterruptedLastFixTime);}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00368\ \ \ \ \ \}}
+\DoxyCodeLine{00369\ }
+\DoxyCodeLine{00370\ \ \ \ \ fixRDV.push\_back(RDV);}
+\DoxyCodeLine{00371\ \ \ \ \ RDVs.push\_back(RDV);}
+\DoxyCodeLine{00372\ \ \ \ \ fixItem.push\_back(0);}
+\DoxyCodeLine{00373\ \ \ \ \ \textcolor{keywordtype}{int}\ dt\ =\ latency\ -\/\ (latency\ \%\ timeStep);}
+\DoxyCodeLine{00374\ \ \ \ \ fixTime.push\_back(dt);}
+\DoxyCodeLine{00375\ \ \ \ \ time\ +=\ dt;}
+\DoxyCodeLine{00376\ }
+\DoxyCodeLine{00377\ \ \ \ \ \textcolor{keywordtype}{int}\ fixNumber\ =\ 1;}
+\DoxyCodeLine{00378\ \ \ \ \ \textcolor{keywordtype}{int}\ prevFixatedItem\ =\ -\/1;}
+\DoxyCodeLine{00379\ \ \ \ \ \textcolor{keywordtype}{int}\ currFixLocation\ =\ 0;}
+\DoxyCodeLine{00380\ \ \ \ \ \textcolor{keywordtype}{bool}\ decisionReached\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00381\ \ \ \ \ \textcolor{keywordtype}{float}\ currFixTime;}
+\DoxyCodeLine{00382\ }
+\DoxyCodeLine{00383\ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (currFixLocation\ ==\ 0)\ \{}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (prevFixatedItem\ ==\ -\/1)\ \{}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::discrete\_distribution<>\ ddist(\{fixationData.\mbox{\hyperlink{class_fixation_data_ac94f66e2c75130b416982631f76580b8}{probFixLeftFirst}},\ 1\ -\/\ fixationData.\mbox{\hyperlink{class_fixation_data_ac94f66e2c75130b416982631f76580b8}{probFixLeftFirst}}\});}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currFixLocation\ =\ ddist(gen)\ +\ 1;}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (prevFixatedItem\ ==\ 1)\ \{}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currFixLocation\ =\ 2;}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (prevFixatedItem\ ==\ 2)\ \{}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currFixLocation\ =\ 1;}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \ \ \ \ prevFixatedItem\ =\ currFixLocation;}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ASSUMING\ WE\ ARE\ USING\ FIXATION\ DATA\ DIST\ FOR\ NOW}}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (fixationDist.empty())\ \{}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ASSUMING\ SIMPLE}}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (fixationData.\mbox{\hyperlink{class_fixation_data_abae78ac11b072c59b1821d2b2d05eeae}{fixDistType}}\ ==\ \textcolor{stringliteral}{"{}simple"{}})\ \{}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vector<float>\ fixTimes\ =\ fixationData.\mbox{\hyperlink{class_fixation_data_a47d55cea6c6a1ecaef33baa5e9a0f60c}{fixations}}.at(fixNumber);}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::uniform\_int\_distribution<std::size\_t>\ fudist(0,\ fixTimes.size()\ -\/\ 1);}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rIDX\ =\ fudist(gen);}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currFixTime\ =\ fixTimes.at(rIDX);}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}not\ implemented"{}});}
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (fixNumber\ <\ numFixDists)\ \{}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fixNumber++;}
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \ \ \ \ currFixLocation\ =\ 0;}
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \ \ \ \ rIDX\ =\ rand()\ \%\ fixationData.\mbox{\hyperlink{class_fixation_data_a10bd0c29fb903e681b6376d832c4d55c}{transitions}}.size();}
+\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ \ \ \ \ currFixTime\ =\ fixationData.\mbox{\hyperlink{class_fixation_data_a10bd0c29fb903e681b6376d832c4d55c}{transitions}}.at(rIDX);}
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (remainingNDT\ >\ 0)\ \ \{}
+\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ t\ =\ 0;\ t\ <\ remainingNDT\ /\ timeStep;\ t++)\ \{}
+\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::normal\_distribution<float>\ ndist(0,\ this-\/>\mbox{\hyperlink{class_d_d_m_a17570a6c2378cdb363437f39a5fa3f00}{sigma}});}
+\DoxyCodeLine{00418\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ inc\ =\ ndist(gen);}
+\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RDV\ +=\ inc;}
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RDVs.push\_back(RDV);}
+\DoxyCodeLine{00421\ }
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(RDV\ >=\ this-\/>barrier\ ||\ RDV\ <=\ -\/this-\/>\mbox{\hyperlink{class_d_d_m_a0293f051d7889ee014fb55c4939e4783}{barrier}})\ \{}
+\DoxyCodeLine{00423\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (RDV\ >=\ this-\/>barrier)\ \{}
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ choice\ =\ -\/1;}
+\DoxyCodeLine{00425\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00426\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ choice\ =\ 1;\ }
+\DoxyCodeLine{00427\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00428\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fixRDV.push\_back(RDV);}
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fixItem.push\_back(currFixLocation);}
+\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ dt\ =\ (t\ +\ 1)\ *\ timeStep;}
+\DoxyCodeLine{00431\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fixTime.push\_back(dt);}
+\DoxyCodeLine{00432\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ time\ +=\ dt;}
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RT\ =\ time;}
+\DoxyCodeLine{00434\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uninterruptedLastFixTime\ =\ currFixTime;}
+\DoxyCodeLine{00435\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ decisionReached\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00436\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00438\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (decisionReached)\ \{}
+\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ remainingFixTime\ =\ max(0.0f,\ currFixTime\ -\/\ max(0,\ remainingNDT));}
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ remainingNDT\ -\/=\ currFixTime;}
+\DoxyCodeLine{00445\ }
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ t\ =\ 0;\ t\ <\ round(remainingFixTime\ /\ timeStep);\ t++)\ \{}
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ mean;}
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (currFixLocation\ ==\ 0)\ \{}
+\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mean\ =\ 0;}
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (currFixLocation\ ==\ 1)\ \{}
+\DoxyCodeLine{00451\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mean\ =\ this-\/>\mbox{\hyperlink{class_d_d_m_a15511d3cf0f7deb5de073dcdfd09bcc6}{d}}\ *\ (\mbox{\hyperlink{addm__mle_8cpp_a66ae2c9a86cab7b4970ecc123c799c45}{valueLeft}}\ -\/\ (this-\/>\mbox{\hyperlink{classa_d_d_m_a9c6c014066b0930baaa665b06dec9bb3}{theta}}\ *\ valueRight));}
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (currFixLocation\ ==\ 2)\ \{}
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mean\ =\ this-\/>\mbox{\hyperlink{class_d_d_m_a15511d3cf0f7deb5de073dcdfd09bcc6}{d}}\ *\ ((this-\/>\mbox{\hyperlink{classa_d_d_m_a9c6c014066b0930baaa665b06dec9bb3}{theta}}\ *\ \mbox{\hyperlink{addm__mle_8cpp_a66ae2c9a86cab7b4970ecc123c799c45}{valueLeft}})\ -\/\ valueRight);}
+\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \ \ \ \ std::normal\_distribution<float>\ ndist(mean,\ this-\/>\mbox{\hyperlink{class_d_d_m_a17570a6c2378cdb363437f39a5fa3f00}{sigma}});}
+\DoxyCodeLine{00456\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ inc\ =\ ndist(gen);}
+\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ \ \ \ \ RDV\ +=\ inc;}
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \ \ \ \ RDVs.push\_back(RDV);\ }
+\DoxyCodeLine{00459\ }
+\DoxyCodeLine{00460\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(RDV\ >=\ this-\/>barrier\ ||\ RDV\ <=\ -\/this-\/>\mbox{\hyperlink{class_d_d_m_a0293f051d7889ee014fb55c4939e4783}{barrier}})\ \{}
+\DoxyCodeLine{00461\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (RDV\ >=\ this-\/>barrier)\ \{}
+\DoxyCodeLine{00462\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ choice\ =\ -\/1;}
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00464\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ choice\ =\ 1;\ }
+\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fixRDV.push\_back(RDV);}
+\DoxyCodeLine{00467\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fixItem.push\_back(currFixLocation);}
+\DoxyCodeLine{00468\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ dt\ =\ (t\ +\ 1)\ *\ timeStep;}
+\DoxyCodeLine{00469\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fixTime.push\_back(dt);}
+\DoxyCodeLine{00470\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ time\ +=\ dt;}
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RT\ =\ time;}
+\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uninterruptedLastFixTime\ =\ currFixTime;}
+\DoxyCodeLine{00473\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ decisionReached\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00474\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00475\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00477\ }
+\DoxyCodeLine{00478\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (decisionReached)\ \{}
+\DoxyCodeLine{00479\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00480\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00481\ }
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ fixRDV.push\_back(RDV);}
+\DoxyCodeLine{00483\ \ \ \ \ \ \ \ \ fixItem.push\_back(currFixLocation);}
+\DoxyCodeLine{00484\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ cft\ =\ round(currFixTime);}
+\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ dt\ =\ cft\ -\/\ (cft\ \%\ timeStep);}
+\DoxyCodeLine{00486\ \ \ \ \ \ \ \ \ fixTime.push\_back(dt);}
+\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ time\ +=\ dt;}
+\DoxyCodeLine{00488\ \ \ \ \ \}\ }
+\DoxyCodeLine{00489\ }
+\DoxyCodeLine{00490\ \ \ \ \ \mbox{\hyperlink{classa_d_d_m_trial}{aDDMTrial}}\ trial\ =\ \mbox{\hyperlink{classa_d_d_m_trial}{aDDMTrial}}(RT,\ choice,\ \mbox{\hyperlink{addm__mle_8cpp_a66ae2c9a86cab7b4970ecc123c799c45}{valueLeft}},\ valueRight,\ fixItem,\ fixTime,\ fixRDV,\ uninterruptedLastFixTime);}
+\DoxyCodeLine{00491\ \ \ \ \ trial.\mbox{\hyperlink{classa_d_d_m_trial_afb1868d3ccccaca0d1f32c4fff6399c3}{RDVs}}\ =\ RDVs;}
+\DoxyCodeLine{00492\ \ \ \ \ trial.\mbox{\hyperlink{class_d_d_m_trial_a6fd7d06bba895acb5cf3627343915aac}{timeStep}}\ =\ timeStep;}
+\DoxyCodeLine{00493\ \ \ \ \ \textcolor{keywordflow}{return}\ trial;}
+\DoxyCodeLine{00494\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classa_d_d_m_a9c6c014066b0930baaa665b06dec9bb3}\label{classa_d_d_m_a9c6c014066b0930baaa665b06dec9bb3} 
+\index{aDDM@{aDDM}!theta@{theta}}
+\index{theta@{theta}!aDDM@{aDDM}}
+\doxysubsubsection{\texorpdfstring{theta}{theta}}
+{\footnotesize\ttfamily float a\+DDM\+::theta}
+
+
+
+Definition at line \mbox{\hyperlink{addm_8h_source_l00049}{49}} of file \mbox{\hyperlink{addm_8h_source}{addm.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{addm_8h}{addm.\+h}}\item 
+lib/\mbox{\hyperlink{addm_8cpp}{addm.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,53 @@
+\doxysection{cpp\+\_\+error Namespace Reference}
+\hypertarget{namespacecpp__error}{}\label{namespacecpp__error}\index{cpp\_error@{cpp\_error}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacecpp__error_a0c87cbd4233ca111a338b74a94e3f09c}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacecpp__error_a0c87cbd4233ca111a338b74a94e3f09c}\label{namespacecpp__error_a0c87cbd4233ca111a338b74a94e3f09c} 
+\index{cpp\_error@{cpp\_error}!main@{main}}
+\index{main@{main}!cpp\_error@{cpp\_error}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily cpp\+\_\+error.\+main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{cpp__error_8py_source_l00008}{8}} of file \mbox{\hyperlink{cpp__error_8py_source}{cpp\+\_\+error.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00008\ \textcolor{keyword}{def\ }\mbox{\hyperlink{addm__mle_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}():}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordflow}{if}\ (len(sys.argv)\ >\ 1\ \textcolor{keywordflow}{and}\ sys.argv[1]\ ==\ \textcolor{stringliteral}{"{}addm"{}}):}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ df1\ =\ pd.read\_csv(\textcolor{stringliteral}{"{}results/addm\_simulations\_prob.csv"{}})}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ df2\ =\ pd.read\_csv(\textcolor{stringliteral}{"{}results/python\_addm\_sim\_prob.csv"{}})}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ df1\ =\ pd.read\_csv(\textcolor{stringliteral}{"{}results/ddm\_simulations\_prob.csv"{}})}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ df2\ =\ pd.read\_csv(\textcolor{stringliteral}{"{}results/python\_ddm\_sim\_prob.csv"{}})}
+\DoxyCodeLine{00015\ \ \ \ \ cpp\_error\ =\ list()}
+\DoxyCodeLine{00016\ \ \ \ \ py\_error\ =\ list()}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordflow}{for}\ i,\ row\ \textcolor{keywordflow}{in}\ df1.iterrows():}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ cpp\_error.append(row[\textcolor{stringliteral}{"{}p"{}}])}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ py\_error.append(df2[\textcolor{stringliteral}{"{}p"{}}][i])}
+\DoxyCodeLine{00020\ \ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ plt.figure(figsize=(15,\ 15))}
+\DoxyCodeLine{00022\ \ \ \ \ plt.scatter(cpp\_error,\ py\_error)}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ x\ =\ np.arange(0,\ 1,\ 0.1)}
+\DoxyCodeLine{00025\ \ \ \ \ y\ =\ x}
+\DoxyCodeLine{00026\ \ \ \ \ plt.plot(x,\ y,\ c=\textcolor{stringliteral}{"{}red"{}})}
+\DoxyCodeLine{00027\ \ \ \ \ plt.xlim([0,\ 0.0175])}
+\DoxyCodeLine{00028\ \ \ \ \ plt.ylim([0,\ 0.0175])}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ plt.xlabel(\textcolor{stringliteral}{"{}cpp\ values"{}})}
+\DoxyCodeLine{00031\ \ \ \ \ plt.ylabel(\textcolor{stringliteral}{"{}python\ values"{}})}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordflow}{if}\ (len(sys.argv)\ >\ 1\ \textcolor{keywordflow}{and}\ \textcolor{stringliteral}{"{}save"{}}\ \textcolor{keywordflow}{in}\ sys.argv):}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ currTime\ =\ datetime.now().strftime(\textcolor{stringliteral}{u"{}\%Y-\/\%m-\/\%d\_\%H:\%M:\%S"{}})}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ plt.savefig(\textcolor{stringliteral}{"{}imgs/py\_cpp\_error\_"{}}\ +\ currTime\ +\ \textcolor{stringliteral}{"{}.png"{}})}
+\DoxyCodeLine{00036\ }
+
+\end{DoxyCode}

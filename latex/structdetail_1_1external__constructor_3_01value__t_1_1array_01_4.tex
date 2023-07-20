@@ -1,0 +1,157 @@
+\doxysection{detail\+::external\+\_\+constructor\texorpdfstring{$<$}{<} value\+\_\+t\+::array \texorpdfstring{$>$}{>} Struct Reference}
+\hypertarget{structdetail_1_1external__constructor_3_01value__t_1_1array_01_4}{}\label{structdetail_1_1external__constructor_3_01value__t_1_1array_01_4}\index{detail::external\_constructor$<$ value\_t::array $>$@{detail::external\_constructor$<$ value\_t::array $>$}}
+
+
+{\ttfamily \#include $<$json.\+hpp$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type $>$ }\\static void \mbox{\hyperlink{structdetail_1_1external__constructor_3_01value__t_1_1array_01_4_ab4ee01b86545c25823e95f06bfb8cec3}{construct}} (Basic\+Json\+Type \&j, const typename Basic\+Json\+Type\+::array\+\_\+t \&arr)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type $>$ }\\static void \mbox{\hyperlink{structdetail_1_1external__constructor_3_01value__t_1_1array_01_4_aa1344db7d6793021693563dca416e5b4}{construct}} (Basic\+Json\+Type \&j, typename Basic\+Json\+Type\+::array\+\_\+t \&\&arr)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename Compatible\+Array\+Type , \mbox{\hyperlink{namespacedetail_a66bbcd629c83a87ba9cbc72a675cf84a}{enable\+\_\+if\+\_\+t}}$<$ !std\+::is\+\_\+same$<$ Compatible\+Array\+Type, typename Basic\+Json\+Type\+::array\+\_\+t $>$\mbox{\hyperlink{namespacedetail_a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\static void \mbox{\hyperlink{structdetail_1_1external__constructor_3_01value__t_1_1array_01_4_ae399adc0d10013a567e8646807d650b5}{construct}} (Basic\+Json\+Type \&j, const Compatible\+Array\+Type \&arr)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type $>$ }\\static void \mbox{\hyperlink{structdetail_1_1external__constructor_3_01value__t_1_1array_01_4_a8d6adedb6b308d21cd8a02b68f6cb3c3}{construct}} (Basic\+Json\+Type \&j, const std\+::vector$<$ bool $>$ \&arr)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename T , \mbox{\hyperlink{namespacedetail_a66bbcd629c83a87ba9cbc72a675cf84a}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+convertible$<$ T, Basic\+Json\+Type $>$\mbox{\hyperlink{namespacedetail_a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\static void \mbox{\hyperlink{structdetail_1_1external__constructor_3_01value__t_1_1array_01_4_afe050b2957d0a1f416107909d919a772}{construct}} (Basic\+Json\+Type \&j, const std\+::valarray$<$ T $>$ \&arr)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{json_8hpp_source_l05462}{5462}} of file \mbox{\hyperlink{json_8hpp_source}{json.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structdetail_1_1external__constructor_3_01value__t_1_1array_01_4_ae399adc0d10013a567e8646807d650b5}\label{structdetail_1_1external__constructor_3_01value__t_1_1array_01_4_ae399adc0d10013a567e8646807d650b5} 
+\index{detail::external\_constructor$<$ value\_t::array $>$@{detail::external\_constructor$<$ value\_t::array $>$}!construct@{construct}}
+\index{construct@{construct}!detail::external\_constructor$<$ value\_t::array $>$@{detail::external\_constructor$<$ value\_t::array $>$}}
+\doxysubsubsection{\texorpdfstring{construct()}{construct()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Compatible\+Array\+Type , \mbox{\hyperlink{namespacedetail_a66bbcd629c83a87ba9cbc72a675cf84a}{enable\+\_\+if\+\_\+t}}$<$ !std\+::is\+\_\+same$<$ Compatible\+Array\+Type, typename Basic\+Json\+Type\+::array\+\_\+t $>$\mbox{\hyperlink{namespacedetail_a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ \\
+static void \mbox{\hyperlink{structdetail_1_1external__constructor}{detail\+::external\+\_\+constructor}}$<$ \mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632af1f713c9e000f5d3f280adbd124df4f5}{value\+\_\+t\+::array}} $>$\+::construct (\begin{DoxyParamCaption}\item[{Basic\+Json\+Type \&}]{j,  }\item[{const Compatible\+Array\+Type \&}]{arr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{json_8hpp_source_l05487}{5487}} of file \mbox{\hyperlink{json_8hpp_source}{json.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{05488\ \ \ \ \ \{}
+\DoxyCodeLine{05489\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }std::begin;}
+\DoxyCodeLine{05490\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }std::end;}
+\DoxyCodeLine{05491\ }
+\DoxyCodeLine{05492\ \ \ \ \ \ \ \ \ j.m\_data.m\_value.destroy(j.m\_data.m\_type);}
+\DoxyCodeLine{05493\ \ \ \ \ \ \ \ \ j.m\_data.m\_type\ =\ \mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632af1f713c9e000f5d3f280adbd124df4f5}{value\_t::array}};}
+\DoxyCodeLine{05494\ \ \ \ \ \ \ \ \ j.m\_data.m\_value.array\ =\ j.template\ create<typename\ BasicJsonType::array\_t>(begin(arr),\ end(arr));}
+\DoxyCodeLine{05495\ \ \ \ \ \ \ \ \ j.set\_parents();}
+\DoxyCodeLine{05496\ \ \ \ \ \ \ \ \ j.assert\_invariant();}
+\DoxyCodeLine{05497\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{structdetail_1_1external__constructor_3_01value__t_1_1array_01_4_afe050b2957d0a1f416107909d919a772}\label{structdetail_1_1external__constructor_3_01value__t_1_1array_01_4_afe050b2957d0a1f416107909d919a772} 
+\index{detail::external\_constructor$<$ value\_t::array $>$@{detail::external\_constructor$<$ value\_t::array $>$}!construct@{construct}}
+\index{construct@{construct}!detail::external\_constructor$<$ value\_t::array $>$@{detail::external\_constructor$<$ value\_t::array $>$}}
+\doxysubsubsection{\texorpdfstring{construct()}{construct()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename T , \mbox{\hyperlink{namespacedetail_a66bbcd629c83a87ba9cbc72a675cf84a}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+convertible$<$ T, Basic\+Json\+Type $>$\mbox{\hyperlink{namespacedetail_a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ \\
+static void \mbox{\hyperlink{structdetail_1_1external__constructor}{detail\+::external\+\_\+constructor}}$<$ \mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632af1f713c9e000f5d3f280adbd124df4f5}{value\+\_\+t\+::array}} $>$\+::construct (\begin{DoxyParamCaption}\item[{Basic\+Json\+Type \&}]{j,  }\item[{const std\+::valarray$<$ T $>$ \&}]{arr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{json_8hpp_source_l05516}{5516}} of file \mbox{\hyperlink{json_8hpp_source}{json.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{05517\ \ \ \ \ \{}
+\DoxyCodeLine{05518\ \ \ \ \ \ \ \ \ j.m\_data.m\_value.destroy(j.m\_data.m\_type);}
+\DoxyCodeLine{05519\ \ \ \ \ \ \ \ \ j.m\_data.m\_type\ =\ \mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632af1f713c9e000f5d3f280adbd124df4f5}{value\_t::array}};}
+\DoxyCodeLine{05520\ \ \ \ \ \ \ \ \ j.m\_data.m\_value\ =\ \mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632af1f713c9e000f5d3f280adbd124df4f5}{value\_t::array}};}
+\DoxyCodeLine{05521\ \ \ \ \ \ \ \ \ j.m\_data.m\_value.array-\/>resize(arr.size());}
+\DoxyCodeLine{05522\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (arr.size()\ >\ 0)}
+\DoxyCodeLine{05523\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{05524\ \ \ \ \ \ \ \ \ \ \ \ \ std::copy(std::begin(arr),\ std::end(arr),\ j.m\_data.m\_value.array-\/>begin());}
+\DoxyCodeLine{05525\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{05526\ \ \ \ \ \ \ \ \ j.set\_parents();}
+\DoxyCodeLine{05527\ \ \ \ \ \ \ \ \ j.assert\_invariant();}
+\DoxyCodeLine{05528\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{structdetail_1_1external__constructor_3_01value__t_1_1array_01_4_a8d6adedb6b308d21cd8a02b68f6cb3c3}\label{structdetail_1_1external__constructor_3_01value__t_1_1array_01_4_a8d6adedb6b308d21cd8a02b68f6cb3c3} 
+\index{detail::external\_constructor$<$ value\_t::array $>$@{detail::external\_constructor$<$ value\_t::array $>$}!construct@{construct}}
+\index{construct@{construct}!detail::external\_constructor$<$ value\_t::array $>$@{detail::external\_constructor$<$ value\_t::array $>$}}
+\doxysubsubsection{\texorpdfstring{construct()}{construct()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+static void \mbox{\hyperlink{structdetail_1_1external__constructor}{detail\+::external\+\_\+constructor}}$<$ \mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632af1f713c9e000f5d3f280adbd124df4f5}{value\+\_\+t\+::array}} $>$\+::construct (\begin{DoxyParamCaption}\item[{Basic\+Json\+Type \&}]{j,  }\item[{const std\+::vector$<$ bool $>$ \&}]{arr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{json_8hpp_source_l05500}{5500}} of file \mbox{\hyperlink{json_8hpp_source}{json.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{05501\ \ \ \ \ \{}
+\DoxyCodeLine{05502\ \ \ \ \ \ \ \ \ j.m\_data.m\_value.destroy(j.m\_data.m\_type);}
+\DoxyCodeLine{05503\ \ \ \ \ \ \ \ \ j.m\_data.m\_type\ =\ \mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632af1f713c9e000f5d3f280adbd124df4f5}{value\_t::array}};}
+\DoxyCodeLine{05504\ \ \ \ \ \ \ \ \ j.m\_data.m\_value\ =\ \mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632af1f713c9e000f5d3f280adbd124df4f5}{value\_t::array}};}
+\DoxyCodeLine{05505\ \ \ \ \ \ \ \ \ j.m\_data.m\_value.array-\/>reserve(arr.size());}
+\DoxyCodeLine{05506\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ x\ :\ arr)}
+\DoxyCodeLine{05507\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{05508\ \ \ \ \ \ \ \ \ \ \ \ \ j.m\_data.m\_value.array-\/>push\_back(x);}
+\DoxyCodeLine{05509\ \ \ \ \ \ \ \ \ \ \ \ \ j.set\_parent(j.m\_data.m\_value.array-\/>back());}
+\DoxyCodeLine{05510\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{05511\ \ \ \ \ \ \ \ \ j.assert\_invariant();}
+\DoxyCodeLine{05512\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{structdetail_1_1external__constructor_3_01value__t_1_1array_01_4_ab4ee01b86545c25823e95f06bfb8cec3}\label{structdetail_1_1external__constructor_3_01value__t_1_1array_01_4_ab4ee01b86545c25823e95f06bfb8cec3} 
+\index{detail::external\_constructor$<$ value\_t::array $>$@{detail::external\_constructor$<$ value\_t::array $>$}!construct@{construct}}
+\index{construct@{construct}!detail::external\_constructor$<$ value\_t::array $>$@{detail::external\_constructor$<$ value\_t::array $>$}}
+\doxysubsubsection{\texorpdfstring{construct()}{construct()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+static void \mbox{\hyperlink{structdetail_1_1external__constructor}{detail\+::external\+\_\+constructor}}$<$ \mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632af1f713c9e000f5d3f280adbd124df4f5}{value\+\_\+t\+::array}} $>$\+::construct (\begin{DoxyParamCaption}\item[{Basic\+Json\+Type \&}]{j,  }\item[{const typename Basic\+Json\+Type\+::array\+\_\+t \&}]{arr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{json_8hpp_source_l05465}{5465}} of file \mbox{\hyperlink{json_8hpp_source}{json.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{05466\ \ \ \ \ \{}
+\DoxyCodeLine{05467\ \ \ \ \ \ \ \ \ j.m\_data.m\_value.destroy(j.m\_data.m\_type);}
+\DoxyCodeLine{05468\ \ \ \ \ \ \ \ \ j.m\_data.m\_type\ =\ \mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632af1f713c9e000f5d3f280adbd124df4f5}{value\_t::array}};}
+\DoxyCodeLine{05469\ \ \ \ \ \ \ \ \ j.m\_data.m\_value\ =\ arr;}
+\DoxyCodeLine{05470\ \ \ \ \ \ \ \ \ j.set\_parents();}
+\DoxyCodeLine{05471\ \ \ \ \ \ \ \ \ j.assert\_invariant();}
+\DoxyCodeLine{05472\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{structdetail_1_1external__constructor_3_01value__t_1_1array_01_4_aa1344db7d6793021693563dca416e5b4}\label{structdetail_1_1external__constructor_3_01value__t_1_1array_01_4_aa1344db7d6793021693563dca416e5b4} 
+\index{detail::external\_constructor$<$ value\_t::array $>$@{detail::external\_constructor$<$ value\_t::array $>$}!construct@{construct}}
+\index{construct@{construct}!detail::external\_constructor$<$ value\_t::array $>$@{detail::external\_constructor$<$ value\_t::array $>$}}
+\doxysubsubsection{\texorpdfstring{construct()}{construct()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+static void \mbox{\hyperlink{structdetail_1_1external__constructor}{detail\+::external\+\_\+constructor}}$<$ \mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632af1f713c9e000f5d3f280adbd124df4f5}{value\+\_\+t\+::array}} $>$\+::construct (\begin{DoxyParamCaption}\item[{Basic\+Json\+Type \&}]{j,  }\item[{typename Basic\+Json\+Type\+::array\+\_\+t \&\&}]{arr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{json_8hpp_source_l05475}{5475}} of file \mbox{\hyperlink{json_8hpp_source}{json.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{05476\ \ \ \ \ \{}
+\DoxyCodeLine{05477\ \ \ \ \ \ \ \ \ j.m\_data.m\_value.destroy(j.m\_data.m\_type);}
+\DoxyCodeLine{05478\ \ \ \ \ \ \ \ \ j.m\_data.m\_type\ =\ \mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632af1f713c9e000f5d3f280adbd124df4f5}{value\_t::array}};}
+\DoxyCodeLine{05479\ \ \ \ \ \ \ \ \ j.m\_data.m\_value\ =\ std::move(arr);}
+\DoxyCodeLine{05480\ \ \ \ \ \ \ \ \ j.set\_parents();}
+\DoxyCodeLine{05481\ \ \ \ \ \ \ \ \ j.assert\_invariant();}
+\DoxyCodeLine{05482\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/nlohmann/\mbox{\hyperlink{json_8hpp}{json.\+hpp}}\end{DoxyCompactItemize}

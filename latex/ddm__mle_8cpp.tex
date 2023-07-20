@@ -1,0 +1,149 @@
+\doxysection{src/ddm\+\_\+mle.cpp File Reference}
+\hypertarget{ddm__mle_8cpp}{}\label{ddm__mle_8cpp}\index{src/ddm\_mle.cpp@{src/ddm\_mle.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include \"{}ddm.\+h\"{}}\newline
+{\ttfamily \#include \"{}util.\+h\"{}}\newline
+Include dependency graph for ddm\+\_\+mle.\+cpp\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{ddm__mle_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ float $>$ \mbox{\hyperlink{ddm__mle_8cpp_a800d6969137d46bac6c127a9f70b7e51}{rangeD}} = \{0.\+003, 0.\+004, 0.\+005, 0.\+006, 0.\+007, 0.\+008, 0.\+009\}
+\item 
+std\+::vector$<$ float $>$ \mbox{\hyperlink{ddm__mle_8cpp_a347dbb7726ce6ea89520f5980d686dd8}{range\+Sigma}} = \{0.\+03, 0.\+04, 0.\+05, 0.\+06, 0.\+07, 0.\+08, 0.\+09\}
+\item 
+int \mbox{\hyperlink{ddm__mle_8cpp_a7ae0aa3d3c3bd4dc2fd68df5f46bb05f}{barrier}} = 1
+\item 
+int \mbox{\hyperlink{ddm__mle_8cpp_a66ae2c9a86cab7b4970ecc123c799c45}{value\+Left}} = 3
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{ddm__mle_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{ddm__mle_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+\index{ddm\_mle.cpp@{ddm\_mle.cpp}!main@{main}}
+\index{main@{main}!ddm\_mle.cpp@{ddm\_mle.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ddm__mle_8cpp_source_l00016}{16}} of file \mbox{\hyperlink{ddm__mle_8cpp_source}{ddm\+\_\+mle.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ std::vector<DDMTrial>\ trials;\ }
+\DoxyCodeLine{00018\ \ \ \ \ std::vector<DDM>\ ddms;}
+\DoxyCodeLine{00019\ \ \ \ \ std::ifstream\ file(\textcolor{stringliteral}{"{}results/ddm\_simulations.csv"{}});}
+\DoxyCodeLine{00020\ \ \ \ \ std::string\ line;}
+\DoxyCodeLine{00021\ \ \ \ \ std::getline(file,\ line);}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{int}\ choice;\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ RT;\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{int}\ valDiff;}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(file,\ line))\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ std::stringstream\ ss(line);}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ std::string\ field;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ std::getline(ss,\ field,\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ choice\ =\ std::stoi(field);}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ std::getline(ss,\ field,\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ RT\ =\ std::stoi(field);}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ std::getline(ss,\ field,\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ valDiff\ =\ std::stoi(field);}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_d_m_trial}{DDMTrial}}\ dt\ =\ \mbox{\hyperlink{class_d_d_m_trial}{DDMTrial}}(RT,\ choice,\ \mbox{\hyperlink{ddm__mle_8cpp_a66ae2c9a86cab7b4970ecc123c799c45}{valueLeft}},\ \mbox{\hyperlink{ddm__mle_8cpp_a66ae2c9a86cab7b4970ecc123c799c45}{valueLeft}}\ -\/\ valDiff);}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ trials.push\_back(dt);}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+\DoxyCodeLine{00037\ \ \ \ \ file.close();}
+\DoxyCodeLine{00038\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Counted\ "{}}\ <<\ trials.size()\ <<\ \textcolor{stringliteral}{"{}\ trials."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{float}\ \mbox{\hyperlink{addm__nll_8cpp_a3fbbd8a3959e76a2bc3455d3bade52dc}{d}}\ :\ \mbox{\hyperlink{ddm__mle_8cpp_a800d6969137d46bac6c127a9f70b7e51}{rangeD}})\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{float}\ \mbox{\hyperlink{addm__nll_8cpp_ae11aeeb83e22b5b7f1e6b4347eb1daa6}{sigma}}\ :\ \mbox{\hyperlink{ddm__mle_8cpp_a347dbb7726ce6ea89520f5980d686dd8}{rangeSigma}})\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ ddms.push\_back(\mbox{\hyperlink{class_d_d_m}{DDM}}(\mbox{\hyperlink{addm__nll_8cpp_a3fbbd8a3959e76a2bc3455d3bade52dc}{d}},\ \mbox{\hyperlink{addm__nll_8cpp_ae11aeeb83e22b5b7f1e6b4347eb1daa6}{sigma}},\ \mbox{\hyperlink{ddm__mle_8cpp_a7ae0aa3d3c3bd4dc2fd68df5f46bb05f}{barrier}}));}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ std::ofstream\ \mbox{\hyperlink{test_8cpp_ae3c7e522825338c52b9d66891f9642a5}{fp}};}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{test_8cpp_ae3c7e522825338c52b9d66891f9642a5}{fp}}.open(\textcolor{stringliteral}{"{}results/ddm\_mle.csv"{}});}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{test_8cpp_ae3c7e522825338c52b9d66891f9642a5}{fp}}\ <<\ \textcolor{stringliteral}{"{}d,sigma,NLL\(\backslash\)n"{}};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{double}\ minNLL\ =\ \_\_DBL\_MAX\_\_;}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{double}\ minD\ =\ 0;\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{double}\ minSigma\ =\ 0;\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{class_d_d_m}{DDM}}\ ddm\ :\ ddms)\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Testing\ combination\ d="{}}\ <<\ ddm.d\ <<\ \textcolor{stringliteral}{"{}\ sigma="{}}\ <<\ ddm.sigma\ <<\ std::endl;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ NLL\ =\ 0;}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{class_d_d_m_trial}{DDMTrial}}\ dt\ :\ trials)\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ prob\ =\ ddm.getTrialLikelihood(dt);}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ NLL\ +=\ -\/log(prob);}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}NLL="{}}\ <<\ NLL\ <<\ std::endl;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (NLL\ <\ minNLL)\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ minNLL\ =\ NLL;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ minD\ =\ ddm.d;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ minSigma\ =\ ddm.sigma;}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{test_8cpp_ae3c7e522825338c52b9d66891f9642a5}{fp}}\ <<\ ddm.d\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ ddm.sigma\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ NLL\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{test_8cpp_ae3c7e522825338c52b9d66891f9642a5}{fp}}.close();\ }
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ std::cout\ <<\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{stringliteral}{"{}\ \ Optimal\ Parameters\ \ \(\backslash\)n"{}}\ <<\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{stringliteral}{"{}======================\(\backslash\)n"{}}\ <<}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{stringliteral}{"{}d\ \ \ \ \ \ :\ "{}}\ <<\ minD\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ <<\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{stringliteral}{"{}sigma\ \ :\ "{}}\ <<\ minSigma\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ <<\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{stringliteral}{"{}NLL\ \ \ \ :\ "{}}\ <<\ minNLL\ <<\ std::endl;}
+\DoxyCodeLine{00076\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{ddm__mle_8cpp_a7ae0aa3d3c3bd4dc2fd68df5f46bb05f}\label{ddm__mle_8cpp_a7ae0aa3d3c3bd4dc2fd68df5f46bb05f} 
+\index{ddm\_mle.cpp@{ddm\_mle.cpp}!barrier@{barrier}}
+\index{barrier@{barrier}!ddm\_mle.cpp@{ddm\_mle.cpp}}
+\doxysubsubsection{\texorpdfstring{barrier}{barrier}}
+{\footnotesize\ttfamily int barrier = 1}
+
+
+
+Definition at line \mbox{\hyperlink{ddm__mle_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{ddm__mle_8cpp_source}{ddm\+\_\+mle.\+cpp}}.
+
+\Hypertarget{ddm__mle_8cpp_a800d6969137d46bac6c127a9f70b7e51}\label{ddm__mle_8cpp_a800d6969137d46bac6c127a9f70b7e51} 
+\index{ddm\_mle.cpp@{ddm\_mle.cpp}!rangeD@{rangeD}}
+\index{rangeD@{rangeD}!ddm\_mle.cpp@{ddm\_mle.cpp}}
+\doxysubsubsection{\texorpdfstring{rangeD}{rangeD}}
+{\footnotesize\ttfamily std\+::vector$<$float$>$ rangeD = \{0.\+003, 0.\+004, 0.\+005, 0.\+006, 0.\+007, 0.\+008, 0.\+009\}}
+
+
+
+Definition at line \mbox{\hyperlink{ddm__mle_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{ddm__mle_8cpp_source}{ddm\+\_\+mle.\+cpp}}.
+
+\Hypertarget{ddm__mle_8cpp_a347dbb7726ce6ea89520f5980d686dd8}\label{ddm__mle_8cpp_a347dbb7726ce6ea89520f5980d686dd8} 
+\index{ddm\_mle.cpp@{ddm\_mle.cpp}!rangeSigma@{rangeSigma}}
+\index{rangeSigma@{rangeSigma}!ddm\_mle.cpp@{ddm\_mle.cpp}}
+\doxysubsubsection{\texorpdfstring{rangeSigma}{rangeSigma}}
+{\footnotesize\ttfamily std\+::vector$<$float$>$ range\+Sigma = \{0.\+03, 0.\+04, 0.\+05, 0.\+06, 0.\+07, 0.\+08, 0.\+09\}}
+
+
+
+Definition at line \mbox{\hyperlink{ddm__mle_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{ddm__mle_8cpp_source}{ddm\+\_\+mle.\+cpp}}.
+
+\Hypertarget{ddm__mle_8cpp_a66ae2c9a86cab7b4970ecc123c799c45}\label{ddm__mle_8cpp_a66ae2c9a86cab7b4970ecc123c799c45} 
+\index{ddm\_mle.cpp@{ddm\_mle.cpp}!valueLeft@{valueLeft}}
+\index{valueLeft@{valueLeft}!ddm\_mle.cpp@{ddm\_mle.cpp}}
+\doxysubsubsection{\texorpdfstring{valueLeft}{valueLeft}}
+{\footnotesize\ttfamily int value\+Left = 3}
+
+
+
+Definition at line \mbox{\hyperlink{ddm__mle_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{ddm__mle_8cpp_source}{ddm\+\_\+mle.\+cpp}}.
+

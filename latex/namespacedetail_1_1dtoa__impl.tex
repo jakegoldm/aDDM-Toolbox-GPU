@@ -1,0 +1,989 @@
+\doxysection{detail\+::dtoa\+\_\+impl Namespace Reference}
+\hypertarget{namespacedetail_1_1dtoa__impl}{}\label{namespacedetail_1_1dtoa__impl}\index{detail::dtoa\_impl@{detail::dtoa\_impl}}
+
+
+implements the Grisu2 algorithm for binary to decimal floating-\/point conversion.  
+
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1boundaries}{boundaries}}
+\item 
+struct \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1cached__power}{cached\+\_\+power}}
+\item 
+struct \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp}{diyfp}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Target , typename Source $>$ }\\Target \mbox{\hyperlink{namespacedetail_1_1dtoa__impl_a3c879bf97b806cacbcbb2da07a5ff5c8}{reinterpret\+\_\+bits}} (const Source source)
+\item 
+{\footnotesize template$<$typename Float\+Type $>$ }\\\mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1boundaries}{boundaries}} \mbox{\hyperlink{namespacedetail_1_1dtoa__impl_a6a5ccf11847aab7a0f42f587b33935df}{compute\+\_\+boundaries}} (Float\+Type \mbox{\hyperlink{namespacedetail_a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804}{value}})
+\item 
+\mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1cached__power}{cached\+\_\+power}} \mbox{\hyperlink{namespacedetail_1_1dtoa__impl_a29ae6574f6be09a5c8ab08da9a3f71b4}{get\+\_\+cached\+\_\+power\+\_\+for\+\_\+binary\+\_\+exponent}} (int e)
+\item 
+int \mbox{\hyperlink{namespacedetail_1_1dtoa__impl_a04eb234a28617519974fc962cd4da666}{find\+\_\+largest\+\_\+pow10}} (const std\+::uint32\+\_\+t n, std\+::uint32\+\_\+t \&pow10)
+\item 
+void \mbox{\hyperlink{namespacedetail_1_1dtoa__impl_a73a15efcb5c2157ea0e1375b98ef0e83}{grisu2\+\_\+round}} (char \texorpdfstring{$\ast$}{*}buf, int len, std\+::uint64\+\_\+t dist, std\+::uint64\+\_\+t delta, std\+::uint64\+\_\+t rest, std\+::uint64\+\_\+t ten\+\_\+k)
+\item 
+void \mbox{\hyperlink{namespacedetail_1_1dtoa__impl_ae877aa13ab872c99a1c614e5e1524807}{grisu2\+\_\+digit\+\_\+gen}} (char \texorpdfstring{$\ast$}{*}buffer, int \&length, int \&decimal\+\_\+exponent, \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp}{diyfp}} M\+\_\+minus, \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp}{diyfp}} w, \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp}{diyfp}} M\+\_\+plus)
+\item 
+void \mbox{\hyperlink{namespacedetail_1_1dtoa__impl_ad549352ed1a9676a092d143a2daa3dee}{grisu2}} (char \texorpdfstring{$\ast$}{*}buf, int \&len, int \&decimal\+\_\+exponent, \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp}{diyfp}} m\+\_\+minus, \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp}{diyfp}} v, \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp}{diyfp}} m\+\_\+plus)
+\item 
+{\footnotesize template$<$typename Float\+Type $>$ }\\void \mbox{\hyperlink{namespacedetail_1_1dtoa__impl_abdf6bc05c54068a5930f66c2e803e8b8}{grisu2}} (char \texorpdfstring{$\ast$}{*}buf, int \&len, int \&decimal\+\_\+exponent, Float\+Type \mbox{\hyperlink{namespacedetail_a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804}{value}})
+\item 
+\mbox{\hyperlink{json_8hpp_a5f2aaec3b681d0a72f7d6e90b70cdcd1}{JSON\+\_\+\+HEDLEY\+\_\+\+RETURNS\+\_\+\+NON\+\_\+\+NULL}} char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespacedetail_1_1dtoa__impl_aec9f6655c3b629aeb0e8c887aea5da87}{append\+\_\+exponent}} (char \texorpdfstring{$\ast$}{*}buf, int e)
+\begin{DoxyCompactList}\small\item\em appends a decimal representation of e to buf \end{DoxyCompactList}\item 
+\mbox{\hyperlink{json_8hpp_a5f2aaec3b681d0a72f7d6e90b70cdcd1}{JSON\+\_\+\+HEDLEY\+\_\+\+RETURNS\+\_\+\+NON\+\_\+\+NULL}} char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespacedetail_1_1dtoa__impl_afab91abfdd1cdf43cc2fcd5b9c4a7456}{format\+\_\+buffer}} (char \texorpdfstring{$\ast$}{*}buf, int len, int decimal\+\_\+exponent, int min\+\_\+exp, int max\+\_\+exp)
+\begin{DoxyCompactList}\small\item\em prettify v = buf \texorpdfstring{$\ast$}{*} 10\texorpdfstring{$^\wedge$}{\string^}decimal\+\_\+exponent \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr int \mbox{\hyperlink{namespacedetail_1_1dtoa__impl_a95c569b7627a9372686f1f77d73e8660}{k\+Alpha}} = -\/60
+\item 
+constexpr int \mbox{\hyperlink{namespacedetail_1_1dtoa__impl_ae152a095d2dd1a6dd41ef8ad39c26e19}{k\+Gamma}} = -\/32
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+implements the Grisu2 algorithm for binary to decimal floating-\/point conversion. 
+
+This implementation is a slightly modified version of the reference implementation which may be obtained from \href{http://florian.loitsch.com/publications}{\texttt{ http\+://florian.\+loitsch.\+com/publications}} (bench.\+tar.\+gz).
+
+The code is distributed under the MIT license, Copyright (c) 2009 Florian Loitsch.
+
+For a detailed description of the algorithm see\+:
+
+\mbox{[}1\mbox{]} Loitsch, \"{}\+Printing Floating-\/\+Point Numbers Quickly and Accurately with     Integers\"{}, Proceedings of the ACM SIGPLAN 2010 Conference on Programming Language Design and Implementation, PLDI 2010 \mbox{[}2\mbox{]} Burger, Dybvig, \"{}\+Printing Floating-\/\+Point Numbers Quickly and Accurately\"{}, Proceedings of the ACM SIGPLAN 1996 Conference on Programming Language Design and Implementation, PLDI 1996 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacedetail_1_1dtoa__impl_aec9f6655c3b629aeb0e8c887aea5da87}\label{namespacedetail_1_1dtoa__impl_aec9f6655c3b629aeb0e8c887aea5da87} 
+\index{detail::dtoa\_impl@{detail::dtoa\_impl}!append\_exponent@{append\_exponent}}
+\index{append\_exponent@{append\_exponent}!detail::dtoa\_impl@{detail::dtoa\_impl}}
+\doxysubsubsection{\texorpdfstring{append\_exponent()}{append\_exponent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{json_8hpp_a5f2aaec3b681d0a72f7d6e90b70cdcd1}{JSON\+\_\+\+HEDLEY\+\_\+\+RETURNS\+\_\+\+NON\+\_\+\+NULL}} char \texorpdfstring{$\ast$}{*} detail\+::dtoa\+\_\+impl\+::append\+\_\+exponent (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{buf,  }\item[{int}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+appends a decimal representation of e to buf 
+
+\begin{DoxyReturn}{Returns}
+a pointer to the element following the exponent. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+-\/1000 \texorpdfstring{$<$}{<} e \texorpdfstring{$<$}{<} 1000 
+\end{DoxyPrecond}
+
+
+Definition at line \mbox{\hyperlink{json_8hpp_source_l17749}{17749}} of file \mbox{\hyperlink{json_8hpp_source}{json.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{17750\ \{}
+\DoxyCodeLine{17751\ \ \ \ \ \mbox{\hyperlink{json_8hpp_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(e\ >\ -\/1000);}
+\DoxyCodeLine{17752\ \ \ \ \ \mbox{\hyperlink{json_8hpp_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(e\ <\ \ 1000);}
+\DoxyCodeLine{17753\ }
+\DoxyCodeLine{17754\ \ \ \ \ \textcolor{keywordflow}{if}\ (e\ <\ 0)}
+\DoxyCodeLine{17755\ \ \ \ \ \{}
+\DoxyCodeLine{17756\ \ \ \ \ \ \ \ \ e\ =\ -\/e;}
+\DoxyCodeLine{17757\ \ \ \ \ \ \ \ \ *buf++\ =\ \textcolor{charliteral}{'-\/'};}
+\DoxyCodeLine{17758\ \ \ \ \ \}}
+\DoxyCodeLine{17759\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{17760\ \ \ \ \ \{}
+\DoxyCodeLine{17761\ \ \ \ \ \ \ \ \ *buf++\ =\ \textcolor{charliteral}{'+'};}
+\DoxyCodeLine{17762\ \ \ \ \ \}}
+\DoxyCodeLine{17763\ }
+\DoxyCodeLine{17764\ \ \ \ \ \textcolor{keyword}{auto}\ k\ =\ \textcolor{keyword}{static\_cast<}std::uint32\_t\textcolor{keyword}{>}(e);}
+\DoxyCodeLine{17765\ \ \ \ \ \textcolor{keywordflow}{if}\ (k\ <\ 10)}
+\DoxyCodeLine{17766\ \ \ \ \ \{}
+\DoxyCodeLine{17767\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Always\ print\ at\ least\ two\ digits\ in\ the\ exponent.}}
+\DoxyCodeLine{17768\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ This\ is\ for\ compatibility\ with\ printf("{}\%g"{}).}}
+\DoxyCodeLine{17769\ \ \ \ \ \ \ \ \ *buf++\ =\ \textcolor{charliteral}{'0'};}
+\DoxyCodeLine{17770\ \ \ \ \ \ \ \ \ *buf++\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{char}\textcolor{keyword}{>}(\textcolor{charliteral}{'0'}\ +\ k);}
+\DoxyCodeLine{17771\ \ \ \ \ \}}
+\DoxyCodeLine{17772\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (k\ <\ 100)}
+\DoxyCodeLine{17773\ \ \ \ \ \{}
+\DoxyCodeLine{17774\ \ \ \ \ \ \ \ \ *buf++\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{char}\textcolor{keyword}{>}(\textcolor{charliteral}{'0'}\ +\ k\ /\ 10);}
+\DoxyCodeLine{17775\ \ \ \ \ \ \ \ \ k\ \%=\ 10;}
+\DoxyCodeLine{17776\ \ \ \ \ \ \ \ \ *buf++\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{char}\textcolor{keyword}{>}(\textcolor{charliteral}{'0'}\ +\ k);}
+\DoxyCodeLine{17777\ \ \ \ \ \}}
+\DoxyCodeLine{17778\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{17779\ \ \ \ \ \{}
+\DoxyCodeLine{17780\ \ \ \ \ \ \ \ \ *buf++\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{char}\textcolor{keyword}{>}(\textcolor{charliteral}{'0'}\ +\ k\ /\ 100);}
+\DoxyCodeLine{17781\ \ \ \ \ \ \ \ \ k\ \%=\ 100;}
+\DoxyCodeLine{17782\ \ \ \ \ \ \ \ \ *buf++\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{char}\textcolor{keyword}{>}(\textcolor{charliteral}{'0'}\ +\ k\ /\ 10);}
+\DoxyCodeLine{17783\ \ \ \ \ \ \ \ \ k\ \%=\ 10;}
+\DoxyCodeLine{17784\ \ \ \ \ \ \ \ \ *buf++\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{char}\textcolor{keyword}{>}(\textcolor{charliteral}{'0'}\ +\ k);}
+\DoxyCodeLine{17785\ \ \ \ \ \}}
+\DoxyCodeLine{17786\ }
+\DoxyCodeLine{17787\ \ \ \ \ \textcolor{keywordflow}{return}\ buf;}
+\DoxyCodeLine{17788\ \}}
+
+\end{DoxyCode}
+\Hypertarget{namespacedetail_1_1dtoa__impl_a6a5ccf11847aab7a0f42f587b33935df}\label{namespacedetail_1_1dtoa__impl_a6a5ccf11847aab7a0f42f587b33935df} 
+\index{detail::dtoa\_impl@{detail::dtoa\_impl}!compute\_boundaries@{compute\_boundaries}}
+\index{compute\_boundaries@{compute\_boundaries}!detail::dtoa\_impl@{detail::dtoa\_impl}}
+\doxysubsubsection{\texorpdfstring{compute\_boundaries()}{compute\_boundaries()}}
+{\footnotesize\ttfamily template$<$typename Float\+Type $>$ \\
+\mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1boundaries}{boundaries}} detail\+::dtoa\+\_\+impl\+::compute\+\_\+boundaries (\begin{DoxyParamCaption}\item[{Float\+Type}]{value }\end{DoxyParamCaption})}
+
+Compute the (normalized) diyfp representing the input number \textquotesingle{}value\textquotesingle{} and its boundaries.
+
+\begin{DoxyPrecond}{Precondition}
+value must be finite and positive 
+\end{DoxyPrecond}
+
+
+Definition at line \mbox{\hyperlink{json_8hpp_source_l17010}{17010}} of file \mbox{\hyperlink{json_8hpp_source}{json.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{17011\ \{}
+\DoxyCodeLine{17012\ \ \ \ \ \mbox{\hyperlink{json_8hpp_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(std::isfinite(value));}
+\DoxyCodeLine{17013\ \ \ \ \ \mbox{\hyperlink{json_8hpp_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(value\ >\ 0);}
+\DoxyCodeLine{17014\ }
+\DoxyCodeLine{17015\ \ \ \ \ \textcolor{comment}{//\ Convert\ the\ IEEE\ representation\ into\ a\ diyfp.}}
+\DoxyCodeLine{17016\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17017\ \ \ \ \ \textcolor{comment}{//\ If\ v\ is\ denormal:}}
+\DoxyCodeLine{17018\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ value\ =\ 0.F\ *\ 2\string^(1\ -\/\ bias)\ =\ (\ \ \ \ \ \ \ \ \ \ F)\ *\ 2\string^(1\ -\/\ bias\ -\/\ (p-\/1))}}
+\DoxyCodeLine{17019\ \ \ \ \ \textcolor{comment}{//\ If\ v\ is\ normalized:}}
+\DoxyCodeLine{17020\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ value\ =\ 1.F\ *\ 2\string^(E\ -\/\ bias)\ =\ (2\string^(p-\/1)\ +\ F)\ *\ 2\string^(E\ -\/\ bias\ -\/\ (p-\/1))}}
+\DoxyCodeLine{17021\ }
+\DoxyCodeLine{17022\ \ \ \ \ \textcolor{keyword}{static\_assert}(std::numeric\_limits<FloatType>::is\_iec559,}
+\DoxyCodeLine{17023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}internal\ error:\ dtoa\_short\ requires\ an\ IEEE-\/754\ floating-\/point\ implementation"{}});}
+\DoxyCodeLine{17024\ }
+\DoxyCodeLine{17025\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ kPrecision\ =\ std::numeric\_limits<FloatType>::digits;\ \textcolor{comment}{//\ =\ p\ (includes\ the\ hidden\ bit)}}
+\DoxyCodeLine{17026\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ kBias\ \ \ \ \ \ =\ std::numeric\_limits<FloatType>::max\_exponent\ -\/\ 1\ +\ (kPrecision\ -\/\ 1);}
+\DoxyCodeLine{17027\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ kMinExp\ \ \ \ =\ 1\ -\/\ kBias;}
+\DoxyCodeLine{17028\ \ \ \ \ \textcolor{keyword}{constexpr}\ std::uint64\_t\ kHiddenBit\ =\ std::uint64\_t\{1\}\ <<\ (kPrecision\ -\/\ 1);\ \textcolor{comment}{//\ =\ 2\string^(p-\/1)}}
+\DoxyCodeLine{17029\ }
+\DoxyCodeLine{17030\ \ \ \ \ \textcolor{keyword}{using\ }bits\_type\ =\ \textcolor{keyword}{typename}\ std::conditional<kPrecision\ ==\ 24,\ std::uint32\_t,\ std::uint64\_t\ >::type;}
+\DoxyCodeLine{17031\ }
+\DoxyCodeLine{17032\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ bits\ =\ \textcolor{keyword}{static\_cast<}std::uint64\_t\textcolor{keyword}{>}(reinterpret\_bits<bits\_type>(value));}
+\DoxyCodeLine{17033\ \ \ \ \ \textcolor{keyword}{const}\ std::uint64\_t\ E\ =\ bits\ >>\ (kPrecision\ -\/\ 1);}
+\DoxyCodeLine{17034\ \ \ \ \ \textcolor{keyword}{const}\ std::uint64\_t\ F\ =\ bits\ \&\ (kHiddenBit\ -\/\ 1);}
+\DoxyCodeLine{17035\ }
+\DoxyCodeLine{17036\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ is\_denormal\ =\ E\ ==\ 0;}
+\DoxyCodeLine{17037\ \ \ \ \ \textcolor{keyword}{const}\ diyfp\ v\ =\ is\_denormal}
+\DoxyCodeLine{17038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ diyfp(F,\ kMinExp)}
+\DoxyCodeLine{17039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ diyfp(F\ +\ kHiddenBit,\ static\_cast<int>(E)\ -\/\ kBias);}
+\DoxyCodeLine{17040\ }
+\DoxyCodeLine{17041\ \ \ \ \ \textcolor{comment}{//\ Compute\ the\ boundaries\ m-\/\ and\ m+\ of\ the\ floating-\/point\ value}}
+\DoxyCodeLine{17042\ \ \ \ \ \textcolor{comment}{//\ v\ =\ f\ *\ 2\string^e.}}
+\DoxyCodeLine{17043\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17044\ \ \ \ \ \textcolor{comment}{//\ Determine\ v-\/\ and\ v+,\ the\ floating-\/point\ predecessor\ and\ successor\ if\ v,}}
+\DoxyCodeLine{17045\ \ \ \ \ \textcolor{comment}{//\ respectively.}}
+\DoxyCodeLine{17046\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17047\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ v-\/\ =\ v\ -\/\ 2\string^e\ \ \ \ \ \ \ \ if\ f\ !=\ 2\string^(p-\/1)\ or\ e\ ==\ e\_min\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (A)}}
+\DoxyCodeLine{17048\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ =\ v\ -\/\ 2\string^(e-\/1)\ \ \ \ if\ f\ ==\ 2\string^(p-\/1)\ and\ e\ >\ e\_min\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (B)}}
+\DoxyCodeLine{17049\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17050\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ v+\ =\ v\ +\ 2\string^e}}
+\DoxyCodeLine{17051\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17052\ \ \ \ \ \textcolor{comment}{//\ Let\ m-\/\ =\ (v-\/\ +\ v)\ /\ 2\ and\ m+\ =\ (v\ +\ v+)\ /\ 2.\ All\ real\ numbers\ \_strictly\_}}
+\DoxyCodeLine{17053\ \ \ \ \ \textcolor{comment}{//\ between\ m-\/\ and\ m+\ round\ to\ v,\ regardless\ of\ how\ the\ input\ rounding}}
+\DoxyCodeLine{17054\ \ \ \ \ \textcolor{comment}{//\ algorithm\ breaks\ ties.}}
+\DoxyCodeLine{17055\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17056\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ -\/-\/-\/+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+-\/-\/-\/\ \ (A)}}
+\DoxyCodeLine{17057\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ v-\/\ \ \ \ \ \ \ \ \ \ \ \ m-\/\ \ \ \ \ \ \ \ \ \ \ \ v\ \ \ \ \ \ \ \ \ \ \ \ \ m+\ \ \ \ \ \ \ \ \ \ \ \ v+}}
+\DoxyCodeLine{17058\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17059\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+-\/-\/-\/\ \ (B)}}
+\DoxyCodeLine{17060\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ v-\/\ \ \ \ \ m-\/\ \ \ \ \ v\ \ \ \ \ \ \ \ \ \ \ \ \ m+\ \ \ \ \ \ \ \ \ \ \ \ v+}}
+\DoxyCodeLine{17061\ }
+\DoxyCodeLine{17062\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ lower\_boundary\_is\_closer\ =\ F\ ==\ 0\ \&\&\ E\ >\ 1;}
+\DoxyCodeLine{17063\ \ \ \ \ \textcolor{keyword}{const}\ diyfp\ m\_plus\ =\ diyfp(2\ *\ v.f\ +\ 1,\ v.e\ -\/\ 1);}
+\DoxyCodeLine{17064\ \ \ \ \ \textcolor{keyword}{const}\ diyfp\ m\_minus\ =\ lower\_boundary\_is\_closer}
+\DoxyCodeLine{17065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ diyfp(4\ *\ v.f\ -\/\ 1,\ v.e\ -\/\ 2)\ \ \textcolor{comment}{//\ (B)}}
+\DoxyCodeLine{17066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ diyfp(2\ *\ v.f\ -\/\ 1,\ v.e\ -\/\ 1);\ \textcolor{comment}{//\ (A)}}
+\DoxyCodeLine{17067\ }
+\DoxyCodeLine{17068\ \ \ \ \ \textcolor{comment}{//\ Determine\ the\ normalized\ w+\ =\ m+.}}
+\DoxyCodeLine{17069\ \ \ \ \ \textcolor{keyword}{const}\ diyfp\ w\_plus\ =\ diyfp::normalize(m\_plus);}
+\DoxyCodeLine{17070\ }
+\DoxyCodeLine{17071\ \ \ \ \ \textcolor{comment}{//\ Determine\ w-\/\ =\ m-\/\ such\ that\ e\_(w-\/)\ =\ e\_(w+).}}
+\DoxyCodeLine{17072\ \ \ \ \ \textcolor{keyword}{const}\ diyfp\ w\_minus\ =\ diyfp::normalize\_to(m\_minus,\ w\_plus.e);}
+\DoxyCodeLine{17073\ }
+\DoxyCodeLine{17074\ \ \ \ \ \textcolor{keywordflow}{return}\ \{diyfp::normalize(v),\ w\_minus,\ w\_plus\};}
+\DoxyCodeLine{17075\ \}}
+
+\end{DoxyCode}
+\Hypertarget{namespacedetail_1_1dtoa__impl_a04eb234a28617519974fc962cd4da666}\label{namespacedetail_1_1dtoa__impl_a04eb234a28617519974fc962cd4da666} 
+\index{detail::dtoa\_impl@{detail::dtoa\_impl}!find\_largest\_pow10@{find\_largest\_pow10}}
+\index{find\_largest\_pow10@{find\_largest\_pow10}!detail::dtoa\_impl@{detail::dtoa\_impl}}
+\doxysubsubsection{\texorpdfstring{find\_largest\_pow10()}{find\_largest\_pow10()}}
+{\footnotesize\ttfamily int detail\+::dtoa\+\_\+impl\+::find\+\_\+largest\+\_\+pow10 (\begin{DoxyParamCaption}\item[{const std\+::uint32\+\_\+t}]{n,  }\item[{std\+::uint32\+\_\+t \&}]{pow10 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+For n != 0, returns k, such that pow10 \+:= 10\texorpdfstring{$^\wedge$}{\string^}(k-\/1) \texorpdfstring{$<$}{<}= n \texorpdfstring{$<$}{<} 10\texorpdfstring{$^\wedge$}{\string^}k. For n == 0, returns 1 and sets pow10 \+:= 1. 
+
+Definition at line \mbox{\hyperlink{json_8hpp_source_l17313}{17313}} of file \mbox{\hyperlink{json_8hpp_source}{json.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{17314\ \{}
+\DoxyCodeLine{17315\ \ \ \ \ \textcolor{comment}{//\ LCOV\_EXCL\_START}}
+\DoxyCodeLine{17316\ \ \ \ \ \textcolor{keywordflow}{if}\ (n\ >=\ 1000000000)}
+\DoxyCodeLine{17317\ \ \ \ \ \{}
+\DoxyCodeLine{17318\ \ \ \ \ \ \ \ \ pow10\ =\ 1000000000;}
+\DoxyCodeLine{17319\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 10;}
+\DoxyCodeLine{17320\ \ \ \ \ \}}
+\DoxyCodeLine{17321\ \ \ \ \ \textcolor{comment}{//\ LCOV\_EXCL\_STOP}}
+\DoxyCodeLine{17322\ \ \ \ \ \textcolor{keywordflow}{if}\ (n\ >=\ 100000000)}
+\DoxyCodeLine{17323\ \ \ \ \ \{}
+\DoxyCodeLine{17324\ \ \ \ \ \ \ \ \ pow10\ =\ 100000000;}
+\DoxyCodeLine{17325\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \ 9;}
+\DoxyCodeLine{17326\ \ \ \ \ \}}
+\DoxyCodeLine{17327\ \ \ \ \ \textcolor{keywordflow}{if}\ (n\ >=\ 10000000)}
+\DoxyCodeLine{17328\ \ \ \ \ \{}
+\DoxyCodeLine{17329\ \ \ \ \ \ \ \ \ pow10\ =\ 10000000;}
+\DoxyCodeLine{17330\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \ 8;}
+\DoxyCodeLine{17331\ \ \ \ \ \}}
+\DoxyCodeLine{17332\ \ \ \ \ \textcolor{keywordflow}{if}\ (n\ >=\ 1000000)}
+\DoxyCodeLine{17333\ \ \ \ \ \{}
+\DoxyCodeLine{17334\ \ \ \ \ \ \ \ \ pow10\ =\ 1000000;}
+\DoxyCodeLine{17335\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \ 7;}
+\DoxyCodeLine{17336\ \ \ \ \ \}}
+\DoxyCodeLine{17337\ \ \ \ \ \textcolor{keywordflow}{if}\ (n\ >=\ 100000)}
+\DoxyCodeLine{17338\ \ \ \ \ \{}
+\DoxyCodeLine{17339\ \ \ \ \ \ \ \ \ pow10\ =\ 100000;}
+\DoxyCodeLine{17340\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \ 6;}
+\DoxyCodeLine{17341\ \ \ \ \ \}}
+\DoxyCodeLine{17342\ \ \ \ \ \textcolor{keywordflow}{if}\ (n\ >=\ 10000)}
+\DoxyCodeLine{17343\ \ \ \ \ \{}
+\DoxyCodeLine{17344\ \ \ \ \ \ \ \ \ pow10\ =\ 10000;}
+\DoxyCodeLine{17345\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \ 5;}
+\DoxyCodeLine{17346\ \ \ \ \ \}}
+\DoxyCodeLine{17347\ \ \ \ \ \textcolor{keywordflow}{if}\ (n\ >=\ 1000)}
+\DoxyCodeLine{17348\ \ \ \ \ \{}
+\DoxyCodeLine{17349\ \ \ \ \ \ \ \ \ pow10\ =\ 1000;}
+\DoxyCodeLine{17350\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \ 4;}
+\DoxyCodeLine{17351\ \ \ \ \ \}}
+\DoxyCodeLine{17352\ \ \ \ \ \textcolor{keywordflow}{if}\ (n\ >=\ 100)}
+\DoxyCodeLine{17353\ \ \ \ \ \{}
+\DoxyCodeLine{17354\ \ \ \ \ \ \ \ \ pow10\ =\ 100;}
+\DoxyCodeLine{17355\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \ 3;}
+\DoxyCodeLine{17356\ \ \ \ \ \}}
+\DoxyCodeLine{17357\ \ \ \ \ \textcolor{keywordflow}{if}\ (n\ >=\ 10)}
+\DoxyCodeLine{17358\ \ \ \ \ \{}
+\DoxyCodeLine{17359\ \ \ \ \ \ \ \ \ pow10\ =\ 10;}
+\DoxyCodeLine{17360\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \ 2;}
+\DoxyCodeLine{17361\ \ \ \ \ \}}
+\DoxyCodeLine{17362\ }
+\DoxyCodeLine{17363\ \ \ \ \ pow10\ =\ 1;}
+\DoxyCodeLine{17364\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{17365\ \}}
+
+\end{DoxyCode}
+\Hypertarget{namespacedetail_1_1dtoa__impl_afab91abfdd1cdf43cc2fcd5b9c4a7456}\label{namespacedetail_1_1dtoa__impl_afab91abfdd1cdf43cc2fcd5b9c4a7456} 
+\index{detail::dtoa\_impl@{detail::dtoa\_impl}!format\_buffer@{format\_buffer}}
+\index{format\_buffer@{format\_buffer}!detail::dtoa\_impl@{detail::dtoa\_impl}}
+\doxysubsubsection{\texorpdfstring{format\_buffer()}{format\_buffer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{json_8hpp_a5f2aaec3b681d0a72f7d6e90b70cdcd1}{JSON\+\_\+\+HEDLEY\+\_\+\+RETURNS\+\_\+\+NON\+\_\+\+NULL}} char \texorpdfstring{$\ast$}{*} detail\+::dtoa\+\_\+impl\+::format\+\_\+buffer (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{buf,  }\item[{int}]{len,  }\item[{int}]{decimal\+\_\+exponent,  }\item[{int}]{min\+\_\+exp,  }\item[{int}]{max\+\_\+exp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+prettify v = buf \texorpdfstring{$\ast$}{*} 10\texorpdfstring{$^\wedge$}{\string^}decimal\+\_\+exponent 
+
+If v is in the range \mbox{[}10\texorpdfstring{$^\wedge$}{\string^}min\+\_\+exp, 10\texorpdfstring{$^\wedge$}{\string^}max\+\_\+exp) it will be printed in fixed-\/point notation. Otherwise it will be printed in exponential notation.
+
+\begin{DoxyPrecond}{Precondition}
+min\+\_\+exp \texorpdfstring{$<$}{<} 0 
+
+max\+\_\+exp \texorpdfstring{$>$}{>} 0 
+\end{DoxyPrecond}
+
+
+Definition at line \mbox{\hyperlink{json_8hpp_source_l17801}{17801}} of file \mbox{\hyperlink{json_8hpp_source}{json.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{17803\ \{}
+\DoxyCodeLine{17804\ \ \ \ \ \mbox{\hyperlink{json_8hpp_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(min\_exp\ <\ 0);}
+\DoxyCodeLine{17805\ \ \ \ \ \mbox{\hyperlink{json_8hpp_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(max\_exp\ >\ 0);}
+\DoxyCodeLine{17806\ }
+\DoxyCodeLine{17807\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ k\ =\ len;}
+\DoxyCodeLine{17808\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ n\ =\ len\ +\ decimal\_exponent;}
+\DoxyCodeLine{17809\ }
+\DoxyCodeLine{17810\ \ \ \ \ \textcolor{comment}{//\ v\ =\ buf\ *\ 10\string^(n-\/k)}}
+\DoxyCodeLine{17811\ \ \ \ \ \textcolor{comment}{//\ k\ is\ the\ length\ of\ the\ buffer\ (number\ of\ decimal\ digits)}}
+\DoxyCodeLine{17812\ \ \ \ \ \textcolor{comment}{//\ n\ is\ the\ position\ of\ the\ decimal\ point\ relative\ to\ the\ start\ of\ the\ buffer.}}
+\DoxyCodeLine{17813\ }
+\DoxyCodeLine{17814\ \ \ \ \ \textcolor{keywordflow}{if}\ (k\ <=\ n\ \&\&\ n\ <=\ max\_exp)}
+\DoxyCodeLine{17815\ \ \ \ \ \{}
+\DoxyCodeLine{17816\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ digits[000]}}
+\DoxyCodeLine{17817\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ len\ <=\ max\_exp\ +\ 2}}
+\DoxyCodeLine{17818\ }
+\DoxyCodeLine{17819\ \ \ \ \ \ \ \ \ std::memset(buf\ +\ k,\ \textcolor{charliteral}{'0'},\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(n)\ -\/\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(k));}
+\DoxyCodeLine{17820\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Make\ it\ look\ like\ a\ floating-\/point\ number\ (\#362,\ \#378)}}
+\DoxyCodeLine{17821\ \ \ \ \ \ \ \ \ buf[n\ +\ 0]\ =\ \textcolor{charliteral}{'.'};}
+\DoxyCodeLine{17822\ \ \ \ \ \ \ \ \ buf[n\ +\ 1]\ =\ \textcolor{charliteral}{'0'};}
+\DoxyCodeLine{17823\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ buf\ +\ (\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(n)\ +\ 2);}
+\DoxyCodeLine{17824\ \ \ \ \ \}}
+\DoxyCodeLine{17825\ }
+\DoxyCodeLine{17826\ \ \ \ \ \textcolor{keywordflow}{if}\ (0\ <\ n\ \&\&\ n\ <=\ max\_exp)}
+\DoxyCodeLine{17827\ \ \ \ \ \{}
+\DoxyCodeLine{17828\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ dig.its}}
+\DoxyCodeLine{17829\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ len\ <=\ max\_digits10\ +\ 1}}
+\DoxyCodeLine{17830\ }
+\DoxyCodeLine{17831\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{json_8hpp_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(k\ >\ n);}
+\DoxyCodeLine{17832\ }
+\DoxyCodeLine{17833\ \ \ \ \ \ \ \ \ std::memmove(buf\ +\ (\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(n)\ +\ 1),\ buf\ +\ n,\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(k)\ -\/\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(n));}
+\DoxyCodeLine{17834\ \ \ \ \ \ \ \ \ buf[n]\ =\ \textcolor{charliteral}{'.'};}
+\DoxyCodeLine{17835\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ buf\ +\ (\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(k)\ +\ 1U);}
+\DoxyCodeLine{17836\ \ \ \ \ \}}
+\DoxyCodeLine{17837\ }
+\DoxyCodeLine{17838\ \ \ \ \ \textcolor{keywordflow}{if}\ (min\_exp\ <\ n\ \&\&\ n\ <=\ 0)}
+\DoxyCodeLine{17839\ \ \ \ \ \{}
+\DoxyCodeLine{17840\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 0.[000]digits}}
+\DoxyCodeLine{17841\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ len\ <=\ 2\ +\ (-\/min\_exp\ -\/\ 1)\ +\ max\_digits10}}
+\DoxyCodeLine{17842\ }
+\DoxyCodeLine{17843\ \ \ \ \ \ \ \ \ std::memmove(buf\ +\ (2\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(-\/n)),\ buf,\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(k));}
+\DoxyCodeLine{17844\ \ \ \ \ \ \ \ \ buf[0]\ =\ \textcolor{charliteral}{'0'};}
+\DoxyCodeLine{17845\ \ \ \ \ \ \ \ \ buf[1]\ =\ \textcolor{charliteral}{'.'};}
+\DoxyCodeLine{17846\ \ \ \ \ \ \ \ \ std::memset(buf\ +\ 2,\ \textcolor{charliteral}{'0'},\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(-\/n));}
+\DoxyCodeLine{17847\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ buf\ +\ (2U\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(-\/n)\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(k));}
+\DoxyCodeLine{17848\ \ \ \ \ \}}
+\DoxyCodeLine{17849\ }
+\DoxyCodeLine{17850\ \ \ \ \ \textcolor{keywordflow}{if}\ (k\ ==\ 1)}
+\DoxyCodeLine{17851\ \ \ \ \ \{}
+\DoxyCodeLine{17852\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ dE+123}}
+\DoxyCodeLine{17853\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ len\ <=\ 1\ +\ 5}}
+\DoxyCodeLine{17854\ }
+\DoxyCodeLine{17855\ \ \ \ \ \ \ \ \ buf\ +=\ 1;}
+\DoxyCodeLine{17856\ \ \ \ \ \}}
+\DoxyCodeLine{17857\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{17858\ \ \ \ \ \{}
+\DoxyCodeLine{17859\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ d.igitsE+123}}
+\DoxyCodeLine{17860\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ len\ <=\ max\_digits10\ +\ 1\ +\ 5}}
+\DoxyCodeLine{17861\ }
+\DoxyCodeLine{17862\ \ \ \ \ \ \ \ \ std::memmove(buf\ +\ 2,\ buf\ +\ 1,\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(k)\ -\/\ 1);}
+\DoxyCodeLine{17863\ \ \ \ \ \ \ \ \ buf[1]\ =\ \textcolor{charliteral}{'.'};}
+\DoxyCodeLine{17864\ \ \ \ \ \ \ \ \ buf\ +=\ 1\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(k);}
+\DoxyCodeLine{17865\ \ \ \ \ \}}
+\DoxyCodeLine{17866\ }
+\DoxyCodeLine{17867\ \ \ \ \ *buf++\ =\ \textcolor{charliteral}{'e'};}
+\DoxyCodeLine{17868\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacedetail_1_1dtoa__impl_aec9f6655c3b629aeb0e8c887aea5da87}{append\_exponent}}(buf,\ n\ -\/\ 1);}
+\DoxyCodeLine{17869\ \}}
+
+\end{DoxyCode}
+\Hypertarget{namespacedetail_1_1dtoa__impl_a29ae6574f6be09a5c8ab08da9a3f71b4}\label{namespacedetail_1_1dtoa__impl_a29ae6574f6be09a5c8ab08da9a3f71b4} 
+\index{detail::dtoa\_impl@{detail::dtoa\_impl}!get\_cached\_power\_for\_binary\_exponent@{get\_cached\_power\_for\_binary\_exponent}}
+\index{get\_cached\_power\_for\_binary\_exponent@{get\_cached\_power\_for\_binary\_exponent}!detail::dtoa\_impl@{detail::dtoa\_impl}}
+\doxysubsubsection{\texorpdfstring{get\_cached\_power\_for\_binary\_exponent()}{get\_cached\_power\_for\_binary\_exponent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1cached__power}{cached\+\_\+power}} detail\+::dtoa\+\_\+impl\+::get\+\_\+cached\+\_\+power\+\_\+for\+\_\+binary\+\_\+exponent (\begin{DoxyParamCaption}\item[{int}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+For a normalized diyfp w = f \texorpdfstring{$\ast$}{*} 2\texorpdfstring{$^\wedge$}{\string^}e, this function returns a (normalized) cached power-\/of-\/ten c = f\+\_\+c \texorpdfstring{$\ast$}{*} 2\texorpdfstring{$^\wedge$}{\string^}e\+\_\+c, such that the exponent of the product w \texorpdfstring{$\ast$}{*} c satisfies (Definition 3.\+2 from \mbox{[}1\mbox{]}) \begin{DoxyVerb} alpha <= e_c + e + q <= gamma.
+\end{DoxyVerb}
+ 
+
+Definition at line \mbox{\hyperlink{json_8hpp_source_l17149}{17149}} of file \mbox{\hyperlink{json_8hpp_source}{json.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{17150\ \{}
+\DoxyCodeLine{17151\ \ \ \ \ \textcolor{comment}{//\ Now}}
+\DoxyCodeLine{17152\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17153\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ alpha\ <=\ e\_c\ +\ e\ +\ q\ <=\ gamma\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1)}}
+\DoxyCodeLine{17154\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ ==>\ f\_c\ *\ 2\string^alpha\ <=\ c\ *\ 2\string^e\ *\ 2\string^q}}
+\DoxyCodeLine{17155\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17156\ \ \ \ \ \textcolor{comment}{//\ and\ since\ the\ c's\ are\ normalized,\ 2\string^(q-\/1)\ <=\ f\_c,}}
+\DoxyCodeLine{17157\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17158\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ ==>\ 2\string^(q\ -\/\ 1\ +\ alpha)\ <=\ c\ *\ 2\string^(e\ +\ q)}}
+\DoxyCodeLine{17159\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ ==>\ 2\string^(alpha\ -\/\ e\ -\/\ 1)\ <=\ c}}
+\DoxyCodeLine{17160\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17161\ \ \ \ \ \textcolor{comment}{//\ If\ c\ were\ an\ exact\ power\ of\ ten,\ i.e.\ c\ =\ 10\string^k,\ one\ may\ determine\ k\ as}}
+\DoxyCodeLine{17162\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17163\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ k\ =\ ceil(\ log\_10(\ 2\string^(alpha\ -\/\ e\ -\/\ 1)\ )\ )}}
+\DoxyCodeLine{17164\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ =\ ceil(\ (alpha\ -\/\ e\ -\/\ 1)\ *\ log\_10(2)\ )}}
+\DoxyCodeLine{17165\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17166\ \ \ \ \ \textcolor{comment}{//\ From\ the\ paper:}}
+\DoxyCodeLine{17167\ \ \ \ \ \textcolor{comment}{//\ "{}In\ theory\ the\ result\ of\ the\ procedure\ could\ be\ wrong\ since\ c\ is\ rounded,}}
+\DoxyCodeLine{17168\ \ \ \ \ \textcolor{comment}{//\ \ and\ the\ computation\ itself\ is\ approximated\ [...].\ In\ practice,\ however,}}
+\DoxyCodeLine{17169\ \ \ \ \ \textcolor{comment}{//\ \ this\ simple\ function\ is\ sufficient."{}}}
+\DoxyCodeLine{17170\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17171\ \ \ \ \ \textcolor{comment}{//\ For\ IEEE\ double\ precision\ floating-\/point\ numbers\ converted\ into}}
+\DoxyCodeLine{17172\ \ \ \ \ \textcolor{comment}{//\ normalized\ diyfp's\ w\ =\ f\ *\ 2\string^e,\ with\ q\ =\ 64,}}
+\DoxyCodeLine{17173\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17174\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ e\ >=\ -\/1022\ \ \ \ \ \ (min\ IEEE\ exponent)}}
+\DoxyCodeLine{17175\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ -\/52\ \ \ \ \ \ \ \ (p\ -\/\ 1)}}
+\DoxyCodeLine{17176\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ -\/52\ \ \ \ \ \ \ \ (p\ -\/\ 1,\ possibly\ normalize\ denormal\ IEEE\ numbers)}}
+\DoxyCodeLine{17177\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ -\/11\ \ \ \ \ \ \ \ (normalize\ the\ diyfp)}}
+\DoxyCodeLine{17178\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ =\ -\/1137}}
+\DoxyCodeLine{17179\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17180\ \ \ \ \ \textcolor{comment}{//\ and}}
+\DoxyCodeLine{17181\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17182\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ e\ <=\ +1023\ \ \ \ \ \ (max\ IEEE\ exponent)}}
+\DoxyCodeLine{17183\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ -\/52\ \ \ \ \ \ \ \ (p\ -\/\ 1)}}
+\DoxyCodeLine{17184\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ -\/11\ \ \ \ \ \ \ \ (normalize\ the\ diyfp)}}
+\DoxyCodeLine{17185\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ =\ 960}}
+\DoxyCodeLine{17186\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17187\ \ \ \ \ \textcolor{comment}{//\ This\ binary\ exponent\ range\ [-\/1137,960]\ results\ in\ a\ decimal\ exponent}}
+\DoxyCodeLine{17188\ \ \ \ \ \textcolor{comment}{//\ range\ [-\/307,324].\ One\ does\ not\ need\ to\ store\ a\ cached\ power\ for\ each}}
+\DoxyCodeLine{17189\ \ \ \ \ \textcolor{comment}{//\ k\ in\ this\ range.\ For\ each\ such\ k\ it\ suffices\ to\ find\ a\ cached\ power}}
+\DoxyCodeLine{17190\ \ \ \ \ \textcolor{comment}{//\ such\ that\ the\ exponent\ of\ the\ product\ lies\ in\ [alpha,gamma].}}
+\DoxyCodeLine{17191\ \ \ \ \ \textcolor{comment}{//\ This\ implies\ that\ the\ difference\ of\ the\ decimal\ exponents\ of\ adjacent}}
+\DoxyCodeLine{17192\ \ \ \ \ \textcolor{comment}{//\ table\ entries\ must\ be\ less\ than\ or\ equal\ to}}
+\DoxyCodeLine{17193\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17194\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ floor(\ (gamma\ -\/\ alpha)\ *\ log\_10(2)\ )\ =\ 8.}}
+\DoxyCodeLine{17195\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17196\ \ \ \ \ \textcolor{comment}{//\ (A\ smaller\ distance\ gamma-\/alpha\ would\ require\ a\ larger\ table.)}}
+\DoxyCodeLine{17197\ }
+\DoxyCodeLine{17198\ \ \ \ \ \textcolor{comment}{//\ NB:}}
+\DoxyCodeLine{17199\ \ \ \ \ \textcolor{comment}{//\ Actually\ this\ function\ returns\ c,\ such\ that\ -\/60\ <=\ e\_c\ +\ e\ +\ 64\ <=\ -\/34.}}
+\DoxyCodeLine{17200\ }
+\DoxyCodeLine{17201\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ kCachedPowersMinDecExp\ =\ -\/300;}
+\DoxyCodeLine{17202\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ kCachedPowersDecStep\ =\ 8;}
+\DoxyCodeLine{17203\ }
+\DoxyCodeLine{17204\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ std::array<cached\_power,\ 79>\ kCachedPowers\ =}
+\DoxyCodeLine{17205\ \ \ \ \ \{}
+\DoxyCodeLine{17206\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{17207\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xAB70FE17C79AC6CA,\ -\/1060,\ -\/300\ \},}
+\DoxyCodeLine{17208\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xFF77B1FCBEBCDC4F,\ -\/1034,\ -\/292\ \},}
+\DoxyCodeLine{17209\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xBE5691EF416BD60C,\ -\/1007,\ -\/284\ \},}
+\DoxyCodeLine{17210\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0x8DD01FAD907FFC3C,\ \ -\/980,\ -\/276\ \},}
+\DoxyCodeLine{17211\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xD3515C2831559A83,\ \ -\/954,\ -\/268\ \},}
+\DoxyCodeLine{17212\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0x9D71AC8FADA6C9B5,\ \ -\/927,\ -\/260\ \},}
+\DoxyCodeLine{17213\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xEA9C227723EE8BCB,\ \ -\/901,\ -\/252\ \},}
+\DoxyCodeLine{17214\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xAECC49914078536D,\ \ -\/874,\ -\/244\ \},}
+\DoxyCodeLine{17215\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0x823C12795DB6CE57,\ \ -\/847,\ -\/236\ \},}
+\DoxyCodeLine{17216\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xC21094364DFB5637,\ \ -\/821,\ -\/228\ \},}
+\DoxyCodeLine{17217\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0x9096EA6F3848984F,\ \ -\/794,\ -\/220\ \},}
+\DoxyCodeLine{17218\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xD77485CB25823AC7,\ \ -\/768,\ -\/212\ \},}
+\DoxyCodeLine{17219\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xA086CFCD97BF97F4,\ \ -\/741,\ -\/204\ \},}
+\DoxyCodeLine{17220\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xEF340A98172AACE5,\ \ -\/715,\ -\/196\ \},}
+\DoxyCodeLine{17221\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xB23867FB2A35B28E,\ \ -\/688,\ -\/188\ \},}
+\DoxyCodeLine{17222\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0x84C8D4DFD2C63F3B,\ \ -\/661,\ -\/180\ \},}
+\DoxyCodeLine{17223\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xC5DD44271AD3CDBA,\ \ -\/635,\ -\/172\ \},}
+\DoxyCodeLine{17224\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0x936B9FCEBB25C996,\ \ -\/608,\ -\/164\ \},}
+\DoxyCodeLine{17225\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xDBAC6C247D62A584,\ \ -\/582,\ -\/156\ \},}
+\DoxyCodeLine{17226\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xA3AB66580D5FDAF6,\ \ -\/555,\ -\/148\ \},}
+\DoxyCodeLine{17227\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xF3E2F893DEC3F126,\ \ -\/529,\ -\/140\ \},}
+\DoxyCodeLine{17228\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xB5B5ADA8AAFF80B8,\ \ -\/502,\ -\/132\ \},}
+\DoxyCodeLine{17229\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0x87625F056C7C4A8B,\ \ -\/475,\ -\/124\ \},}
+\DoxyCodeLine{17230\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xC9BCFF6034C13053,\ \ -\/449,\ -\/116\ \},}
+\DoxyCodeLine{17231\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0x964E858C91BA2655,\ \ -\/422,\ -\/108\ \},}
+\DoxyCodeLine{17232\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xDFF9772470297EBD,\ \ -\/396,\ -\/100\ \},}
+\DoxyCodeLine{17233\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xA6DFBD9FB8E5B88F,\ \ -\/369,\ \ -\/92\ \},}
+\DoxyCodeLine{17234\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xF8A95FCF88747D94,\ \ -\/343,\ \ -\/84\ \},}
+\DoxyCodeLine{17235\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xB94470938FA89BCF,\ \ -\/316,\ \ -\/76\ \},}
+\DoxyCodeLine{17236\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0x8A08F0F8BF0F156B,\ \ -\/289,\ \ -\/68\ \},}
+\DoxyCodeLine{17237\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xCDB02555653131B6,\ \ -\/263,\ \ -\/60\ \},}
+\DoxyCodeLine{17238\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0x993FE2C6D07B7FAC,\ \ -\/236,\ \ -\/52\ \},}
+\DoxyCodeLine{17239\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xE45C10C42A2B3B06,\ \ -\/210,\ \ -\/44\ \},}
+\DoxyCodeLine{17240\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xAA242499697392D3,\ \ -\/183,\ \ -\/36\ \},}
+\DoxyCodeLine{17241\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xFD87B5F28300CA0E,\ \ -\/157,\ \ -\/28\ \},}
+\DoxyCodeLine{17242\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xBCE5086492111AEB,\ \ -\/130,\ \ -\/20\ \},}
+\DoxyCodeLine{17243\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0x8CBCCC096F5088CC,\ \ -\/103,\ \ -\/12\ \},}
+\DoxyCodeLine{17244\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xD1B71758E219652C,\ \ \ -\/77,\ \ \ -\/4\ \},}
+\DoxyCodeLine{17245\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0x9C40000000000000,\ \ \ -\/50,\ \ \ \ 4\ \},}
+\DoxyCodeLine{17246\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xE8D4A51000000000,\ \ \ -\/24,\ \ \ 12\ \},}
+\DoxyCodeLine{17247\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xAD78EBC5AC620000,\ \ \ \ \ 3,\ \ \ 20\ \},}
+\DoxyCodeLine{17248\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0x813F3978F8940984,\ \ \ \ 30,\ \ \ 28\ \},}
+\DoxyCodeLine{17249\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xC097CE7BC90715B3,\ \ \ \ 56,\ \ \ 36\ \},}
+\DoxyCodeLine{17250\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0x8F7E32CE7BEA5C70,\ \ \ \ 83,\ \ \ 44\ \},}
+\DoxyCodeLine{17251\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xD5D238A4ABE98068,\ \ \ 109,\ \ \ 52\ \},}
+\DoxyCodeLine{17252\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0x9F4F2726179A2245,\ \ \ 136,\ \ \ 60\ \},}
+\DoxyCodeLine{17253\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xED63A231D4C4FB27,\ \ \ 162,\ \ \ 68\ \},}
+\DoxyCodeLine{17254\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xB0DE65388CC8ADA8,\ \ \ 189,\ \ \ 76\ \},}
+\DoxyCodeLine{17255\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0x83C7088E1AAB65DB,\ \ \ 216,\ \ \ 84\ \},}
+\DoxyCodeLine{17256\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xC45D1DF942711D9A,\ \ \ 242,\ \ \ 92\ \},}
+\DoxyCodeLine{17257\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0x924D692CA61BE758,\ \ \ 269,\ \ 100\ \},}
+\DoxyCodeLine{17258\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xDA01EE641A708DEA,\ \ \ 295,\ \ 108\ \},}
+\DoxyCodeLine{17259\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xA26DA3999AEF774A,\ \ \ 322,\ \ 116\ \},}
+\DoxyCodeLine{17260\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xF209787BB47D6B85,\ \ \ 348,\ \ 124\ \},}
+\DoxyCodeLine{17261\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xB454E4A179DD1877,\ \ \ 375,\ \ 132\ \},}
+\DoxyCodeLine{17262\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0x865B86925B9BC5C2,\ \ \ 402,\ \ 140\ \},}
+\DoxyCodeLine{17263\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xC83553C5C8965D3D,\ \ \ 428,\ \ 148\ \},}
+\DoxyCodeLine{17264\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0x952AB45CFA97A0B3,\ \ \ 455,\ \ 156\ \},}
+\DoxyCodeLine{17265\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xDE469FBD99A05FE3,\ \ \ 481,\ \ 164\ \},}
+\DoxyCodeLine{17266\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xA59BC234DB398C25,\ \ \ 508,\ \ 172\ \},}
+\DoxyCodeLine{17267\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xF6C69A72A3989F5C,\ \ \ 534,\ \ 180\ \},}
+\DoxyCodeLine{17268\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xB7DCBF5354E9BECE,\ \ \ 561,\ \ 188\ \},}
+\DoxyCodeLine{17269\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0x88FCF317F22241E2,\ \ \ 588,\ \ 196\ \},}
+\DoxyCodeLine{17270\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xCC20CE9BD35C78A5,\ \ \ 614,\ \ 204\ \},}
+\DoxyCodeLine{17271\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0x98165AF37B2153DF,\ \ \ 641,\ \ 212\ \},}
+\DoxyCodeLine{17272\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xE2A0B5DC971F303A,\ \ \ 667,\ \ 220\ \},}
+\DoxyCodeLine{17273\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xA8D9D1535CE3B396,\ \ \ 694,\ \ 228\ \},}
+\DoxyCodeLine{17274\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xFB9B7CD9A4A7443C,\ \ \ 720,\ \ 236\ \},}
+\DoxyCodeLine{17275\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xBB764C4CA7A44410,\ \ \ 747,\ \ 244\ \},}
+\DoxyCodeLine{17276\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0x8BAB8EEFB6409C1A,\ \ \ 774,\ \ 252\ \},}
+\DoxyCodeLine{17277\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xD01FEF10A657842C,\ \ \ 800,\ \ 260\ \},}
+\DoxyCodeLine{17278\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0x9B10A4E5E9913129,\ \ \ 827,\ \ 268\ \},}
+\DoxyCodeLine{17279\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xE7109BFBA19C0C9D,\ \ \ 853,\ \ 276\ \},}
+\DoxyCodeLine{17280\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xAC2820D9623BF429,\ \ \ 880,\ \ 284\ \},}
+\DoxyCodeLine{17281\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0x80444B5E7AA7CF85,\ \ \ 907,\ \ 292\ \},}
+\DoxyCodeLine{17282\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xBF21E44003ACDD2D,\ \ \ 933,\ \ 300\ \},}
+\DoxyCodeLine{17283\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0x8E679C2F5E44FF8F,\ \ \ 960,\ \ 308\ \},}
+\DoxyCodeLine{17284\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0xD433179D9C8CB841,\ \ \ 986,\ \ 316\ \},}
+\DoxyCodeLine{17285\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0x9E19DB92B4E31BA9,\ \ 1013,\ \ 324\ \},}
+\DoxyCodeLine{17286\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{17287\ \ \ \ \ \};}
+\DoxyCodeLine{17288\ }
+\DoxyCodeLine{17289\ \ \ \ \ \textcolor{comment}{//\ This\ computation\ gives\ exactly\ the\ same\ results\ for\ k\ as}}
+\DoxyCodeLine{17290\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ k\ =\ ceil((kAlpha\ -\/\ e\ -\/\ 1)\ *\ 0.30102999566398114)}}
+\DoxyCodeLine{17291\ \ \ \ \ \textcolor{comment}{//\ for\ |e|\ <=\ 1500,\ but\ doesn't\ require\ floating-\/point\ operations.}}
+\DoxyCodeLine{17292\ \ \ \ \ \textcolor{comment}{//\ NB:\ log\_10(2)\ \string~=\ 78913\ /\ 2\string^18}}
+\DoxyCodeLine{17293\ \ \ \ \ \mbox{\hyperlink{json_8hpp_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(e\ >=\ -\/1500);}
+\DoxyCodeLine{17294\ \ \ \ \ \mbox{\hyperlink{json_8hpp_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(e\ <=\ \ 1500);}
+\DoxyCodeLine{17295\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ f\ =\ \mbox{\hyperlink{namespacedetail_1_1dtoa__impl_a95c569b7627a9372686f1f77d73e8660}{kAlpha}}\ -\/\ e\ -\/\ 1;}
+\DoxyCodeLine{17296\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ k\ =\ (f\ *\ 78913)\ /\ (1\ <<\ 18)\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(f\ >\ 0);}
+\DoxyCodeLine{17297\ }
+\DoxyCodeLine{17298\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ index\ =\ (-\/kCachedPowersMinDecExp\ +\ k\ +\ (kCachedPowersDecStep\ -\/\ 1))\ /\ kCachedPowersDecStep;}
+\DoxyCodeLine{17299\ \ \ \ \ \mbox{\hyperlink{json_8hpp_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(index\ >=\ 0);}
+\DoxyCodeLine{17300\ \ \ \ \ \mbox{\hyperlink{json_8hpp_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(\textcolor{keyword}{static\_cast<}std::size\_t\textcolor{keyword}{>}(index)\ <\ kCachedPowers.size());}
+\DoxyCodeLine{17301\ }
+\DoxyCodeLine{17302\ \ \ \ \ \textcolor{keyword}{const}\ cached\_power\ cached\ =\ kCachedPowers[\textcolor{keyword}{static\_cast<}std::size\_t\textcolor{keyword}{>}(index)];}
+\DoxyCodeLine{17303\ \ \ \ \ \mbox{\hyperlink{json_8hpp_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(kAlpha\ <=\ cached.e\ +\ e\ +\ 64);}
+\DoxyCodeLine{17304\ \ \ \ \ \mbox{\hyperlink{json_8hpp_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(kGamma\ >=\ cached.e\ +\ e\ +\ 64);}
+\DoxyCodeLine{17305\ }
+\DoxyCodeLine{17306\ \ \ \ \ \textcolor{keywordflow}{return}\ cached;}
+\DoxyCodeLine{17307\ \}}
+
+\end{DoxyCode}
+\Hypertarget{namespacedetail_1_1dtoa__impl_ad549352ed1a9676a092d143a2daa3dee}\label{namespacedetail_1_1dtoa__impl_ad549352ed1a9676a092d143a2daa3dee} 
+\index{detail::dtoa\_impl@{detail::dtoa\_impl}!grisu2@{grisu2}}
+\index{grisu2@{grisu2}!detail::dtoa\_impl@{detail::dtoa\_impl}}
+\doxysubsubsection{\texorpdfstring{grisu2()}{grisu2()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void detail\+::dtoa\+\_\+impl\+::grisu2 (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{buf,  }\item[{int \&}]{len,  }\item[{int \&}]{decimal\+\_\+exponent,  }\item[{\mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp}{diyfp}}}]{m\+\_\+minus,  }\item[{\mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp}{diyfp}}}]{v,  }\item[{\mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp}{diyfp}}}]{m\+\_\+plus }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+v = buf \texorpdfstring{$\ast$}{*} 10\texorpdfstring{$^\wedge$}{\string^}decimal\+\_\+exponent len is the length of the buffer (number of decimal digits) The buffer must be large enough, i.\+e. \texorpdfstring{$>$}{>}= max\+\_\+digits10. 
+
+Definition at line \mbox{\hyperlink{json_8hpp_source_l17649}{17649}} of file \mbox{\hyperlink{json_8hpp_source}{json.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{17651\ \{}
+\DoxyCodeLine{17652\ \ \ \ \ \mbox{\hyperlink{json_8hpp_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(m\_plus.\mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp_ae2b59fab8dee9ef0192eb6b568fa7314}{e}}\ ==\ m\_minus.\mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp_ae2b59fab8dee9ef0192eb6b568fa7314}{e}});}
+\DoxyCodeLine{17653\ \ \ \ \ \mbox{\hyperlink{json_8hpp_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(m\_plus.\mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp_ae2b59fab8dee9ef0192eb6b568fa7314}{e}}\ ==\ v.\mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp_ae2b59fab8dee9ef0192eb6b568fa7314}{e}});}
+\DoxyCodeLine{17654\ }
+\DoxyCodeLine{17655\ \ \ \ \ \textcolor{comment}{//\ \ -\/-\/-\/-\/-\/-\/-\/-\/(-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/)-\/-\/-\/-\/-\/-\/-\/-\/\ \ \ \ (A)}}
+\DoxyCodeLine{17656\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ m-\/\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ v\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m+}}
+\DoxyCodeLine{17657\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17658\ \ \ \ \ \textcolor{comment}{//\ \ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/(-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/)-\/-\/-\/-\/-\/-\/-\/-\/\ \ \ \ (B)}}
+\DoxyCodeLine{17659\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m-\/\ \ \ \ \ \ \ \ \ \ v\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m+}}
+\DoxyCodeLine{17660\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17661\ \ \ \ \ \textcolor{comment}{//\ First\ scale\ v\ (and\ m-\/\ and\ m+)\ such\ that\ the\ exponent\ is\ in\ the\ range}}
+\DoxyCodeLine{17662\ \ \ \ \ \textcolor{comment}{//\ [alpha,\ gamma].}}
+\DoxyCodeLine{17663\ }
+\DoxyCodeLine{17664\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1cached__power}{cached\_power}}\ cached\ =\ \mbox{\hyperlink{namespacedetail_1_1dtoa__impl_a29ae6574f6be09a5c8ab08da9a3f71b4}{get\_cached\_power\_for\_binary\_exponent}}(m\_plus.\mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp_ae2b59fab8dee9ef0192eb6b568fa7314}{e}});}
+\DoxyCodeLine{17665\ }
+\DoxyCodeLine{17666\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp}{diyfp}}\ c\_minus\_k(cached.\mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1cached__power_a1e1bc1d228d8e54dc830fe6ef719eecf}{f}},\ cached.\mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1cached__power_a96cc75e988a7e08e2de93db20024e7df}{e}});\ \textcolor{comment}{//\ =\ c\ \string~=\ 10\string^-\/k}}
+\DoxyCodeLine{17667\ }
+\DoxyCodeLine{17668\ \ \ \ \ \textcolor{comment}{//\ The\ exponent\ of\ the\ products\ is\ =\ v.e\ +\ c\_minus\_k.e\ +\ q\ and\ is\ in\ the\ range\ [alpha,gamma]}}
+\DoxyCodeLine{17669\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp}{diyfp}}\ w\ \ \ \ \ \ \ =\ diyfp::mul(v,\ \ \ \ \ \ \ c\_minus\_k);}
+\DoxyCodeLine{17670\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp}{diyfp}}\ w\_minus\ =\ diyfp::mul(m\_minus,\ c\_minus\_k);}
+\DoxyCodeLine{17671\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp}{diyfp}}\ w\_plus\ \ =\ diyfp::mul(m\_plus,\ \ c\_minus\_k);}
+\DoxyCodeLine{17672\ }
+\DoxyCodeLine{17673\ \ \ \ \ \textcolor{comment}{//\ \ -\/-\/-\/-\/(-\/-\/-\/+-\/-\/-\/)-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/(-\/-\/-\/+-\/-\/-\/)-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/(-\/-\/-\/+-\/-\/-\/)-\/-\/-\/-\/}}
+\DoxyCodeLine{17674\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ w-\/\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ w\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ w+}}
+\DoxyCodeLine{17675\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ =\ c*m-\/\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ c*v\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ c*m+}}
+\DoxyCodeLine{17676\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17677\ \ \ \ \ \textcolor{comment}{//\ diyfp::mul\ rounds\ its\ result\ and\ c\_minus\_k\ is\ approximated\ too.\ w,\ w-\/\ and}}
+\DoxyCodeLine{17678\ \ \ \ \ \textcolor{comment}{//\ w+\ are\ now\ off\ by\ a\ small\ amount.}}
+\DoxyCodeLine{17679\ \ \ \ \ \textcolor{comment}{//\ In\ fact:}}
+\DoxyCodeLine{17680\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17681\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ w\ -\/\ v\ *\ 10\string^k\ <\ 1\ ulp}}
+\DoxyCodeLine{17682\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17683\ \ \ \ \ \textcolor{comment}{//\ To\ account\ for\ this\ inaccuracy,\ add\ resp.\ subtract\ 1\ ulp.}}
+\DoxyCodeLine{17684\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17685\ \ \ \ \ \textcolor{comment}{//\ \ -\/-\/-\/-\/-\/-\/-\/-\/+-\/-\/-\/[-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/(-\/-\/-\/+-\/-\/-\/)-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/]-\/-\/-\/+-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{17686\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ w-\/\ \ M-\/\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ w\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ M+\ \ w+}}
+\DoxyCodeLine{17687\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17688\ \ \ \ \ \textcolor{comment}{//\ Now\ any\ number\ in\ [M-\/,\ M+]\ (bounds\ included)\ will\ round\ to\ w\ when\ input,}}
+\DoxyCodeLine{17689\ \ \ \ \ \textcolor{comment}{//\ regardless\ of\ how\ the\ input\ rounding\ algorithm\ breaks\ ties.}}
+\DoxyCodeLine{17690\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17691\ \ \ \ \ \textcolor{comment}{//\ And\ digit\_gen\ generates\ the\ shortest\ possible\ such\ number\ in\ [M-\/,\ M+].}}
+\DoxyCodeLine{17692\ \ \ \ \ \textcolor{comment}{//\ Note\ that\ this\ does\ not\ mean\ that\ Grisu2\ always\ generates\ the\ shortest}}
+\DoxyCodeLine{17693\ \ \ \ \ \textcolor{comment}{//\ possible\ number\ in\ the\ interval\ (m-\/,\ m+).}}
+\DoxyCodeLine{17694\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp}{diyfp}}\ M\_minus(w\_minus.\mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp_ae1518119517cb69d79aa64ffb93c8375}{f}}\ +\ 1,\ w\_minus.\mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp_ae2b59fab8dee9ef0192eb6b568fa7314}{e}});}
+\DoxyCodeLine{17695\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp}{diyfp}}\ M\_plus\ (w\_plus.\mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp_ae1518119517cb69d79aa64ffb93c8375}{f}}\ \ -\/\ 1,\ w\_plus.\mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp_ae2b59fab8dee9ef0192eb6b568fa7314}{e}}\ );}
+\DoxyCodeLine{17696\ }
+\DoxyCodeLine{17697\ \ \ \ \ decimal\_exponent\ =\ -\/cached.\mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1cached__power_ae9c889d5fc4427f633ec23044e986755}{k}};\ \textcolor{comment}{//\ =\ -\/(-\/k)\ =\ k}}
+\DoxyCodeLine{17698\ }
+\DoxyCodeLine{17699\ \ \ \ \ \mbox{\hyperlink{namespacedetail_1_1dtoa__impl_ae877aa13ab872c99a1c614e5e1524807}{grisu2\_digit\_gen}}(buf,\ len,\ decimal\_exponent,\ M\_minus,\ w,\ M\_plus);}
+\DoxyCodeLine{17700\ \}}
+
+\end{DoxyCode}
+\Hypertarget{namespacedetail_1_1dtoa__impl_abdf6bc05c54068a5930f66c2e803e8b8}\label{namespacedetail_1_1dtoa__impl_abdf6bc05c54068a5930f66c2e803e8b8} 
+\index{detail::dtoa\_impl@{detail::dtoa\_impl}!grisu2@{grisu2}}
+\index{grisu2@{grisu2}!detail::dtoa\_impl@{detail::dtoa\_impl}}
+\doxysubsubsection{\texorpdfstring{grisu2()}{grisu2()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Float\+Type $>$ \\
+void detail\+::dtoa\+\_\+impl\+::grisu2 (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{buf,  }\item[{int \&}]{len,  }\item[{int \&}]{decimal\+\_\+exponent,  }\item[{Float\+Type}]{value }\end{DoxyParamCaption})}
+
+v = buf \texorpdfstring{$\ast$}{*} 10\texorpdfstring{$^\wedge$}{\string^}decimal\+\_\+exponent len is the length of the buffer (number of decimal digits) The buffer must be large enough, i.\+e. \texorpdfstring{$>$}{>}= max\+\_\+digits10. 
+
+Definition at line \mbox{\hyperlink{json_8hpp_source_l17709}{17709}} of file \mbox{\hyperlink{json_8hpp_source}{json.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{17710\ \{}
+\DoxyCodeLine{17711\ \ \ \ \ \textcolor{keyword}{static\_assert}(diyfp::kPrecision\ >=\ std::numeric\_limits<FloatType>::digits\ +\ 3,}
+\DoxyCodeLine{17712\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}internal\ error:\ not\ enough\ precision"{}});}
+\DoxyCodeLine{17713\ }
+\DoxyCodeLine{17714\ \ \ \ \ \mbox{\hyperlink{json_8hpp_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(std::isfinite(value));}
+\DoxyCodeLine{17715\ \ \ \ \ \mbox{\hyperlink{json_8hpp_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(value\ >\ 0);}
+\DoxyCodeLine{17716\ }
+\DoxyCodeLine{17717\ \ \ \ \ \textcolor{comment}{//\ If\ the\ neighbors\ (and\ boundaries)\ of\ 'value'\ are\ always\ computed\ for\ double-\/precision}}
+\DoxyCodeLine{17718\ \ \ \ \ \textcolor{comment}{//\ numbers,\ all\ float's\ can\ be\ recovered\ using\ strtod\ (and\ strtof).\ However,\ the\ resulting}}
+\DoxyCodeLine{17719\ \ \ \ \ \textcolor{comment}{//\ decimal\ representations\ are\ not\ exactly\ "{}short"{}.}}
+\DoxyCodeLine{17720\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17721\ \ \ \ \ \textcolor{comment}{//\ The\ documentation\ for\ 'std::to\_chars'\ (https://en.cppreference.com/w/cpp/utility/to\_chars)}}
+\DoxyCodeLine{17722\ \ \ \ \ \textcolor{comment}{//\ says\ "{}value\ is\ converted\ to\ a\ string\ as\ if\ by\ std::sprintf\ in\ the\ default\ ("{}C"{})\ locale"{}}}
+\DoxyCodeLine{17723\ \ \ \ \ \textcolor{comment}{//\ and\ since\ sprintf\ promotes\ floats\ to\ doubles,\ I\ think\ this\ is\ exactly\ what\ 'std::to\_chars'}}
+\DoxyCodeLine{17724\ \ \ \ \ \textcolor{comment}{//\ does.}}
+\DoxyCodeLine{17725\ \ \ \ \ \textcolor{comment}{//\ On\ the\ other\ hand,\ the\ documentation\ for\ 'std::to\_chars'\ requires\ that\ "{}parsing\ the}}
+\DoxyCodeLine{17726\ \ \ \ \ \textcolor{comment}{//\ representation\ using\ the\ corresponding\ std::from\_chars\ function\ recovers\ value\ exactly"{}.\ That}}
+\DoxyCodeLine{17727\ \ \ \ \ \textcolor{comment}{//\ indicates\ that\ single\ precision\ floating-\/point\ numbers\ should\ be\ recovered\ using}}
+\DoxyCodeLine{17728\ \ \ \ \ \textcolor{comment}{//\ 'std::strtof'.}}
+\DoxyCodeLine{17729\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17730\ \ \ \ \ \textcolor{comment}{//\ NB:\ If\ the\ neighbors\ are\ computed\ for\ single-\/precision\ numbers,\ there\ is\ a\ single\ float}}
+\DoxyCodeLine{17731\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ (7.0385307e-\/26f)\ which\ can't\ be\ recovered\ using\ strtod.\ The\ resulting\ double\ precision}}
+\DoxyCodeLine{17732\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ value\ is\ off\ by\ 1\ ulp.}}
+\DoxyCodeLine{17733\ \textcolor{preprocessor}{\#if\ 0\ }\textcolor{comment}{//\ NOLINT(readability-\/avoid-\/unconditional-\/preprocessor-\/if)}}
+\DoxyCodeLine{17734\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1boundaries}{boundaries}}\ w\ =\ \mbox{\hyperlink{namespacedetail_1_1dtoa__impl_a6a5ccf11847aab7a0f42f587b33935df}{compute\_boundaries}}(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(value));}
+\DoxyCodeLine{17735\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{17736\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1boundaries}{boundaries}}\ w\ =\ \mbox{\hyperlink{namespacedetail_1_1dtoa__impl_a6a5ccf11847aab7a0f42f587b33935df}{compute\_boundaries}}(value);}
+\DoxyCodeLine{17737\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{17738\ }
+\DoxyCodeLine{17739\ \ \ \ \ \mbox{\hyperlink{namespacedetail_1_1dtoa__impl_ad549352ed1a9676a092d143a2daa3dee}{grisu2}}(buf,\ len,\ decimal\_exponent,\ w.\mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1boundaries_aa3b1c7a566175a9ca2f23875dbbbccc4}{minus}},\ w.\mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1boundaries_a4ca4291f3ebf758a4708698688dda485}{w}},\ w.\mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1boundaries_ae2d4dbee09b23c49dac2980e8f455d08}{plus}});}
+\DoxyCodeLine{17740\ \}}
+
+\end{DoxyCode}
+\Hypertarget{namespacedetail_1_1dtoa__impl_ae877aa13ab872c99a1c614e5e1524807}\label{namespacedetail_1_1dtoa__impl_ae877aa13ab872c99a1c614e5e1524807} 
+\index{detail::dtoa\_impl@{detail::dtoa\_impl}!grisu2\_digit\_gen@{grisu2\_digit\_gen}}
+\index{grisu2\_digit\_gen@{grisu2\_digit\_gen}!detail::dtoa\_impl@{detail::dtoa\_impl}}
+\doxysubsubsection{\texorpdfstring{grisu2\_digit\_gen()}{grisu2\_digit\_gen()}}
+{\footnotesize\ttfamily void detail\+::dtoa\+\_\+impl\+::grisu2\+\_\+digit\+\_\+gen (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{buffer,  }\item[{int \&}]{length,  }\item[{int \&}]{decimal\+\_\+exponent,  }\item[{\mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp}{diyfp}}}]{M\+\_\+minus,  }\item[{\mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp}{diyfp}}}]{w,  }\item[{\mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp}{diyfp}}}]{M\+\_\+plus }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Generates V = buffer \texorpdfstring{$\ast$}{*} 10\texorpdfstring{$^\wedge$}{\string^}decimal\+\_\+exponent, such that M-\/ \texorpdfstring{$<$}{<}= V \texorpdfstring{$<$}{<}= M+. M-\/ and M+ must be normalized and share the same exponent -\/60 \texorpdfstring{$<$}{<}= e \texorpdfstring{$<$}{<}= -\/32. 
+
+Definition at line \mbox{\hyperlink{json_8hpp_source_l17408}{17408}} of file \mbox{\hyperlink{json_8hpp_source}{json.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{17410\ \{}
+\DoxyCodeLine{17411\ \ \ \ \ \textcolor{keyword}{static\_assert}(\mbox{\hyperlink{namespacedetail_1_1dtoa__impl_a95c569b7627a9372686f1f77d73e8660}{kAlpha}}\ >=\ -\/60,\ \textcolor{stringliteral}{"{}internal\ error"{}});}
+\DoxyCodeLine{17412\ \ \ \ \ \textcolor{keyword}{static\_assert}(\mbox{\hyperlink{namespacedetail_1_1dtoa__impl_ae152a095d2dd1a6dd41ef8ad39c26e19}{kGamma}}\ <=\ -\/32,\ \textcolor{stringliteral}{"{}internal\ error"{}});}
+\DoxyCodeLine{17413\ }
+\DoxyCodeLine{17414\ \ \ \ \ \textcolor{comment}{//\ Generates\ the\ digits\ (and\ the\ exponent)\ of\ a\ decimal\ floating-\/point}}
+\DoxyCodeLine{17415\ \ \ \ \ \textcolor{comment}{//\ number\ V\ =\ buffer\ *\ 10\string^decimal\_exponent\ in\ the\ range\ [M-\/,\ M+].\ The\ diyfp's}}
+\DoxyCodeLine{17416\ \ \ \ \ \textcolor{comment}{//\ w,\ M-\/\ and\ M+\ share\ the\ same\ exponent\ e,\ which\ satisfies\ alpha\ <=\ e\ <=\ gamma.}}
+\DoxyCodeLine{17417\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17418\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ delta\ -\/-\/-\/-\/>}}
+\DoxyCodeLine{17419\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <-\/-\/-\/-\/\ dist\ -\/-\/-\/-\/-\/-\/-\/-\/-\/>}}
+\DoxyCodeLine{17420\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/[-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/]-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{17421\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ M-\/\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ w\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ M+}}
+\DoxyCodeLine{17422\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17423\ \ \ \ \ \textcolor{comment}{//\ Grisu2\ generates\ the\ digits\ of\ M+\ from\ left\ to\ right\ and\ stops\ as\ soon\ as}}
+\DoxyCodeLine{17424\ \ \ \ \ \textcolor{comment}{//\ V\ is\ in\ [M-\/,M+].}}
+\DoxyCodeLine{17425\ }
+\DoxyCodeLine{17426\ \ \ \ \ \mbox{\hyperlink{json_8hpp_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(M\_plus.\mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp_ae2b59fab8dee9ef0192eb6b568fa7314}{e}}\ >=\ kAlpha);}
+\DoxyCodeLine{17427\ \ \ \ \ \mbox{\hyperlink{json_8hpp_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(M\_plus.\mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp_ae2b59fab8dee9ef0192eb6b568fa7314}{e}}\ <=\ kGamma);}
+\DoxyCodeLine{17428\ }
+\DoxyCodeLine{17429\ \ \ \ \ std::uint64\_t\ delta\ =\ diyfp::sub(M\_plus,\ M\_minus).f;\ \textcolor{comment}{//\ (significand\ of\ (M+\ -\/\ M-\/),\ implicit\ exponent\ is\ e)}}
+\DoxyCodeLine{17430\ \ \ \ \ std::uint64\_t\ dist\ \ =\ diyfp::sub(M\_plus,\ w\ \ \ \ \ \ ).f;\ \textcolor{comment}{//\ (significand\ of\ (M+\ -\/\ w\ ),\ implicit\ exponent\ is\ e)}}
+\DoxyCodeLine{17431\ }
+\DoxyCodeLine{17432\ \ \ \ \ \textcolor{comment}{//\ Split\ M+\ =\ f\ *\ 2\string^e\ into\ two\ parts\ p1\ and\ p2\ (note:\ e\ <\ 0):}}
+\DoxyCodeLine{17433\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17434\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ M+\ =\ f\ *\ 2\string^e}}
+\DoxyCodeLine{17435\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ =\ ((f\ div\ 2\string^-\/e)\ *\ 2\string^-\/e\ +\ (f\ mod\ 2\string^-\/e))\ *\ 2\string^e}}
+\DoxyCodeLine{17436\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ =\ ((p1\ \ \ \ \ \ \ \ )\ *\ 2\string^-\/e\ +\ (p2\ \ \ \ \ \ \ \ ))\ *\ 2\string^e}}
+\DoxyCodeLine{17437\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ =\ p1\ +\ p2\ *\ 2\string^e}}
+\DoxyCodeLine{17438\ }
+\DoxyCodeLine{17439\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp}{diyfp}}\ one(std::uint64\_t\{1\}\ <<\ -\/M\_plus.\mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp_ae2b59fab8dee9ef0192eb6b568fa7314}{e}},\ M\_plus.\mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp_ae2b59fab8dee9ef0192eb6b568fa7314}{e}});}
+\DoxyCodeLine{17440\ }
+\DoxyCodeLine{17441\ \ \ \ \ \textcolor{keyword}{auto}\ p1\ =\ \textcolor{keyword}{static\_cast<}std::uint32\_t\textcolor{keyword}{>}(M\_plus.\mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp_ae1518119517cb69d79aa64ffb93c8375}{f}}\ >>\ -\/one.e);\ \textcolor{comment}{//\ p1\ =\ f\ div\ 2\string^-\/e\ (Since\ -\/e\ >=\ 32,\ p1\ fits\ into\ a\ 32-\/bit\ int.)}}
+\DoxyCodeLine{17442\ \ \ \ \ std::uint64\_t\ p2\ =\ M\_plus.\mbox{\hyperlink{structdetail_1_1dtoa__impl_1_1diyfp_ae1518119517cb69d79aa64ffb93c8375}{f}}\ \&\ (one.f\ -\/\ 1);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ p2\ =\ f\ mod\ 2\string^-\/e}}
+\DoxyCodeLine{17443\ }
+\DoxyCodeLine{17444\ \ \ \ \ \textcolor{comment}{//\ 1)}}
+\DoxyCodeLine{17445\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17446\ \ \ \ \ \textcolor{comment}{//\ Generate\ the\ digits\ of\ the\ integral\ part\ p1\ =\ d[n-\/1]...d[1]d[0]}}
+\DoxyCodeLine{17447\ }
+\DoxyCodeLine{17448\ \ \ \ \ \mbox{\hyperlink{json_8hpp_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(p1\ >\ 0);}
+\DoxyCodeLine{17449\ }
+\DoxyCodeLine{17450\ \ \ \ \ std::uint32\_t\ pow10\{\};}
+\DoxyCodeLine{17451\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ k\ =\ find\_largest\_pow10(p1,\ pow10);}
+\DoxyCodeLine{17452\ }
+\DoxyCodeLine{17453\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ 10\string^(k-\/1)\ <=\ p1\ <\ 10\string^k,\ pow10\ =\ 10\string^(k-\/1)}}
+\DoxyCodeLine{17454\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17455\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ p1\ =\ (p1\ div\ 10\string^(k-\/1))\ *\ 10\string^(k-\/1)\ +\ (p1\ mod\ 10\string^(k-\/1))}}
+\DoxyCodeLine{17456\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ =\ (d[k-\/1]\ \ \ \ \ \ \ \ \ )\ *\ 10\string^(k-\/1)\ +\ (p1\ mod\ 10\string^(k-\/1))}}
+\DoxyCodeLine{17457\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17458\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ M+\ =\ p1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ p2\ *\ 2\string^e}}
+\DoxyCodeLine{17459\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ =\ d[k-\/1]\ *\ 10\string^(k-\/1)\ +\ (p1\ mod\ 10\string^(k-\/1))\ \ \ \ \ \ \ \ \ \ +\ p2\ *\ 2\string^e}}
+\DoxyCodeLine{17460\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ =\ d[k-\/1]\ *\ 10\string^(k-\/1)\ +\ ((p1\ mod\ 10\string^(k-\/1))\ *\ 2\string^-\/e\ +\ p2)\ *\ 2\string^e}}
+\DoxyCodeLine{17461\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ =\ d[k-\/1]\ *\ 10\string^(k-\/1)\ +\ (\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rest)\ *\ 2\string^e}}
+\DoxyCodeLine{17462\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17463\ \ \ \ \ \textcolor{comment}{//\ Now\ generate\ the\ digits\ d[n]\ of\ p1\ from\ left\ to\ right\ (n\ =\ k-\/1,...,0)}}
+\DoxyCodeLine{17464\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17465\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ p1\ =\ d[k-\/1]...d[n]\ *\ 10\string^n\ +\ d[n-\/1]...d[0]}}
+\DoxyCodeLine{17466\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17467\ \ \ \ \ \textcolor{comment}{//\ but\ stop\ as\ soon\ as}}
+\DoxyCodeLine{17468\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17469\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ rest\ *\ 2\string^e\ =\ (d[n-\/1]...d[0]\ *\ 2\string^-\/e\ +\ p2)\ *\ 2\string^e\ <=\ delta\ *\ 2\string^e}}
+\DoxyCodeLine{17470\ }
+\DoxyCodeLine{17471\ \ \ \ \ \textcolor{keywordtype}{int}\ n\ =\ k;}
+\DoxyCodeLine{17472\ \ \ \ \ \textcolor{keywordflow}{while}\ (n\ >\ 0)}
+\DoxyCodeLine{17473\ \ \ \ \ \{}
+\DoxyCodeLine{17474\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Invariants:}}
+\DoxyCodeLine{17475\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ M+\ =\ buffer\ *\ 10\string^n\ +\ (p1\ +\ p2\ *\ 2\string^e)\ \ \ \ (buffer\ =\ 0\ for\ n\ =\ k)}}
+\DoxyCodeLine{17476\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ pow10\ =\ 10\string^(n-\/1)\ <=\ p1\ <\ 10\string^n}}
+\DoxyCodeLine{17477\ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17478\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::uint32\_t\ \mbox{\hyperlink{addm__nll_8cpp_a3fbbd8a3959e76a2bc3455d3bade52dc}{d}}\ =\ p1\ /\ pow10;\ \ \textcolor{comment}{//\ d\ =\ p1\ div\ 10\string^(n-\/1)}}
+\DoxyCodeLine{17479\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::uint32\_t\ r\ =\ p1\ \%\ pow10;\ \ \textcolor{comment}{//\ r\ =\ p1\ mod\ 10\string^(n-\/1)}}
+\DoxyCodeLine{17480\ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17481\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ M+\ =\ buffer\ *\ 10\string^n\ +\ (d\ *\ 10\string^(n-\/1)\ +\ r)\ +\ p2\ *\ 2\string^e}}
+\DoxyCodeLine{17482\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ =\ (buffer\ *\ 10\ +\ d)\ *\ 10\string^(n-\/1)\ +\ (r\ +\ p2\ *\ 2\string^e)}}
+\DoxyCodeLine{17483\ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17484\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{json_8hpp_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(\mbox{\hyperlink{addm__nll_8cpp_a3fbbd8a3959e76a2bc3455d3bade52dc}{d}}\ <=\ 9);}
+\DoxyCodeLine{17485\ \ \ \ \ \ \ \ \ buffer[length++]\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{char}\textcolor{keyword}{>}(\textcolor{charliteral}{'0'}\ +\ \mbox{\hyperlink{addm__nll_8cpp_a3fbbd8a3959e76a2bc3455d3bade52dc}{d}});\ \textcolor{comment}{//\ buffer\ :=\ buffer\ *\ 10\ +\ d}}
+\DoxyCodeLine{17486\ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17487\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ M+\ =\ buffer\ *\ 10\string^(n-\/1)\ +\ (r\ +\ p2\ *\ 2\string^e)}}
+\DoxyCodeLine{17488\ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17489\ \ \ \ \ \ \ \ \ p1\ =\ r;}
+\DoxyCodeLine{17490\ \ \ \ \ \ \ \ \ n-\/-\/;}
+\DoxyCodeLine{17491\ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17492\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ M+\ =\ buffer\ *\ 10\string^n\ +\ (p1\ +\ p2\ *\ 2\string^e)}}
+\DoxyCodeLine{17493\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ pow10\ =\ 10\string^n}}
+\DoxyCodeLine{17494\ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17495\ }
+\DoxyCodeLine{17496\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Now\ check\ if\ enough\ digits\ have\ been\ generated.}}
+\DoxyCodeLine{17497\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute}}
+\DoxyCodeLine{17498\ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17499\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ p1\ +\ p2\ *\ 2\string^e\ =\ (p1\ *\ 2\string^-\/e\ +\ p2)\ *\ 2\string^e\ =\ rest\ *\ 2\string^e}}
+\DoxyCodeLine{17500\ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17501\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Note:}}
+\DoxyCodeLine{17502\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Since\ rest\ and\ delta\ share\ the\ same\ exponent\ e,\ it\ suffices\ to}}
+\DoxyCodeLine{17503\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ compare\ the\ significands.}}
+\DoxyCodeLine{17504\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::uint64\_t\ rest\ =\ (std::uint64\_t\{p1\}\ <<\ -\/one.e)\ +\ p2;}
+\DoxyCodeLine{17505\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (rest\ <=\ delta)}
+\DoxyCodeLine{17506\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{17507\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ V\ =\ buffer\ *\ 10\string^n,\ with\ M-\/\ <=\ V\ <=\ M+.}}
+\DoxyCodeLine{17508\ }
+\DoxyCodeLine{17509\ \ \ \ \ \ \ \ \ \ \ \ \ decimal\_exponent\ +=\ n;}
+\DoxyCodeLine{17510\ }
+\DoxyCodeLine{17511\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ We\ may\ now\ just\ stop.\ But\ instead\ look\ if\ the\ buffer\ could\ be}}
+\DoxyCodeLine{17512\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ decremented\ to\ bring\ V\ closer\ to\ w.}}
+\DoxyCodeLine{17513\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17514\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ pow10\ =\ 10\string^n\ is\ now\ 1\ ulp\ in\ the\ decimal\ representation\ V.}}
+\DoxyCodeLine{17515\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ The\ rounding\ procedure\ works\ with\ diyfp's\ with\ an\ implicit}}
+\DoxyCodeLine{17516\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ exponent\ of\ e.}}
+\DoxyCodeLine{17517\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17518\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ 10\string^n\ =\ (10\string^n\ *\ 2\string^-\/e)\ *\ 2\string^e\ =\ ulp\ *\ 2\string^e}}
+\DoxyCodeLine{17519\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17520\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::uint64\_t\ ten\_n\ =\ std::uint64\_t\{pow10\}\ <<\ -\/one.e;}
+\DoxyCodeLine{17521\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacedetail_1_1dtoa__impl_a73a15efcb5c2157ea0e1375b98ef0e83}{grisu2\_round}}(buffer,\ length,\ dist,\ delta,\ rest,\ ten\_n);}
+\DoxyCodeLine{17522\ }
+\DoxyCodeLine{17523\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{17524\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{17525\ }
+\DoxyCodeLine{17526\ \ \ \ \ \ \ \ \ pow10\ /=\ 10;}
+\DoxyCodeLine{17527\ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17528\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ pow10\ =\ 10\string^(n-\/1)\ <=\ p1\ <\ 10\string^n}}
+\DoxyCodeLine{17529\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Invariants\ restored.}}
+\DoxyCodeLine{17530\ \ \ \ \ \}}
+\DoxyCodeLine{17531\ }
+\DoxyCodeLine{17532\ \ \ \ \ \textcolor{comment}{//\ 2)}}
+\DoxyCodeLine{17533\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17534\ \ \ \ \ \textcolor{comment}{//\ The\ digits\ of\ the\ integral\ part\ have\ been\ generated:}}
+\DoxyCodeLine{17535\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17536\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ M+\ =\ d[k-\/1]...d[1]d[0]\ +\ p2\ *\ 2\string^e}}
+\DoxyCodeLine{17537\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ =\ buffer\ \ \ \ \ \ \ \ \ \ \ \ +\ p2\ *\ 2\string^e}}
+\DoxyCodeLine{17538\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17539\ \ \ \ \ \textcolor{comment}{//\ Now\ generate\ the\ digits\ of\ the\ fractional\ part\ p2\ *\ 2\string^e.}}
+\DoxyCodeLine{17540\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17541\ \ \ \ \ \textcolor{comment}{//\ Note:}}
+\DoxyCodeLine{17542\ \ \ \ \ \textcolor{comment}{//\ No\ decimal\ point\ is\ generated:\ the\ exponent\ is\ adjusted\ instead.}}
+\DoxyCodeLine{17543\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17544\ \ \ \ \ \textcolor{comment}{//\ p2\ actually\ represents\ the\ fraction}}
+\DoxyCodeLine{17545\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17546\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ p2\ *\ 2\string^e}}
+\DoxyCodeLine{17547\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ =\ p2\ /\ 2\string^-\/e}}
+\DoxyCodeLine{17548\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ =\ d[-\/1]\ /\ 10\string^1\ +\ d[-\/2]\ /\ 10\string^2\ +\ ...}}
+\DoxyCodeLine{17549\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17550\ \ \ \ \ \textcolor{comment}{//\ Now\ generate\ the\ digits\ d[-\/m]\ of\ p1\ from\ left\ to\ right\ (m\ =\ 1,2,...)}}
+\DoxyCodeLine{17551\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17552\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ p2\ *\ 2\string^e\ =\ d[-\/1]d[-\/2]...d[-\/m]\ *\ 10\string^-\/m}}
+\DoxyCodeLine{17553\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ 10\string^-\/m\ *\ (d[-\/m-\/1]\ /\ 10\string^1\ +\ d[-\/m-\/2]\ /\ 10\string^2\ +\ ...)}}
+\DoxyCodeLine{17554\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17555\ \ \ \ \ \textcolor{comment}{//\ using}}
+\DoxyCodeLine{17556\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17557\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ 10\string^m\ *\ p2\ =\ ((10\string^m\ *\ p2)\ div\ 2\string^-\/e)\ *\ 2\string^-\/e\ +\ ((10\string^m\ *\ p2)\ mod\ 2\string^-\/e)}}
+\DoxyCodeLine{17558\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ (\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ d)\ *\ 2\string^-\/e\ +\ (\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r)}}
+\DoxyCodeLine{17559\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17560\ \ \ \ \ \textcolor{comment}{//\ or}}
+\DoxyCodeLine{17561\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ 10\string^m\ *\ p2\ *\ 2\string^e\ =\ d\ +\ r\ *\ 2\string^e}}
+\DoxyCodeLine{17562\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17563\ \ \ \ \ \textcolor{comment}{//\ i.e.}}
+\DoxyCodeLine{17564\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17565\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ M+\ =\ buffer\ +\ p2\ *\ 2\string^e}}
+\DoxyCodeLine{17566\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ =\ buffer\ +\ 10\string^-\/m\ *\ (d\ +\ r\ *\ 2\string^e)}}
+\DoxyCodeLine{17567\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ =\ (buffer\ *\ 10\string^m\ +\ d)\ *\ 10\string^-\/m\ +\ 10\string^-\/m\ *\ r\ *\ 2\string^e}}
+\DoxyCodeLine{17568\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17569\ \ \ \ \ \textcolor{comment}{//\ and\ stop\ as\ soon\ as\ 10\string^-\/m\ *\ r\ *\ 2\string^e\ <=\ delta\ *\ 2\string^e}}
+\DoxyCodeLine{17570\ }
+\DoxyCodeLine{17571\ \ \ \ \ \mbox{\hyperlink{json_8hpp_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(p2\ >\ delta);}
+\DoxyCodeLine{17572\ }
+\DoxyCodeLine{17573\ \ \ \ \ \textcolor{keywordtype}{int}\ m\ =\ 0;}
+\DoxyCodeLine{17574\ \ \ \ \ \textcolor{keywordflow}{for}\ (;;)}
+\DoxyCodeLine{17575\ \ \ \ \ \{}
+\DoxyCodeLine{17576\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Invariant:}}
+\DoxyCodeLine{17577\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ M+\ =\ buffer\ *\ 10\string^-\/m\ +\ 10\string^-\/m\ *\ (d[-\/m-\/1]\ /\ 10\ +\ d[-\/m-\/2]\ /\ 10\string^2\ +\ ...)\ *\ 2\string^e}}
+\DoxyCodeLine{17578\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ =\ buffer\ *\ 10\string^-\/m\ +\ 10\string^-\/m\ *\ (p2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )\ *\ 2\string^e}}
+\DoxyCodeLine{17579\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ =\ buffer\ *\ 10\string^-\/m\ +\ 10\string^-\/m\ *\ (1/10\ *\ (10\ *\ p2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )\ *\ 2\string^e}}
+\DoxyCodeLine{17580\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ =\ buffer\ *\ 10\string^-\/m\ +\ 10\string^-\/m\ *\ (1/10\ *\ ((10*p2\ div\ 2\string^-\/e)\ *\ 2\string^-\/e\ +\ (10*p2\ mod\ 2\string^-\/e))\ *\ 2\string^e}}
+\DoxyCodeLine{17581\ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17582\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{json_8hpp_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(p2\ <=\ (std::numeric\_limits<std::uint64\_t>::max)()\ /\ 10);}
+\DoxyCodeLine{17583\ \ \ \ \ \ \ \ \ p2\ *=\ 10;}
+\DoxyCodeLine{17584\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::uint64\_t\ \mbox{\hyperlink{addm__nll_8cpp_a3fbbd8a3959e76a2bc3455d3bade52dc}{d}}\ =\ p2\ >>\ -\/one.e;\ \ \ \ \ \textcolor{comment}{//\ d\ =\ (10\ *\ p2)\ div\ 2\string^-\/e}}
+\DoxyCodeLine{17585\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::uint64\_t\ r\ =\ p2\ \&\ (one.f\ -\/\ 1);\ \textcolor{comment}{//\ r\ =\ (10\ *\ p2)\ mod\ 2\string^-\/e}}
+\DoxyCodeLine{17586\ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17587\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ M+\ =\ buffer\ *\ 10\string^-\/m\ +\ 10\string^-\/m\ *\ (1/10\ *\ (d\ *\ 2\string^-\/e\ +\ r)\ *\ 2\string^e}}
+\DoxyCodeLine{17588\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ =\ buffer\ *\ 10\string^-\/m\ +\ 10\string^-\/m\ *\ (1/10\ *\ (d\ +\ r\ *\ 2\string^e))}}
+\DoxyCodeLine{17589\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ =\ (buffer\ *\ 10\ +\ d)\ *\ 10\string^(-\/m-\/1)\ +\ 10\string^(-\/m-\/1)\ *\ r\ *\ 2\string^e}}
+\DoxyCodeLine{17590\ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17591\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{json_8hpp_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(\mbox{\hyperlink{addm__nll_8cpp_a3fbbd8a3959e76a2bc3455d3bade52dc}{d}}\ <=\ 9);}
+\DoxyCodeLine{17592\ \ \ \ \ \ \ \ \ buffer[length++]\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{char}\textcolor{keyword}{>}(\textcolor{charliteral}{'0'}\ +\ \mbox{\hyperlink{addm__nll_8cpp_a3fbbd8a3959e76a2bc3455d3bade52dc}{d}});\ \textcolor{comment}{//\ buffer\ :=\ buffer\ *\ 10\ +\ d}}
+\DoxyCodeLine{17593\ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17594\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ M+\ =\ buffer\ *\ 10\string^(-\/m-\/1)\ +\ 10\string^(-\/m-\/1)\ *\ r\ *\ 2\string^e}}
+\DoxyCodeLine{17595\ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17596\ \ \ \ \ \ \ \ \ p2\ =\ r;}
+\DoxyCodeLine{17597\ \ \ \ \ \ \ \ \ m++;}
+\DoxyCodeLine{17598\ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17599\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ M+\ =\ buffer\ *\ 10\string^-\/m\ +\ 10\string^-\/m\ *\ p2\ *\ 2\string^e}}
+\DoxyCodeLine{17600\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Invariant\ restored.}}
+\DoxyCodeLine{17601\ }
+\DoxyCodeLine{17602\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ if\ enough\ digits\ have\ been\ generated.}}
+\DoxyCodeLine{17603\ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17604\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ 10\string^-\/m\ *\ p2\ *\ 2\string^e\ <=\ delta\ *\ 2\string^e}}
+\DoxyCodeLine{17605\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ p2\ *\ 2\string^e\ <=\ 10\string^m\ *\ delta\ *\ 2\string^e}}
+\DoxyCodeLine{17606\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p2\ <=\ 10\string^m\ *\ delta}}
+\DoxyCodeLine{17607\ \ \ \ \ \ \ \ \ delta\ *=\ 10;}
+\DoxyCodeLine{17608\ \ \ \ \ \ \ \ \ dist\ \ *=\ 10;}
+\DoxyCodeLine{17609\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (p2\ <=\ delta)}
+\DoxyCodeLine{17610\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{17611\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{17612\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{17613\ \ \ \ \ \}}
+\DoxyCodeLine{17614\ }
+\DoxyCodeLine{17615\ \ \ \ \ \textcolor{comment}{//\ V\ =\ buffer\ *\ 10\string^-\/m,\ with\ M-\/\ <=\ V\ <=\ M+.}}
+\DoxyCodeLine{17616\ }
+\DoxyCodeLine{17617\ \ \ \ \ decimal\_exponent\ -\/=\ m;}
+\DoxyCodeLine{17618\ }
+\DoxyCodeLine{17619\ \ \ \ \ \textcolor{comment}{//\ 1\ ulp\ in\ the\ decimal\ representation\ is\ now\ 10\string^-\/m.}}
+\DoxyCodeLine{17620\ \ \ \ \ \textcolor{comment}{//\ Since\ delta\ and\ dist\ are\ now\ scaled\ by\ 10\string^m,\ we\ need\ to\ do\ the}}
+\DoxyCodeLine{17621\ \ \ \ \ \textcolor{comment}{//\ same\ with\ ulp\ in\ order\ to\ keep\ the\ units\ in\ sync.}}
+\DoxyCodeLine{17622\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17623\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ 10\string^m\ *\ 10\string^-\/m\ =\ 1\ =\ 2\string^-\/e\ *\ 2\string^e\ =\ ten\_m\ *\ 2\string^e}}
+\DoxyCodeLine{17624\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17625\ \ \ \ \ \textcolor{keyword}{const}\ std::uint64\_t\ ten\_m\ =\ one.f;}
+\DoxyCodeLine{17626\ \ \ \ \ \mbox{\hyperlink{namespacedetail_1_1dtoa__impl_a73a15efcb5c2157ea0e1375b98ef0e83}{grisu2\_round}}(buffer,\ length,\ dist,\ delta,\ p2,\ ten\_m);}
+\DoxyCodeLine{17627\ }
+\DoxyCodeLine{17628\ \ \ \ \ \textcolor{comment}{//\ By\ construction\ this\ algorithm\ generates\ the\ shortest\ possible\ decimal}}
+\DoxyCodeLine{17629\ \ \ \ \ \textcolor{comment}{//\ number\ (Loitsch,\ Theorem\ 6.2)\ which\ rounds\ back\ to\ w.}}
+\DoxyCodeLine{17630\ \ \ \ \ \textcolor{comment}{//\ For\ an\ input\ number\ of\ precision\ p,\ at\ least}}
+\DoxyCodeLine{17631\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17632\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ N\ =\ 1\ +\ ceil(p\ *\ log\_10(2))}}
+\DoxyCodeLine{17633\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17634\ \ \ \ \ \textcolor{comment}{//\ decimal\ digits\ are\ sufficient\ to\ identify\ all\ binary\ floating-\/point}}
+\DoxyCodeLine{17635\ \ \ \ \ \textcolor{comment}{//\ numbers\ (Matula,\ "{}In-\/and-\/Out\ conversions"{}).}}
+\DoxyCodeLine{17636\ \ \ \ \ \textcolor{comment}{//\ This\ implies\ that\ the\ algorithm\ does\ not\ produce\ more\ than\ N\ decimal}}
+\DoxyCodeLine{17637\ \ \ \ \ \textcolor{comment}{//\ digits.}}
+\DoxyCodeLine{17638\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17639\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ N\ =\ 17\ for\ p\ =\ 53\ (IEEE\ double\ precision)}}
+\DoxyCodeLine{17640\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ N\ =\ 9\ \ for\ p\ =\ 24\ (IEEE\ single\ precision)}}
+\DoxyCodeLine{17641\ \}}
+
+\end{DoxyCode}
+\Hypertarget{namespacedetail_1_1dtoa__impl_a73a15efcb5c2157ea0e1375b98ef0e83}\label{namespacedetail_1_1dtoa__impl_a73a15efcb5c2157ea0e1375b98ef0e83} 
+\index{detail::dtoa\_impl@{detail::dtoa\_impl}!grisu2\_round@{grisu2\_round}}
+\index{grisu2\_round@{grisu2\_round}!detail::dtoa\_impl@{detail::dtoa\_impl}}
+\doxysubsubsection{\texorpdfstring{grisu2\_round()}{grisu2\_round()}}
+{\footnotesize\ttfamily void detail\+::dtoa\+\_\+impl\+::grisu2\+\_\+round (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{buf,  }\item[{int}]{len,  }\item[{std\+::uint64\+\_\+t}]{dist,  }\item[{std\+::uint64\+\_\+t}]{delta,  }\item[{std\+::uint64\+\_\+t}]{rest,  }\item[{std\+::uint64\+\_\+t}]{ten\+\_\+k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{json_8hpp_source_l17367}{17367}} of file \mbox{\hyperlink{json_8hpp_source}{json.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{17369\ \{}
+\DoxyCodeLine{17370\ \ \ \ \ \mbox{\hyperlink{json_8hpp_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(len\ >=\ 1);}
+\DoxyCodeLine{17371\ \ \ \ \ \mbox{\hyperlink{json_8hpp_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(dist\ <=\ delta);}
+\DoxyCodeLine{17372\ \ \ \ \ \mbox{\hyperlink{json_8hpp_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(rest\ <=\ delta);}
+\DoxyCodeLine{17373\ \ \ \ \ \mbox{\hyperlink{json_8hpp_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(ten\_k\ >\ 0);}
+\DoxyCodeLine{17374\ }
+\DoxyCodeLine{17375\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ delta\ -\/-\/-\/-\/>}}
+\DoxyCodeLine{17376\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <-\/-\/-\/-\/\ dist\ -\/-\/-\/-\/-\/-\/-\/-\/-\/>}}
+\DoxyCodeLine{17377\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/[-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/]-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{17378\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ M-\/\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ w\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ M+}}
+\DoxyCodeLine{17379\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17380\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ten\_k}}
+\DoxyCodeLine{17381\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <-\/-\/-\/-\/-\/-\/>}}
+\DoxyCodeLine{17382\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <-\/-\/-\/-\/\ rest\ -\/-\/-\/-\/>}}
+\DoxyCodeLine{17383\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/[-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+-\/-\/-\/-\/+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/]-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{17384\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ w\ \ \ \ V}}
+\DoxyCodeLine{17385\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ buf\ *\ 10\string^k}}
+\DoxyCodeLine{17386\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{17387\ \ \ \ \ \textcolor{comment}{//\ ten\_k\ represents\ a\ unit-\/in-\/the-\/last-\/place\ in\ the\ decimal\ representation}}
+\DoxyCodeLine{17388\ \ \ \ \ \textcolor{comment}{//\ stored\ in\ buf.}}
+\DoxyCodeLine{17389\ \ \ \ \ \textcolor{comment}{//\ Decrement\ buf\ by\ ten\_k\ while\ this\ takes\ buf\ closer\ to\ w.}}
+\DoxyCodeLine{17390\ }
+\DoxyCodeLine{17391\ \ \ \ \ \textcolor{comment}{//\ The\ tests\ are\ written\ in\ this\ order\ to\ avoid\ overflow\ in\ unsigned}}
+\DoxyCodeLine{17392\ \ \ \ \ \textcolor{comment}{//\ integer\ arithmetic.}}
+\DoxyCodeLine{17393\ }
+\DoxyCodeLine{17394\ \ \ \ \ \textcolor{keywordflow}{while}\ (rest\ <\ dist}
+\DoxyCodeLine{17395\ \ \ \ \ \ \ \ \ \ \ \ \ \&\&\ delta\ -\/\ rest\ >=\ ten\_k}
+\DoxyCodeLine{17396\ \ \ \ \ \ \ \ \ \ \ \ \ \&\&\ (rest\ +\ ten\_k\ <\ dist\ ||\ dist\ -\/\ rest\ >\ rest\ +\ ten\_k\ -\/\ dist))}
+\DoxyCodeLine{17397\ \ \ \ \ \{}
+\DoxyCodeLine{17398\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{json_8hpp_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(buf[len\ -\/\ 1]\ !=\ \textcolor{charliteral}{'0'});}
+\DoxyCodeLine{17399\ \ \ \ \ \ \ \ \ buf[len\ -\/\ 1]-\/-\/;}
+\DoxyCodeLine{17400\ \ \ \ \ \ \ \ \ rest\ +=\ ten\_k;}
+\DoxyCodeLine{17401\ \ \ \ \ \}}
+\DoxyCodeLine{17402\ \}}
+
+\end{DoxyCode}
+\Hypertarget{namespacedetail_1_1dtoa__impl_a3c879bf97b806cacbcbb2da07a5ff5c8}\label{namespacedetail_1_1dtoa__impl_a3c879bf97b806cacbcbb2da07a5ff5c8} 
+\index{detail::dtoa\_impl@{detail::dtoa\_impl}!reinterpret\_bits@{reinterpret\_bits}}
+\index{reinterpret\_bits@{reinterpret\_bits}!detail::dtoa\_impl@{detail::dtoa\_impl}}
+\doxysubsubsection{\texorpdfstring{reinterpret\_bits()}{reinterpret\_bits()}}
+{\footnotesize\ttfamily template$<$typename Target , typename Source $>$ \\
+Target detail\+::dtoa\+\_\+impl\+::reinterpret\+\_\+bits (\begin{DoxyParamCaption}\item[{const Source}]{source }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{json_8hpp_source_l16869}{16869}} of file \mbox{\hyperlink{json_8hpp_source}{json.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{16870\ \{}
+\DoxyCodeLine{16871\ \ \ \ \ \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(Target)\ ==\ \textcolor{keyword}{sizeof}(Source),\ \textcolor{stringliteral}{"{}size\ mismatch"{}});}
+\DoxyCodeLine{16872\ }
+\DoxyCodeLine{16873\ \ \ \ \ Target\ target;}
+\DoxyCodeLine{16874\ \ \ \ \ std::memcpy(\&target,\ \&source,\ \textcolor{keyword}{sizeof}(Source));}
+\DoxyCodeLine{16875\ \ \ \ \ \textcolor{keywordflow}{return}\ target;}
+\DoxyCodeLine{16876\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacedetail_1_1dtoa__impl_a95c569b7627a9372686f1f77d73e8660}\label{namespacedetail_1_1dtoa__impl_a95c569b7627a9372686f1f77d73e8660} 
+\index{detail::dtoa\_impl@{detail::dtoa\_impl}!kAlpha@{kAlpha}}
+\index{kAlpha@{kAlpha}!detail::dtoa\_impl@{detail::dtoa\_impl}}
+\doxysubsubsection{\texorpdfstring{kAlpha}{kAlpha}}
+{\footnotesize\ttfamily constexpr int detail\+::dtoa\+\_\+impl\+::k\+Alpha = -\/60\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{json_8hpp_source_l17132}{17132}} of file \mbox{\hyperlink{json_8hpp_source}{json.\+hpp}}.
+
+\Hypertarget{namespacedetail_1_1dtoa__impl_ae152a095d2dd1a6dd41ef8ad39c26e19}\label{namespacedetail_1_1dtoa__impl_ae152a095d2dd1a6dd41ef8ad39c26e19} 
+\index{detail::dtoa\_impl@{detail::dtoa\_impl}!kGamma@{kGamma}}
+\index{kGamma@{kGamma}!detail::dtoa\_impl@{detail::dtoa\_impl}}
+\doxysubsubsection{\texorpdfstring{kGamma}{kGamma}}
+{\footnotesize\ttfamily constexpr int detail\+::dtoa\+\_\+impl\+::k\+Gamma = -\/32\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{json_8hpp_source_l17133}{17133}} of file \mbox{\hyperlink{json_8hpp_source}{json.\+hpp}}.
+

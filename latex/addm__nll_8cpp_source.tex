@@ -1,0 +1,90 @@
+\doxysection{addm\+\_\+nll.\+cpp}
+\hypertarget{addm__nll_8cpp_source}{}\label{addm__nll_8cpp_source}\index{src/addm\_nll.cpp@{src/addm\_nll.cpp}}
+\mbox{\hyperlink{addm__nll_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <vector>}\ }
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <random>}}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <ctime>}}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{addm_8h}{addm.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ddm_8h}{ddm.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{util_8h}{util.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00011}\mbox{\hyperlink{addm__nll_8cpp_a3fbbd8a3959e76a2bc3455d3bade52dc}{00011}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{addm__nll_8cpp_a3fbbd8a3959e76a2bc3455d3bade52dc}{d}}\ =\ 0.005;}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00012}\mbox{\hyperlink{addm__nll_8cpp_ae11aeeb83e22b5b7f1e6b4347eb1daa6}{00012}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{addm__nll_8cpp_ae11aeeb83e22b5b7f1e6b4347eb1daa6}{sigma}}\ =\ 0.07;}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00013}\mbox{\hyperlink{addm__nll_8cpp_aadfc5c227ca658a29a59a0ce6fc15792}{00013}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{addm__nll_8cpp_aadfc5c227ca658a29a59a0ce6fc15792}{theta}}\ =\ 0.5;}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00014}\mbox{\hyperlink{addm__nll_8cpp_a7ae0aa3d3c3bd4dc2fd68df5f46bb05f}{00014}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{addm__nll_8cpp_a7ae0aa3d3c3bd4dc2fd68df5f46bb05f}{barrier}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00015}\mbox{\hyperlink{addm__nll_8cpp_a66ae2c9a86cab7b4970ecc123c799c45}{00015}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{addm__nll_8cpp_a66ae2c9a86cab7b4970ecc123c799c45}{valueLeft}}\ =\ 3;\ }
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00017}\mbox{\hyperlink{addm__nll_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00017}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{addm__nll_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()\ \{}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00018}00018\ \ \ \ \ std::vector<aDDMTrial>\ trials;\ }
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00019}00019\ \ \ \ \ std::ifstream\ file(\textcolor{stringliteral}{"{}results/addm\_simulations.csv"{}});}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00020}00020\ \ \ \ \ std::string\ line;}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00021}00021\ \ \ \ \ std::getline(file,\ line);}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00023}00023\ \ \ \ \ \textcolor{keywordtype}{int}\ ID;}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00024}00024\ \ \ \ \ \textcolor{keywordtype}{int}\ choice;\ }
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00025}00025\ \ \ \ \ \textcolor{keywordtype}{int}\ RT;\ }
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00026}00026\ \ \ \ \ \textcolor{keywordtype}{int}\ valDiff;}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{keywordtype}{int}\ prevID;}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00028}00028\ \ \ \ \ \textcolor{keywordtype}{int}\ fItem;}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00029}00029\ \ \ \ \ \textcolor{keywordtype}{int}\ fTime;\ }
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00030}00030\ \ \ \ \ \textcolor{keywordtype}{bool}\ firstIter\ =\ \textcolor{keyword}{true};\ }
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00031}00031\ \ \ \ \ std::vector<int>\ fixItem;}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00032}00032\ \ \ \ \ std::vector<int>\ fixTime;\ }
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00034}00034\ \ \ \ \ \mbox{\hyperlink{classa_d_d_m_trial}{aDDMTrial}}\ adt\ =\ \mbox{\hyperlink{classa_d_d_m_trial}{aDDMTrial}}();}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00035}00035\ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(file,\ line))\ \{}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ std::stringstream\ ss(line);}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ std::string\ field;}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ std::getline(ss,\ field,\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ ID\ =\ std::stoi(field);}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ std::getline(ss,\ field,\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ choice\ =\ std::stoi(field);}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ std::getline(ss,\ field,\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ RT\ =\ std::stoi(field);}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ std::getline(ss,\ field,\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ valDiff\ =\ std::stoi(field);}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ std::getline(ss,\ field,\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ fItem\ =\ std::stoi(field);}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ std::getline(ss,\ field,\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ fTime\ =\ std::stoi(field);}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ID\ ==\ prevID\ \&\&\ !firstIter)\ \{}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ adt.\mbox{\hyperlink{classa_d_d_m_trial_a8b7e649ce0fded823e1191c2f9675cf2}{fixItem}}.push\_back(fItem);}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ adt.\mbox{\hyperlink{classa_d_d_m_trial_adf04171bada997ac559e29629524da2f}{fixTime}}.push\_back(fTime);}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (firstIter)\ \{}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ firstIter\ =\ \textcolor{keyword}{false};\ }
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ trials.push\_back(adt);}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ adt\ =\ \mbox{\hyperlink{classa_d_d_m_trial}{aDDMTrial}}(RT,\ choice,\ \mbox{\hyperlink{addm__nll_8cpp_a66ae2c9a86cab7b4970ecc123c799c45}{valueLeft}},\ \mbox{\hyperlink{addm__nll_8cpp_a66ae2c9a86cab7b4970ecc123c799c45}{valueLeft}}\ -\/\ valDiff);}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ adt.\mbox{\hyperlink{classa_d_d_m_trial_a8b7e649ce0fded823e1191c2f9675cf2}{fixItem}}.push\_back(fItem);}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ adt.\mbox{\hyperlink{classa_d_d_m_trial_adf04171bada997ac559e29629524da2f}{fixTime}}.push\_back(fTime);}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ prevID\ =\ ID;}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00065}00065\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00066}00066\ \ \ \ \ trials.push\_back(adt);}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00067}00067\ \ \ \ \ file.close();}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00068}00068\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Counted\ "{}}\ <<\ trials.size()\ <<\ \textcolor{stringliteral}{"{}\ trials."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00070}00070\ \ \ \ \ \mbox{\hyperlink{classa_d_d_m}{aDDM}}\ addm\ =\ \mbox{\hyperlink{classa_d_d_m}{aDDM}}(\mbox{\hyperlink{addm__nll_8cpp_a3fbbd8a3959e76a2bc3455d3bade52dc}{d}},\ \mbox{\hyperlink{addm__nll_8cpp_ae11aeeb83e22b5b7f1e6b4347eb1daa6}{sigma}},\ \mbox{\hyperlink{addm__nll_8cpp_aadfc5c227ca658a29a59a0ce6fc15792}{theta}},\ \mbox{\hyperlink{addm__nll_8cpp_a7ae0aa3d3c3bd4dc2fd68df5f46bb05f}{barrier}});}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00072}00072\ \ \ \ \ std::ofstream\ \mbox{\hyperlink{test_8cpp_ae3c7e522825338c52b9d66891f9642a5}{fp}};}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00073}00073\ \ \ \ \ \mbox{\hyperlink{test_8cpp_ae3c7e522825338c52b9d66891f9642a5}{fp}}.open(\textcolor{stringliteral}{"{}results/addm\_simulations\_prob.csv"{}});}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00074}00074\ \ \ \ \ \mbox{\hyperlink{test_8cpp_ae3c7e522825338c52b9d66891f9642a5}{fp}}\ <<\ \textcolor{stringliteral}{"{}choice,RT,p\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00076}00076\ \ \ \ \ \textcolor{keywordtype}{double}\ NLL\ =\ 0;\ }
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00077}00077\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classa_d_d_m_trial}{aDDMTrial}}\ adt\ :\ trials)\ \{}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ prob\ =\ addm.\mbox{\hyperlink{classa_d_d_m_a9ccee0abe15711f09f8eee0a782f3e06}{getTrialLikelihood}}(adt);}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{test_8cpp_ae3c7e522825338c52b9d66891f9642a5}{fp}}\ <<\ adt.\mbox{\hyperlink{class_d_d_m_trial_a941813496795b5c0f16d068444abf483}{choice}}\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ adt.\mbox{\hyperlink{class_d_d_m_trial_a1fed499f6f800dcf08331b0f08d4570b}{RT}}\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ prob\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ NLL\ +=\ -\/log(prob);}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00081}00081\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00082}00082\ \ \ \ \ \mbox{\hyperlink{test_8cpp_ae3c7e522825338c52b9d66891f9642a5}{fp}}.close();}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00083}00083\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}NLL:\ "{}}\ <<\ NLL\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{addm__nll_8cpp_source_l00084}00084\ \}}
+
+\end{DoxyCode}

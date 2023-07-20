@@ -1,0 +1,84 @@
+\doxysection{include/addm.h File Reference}
+\hypertarget{addm_8h}{}\label{addm_8h}\index{include/addm.h@{include/addm.h}}
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include \"{}ddm.\+h\"{}}\newline
+Include dependency graph for addm.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_fixation_data}{Fixation\+Data}}
+\item 
+class \mbox{\hyperlink{classa_d_d_m_trial}{a\+DDMTrial}}
+\item 
+class \mbox{\hyperlink{classa_d_d_m}{a\+DDM}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{addm_8h_ac73e0abca434ac872480feb6a7cf4c56}{fix\+Dists}} = map$<$ int, vector$<$ float $>$ $>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{addm_8h_af2186cd8aff37cd7fa28ad2dcb706094}{a\+DDMParallel\+NLL}} (\mbox{\hyperlink{classa_d_d_m}{a\+DDM}} addm, std\+::vector$<$ \mbox{\hyperlink{classa_d_d_m_trial}{a\+DDMTrial}} $>$ trials)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{addm_8h_ac73e0abca434ac872480feb6a7cf4c56}\label{addm_8h_ac73e0abca434ac872480feb6a7cf4c56} 
+\index{addm.h@{addm.h}!fixDists@{fixDists}}
+\index{fixDists@{fixDists}!addm.h@{addm.h}}
+\doxysubsubsection{\texorpdfstring{fixDists}{fixDists}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{addm_8h_ac73e0abca434ac872480feb6a7cf4c56}{fix\+Dists}} =  map$<$int, vector$<$float$>$ $>$}
+
+
+
+Definition at line \mbox{\hyperlink{addm_8h_source_l00011}{11}} of file \mbox{\hyperlink{addm_8h_source}{addm.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{addm_8h_af2186cd8aff37cd7fa28ad2dcb706094}\label{addm_8h_af2186cd8aff37cd7fa28ad2dcb706094} 
+\index{addm.h@{addm.h}!aDDMParallelNLL@{aDDMParallelNLL}}
+\index{aDDMParallelNLL@{aDDMParallelNLL}!addm.h@{addm.h}}
+\doxysubsubsection{\texorpdfstring{aDDMParallelNLL()}{aDDMParallelNLL()}}
+{\footnotesize\ttfamily double a\+DDMParallel\+NLL (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classa_d_d_m}{a\+DDM}}}]{addm,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classa_d_d_m_trial}{a\+DDMTrial}} $>$}]{trials }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{addm_8cpp_source_l00496}{496}} of file \mbox{\hyperlink{addm_8cpp_source}{addm.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00496\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00497\ \ \ \ \ \textcolor{keywordtype}{double}\ NLL\ =\ 0;\ }
+\DoxyCodeLine{00498\ }
+\DoxyCodeLine{00499\ \ \ \ \ \textcolor{comment}{//\ \#ifndef\ \_\_NVCC\_\_}}
+\DoxyCodeLine{00500\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_b_s_1_1thread__pool}{BS::thread\_pool}}\ pool;}
+\DoxyCodeLine{00501\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_b_s_1_1multi__future}{BS::multi\_future<double>}}\ futs\ =\ pool.\mbox{\hyperlink{class_b_s_1_1thread__pool_ab63b1085ad48295d7f653cbb36a286be}{parallelize\_loop}}(}
+\DoxyCodeLine{00502\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ trials.size(),\ }
+\DoxyCodeLine{00503\ \ \ \ \ \ \ \ \ \ \ \ \ [\&addm,\ \&trials](\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ a,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ b)\ \{}
+\DoxyCodeLine{00504\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ double\ block\_total\ =\ 0;\ }
+\DoxyCodeLine{00505\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ for\ (int\ i\ =\ a;\ i\ <\ b;\ ++i)\ \{}
+\DoxyCodeLine{00506\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ block\_total\ +=\ -\/log(}
+\DoxyCodeLine{00507\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ addm.getTrialLikelihood(trials[i])}
+\DoxyCodeLine{00508\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00509\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00510\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ block\_total;}
+\DoxyCodeLine{00511\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00512\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00513\ \ \ \ \ \ \ \ \ std::vector<double>\ totals\ =\ futs.get();}
+\DoxyCodeLine{00514\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ t\ :\ totals)\ \{}
+\DoxyCodeLine{00515\ \ \ \ \ \ \ \ \ \ \ \ \ NLL\ +=\ t;\ }
+\DoxyCodeLine{00516\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00517\ \ \ \ \ \textcolor{comment}{//\ \#endif\ }}
+\DoxyCodeLine{00518\ }
+\DoxyCodeLine{00519\ \ \ \ \ \textcolor{keywordflow}{return}\ NLL;}
+\DoxyCodeLine{00520\ \}}
+
+\end{DoxyCode}
