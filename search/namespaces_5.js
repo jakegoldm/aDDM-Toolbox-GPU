@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['json_5fliterals_0',['json_literals',['../namespaceliterals_1_1json__literals.html',1,'literals']]],
-  ['literals_1',['literals',['../namespaceliterals.html',1,'']]]
+  ['vd_5fdists_0',['vd_dists',['../namespacevd__dists.html',1,'']]]
 ];

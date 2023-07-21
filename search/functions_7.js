@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['has_5fsubtype_0',['has_subtype',['../classbyte__container__with__subtype.html#a793fab04ad06741b6909dde032d9ea35',1,'byte_container_with_subtype']]],
-  ['hash_1',['hash',['../namespacedetail.html#a9dd43d16a6a490b032ceaca358755a29',1,'detail']]]
+  ['printmatrix_0',['printMatrix',['../util_8h.html#a81800961a300ff0d4bdaaa7ee2e97ff8',1,'util.h']]],
+  ['probabilitydensityfunction_1',['probabilityDensityFunction',['../util_8h.html#a3c70684bbd5c18365b967d158305e919',1,'probabilityDensityFunction(float mean, float sigma, float x):&#160;util.cpp'],['../util_8cpp.html#a3c70684bbd5c18365b967d158305e919',1,'probabilityDensityFunction(float mean, float sigma, float x):&#160;util.cpp']]]
 ];

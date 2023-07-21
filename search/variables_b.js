@@ -1,11 +1,7 @@
 var searchData=
 [
-  ['m_5fdata_0',['m_data',['../classbasic__json.html#a4f7fd3c3afd2abb77797652506ab6bc0',1,'basic_json']]],
-  ['m_5fit_1',['m_it',['../classdetail_1_1iter__impl.html#a79b7b8c6b778d9f7e76b086b45d9ea2e',1,'detail::iter_impl']]],
-  ['m_5fvalue_2',['m_value',['../classbasic__json.html#acd0f167153f047a246b51858d7c921b8',1,'basic_json']]],
-  ['min_5fd_3',['min_d',['../namespaceaddm__mle.html#a53e92352795005fd1fc73be01ffb047a',1,'addm_mle']]],
-  ['min_5fnll_5fidx_4',['min_nll_idx',['../namespaceaddm__mle.html#a25fca0cbbec6a115e2a6870b0d85875b',1,'addm_mle']]],
-  ['min_5fsigma_5',['min_sigma',['../namespaceaddm__mle.html#a4f98a94fe07bb4b01279b1eb6c92ae9e',1,'addm_mle']]],
-  ['min_5ftheta_6',['min_theta',['../namespaceaddm__mle.html#aa49d989d55f6d647dfa251e3024b1af4',1,'addm_mle']]],
-  ['minus_7',['minus',['../structdetail_1_1dtoa__impl_1_1boundaries.html#aa3b1c7a566175a9ca2f23875dbbbccc4',1,'detail::dtoa_impl::boundaries']]]
+  ['valdiffs_0',['valDiffs',['../addm__simulate_8cpp.html#a918c56381f398e42c3dc1d018b0016bd',1,'valDiffs:&#160;addm_simulate.cpp'],['../ddm__simulate_8cpp.html#a918c56381f398e42c3dc1d018b0016bd',1,'valDiffs:&#160;ddm_simulate.cpp'],['../test_8cpp.html#a918c56381f398e42c3dc1d018b0016bd',1,'valDiffs:&#160;test.cpp']]],
+  ['validfixdisttypes_1',['validFixDistTypes',['../util_8h.html#a99cfa00f5e7249d86df14b3f97b01d5e',1,'validFixDistTypes:&#160;util.cpp'],['../util_8cpp.html#a99cfa00f5e7249d86df14b3f97b01d5e',1,'validFixDistTypes:&#160;util.cpp']]],
+  ['valueleft_2',['valueLeft',['../class_d_d_m_trial.html#ae949e54554e10660f73878a07a95d14d',1,'DDMTrial::valueLeft'],['../addm__mle_8cpp.html#a66ae2c9a86cab7b4970ecc123c799c45',1,'valueLeft:&#160;addm_mle.cpp'],['../addm__mle__thread_8cpp.html#a66ae2c9a86cab7b4970ecc123c799c45',1,'valueLeft:&#160;addm_mle_thread.cpp'],['../addm__nll_8cpp.html#a66ae2c9a86cab7b4970ecc123c799c45',1,'valueLeft:&#160;addm_nll.cpp'],['../addm__nll__thread_8cpp.html#a66ae2c9a86cab7b4970ecc123c799c45',1,'valueLeft:&#160;addm_nll_thread.cpp'],['../ddm__mle_8cpp.html#a66ae2c9a86cab7b4970ecc123c799c45',1,'valueLeft:&#160;ddm_mle.cpp'],['../ddm__mle__thread_8cpp.html#a66ae2c9a86cab7b4970ecc123c799c45',1,'valueLeft:&#160;ddm_mle_thread.cpp'],['../ddm__nll_8cpp.html#a66ae2c9a86cab7b4970ecc123c799c45',1,'valueLeft:&#160;ddm_nll.cpp'],['../ddm__nll__thread_8cpp.html#a66ae2c9a86cab7b4970ecc123c799c45',1,'valueLeft:&#160;ddm_nll_thread.cpp']]],
+  ['valueright_3',['valueRight',['../class_d_d_m_trial.html#a9e1a0900b92b8d16fb3bd49894c9dc2c',1,'DDMTrial']]]
 ];

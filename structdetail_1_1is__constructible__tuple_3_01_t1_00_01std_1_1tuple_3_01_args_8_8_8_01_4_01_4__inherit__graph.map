@@ -1,7 +1,0 @@
-<map id="detail::is_constructible_tuple&lt; T1, std::tuple&lt; Args... &gt; &gt;" name="detail::is_constructible_tuple&lt; T1, std::tuple&lt; Args... &gt; &gt;">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,183,155,238"/>
-<area shape="rect" id="Node000002" href="$structdetail_1_1conjunction.html" title=" " alt="" coords="14,79,146,135"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="83,150,83,182,77,182,77,150"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="31,5,129,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="83,46,83,78,77,78,77,46"/>
-</map>

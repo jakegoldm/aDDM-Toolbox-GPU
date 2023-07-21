@@ -1,12 +1,16 @@
 var searchData=
 [
-  ['binary_5freader_0',['binary_reader',['../classbasic__json.html#aa226ed5103dfd10e27e562d35a3a106b',1,'basic_json']]],
-  ['binary_5fwriter_1',['binary_writer',['../classbasic__json.html#a69d491bbda88ade6d3c7a2b11309e8bf',1,'basic_json']]],
-  ['exception_2',['exception',['../classbasic__json.html#abdcb15d025676b4d3db0f32a50f4393f',1,'basic_json']]],
-  ['iter_5fimpl_3',['iter_impl',['../classbasic__json.html#a842e5c7ca096025c18b11e715d3401f4',1,'basic_json']]],
-  ['json_5fliterals_4',['json_literals',['../namespaceliterals_1_1json__literals.html',1,'']]],
-  ['json_5fpointer_5',['json_pointer',['../classbasic__json.html#a43f901b14cf3f7135269b0c75c9ac233',1,'basic_json']]],
-  ['json_5fsax_5fdom_5fcallback_5fparser_6',['json_sax_dom_callback_parser',['../classbasic__json.html#a95574da8d12905ea99dc348934c837da',1,'basic_json']]],
-  ['json_5fsax_5fdom_5fparser_7',['json_sax_dom_parser',['../classbasic__json.html#a47aabb1eceae32e8a6e8e7f0ff34be60',1,'basic_json']]],
-  ['parser_8',['parser',['../classbasic__json.html#ac8f3125911eb018ef4ab00d879487baf',1,'basic_json']]]
+  ['addm_0',['aDDM',['../classa_d_d_m.html',1,'aDDM'],['../classa_d_d_m.html#ad9ecaeec702acd80c74d483ca653524d',1,'aDDM::aDDM()']]],
+  ['addm_2ecpp_1',['addm.cpp',['../addm_8cpp.html',1,'']]],
+  ['addm_2eh_2',['addm.h',['../addm_8h.html',1,'']]],
+  ['addm_5fmle_3',['addm_mle',['../namespaceaddm__mle.html',1,'']]],
+  ['addm_5fmle_2ecpp_4',['addm_mle.cpp',['../addm__mle_8cpp.html',1,'']]],
+  ['addm_5fmle_2epy_5',['addm_mle.py',['../addm__mle_8py.html',1,'']]],
+  ['addm_5fmle_5fthread_2ecpp_6',['addm_mle_thread.cpp',['../addm__mle__thread_8cpp.html',1,'']]],
+  ['addm_5fnll_2ecpp_7',['addm_nll.cpp',['../addm__nll_8cpp.html',1,'']]],
+  ['addm_5fnll_5fthread_2ecpp_8',['addm_nll_thread.cpp',['../addm__nll__thread_8cpp.html',1,'']]],
+  ['addm_5fsimulate_2ecpp_9',['addm_simulate.cpp',['../addm__simulate_8cpp.html',1,'']]],
+  ['addmexportdata_10',['aDDMexportData',['../util_8cpp.html#a97aa8641a43699dcdbb5a052c14cfee1',1,'aDDMexportData(aDDM addm, aDDMTrial adt):&#160;util.cpp'],['../util_8h.html#a97aa8641a43699dcdbb5a052c14cfee1',1,'aDDMexportData(aDDM addm, aDDMTrial adt):&#160;util.cpp']]],
+  ['addmparallelnll_11',['aDDMParallelNLL',['../addm_8cpp.html#af2186cd8aff37cd7fa28ad2dcb706094',1,'aDDMParallelNLL(aDDM addm, std::vector&lt; aDDMTrial &gt; trials):&#160;addm.cpp'],['../addm_8h.html#af2186cd8aff37cd7fa28ad2dcb706094',1,'aDDMParallelNLL(aDDM addm, std::vector&lt; aDDMTrial &gt; trials):&#160;addm.cpp']]],
+  ['addmtrial_12',['aDDMTrial',['../classa_d_d_m_trial.html#ae406a1f1ae278a292421caedafda67a2',1,'aDDMTrial::aDDMTrial()'],['../classa_d_d_m_trial.html#aa10527b5851a8395529eff1e8ad86adc',1,'aDDMTrial::aDDMTrial(unsigned int RT, int choice, int valueLeft, int valueRight, vector&lt; int &gt; fixItem={}, vector&lt; int &gt; fixTime={}, vector&lt; float &gt; fixRDV={}, float uninterruptedLastFixTime=0)'],['../classa_d_d_m_trial.html',1,'aDDMTrial']]]
 ];

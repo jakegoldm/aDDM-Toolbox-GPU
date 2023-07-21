@@ -96,26 +96,6 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="time__diff_8py_source.html#l00009">9</a> of file <a class="el" href="time__diff_8py_source.html">time_diff.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    9</span><span class="keyword">def </span><a class="code hl_function" href="addm__mle_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>():</div>
-<div class="line"><span class="lineno">   10</span>    py_time = 1087</div>
-<div class="line"><span class="lineno">   11</span> </div>
-<div class="line"><span class="lineno">   12</span>    df = pd.read_csv(<span class="stringliteral">&quot;results/test_addm.csv&quot;</span>)</div>
-<div class="line"><span class="lineno">   13</span>    times = df[<span class="stringliteral">&quot;time&quot;</span>]</div>
-<div class="line"><span class="lineno">   14</span>    avg = np.mean(times)</div>
-<div class="line"><span class="lineno">   15</span> </div>
-<div class="line"><span class="lineno">   16</span>    xaxis = (<span class="stringliteral">&quot;C++ CPU&quot;</span>, <span class="stringliteral">&quot;Python&quot;</span>)</div>
-<div class="line"><span class="lineno">   17</span>    yaxis = (avg, py_time)</div>
-<div class="line"><span class="lineno">   18</span> </div>
-<div class="line"><span class="lineno">   19</span>    plt.bar(xaxis, yaxis, align=<span class="stringliteral">&quot;center&quot;</span>)</div>
-<div class="line"><span class="lineno">   20</span>    plt.xticks(np.arange(len(xaxis)), xaxis)</div>
-<div class="line"><span class="lineno">   21</span>    plt.ylabel(<span class="stringliteral">&quot;Time (s)&quot;</span>)</div>
-<div class="line"><span class="lineno">   22</span>    plt.title(<span class="stringliteral">&quot;aDDM MLE Performance Comparison&quot;</span>)</div>
-<div class="line"><span class="lineno">   23</span> </div>
-<div class="line"><span class="lineno">   24</span>    plt.show()</div>
-<div class="line"><span class="lineno">   25</span> </div>
-<div class="ttc" id="aaddm__mle_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="addm__mle_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition</b> <a href="addm__mle_8cpp_source.html#l00018">addm_mle.cpp:18</a></div></div>
-</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

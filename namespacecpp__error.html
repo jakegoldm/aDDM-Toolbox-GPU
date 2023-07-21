@@ -96,38 +96,6 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="cpp__error_8py_source.html#l00008">8</a> of file <a class="el" href="cpp__error_8py_source.html">cpp_error.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    8</span><span class="keyword">def </span><a class="code hl_function" href="addm__mle_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>():</div>
-<div class="line"><span class="lineno">    9</span>    <span class="keywordflow">if</span> (len(sys.argv) &gt; 1 <span class="keywordflow">and</span> sys.argv[1] == <span class="stringliteral">&quot;addm&quot;</span>):</div>
-<div class="line"><span class="lineno">   10</span>        df1 = pd.read_csv(<span class="stringliteral">&quot;results/addm_simulations_prob.csv&quot;</span>)</div>
-<div class="line"><span class="lineno">   11</span>        df2 = pd.read_csv(<span class="stringliteral">&quot;results/python_addm_sim_prob.csv&quot;</span>)</div>
-<div class="line"><span class="lineno">   12</span>    <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno">   13</span>        df1 = pd.read_csv(<span class="stringliteral">&quot;results/ddm_simulations_prob.csv&quot;</span>)</div>
-<div class="line"><span class="lineno">   14</span>        df2 = pd.read_csv(<span class="stringliteral">&quot;results/python_ddm_sim_prob.csv&quot;</span>)</div>
-<div class="line"><span class="lineno">   15</span>    cpp_error = list()</div>
-<div class="line"><span class="lineno">   16</span>    py_error = list()</div>
-<div class="line"><span class="lineno">   17</span>    <span class="keywordflow">for</span> i, row <span class="keywordflow">in</span> df1.iterrows():</div>
-<div class="line"><span class="lineno">   18</span>        cpp_error.append(row[<span class="stringliteral">&quot;p&quot;</span>])</div>
-<div class="line"><span class="lineno">   19</span>        py_error.append(df2[<span class="stringliteral">&quot;p&quot;</span>][i])</div>
-<div class="line"><span class="lineno">   20</span>    </div>
-<div class="line"><span class="lineno">   21</span>    plt.figure(figsize=(15, 15))</div>
-<div class="line"><span class="lineno">   22</span>    plt.scatter(cpp_error, py_error)</div>
-<div class="line"><span class="lineno">   23</span> </div>
-<div class="line"><span class="lineno">   24</span>    x = np.arange(0, 1, 0.1)</div>
-<div class="line"><span class="lineno">   25</span>    y = x</div>
-<div class="line"><span class="lineno">   26</span>    plt.plot(x, y, c=<span class="stringliteral">&quot;red&quot;</span>)</div>
-<div class="line"><span class="lineno">   27</span>    plt.xlim([0, 0.0175])</div>
-<div class="line"><span class="lineno">   28</span>    plt.ylim([0, 0.0175])</div>
-<div class="line"><span class="lineno">   29</span> </div>
-<div class="line"><span class="lineno">   30</span>    plt.xlabel(<span class="stringliteral">&quot;cpp values&quot;</span>)</div>
-<div class="line"><span class="lineno">   31</span>    plt.ylabel(<span class="stringliteral">&quot;python values&quot;</span>)</div>
-<div class="line"><span class="lineno">   32</span> </div>
-<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">if</span> (len(sys.argv) &gt; 1 <span class="keywordflow">and</span> <span class="stringliteral">&quot;save&quot;</span> <span class="keywordflow">in</span> sys.argv):</div>
-<div class="line"><span class="lineno">   34</span>        currTime = datetime.now().strftime(<span class="stringliteral">u&quot;%Y-%m-%d_%H:%M:%S&quot;</span>)</div>
-<div class="line"><span class="lineno">   35</span>        plt.savefig(<span class="stringliteral">&quot;imgs/py_cpp_error_&quot;</span> + currTime + <span class="stringliteral">&quot;.png&quot;</span>)</div>
-<div class="line"><span class="lineno">   36</span> </div>
-<div class="ttc" id="aaddm__mle_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="addm__mle_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition</b> <a href="addm__mle_8cpp_source.html#l00018">addm_mle.cpp:18</a></div></div>
-</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

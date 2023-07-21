@@ -97,10 +97,7 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a47d55cea6c6a1ecaef33baa5e9a0f60c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="addm_8h.html#ac73e0abca434ac872480feb6a7cf4c56">fixDists</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fixation_data.html#a47d55cea6c6a1ecaef33baa5e9a0f60c">fixations</a></td></tr>
 <tr class="separator:a47d55cea6c6a1ecaef33baa5e9a0f60c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="addm_8h_source.html#l00013">13</a> of file <a class="el" href="addm_8h_source.html">addm.h</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a26d7e8281996bf28e056b440baf3be8d" name="a26d7e8281996bf28e056b440baf3be8d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a26d7e8281996bf28e056b440baf3be8d">&#9670;&#160;</a></span>FixationData()</h2>
 
@@ -145,26 +142,6 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="addm_8cpp_source.html#l00017">17</a> of file <a class="el" href="addm_8cpp_source.html">addm.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   18</span>                                                                           {</div>
-<div class="line"><span class="lineno">   19</span>    <span class="keywordflow">if</span> (!std::count(</div>
-<div class="line"><span class="lineno">   20</span>        <a class="code hl_variable" href="util_8h.html#a99cfa00f5e7249d86df14b3f97b01d5e">validFixDistTypes</a>.begin(), <a class="code hl_variable" href="util_8h.html#a99cfa00f5e7249d86df14b3f97b01d5e">validFixDistTypes</a>.end(), <a class="code hl_variable" href="class_fixation_data.html#abae78ac11b072c59b1821d2b2d05eeae">fixDistType</a>)) {</div>
-<div class="line"><span class="lineno">   21</span>            <span class="keywordflow">throw</span> std::invalid_argument(</div>
-<div class="line"><span class="lineno">   22</span>                <span class="stringliteral">&quot;Argument type must be one of {simple, difficulty, fixation}&quot;</span>);</div>
-<div class="line"><span class="lineno">   23</span>        }</div>
-<div class="line"><span class="lineno">   24</span>    this-&gt;<a class="code hl_variable" href="class_fixation_data.html#ac94f66e2c75130b416982631f76580b8">probFixLeftFirst</a> = <a class="code hl_variable" href="class_fixation_data.html#ac94f66e2c75130b416982631f76580b8">probFixLeftFirst</a>;</div>
-<div class="line"><span class="lineno">   25</span>    this-&gt;<a class="code hl_variable" href="class_fixation_data.html#a07031fd2270b2693fecfb8121d246a74">latencies</a> = <a class="code hl_variable" href="class_fixation_data.html#a07031fd2270b2693fecfb8121d246a74">latencies</a>;</div>
-<div class="line"><span class="lineno">   26</span>    this-&gt;<a class="code hl_variable" href="class_fixation_data.html#a10bd0c29fb903e681b6376d832c4d55c">transitions</a> = <a class="code hl_variable" href="class_fixation_data.html#a10bd0c29fb903e681b6376d832c4d55c">transitions</a>;</div>
-<div class="line"><span class="lineno">   27</span>    this-&gt;<a class="code hl_variable" href="class_fixation_data.html#a47d55cea6c6a1ecaef33baa5e9a0f60c">fixations</a> = <a class="code hl_variable" href="class_fixation_data.html#a47d55cea6c6a1ecaef33baa5e9a0f60c">fixations</a>;</div>
-<div class="line"><span class="lineno">   28</span>    this-&gt;<a class="code hl_variable" href="class_fixation_data.html#abae78ac11b072c59b1821d2b2d05eeae">fixDistType</a> = <a class="code hl_variable" href="class_fixation_data.html#abae78ac11b072c59b1821d2b2d05eeae">fixDistType</a>;</div>
-<div class="line"><span class="lineno">   29</span>}</div>
-<div class="ttc" id="aclass_fixation_data_html_a07031fd2270b2693fecfb8121d246a74"><div class="ttname"><a href="class_fixation_data.html#a07031fd2270b2693fecfb8121d246a74">FixationData::latencies</a></div><div class="ttdeci">vector&lt; int &gt; latencies</div><div class="ttdef"><b>Definition</b> <a href="addm_8h_source.html#l00018">addm.h:18</a></div></div>
-<div class="ttc" id="aclass_fixation_data_html_a10bd0c29fb903e681b6376d832c4d55c"><div class="ttname"><a href="class_fixation_data.html#a10bd0c29fb903e681b6376d832c4d55c">FixationData::transitions</a></div><div class="ttdeci">vector&lt; int &gt; transitions</div><div class="ttdef"><b>Definition</b> <a href="addm_8h_source.html#l00019">addm.h:19</a></div></div>
-<div class="ttc" id="aclass_fixation_data_html_a47d55cea6c6a1ecaef33baa5e9a0f60c"><div class="ttname"><a href="class_fixation_data.html#a47d55cea6c6a1ecaef33baa5e9a0f60c">FixationData::fixations</a></div><div class="ttdeci">fixDists fixations</div><div class="ttdef"><b>Definition</b> <a href="addm_8h_source.html#l00020">addm.h:20</a></div></div>
-<div class="ttc" id="aclass_fixation_data_html_abae78ac11b072c59b1821d2b2d05eeae"><div class="ttname"><a href="class_fixation_data.html#abae78ac11b072c59b1821d2b2d05eeae">FixationData::fixDistType</a></div><div class="ttdeci">string fixDistType</div><div class="ttdef"><b>Definition</b> <a href="addm_8h_source.html#l00016">addm.h:16</a></div></div>
-<div class="ttc" id="aclass_fixation_data_html_ac94f66e2c75130b416982631f76580b8"><div class="ttname"><a href="class_fixation_data.html#ac94f66e2c75130b416982631f76580b8">FixationData::probFixLeftFirst</a></div><div class="ttdeci">float probFixLeftFirst</div><div class="ttdef"><b>Definition</b> <a href="addm_8h_source.html#l00017">addm.h:17</a></div></div>
-<div class="ttc" id="autil_8h_html_a99cfa00f5e7249d86df14b3f97b01d5e"><div class="ttname"><a href="util_8h.html#a99cfa00f5e7249d86df14b3f97b01d5e">validFixDistTypes</a></div><div class="ttdeci">vector&lt; string &gt; validFixDistTypes</div><div class="ttdef"><b>Definition</b> <a href="util_8cpp_source.html#l00022">util.cpp:22</a></div></div>
-</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -180,8 +157,6 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="addm_8h_source.html#l00020">20</a> of file <a class="el" href="addm_8h_source.html">addm.h</a>.</p>
-
 </div>
 </div>
 <a id="abae78ac11b072c59b1821d2b2d05eeae" name="abae78ac11b072c59b1821d2b2d05eeae"></a>
@@ -195,8 +170,6 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="addm_8h_source.html#l00016">16</a> of file <a class="el" href="addm_8h_source.html">addm.h</a>.</p>
 
 </div>
 </div>
@@ -212,8 +185,6 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="addm_8h_source.html#l00018">18</a> of file <a class="el" href="addm_8h_source.html">addm.h</a>.</p>
-
 </div>
 </div>
 <a id="ac94f66e2c75130b416982631f76580b8" name="ac94f66e2c75130b416982631f76580b8"></a>
@@ -227,8 +198,6 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="addm_8h_source.html#l00017">17</a> of file <a class="el" href="addm_8h_source.html">addm.h</a>.</p>
 
 </div>
 </div>
@@ -244,13 +213,11 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="addm_8h_source.html#l00019">19</a> of file <a class="el" href="addm_8h_source.html">addm.h</a>.</p>
-
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/<a class="el" href="addm_8h_source.html">addm.h</a></li>
-<li>lib/<a class="el" href="addm_8cpp_source.html">addm.cpp</a></li>
+<li>lib/<a class="el" href="addm_8cpp.html">addm.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

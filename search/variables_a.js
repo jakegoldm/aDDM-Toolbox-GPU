@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['latencies_0',['latencies',['../class_fixation_data.html#a07031fd2270b2693fecfb8121d246a74',1,'FixationData']]],
-  ['lines_5fread_1',['lines_read',['../structdetail_1_1position__t.html#a9ec1ac6600d1364f4d1c9f67de6a670b',1,'detail::position_t']]],
-  ['loc_2',['loc',['../classdetail_1_1serializer.html#a80ca90565eec446d377ab65a023297ab',1,'detail::serializer']]]
+  ['uninterruptedlastfixtime_0',['uninterruptedLastFixTime',['../classa_d_d_m_trial.html#ae0e6788d10a1c67884727fe58b6b4953',1,'aDDMTrial']]],
+  ['usegpu_1',['useGPU',['../ddm_8cpp.html#a07f2098d9ced32b0b2e75dded17de056',1,'ddm.cpp']]]
 ];

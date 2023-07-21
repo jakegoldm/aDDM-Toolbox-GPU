@@ -192,32 +192,6 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ddm_8cpp_source.html#l00355">355</a> of file <a class="el" href="ddm_8cpp_source.html">ddm.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  355</span>                                                           {</div>
-<div class="line"><span class="lineno">  356</span>    <span class="keywordtype">double</span> NLL = 0;</div>
-<div class="line"><span class="lineno">  357</span>    <a class="code hl_class" href="class_b_s_1_1thread__pool.html">BS::thread_pool</a> pool;</div>
-<div class="line"><span class="lineno">  358</span>    <a class="code hl_class" href="class_b_s_1_1multi__future.html">BS::multi_future&lt;double&gt;</a> futs = pool.<a class="code hl_function" href="class_b_s_1_1thread__pool.html#ab63b1085ad48295d7f653cbb36a286be">parallelize_loop</a>(</div>
-<div class="line"><span class="lineno">  359</span>        0, trials.size(), </div>
-<div class="line"><span class="lineno">  360</span>        [&amp;ddm, &amp;trials](<span class="keyword">const</span> <span class="keywordtype">int</span> a, <span class="keyword">const</span> <span class="keywordtype">int</span> b) {</div>
-<div class="line"><span class="lineno">  361</span>            double block_total = 0; </div>
-<div class="line"><span class="lineno">  362</span>            for (int i = a; i &lt; b; ++i) {</div>
-<div class="line"><span class="lineno">  363</span>                block_total += -log(</div>
-<div class="line"><span class="lineno">  364</span>                    ddm.getTrialLikelihood(trials[i])</div>
-<div class="line"><span class="lineno">  365</span>                );</div>
-<div class="line"><span class="lineno">  366</span>            }</div>
-<div class="line"><span class="lineno">  367</span>            <span class="keywordflow">return</span> block_total;</div>
-<div class="line"><span class="lineno">  368</span>        }</div>
-<div class="line"><span class="lineno">  369</span>    );</div>
-<div class="line"><span class="lineno">  370</span>    std::vector&lt;double&gt; totals = futs.get();</div>
-<div class="line"><span class="lineno">  371</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keywordtype">double</span> t : totals) {</div>
-<div class="line"><span class="lineno">  372</span>        NLL += t; </div>
-<div class="line"><span class="lineno">  373</span>    }</div>
-<div class="line"><span class="lineno">  374</span>    <span class="keywordflow">return</span> NLL;</div>
-<div class="line"><span class="lineno">  375</span>}</div>
-<div class="ttc" id="aclass_b_s_1_1multi__future_html"><div class="ttname"><a href="class_b_s_1_1multi__future.html">BS::multi_future</a></div><div class="ttdoc">A helper class to facilitate waiting for and/or getting the results of multiple futures at once.</div><div class="ttdef"><b>Definition</b> <a href="_b_s__thread__pool_8hpp_source.html#l00045">BS_thread_pool.hpp:46</a></div></div>
-<div class="ttc" id="aclass_b_s_1_1thread__pool_html"><div class="ttname"><a href="class_b_s_1_1thread__pool.html">BS::thread_pool</a></div><div class="ttdoc">A fast, lightweight, and easy-to-use C++17 thread pool class.</div><div class="ttdef"><b>Definition</b> <a href="_b_s__thread__pool_8hpp_source.html#l00239">BS_thread_pool.hpp:240</a></div></div>
-<div class="ttc" id="aclass_b_s_1_1thread__pool_html_ab63b1085ad48295d7f653cbb36a286be"><div class="ttname"><a href="class_b_s_1_1thread__pool.html#ab63b1085ad48295d7f653cbb36a286be">BS::thread_pool::parallelize_loop</a></div><div class="ttdeci">multi_future&lt; R &gt; parallelize_loop(const T1 first_index, const T2 index_after_last, F &amp;&amp;loop, const size_t num_blocks=0)</div><div class="ttdoc">Parallelize a loop by automatically splitting it into blocks and submitting each block separately to ...</div><div class="ttdef"><b>Definition</b> <a href="_b_s__thread__pool_8hpp_source.html#l00338">BS_thread_pool.hpp:338</a></div></div>
-</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

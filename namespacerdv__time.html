@@ -96,35 +96,6 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="rdv__time_8py_source.html#l00007">7</a> of file <a class="el" href="rdv__time_8py_source.html">rdv_time.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    7</span><span class="keyword">def </span><a class="code hl_function" href="addm__mle_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>():</div>
-<div class="line"><span class="lineno">    8</span>    <span class="keyword">with</span> open(<span class="stringliteral">&#39;results/data.json&#39;</span>) <span class="keyword">as</span> file:</div>
-<div class="line"><span class="lineno">    9</span>        data = json.load(file)</div>
-<div class="line"><span class="lineno">   10</span> </div>
-<div class="line"><span class="lineno">   11</span>    rdvs = data[<span class="stringliteral">&quot;RDVs&quot;</span>]</div>
-<div class="line"><span class="lineno">   12</span>    x = np.arange(len(rdvs)) * data[<span class="stringliteral">&quot;timeStep&quot;</span>]</div>
-<div class="line"><span class="lineno">   13</span>    plt.plot(x, rdvs, label=<span class="stringliteral">&quot;RDVs&quot;</span>)   </div>
-<div class="line"><span class="lineno">   14</span> </div>
-<div class="line"><span class="lineno">   15</span>    barrier = float(data[<span class="stringliteral">&quot;barrier&quot;</span>])</div>
-<div class="line"><span class="lineno">   16</span>    bias = float(data[<span class="stringliteral">&quot;bias&quot;</span>])</div>
-<div class="line"><span class="lineno">   17</span>    plt.axhline(barrier, color=<span class="stringliteral">&quot;grey&quot;</span>)</div>
-<div class="line"><span class="lineno">   18</span>    plt.axhline(-barrier, color=<span class="stringliteral">&quot;grey&quot;</span>)</div>
-<div class="line"><span class="lineno">   19</span>    plt.axhline(bias, color=<span class="stringliteral">&quot;grey&quot;</span>)</div>
-<div class="line"><span class="lineno">   20</span> </div>
-<div class="line"><span class="lineno">   21</span>    plt.text(0, -barrier * 0.95, f<span class="stringliteral">&quot;d: {round(data[&#39;d&#39;], 3)}\n&quot;</span>\</div>
-<div class="line"><span class="lineno">   22</span>             f<span class="stringliteral">&quot;RT: {data[&#39;RT&#39;]}\nsigma: {round(data[&#39;sigma&#39;], 3)}&quot;</span>)</div>
-<div class="line"><span class="lineno">   23</span> </div>
-<div class="line"><span class="lineno">   24</span>    plt.xlabel(<span class="stringliteral">&quot;Time (ms)&quot;</span>)</div>
-<div class="line"><span class="lineno">   25</span>    plt.ylabel(<span class="stringliteral">&quot;RDV&quot;</span>)</div>
-<div class="line"><span class="lineno">   26</span> </div>
-<div class="line"><span class="lineno">   27</span>    <span class="keywordflow">if</span> (len(sys.argv) &gt; 1 <span class="keywordflow">and</span> <span class="stringliteral">&quot;save&quot;</span> <span class="keywordflow">in</span> sys.argv):</div>
-<div class="line"><span class="lineno">   28</span>        currTime = datetime.now().strftime(<span class="stringliteral">u&quot;%Y-%m-%d_%H:%M:%S&quot;</span>)</div>
-<div class="line"><span class="lineno">   29</span>        plt.savefig(<span class="stringliteral">&quot;imgs/rdv_time_&quot;</span> + currTime + <span class="stringliteral">&quot;.png&quot;</span>)</div>
-<div class="line"><span class="lineno">   30</span>    </div>
-<div class="line"><span class="lineno">   31</span>    plt.show()</div>
-<div class="line"><span class="lineno">   32</span> </div>
-<div class="ttc" id="aaddm__mle_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="addm__mle_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition</b> <a href="addm__mle_8cpp_source.html#l00018">addm_mle.cpp:18</a></div></div>
-</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['k_0',['k',['../structdetail_1_1dtoa__impl_1_1cached__power.html#ae9c889d5fc4427f633ec23044e986755',1,'detail::dtoa_impl::cached_power']]],
-  ['kalpha_1',['kAlpha',['../namespacedetail_1_1dtoa__impl.html#a95c569b7627a9372686f1f77d73e8660',1,'detail::dtoa_impl']]],
-  ['kgamma_2',['kGamma',['../namespacedetail_1_1dtoa__impl.html#ae152a095d2dd1a6dd41ef8ad39c26e19',1,'detail::dtoa_impl']]],
-  ['kprecision_3',['kPrecision',['../structdetail_1_1dtoa__impl_1_1diyfp.html#a80cf8cc846a7bf96362d3b11886994e3',1,'detail::dtoa_impl::diyfp']]]
+  ['theta_0',['theta',['../classa_d_d_m.html#a9c6c014066b0930baaa665b06dec9bb3',1,'aDDM::theta'],['../addm__nll_8cpp.html#aadfc5c227ca658a29a59a0ce6fc15792',1,'theta:&#160;addm_nll.cpp'],['../addm__nll__thread_8cpp.html#aadfc5c227ca658a29a59a0ce6fc15792',1,'theta:&#160;addm_nll_thread.cpp'],['../addm__simulate_8cpp.html#aadfc5c227ca658a29a59a0ce6fc15792',1,'theta:&#160;addm_simulate.cpp']]],
+  ['timestep_1',['timeStep',['../class_d_d_m_trial.html#a6fd7d06bba895acb5cf3627343915aac',1,'DDMTrial']]],
+  ['transitions_2',['transitions',['../class_fixation_data.html#a10bd0c29fb903e681b6376d832c4d55c',1,'FixationData']]]
 ];
