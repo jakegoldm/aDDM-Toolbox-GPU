@@ -5,7 +5,6 @@ var searchData=
   ['rangetheta_2',['rangeTheta',['../addm__mle_8cpp.html#ad2aa7a364e6ed4961ee3bb151d523d2c',1,'rangeTheta:&#160;addm_mle.cpp'],['../addm__mle__thread_8cpp.html#ad2aa7a364e6ed4961ee3bb151d523d2c',1,'rangeTheta:&#160;addm_mle_thread.cpp']]],
   ['rdv_5ftime_3',['rdv_time',['../namespacerdv__time.html',1,'']]],
   ['rdv_5ftime_2epy_4',['rdv_time.py',['../rdv__time_8py.html',1,'']]],
-  ['rdvs_5',['RDVs',['../classa_d_d_m_trial.html#afb1868d3ccccaca0d1f32c4fff6399c3',1,'aDDMTrial::RDVs'],['../class_d_d_m_trial.html#aa2f7a89ec8820e74e6fa9af95222a8d7',1,'DDMTrial::RDVs']]],
-  ['restrictspace_6',['restrictSpace',['../ddm_8cpp.html#ac34cf3b3215db72eab8926917db0da7d',1,'ddm.cpp']]],
-  ['rt_7',['RT',['../class_d_d_m_trial.html#a1fed499f6f800dcf08331b0f08d4570b',1,'DDMTrial']]]
+  ['rdvs_5',['RDVs',['../classa_d_d_m_trial.html#afb1868d3ccccaca0d1f32c4fff6399c3',1,'aDDMTrial']]],
+  ['restrictspace_6',['restrictSpace',['../ddm_8cpp.html#ac34cf3b3215db72eab8926917db0da7d',1,'ddm.cpp']]]
 ];

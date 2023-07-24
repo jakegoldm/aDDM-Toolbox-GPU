@@ -74,7 +74,6 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">ddm.cpp File Reference</div></div>
 </div><!--header-->
@@ -88,55 +87,49 @@ $(function() {
 <code>#include &lt;iomanip&gt;</code><br />
 <code>#include &quot;nlohmann/json.hpp&quot;</code><br />
 <code>#include &quot;<a class="el" href="util_8h_source.html">util.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ddm_8h_source.html">ddm.h</a>&quot;</code><br />
+<code>#include &quot;ddm.cuh&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ddm.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="ddm_8cpp__incl.png" border="0" usemap="#alib_2ddm_8cpp" alt=""/></div>
 <map name="alib_2ddm_8cpp" id="alib_2ddm_8cpp">
-<area shape="rect" title=" " alt="" coords="416,5,504,31"/>
+<area shape="rect" title=" " alt="" coords="407,5,494,31"/>
 <area shape="rect" title=" " alt="" coords="5,79,83,105"/>
-<area shape="poly" title=" " alt="" coords="416,28,278,50,98,81,97,76,277,44,416,23"/>
+<area shape="poly" title=" " alt="" coords="407,29,273,50,98,81,97,76,272,45,406,23"/>
 <area shape="rect" title=" " alt="" coords="107,79,178,105"/>
-<area shape="poly" title=" " alt="" coords="417,32,193,81,192,76,416,26"/>
+<area shape="poly" title=" " alt="" coords="407,32,193,81,192,76,406,27"/>
 <area shape="rect" title=" " alt="" coords="203,79,267,105"/>
-<area shape="poly" title=" " alt="" coords="423,34,282,78,280,73,421,29"/>
-<area shape="rect" title=" " alt="" coords="413,241,467,267"/>
-<area shape="poly" title=" " alt="" coords="467,30,487,66,501,85,518,103,533,112,547,118,577,122,605,129,618,137,630,151,638,173,630,195,616,211,599,224,560,242,519,252,482,256,481,250,518,246,558,237,596,219,612,207,626,192,633,173,626,154,615,141,603,133,576,127,546,123,530,117,514,107,497,89,482,69,463,33"/>
-<area shape="rect" title=" " alt="" coords="528,79,592,105"/>
-<area shape="poly" title=" " alt="" coords="479,29,533,68,530,72,475,34"/>
-<area shape="rect" title=" " alt="" coords="617,79,682,105"/>
-<area shape="poly" title=" " alt="" coords="493,29,605,71,603,76,491,34"/>
-<area shape="rect" title=" " alt="" coords="706,79,772,105"/>
-<area shape="poly" title=" " alt="" coords="505,28,692,76,690,81,503,33"/>
-<area shape="rect" title=" " alt="" coords="795,79,925,105"/>
-<area shape="poly" title=" " alt="" coords="504,25,781,74,780,79,503,30"/>
-<area shape="rect" href="util_8h.html" title=" " alt="" coords="405,79,454,105"/>
-<area shape="poly" title=" " alt="" coords="457,32,443,66,438,64,452,30"/>
-<area shape="rect" href="ddm_8h.html" title=" " alt="" coords="212,241,268,267"/>
-<area shape="poly" title=" " alt="" coords="444,34,378,83,338,117,302,154,275,192,254,229,250,227,270,190,298,151,335,113,374,79,440,29"/>
-<area shape="poly" title=" " alt="" coords="433,105,441,226,436,226,427,105"/>
-<area shape="rect" title=" " alt="" coords="347,315,405,341"/>
-<area shape="poly" title=" " alt="" coords="454,94,552,115,600,131,618,140,630,151,638,173,630,195,610,222,586,245,530,281,471,306,420,320,419,315,470,301,528,276,583,241,606,218,626,192,633,173,626,154,615,145,598,136,550,120,453,99"/>
-<area shape="rect" title=" " alt="" coords="293,241,339,267"/>
-<area shape="poly" title=" " alt="" coords="406,101,359,119,336,134,318,154,311,171,309,190,312,227,306,227,303,190,306,170,314,151,332,130,356,114,404,96"/>
-<area shape="rect" href="addm_8h.html" title=" " alt="" coords="328,160,392,186"/>
-<area shape="poly" title=" " alt="" coords="421,107,382,150,378,147,417,103"/>
-<area shape="rect" title=" " alt="" coords="467,153,616,193"/>
-<area shape="poly" title=" " alt="" coords="448,103,503,142,500,146,445,107"/>
-<area shape="poly" title=" " alt="" coords="374,184,419,229,416,233,370,188"/>
-<area shape="poly" title=" " alt="" coords="364,186,376,300,371,301,359,187"/>
-<area shape="poly" title=" " alt="" coords="356,188,332,229,328,227,351,185"/>
-<area shape="poly" title=" " alt="" coords="343,188,272,235,269,231,340,184"/>
-<area shape="poly" title=" " alt="" coords="264,265,341,305,339,310,262,270"/>
+<area shape="poly" title=" " alt="" coords="415,34,282,78,280,73,413,29"/>
+<area shape="rect" title=" " alt="" coords="273,241,327,267"/>
+<area shape="poly" title=" " alt="" coords="437,33,386,81,357,115,334,154,319,192,308,228,303,227,314,190,330,151,353,112,382,77,434,29"/>
+<area shape="rect" title=" " alt="" coords="519,79,583,105"/>
+<area shape="poly" title=" " alt="" coords="469,29,523,68,520,72,466,34"/>
+<area shape="rect" title=" " alt="" coords="607,79,673,105"/>
+<area shape="poly" title=" " alt="" coords="484,29,595,71,593,76,482,34"/>
+<area shape="rect" title=" " alt="" coords="696,79,763,105"/>
+<area shape="poly" title=" " alt="" coords="495,28,682,76,681,81,494,33"/>
+<area shape="rect" title=" " alt="" coords="786,79,915,105"/>
+<area shape="poly" title=" " alt="" coords="495,25,772,74,771,79,494,30"/>
+<area shape="rect" href="util_8h.html" title=" " alt="" coords="396,79,444,105"/>
+<area shape="poly" title=" " alt="" coords="448,32,433,66,429,64,443,30"/>
+<area shape="rect" title=" " alt="" coords="602,241,673,267"/>
+<area shape="poly" title=" " alt="" coords="458,30,476,66,491,86,508,102,533,116,557,121,604,119,626,119,648,122,670,131,690,151,697,172,692,194,680,215,664,233,660,229,675,212,687,192,692,172,686,154,667,136,647,127,626,124,604,125,556,126,531,121,505,107,487,90,472,69,453,33"/>
+<area shape="poly" title=" " alt="" coords="410,107,369,154,317,230,313,227,365,151,406,103"/>
+<area shape="rect" title=" " alt="" coords="367,241,425,267"/>
+<area shape="poly" title=" " alt="" coords="410,107,392,127,379,154,375,172,376,191,387,227,381,228,371,192,370,172,373,152,388,124,406,103"/>
+<area shape="rect" title=" " alt="" coords="457,241,503,267"/>
+<area shape="poly" title=" " alt="" coords="434,104,451,125,466,152,477,190,482,226,477,227,472,191,462,154,447,128,430,107"/>
+<area shape="rect" href="addm_8h.html" title=" " alt="" coords="388,160,452,186"/>
+<area shape="poly" title=" " alt="" coords="423,105,423,145,417,145,417,105"/>
+<area shape="rect" title=" " alt="" coords="527,153,676,193"/>
+<area shape="poly" title=" " alt="" coords="446,101,544,144,542,149,443,106"/>
+<area shape="poly" title=" " alt="" coords="403,188,332,235,329,231,400,184"/>
+<area shape="poly" title=" " alt="" coords="419,187,407,228,401,226,414,185"/>
+<area shape="poly" title=" " alt="" coords="431,185,464,228,460,231,427,188"/>
+<area shape="poly" title=" " alt="" coords="453,183,591,233,589,238,451,188"/>
 </map>
 </div>
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ac42a77bf862f9427fc29a3869525b76e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ddm_8cpp.html#ac42a77bf862f9427fc29a3869525b76e">DDMParallelNLL</a> (<a class="el" href="class_d_d_m.html">DDM</a> ddm, std::vector&lt; <a class="el" href="class_d_d_m_trial.html">DDMTrial</a> &gt; trials)</td></tr>
-<tr class="separator:ac42a77bf862f9427fc29a3869525b76e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:ac34cf3b3215db72eab8926917db0da7d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ddm_8cpp.html#ac34cf3b3215db72eab8926917db0da7d">restrictSpace</a> = true</td></tr>
@@ -144,35 +137,6 @@ Variables</h2></td></tr>
 <tr class="memitem:a07f2098d9ced32b0b2e75dded17de056"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ddm_8cpp.html#a07f2098d9ced32b0b2e75dded17de056">useGPU</a> = false</td></tr>
 <tr class="separator:a07f2098d9ced32b0b2e75dded17de056"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="ac42a77bf862f9427fc29a3869525b76e" name="ac42a77bf862f9427fc29a3869525b76e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac42a77bf862f9427fc29a3869525b76e">&#9670;&#160;</a></span>DDMParallelNLL()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double DDMParallelNLL </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_d_d_m.html">DDM</a>&#160;</td>
-          <td class="paramname"><em>ddm</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="class_d_d_m_trial.html">DDMTrial</a> &gt;&#160;</td>
-          <td class="paramname"><em>trials</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <h2 class="groupheader">Variable Documentation</h2>
 <a id="ac34cf3b3215db72eab8926917db0da7d" name="ac34cf3b3215db72eab8926917db0da7d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac34cf3b3215db72eab8926917db0da7d">&#9670;&#160;</a></span>restrictSpace</h2>

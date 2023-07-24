@@ -1,5 +1,9 @@
 var searchData=
 [
-  ['d_0',['d',['../class_d_d_m.html#a15511d3cf0f7deb5de073dcdfd09bcc6',1,'DDM::d'],['../addm__nll_8cpp.html#a3fbbd8a3959e76a2bc3455d3bade52dc',1,'d:&#160;addm_nll.cpp'],['../addm__nll__thread_8cpp.html#a3fbbd8a3959e76a2bc3455d3bade52dc',1,'d:&#160;addm_nll_thread.cpp'],['../addm__simulate_8cpp.html#a3fbbd8a3959e76a2bc3455d3bade52dc',1,'d:&#160;addm_simulate.cpp'],['../ddm__nll_8cpp.html#a3fbbd8a3959e76a2bc3455d3bade52dc',1,'d:&#160;ddm_nll.cpp'],['../ddm__nll__thread_8cpp.html#a3fbbd8a3959e76a2bc3455d3bade52dc',1,'d:&#160;ddm_nll_thread.cpp'],['../ddm__simulate_8cpp.html#a3fbbd8a3959e76a2bc3455d3bade52dc',1,'d:&#160;ddm_simulate.cpp']]],
-  ['decay_1',['DECAY',['../util_8h.html#ae307adc0568237d1e5bc8802f60f67bf',1,'DECAY:&#160;util.cpp'],['../util_8cpp.html#ae307adc0568237d1e5bc8802f60f67bf',1,'DECAY:&#160;util.cpp']]]
+  ['fixations_0',['fixations',['../class_fixation_data.html#a47d55cea6c6a1ecaef33baa5e9a0f60c',1,'FixationData']]],
+  ['fixdisttype_1',['fixDistType',['../class_fixation_data.html#abae78ac11b072c59b1821d2b2d05eeae',1,'FixationData']]],
+  ['fixitem_2',['fixItem',['../classa_d_d_m_trial.html#a8b7e649ce0fded823e1191c2f9675cf2',1,'aDDMTrial']]],
+  ['fixrdv_3',['fixRDV',['../classa_d_d_m_trial.html#abd71cbec989e9c2e08ab0c516c829283',1,'aDDMTrial']]],
+  ['fixtime_4',['fixTime',['../classa_d_d_m_trial.html#adf04171bada997ac559e29629524da2f',1,'aDDMTrial']]],
+  ['fp_5',['fp',['../test_8cpp.html#ae3c7e522825338c52b9d66891f9642a5',1,'test.cpp']]]
 ];

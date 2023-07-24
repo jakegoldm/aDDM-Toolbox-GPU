@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['seed_0',['SEED',['../util_8h.html#ac02944cc493358b6ef201270bd229165',1,'SEED:&#160;util.cpp'],['../util_8cpp.html#ac02944cc493358b6ef201270bd229165',1,'SEED:&#160;util.cpp']]],
-  ['sigma_1',['sigma',['../class_d_d_m.html#a17570a6c2378cdb363437f39a5fa3f00',1,'DDM::sigma'],['../addm__nll_8cpp.html#ae11aeeb83e22b5b7f1e6b4347eb1daa6',1,'sigma:&#160;addm_nll.cpp'],['../addm__nll__thread_8cpp.html#ae11aeeb83e22b5b7f1e6b4347eb1daa6',1,'sigma:&#160;addm_nll_thread.cpp'],['../addm__simulate_8cpp.html#ae11aeeb83e22b5b7f1e6b4347eb1daa6',1,'sigma:&#160;addm_simulate.cpp'],['../ddm__nll_8cpp.html#ae11aeeb83e22b5b7f1e6b4347eb1daa6',1,'sigma:&#160;ddm_nll.cpp'],['../ddm__nll__thread_8cpp.html#ae11aeeb83e22b5b7f1e6b4347eb1daa6',1,'sigma:&#160;ddm_nll_thread.cpp'],['../ddm__simulate_8cpp.html#ae11aeeb83e22b5b7f1e6b4347eb1daa6',1,'sigma:&#160;ddm_simulate.cpp']]]
+  ['theta_0',['theta',['../classa_d_d_m.html#a9c6c014066b0930baaa665b06dec9bb3',1,'aDDM::theta'],['../addm__nll_8cpp.html#aadfc5c227ca658a29a59a0ce6fc15792',1,'theta:&#160;addm_nll.cpp'],['../addm__nll__thread_8cpp.html#aadfc5c227ca658a29a59a0ce6fc15792',1,'theta:&#160;addm_nll_thread.cpp'],['../addm__simulate_8cpp.html#aadfc5c227ca658a29a59a0ce6fc15792',1,'theta:&#160;addm_simulate.cpp']]],
+  ['transitions_1',['transitions',['../class_fixation_data.html#a10bd0c29fb903e681b6376d832c4d55c',1,'FixationData']]]
 ];
