@@ -1,33 +1,30 @@
 var indexSectionsWithContent =
 {
   0: "abcdfgjlmnprstuv",
-  1: "af",
-  2: "acdrtv",
-  3: "acdrtuv",
-  4: "acdfglmpst",
-  5: "bdflnprstuv",
-  6: "fj"
+  1: "acdrtv",
+  2: "acdrtuv",
+  3: "acdglmpst",
+  4: "bdfnrstuv",
+  5: "j"
 };
 
 var indexSectionNames =
 {
   0: "all",
-  1: "classes",
-  2: "namespaces",
-  3: "files",
-  4: "functions",
-  5: "variables",
-  6: "typedefs"
+  1: "namespaces",
+  2: "files",
+  3: "functions",
+  4: "variables",
+  5: "typedefs"
 };
 
 var indexSectionLabels =
 {
   0: "All",
-  1: "Classes",
-  2: "Namespaces",
-  3: "Files",
-  4: "Functions",
-  5: "Variables",
-  6: "Typedefs"
+  1: "Namespaces",
+  2: "Files",
+  3: "Functions",
+  4: "Variables",
+  5: "Typedefs"
 };
 

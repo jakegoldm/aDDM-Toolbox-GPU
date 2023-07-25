@@ -73,8 +73,6 @@ $(function() {
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">addm.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -91,102 +89,52 @@ $(function() {
 <code>#include &quot;nlohmann/json.hpp&quot;</code><br />
 <code>#include &quot;ddm.cuh&quot;</code><br />
 <code>#include &quot;<a class="el" href="util_8h_source.html">util.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="addm_8h_source.html">addm.h</a>&quot;</code><br />
+<code>#include &quot;addm.cuh&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for addm.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="addm_8cpp__incl.png" border="0" usemap="#alib_2addm_8cpp" alt=""/></div>
 <map name="alib_2addm_8cpp" id="alib_2addm_8cpp">
-<area shape="rect" title=" " alt="" coords="542,5,636,31"/>
+<area shape="rect" title=" " alt="" coords="553,5,647,31"/>
 <area shape="rect" title=" " alt="" coords="5,79,77,105"/>
-<area shape="poly" title=" " alt="" coords="542,26,349,45,223,61,92,82,91,76,222,56,348,40,541,21"/>
+<area shape="poly" title=" " alt="" coords="552,26,355,45,226,61,92,81,91,76,225,56,355,39,552,21"/>
 <area shape="rect" title=" " alt="" coords="101,79,176,105"/>
-<area shape="poly" title=" " alt="" coords="542,28,389,49,191,81,190,76,389,43,541,23"/>
+<area shape="poly" title=" " alt="" coords="552,28,396,48,191,81,190,76,395,43,552,22"/>
 <area shape="rect" title=" " alt="" coords="200,79,277,105"/>
-<area shape="poly" title=" " alt="" coords="542,31,292,81,291,76,541,26"/>
+<area shape="poly" title=" " alt="" coords="553,31,292,81,291,76,552,25"/>
 <area shape="rect" title=" " alt="" coords="302,79,367,105"/>
-<area shape="poly" title=" " alt="" coords="547,34,382,80,381,75,545,29"/>
+<area shape="poly" title=" " alt="" coords="555,34,382,81,380,75,554,29"/>
 <area shape="rect" title=" " alt="" coords="391,79,459,105"/>
-<area shape="poly" title=" " alt="" coords="562,34,467,75,465,70,560,29"/>
-<area shape="rect" title=" " alt="" coords="317,241,363,267"/>
-<area shape="poly" title=" " alt="" coords="576,34,531,68,473,107,441,120,414,126,390,134,366,154,355,171,348,190,342,227,337,226,343,189,350,169,362,151,387,129,412,121,440,115,470,102,528,64,573,29"/>
-<area shape="rect" title=" " alt="" coords="708,79,761,105"/>
-<area shape="poly" title=" " alt="" coords="615,29,698,70,696,75,612,34"/>
-<area shape="rect" title=" " alt="" coords="785,79,841,105"/>
-<area shape="poly" title=" " alt="" coords="628,29,772,75,770,80,626,34"/>
-<area shape="rect" title=" " alt="" coords="865,79,924,105"/>
-<area shape="poly" title=" " alt="" coords="637,27,851,76,849,81,636,32"/>
-<area shape="rect" title=" " alt="" coords="948,79,1012,105"/>
-<area shape="poly" title=" " alt="" coords="637,24,767,44,933,76,932,81,766,50,636,29"/>
-<area shape="rect" title=" " alt="" coords="1036,79,1166,105"/>
-<area shape="poly" title=" " alt="" coords="637,23,1022,76,1021,81,636,28"/>
-<area shape="rect" title=" " alt="" coords="705,241,775,267"/>
-<area shape="poly" title=" " alt="" coords="610,29,671,77,704,111,730,152,741,190,744,227,739,227,736,191,725,154,700,115,668,81,607,34"/>
-<area shape="rect" href="util_8h.html" title=" " alt="" coords="534,79,583,105"/>
-<area shape="poly" title=" " alt="" coords="586,32,572,66,567,64,581,30"/>
-<area shape="rect" href="addm_8h.html" title=" " alt="" coords="652,160,715,186"/>
-<area shape="poly" title=" " alt="" coords="599,30,671,146,667,149,594,33"/>
-<area shape="poly" title=" " alt="" coords="535,103,463,127,429,141,405,155,388,172,374,191,352,229,348,227,369,188,384,168,402,151,426,137,461,122,533,98"/>
-<area shape="rect" title=" " alt="" coords="598,241,655,267"/>
-<area shape="poly" title=" " alt="" coords="567,104,591,152,620,226,615,228,587,154,563,106"/>
-<area shape="rect" title=" " alt="" coords="460,241,513,267"/>
-<area shape="poly" title=" " alt="" coords="535,102,467,125,436,139,418,154,412,173,418,192,433,214,453,231,450,235,429,217,413,195,406,172,413,151,433,135,465,120,533,97"/>
-<area shape="poly" title=" " alt="" coords="579,103,654,150,651,154,576,107"/>
-<area shape="rect" title=" " alt="" coords="428,153,577,193"/>
-<area shape="poly" title=" " alt="" coords="552,107,527,142,522,139,548,104"/>
-<area shape="poly" title=" " alt="" coords="653,184,378,247,377,242,651,179"/>
-<area shape="poly" title=" " alt="" coords="694,185,725,227,720,231,690,188"/>
-<area shape="poly" title=" " alt="" coords="677,188,646,231,642,227,673,185"/>
-<area shape="poly" title=" " alt="" coords="654,189,528,239,526,234,652,184"/>
+<area shape="poly" title=" " alt="" coords="571,34,469,75,467,71,569,29"/>
+<area shape="rect" title=" " alt="" coords="653,160,699,186"/>
+<area shape="poly" title=" " alt="" coords="576,34,553,48,532,65,521,84,521,93,525,103,548,128,577,145,609,157,638,164,637,169,607,162,575,150,544,132,520,106,515,94,516,82,528,61,550,43,573,29"/>
+<area shape="rect" title=" " alt="" coords="534,79,588,105"/>
+<area shape="poly" title=" " alt="" coords="596,32,577,67,572,65,591,30"/>
+<area shape="rect" title=" " alt="" coords="612,79,668,105"/>
+<area shape="poly" title=" " alt="" coords="609,30,628,65,623,67,604,33"/>
+<area shape="rect" title=" " alt="" coords="691,79,751,105"/>
+<area shape="poly" title=" " alt="" coords="622,29,689,69,686,73,619,34"/>
+<area shape="rect" title=" " alt="" coords="774,79,839,105"/>
+<area shape="poly" title=" " alt="" coords="636,29,761,72,759,77,634,34"/>
+<area shape="rect" title=" " alt="" coords="863,79,992,105"/>
+<area shape="poly" title=" " alt="" coords="648,27,858,73,857,78,647,32"/>
+<area shape="rect" title=" " alt="" coords="1017,79,1087,105"/>
+<area shape="poly" title=" " alt="" coords="648,22,801,43,1002,76,1002,82,800,48,647,28"/>
+<area shape="rect" href="util_8h.html" title=" " alt="" coords="1112,79,1160,105"/>
+<area shape="poly" title=" " alt="" coords="647,20,840,37,967,53,1097,77,1096,82,966,59,840,42,647,25"/>
+<area shape="rect" title=" " alt="" coords="1234,160,1312,186"/>
+<area shape="poly" title=" " alt="" coords="647,18,767,23,920,33,1068,50,1128,62,1173,77,1198,91,1222,110,1258,147,1254,151,1218,114,1195,96,1171,81,1127,67,1067,55,919,38,766,28,647,23"/>
+<area shape="poly" title=" " alt="" coords="1112,104,1099,107,990,130,882,148,714,170,713,165,881,142,989,124,1098,102,1110,99"/>
+<area shape="rect" title=" " alt="" coords="902,160,959,186"/>
+<area shape="poly" title=" " alt="" coords="1112,104,973,155,970,156,968,151,971,150,1110,99"/>
+<area shape="rect" title=" " alt="" coords="984,160,1037,186"/>
+<area shape="poly" title=" " alt="" coords="1118,107,1043,154,1040,150,1115,103"/>
+<area shape="poly" title=" " alt="" coords="1158,103,1241,150,1238,155,1155,107"/>
+<area shape="rect" title=" " alt="" coords="1062,153,1210,193"/>
+<area shape="poly" title=" " alt="" coords="1138,105,1138,138,1133,138,1133,105"/>
 </map>
 </div>
-</div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:af2186cd8aff37cd7fa28ad2dcb706094"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="addm_8cpp.html#af2186cd8aff37cd7fa28ad2dcb706094">aDDMParallelNLL</a> (<a class="el" href="classa_d_d_m.html">aDDM</a> addm, std::vector&lt; <a class="el" href="classa_d_d_m_trial.html">aDDMTrial</a> &gt; trials)</td></tr>
-<tr class="memdesc:af2186cd8aff37cd7fa28ad2dcb706094"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the Negative Log Likelihood (NLL) for a given vector of aDDMTrials using multithreading. Once all trial likelihoods are computed, return the total NLL for the dataset.  <br /></td></tr>
-<tr class="separator:af2186cd8aff37cd7fa28ad2dcb706094"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="af2186cd8aff37cd7fa28ad2dcb706094" name="af2186cd8aff37cd7fa28ad2dcb706094"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af2186cd8aff37cd7fa28ad2dcb706094">&#9670;&#160;</a></span>aDDMParallelNLL()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double aDDMParallelNLL </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classa_d_d_m.html">aDDM</a>&#160;</td>
-          <td class="paramname"><em>addm</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="classa_d_d_m_trial.html">aDDMTrial</a> &gt;&#160;</td>
-          <td class="paramname"><em>trials</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Compute the Negative Log Likelihood (NLL) for a given vector of aDDMTrials using multithreading. Once all trial likelihoods are computed, return the total NLL for the dataset. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">addm</td><td><a class="el" href="classa_d_d_m.html">aDDM</a> object that calls getTrialLikelihood on each trial in the input dataset. </td></tr>
-    <tr><td class="paramname">trials</td><td>Vector of trials to compute the total NLL for. Each trial's likelihood is computed in parallel blocks. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>double representing the total NLL for the entire dataset. </dd></dl>
-
-</div>
-</div>
-</div><!-- contents -->
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7

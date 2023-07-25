@@ -94,7 +94,7 @@ $(function() {
 <code>#include &quot;bshoshany/BS_thread_pool.hpp&quot;</code><br />
 <code>#include &quot;nlohmann/json.hpp&quot;</code><br />
 <code>#include &quot;<a class="el" href="util_8h_source.html">util.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="addm_8h_source.html">addm.h</a>&quot;</code><br />
+<code>#include &quot;addm.cuh&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for util.cpp:</div>
 <div class="dyncontent">
@@ -119,30 +119,25 @@ Include dependency graph for util.cpp:</div>
 <area shape="poly" title=" " alt="" coords="664,31,664,72,659,72,659,31"/>
 <area shape="rect" title=" " alt="" coords="715,87,792,112"/>
 <area shape="poly" title=" " alt="" coords="677,29,730,75,726,79,673,33"/>
-<area shape="rect" title=" " alt="" coords="802,256,859,282"/>
-<area shape="poly" title=" " alt="" coords="702,23,757,40,784,56,806,77,827,118,837,163,839,206,837,242,832,241,834,206,832,164,822,120,802,81,780,60,754,45,700,28"/>
+<area shape="rect" title=" " alt="" coords="693,175,750,201"/>
+<area shape="poly" title=" " alt="" coords="702,22,729,28,758,39,785,55,806,78,813,99,806,121,786,149,760,169,756,165,782,145,801,118,808,99,802,80,781,59,756,44,728,33,701,27"/>
 <area shape="rect" title=" " alt="" coords="1040,79,1200,120"/>
 <area shape="poly" title=" " alt="" coords="702,23,1022,76,1025,77,1025,82,1021,82,701,28"/>
-<area shape="rect" title=" " alt="" coords="1099,168,1247,208"/>
-<area shape="poly" title=" " alt="" coords="702,18,758,23,828,33,905,50,978,77,994,86,1005,96,1029,117,1111,159,1108,164,1026,122,1001,100,991,90,976,81,903,55,827,38,757,28,701,24"/>
+<area shape="rect" title=" " alt="" coords="774,168,922,208"/>
+<area shape="poly" title=" " alt="" coords="702,21,733,27,767,37,799,54,827,77,839,95,846,114,852,153,846,153,841,115,834,97,823,81,796,58,765,42,732,32,701,26"/>
 <area shape="rect" title=" " alt="" coords="1225,87,1354,112"/>
 <area shape="poly" title=" " alt="" coords="702,19,920,38,1065,54,1212,76,1231,80,1230,85,1211,82,1065,60,920,43,701,25"/>
 <area shape="rect" href="util_8h.html" title=" " alt="" coords="917,87,965,112"/>
 <area shape="poly" title=" " alt="" coords="702,25,793,45,899,76,905,78,903,83,898,82,792,51,701,30"/>
-<area shape="rect" href="addm_8h.html" title=" " alt="" coords="910,175,973,201"/>
-<area shape="poly" title=" " alt="" coords="702,23,773,42,813,57,849,77,874,96,895,118,928,161,924,164,891,122,870,100,846,81,810,62,772,47,701,28"/>
-<area shape="poly" title=" " alt="" coords="935,114,848,246,844,243,931,111"/>
-<area shape="poly" title=" " alt="" coords="967,110,985,117,1101,160,1099,165,983,122,965,115"/>
-<area shape="rect" title=" " alt="" coords="978,256,1024,282"/>
-<area shape="poly" title=" " alt="" coords="953,111,971,136,988,167,998,205,1003,241,997,242,993,206,983,169,967,138,949,114"/>
-<area shape="rect" title=" " alt="" coords="1048,256,1101,282"/>
-<area shape="poly" title=" " alt="" coords="957,111,1011,166,1040,206,1063,243,1059,245,1036,209,1007,169,953,115"/>
-<area shape="poly" title=" " alt="" coords="944,113,944,160,939,160,939,113"/>
-<area shape="poly" title=" " alt="" coords="926,203,861,250,858,245,923,199"/>
-<area shape="poly" title=" " alt="" coords="952,200,985,243,981,246,948,203"/>
-<area shape="poly" title=" " alt="" coords="963,199,1043,246,1040,251,960,204"/>
-<area shape="rect" title=" " alt="" coords="883,256,954,282"/>
-<area shape="poly" title=" " alt="" coords="940,202,929,243,923,241,935,201"/>
+<area shape="rect" title=" " alt="" coords="1093,175,1171,201"/>
+<area shape="poly" title=" " alt="" coords="702,18,758,23,828,33,905,50,978,77,1005,95,1029,118,1101,165,1098,169,1026,122,1002,100,976,81,903,55,827,38,757,28,701,24"/>
+<area shape="poly" title=" " alt="" coords="917,112,762,170,760,171,758,166,760,165,916,107"/>
+<area shape="poly" title=" " alt="" coords="930,115,881,160,878,156,926,111"/>
+<area shape="rect" title=" " alt="" coords="1023,175,1070,201"/>
+<area shape="poly" title=" " alt="" coords="957,111,1022,163,1019,168,954,115"/>
+<area shape="rect" title=" " alt="" coords="947,175,1000,201"/>
+<area shape="poly" title=" " alt="" coords="948,112,966,161,961,162,943,114"/>
+<area shape="poly" title=" " alt="" coords="967,109,1093,166,1091,171,965,114"/>
 </map>
 </div>
 </div><table class="memberdecls">
@@ -157,13 +152,13 @@ Functions</h2></td></tr>
 <tr class="separator:a3c70684bbd5c18365b967d158305e919"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab0c2fb4c0b02fabb15eeab9d6f73e5ab"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="util_8cpp.html#ab0c2fb4c0b02fabb15eeab9d6f73e5ab">cumulativeDensityFunction</a> (float mean, float <a class="el" href="addm__nll_8cpp.html#ae11aeeb83e22b5b7f1e6b4347eb1daa6">sigma</a>, float x)</td></tr>
 <tr class="separator:ab0c2fb4c0b02fabb15eeab9d6f73e5ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78fc1c7aadc9bd3f08e29b796632b49b"><td class="memItemLeft" align="right" valign="top">std::map&lt; int, std::vector&lt; <a class="el" href="classa_d_d_m_trial.html">aDDMTrial</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="util_8cpp.html#a78fc1c7aadc9bd3f08e29b796632b49b">loadDataFromCSV</a> (std::string expDataFilename, std::string fixDataFilename)</td></tr>
+<tr class="memitem:a78fc1c7aadc9bd3f08e29b796632b49b"><td class="memItemLeft" align="right" valign="top">std::map&lt; int, std::vector&lt; aDDMTrial &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="util_8cpp.html#a78fc1c7aadc9bd3f08e29b796632b49b">loadDataFromCSV</a> (std::string expDataFilename, std::string fixDataFilename)</td></tr>
 <tr class="separator:a78fc1c7aadc9bd3f08e29b796632b49b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4ed92bf615671307f66b37c6f37b488"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_fixation_data.html">FixationData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="util_8cpp.html#ad4ed92bf615671307f66b37c6f37b488">getEmpiricalDistributions</a> (std::map&lt; int, std::vector&lt; <a class="el" href="classa_d_d_m_trial.html">aDDMTrial</a> &gt; &gt; data, int timeStep, int MaxFixTime, int numFixDists, std::string fixDistType, std::vector&lt; int &gt; valueDiffs, std::vector&lt; int &gt; subjectIDs, bool useOddTrials, bool useEvenTrials, bool useCisTrials, bool useTransTrials)</td></tr>
+<tr class="memitem:ad4ed92bf615671307f66b37c6f37b488"><td class="memItemLeft" align="right" valign="top">FixationData&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="util_8cpp.html#ad4ed92bf615671307f66b37c6f37b488">getEmpiricalDistributions</a> (std::map&lt; int, std::vector&lt; aDDMTrial &gt; &gt; data, int timeStep, int MaxFixTime, int numFixDists, std::string fixDistType, std::vector&lt; int &gt; valueDiffs, std::vector&lt; int &gt; subjectIDs, bool useOddTrials, bool useEvenTrials, bool useCisTrials, bool useTransTrials)</td></tr>
 <tr class="separator:ad4ed92bf615671307f66b37c6f37b488"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab19bb96bad214677bb8f87ab5691d713"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="util_8cpp.html#ab19bb96bad214677bb8f87ab5691d713">DDMexportData</a> (DDM ddm, DDMTrial dt)</td></tr>
 <tr class="separator:ab19bb96bad214677bb8f87ab5691d713"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97aa8641a43699dcdbb5a052c14cfee1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="util_8cpp.html#a97aa8641a43699dcdbb5a052c14cfee1">aDDMexportData</a> (<a class="el" href="classa_d_d_m.html">aDDM</a> addm, <a class="el" href="classa_d_d_m_trial.html">aDDMTrial</a> adt)</td></tr>
+<tr class="memitem:a97aa8641a43699dcdbb5a052c14cfee1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="util_8cpp.html#a97aa8641a43699dcdbb5a052c14cfee1">aDDMexportData</a> (aDDM addm, aDDMTrial adt)</td></tr>
 <tr class="separator:a97aa8641a43699dcdbb5a052c14cfee1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
@@ -200,13 +195,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">void aDDMexportData </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classa_d_d_m.html">aDDM</a>&#160;</td>
+          <td class="paramtype">aDDM&#160;</td>
           <td class="paramname"><em>addm</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classa_d_d_m_trial.html">aDDMTrial</a>&#160;</td>
+          <td class="paramtype">aDDMTrial&#160;</td>
           <td class="paramname"><em>adt</em>&#160;</td>
         </tr>
         <tr>
@@ -288,9 +283,9 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_fixation_data.html">FixationData</a> getEmpiricalDistributions </td>
+          <td class="memname">FixationData getEmpiricalDistributions </td>
           <td>(</td>
-          <td class="paramtype">std::map&lt; int, std::vector&lt; <a class="el" href="classa_d_d_m_trial.html">aDDMTrial</a> &gt; &gt;&#160;</td>
+          <td class="paramtype">std::map&lt; int, std::vector&lt; aDDMTrial &gt; &gt;&#160;</td>
           <td class="paramname"><em>data</em>, </td>
         </tr>
         <tr>
@@ -370,7 +365,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::map&lt; int, std::vector&lt; <a class="el" href="classa_d_d_m_trial.html">aDDMTrial</a> &gt; &gt; loadDataFromCSV </td>
+          <td class="memname">std::map&lt; int, std::vector&lt; aDDMTrial &gt; &gt; loadDataFromCSV </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>expDataFilename</em>, </td>
