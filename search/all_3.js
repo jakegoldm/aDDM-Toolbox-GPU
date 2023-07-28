@@ -1,8 +1,8 @@
 var searchData=
 [
   ['choice_0',['choice',['../class_d_d_m_trial.html#a941813496795b5c0f16d068444abf483',1,'DDMTrial']]],
-  ['computegpunll_1',['computeGPUNLL',['../classa_d_d_m.html#a21cddd41df741c8970e482417e89c1c5',1,'aDDM::computeGPUNLL()'],['../class_d_d_m.html#ae4dd5d72f5a75761988223fed782d3bf',1,'DDM::computeGPUNLL()']]],
-  ['computeparallelnll_2',['computeParallelNLL',['../classa_d_d_m.html#af8ffe4732721457c34d4c98dc8621745',1,'aDDM::computeParallelNLL()'],['../class_d_d_m.html#ad923cb1440ebcd24b1ba95fc84e6df9a',1,'DDM::computeParallelNLL()']]],
+  ['computegpunll_1',['computeGPUNLL',['../classa_d_d_m.html#a4d84a138726cd4260fa83bf45ebc26bf',1,'aDDM::computeGPUNLL()'],['../class_d_d_m.html#ae4dd5d72f5a75761988223fed782d3bf',1,'DDM::computeGPUNLL()']]],
+  ['computeparallelnll_2',['computeParallelNLL',['../classa_d_d_m.html#ad27e265b6d52593d6080495f67fc25db',1,'aDDM::computeParallelNLL()'],['../class_d_d_m.html#ad923cb1440ebcd24b1ba95fc84e6df9a',1,'DDM::computeParallelNLL()']]],
   ['cpp_5ferror_3',['cpp_error',['../namespacecpp__error.html',1,'']]],
   ['cpp_5ferror_2epy_4',['cpp_error.py',['../cpp__error_8py.html',1,'']]],
   ['cuaddm_2ecu_5',['cuaddm.cu',['../cuaddm_8cu.html',1,'']]],
