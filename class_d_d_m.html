@@ -80,25 +80,32 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:acd37ba5a2a2f6e45661df2516dabf267"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#acd37ba5a2a2f6e45661df2516dabf267">operator&lt;</a> (const <a class="el" href="class_d_d_m.html">DDM</a> &amp;rhs) const</td></tr>
+<tr class="separator:acd37ba5a2a2f6e45661df2516dabf267"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8079400de69cdcec8414c9083884558"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#af8079400de69cdcec8414c9083884558">DDM</a> (float <a class="el" href="class_d_d_m.html#a15511d3cf0f7deb5de073dcdfd09bcc6">d</a>, float <a class="el" href="class_d_d_m.html#a17570a6c2378cdb363437f39a5fa3f00">sigma</a>, float <a class="el" href="class_d_d_m.html#a0293f051d7889ee014fb55c4939e4783">barrier</a>, unsigned int <a class="el" href="class_d_d_m.html#a0821be8a65988df0004b4d9f4239a020">nonDecisionTime</a>=0, float <a class="el" href="class_d_d_m.html#a0cecc28e691846bce6dccb02f34aef07">bias</a>=0)</td></tr>
+<tr class="memdesc:af8079400de69cdcec8414c9083884558"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="class_d_d_m.html">DDM</a> object.  <br /></td></tr>
 <tr class="separator:af8079400de69cdcec8414c9083884558"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c65c29756565b1a6a9ca6605fa1c003"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#a5c65c29756565b1a6a9ca6605fa1c003">DDM</a> ()</td></tr>
+<tr class="memdesc:a5c65c29756565b1a6a9ca6605fa1c003"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an empty <a class="el" href="class_d_d_m.html">DDM</a> object.  <br /></td></tr>
 <tr class="separator:a5c65c29756565b1a6a9ca6605fa1c003"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a025072ab3fd16dee3a0b0f57c7585a06"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#a025072ab3fd16dee3a0b0f57c7585a06">getTrialLikelihood</a> (<a class="el" href="class_d_d_m_trial.html">DDMTrial</a> trial, bool debug=false, int timeStep=10, float approxStateStep=0.1)</td></tr>
+<tr class="memdesc:a025072ab3fd16dee3a0b0f57c7585a06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the likelihood of the trial results provided the current parameters.  <br /></td></tr>
 <tr class="separator:a025072ab3fd16dee3a0b0f57c7585a06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a1471b7df53bbb107df7bf954f6d7a6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_d_d_m_trial.html">DDMTrial</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#a6a1471b7df53bbb107df7bf954f6d7a6">simulateTrial</a> (int ValueLeft, int ValueRight, int timeStep=10)</td></tr>
+<tr class="memdesc:a6a1471b7df53bbb107df7bf954f6d7a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a simulated <a class="el" href="class_d_d_m.html">DDM</a> trial provided item values.  <br /></td></tr>
 <tr class="separator:a6a1471b7df53bbb107df7bf954f6d7a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad923cb1440ebcd24b1ba95fc84e6df9a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#ad923cb1440ebcd24b1ba95fc84e6df9a">computeParallelNLL</a> (std::vector&lt; <a class="el" href="class_d_d_m_trial.html">DDMTrial</a> &gt; trials, bool debug=false, int timeStep=10, float approxStateStep=0.1)</td></tr>
+<tr class="memdesc:ad923cb1440ebcd24b1ba95fc84e6df9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the total Negative Log Likelihood (NLL) for a vector of DDMTrials. Use CPU multithreading to maximize the number of blocks of trials that can have their respective NLLs computed in parallel.  <br /></td></tr>
 <tr class="separator:ad923cb1440ebcd24b1ba95fc84e6df9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4dd5d72f5a75761988223fed782d3bf"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#ae4dd5d72f5a75761988223fed782d3bf">computeGPUNLL</a> (std::vector&lt; <a class="el" href="class_d_d_m_trial.html">DDMTrial</a> &gt; trials, bool debug=false, int trialsPerThread=10, int timeStep=10, float approxStateStep=0.1)</td></tr>
+<tr class="memdesc:ae4dd5d72f5a75761988223fed782d3bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the total Negative Log Likelihood (NLL) for a vector of DDMTrials. Use the GPU to maximize the number of trials being computed in parallel.  <br /></td></tr>
 <tr class="separator:ae4dd5d72f5a75761988223fed782d3bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a92b7316ad8a67ddc5952ea50b78dcbee"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_d_d_m.html">DDM</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#a92b7316ad8a67ddc5952ea50b78dcbee">fitModelBasic</a> (std::vector&lt; <a class="el" href="class_d_d_m_trial.html">DDMTrial</a> &gt; trials, std::vector&lt; float &gt; <a class="el" href="addm__mle_8cpp.html#a800d6969137d46bac6c127a9f70b7e51">rangeD</a>, std::vector&lt; float &gt; <a class="el" href="addm__mle_8cpp.html#a347dbb7726ce6ea89520f5980d686dd8">rangeSigma</a>, float <a class="el" href="class_d_d_m.html#a0293f051d7889ee014fb55c4939e4783">barrier</a>, std::string computeMethod=&quot;basic&quot;)</td></tr>
-<tr class="separator:a92b7316ad8a67ddc5952ea50b78dcbee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d405937d0259462329d15817244d820"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_d_d_m.html">DDM</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#a2d405937d0259462329d15817244d820">fitModelOptimized</a> (std::vector&lt; <a class="el" href="class_d_d_m_trial.html">DDMTrial</a> &gt; trials, float startD=0.1, float startSigma=1, float deltaD=0.05, float deltaSigma=0.5, float <a class="el" href="class_d_d_m.html#a0293f051d7889ee014fb55c4939e4783">barrier</a>=1, float tolerance=1, std::string computeMethod=&quot;basic&quot;, std::string optimizer=&quot;hooke-jeeves&quot;)</td></tr>
-<tr class="separator:a2d405937d0259462329d15817244d820"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa088ac37fa5439d93d98acf6e193a7f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_d_d_m.html">DDM</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#afa088ac37fa5439d93d98acf6e193a7f">fitModelMLE</a> (std::vector&lt; <a class="el" href="class_d_d_m_trial.html">DDMTrial</a> &gt; trials, std::vector&lt; float &gt; <a class="el" href="addm__mle_8cpp.html#a800d6969137d46bac6c127a9f70b7e51">rangeD</a>, std::vector&lt; float &gt; <a class="el" href="addm__mle_8cpp.html#a347dbb7726ce6ea89520f5980d686dd8">rangeSigma</a>, float <a class="el" href="class_d_d_m.html#a0293f051d7889ee014fb55c4939e4783">barrier</a>, std::string computeMethod=&quot;basic&quot;)</td></tr>
+<tr class="memdesc:afa088ac37fa5439d93d98acf6e193a7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copmlete a grid-search based Maximum Likelihood Estimation of all possible paramters combinations (d, sigma) to determine which parameters are most likely to generate the provided DDMTrials. Each potential model generates an NLL value for the dataset and the method returns the model with the minimum NLL value.  <br /></td></tr>
+<tr class="separator:afa088ac37fa5439d93d98acf6e193a7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -158,6 +165,18 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Construct a new <a class="el" href="class_d_d_m.html">DDM</a> object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td>Drift rate. </td></tr>
+    <tr><td class="paramname">sigma</td><td>Noise or standard deviation for the normal distribution. </td></tr>
+    <tr><td class="paramname">barrier</td><td>Positive magnitude of the signal threshold. </td></tr>
+    <tr><td class="paramname">nonDecisionTime</td><td>Amount of time in milliseconds in which only noise is added to the decision variable. </td></tr>
+    <tr><td class="paramname">bias</td><td>Corresponds to the initial value of the decision variable. Must be smaller than the barrier. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a5c65c29756565b1a6a9ca6605fa1c003" name="a5c65c29756565b1a6a9ca6605fa1c003"></a>
@@ -182,6 +201,8 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Construct an empty <a class="el" href="class_d_d_m.html">DDM</a> object. </p>
 
 </div>
 </div>
@@ -230,6 +251,19 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Compute the total Negative Log Likelihood (NLL) for a vector of DDMTrials. Use the GPU to maximize the number of trials being computed in parallel. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">trials</td><td>Vector of DDMTrials that the model should calculate the NLL for. </td></tr>
+    <tr><td class="paramname">debug</td><td>Boolean specifying if state variables should be printed for debugging purposes. </td></tr>
+    <tr><td class="paramname">trialsPerThread</td><td>Number of trials that each thread should be designated to copmute. Must be divisible by the total number of trials. </td></tr>
+    <tr><td class="paramname">timeStep</td><td>Value in milliseconds used for binning the time axis. </td></tr>
+    <tr><td class="paramname">approxStateStep</td><td>Used for binning the RDV axis. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>double representing the sum of negative log likelihoods for each trial. </dd></dl>
+
 </div>
 </div>
 <a id="ad923cb1440ebcd24b1ba95fc84e6df9a" name="ad923cb1440ebcd24b1ba95fc84e6df9a"></a>
@@ -270,10 +304,22 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Compute the total Negative Log Likelihood (NLL) for a vector of DDMTrials. Use CPU multithreading to maximize the number of blocks of trials that can have their respective NLLs computed in parallel. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">trials</td><td>Vector of DDMTrials that the model should calculate the NLL for. </td></tr>
+    <tr><td class="paramname">debug</td><td>Boolean specifying if state variables should be printed for debugging purposes. </td></tr>
+    <tr><td class="paramname">timeStep</td><td>Value in milliseconds used for binning the time axis. </td></tr>
+    <tr><td class="paramname">approxStateStep</td><td>Used for binning the RDV axis. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>double representing the sum of negative log likelihoods for each trial. </dd></dl>
+
 </div>
 </div>
-<a id="a92b7316ad8a67ddc5952ea50b78dcbee" name="a92b7316ad8a67ddc5952ea50b78dcbee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a92b7316ad8a67ddc5952ea50b78dcbee">&#9670;&#160;</a></span>fitModelBasic()</h2>
+<a id="afa088ac37fa5439d93d98acf6e193a7f" name="afa088ac37fa5439d93d98acf6e193a7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa088ac37fa5439d93d98acf6e193a7f">&#9670;&#160;</a></span>fitModelMLE()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -282,7 +328,7 @@ Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_d_d_m.html">DDM</a> DDM::fitModelBasic </td>
+          <td class="memname"><a class="el" href="class_d_d_m.html">DDM</a> DDM::fitModelMLE </td>
           <td>(</td>
           <td class="paramtype">std::vector&lt; <a class="el" href="class_d_d_m_trial.html">DDMTrial</a> &gt;&#160;</td>
           <td class="paramname"><em>trials</em>, </td>
@@ -324,83 +370,18 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a2d405937d0259462329d15817244d820" name="a2d405937d0259462329d15817244d820"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2d405937d0259462329d15817244d820">&#9670;&#160;</a></span>fitModelOptimized()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_d_d_m.html">DDM</a> DDM::fitModelOptimized </td>
-          <td>(</td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="class_d_d_m_trial.html">DDMTrial</a> &gt;&#160;</td>
-          <td class="paramname"><em>trials</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>startD</em> = <code>0.1</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>startSigma</em> = <code>1</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>deltaD</em> = <code>0.05</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>deltaSigma</em> = <code>0.5</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>barrier</em> = <code>1</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>tolerance</em> = <code>1</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>computeMethod</em> = <code>&quot;basic&quot;</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>optimizer</em> = <code>&quot;hooke-jeeves&quot;</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>Copmlete a grid-search based Maximum Likelihood Estimation of all possible paramters combinations (d, sigma) to determine which parameters are most likely to generate the provided DDMTrials. Each potential model generates an NLL value for the dataset and the method returns the model with the minimum NLL value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">trials</td><td>Vector of DDMTrials that each model should calculate the NLL for. </td></tr>
+    <tr><td class="paramname">rangeD</td><td>Vector of floats representing possible values of d to dest for. </td></tr>
+    <tr><td class="paramname">rangeSigma</td><td>Vector of floats representing possible values of sigma to test for. </td></tr>
+    <tr><td class="paramname">barrier</td><td>Positive magnitude of the sigmal threshold. </td></tr>
+    <tr><td class="paramname">computeMethod</td><td>Computation method to calculate the NLL for each possible model. Allowed values are {basic, thread, gpu}. "basic" will compute each trial likelihood sequentially and compute the NLL as the sum of all negative log likelihoods. "thread" will use a thread pool to divide all trials into the maximum number of CPU threads and compute the NLL of each block of trials in parallel. "gpu" will call a CUDA kernel to compute the likelihood of each trial in parallel on the GPU. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>
@@ -442,6 +423,44 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Compute the likelihood of the trial results provided the current parameters. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">trial</td><td><a class="el" href="class_d_d_m_trial.html">DDMTrial</a> object. </td></tr>
+    <tr><td class="paramname">debug</td><td>Boolean specifying if state variables should be printed for debugging purposes. </td></tr>
+    <tr><td class="paramname">timeStep</td><td>Value in milliseconds used for binning the time axis. </td></tr>
+    <tr><td class="paramname">approxStateStep</td><td>Used for binning the RDV axis. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>double representing the likelihood for the given trial. </dd></dl>
+
+</div>
+</div>
+<a id="acd37ba5a2a2f6e45661df2516dabf267" name="acd37ba5a2a2f6e45661df2516dabf267"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd37ba5a2a2f6e45661df2516dabf267">&#9670;&#160;</a></span>operator&lt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DDM::operator&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_d_d_m.html">DDM</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
 </div>
 </div>
 <a id="a6a1471b7df53bbb107df7bf954f6d7a6" name="a6a1471b7df53bbb107df7bf954f6d7a6"></a>
@@ -476,6 +495,17 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Generate a simulated <a class="el" href="class_d_d_m.html">DDM</a> trial provided item values. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ValueLeft</td><td>Value of the left item. </td></tr>
+    <tr><td class="paramname">ValueRight</td><td>Value of the right item. </td></tr>
+    <tr><td class="paramname">timeStep</td><td>Value in milliseconds used for binning the time axis. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_d_d_m_trial.html">DDMTrial</a> resulting from the simulation. </dd></dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -490,6 +520,7 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Positive float representing the magnitude of the signal threshold. </p>
 
 </div>
 </div>
@@ -504,6 +535,7 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Float corresponding to the initial RDV. Must be smaller than the barrier. </p>
 
 </div>
 </div>
@@ -518,6 +550,7 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Float parameter of the model that controls the speed of integration. Referred to as drift rate. </p>
 
 </div>
 </div>
@@ -532,6 +565,7 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Non-negative integer representing the amount of time in milliseconds in which only noise is added to the decision variable. </p>
 
 </div>
 </div>
@@ -546,6 +580,7 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Float parameter of the model that control noise of the RDV signal and standard deviation for any sampled normal distributions. </p>
 
 </div>
 </div>

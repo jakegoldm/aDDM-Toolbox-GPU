@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['simulatedataset_0',['simulateDataset',['../test_8cpp.html#a93a7002eb4726f66f9f62853112b1bfd',1,'test.cpp']]],
-  ['simulatetrial_1',['simulateTrial',['../classa_d_d_m.html#ac9cc21a00f8516e23a0e3b15f913999b',1,'aDDM::simulateTrial()'],['../class_d_d_m.html#a6a1471b7df53bbb107df7bf954f6d7a6',1,'DDM::simulateTrial()']]]
+  ['pdf_0',['pdf',['../cuda__util_8cuh.html#a5ef8b0f3b58deeba3723b6be6f9ded0b',1,'cuda_util.cuh']]],
+  ['printmatrix_1',['printMatrix',['../util_8h.html#a81800961a300ff0d4bdaaa7ee2e97ff8',1,'util.h']]],
+  ['probabilitydensityfunction_2',['probabilityDensityFunction',['../util_8h.html#a3c70684bbd5c18365b967d158305e919',1,'probabilityDensityFunction(float mean, float sigma, float x):&#160;util.cpp'],['../util_8cpp.html#a3c70684bbd5c18365b967d158305e919',1,'probabilityDensityFunction(float mean, float sigma, float x):&#160;util.cpp']]]
 ];
