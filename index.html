@@ -173,7 +173,7 @@ aDDM</h3>
 <div class="line"><span class="keywordtype">int</span> valueRight = 7; </div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> <a class="code hl_function" href="addm__mle_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
-<div class="line">    std::map&lt;int, std::vector&lt;aDDMTrial&gt;&gt; data = <a class="code hl_function" href="util_8h.html#ab6b9c5e80a13d7b17e7617f31e47f156">loadDataFromSingleCSV</a>(<span class="stringliteral">&quot;data/addm_sims.csv&quot;</span>);</div>
+<div class="line">    map&lt;int, vector&lt;aDDMTrial&gt;&gt; data = <a class="code hl_function" href="util_8h.html#ab6b9c5e80a13d7b17e7617f31e47f156">loadDataFromSingleCSV</a>(<span class="stringliteral">&quot;data/addm_sims.csv&quot;</span>);</div>
 <div class="line">    <a class="code hl_class" href="class_fixation_data.html">FixationData</a> fixationData = <a class="code hl_function" href="util_8h.html#a35c0510fda1855a7e52a89070c757152">getEmpiricalDistributions</a>(data);</div>
 <div class="line"> </div>
 <div class="line">    vector&lt;DDMTrial&gt; trials(<a class="code hl_variable" href="addm__simulate_8cpp.html#a7722c8ecbb62d99aee7ce68b1752f337">N</a>);</div>
@@ -201,7 +201,7 @@ aDDM</h3>
 <div class="line"><span class="keywordtype">int</span> valueRight = 7; </div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> <a class="code hl_function" href="addm__mle_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
-<div class="line">    std::map&lt;int, std::vector&lt;aDDMTrial&gt;&gt; data = <a class="code hl_function" href="util_8h.html#a78fc1c7aadc9bd3f08e29b796632b49b">loadDataFromCSV</a>(<span class="stringliteral">&quot;data/expdata.csv&quot;</span>, <span class="stringliteral">&quot;data/fixations.csv&quot;</span>);</div>
+<div class="line">    map&lt;int, vector&lt;aDDMTrial&gt;&gt; data = <a class="code hl_function" href="util_8h.html#a78fc1c7aadc9bd3f08e29b796632b49b">loadDataFromCSV</a>(<span class="stringliteral">&quot;data/expdata.csv&quot;</span>, <span class="stringliteral">&quot;data/fixations.csv&quot;</span>);</div>
 <div class="line">    <a class="code hl_class" href="class_fixation_data.html">FixationData</a> fixationData = <a class="code hl_function" href="util_8h.html#a35c0510fda1855a7e52a89070c757152">getEmpiricalDistributions</a>(data);</div>
 <div class="line"> </div>
 <div class="line">    vector&lt;DDMTrial&gt; trials(<a class="code hl_variable" href="addm__simulate_8cpp.html#a7722c8ecbb62d99aee7ce68b1752f337">N</a>);</div>
