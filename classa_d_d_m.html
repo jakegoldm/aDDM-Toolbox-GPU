@@ -83,6 +83,8 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:aa91c58ed9dadaf2fdb4c17390a2c22b4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classa_d_d_m.html#aa91c58ed9dadaf2fdb4c17390a2c22b4">operator&lt;</a> (const <a class="el" href="classa_d_d_m.html">aDDM</a> &amp;rhs) const</td></tr>
+<tr class="separator:aa91c58ed9dadaf2fdb4c17390a2c22b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9ecaeec702acd80c74d483ca653524d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classa_d_d_m.html#ad9ecaeec702acd80c74d483ca653524d">aDDM</a> (float <a class="el" href="class_d_d_m.html#a15511d3cf0f7deb5de073dcdfd09bcc6">d</a>, float <a class="el" href="class_d_d_m.html#a17570a6c2378cdb363437f39a5fa3f00">sigma</a>, float <a class="el" href="classa_d_d_m.html#a9c6c014066b0930baaa665b06dec9bb3">theta</a>, float <a class="el" href="class_d_d_m.html#a0293f051d7889ee014fb55c4939e4783">barrier</a>, unsigned int <a class="el" href="class_d_d_m.html#a0821be8a65988df0004b4d9f4239a020">nonDecisionTime</a>=0, float <a class="el" href="class_d_d_m.html#a0cecc28e691846bce6dccb02f34aef07">bias</a>=0)</td></tr>
 <tr class="memdesc:ad9ecaeec702acd80c74d483ca653524d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classa_d_d_m.html" title="Implementation of the attentional Drift Diffusion Model (aDDM).">aDDM</a> object.  <br /></td></tr>
 <tr class="separator:ad9ecaeec702acd80c74d483ca653524d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -125,13 +127,13 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ac3e8bdd00879d66f884e2fab1e831b79"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classa_d_d_m.html">aDDM</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classa_d_d_m.html#ac3e8bdd00879d66f884e2fab1e831b79">fitModelMLE</a> (vector&lt; <a class="el" href="classa_d_d_m_trial.html">aDDMTrial</a> &gt; trials, vector&lt; float &gt; <a class="el" href="addm__mle_8cpp.html#a800d6969137d46bac6c127a9f70b7e51">rangeD</a>, vector&lt; float &gt; <a class="el" href="addm__mle_8cpp.html#a347dbb7726ce6ea89520f5980d686dd8">rangeSigma</a>, vector&lt; float &gt; <a class="el" href="addm__mle_8cpp.html#ad2aa7a364e6ed4961ee3bb151d523d2c">rangeTheta</a>, float <a class="el" href="class_d_d_m.html#a0293f051d7889ee014fb55c4939e4783">barrier</a>, string computeMethod=&quot;basic&quot;)</td></tr>
-<tr class="memdesc:ac3e8bdd00879d66f884e2fab1e831b79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Complete a grid-search based Maximum Likelihood Estimation of all possible parameter combinations (d, theta, sigma) to determine which parameters are most likely to generate the provided aDDMTrials. Each potential model generates an NLL value for the dataset and the method returns the model with the minimum NLL value.  <br /></td></tr>
-<tr class="separator:ac3e8bdd00879d66f884e2fab1e831b79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1a55c6799d197dca7c0f59fc947e875"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="struct_m_l_einfo.html">MLEinfo</a>&lt; <a class="el" href="classa_d_d_m.html">aDDM</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classa_d_d_m.html#ab1a55c6799d197dca7c0f59fc947e875">fitModelMLE</a> (vector&lt; <a class="el" href="classa_d_d_m_trial.html">aDDMTrial</a> &gt; trials, vector&lt; float &gt; <a class="el" href="addm__mle_8cpp.html#a800d6969137d46bac6c127a9f70b7e51">rangeD</a>, vector&lt; float &gt; <a class="el" href="addm__mle_8cpp.html#a347dbb7726ce6ea89520f5980d686dd8">rangeSigma</a>, vector&lt; float &gt; <a class="el" href="addm__mle_8cpp.html#ad2aa7a364e6ed4961ee3bb151d523d2c">rangeTheta</a>, float <a class="el" href="class_d_d_m.html#a0293f051d7889ee014fb55c4939e4783">barrier</a>, string computeMethod=&quot;basic&quot;)</td></tr>
+<tr class="memdesc:ab1a55c6799d197dca7c0f59fc947e875"><td class="mdescLeft">&#160;</td><td class="mdescRight">Complete a grid-search based Maximum Likelihood Estimation of all possible parameter combinations (d, theta, sigma) to determine which parameters are most likely to generate the provided aDDMTrials. Each potential model generates an NLL value for the dataset and the method returns the model with the minimum NLL value.  <br /></td></tr>
+<tr class="separator:ab1a55c6799d197dca7c0f59fc947e875"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_methods_class_d_d_m"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_class_d_d_m')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="class_d_d_m.html">DDM</a></td></tr>
-<tr class="memitem:afa088ac37fa5439d93d98acf6e193a7f inherit pub_static_methods_class_d_d_m"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_d_d_m.html">DDM</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#afa088ac37fa5439d93d98acf6e193a7f">fitModelMLE</a> (std::vector&lt; <a class="el" href="class_d_d_m_trial.html">DDMTrial</a> &gt; trials, std::vector&lt; float &gt; <a class="el" href="addm__mle_8cpp.html#a800d6969137d46bac6c127a9f70b7e51">rangeD</a>, std::vector&lt; float &gt; <a class="el" href="addm__mle_8cpp.html#a347dbb7726ce6ea89520f5980d686dd8">rangeSigma</a>, float <a class="el" href="class_d_d_m.html#a0293f051d7889ee014fb55c4939e4783">barrier</a>, std::string computeMethod=&quot;basic&quot;)</td></tr>
-<tr class="memdesc:afa088ac37fa5439d93d98acf6e193a7f inherit pub_static_methods_class_d_d_m"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copmlete a grid-search based Maximum Likelihood Estimation of all possible paramters combinations (d, sigma) to determine which parameters are most likely to generate the provided DDMTrials. Each potential model generates an NLL value for the dataset and the method returns the model with the minimum NLL value.  <br /></td></tr>
-<tr class="separator:afa088ac37fa5439d93d98acf6e193a7f inherit pub_static_methods_class_d_d_m"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a9c5f28d5ea48ae97d18a5f81fc0e61 inherit pub_static_methods_class_d_d_m"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="struct_m_l_einfo.html">MLEinfo</a>&lt; <a class="el" href="class_d_d_m.html">DDM</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#a9a9c5f28d5ea48ae97d18a5f81fc0e61">fitModelMLE</a> (std::vector&lt; <a class="el" href="class_d_d_m_trial.html">DDMTrial</a> &gt; trials, std::vector&lt; float &gt; <a class="el" href="addm__mle_8cpp.html#a800d6969137d46bac6c127a9f70b7e51">rangeD</a>, std::vector&lt; float &gt; <a class="el" href="addm__mle_8cpp.html#a347dbb7726ce6ea89520f5980d686dd8">rangeSigma</a>, float <a class="el" href="class_d_d_m.html#a0293f051d7889ee014fb55c4939e4783">barrier</a>, std::string computeMethod=&quot;basic&quot;)</td></tr>
+<tr class="memdesc:a9a9c5f28d5ea48ae97d18a5f81fc0e61 inherit pub_static_methods_class_d_d_m"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copmlete a grid-search based Maximum Likelihood Estimation of all possible paramters combinations (d, sigma) to determine which parameters are most likely to generate the provided DDMTrials. Each potential model generates an NLL value for the dataset and the method returns the model with the minimum NLL value.  <br /></td></tr>
+<tr class="separator:a9a9c5f28d5ea48ae97d18a5f81fc0e61 inherit pub_static_methods_class_d_d_m"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -357,8 +359,8 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ac3e8bdd00879d66f884e2fab1e831b79" name="ac3e8bdd00879d66f884e2fab1e831b79"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac3e8bdd00879d66f884e2fab1e831b79">&#9670;&#160;</a></span>fitModelMLE()</h2>
+<a id="ab1a55c6799d197dca7c0f59fc947e875" name="ab1a55c6799d197dca7c0f59fc947e875"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1a55c6799d197dca7c0f59fc947e875">&#9670;&#160;</a></span>fitModelMLE()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -367,7 +369,7 @@ Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classa_d_d_m.html">aDDM</a> aDDM::fitModelMLE </td>
+          <td class="memname"><a class="el" href="struct_m_l_einfo.html">MLEinfo</a>&lt; <a class="el" href="classa_d_d_m.html">aDDM</a> &gt; aDDM::fitModelMLE </td>
           <td>(</td>
           <td class="paramtype">vector&lt; <a class="el" href="classa_d_d_m_trial.html">aDDMTrial</a> &gt;&#160;</td>
           <td class="paramname"><em>trials</em>, </td>
@@ -480,6 +482,32 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>double representing the likelihood for the given trial. </dd></dl>
+
+</div>
+</div>
+<a id="aa91c58ed9dadaf2fdb4c17390a2c22b4" name="aa91c58ed9dadaf2fdb4c17390a2c22b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa91c58ed9dadaf2fdb4c17390a2c22b4">&#9670;&#160;</a></span>operator&lt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool aDDM::operator&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classa_d_d_m.html">aDDM</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

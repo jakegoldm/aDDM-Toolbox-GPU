@@ -13,7 +13,7 @@ var searchData=
   ['addm_5fnll_5fgpu_2ecu_10',['addm_nll_gpu.cu',['../addm__nll__gpu_8cu.html',1,'']]],
   ['addm_5fnll_5fthread_2ecpp_11',['addm_nll_thread.cpp',['../addm__nll__thread_8cpp.html',1,'']]],
   ['addm_5fsimulate_2ecpp_12',['addm_simulate.cpp',['../addm__simulate_8cpp.html',1,'']]],
-  ['addmexportdata_13',['aDDMexportData',['../util_8h.html#a97aa8641a43699dcdbb5a052c14cfee1',1,'aDDMexportData(aDDM addm, aDDMTrial adt):&#160;util.cpp'],['../util_8cpp.html#a97aa8641a43699dcdbb5a052c14cfee1',1,'aDDMexportData(aDDM addm, aDDMTrial adt):&#160;util.cpp']]],
-  ['addmtoolboxgpu_5fh_14',['addmToolboxGPU_h',['../gpu__toolbox_8cuh.html#ae1cc989d6f1b0e8ed53526545710b95b',1,'gpu_toolbox.cuh']]],
+  ['addm_5ftoolbox_5fgpu_5fh_13',['ADDM_TOOLBOX_GPU_H',['../gpu__toolbox_8cuh.html#affd90b6b8c518cb5487ae0af03dbb363',1,'gpu_toolbox.cuh']]],
+  ['addmexportdata_14',['aDDMexportData',['../util_8h.html#a97aa8641a43699dcdbb5a052c14cfee1',1,'aDDMexportData(aDDM addm, aDDMTrial adt):&#160;util.cpp'],['../util_8cpp.html#a97aa8641a43699dcdbb5a052c14cfee1',1,'aDDMexportData(aDDM addm, aDDMTrial adt):&#160;util.cpp']]],
   ['addmtrial_15',['aDDMTrial',['../classa_d_d_m_trial.html#aa10527b5851a8395529eff1e8ad86adc',1,'aDDMTrial::aDDMTrial(unsigned int RT, int choice, int valueLeft, int valueRight, vector&lt; int &gt; fixItem={}, vector&lt; int &gt; fixTime={}, vector&lt; float &gt; fixRDV={}, float uninterruptedLastFixTime=0)'],['../classa_d_d_m_trial.html#ae406a1f1ae278a292421caedafda67a2',1,'aDDMTrial::aDDMTrial()'],['../classa_d_d_m_trial.html',1,'aDDMTrial']]]
 ];

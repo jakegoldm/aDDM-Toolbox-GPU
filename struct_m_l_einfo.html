@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>aDDM-Toolbox-GPU: include/gpu_toolbox.cuh File Reference</title>
+<title>aDDM-Toolbox-GPU: MLEinfo&lt; T &gt; Struct Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -67,43 +67,60 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
-</div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a>  </div>
-  <div class="headertitle"><div class="title">gpu_toolbox.cuh File Reference</div></div>
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="struct_m_l_einfo-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">MLEinfo&lt; T &gt; Struct Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="addm_8cuh_source.html">addm.cuh</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="cuda__util_8cuh_source.html">cuda_util.cuh</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="mle__info_8h_source.html">mle_info.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ddm_8cuh_source.html">ddm.cuh</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="util_8h_source.html">util.h</a>&quot;</code><br />
-</div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:affd90b6b8c518cb5487ae0af03dbb363"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gpu__toolbox_8cuh.html#affd90b6b8c518cb5487ae0af03dbb363">ADDM_TOOLBOX_GPU_H</a></td></tr>
-<tr class="separator:affd90b6b8c518cb5487ae0af03dbb363"><td class="memSeparator" colspan="2">&#160;</td></tr>
+
+<p><code>#include &lt;<a class="el" href="mle__info_8h_source.html">mle_info.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a054f10abde01843cc1db0b07135edb0e"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_m_l_einfo.html#a054f10abde01843cc1db0b07135edb0e">optimal</a></td></tr>
+<tr class="separator:a054f10abde01843cc1db0b07135edb0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a870909204aa0bd0c840d81dc27ea6185"><td class="memItemLeft" align="right" valign="top">std::map&lt; T, float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_m_l_einfo.html#a870909204aa0bd0c840d81dc27ea6185">posteriors</a></td></tr>
+<tr class="separator:a870909204aa0bd0c840d81dc27ea6185"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="affd90b6b8c518cb5487ae0af03dbb363" name="affd90b6b8c518cb5487ae0af03dbb363"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#affd90b6b8c518cb5487ae0af03dbb363">&#9670;&#160;</a></span>ADDM_TOOLBOX_GPU_H</h2>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a054f10abde01843cc1db0b07135edb0e" name="a054f10abde01843cc1db0b07135edb0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a054f10abde01843cc1db0b07135edb0e">&#9670;&#160;</a></span>optimal</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">#define ADDM_TOOLBOX_GPU_H</td>
+          <td class="memname">T <a class="el" href="struct_m_l_einfo.html">MLEinfo</a>&lt; T &gt;::optimal</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
+<a id="a870909204aa0bd0c840d81dc27ea6185" name="a870909204aa0bd0c840d81dc27ea6185"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a870909204aa0bd0c840d81dc27ea6185">&#9670;&#160;</a></span>posteriors</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;T, float&gt; <a class="el" href="struct_m_l_einfo.html">MLEinfo</a>&lt; T &gt;::posteriors</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>include/<a class="el" href="mle__info_8h_source.html">mle_info.h</a></li>
+</ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
