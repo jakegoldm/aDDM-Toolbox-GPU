@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['fitmodelmle_0',['fitModelMLE',['../classa_d_d_m.html#ab1a55c6799d197dca7c0f59fc947e875',1,'aDDM::fitModelMLE()'],['../class_d_d_m.html#a9a9c5f28d5ea48ae97d18a5f81fc0e61',1,'DDM::fitModelMLE()']]],
+  ['fitmodelmle_0',['fitModelMLE',['../classa_d_d_m.html#a98af9ca5cb9bd56b66460c3206176197',1,'aDDM::fitModelMLE()'],['../class_d_d_m.html#a61f506f4d5cab6c10928d63cf18a9b66',1,'DDM::fitModelMLE()']]],
   ['fixationdata_1',['FixationData',['../class_fixation_data.html',1,'FixationData'],['../class_fixation_data.html#a26d7e8281996bf28e056b440baf3be8d',1,'FixationData::FixationData(float probFixLeftFirst, vector&lt; int &gt; latencies, vector&lt; int &gt; transitions, fixDists fixations, string fixDistType)']]],
   ['fixations_2',['fixations',['../class_fixation_data.html#a47d55cea6c6a1ecaef33baa5e9a0f60c',1,'FixationData']]],
   ['fixdists_3',['fixDists',['../addm_8cuh.html#ac73e0abca434ac872480feb6a7cf4c56',1,'addm.cuh']]],
