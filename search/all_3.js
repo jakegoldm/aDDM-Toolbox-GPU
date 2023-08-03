@@ -8,5 +8,9 @@ var searchData=
   ['cuaddm_2ecu_5',['cuaddm.cu',['../cuaddm_8cu.html',1,'']]],
   ['cuda_5futil_2ecuh_6',['cuda_util.cuh',['../cuda__util_8cuh.html',1,'']]],
   ['cuddm_2ecu_7',['cuddm.cu',['../cuddm_8cu.html',1,'']]],
-  ['cumulativedensityfunction_8',['cumulativeDensityFunction',['../util_8h.html#ab0c2fb4c0b02fabb15eeab9d6f73e5ab',1,'cumulativeDensityFunction(float mean, float sigma, float x):&#160;util.cpp'],['../util_8cpp.html#ab0c2fb4c0b02fabb15eeab9d6f73e5ab',1,'cumulativeDensityFunction(float mean, float sigma, float x):&#160;util.cpp']]]
+  ['cumulativedensityfunction_8',['cumulativeDensityFunction',['../util_8h.html#ab0c2fb4c0b02fabb15eeab9d6f73e5ab',1,'cumulativeDensityFunction(float mean, float sigma, float x):&#160;util.cpp'],['../util_8cpp.html#ab0c2fb4c0b02fabb15eeab9d6f73e5ab',1,'cumulativeDensityFunction(float mean, float sigma, float x):&#160;util.cpp']]],
+  ['curr_9',['curr',['../namespaceposteriors.html#abc86f348e77c0130bead961244e644ae',1,'posteriors']]],
+  ['curr_5fheatmap_10',['curr_heatmap',['../namespaceposteriors.html#a0584c47c7fcd3cb0b181c1dc83293839',1,'posteriors']]],
+  ['curr_5fpar1_11',['curr_par1',['../namespaceposteriors.html#a31ccc543e12306644e0a2f874ffeb122',1,'posteriors']]],
+  ['curr_5fpar2_12',['curr_par2',['../namespaceposteriors.html#a83726de6d8d270c64128afc328a366c8',1,'posteriors']]]
 ];

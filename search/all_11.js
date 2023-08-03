@@ -1,10 +1,15 @@
 var searchData=
 [
-  ['valdiffs_0',['valDiffs',['../addm__simulate_8cpp.html#a918c56381f398e42c3dc1d018b0016bd',1,'valDiffs:&#160;addm_simulate.cpp'],['../ddm__simulate_8cpp.html#a918c56381f398e42c3dc1d018b0016bd',1,'valDiffs:&#160;ddm_simulate.cpp'],['../test_8cpp.html#a918c56381f398e42c3dc1d018b0016bd',1,'valDiffs:&#160;test.cpp']]],
-  ['validcomputemethods_1',['validComputeMethods',['../util_8h.html#a2594fe56f3198371358f16212e99e9cc',1,'validComputeMethods:&#160;util.cpp'],['../util_8cpp.html#a2594fe56f3198371358f16212e99e9cc',1,'validComputeMethods:&#160;util.cpp']]],
-  ['validfixdisttypes_2',['validFixDistTypes',['../util_8h.html#a99cfa00f5e7249d86df14b3f97b01d5e',1,'validFixDistTypes:&#160;util.cpp'],['../util_8cpp.html#a99cfa00f5e7249d86df14b3f97b01d5e',1,'validFixDistTypes:&#160;util.cpp']]],
-  ['valueleft_3',['valueLeft',['../ddm__nll__thread_8cpp.html#a66ae2c9a86cab7b4970ecc123c799c45',1,'valueLeft:&#160;ddm_nll_thread.cpp'],['../ddm__nll__gpu_8cu.html#a66ae2c9a86cab7b4970ecc123c799c45',1,'valueLeft:&#160;ddm_nll_gpu.cu'],['../ddm__nll_8cpp.html#a66ae2c9a86cab7b4970ecc123c799c45',1,'valueLeft:&#160;ddm_nll.cpp'],['../ddm__mle__thread_8cpp.html#a66ae2c9a86cab7b4970ecc123c799c45',1,'valueLeft:&#160;ddm_mle_thread.cpp'],['../ddm__mle_8cpp.html#a66ae2c9a86cab7b4970ecc123c799c45',1,'valueLeft:&#160;ddm_mle.cpp'],['../addm__nll__thread_8cpp.html#a66ae2c9a86cab7b4970ecc123c799c45',1,'valueLeft:&#160;addm_nll_thread.cpp'],['../addm__nll_8cpp.html#a66ae2c9a86cab7b4970ecc123c799c45',1,'valueLeft:&#160;addm_nll.cpp'],['../addm__mle__thread_8cpp.html#a66ae2c9a86cab7b4970ecc123c799c45',1,'valueLeft:&#160;addm_mle_thread.cpp'],['../addm__mle_8cpp.html#a66ae2c9a86cab7b4970ecc123c799c45',1,'valueLeft:&#160;addm_mle.cpp'],['../class_d_d_m_trial.html#ae949e54554e10660f73878a07a95d14d',1,'DDMTrial::valueLeft']]],
-  ['valueright_4',['valueRight',['../class_d_d_m_trial.html#a9e1a0900b92b8d16fb3bd49894c9dc2c',1,'DDMTrial']]],
-  ['vd_5fdists_5',['vd_dists',['../namespacevd__dists.html',1,'']]],
-  ['vd_5fdists_2epy_6',['vd_dists.py',['../vd__dists_8py.html',1,'']]]
+  ['test_2ecpp_0',['test.cpp',['../test_8cpp.html',1,'']]],
+  ['testddmtimespeedup_1',['testDDMtimeSpeedup',['../test_8cpp.html#a903c7265e3839b5e61572c955f1123b1',1,'test.cpp']]],
+  ['testmlefullgrid_2',['testMLEfullGrid',['../test_8cpp.html#ac06b150d453d1ec6004488ccd794d9b2',1,'test.cpp']]],
+  ['testsinglecsvload_3',['testSingleCSVLoad',['../test_8cpp.html#a204b57393d5ad5c9a3121a9ad106d0f7',1,'test.cpp']]],
+  ['theta_4',['theta',['../classa_d_d_m.html#a9c6c014066b0930baaa665b06dec9bb3',1,'aDDM::theta'],['../addm__nll_8cpp.html#aadfc5c227ca658a29a59a0ce6fc15792',1,'theta:&#160;addm_nll.cpp'],['../addm__nll__gpu_8cu.html#aadfc5c227ca658a29a59a0ce6fc15792',1,'theta:&#160;addm_nll_gpu.cu'],['../addm__nll__thread_8cpp.html#aadfc5c227ca658a29a59a0ce6fc15792',1,'theta:&#160;addm_nll_thread.cpp'],['../addm__simulate_8cpp.html#aadfc5c227ca658a29a59a0ce6fc15792',1,'theta:&#160;addm_simulate.cpp']]],
+  ['theta_5fsums_5',['theta_sums',['../namespaceposteriors.html#ad406b16741c6ec1a0e4958c7966f3312',1,'posteriors']]],
+  ['theta_5fval_6',['theta_val',['../namespaceposteriors.html#a1e786cf3bf08b44e844cf6d14b5aacda',1,'posteriors']]],
+  ['time_5fdiff_7',['time_diff',['../namespacetime__diff.html',1,'']]],
+  ['time_5fdiff_2epy_8',['time_diff.py',['../time__diff_8py.html',1,'']]],
+  ['timestep_9',['timeStep',['../class_d_d_m_trial.html#a6fd7d06bba895acb5cf3627343915aac',1,'DDMTrial']]],
+  ['title_10',['title',['../namespaceposteriors.html#a1d5ff48ee272d5f0c469484d2d6f5656',1,'posteriors']]],
+  ['transitions_11',['transitions',['../class_fixation_data.html#a10bd0c29fb903e681b6376d832c4d55c',1,'FixationData']]]
 ];

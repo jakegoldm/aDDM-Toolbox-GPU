@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['theta_0',['theta',['../classa_d_d_m.html#a9c6c014066b0930baaa665b06dec9bb3',1,'aDDM::theta'],['../addm__nll_8cpp.html#aadfc5c227ca658a29a59a0ce6fc15792',1,'theta:&#160;addm_nll.cpp'],['../addm__nll__gpu_8cu.html#aadfc5c227ca658a29a59a0ce6fc15792',1,'theta:&#160;addm_nll_gpu.cu'],['../addm__nll__thread_8cpp.html#aadfc5c227ca658a29a59a0ce6fc15792',1,'theta:&#160;addm_nll_thread.cpp'],['../addm__simulate_8cpp.html#aadfc5c227ca658a29a59a0ce6fc15792',1,'theta:&#160;addm_simulate.cpp']]],
-  ['timestep_1',['timeStep',['../class_d_d_m_trial.html#a6fd7d06bba895acb5cf3627343915aac',1,'DDMTrial']]],
-  ['transitions_2',['transitions',['../class_fixation_data.html#a10bd0c29fb903e681b6376d832c4d55c',1,'FixationData']]]
+  ['n_0',['N',['../namespaceposteriors.html#a178770fecb7a8e8d063088b092438a27',1,'posteriors.N'],['../addm__simulate_8cpp.html#a7722c8ecbb62d99aee7ce68b1752f337',1,'N:&#160;addm_simulate.cpp'],['../ddm__simulate_8cpp.html#a7722c8ecbb62d99aee7ce68b1752f337',1,'N:&#160;ddm_simulate.cpp'],['../test_8cpp.html#a7722c8ecbb62d99aee7ce68b1752f337',1,'N:&#160;test.cpp']]],
+  ['ncols_1',['ncols',['../namespaceposteriors.html#a4203adec26ba439f39a7c446f5917b82',1,'posteriors']]],
+  ['nll_2',['NLL',['../class_probability_data.html#ac82874e15b2365db4ce1320aa2097055',1,'ProbabilityData']]],
+  ['nondecisiontime_3',['nonDecisionTime',['../class_d_d_m.html#a0821be8a65988df0004b4d9f4239a020',1,'DDM']]],
+  ['nrows_4',['nrows',['../namespaceposteriors.html#afa4470b5dd1104b5bd6e23257d829ef4',1,'posteriors']]]
 ];

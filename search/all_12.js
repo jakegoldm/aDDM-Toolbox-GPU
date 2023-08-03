@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['writetrialstocsv_0',['writeTrialsToCSV',['../classa_d_d_m_trial.html#aa3758e27194c6ae3def6abfb5ebb722e',1,'aDDMTrial::writeTrialsToCSV()'],['../class_d_d_m_trial.html#acf57c528b6ce9b11a75d87b3b61846c4',1,'DDMTrial::writeTrialsToCSV()']]]
+  ['uninterruptedlastfixtime_0',['uninterruptedLastFixTime',['../classa_d_d_m_trial.html#ae0e6788d10a1c67884727fe58b6b4953',1,'aDDMTrial']]],
+  ['util_2ecpp_1',['util.cpp',['../util_8cpp.html',1,'']]],
+  ['util_2eh_2',['util.h',['../util_8h.html',1,'']]]
 ];

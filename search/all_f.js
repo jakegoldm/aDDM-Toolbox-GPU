@@ -1,12 +1,11 @@
 var searchData=
 [
-  ['test_2ecpp_0',['test.cpp',['../test_8cpp.html',1,'']]],
-  ['testddmtimespeedup_1',['testDDMtimeSpeedup',['../test_8cpp.html#a903c7265e3839b5e61572c955f1123b1',1,'test.cpp']]],
-  ['testmlefullgrid_2',['testMLEfullGrid',['../test_8cpp.html#ac06b150d453d1ec6004488ccd794d9b2',1,'test.cpp']]],
-  ['testsinglecsvload_3',['testSingleCSVLoad',['../test_8cpp.html#a204b57393d5ad5c9a3121a9ad106d0f7',1,'test.cpp']]],
-  ['theta_4',['theta',['../classa_d_d_m.html#a9c6c014066b0930baaa665b06dec9bb3',1,'aDDM::theta'],['../addm__nll_8cpp.html#aadfc5c227ca658a29a59a0ce6fc15792',1,'theta:&#160;addm_nll.cpp'],['../addm__nll__gpu_8cu.html#aadfc5c227ca658a29a59a0ce6fc15792',1,'theta:&#160;addm_nll_gpu.cu'],['../addm__nll__thread_8cpp.html#aadfc5c227ca658a29a59a0ce6fc15792',1,'theta:&#160;addm_nll_thread.cpp'],['../addm__simulate_8cpp.html#aadfc5c227ca658a29a59a0ce6fc15792',1,'theta:&#160;addm_simulate.cpp']]],
-  ['time_5fdiff_5',['time_diff',['../namespacetime__diff.html',1,'']]],
-  ['time_5fdiff_2epy_6',['time_diff.py',['../time__diff_8py.html',1,'']]],
-  ['timestep_7',['timeStep',['../class_d_d_m_trial.html#a6fd7d06bba895acb5cf3627343915aac',1,'DDMTrial']]],
-  ['transitions_8',['transitions',['../class_fixation_data.html#a10bd0c29fb903e681b6376d832c4d55c',1,'FixationData']]]
+  ['ranged_0',['rangeD',['../addm__mle_8cpp.html#a800d6969137d46bac6c127a9f70b7e51',1,'rangeD:&#160;addm_mle.cpp'],['../addm__mle__thread_8cpp.html#a800d6969137d46bac6c127a9f70b7e51',1,'rangeD:&#160;addm_mle_thread.cpp'],['../ddm__mle_8cpp.html#a800d6969137d46bac6c127a9f70b7e51',1,'rangeD:&#160;ddm_mle.cpp'],['../ddm__mle__thread_8cpp.html#a800d6969137d46bac6c127a9f70b7e51',1,'rangeD:&#160;ddm_mle_thread.cpp']]],
+  ['rangesigma_1',['rangeSigma',['../addm__mle_8cpp.html#a347dbb7726ce6ea89520f5980d686dd8',1,'rangeSigma:&#160;addm_mle.cpp'],['../addm__mle__thread_8cpp.html#a347dbb7726ce6ea89520f5980d686dd8',1,'rangeSigma:&#160;addm_mle_thread.cpp'],['../ddm__mle_8cpp.html#a347dbb7726ce6ea89520f5980d686dd8',1,'rangeSigma:&#160;ddm_mle.cpp'],['../ddm__mle__thread_8cpp.html#a347dbb7726ce6ea89520f5980d686dd8',1,'rangeSigma:&#160;ddm_mle_thread.cpp']]],
+  ['rangetheta_2',['rangeTheta',['../addm__mle_8cpp.html#ad2aa7a364e6ed4961ee3bb151d523d2c',1,'rangeTheta:&#160;addm_mle.cpp'],['../addm__mle__thread_8cpp.html#ad2aa7a364e6ed4961ee3bb151d523d2c',1,'rangeTheta:&#160;addm_mle_thread.cpp']]],
+  ['rdv_5ftime_3',['rdv_time',['../namespacerdv__time.html',1,'']]],
+  ['rdv_5ftime_2epy_4',['rdv_time.py',['../rdv__time_8py.html',1,'']]],
+  ['rdvs_5',['RDVs',['../class_d_d_m_trial.html#aa2f7a89ec8820e74e6fa9af95222a8d7',1,'DDMTrial']]],
+  ['readme_2emd_6',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
+  ['rt_7',['RT',['../class_d_d_m_trial.html#a1fed499f6f800dcf08331b0f08d4570b',1,'DDMTrial']]]
 ];

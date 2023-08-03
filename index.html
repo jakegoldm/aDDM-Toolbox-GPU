@@ -119,7 +119,7 @@ Examples</h1>
 </ul>
 <h2><a class="anchor" id="autotoc_md4"></a>
 N-Trial Simulation</h2>
-<p>Both the <code>ddm</code> and <code>addm</code> classes provide methods for simulating mass amounts of trials. This can be done using the <code>simulateTrial</code> method defined in both classes:</p>
+<p>Both the <code><a class="el" href="class_d_d_m.html">DDM</a></code> and <code><a class="el" href="classa_d_d_m.html" title="Implementation of the attentional Drift Diffusion Model (aDDM).">aDDM</a></code> classes provide methods for simulating mass amounts of trials. This can be done using the <code>simulateTrial</code> method defined in both classes:</p>
 <h3><a class="anchor" id="autotoc_md5"></a>
 DDM</h3>
 <div class="fragment"><div class="line"> ++</div>
@@ -240,6 +240,45 @@ Fixation Data</h4>
 <div class="ttc" id="autil_8h_html_a78fc1c7aadc9bd3f08e29b796632b49b"><div class="ttname"><a href="util_8h.html#a78fc1c7aadc9bd3f08e29b796632b49b">loadDataFromCSV</a></div><div class="ttdeci">std::map&lt; int, std::vector&lt; aDDMTrial &gt; &gt; loadDataFromCSV(std::string expDataFilename, std::string fixDataFilename)</div><div class="ttdef"><b>Definition</b> util.cpp:44</div></div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md9"></a>
 Trial Likelihood Compuation</h2>
+<p>The <code><a class="el" href="class_d_d_m.html">DDM</a></code> and <code><a class="el" href="classa_d_d_m.html" title="Implementation of the attentional Drift Diffusion Model (aDDM).">aDDM</a></code> classes both provide functionality for estimating trial likelihoods. The <code>getTrialLikelihood(...)</code> method takes in a single trial object and returns the likelihood that the provided model will generate that trial. Examples are provided below:</p>
+<h3><a class="anchor" id="autotoc_md10"></a>
+DDM</h3>
+<div class="fragment"><div class="line"> ++</div>
+<div class="line"><span class="preprocessor">#include &lt;addm/gpu_toolbox.cuh&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span>std; </div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> <a class="code hl_function" href="addm__mle_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
+<div class="line">    <a class="code hl_class" href="class_d_d_m.html">DDM</a> ddm = <a class="code hl_class" href="class_d_d_m.html">DDM</a>(0.005, 0.07, 1);</div>
+<div class="line">    <a class="code hl_class" href="class_d_d_m_trial.html">DDMTrial</a> trial = <a class="code hl_class" href="class_d_d_m_trial.html">DDMTrial</a>(2400, -1, 4, 5); </div>
+<div class="line">    <span class="keywordtype">double</span> prob = ddm.<a class="code hl_function" href="class_d_d_m.html#a025072ab3fd16dee3a0b0f57c7585a06">getTrialLikelihood</a>(trial);</div>
+<div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;Probability = &quot;</span> &lt;&lt; prob &lt;&lt; endl; </div>
+<div class="line">}</div>
+<div class="ttc" id="aclass_d_d_m_html_a025072ab3fd16dee3a0b0f57c7585a06"><div class="ttname"><a href="class_d_d_m.html#a025072ab3fd16dee3a0b0f57c7585a06">DDM::getTrialLikelihood</a></div><div class="ttdeci">double getTrialLikelihood(DDMTrial trial, bool debug=false, int timeStep=10, float approxStateStep=0.1)</div><div class="ttdoc">Compute the likelihood of the trial results provided the current parameters.</div><div class="ttdef"><b>Definition</b> ddm.cpp:36</div></div>
+</div><!-- fragment --><p> Output: </p><div class="fragment"><div class="line">Probability = 0.000166691</div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md11"></a>
+aDDM</h3>
+<div class="fragment"><div class="line"> ++</div>
+<div class="line"><span class="preprocessor">#include &lt;addm/gpu_toolbox.cuh&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span>std; </div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> <a class="code hl_function" href="addm__mle_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
+<div class="line">    <a class="code hl_class" href="classa_d_d_m.html">aDDM</a> addm = <a class="code hl_class" href="classa_d_d_m.html">aDDM</a>(0.005, 0.07, 0.5, 1);</div>
+<div class="line">    <a class="code hl_class" href="classa_d_d_m_trial.html">aDDMTrial</a> trial = <a class="code hl_class" href="classa_d_d_m_trial.html">aDDMTrial</a>(</div>
+<div class="line">        240, 1, 3, 3, {0, -1}, {100, 140}</div>
+<div class="line">    );</div>
+<div class="line">    <span class="keywordtype">double</span> prob = addm.<a class="code hl_function" href="classa_d_d_m.html#a9ccee0abe15711f09f8eee0a782f3e06">getTrialLikelihood</a>(trial);</div>
+<div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;Probability = &quot;</span> &lt;&lt; prob &lt;&lt; endl; </div>
+<div class="line">}</div>
+<div class="ttc" id="aclassa_d_d_m_html_a9ccee0abe15711f09f8eee0a782f3e06"><div class="ttname"><a href="classa_d_d_m.html#a9ccee0abe15711f09f8eee0a782f3e06">aDDM::getTrialLikelihood</a></div><div class="ttdeci">double getTrialLikelihood(aDDMTrial trial, bool debug=false, int timeStep=10, float approxStateStep=0.1)</div><div class="ttdoc">Compute the likelihood of the trial results provided the current parameters.</div><div class="ttdef"><b>Definition</b> addm.cpp:48</div></div>
+</div><!-- fragment --><p> Output: </p><div class="fragment"><div class="line">Probability = 0.000515395</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md12"></a>
+Negative Log Likelihoods (NLL)</h2>
+<h2><a class="anchor" id="autotoc_md13"></a>
+Maximum Likelihood Estimation (MLE)</h2>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->

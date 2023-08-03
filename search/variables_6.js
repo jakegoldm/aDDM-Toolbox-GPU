@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['optimal_0',['optimal',['../struct_m_l_einfo.html#a054f10abde01843cc1db0b07135edb0e',1,'MLEinfo']]]
+  ['heatmaps_0',['heatmaps',['../namespaceposteriors.html#a8f941f329c533f7dbc04d4d584c64681',1,'posteriors']]],
+  ['heatmaps_5fqueue_1',['heatmaps_queue',['../namespaceposteriors.html#a4e4c8712ab9d8d84b990b197b106d00a',1,'posteriors']]]
 ];

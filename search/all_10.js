@@ -1,6 +1,11 @@
 var searchData=
 [
-  ['uninterruptedlastfixtime_0',['uninterruptedLastFixTime',['../classa_d_d_m_trial.html#ae0e6788d10a1c67884727fe58b6b4953',1,'aDDMTrial']]],
-  ['util_2ecpp_1',['util.cpp',['../util_8cpp.html',1,'']]],
-  ['util_2eh_2',['util.h',['../util_8h.html',1,'']]]
+  ['seed_0',['SEED',['../util_8h.html#ac02944cc493358b6ef201270bd229165',1,'SEED:&#160;util.cpp'],['../util_8cpp.html#ac02944cc493358b6ef201270bd229165',1,'SEED:&#160;util.cpp']]],
+  ['sigma_1',['sigma',['../class_d_d_m.html#a17570a6c2378cdb363437f39a5fa3f00',1,'DDM::sigma'],['../addm__nll_8cpp.html#ae11aeeb83e22b5b7f1e6b4347eb1daa6',1,'sigma:&#160;addm_nll.cpp'],['../addm__nll__gpu_8cu.html#ae11aeeb83e22b5b7f1e6b4347eb1daa6',1,'sigma:&#160;addm_nll_gpu.cu'],['../addm__nll__thread_8cpp.html#ae11aeeb83e22b5b7f1e6b4347eb1daa6',1,'sigma:&#160;addm_nll_thread.cpp'],['../addm__simulate_8cpp.html#ae11aeeb83e22b5b7f1e6b4347eb1daa6',1,'sigma:&#160;addm_simulate.cpp'],['../ddm__nll_8cpp.html#ae11aeeb83e22b5b7f1e6b4347eb1daa6',1,'sigma:&#160;ddm_nll.cpp'],['../ddm__nll__gpu_8cu.html#ae11aeeb83e22b5b7f1e6b4347eb1daa6',1,'sigma:&#160;ddm_nll_gpu.cu'],['../ddm__nll__thread_8cpp.html#ae11aeeb83e22b5b7f1e6b4347eb1daa6',1,'sigma:&#160;ddm_nll_thread.cpp'],['../ddm__simulate_8cpp.html#ae11aeeb83e22b5b7f1e6b4347eb1daa6',1,'sigma:&#160;ddm_simulate.cpp']]],
+  ['sigma_5fsums_2',['sigma_sums',['../namespaceposteriors.html#a72e872f2ce0401036381e421dc343409',1,'posteriors']]],
+  ['sigma_5ftheta_3',['sigma_theta',['../namespaceposteriors.html#a5acf60f0f01e1299efb4e2a1adb768ae',1,'posteriors']]],
+  ['sigma_5fval_4',['sigma_val',['../namespaceposteriors.html#a1f608b97c3245a836c893ca38e620f31',1,'posteriors']]],
+  ['simulatedataset_5',['simulateDataset',['../test_8cpp.html#a93a7002eb4726f66f9f62853112b1bfd',1,'test.cpp']]],
+  ['simulatetrial_6',['simulateTrial',['../classa_d_d_m.html#ac9cc21a00f8516e23a0e3b15f913999b',1,'aDDM::simulateTrial()'],['../class_d_d_m.html#a6a1471b7df53bbb107df7bf954f6d7a6',1,'DDM::simulateTrial()']]],
+  ['size_7',['size',['../namespaceposteriors.html#ada56115895d2df2d9824599bd8240bbc',1,'posteriors']]]
 ];

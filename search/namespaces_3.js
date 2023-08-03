@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rdv_5ftime_0',['rdv_time',['../namespacerdv__time.html',1,'']]]
+  ['posteriors_0',['posteriors',['../namespaceposteriors.html',1,'']]]
 ];
