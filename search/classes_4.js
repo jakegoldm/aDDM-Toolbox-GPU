@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['probabilitydata_0',['ProbabilityData',['../class_probability_data.html',1,'']]]
+  ['mleinfo_0',['MLEinfo',['../struct_m_l_einfo.html',1,'']]]
 ];

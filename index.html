@@ -75,14 +75,16 @@ $(function() {
 <div class="textblock"><p><a class="anchor" id="md__r_e_a_d_m_e"></a> This toolbox can be used to perform model fitting and data simulation for the Drift Diffusion Model (<a class="el" href="class_d_d_m.html">DDM</a>) and the attentional Drift Diffusion Model (<a class="el" href="classa_d_d_m.html" title="Implementation of the attentional Drift Diffusion Model (aDDM).">aDDM</a>). It is aimed to provide computational speedup, employing GPU optimizations for parameter estimations.</p>
 <h1><a class="anchor" id="autotoc_md1"></a>
 Requirements</h1>
-<p>This library requires NVCC and CUDA Toolkit versions 12.2 and g++ version 11.3.0. This library also uses two thrid-party C++ packages for thread pools and JSON processing:</p>
+<p>This library requires NVCC and CUDA Toolkit versions 12.2 and g++ version 11.3.0. This library also uses three thrid-party C++ packages for thread pools, JSON processing, and statistical distributions:</p>
 <ul>
 <li><a href="https://github.com/bshoshany/thread-pool">BS::thread_pool</a></li>
 <li><a href="https://github.com/nlohmann/json">JSON for Modern C++</a></li>
+<li><a href="https://www.boost.org/doc/libs/?view=category_math">Boost Math/Statistical Distributions</a></li>
 </ul>
 <p>These dependencies can be installed using the following commands:</p>
 <div class="fragment"><div class="line">$ wget -O /usr/include/c++/11/BS_thread_pool.hpp https://raw.githubusercontent.com/bshoshany/thread-pool/master/include/BS_thread_pool.hpp</div>
 <div class="line">$ wget -O /usr/include/c++/11/nlohmann/json.hpp https://raw.githubusercontent.com/nlohmann/json/develop/single_include/nlohmann/json.hpp</div>
+<div class="line">$ apt-get install libboost-math-dev libboost-math1.74-dev</div>
 </div><!-- fragment --><p><em>Note that the installation directory /usr/include/c++/11 may be modified to support newer versions of C++.</em></p>
 <h1><a class="anchor" id="autotoc_md2"></a>
 Installation and Usage</h1>
@@ -276,10 +278,77 @@ aDDM</h3>
 <div class="ttc" id="aclassa_d_d_m_html_a9ccee0abe15711f09f8eee0a782f3e06"><div class="ttname"><a href="classa_d_d_m.html#a9ccee0abe15711f09f8eee0a782f3e06">aDDM::getTrialLikelihood</a></div><div class="ttdeci">double getTrialLikelihood(aDDMTrial trial, bool debug=false, int timeStep=10, float approxStateStep=0.1)</div><div class="ttdoc">Compute the likelihood of the trial results provided the current parameters.</div><div class="ttdef"><b>Definition</b> addm.cpp:48</div></div>
 </div><!-- fragment --><p> Output: </p><div class="fragment"><div class="line">Probability = 0.000515395</div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md12"></a>
-Negative Log Likelihoods (NLL)</h2>
-<h2><a class="anchor" id="autotoc_md13"></a>
-Maximum Likelihood Estimation (MLE)</h2>
-</div></div><!-- PageDoc -->
+Negative Log Likelihoods (NLL) and Maximum Likelihood Estimation (MLE)</h2>
+<p>A useful application of the trial likelihood computation is determining the total <b>Negative Log Likelihood (NLL)</b> of an aggregation of trials. Each instance of the <code><a class="el" href="class_d_d_m.html">DDM</a></code> and <code><a class="el" href="classa_d_d_m.html" title="Implementation of the attentional Drift Diffusion Model (aDDM).">aDDM</a></code>classes can use the following methods to determine the sum of NLLs for the trials.</p>
+<ul>
+<li><code>computeParallelNLL(...)</code> to compute the sum of NLLs for a vector of trials using CPU multithreading.</li>
+<li><code>computeGPUNLL(...)</code> to compute tthe sum of NLLs for a vector of trials using GPU parallelism.</li>
+</ul>
+<p>The sum of NLLs can also be computed without any optimization features using a simple for-loop and the <code>getTrialLikelihood</code> method.</p>
+<p>These methods can be applied for model fitting and performing <b>Maximum Likelihood Estimations (MLE)</b> for a set of models. The <code>fitModelMLE(...)</code> method of both the <code><a class="el" href="class_d_d_m.html">DDM</a></code> and <code><a class="el" href="classa_d_d_m.html" title="Implementation of the attentional Drift Diffusion Model (aDDM).">aDDM</a></code> allows a user to select a range of available parameters to test for, as well as the computational optimizations to employ based off the user's hardware. The <code>fitModelMLE(...)</code> method returns an instance of the <code><a class="el" href="struct_m_l_einfo.html">MLEinfo</a></code> struct, which contains the model with the most optimal parameters and aggregated likelihoods information:</p>
+<ol type="1">
+<li>Mapping of models to their calculated NLLs over the dataset of trials.</li>
+<li>Mapping of models to their normalized posteriors, taken as the sum of likelihoods.</li>
+</ol>
+<p>Examples of MLE calculations are described below:</p>
+<h3><a class="anchor" id="autotoc_md13"></a>
+DDM</h3>
+<div class="fragment"><div class="line"> ++</div>
+<div class="line"><span class="preprocessor">#include &lt;addm/gpu_toolbox.cuh&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span>std::chrono;</div>
+<div class="line"> </div>
+<div class="line">std::vector&lt;float&gt; <a class="code hl_variable" href="addm__mle_8cpp.html#a800d6969137d46bac6c127a9f70b7e51">rangeD</a> = {0.003, 0.004, 0.005, 0.006, 0.007, 0.008, 0.009};</div>
+<div class="line">std::vector&lt;float&gt; <a class="code hl_variable" href="addm__mle_8cpp.html#a347dbb7726ce6ea89520f5980d686dd8">rangeSigma</a> = {0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09};</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> <a class="code hl_variable" href="addm__mle_8cpp.html#a7ae0aa3d3c3bd4dc2fd68df5f46bb05f">barrier</a> = 1;</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> <a class="code hl_function" href="addm__mle_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
+<div class="line">    std::vector&lt;DDMTrial&gt; trials = <a class="code hl_function" href="class_d_d_m_trial.html#aa29a09c2bd047f0e7d15ccbd7bd6e7f3">DDMTrial::loadTrialsFromCSV</a>(<span class="stringliteral">&quot;results/ddm_simulations.csv&quot;</span>); </div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Counted &quot;</span> &lt;&lt; trials.size() &lt;&lt; <span class="stringliteral">&quot; trials.&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    <a class="code hl_struct" href="struct_m_l_einfo.html">MLEinfo&lt;DDM&gt;</a> info = <a class="code hl_function" href="class_d_d_m.html#a61f506f4d5cab6c10928d63cf18a9b66">DDM::fitModelMLE</a>(trials, <a class="code hl_variable" href="addm__mle_8cpp.html#a800d6969137d46bac6c127a9f70b7e51">rangeD</a>, <a class="code hl_variable" href="addm__mle_8cpp.html#a347dbb7726ce6ea89520f5980d686dd8">rangeSigma</a>, <a class="code hl_variable" href="addm__mle_8cpp.html#a7ae0aa3d3c3bd4dc2fd68df5f46bb05f">barrier</a>, <span class="stringliteral">&quot;gpu&quot;</span>, <span class="keyword">true</span>);</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Optimal d=&quot;</span> &lt;&lt; info.<a class="code hl_variable" href="struct_m_l_einfo.html#a054f10abde01843cc1db0b07135edb0e">optimal</a>.d &lt;&lt; <span class="stringliteral">&quot; sigma=&quot;</span> &lt;&lt; info.<a class="code hl_variable" href="struct_m_l_einfo.html#a054f10abde01843cc1db0b07135edb0e">optimal</a>.sigma &lt;&lt; std::endl; </div>
+<div class="line">}</div>
+<div class="ttc" id="aaddm__mle_8cpp_html_a347dbb7726ce6ea89520f5980d686dd8"><div class="ttname"><a href="addm__mle_8cpp.html#a347dbb7726ce6ea89520f5980d686dd8">rangeSigma</a></div><div class="ttdeci">std::vector&lt; float &gt; rangeSigma</div><div class="ttdef"><b>Definition</b> addm_mle.cpp:10</div></div>
+<div class="ttc" id="aaddm__mle_8cpp_html_a7ae0aa3d3c3bd4dc2fd68df5f46bb05f"><div class="ttname"><a href="addm__mle_8cpp.html#a7ae0aa3d3c3bd4dc2fd68df5f46bb05f">barrier</a></div><div class="ttdeci">int barrier</div><div class="ttdef"><b>Definition</b> addm_mle.cpp:13</div></div>
+<div class="ttc" id="aaddm__mle_8cpp_html_a800d6969137d46bac6c127a9f70b7e51"><div class="ttname"><a href="addm__mle_8cpp.html#a800d6969137d46bac6c127a9f70b7e51">rangeD</a></div><div class="ttdeci">std::vector&lt; float &gt; rangeD</div><div class="ttdef"><b>Definition</b> addm_mle.cpp:9</div></div>
+<div class="ttc" id="aclass_d_d_m_html_a61f506f4d5cab6c10928d63cf18a9b66"><div class="ttname"><a href="class_d_d_m.html#a61f506f4d5cab6c10928d63cf18a9b66">DDM::fitModelMLE</a></div><div class="ttdeci">static MLEinfo&lt; DDM &gt; fitModelMLE(std::vector&lt; DDMTrial &gt; trials, std::vector&lt; float &gt; rangeD, std::vector&lt; float &gt; rangeSigma, float barrier, std::string computeMethod=&quot;basic&quot;, bool normalizePosteriors=false)</div><div class="ttdoc">Copmlete a grid-search based Maximum Likelihood Estimation of all possible paramters combinations (d,...</div><div class="ttdef"><b>Definition</b> cuddm.cu:362</div></div>
+<div class="ttc" id="aclass_d_d_m_trial_html_aa29a09c2bd047f0e7d15ccbd7bd6e7f3"><div class="ttname"><a href="class_d_d_m_trial.html#aa29a09c2bd047f0e7d15ccbd7bd6e7f3">DDMTrial::loadTrialsFromCSV</a></div><div class="ttdeci">static std::vector&lt; DDMTrial &gt; loadTrialsFromCSV(std::string filename)</div><div class="ttdef"><b>Definition</b> ddm.cpp:382</div></div>
+<div class="ttc" id="astruct_m_l_einfo_html"><div class="ttname"><a href="struct_m_l_einfo.html">MLEinfo</a></div><div class="ttdef"><b>Definition</b> mle_info.h:7</div></div>
+<div class="ttc" id="astruct_m_l_einfo_html_a054f10abde01843cc1db0b07135edb0e"><div class="ttname"><a href="struct_m_l_einfo.html#a054f10abde01843cc1db0b07135edb0e">MLEinfo::optimal</a></div><div class="ttdeci">T optimal</div><div class="ttdef"><b>Definition</b> mle_info.h:8</div></div>
+</div><!-- fragment --><p> Output: </p><div class="fragment"><div class="line">Counted 1000 trials.</div>
+<div class="line">Optimal d=0.005 sigma=0.07</div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md14"></a>
+aDDM</h3>
+<div class="fragment"><div class="line"> ++</div>
+<div class="line"><span class="preprocessor">#include &lt;addm/gpu_toolbox.cuh&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span>std::chrono;</div>
+<div class="line"> </div>
+<div class="line">std::vector&lt;float&gt; <a class="code hl_variable" href="addm__mle_8cpp.html#a800d6969137d46bac6c127a9f70b7e51">rangeD</a> = {0.003, 0.004, 0.005};</div>
+<div class="line">std::vector&lt;float&gt; <a class="code hl_variable" href="addm__mle_8cpp.html#a347dbb7726ce6ea89520f5980d686dd8">rangeSigma</a> = {0.06, 0.07, 0.08};</div>
+<div class="line">std::vector&lt;float&gt; <a class="code hl_variable" href="addm__mle_8cpp.html#ad2aa7a364e6ed4961ee3bb151d523d2c">rangeTheta</a> = {0.5, 0.6, 0.7};</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> <a class="code hl_variable" href="addm__mle_8cpp.html#a7ae0aa3d3c3bd4dc2fd68df5f46bb05f">barrier</a> = 1;</div>
+<div class="line"><span class="keywordtype">int</span> <a class="code hl_variable" href="addm__mle_8cpp.html#a66ae2c9a86cab7b4970ecc123c799c45">valueLeft</a> = 3; </div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> <a class="code hl_function" href="addm__mle_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
+<div class="line">    std::vector&lt;aDDMTrial&gt; trials = <a class="code hl_function" href="classa_d_d_m_trial.html#a370280f496885eeb71c2530d77f5d889">aDDMTrial::loadTrialsFromCSV</a>(<span class="stringliteral">&quot;results/addm_simulations.csv&quot;</span>);</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Counted &quot;</span> &lt;&lt; trials.size() &lt;&lt; <span class="stringliteral">&quot; trials.&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    <a class="code hl_struct" href="struct_m_l_einfo.html">MLEinfo</a> info = <a class="code hl_function" href="classa_d_d_m.html#a98af9ca5cb9bd56b66460c3206176197">aDDM::fitModelMLE</a>(trials, <a class="code hl_variable" href="addm__mle_8cpp.html#a800d6969137d46bac6c127a9f70b7e51">rangeD</a>, <a class="code hl_variable" href="addm__mle_8cpp.html#a347dbb7726ce6ea89520f5980d686dd8">rangeSigma</a>, <a class="code hl_variable" href="addm__mle_8cpp.html#ad2aa7a364e6ed4961ee3bb151d523d2c">rangeTheta</a>, <a class="code hl_variable" href="addm__mle_8cpp.html#a7ae0aa3d3c3bd4dc2fd68df5f46bb05f">barrier</a>, <span class="stringliteral">&quot;thread&quot;</span>, <span class="keyword">true</span>);</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Optimal d=&quot;</span> &lt;&lt; info.<a class="code hl_variable" href="struct_m_l_einfo.html#a054f10abde01843cc1db0b07135edb0e">optimal</a>.d &lt;&lt; </div>
+<div class="line">                 <span class="stringliteral">&quot; sigma=&quot;</span> &lt;&lt; info.<a class="code hl_variable" href="struct_m_l_einfo.html#a054f10abde01843cc1db0b07135edb0e">optimal</a>.sigma &lt;&lt; </div>
+<div class="line">                 <span class="stringliteral">&quot; theta=&quot;</span> &lt;&lt; info.<a class="code hl_variable" href="struct_m_l_einfo.html#a054f10abde01843cc1db0b07135edb0e">optimal</a>.theta &lt;&lt; </div>
+<div class="line">                 std::endl;    </div>
+<div class="line">}</div>
+<div class="ttc" id="aaddm__mle_8cpp_html_ad2aa7a364e6ed4961ee3bb151d523d2c"><div class="ttname"><a href="addm__mle_8cpp.html#ad2aa7a364e6ed4961ee3bb151d523d2c">rangeTheta</a></div><div class="ttdeci">std::vector&lt; float &gt; rangeTheta</div><div class="ttdef"><b>Definition</b> addm_mle.cpp:11</div></div>
+<div class="ttc" id="aclassa_d_d_m_html_a98af9ca5cb9bd56b66460c3206176197"><div class="ttname"><a href="classa_d_d_m.html#a98af9ca5cb9bd56b66460c3206176197">aDDM::fitModelMLE</a></div><div class="ttdeci">static MLEinfo&lt; aDDM &gt; fitModelMLE(vector&lt; aDDMTrial &gt; trials, vector&lt; float &gt; rangeD, vector&lt; float &gt; rangeSigma, vector&lt; float &gt; rangeTheta, float barrier, string computeMethod=&quot;basic&quot;, bool normalizePosteriors=false)</div><div class="ttdoc">Complete a grid-search based Maximum Likelihood Estimation of all possible parameter combinations (d,...</div><div class="ttdef"><b>Definition</b> cuaddm.cu:445</div></div>
+<div class="ttc" id="aclassa_d_d_m_trial_html_a370280f496885eeb71c2530d77f5d889"><div class="ttname"><a href="classa_d_d_m_trial.html#a370280f496885eeb71c2530d77f5d889">aDDMTrial::loadTrialsFromCSV</a></div><div class="ttdeci">static vector&lt; aDDMTrial &gt; loadTrialsFromCSV(string filename)</div><div class="ttdef"><b>Definition</b> addm.cpp:538</div></div>
+</div><!-- fragment --><p> Output: </p><div class="fragment"><div class="line">Counted 1000 trials. </div>
+<div class="line">Optimal d=0.005 sigma=0.07 theta=0.5</div>
+</div><!-- fragment --> </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
