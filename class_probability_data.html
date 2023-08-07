@@ -83,8 +83,6 @@ $(function() {
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a865aa89be661b2fd1926f922b31a5aa6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_probability_data.html#a865aa89be661b2fd1926f922b31a5aa6">ProbabilityData</a> (double <a class="el" href="class_probability_data.html#a5be1c9f44c8addb85159a68db7345d79">likelihood</a>=0, double <a class="el" href="class_probability_data.html#ac82874e15b2365db4ce1320aa2097055">NLL</a>=0)</td></tr>
 <tr class="separator:a865aa89be661b2fd1926f922b31a5aa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a271573c938254a5a1cde23c231ab4442"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_probability_data.html#a271573c938254a5a1cde23c231ab4442">operator double</a> () const</td></tr>
-<tr class="separator:a271573c938254a5a1cde23c231ab4442"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -92,6 +90,8 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a5be1c9f44c8addb85159a68db7345d79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac82874e15b2365db4ce1320aa2097055"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_probability_data.html#ac82874e15b2365db4ce1320aa2097055">NLL</a></td></tr>
 <tr class="separator:ac82874e15b2365db4ce1320aa2097055"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34574072903da22d969799d75b15c242"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_probability_data.html#a34574072903da22d969799d75b15c242">trialLikelihoods</a></td></tr>
+<tr class="separator:a34574072903da22d969799d75b15c242"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a865aa89be661b2fd1926f922b31a5aa6" name="a865aa89be661b2fd1926f922b31a5aa6"></a>
@@ -130,32 +130,6 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a271573c938254a5a1cde23c231ab4442" name="a271573c938254a5a1cde23c231ab4442"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a271573c938254a5a1cde23c231ab4442">&#9670;&#160;</a></span>operator double()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">ProbabilityData::operator double </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a id="a5be1c9f44c8addb85159a68db7345d79" name="a5be1c9f44c8addb85159a68db7345d79"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5be1c9f44c8addb85159a68db7345d79">&#9670;&#160;</a></span>likelihood</h2>
@@ -179,6 +153,20 @@ Public Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">double ProbabilityData::NLL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a34574072903da22d969799d75b15c242" name="a34574072903da22d969799d75b15c242"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34574072903da22d969799d75b15c242">&#9670;&#160;</a></span>trialLikelihoods</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;double&gt; ProbabilityData::trialLikelihoods</td>
         </tr>
       </table>
 </div><div class="memdoc">

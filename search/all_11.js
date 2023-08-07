@@ -8,5 +8,6 @@ var searchData=
   ['time_5fdiff_5',['time_diff',['../namespacetime__diff.html',1,'']]],
   ['time_5fdiff_2epy_6',['time_diff.py',['../time__diff_8py.html',1,'']]],
   ['timestep_7',['timeStep',['../class_d_d_m_trial.html#a6fd7d06bba895acb5cf3627343915aac',1,'DDMTrial']]],
-  ['transitions_8',['transitions',['../class_fixation_data.html#a10bd0c29fb903e681b6376d832c4d55c',1,'FixationData']]]
+  ['transitions_8',['transitions',['../class_fixation_data.html#a10bd0c29fb903e681b6376d832c4d55c',1,'FixationData']]],
+  ['triallikelihoods_9',['trialLikelihoods',['../class_probability_data.html#a34574072903da22d969799d75b15c242',1,'ProbabilityData']]]
 ];
