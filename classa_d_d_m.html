@@ -94,9 +94,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9ccee0abe15711f09f8eee0a782f3e06"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classa_d_d_m.html#a9ccee0abe15711f09f8eee0a782f3e06">getTrialLikelihood</a> (<a class="el" href="classa_d_d_m_trial.html">aDDMTrial</a> trial, bool debug=false, int timeStep=10, float approxStateStep=0.1)</td></tr>
 <tr class="memdesc:a9ccee0abe15711f09f8eee0a782f3e06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the likelihood of the trial results provided the current parameters.  <br /></td></tr>
 <tr class="separator:a9ccee0abe15711f09f8eee0a782f3e06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9cc21a00f8516e23a0e3b15f913999b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classa_d_d_m_trial.html">aDDMTrial</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classa_d_d_m.html#ac9cc21a00f8516e23a0e3b15f913999b">simulateTrial</a> (int <a class="el" href="addm__mle_8cpp.html#a66ae2c9a86cab7b4970ecc123c799c45">valueLeft</a>, int valueRight, <a class="el" href="class_fixation_data.html">FixationData</a> fixationData, int timeStep=10, int numFixDists=3, <a class="el" href="addm_8cuh.html#ac73e0abca434ac872480feb6a7cf4c56">fixDists</a> fixationDist={}, vector&lt; int &gt; timeBins={})</td></tr>
-<tr class="memdesc:ac9cc21a00f8516e23a0e3b15f913999b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate simulated fixations provided item values and empirical fixation data.  <br /></td></tr>
-<tr class="separator:ac9cc21a00f8516e23a0e3b15f913999b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bff97cd2823b7e44e08af34351c6676"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classa_d_d_m_trial.html">aDDMTrial</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classa_d_d_m.html#a2bff97cd2823b7e44e08af34351c6676">simulateTrial</a> (int <a class="el" href="addm__mle_8cpp.html#a66ae2c9a86cab7b4970ecc123c799c45">valueLeft</a>, int valueRight, <a class="el" href="class_fixation_data.html">FixationData</a> fixationData, int timeStep=10, int numFixDists=3, <a class="el" href="addm_8cuh.html#ac73e0abca434ac872480feb6a7cf4c56">fixDists</a> fixationDist={}, vector&lt; int &gt; timeBins={}, int seed=-1)</td></tr>
+<tr class="memdesc:a2bff97cd2823b7e44e08af34351c6676"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate simulated fixations provided item values and empirical fixation data.  <br /></td></tr>
+<tr class="separator:a2bff97cd2823b7e44e08af34351c6676"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9ff4c316f0c3ca0a4df3b2b4823e97d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_probability_data.html">ProbabilityData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classa_d_d_m.html#ab9ff4c316f0c3ca0a4df3b2b4823e97d">computeParallelNLL</a> (vector&lt; <a class="el" href="classa_d_d_m_trial.html">aDDMTrial</a> &gt; trials, bool debug=false, int timeStep=10, float approxStateStep=0.1)</td></tr>
 <tr class="memdesc:ab9ff4c316f0c3ca0a4df3b2b4823e97d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the total Negative Log Likelihood (NLL) for a vector of aDDMTrials. Use CPU multithreading to maximize the number of blocks of trials that can have their respective NLLs computed in parallel.  <br /></td></tr>
 <tr class="separator:ab9ff4c316f0c3ca0a4df3b2b4823e97d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -115,9 +115,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a025072ab3fd16dee3a0b0f57c7585a06 inherit pub_methods_class_d_d_m"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#a025072ab3fd16dee3a0b0f57c7585a06">getTrialLikelihood</a> (<a class="el" href="class_d_d_m_trial.html">DDMTrial</a> trial, bool debug=false, int timeStep=10, float approxStateStep=0.1)</td></tr>
 <tr class="memdesc:a025072ab3fd16dee3a0b0f57c7585a06 inherit pub_methods_class_d_d_m"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the likelihood of the trial results provided the current parameters.  <br /></td></tr>
 <tr class="separator:a025072ab3fd16dee3a0b0f57c7585a06 inherit pub_methods_class_d_d_m"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a1471b7df53bbb107df7bf954f6d7a6 inherit pub_methods_class_d_d_m"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_d_d_m_trial.html">DDMTrial</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#a6a1471b7df53bbb107df7bf954f6d7a6">simulateTrial</a> (int ValueLeft, int ValueRight, int timeStep=10)</td></tr>
-<tr class="memdesc:a6a1471b7df53bbb107df7bf954f6d7a6 inherit pub_methods_class_d_d_m"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a simulated <a class="el" href="class_d_d_m.html">DDM</a> trial provided item values.  <br /></td></tr>
-<tr class="separator:a6a1471b7df53bbb107df7bf954f6d7a6 inherit pub_methods_class_d_d_m"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3a9a7bb885ba0154347082eb81b3f91 inherit pub_methods_class_d_d_m"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_d_d_m_trial.html">DDMTrial</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#aa3a9a7bb885ba0154347082eb81b3f91">simulateTrial</a> (int <a class="el" href="addm__mle_8cpp.html#a66ae2c9a86cab7b4970ecc123c799c45">valueLeft</a>, int valueRight, int timeStep=10, int seed=-1)</td></tr>
+<tr class="memdesc:aa3a9a7bb885ba0154347082eb81b3f91 inherit pub_methods_class_d_d_m"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a simulated <a class="el" href="class_d_d_m.html">DDM</a> trial provided item values.  <br /></td></tr>
+<tr class="separator:aa3a9a7bb885ba0154347082eb81b3f91 inherit pub_methods_class_d_d_m"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d6015bc88172ad579bd9882d84fbcd7 inherit pub_methods_class_d_d_m"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_probability_data.html">ProbabilityData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#a9d6015bc88172ad579bd9882d84fbcd7">computeParallelNLL</a> (std::vector&lt; <a class="el" href="class_d_d_m_trial.html">DDMTrial</a> &gt; trials, bool debug=false, int timeStep=10, float approxStateStep=0.1)</td></tr>
 <tr class="memdesc:a9d6015bc88172ad579bd9882d84fbcd7 inherit pub_methods_class_d_d_m"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the total Negative Log Likelihood (NLL) for a vector of DDMTrials. Use CPU multithreading to maximize the number of blocks of trials that can have their respective NLLs computed in parallel.  <br /></td></tr>
 <tr class="separator:a9d6015bc88172ad579bd9882d84fbcd7 inherit pub_methods_class_d_d_m"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -153,7 +153,8 @@ Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Implementation of the attentional Drift Diffusion Model (<a class="el" href="classa_d_d_m.html" title="Implementation of the attentional Drift Diffusion Model (aDDM).">aDDM</a>). </p>
-<p>ADD MORE DETAILED DESCRIPTION HERE </p>
+<p>This class contains an implementation of the attentional Drif Diffusion Model (<a class="el" href="classa_d_d_m.html" title="Implementation of the attentional Drift Diffusion Model (aDDM).">aDDM</a>) as described by Krajbich et al. (2010). It builds upon the standard and well-known model of the <a class="el" href="class_d_d_m.html">DDM</a> by considering the impact of visual ffixation patterns on perceptual binary choices. This class provides methods for data simulation and model fitting via Maximum Likelihood Estimation. The process of model fitting involves selecting some range of potential parameters (d, theta, sigma) and iterating over the parameter space to deterimine which combination best fits the provided set of <a class="el" href="classa_d_d_m.html" title="Implementation of the attentional Drift Diffusion Model (aDDM).">aDDM</a> trials. For details on the simulation and model fitting process, see the individual methods described below. <br  />
+ </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad9ecaeec702acd80c74d483ca653524d" name="ad9ecaeec702acd80c74d483ca653524d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad9ecaeec702acd80c74d483ca653524d">&#9670;&#160;</a></span>aDDM() <span class="overload">[1/2]</span></h2>
@@ -303,7 +304,7 @@ Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>double representing the sum of negative log likelihoods for each trial. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_probability_data.html">ProbabilityData</a> containing NLL, sum of likelihoods, and list of all computed likelihoods. </dd></dl>
 
 </div>
 </div>
@@ -355,7 +356,7 @@ Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>double representing the sum of negative log likelihoods for each trial. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_probability_data.html">ProbabilityData</a> containing NLL, sum of likelihoods, and list of all computed likelihoods. </dd></dl>
 
 </div>
 </div>
@@ -432,10 +433,11 @@ Public Attributes</h2></td></tr>
     <tr><td class="paramname">rangeTheta</td><td>Vector of floats representing possible values of theta to test for. </td></tr>
     <tr><td class="paramname">barrier</td><td>Positive magnitude of the signal threshold. </td></tr>
     <tr><td class="paramname">computeMethod</td><td>Computation method to calculate the NLL for each possible model. Allowed values are {basic, thread, gpu}. "basic" will compute each trial likelihood sequentially and compute the NLL as the sum of all negative log likelihoods. "thread" will use a thread pool to divide all trials into the maximum number of CPU threads and compute the NLL of each block in parallel. "gpu" will call a CUDA kernel to compute the likelihood of each trial in parallel on the GPU. </td></tr>
+    <tr><td class="paramname">normalizePosteriors</td><td>true if the returned <a class="el" href="struct_m_l_einfo.html">MLEinfo</a> should contain a mapping of aDDMs to the normzlied posteriors distribution for each model; otherwise, the <a class="el" href="struct_m_l_einfo.html">MLEinfo</a> should containing a mapping of aDDMs to its corresponding NLL. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="struct_m_l_einfo.html">MLEinfo</a> containing the most optimal model and a mapping of models to floats determined by the normalizePosteriors argument. </dd></dl>
 
 </div>
 </div>
@@ -517,8 +519,8 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ac9cc21a00f8516e23a0e3b15f913999b" name="ac9cc21a00f8516e23a0e3b15f913999b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac9cc21a00f8516e23a0e3b15f913999b">&#9670;&#160;</a></span>simulateTrial()</h2>
+<a id="a2bff97cd2823b7e44e08af34351c6676" name="a2bff97cd2823b7e44e08af34351c6676"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bff97cd2823b7e44e08af34351c6676">&#9670;&#160;</a></span>simulateTrial()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -563,7 +565,13 @@ Public Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">vector&lt; int &gt;&#160;</td>
-          <td class="paramname"><em>timeBins</em> = <code>{}</code>&#160;</td>
+          <td class="paramname"><em>timeBins</em> = <code>{}</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>seed</em> = <code>-1</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -578,11 +586,12 @@ Public Attributes</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">valueLeft</td><td>value of the left item </td></tr>
     <tr><td class="paramname">valueRight</td><td>value of the right item </td></tr>
-    <tr><td class="paramname">fixationData</td><td>instance of a <a class="el" href="class_fixation_data.html">FixationData</a> object containing empirical fixation data </td></tr>
+    <tr><td class="paramname">fixationData</td><td>instance of a <a class="el" href="class_fixation_data.html" title="Record of empirical fixation data that is used for simulating new aDDMTrials.">FixationData</a> object containing empirical fixation data </td></tr>
     <tr><td class="paramname">timeStep</td><td>value of in milliseconds used for binning time axis. </td></tr>
     <tr><td class="paramname">numFixDists</td><td>number of expected fixations in a given trial </td></tr>
     <tr><td class="paramname">fixationDist</td><td>distribution of the fixation data being used. </td></tr>
     <tr><td class="paramname">timeBins</td><td>predetermined time bins as used in the fixationDist. </td></tr>
+    <tr><td class="paramname">seed</td><td>used for standardizing any random number generators. </td></tr>
   </table>
   </dd>
 </dl>

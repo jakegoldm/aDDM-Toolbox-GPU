@@ -98,8 +98,10 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:aa3758e27194c6ae3def6abfb5ebb722e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classa_d_d_m_trial.html#aa3758e27194c6ae3def6abfb5ebb722e">writeTrialsToCSV</a> (vector&lt; <a class="el" href="classa_d_d_m_trial.html">aDDMTrial</a> &gt; trials, string filename)</td></tr>
+<tr class="memdesc:aa3758e27194c6ae3def6abfb5ebb722e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a vector of aDDMTrials to a CSV file.  <br /></td></tr>
 <tr class="separator:aa3758e27194c6ae3def6abfb5ebb722e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a370280f496885eeb71c2530d77f5d889"><td class="memItemLeft" align="right" valign="top">static vector&lt; <a class="el" href="classa_d_d_m_trial.html">aDDMTrial</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classa_d_d_m_trial.html#a370280f496885eeb71c2530d77f5d889">loadTrialsFromCSV</a> (string filename)</td></tr>
+<tr class="memdesc:a370280f496885eeb71c2530d77f5d889"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a dataset of aDDMTrials into program memory.  <br /></td></tr>
 <tr class="separator:a370280f496885eeb71c2530d77f5d889"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_methods_class_d_d_m_trial"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_class_d_d_m_trial')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="class_d_d_m_trial.html">DDMTrial</a></td></tr>
 <tr class="memitem:acf57c528b6ce9b11a75d87b3b61846c4 inherit pub_static_methods_class_d_d_m_trial"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m_trial.html#acf57c528b6ce9b11a75d87b3b61846c4">writeTrialsToCSV</a> (std::vector&lt; <a class="el" href="class_d_d_m_trial.html">DDMTrial</a> &gt; trials, std::string filename)</td></tr>
@@ -133,7 +135,7 @@ Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Implementation of a single <a class="el" href="classa_d_d_m_trial.html" title="Implementation of a single aDDMTrial object.">aDDMTrial</a> object. </p>
-<p>ADD MORE DOCUMENTATION. </p>
+<p>An <a class="el" href="classa_d_d_m_trial.html" title="Implementation of a single aDDMTrial object.">aDDMTrial</a> can either be generated via simulating data trials or loaded from a CSV. A single trial represents an individual binary perceptual choice made by one subject. These trials can be aggregated together for model fitting and likelihood computations. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa10527b5851a8395529eff1e8ad86adc" name="aa10527b5851a8395529eff1e8ad86adc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa10527b5851a8395529eff1e8ad86adc">&#9670;&#160;</a></span>aDDMTrial() <span class="overload">[1/2]</span></h2>
@@ -266,6 +268,15 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Load a dataset of aDDMTrials into program memory. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>Location of the data trials. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>vector&lt;aDDMTrial&gt; containing the stored trials. </dd></dl>
+
 </div>
 </div>
 <a id="aa3758e27194c6ae3def6abfb5ebb722e" name="aa3758e27194c6ae3def6abfb5ebb722e"></a>
@@ -301,6 +312,15 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Write a vector of aDDMTrials to a CSV file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">trials</td><td>Vector of trials to be saved. </td></tr>
+    <tr><td class="paramname">filename</td><td>File to store the trials in. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

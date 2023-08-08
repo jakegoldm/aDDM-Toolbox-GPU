@@ -94,8 +94,8 @@ Macros</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:aa6952771a7995d5e1c4ec03dac80373c"><td class="memItemLeft" align="right" valign="top">__host__ __device__ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cuda__util_8cuh.html#aa6952771a7995d5e1c4ec03dac80373c">__RC2IDX</a> (int row, int col, int columns_per_row)</td></tr>
 <tr class="separator:aa6952771a7995d5e1c4ec03dac80373c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ef8b0f3b58deeba3723b6be6f9ded0b"><td class="memItemLeft" align="right" valign="top">__device__ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cuda__util_8cuh.html#a5ef8b0f3b58deeba3723b6be6f9ded0b">pdf</a> (float x, float mean, float <a class="el" href="addm__nll_8cpp.html#ae11aeeb83e22b5b7f1e6b4347eb1daa6">sigma</a>)</td></tr>
-<tr class="separator:a5ef8b0f3b58deeba3723b6be6f9ded0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f73614b9341057f7b103af56a53f9cb"><td class="memItemLeft" align="right" valign="top">__device__ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cuda__util_8cuh.html#a4f73614b9341057f7b103af56a53f9cb">__pdf</a> (float x, float mean, float <a class="el" href="addm__nll_8cpp.html#ae11aeeb83e22b5b7f1e6b4347eb1daa6">sigma</a>)</td></tr>
+<tr class="separator:a4f73614b9341057f7b103af56a53f9cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a265354e1b9d28b9969f07f3b8e4964ef" name="a265354e1b9d28b9969f07f3b8e4964ef"></a>
@@ -113,6 +113,48 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a4f73614b9341057f7b103af56a53f9cb" name="a4f73614b9341057f7b103af56a53f9cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f73614b9341057f7b103af56a53f9cb">&#9670;&#160;</a></span>__pdf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">__device__ double __pdf </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>mean</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>sigma</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="aa6952771a7995d5e1c4ec03dac80373c" name="aa6952771a7995d5e1c4ec03dac80373c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa6952771a7995d5e1c4ec03dac80373c">&#9670;&#160;</a></span>__RC2IDX()</h2>
 
@@ -139,48 +181,6 @@ Functions</h2></td></tr>
           <td></td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>columns_per_row</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5ef8b0f3b58deeba3723b6be6f9ded0b" name="a5ef8b0f3b58deeba3723b6be6f9ded0b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ef8b0f3b58deeba3723b6be6f9ded0b">&#9670;&#160;</a></span>pdf()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">__device__ double pdf </td>
-          <td>(</td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>mean</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>sigma</em>&#160;</td>
         </tr>
         <tr>
           <td></td>

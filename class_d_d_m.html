@@ -91,9 +91,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a025072ab3fd16dee3a0b0f57c7585a06"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#a025072ab3fd16dee3a0b0f57c7585a06">getTrialLikelihood</a> (<a class="el" href="class_d_d_m_trial.html">DDMTrial</a> trial, bool debug=false, int timeStep=10, float approxStateStep=0.1)</td></tr>
 <tr class="memdesc:a025072ab3fd16dee3a0b0f57c7585a06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the likelihood of the trial results provided the current parameters.  <br /></td></tr>
 <tr class="separator:a025072ab3fd16dee3a0b0f57c7585a06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a1471b7df53bbb107df7bf954f6d7a6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_d_d_m_trial.html">DDMTrial</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#a6a1471b7df53bbb107df7bf954f6d7a6">simulateTrial</a> (int ValueLeft, int ValueRight, int timeStep=10)</td></tr>
-<tr class="memdesc:a6a1471b7df53bbb107df7bf954f6d7a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a simulated <a class="el" href="class_d_d_m.html">DDM</a> trial provided item values.  <br /></td></tr>
-<tr class="separator:a6a1471b7df53bbb107df7bf954f6d7a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3a9a7bb885ba0154347082eb81b3f91"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_d_d_m_trial.html">DDMTrial</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#aa3a9a7bb885ba0154347082eb81b3f91">simulateTrial</a> (int <a class="el" href="addm__mle_8cpp.html#a66ae2c9a86cab7b4970ecc123c799c45">valueLeft</a>, int valueRight, int timeStep=10, int seed=-1)</td></tr>
+<tr class="memdesc:aa3a9a7bb885ba0154347082eb81b3f91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a simulated <a class="el" href="class_d_d_m.html">DDM</a> trial provided item values.  <br /></td></tr>
+<tr class="separator:aa3a9a7bb885ba0154347082eb81b3f91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d6015bc88172ad579bd9882d84fbcd7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_probability_data.html">ProbabilityData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#a9d6015bc88172ad579bd9882d84fbcd7">computeParallelNLL</a> (std::vector&lt; <a class="el" href="class_d_d_m_trial.html">DDMTrial</a> &gt; trials, bool debug=false, int timeStep=10, float approxStateStep=0.1)</td></tr>
 <tr class="memdesc:a9d6015bc88172ad579bd9882d84fbcd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the total Negative Log Likelihood (NLL) for a vector of DDMTrials. Use CPU multithreading to maximize the number of blocks of trials that can have their respective NLLs computed in parallel.  <br /></td></tr>
 <tr class="separator:a9d6015bc88172ad579bd9882d84fbcd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -469,8 +469,8 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a6a1471b7df53bbb107df7bf954f6d7a6" name="a6a1471b7df53bbb107df7bf954f6d7a6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a1471b7df53bbb107df7bf954f6d7a6">&#9670;&#160;</a></span>simulateTrial()</h2>
+<a id="aa3a9a7bb885ba0154347082eb81b3f91" name="aa3a9a7bb885ba0154347082eb81b3f91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3a9a7bb885ba0154347082eb81b3f91">&#9670;&#160;</a></span>simulateTrial()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -479,19 +479,25 @@ Public Attributes</h2></td></tr>
           <td class="memname"><a class="el" href="class_d_d_m_trial.html">DDMTrial</a> DDM::simulateTrial </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>ValueLeft</em>, </td>
+          <td class="paramname"><em>valueLeft</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>ValueRight</em>, </td>
+          <td class="paramname"><em>valueRight</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>timeStep</em> = <code>10</code>&#160;</td>
+          <td class="paramname"><em>timeStep</em> = <code>10</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>seed</em> = <code>-1</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -504,9 +510,10 @@ Public Attributes</h2></td></tr>
 <p>Generate a simulated <a class="el" href="class_d_d_m.html">DDM</a> trial provided item values. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ValueLeft</td><td>Value of the left item. </td></tr>
-    <tr><td class="paramname">ValueRight</td><td>Value of the right item. </td></tr>
+    <tr><td class="paramname">valueLeft</td><td>Value of the left item. </td></tr>
+    <tr><td class="paramname">valueRight</td><td>Value of the right item. </td></tr>
     <tr><td class="paramname">timeStep</td><td>Value in milliseconds used for binning the time axis. </td></tr>
+    <tr><td class="paramname">seed</td><td>used for standardizing any random number generators. </td></tr>
   </table>
   </dd>
 </dl>
