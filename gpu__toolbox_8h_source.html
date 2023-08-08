@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>aDDM-Toolbox-GPU: include/gpu_toolbox.cuh File Reference</title>
+<title>aDDM-Toolbox-GPU: include/gpu_toolbox.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -73,38 +73,27 @@ $(function() {
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#define-members">Macros</a>  </div>
-  <div class="headertitle"><div class="title">gpu_toolbox.cuh File Reference</div></div>
+  <div class="headertitle"><div class="title">gpu_toolbox.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="addm_8cuh_source.html">addm.cuh</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="cuda__util_8cuh_source.html">cuda_util.cuh</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="mle__info_8h_source.html">mle_info.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ddm_8cuh_source.html">ddm.cuh</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="util_8h_source.html">util.h</a>&quot;</code><br />
-</div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:affd90b6b8c518cb5487ae0af03dbb363"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gpu__toolbox_8cuh.html#affd90b6b8c518cb5487ae0af03dbb363">ADDM_TOOLBOX_GPU_H</a></td></tr>
-<tr class="separator:affd90b6b8c518cb5487ae0af03dbb363"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="affd90b6b8c518cb5487ae0af03dbb363" name="affd90b6b8c518cb5487ae0af03dbb363"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#affd90b6b8c518cb5487ae0af03dbb363">&#9670;&#160;</a></span>ADDM_TOOLBOX_GPU_H</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ADDM_TOOLBOX_GPU_H</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-</div><!-- contents -->
+<a href="gpu__toolbox_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef ADDM_TOOLBOX_GPU_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define ADDM_TOOLBOX_GPU_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="ddm_8cuh.html">ddm.cuh</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="addm_8cuh.html">addm.cuh</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#ifndef EXCLUDE_CUDA_CODE</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#   include &quot;<a class="code" href="cuda__util_8cuh.html">cuda_util.cuh</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="mle__info_8h.html">mle_info.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="util_8h.html">util.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aaddm_8cuh_html"><div class="ttname"><a href="addm_8cuh.html">addm.cuh</a></div></div>
+<div class="ttc" id="acuda__util_8cuh_html"><div class="ttname"><a href="cuda__util_8cuh.html">cuda_util.cuh</a></div></div>
+<div class="ttc" id="addm_8cuh_html"><div class="ttname"><a href="ddm_8cuh.html">ddm.cuh</a></div></div>
+<div class="ttc" id="amle__info_8h_html"><div class="ttname"><a href="mle__info_8h.html">mle_info.h</a></div></div>
+<div class="ttc" id="autil_8h_html"><div class="ttname"><a href="util_8h.html">util.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7

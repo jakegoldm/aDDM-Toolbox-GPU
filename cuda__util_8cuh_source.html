@@ -76,21 +76,26 @@ $(function() {
   <div class="headertitle"><div class="title">cuda_util.cuh</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="cuda__util_8cuh.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &lt;cuda.h&gt;</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;cuda_runtime.h&gt;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;cmath&gt;</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="cuda__util_8cuh.html#aa6952771a7995d5e1c4ec03dac80373c">    5</a></span>__host__ __device__ <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code hl_function" href="cuda__util_8cuh.html#aa6952771a7995d5e1c4ec03dac80373c">__RC2IDX</a>(<span class="keywordtype">int</span> row, <span class="keywordtype">int</span> col, <span class="keywordtype">int</span> columns_per_row) {</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <span class="keywordflow">return</span> (row * columns_per_row) + col; </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>}</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="cuda__util_8cuh.html#a5ef8b0f3b58deeba3723b6be6f9ded0b">    9</a></span>__device__ <span class="keyword">inline</span> <span class="keywordtype">double</span> <a class="code hl_function" href="cuda__util_8cuh.html#a5ef8b0f3b58deeba3723b6be6f9ded0b">pdf</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> mean, <span class="keywordtype">float</span> <a class="code hl_variable" href="addm__nll_8cpp.html#ae11aeeb83e22b5b7f1e6b4347eb1daa6">sigma</a>) {</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordflow">return</span> expf(-0.5 * powf((x - mean) / <a class="code hl_variable" href="addm__nll_8cpp.html#ae11aeeb83e22b5b7f1e6b4347eb1daa6">sigma</a>, 2)) / (</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <a class="code hl_variable" href="addm__nll_8cpp.html#ae11aeeb83e22b5b7f1e6b4347eb1daa6">sigma</a> * sqrtf(2 * M_PI));</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>}</div>
+<a href="cuda__util_8cuh.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef CUDA_UTIL_CUH</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno"><a class="line" href="cuda__util_8cuh.html#a265354e1b9d28b9969f07f3b8e4964ef">    2</a></span><span class="preprocessor">#define CUDA_UTIL_CUH</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;cuda.h&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;cuda_runtime.h&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;cmath&gt;</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="cuda__util_8cuh.html#aa6952771a7995d5e1c4ec03dac80373c">    8</a></span>__host__ __device__ <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code hl_function" href="cuda__util_8cuh.html#aa6952771a7995d5e1c4ec03dac80373c">__RC2IDX</a>(<span class="keywordtype">int</span> row, <span class="keywordtype">int</span> col, <span class="keywordtype">int</span> columns_per_row) {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keywordflow">return</span> (row * columns_per_row) + col; </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>}</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="cuda__util_8cuh.html#a5ef8b0f3b58deeba3723b6be6f9ded0b">   12</a></span>__device__ <span class="keyword">inline</span> <span class="keywordtype">double</span> <a class="code hl_function" href="cuda__util_8cuh.html#a5ef8b0f3b58deeba3723b6be6f9ded0b">pdf</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> mean, <span class="keywordtype">float</span> <a class="code hl_variable" href="addm__nll_8cpp.html#ae11aeeb83e22b5b7f1e6b4347eb1daa6">sigma</a>) {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordflow">return</span> expf(-0.5 * powf((x - mean) / <a class="code hl_variable" href="addm__nll_8cpp.html#ae11aeeb83e22b5b7f1e6b4347eb1daa6">sigma</a>, 2)) / (</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <a class="code hl_variable" href="addm__nll_8cpp.html#ae11aeeb83e22b5b7f1e6b4347eb1daa6">sigma</a> * sqrtf(2 * M_PI));</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>}</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#endif </span></div>
 <div class="ttc" id="aaddm__nll_8cpp_html_ae11aeeb83e22b5b7f1e6b4347eb1daa6"><div class="ttname"><a href="addm__nll_8cpp.html#ae11aeeb83e22b5b7f1e6b4347eb1daa6">sigma</a></div><div class="ttdeci">float sigma</div><div class="ttdef"><b>Definition</b> addm_nll.cpp:10</div></div>
-<div class="ttc" id="acuda__util_8cuh_html_a5ef8b0f3b58deeba3723b6be6f9ded0b"><div class="ttname"><a href="cuda__util_8cuh.html#a5ef8b0f3b58deeba3723b6be6f9ded0b">pdf</a></div><div class="ttdeci">__device__ double pdf(float x, float mean, float sigma)</div><div class="ttdef"><b>Definition</b> cuda_util.cuh:9</div></div>
-<div class="ttc" id="acuda__util_8cuh_html_aa6952771a7995d5e1c4ec03dac80373c"><div class="ttname"><a href="cuda__util_8cuh.html#aa6952771a7995d5e1c4ec03dac80373c">__RC2IDX</a></div><div class="ttdeci">__host__ __device__ int __RC2IDX(int row, int col, int columns_per_row)</div><div class="ttdef"><b>Definition</b> cuda_util.cuh:5</div></div>
+<div class="ttc" id="acuda__util_8cuh_html_a5ef8b0f3b58deeba3723b6be6f9ded0b"><div class="ttname"><a href="cuda__util_8cuh.html#a5ef8b0f3b58deeba3723b6be6f9ded0b">pdf</a></div><div class="ttdeci">__device__ double pdf(float x, float mean, float sigma)</div><div class="ttdef"><b>Definition</b> cuda_util.cuh:12</div></div>
+<div class="ttc" id="acuda__util_8cuh_html_aa6952771a7995d5e1c4ec03dac80373c"><div class="ttname"><a href="cuda__util_8cuh.html#aa6952771a7995d5e1c4ec03dac80373c">__RC2IDX</a></div><div class="ttdeci">__host__ __device__ int __RC2IDX(int row, int col, int columns_per_row)</div><div class="ttdef"><b>Definition</b> cuda_util.cuh:8</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
