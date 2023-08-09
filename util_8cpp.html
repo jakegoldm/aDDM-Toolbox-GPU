@@ -96,26 +96,31 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a3c70684bbd5c18365b967d158305e919"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="util_8cpp.html#a3c70684bbd5c18365b967d158305e919">probabilityDensityFunction</a> (float mean, float <a class="el" href="addm__nll_8cpp.html#ae11aeeb83e22b5b7f1e6b4347eb1daa6">sigma</a>, float x)</td></tr>
+<tr class="memdesc:a3c70684bbd5c18365b967d158305e919"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the probability density function provided mean and standard deviation.  <br /></td></tr>
 <tr class="separator:a3c70684bbd5c18365b967d158305e919"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab0c2fb4c0b02fabb15eeab9d6f73e5ab"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="util_8cpp.html#ab0c2fb4c0b02fabb15eeab9d6f73e5ab">cumulativeDensityFunction</a> (float mean, float <a class="el" href="addm__nll_8cpp.html#ae11aeeb83e22b5b7f1e6b4347eb1daa6">sigma</a>, float x)</td></tr>
+<tr class="memdesc:ab0c2fb4c0b02fabb15eeab9d6f73e5ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the cumulative density function provided mean and standard deviation.  <br /></td></tr>
 <tr class="separator:ab0c2fb4c0b02fabb15eeab9d6f73e5ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6b9c5e80a13d7b17e7617f31e47f156"><td class="memItemLeft" align="right" valign="top">std::map&lt; int, std::vector&lt; <a class="el" href="classa_d_d_m_trial.html">aDDMTrial</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="util_8cpp.html#ab6b9c5e80a13d7b17e7617f31e47f156">loadDataFromSingleCSV</a> (std::string filename)</td></tr>
+<tr class="memdesc:ab6b9c5e80a13d7b17e7617f31e47f156"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load experimental data from a single CSV file. Format expected is:  <br /></td></tr>
 <tr class="separator:ab6b9c5e80a13d7b17e7617f31e47f156"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a78fc1c7aadc9bd3f08e29b796632b49b"><td class="memItemLeft" align="right" valign="top">std::map&lt; int, std::vector&lt; <a class="el" href="classa_d_d_m_trial.html">aDDMTrial</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="util_8cpp.html#a78fc1c7aadc9bd3f08e29b796632b49b">loadDataFromCSV</a> (std::string expDataFilename, std::string fixDataFilename)</td></tr>
+<tr class="memdesc:a78fc1c7aadc9bd3f08e29b796632b49b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load experimental data from two CSV files: an experimental data file and a fixations file. Format expected for experimental data file:  <br /></td></tr>
 <tr class="separator:a78fc1c7aadc9bd3f08e29b796632b49b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a09b053b0688ac92f3f6b9d5af66a2a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_fixation_data.html">FixationData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="util_8cpp.html#a1a09b053b0688ac92f3f6b9d5af66a2a">getEmpiricalDistributions</a> (std::map&lt; int, std::vector&lt; <a class="el" href="classa_d_d_m_trial.html">aDDMTrial</a> &gt; &gt; data, int timeStep, int MaxFixTime, int numFixDists, std::vector&lt; int &gt; valueDiffs, std::vector&lt; int &gt; subjectIDs, bool useOddTrials, bool useEvenTrials, bool useCisTrials, bool useTransTrials)</td></tr>
+<tr class="memdesc:a1a09b053b0688ac92f3f6b9d5af66a2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create empirical distributions fro the data ot be used when generating model simulations.  <br /></td></tr>
 <tr class="separator:a1a09b053b0688ac92f3f6b9d5af66a2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1fc778f00048f198efadf0416137565"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="util_8cpp.html#aa1fc778f00048f198efadf0416137565">DDMexportTrial</a> (<a class="el" href="class_d_d_m.html">DDM</a> ddm, <a class="el" href="class_d_d_m_trial.html">DDMTrial</a> dt, std::string filename)</td></tr>
+<tr class="memdesc:aa1fc778f00048f198efadf0416137565"><td class="mdescLeft">&#160;</td><td class="mdescRight">Export the data pertaining to a single <a class="el" href="class_d_d_m.html" title="Implementation of the Drift Diffusion Model (DDM).">DDM</a> and <a class="el" href="class_d_d_m_trial.html" title="Implementation of a single DDMTrial object.">DDMTrial</a> to a JSON file.  <br /></td></tr>
 <tr class="separator:aa1fc778f00048f198efadf0416137565"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58bdc0d7b9b3d4ed1ba436074938d0c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="util_8cpp.html#a58bdc0d7b9b3d4ed1ba436074938d0c2">aDDMexportTrial</a> (<a class="el" href="classa_d_d_m.html">aDDM</a> addm, <a class="el" href="classa_d_d_m_trial.html">aDDMTrial</a> adt, std::string filename)</td></tr>
+<tr class="memdesc:a58bdc0d7b9b3d4ed1ba436074938d0c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Export the data pertaining to a single <a class="el" href="classa_d_d_m.html" title="Implementation of the attentional Drift Diffusion Model (aDDM).">aDDM</a> and <a class="el" href="classa_d_d_m_trial.html" title="Implementation of a single aDDMTrial object.">aDDMTrial</a> to a JSON file.  <br /></td></tr>
 <tr class="separator:a58bdc0d7b9b3d4ed1ba436074938d0c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a14a86a1ac143b9422bb8732c68acb5ab"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="util_8cpp.html#a14a86a1ac143b9422bb8732c68acb5ab">gpuInvalid</a> = false</td></tr>
 <tr class="separator:a14a86a1ac143b9422bb8732c68acb5ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae307adc0568237d1e5bc8802f60f67bf"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="util_8cpp.html#ae307adc0568237d1e5bc8802f60f67bf">DECAY</a> = 0</td></tr>
-<tr class="separator:ae307adc0568237d1e5bc8802f60f67bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2594fe56f3198371358f16212e99e9cc"><td class="memItemLeft" align="right" valign="top">vector&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="util_8cpp.html#a2594fe56f3198371358f16212e99e9cc">validComputeMethods</a> = {&quot;basic&quot;, &quot;thread&quot;, &quot;gpu&quot;}</td></tr>
 <tr class="separator:a2594fe56f3198371358f16212e99e9cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -152,6 +157,16 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Export the data pertaining to a single <a class="el" href="classa_d_d_m.html" title="Implementation of the attentional Drift Diffusion Model (aDDM).">aDDM</a> and <a class="el" href="classa_d_d_m_trial.html" title="Implementation of a single aDDMTrial object.">aDDMTrial</a> to a JSON file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">addm</td><td>Model to export. </td></tr>
+    <tr><td class="paramname">adt</td><td>Trial to export. </td></tr>
+    <tr><td class="paramname">filename</td><td>File to store the trial information in. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="ab0c2fb4c0b02fabb15eeab9d6f73e5ab" name="ab0c2fb4c0b02fabb15eeab9d6f73e5ab"></a>
@@ -185,6 +200,17 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Compute the cumulative density function provided mean and standard deviation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mean</td><td>Mean of the distribution. </td></tr>
+    <tr><td class="paramname">sigma</td><td>Standard deviation of the distribution. </td></tr>
+    <tr><td class="paramname">x</td><td>Value to compute the CDF at. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>double containing the computed CDF. </dd></dl>
 
 </div>
 </div>
@@ -220,6 +246,16 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Export the data pertaining to a single <a class="el" href="class_d_d_m.html" title="Implementation of the Drift Diffusion Model (DDM).">DDM</a> and <a class="el" href="class_d_d_m_trial.html" title="Implementation of a single DDMTrial object.">DDMTrial</a> to a JSON file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ddm</td><td>Model to export </td></tr>
+    <tr><td class="paramname">dt</td><td>Trial to export </td></tr>
+    <tr><td class="paramname">filename</td><td>File to store the trial information in. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a1a09b053b0688ac92f3f6b9d5af66a2a" name="a1a09b053b0688ac92f3f6b9d5af66a2a"></a>
@@ -238,55 +274,55 @@ Variables</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>timeStep</em>, </td>
+          <td class="paramname"><em>timeStep</em> = <code>10</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>MaxFixTime</em>, </td>
+          <td class="paramname"><em>MaxFixTime</em> = <code>3000</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>numFixDists</em>, </td>
+          <td class="paramname"><em>numFixDists</em> = <code>3</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::vector&lt; int &gt;&#160;</td>
-          <td class="paramname"><em>valueDiffs</em>, </td>
+          <td class="paramname"><em>valueDiffs</em> = <code>{-3,-2,-1,&#160;0,&#160;1,&#160;2,&#160;3}</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::vector&lt; int &gt;&#160;</td>
-          <td class="paramname"><em>subjectIDs</em>, </td>
+          <td class="paramname"><em>subjectIDs</em> = <code>{}</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>useOddTrials</em>, </td>
+          <td class="paramname"><em>useOddTrials</em> = <code>true</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>useEvenTrials</em>, </td>
+          <td class="paramname"><em>useEvenTrials</em> = <code>true</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>useCisTrials</em>, </td>
+          <td class="paramname"><em>useCisTrials</em> = <code>true</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>useTransTrials</em>&#160;</td>
+          <td class="paramname"><em>useTransTrials</em> = <code>true</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -295,6 +331,24 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Create empirical distributions fro the data ot be used when generating model simulations. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>A mapping of subject IDs to vectors of each subject's corresponding aDDMTrials. </td></tr>
+    <tr><td class="paramname">timeStep</td><td>Minimum duration of a fixation to be considered in milliseconds. </td></tr>
+    <tr><td class="paramname">MaxFixTime</td><td>Maximum duration of a fixation to be considered, in milliseconds. </td></tr>
+    <tr><td class="paramname">numFixDists</td><td>Integer indicating the number of fixation types to use in the fixation distributions. I.e. if set to 3, then three separate fixation typyes will be used, corresponding to the first, second, and third fixation in each trial. </td></tr>
+    <tr><td class="paramname">valueDiffs</td><td>List of integers corresponding to the available value differences between item. </td></tr>
+    <tr><td class="paramname">subjectIDs</td><td>List of subject IDs to consider in the empirical data. If left empty, all subjectIDs will be used. </td></tr>
+    <tr><td class="paramname">useOddTrials</td><td>Boolean indicating whether or not to use odd trials when creating the distributions. </td></tr>
+    <tr><td class="paramname">useEvenTrials</td><td>Boolean indicating whether or not to use even trials when creating the distributions. </td></tr>
+    <tr><td class="paramname">useCisTrials</td><td>Boolean indiciating whether or not to use cis trials when creating the distributions. Cis trials are defined as trials in which both items have either positive or negative values. </td></tr>
+    <tr><td class="paramname">useTransTrials</td><td>Boolean indicating whether or not to use trans trials when creating the distributions. Trans trials are defined as trials in which one item has a positive value and one item has a negative value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_fixation_data.html" title="Record of empirical fixation data that is used for simulating new aDDMTrials.">FixationData</a> object serving as a record of empirical fixation distributions. </dd></dl>
 
 </div>
 </div>
@@ -324,6 +378,19 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Load experimental data from two CSV files: an experimental data file and a fixations file. Format expected for experimental data file: </p>
+<p>parcode, trial, rt, choice, valueLeft, valueRight</p>
+<p>Format expected for fixations file:</p>
+<p>parcode, trial, fixItem, fixTime</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">expDataFilename</td><td>Name of the experimental data trial. </td></tr>
+    <tr><td class="paramname">fixDataFilename</td><td>Name of the fixations file. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::map&lt;int, std::vector&lt;aDDMTrial&gt;&gt; mapping subject IDs to each subject's corresponding aDDMTrials. </dd></dl>
+
 </div>
 </div>
 <a id="ab6b9c5e80a13d7b17e7617f31e47f156" name="ab6b9c5e80a13d7b17e7617f31e47f156"></a>
@@ -341,6 +408,16 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Load experimental data from a single CSV file. Format expected is: </p>
+<p>trial, choice, rt, valueLeft, valueRight, fixItem, fixTime</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>Name of the CSV file. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::map&lt;int, std::vector&lt;aDDMTrial&gt;&gt; mapping subject IDs to each subject's corresponding aDDMTrials. </dd></dl>
 
 </div>
 </div>
@@ -376,23 +453,20 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Compute the probability density function provided mean and standard deviation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mean</td><td>Mean of the distribution. </td></tr>
+    <tr><td class="paramname">sigma</td><td>Standard Deviation of the distribution. </td></tr>
+    <tr><td class="paramname">x</td><td>Value to compute the PDF at. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>double containing the computed PDF. </dd></dl>
+
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="ae307adc0568237d1e5bc8802f60f67bf" name="ae307adc0568237d1e5bc8802f60f67bf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae307adc0568237d1e5bc8802f60f67bf">&#9670;&#160;</a></span>DECAY</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float DECAY = 0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a14a86a1ac143b9422bb8732c68acb5ab" name="a14a86a1ac143b9422bb8732c68acb5ab"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a14a86a1ac143b9422bb8732c68acb5ab">&#9670;&#160;</a></span>gpuInvalid</h2>
 

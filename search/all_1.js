@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['addm_0',['aDDM',['../classa_d_d_m.html',1,'aDDM'],['../classa_d_d_m.html#ad9ecaeec702acd80c74d483ca653524d',1,'aDDM::aDDM(float d, float sigma, float theta, float barrier, unsigned int nonDecisionTime=0, float bias=0)'],['../classa_d_d_m.html#a3deca5544adba4e2ad8ec86a0efdbcfc',1,'aDDM::aDDM()']]],
+  ['addm_0',['aDDM',['../classa_d_d_m.html',1,'aDDM'],['../classa_d_d_m.html#a9811a9347404c2e563103d7d2480dae2',1,'aDDM::aDDM(float d, float sigma, float theta, float barrier=1, unsigned int nonDecisionTime=0, float bias=0, float decay=0)'],['../classa_d_d_m.html#a3deca5544adba4e2ad8ec86a0efdbcfc',1,'aDDM::aDDM()']]],
   ['addm_2dtoolbox_2dgpu_1',['aDDM-Toolbox-GPU',['../index.html',1,'']]],
   ['addm_2ecpp_2',['addm.cpp',['../addm_8cpp.html',1,'']]],
   ['addm_2ecuh_3',['addm.cuh',['../addm_8cuh.html',1,'']]],

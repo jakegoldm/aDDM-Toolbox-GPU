@@ -3,7 +3,7 @@ var searchData=
   ['fig_0',['fig',['../namespaceposteriors.html#a4482ebba6c0d321a31e257e37fdc86ec',1,'posteriors']]],
   ['figsize_1',['figsize',['../namespaceposteriors.html#abb3df86375b05ca46130114c82da7c8f',1,'posteriors']]],
   ['filename_2',['FILENAME',['../namespaceposteriors.html#a5c7f37a28c7431f1e1bb97f00d2c5871',1,'posteriors']]],
-  ['fitmodelmle_3',['fitModelMLE',['../classa_d_d_m.html#a98af9ca5cb9bd56b66460c3206176197',1,'aDDM::fitModelMLE()'],['../class_d_d_m.html#a61f506f4d5cab6c10928d63cf18a9b66',1,'DDM::fitModelMLE()']]],
+  ['fitmodelmle_3',['fitModelMLE',['../classa_d_d_m.html#a98af9ca5cb9bd56b66460c3206176197',1,'aDDM::fitModelMLE()'],['../class_d_d_m.html#a5fb44afa5344b51d0eef6e9e49a0c905',1,'DDM::fitModelMLE()']]],
   ['fixationdata_4',['FixationData',['../class_fixation_data.html',1,'FixationData'],['../class_fixation_data.html#a79013248039f4078807b770647c9d3c4',1,'FixationData::FixationData(float probFixLeftFirst, vector&lt; int &gt; latencies, vector&lt; int &gt; transitions, fixDists fixations)']]],
   ['fixations_5',['fixations',['../class_fixation_data.html#a47d55cea6c6a1ecaef33baa5e9a0f60c',1,'FixationData']]],
   ['fixdists_6',['fixDists',['../addm_8cuh.html#ac73e0abca434ac872480feb6a7cf4c56',1,'addm.cuh']]],

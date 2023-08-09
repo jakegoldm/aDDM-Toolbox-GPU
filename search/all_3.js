@@ -1,8 +1,8 @@
 var searchData=
 [
   ['choice_0',['choice',['../class_d_d_m_trial.html#a941813496795b5c0f16d068444abf483',1,'DDMTrial']]],
-  ['computegpunll_1',['computeGPUNLL',['../classa_d_d_m.html#a6a16f3e6791149afa5a3ba892ee4b0f8',1,'aDDM::computeGPUNLL()'],['../class_d_d_m.html#a90d64df30ac297662888fdf8daec7d77',1,'DDM::computeGPUNLL(std::vector&lt; DDMTrial &gt; trials, bool debug=false, int trialsPerThread=10, int timeStep=10, float approxStateStep=0.1)']]],
-  ['computeparallelnll_2',['computeParallelNLL',['../class_d_d_m.html#a9d6015bc88172ad579bd9882d84fbcd7',1,'DDM::computeParallelNLL()'],['../classa_d_d_m.html#ab9ff4c316f0c3ca0a4df3b2b4823e97d',1,'aDDM::computeParallelNLL()']]],
+  ['computegpunll_1',['computeGPUNLL',['../classa_d_d_m.html#a6a16f3e6791149afa5a3ba892ee4b0f8',1,'aDDM::computeGPUNLL()'],['../class_d_d_m.html#a04d25fdc21b247bd54b83b5f7e9f27a0',1,'DDM::computeGPUNLL(vector&lt; DDMTrial &gt; trials, bool debug=false, int trialsPerThread=10, int timeStep=10, float approxStateStep=0.1)']]],
+  ['computeparallelnll_2',['computeParallelNLL',['../class_d_d_m.html#a1d01bc6718c153538caa2fed7ea4c8b6',1,'DDM::computeParallelNLL()'],['../classa_d_d_m.html#ab9ff4c316f0c3ca0a4df3b2b4823e97d',1,'aDDM::computeParallelNLL()']]],
   ['cpp_5ferror_3',['cpp_error',['../namespacecpp__error.html',1,'']]],
   ['cpp_5ferror_2epy_4',['cpp_error.py',['../cpp__error_8py.html',1,'']]],
   ['cuaddm_2ecu_5',['cuaddm.cu',['../cuaddm_8cu.html',1,'']]],

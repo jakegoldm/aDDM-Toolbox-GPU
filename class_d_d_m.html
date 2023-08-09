@@ -77,35 +77,38 @@ $(function() {
   <div class="headertitle"><div class="title">DDM Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Implementation of the Drift Diffusion Model (<a class="el" href="class_d_d_m.html" title="Implementation of the Drift Diffusion Model (DDM).">DDM</a>).  
+ <a href="class_d_d_m.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:acd37ba5a2a2f6e45661df2516dabf267"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#acd37ba5a2a2f6e45661df2516dabf267">operator&lt;</a> (const <a class="el" href="class_d_d_m.html">DDM</a> &amp;rhs) const</td></tr>
 <tr class="separator:acd37ba5a2a2f6e45661df2516dabf267"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8079400de69cdcec8414c9083884558"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#af8079400de69cdcec8414c9083884558">DDM</a> (float <a class="el" href="class_d_d_m.html#a15511d3cf0f7deb5de073dcdfd09bcc6">d</a>, float <a class="el" href="class_d_d_m.html#a17570a6c2378cdb363437f39a5fa3f00">sigma</a>, float <a class="el" href="class_d_d_m.html#a0293f051d7889ee014fb55c4939e4783">barrier</a>, unsigned int <a class="el" href="class_d_d_m.html#a0821be8a65988df0004b4d9f4239a020">nonDecisionTime</a>=0, float <a class="el" href="class_d_d_m.html#a0cecc28e691846bce6dccb02f34aef07">bias</a>=0)</td></tr>
-<tr class="memdesc:af8079400de69cdcec8414c9083884558"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="class_d_d_m.html">DDM</a> object.  <br /></td></tr>
-<tr class="separator:af8079400de69cdcec8414c9083884558"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f83961c5d323afc64ed55489d4fb23d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#a2f83961c5d323afc64ed55489d4fb23d">DDM</a> (float <a class="el" href="class_d_d_m.html#a15511d3cf0f7deb5de073dcdfd09bcc6">d</a>, float <a class="el" href="class_d_d_m.html#a17570a6c2378cdb363437f39a5fa3f00">sigma</a>, float <a class="el" href="class_d_d_m.html#a0293f051d7889ee014fb55c4939e4783">barrier</a>=1, unsigned int <a class="el" href="class_d_d_m.html#a0821be8a65988df0004b4d9f4239a020">nonDecisionTime</a>=0, float <a class="el" href="class_d_d_m.html#a0cecc28e691846bce6dccb02f34aef07">bias</a>=0, float <a class="el" href="class_d_d_m.html#aa5d70be71626890a4957eb5c59ba309d">decay</a>=0)</td></tr>
+<tr class="memdesc:a2f83961c5d323afc64ed55489d4fb23d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="class_d_d_m.html" title="Implementation of the Drift Diffusion Model (DDM).">DDM</a> object.  <br /></td></tr>
+<tr class="separator:a2f83961c5d323afc64ed55489d4fb23d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c65c29756565b1a6a9ca6605fa1c003"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#a5c65c29756565b1a6a9ca6605fa1c003">DDM</a> ()</td></tr>
-<tr class="memdesc:a5c65c29756565b1a6a9ca6605fa1c003"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an empty <a class="el" href="class_d_d_m.html">DDM</a> object.  <br /></td></tr>
+<tr class="memdesc:a5c65c29756565b1a6a9ca6605fa1c003"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an empty <a class="el" href="class_d_d_m.html" title="Implementation of the Drift Diffusion Model (DDM).">DDM</a> object.  <br /></td></tr>
 <tr class="separator:a5c65c29756565b1a6a9ca6605fa1c003"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a025072ab3fd16dee3a0b0f57c7585a06"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#a025072ab3fd16dee3a0b0f57c7585a06">getTrialLikelihood</a> (<a class="el" href="class_d_d_m_trial.html">DDMTrial</a> trial, bool debug=false, int timeStep=10, float approxStateStep=0.1)</td></tr>
 <tr class="memdesc:a025072ab3fd16dee3a0b0f57c7585a06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the likelihood of the trial results provided the current parameters.  <br /></td></tr>
 <tr class="separator:a025072ab3fd16dee3a0b0f57c7585a06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3a9a7bb885ba0154347082eb81b3f91"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_d_d_m_trial.html">DDMTrial</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#aa3a9a7bb885ba0154347082eb81b3f91">simulateTrial</a> (int <a class="el" href="addm__mle_8cpp.html#a66ae2c9a86cab7b4970ecc123c799c45">valueLeft</a>, int valueRight, int timeStep=10, int seed=-1)</td></tr>
-<tr class="memdesc:aa3a9a7bb885ba0154347082eb81b3f91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a simulated <a class="el" href="class_d_d_m.html">DDM</a> trial provided item values.  <br /></td></tr>
+<tr class="memdesc:aa3a9a7bb885ba0154347082eb81b3f91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a simulated <a class="el" href="class_d_d_m.html" title="Implementation of the Drift Diffusion Model (DDM).">DDM</a> trial provided item values.  <br /></td></tr>
 <tr class="separator:aa3a9a7bb885ba0154347082eb81b3f91"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d6015bc88172ad579bd9882d84fbcd7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_probability_data.html">ProbabilityData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#a9d6015bc88172ad579bd9882d84fbcd7">computeParallelNLL</a> (std::vector&lt; <a class="el" href="class_d_d_m_trial.html">DDMTrial</a> &gt; trials, bool debug=false, int timeStep=10, float approxStateStep=0.1)</td></tr>
-<tr class="memdesc:a9d6015bc88172ad579bd9882d84fbcd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the total Negative Log Likelihood (NLL) for a vector of DDMTrials. Use CPU multithreading to maximize the number of blocks of trials that can have their respective NLLs computed in parallel.  <br /></td></tr>
-<tr class="separator:a9d6015bc88172ad579bd9882d84fbcd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90d64df30ac297662888fdf8daec7d77"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_probability_data.html">ProbabilityData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#a90d64df30ac297662888fdf8daec7d77">computeGPUNLL</a> (std::vector&lt; <a class="el" href="class_d_d_m_trial.html">DDMTrial</a> &gt; trials, bool debug=false, int trialsPerThread=10, int timeStep=10, float approxStateStep=0.1)</td></tr>
-<tr class="memdesc:a90d64df30ac297662888fdf8daec7d77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the total Negative Log Likelihood (NLL) for a vector of DDMTrials. Use the GPU to maximize the number of trials being computed in parallel.  <br /></td></tr>
-<tr class="separator:a90d64df30ac297662888fdf8daec7d77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d01bc6718c153538caa2fed7ea4c8b6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_probability_data.html">ProbabilityData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#a1d01bc6718c153538caa2fed7ea4c8b6">computeParallelNLL</a> (vector&lt; <a class="el" href="class_d_d_m_trial.html">DDMTrial</a> &gt; trials, bool debug=false, int timeStep=10, float approxStateStep=0.1)</td></tr>
+<tr class="memdesc:a1d01bc6718c153538caa2fed7ea4c8b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the total Negative Log Likelihood (NLL) for a vector of DDMTrials. Use CPU multithreading to maximize the number of blocks of trials that can have their respective NLLs computed in parallel.  <br /></td></tr>
+<tr class="separator:a1d01bc6718c153538caa2fed7ea4c8b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04d25fdc21b247bd54b83b5f7e9f27a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_probability_data.html">ProbabilityData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#a04d25fdc21b247bd54b83b5f7e9f27a0">computeGPUNLL</a> (vector&lt; <a class="el" href="class_d_d_m_trial.html">DDMTrial</a> &gt; trials, bool debug=false, int trialsPerThread=10, int timeStep=10, float approxStateStep=0.1)</td></tr>
+<tr class="memdesc:a04d25fdc21b247bd54b83b5f7e9f27a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the total Negative Log Likelihood (NLL) for a vector of DDMTrials. Use the GPU to maximize the number of trials being computed in parallel.  <br /></td></tr>
+<tr class="separator:a04d25fdc21b247bd54b83b5f7e9f27a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a61f506f4d5cab6c10928d63cf18a9b66"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="struct_m_l_einfo.html">MLEinfo</a>&lt; <a class="el" href="class_d_d_m.html">DDM</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#a61f506f4d5cab6c10928d63cf18a9b66">fitModelMLE</a> (std::vector&lt; <a class="el" href="class_d_d_m_trial.html">DDMTrial</a> &gt; trials, std::vector&lt; float &gt; <a class="el" href="addm__mle_8cpp.html#a800d6969137d46bac6c127a9f70b7e51">rangeD</a>, std::vector&lt; float &gt; <a class="el" href="addm__mle_8cpp.html#a347dbb7726ce6ea89520f5980d686dd8">rangeSigma</a>, float <a class="el" href="class_d_d_m.html#a0293f051d7889ee014fb55c4939e4783">barrier</a>, std::string computeMethod=&quot;basic&quot;, bool normalizePosteriors=false)</td></tr>
-<tr class="memdesc:a61f506f4d5cab6c10928d63cf18a9b66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copmlete a grid-search based Maximum Likelihood Estimation of all possible paramters combinations (d, sigma) to determine which parameters are most likely to generate the provided DDMTrials. Each potential model generates an NLL value for the dataset and the method returns the model with the minimum NLL value.  <br /></td></tr>
-<tr class="separator:a61f506f4d5cab6c10928d63cf18a9b66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fb44afa5344b51d0eef6e9e49a0c905"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="struct_m_l_einfo.html">MLEinfo</a>&lt; <a class="el" href="class_d_d_m.html">DDM</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#a5fb44afa5344b51d0eef6e9e49a0c905">fitModelMLE</a> (vector&lt; <a class="el" href="class_d_d_m_trial.html">DDMTrial</a> &gt; trials, vector&lt; float &gt; <a class="el" href="addm__mle_8cpp.html#a800d6969137d46bac6c127a9f70b7e51">rangeD</a>, vector&lt; float &gt; <a class="el" href="addm__mle_8cpp.html#a347dbb7726ce6ea89520f5980d686dd8">rangeSigma</a>, float <a class="el" href="class_d_d_m.html#a0293f051d7889ee014fb55c4939e4783">barrier</a>, string computeMethod=&quot;basic&quot;, bool normalizePosteriors=false)</td></tr>
+<tr class="memdesc:a5fb44afa5344b51d0eef6e9e49a0c905"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copmlete a grid-search based Maximum Likelihood Estimation of all possible paramters combinations (d, sigma) to determine which parameters are most likely to generate the provided DDMTrials. Each potential model generates an NLL value for the dataset and the method returns the model with the minimum NLL value.  <br /></td></tr>
+<tr class="separator:a5fb44afa5344b51d0eef6e9e49a0c905"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -119,10 +122,15 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a0821be8a65988df0004b4d9f4239a020"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0cecc28e691846bce6dccb02f34aef07"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#a0cecc28e691846bce6dccb02f34aef07">bias</a></td></tr>
 <tr class="separator:a0cecc28e691846bce6dccb02f34aef07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5d70be71626890a4957eb5c59ba309d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#aa5d70be71626890a4957eb5c59ba309d">decay</a></td></tr>
+<tr class="separator:aa5d70be71626890a4957eb5c59ba309d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="af8079400de69cdcec8414c9083884558" name="af8079400de69cdcec8414c9083884558"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af8079400de69cdcec8414c9083884558">&#9670;&#160;</a></span>DDM() <span class="overload">[1/2]</span></h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Implementation of the Drift Diffusion Model (<a class="el" href="class_d_d_m.html" title="Implementation of the Drift Diffusion Model (DDM).">DDM</a>). </p>
+<p>This class contains an implementation of the Drift Diffusion Model (<a class="el" href="class_d_d_m.html" title="Implementation of the Drift Diffusion Model (DDM).">DDM</a>) as described by Ratcliff et al. (1998). This class provides methods for data simulation and model fitting via Maximum Likelihood Estimation. The processes of model fiting involves selecting some range of potential parameters (d, sigma) and iterating over the parameter space to determine which combination best fits the provided set of DDMTrials. For details on the simulation and model fitting process, see the individual methods described below. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a2f83961c5d323afc64ed55489d4fb23d" name="a2f83961c5d323afc64ed55489d4fb23d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f83961c5d323afc64ed55489d4fb23d">&#9670;&#160;</a></span>DDM() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -143,7 +151,7 @@ Public Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>barrier</em>, </td>
+          <td class="paramname"><em>barrier</em> = <code>1</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -155,7 +163,13 @@ Public Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>bias</em> = <code>0</code>&#160;</td>
+          <td class="paramname"><em>bias</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>decay</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -165,7 +179,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Construct a new <a class="el" href="class_d_d_m.html">DDM</a> object. </p>
+<p>Construct a new <a class="el" href="class_d_d_m.html" title="Implementation of the Drift Diffusion Model (DDM).">DDM</a> object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">d</td><td>Drift rate. </td></tr>
@@ -173,6 +187,8 @@ Public Attributes</h2></td></tr>
     <tr><td class="paramname">barrier</td><td>Positive magnitude of the signal threshold. </td></tr>
     <tr><td class="paramname">nonDecisionTime</td><td>Amount of time in milliseconds in which only noise is added to the decision variable. </td></tr>
     <tr><td class="paramname">bias</td><td>Corresponds to the initial value of the decision variable. Must be smaller than the barrier. </td></tr>
+    <tr><td class="paramname">decay</td><td>Controls the decay of the RDV barriers over time. <br  />
+ </td></tr>
   </table>
   </dd>
 </dl>
@@ -202,13 +218,13 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Construct an empty <a class="el" href="class_d_d_m.html">DDM</a> object. </p>
+<p>Construct an empty <a class="el" href="class_d_d_m.html" title="Implementation of the Drift Diffusion Model (DDM).">DDM</a> object. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a90d64df30ac297662888fdf8daec7d77" name="a90d64df30ac297662888fdf8daec7d77"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a90d64df30ac297662888fdf8daec7d77">&#9670;&#160;</a></span>computeGPUNLL()</h2>
+<a id="a04d25fdc21b247bd54b83b5f7e9f27a0" name="a04d25fdc21b247bd54b83b5f7e9f27a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04d25fdc21b247bd54b83b5f7e9f27a0">&#9670;&#160;</a></span>computeGPUNLL()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -216,7 +232,7 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="class_probability_data.html">ProbabilityData</a> DDM::computeGPUNLL </td>
           <td>(</td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="class_d_d_m_trial.html">DDMTrial</a> &gt;&#160;</td>
+          <td class="paramtype">vector&lt; <a class="el" href="class_d_d_m_trial.html">DDMTrial</a> &gt;&#160;</td>
           <td class="paramname"><em>trials</em>, </td>
         </tr>
         <tr>
@@ -262,12 +278,12 @@ Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>double representing the sum of negative log likelihoods for each trial. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_probability_data.html">ProbabilityData</a> containing NLL, sum of likelihoods, and a list of all computed likelihood. </dd></dl>
 
 </div>
 </div>
-<a id="a9d6015bc88172ad579bd9882d84fbcd7" name="a9d6015bc88172ad579bd9882d84fbcd7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d6015bc88172ad579bd9882d84fbcd7">&#9670;&#160;</a></span>computeParallelNLL()</h2>
+<a id="a1d01bc6718c153538caa2fed7ea4c8b6" name="a1d01bc6718c153538caa2fed7ea4c8b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d01bc6718c153538caa2fed7ea4c8b6">&#9670;&#160;</a></span>computeParallelNLL()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -275,7 +291,7 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="class_probability_data.html">ProbabilityData</a> DDM::computeParallelNLL </td>
           <td>(</td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="class_d_d_m_trial.html">DDMTrial</a> &gt;&#160;</td>
+          <td class="paramtype">vector&lt; <a class="el" href="class_d_d_m_trial.html">DDMTrial</a> &gt;&#160;</td>
           <td class="paramname"><em>trials</em>, </td>
         </tr>
         <tr>
@@ -314,12 +330,12 @@ Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>double representing the sum of negative log likelihoods for each trial. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_probability_data.html">ProbabilityData</a> containing NLL, sum of likelihoods, and a list of all computed likelihood. </dd></dl>
 
 </div>
 </div>
-<a id="a61f506f4d5cab6c10928d63cf18a9b66" name="a61f506f4d5cab6c10928d63cf18a9b66"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a61f506f4d5cab6c10928d63cf18a9b66">&#9670;&#160;</a></span>fitModelMLE()</h2>
+<a id="a5fb44afa5344b51d0eef6e9e49a0c905" name="a5fb44afa5344b51d0eef6e9e49a0c905"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fb44afa5344b51d0eef6e9e49a0c905">&#9670;&#160;</a></span>fitModelMLE()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -330,19 +346,19 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="struct_m_l_einfo.html">MLEinfo</a>&lt; <a class="el" href="class_d_d_m.html">DDM</a> &gt; DDM::fitModelMLE </td>
           <td>(</td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="class_d_d_m_trial.html">DDMTrial</a> &gt;&#160;</td>
+          <td class="paramtype">vector&lt; <a class="el" href="class_d_d_m_trial.html">DDMTrial</a> &gt;&#160;</td>
           <td class="paramname"><em>trials</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; float &gt;&#160;</td>
+          <td class="paramtype">vector&lt; float &gt;&#160;</td>
           <td class="paramname"><em>rangeD</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; float &gt;&#160;</td>
+          <td class="paramtype">vector&lt; float &gt;&#160;</td>
           <td class="paramname"><em>rangeSigma</em>, </td>
         </tr>
         <tr>
@@ -354,7 +370,7 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::string&#160;</td>
+          <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>computeMethod</em> = <code>&quot;basic&quot;</code>, </td>
         </tr>
         <tr>
@@ -387,7 +403,7 @@ Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="struct_m_l_einfo.html">MLEinfo</a> containing the most optimal model and a mapping of models to floats determined by the normalizePosteriors argument. </dd></dl>
 
 </div>
 </div>
@@ -432,7 +448,7 @@ Public Attributes</h2></td></tr>
 <p>Compute the likelihood of the trial results provided the current parameters. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">trial</td><td><a class="el" href="class_d_d_m_trial.html">DDMTrial</a> object. </td></tr>
+    <tr><td class="paramname">trial</td><td><a class="el" href="class_d_d_m_trial.html" title="Implementation of a single DDMTrial object.">DDMTrial</a> object. </td></tr>
     <tr><td class="paramname">debug</td><td>Boolean specifying if state variables should be printed for debugging purposes. </td></tr>
     <tr><td class="paramname">timeStep</td><td>Value in milliseconds used for binning the time axis. </td></tr>
     <tr><td class="paramname">approxStateStep</td><td>Used for binning the RDV axis. </td></tr>
@@ -507,7 +523,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Generate a simulated <a class="el" href="class_d_d_m.html">DDM</a> trial provided item values. </p>
+<p>Generate a simulated <a class="el" href="class_d_d_m.html" title="Implementation of the Drift Diffusion Model (DDM).">DDM</a> trial provided item values. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">valueLeft</td><td>Value of the left item. </td></tr>
@@ -517,7 +533,7 @@ Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_d_d_m_trial.html">DDMTrial</a> resulting from the simulation. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_d_d_m_trial.html" title="Implementation of a single DDMTrial object.">DDMTrial</a> resulting from the simulation. </dd></dl>
 
 </div>
 </div>
@@ -564,6 +580,21 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Float parameter of the model that controls the speed of integration. Referred to as drift rate. </p>
+
+</div>
+</div>
+<a id="aa5d70be71626890a4957eb5c59ba309d" name="aa5d70be71626890a4957eb5c59ba309d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5d70be71626890a4957eb5c59ba309d">&#9670;&#160;</a></span>decay</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float DDM::decay</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Parameter that controls the decay of the barriers over time. A decay of zero means the barriers are constant. </p>
 
 </div>
 </div>
