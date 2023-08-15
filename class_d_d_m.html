@@ -91,10 +91,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5c65c29756565b1a6a9ca6605fa1c003"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#a5c65c29756565b1a6a9ca6605fa1c003">DDM</a> ()</td></tr>
 <tr class="memdesc:a5c65c29756565b1a6a9ca6605fa1c003"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an empty <a class="el" href="class_d_d_m.html" title="Implementation of the Drift Diffusion Model (DDM).">DDM</a> object.  <br /></td></tr>
 <tr class="separator:a5c65c29756565b1a6a9ca6605fa1c003"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa24d1be1eb26549494f8cf0c6fa91587"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#aa24d1be1eb26549494f8cf0c6fa91587">exportTrial</a> (<a class="el" href="class_d_d_m_trial.html">DDMTrial</a> dt, std::string filename)</td></tr>
+<tr class="memdesc:aa24d1be1eb26549494f8cf0c6fa91587"><td class="mdescLeft">&#160;</td><td class="mdescRight">Export the data pertaining to a single <a class="el" href="class_d_d_m.html" title="Implementation of the Drift Diffusion Model (DDM).">DDM</a> and <a class="el" href="class_d_d_m_trial.html" title="Implementation of a single DDMTrial object.">DDMTrial</a> to a JSON file.  <br /></td></tr>
+<tr class="separator:aa24d1be1eb26549494f8cf0c6fa91587"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a025072ab3fd16dee3a0b0f57c7585a06"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#a025072ab3fd16dee3a0b0f57c7585a06">getTrialLikelihood</a> (<a class="el" href="class_d_d_m_trial.html">DDMTrial</a> trial, bool debug=false, int timeStep=10, float approxStateStep=0.1)</td></tr>
 <tr class="memdesc:a025072ab3fd16dee3a0b0f57c7585a06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the likelihood of the trial results provided the current parameters.  <br /></td></tr>
 <tr class="separator:a025072ab3fd16dee3a0b0f57c7585a06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3a9a7bb885ba0154347082eb81b3f91"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_d_d_m_trial.html">DDMTrial</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#aa3a9a7bb885ba0154347082eb81b3f91">simulateTrial</a> (int <a class="el" href="addm__mle_8cpp.html#a66ae2c9a86cab7b4970ecc123c799c45">valueLeft</a>, int valueRight, int timeStep=10, int seed=-1)</td></tr>
+<tr class="memitem:aa3a9a7bb885ba0154347082eb81b3f91"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_d_d_m_trial.html">DDMTrial</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#aa3a9a7bb885ba0154347082eb81b3f91">simulateTrial</a> (int valueLeft, int valueRight, int timeStep=10, int seed=-1)</td></tr>
 <tr class="memdesc:aa3a9a7bb885ba0154347082eb81b3f91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a simulated <a class="el" href="class_d_d_m.html" title="Implementation of the Drift Diffusion Model (DDM).">DDM</a> trial provided item values.  <br /></td></tr>
 <tr class="separator:aa3a9a7bb885ba0154347082eb81b3f91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d01bc6718c153538caa2fed7ea4c8b6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_probability_data.html">ProbabilityData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#a1d01bc6718c153538caa2fed7ea4c8b6">computeParallelNLL</a> (vector&lt; <a class="el" href="class_d_d_m_trial.html">DDMTrial</a> &gt; trials, bool debug=false, int timeStep=10, float approxStateStep=0.1)</td></tr>
@@ -106,9 +109,9 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a5fb44afa5344b51d0eef6e9e49a0c905"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="struct_m_l_einfo.html">MLEinfo</a>&lt; <a class="el" href="class_d_d_m.html">DDM</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#a5fb44afa5344b51d0eef6e9e49a0c905">fitModelMLE</a> (vector&lt; <a class="el" href="class_d_d_m_trial.html">DDMTrial</a> &gt; trials, vector&lt; float &gt; <a class="el" href="addm__mle_8cpp.html#a800d6969137d46bac6c127a9f70b7e51">rangeD</a>, vector&lt; float &gt; <a class="el" href="addm__mle_8cpp.html#a347dbb7726ce6ea89520f5980d686dd8">rangeSigma</a>, float <a class="el" href="class_d_d_m.html#a0293f051d7889ee014fb55c4939e4783">barrier</a>, string computeMethod=&quot;basic&quot;, bool normalizePosteriors=false)</td></tr>
-<tr class="memdesc:a5fb44afa5344b51d0eef6e9e49a0c905"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copmlete a grid-search based Maximum Likelihood Estimation of all possible paramters combinations (d, sigma) to determine which parameters are most likely to generate the provided DDMTrials. Each potential model generates an NLL value for the dataset and the method returns the model with the minimum NLL value.  <br /></td></tr>
-<tr class="separator:a5fb44afa5344b51d0eef6e9e49a0c905"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6f4cab6e2175c4864222709f0d6bad4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="struct_m_l_einfo.html">MLEinfo</a>&lt; <a class="el" href="class_d_d_m.html">DDM</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#af6f4cab6e2175c4864222709f0d6bad4">fitModelMLE</a> (vector&lt; <a class="el" href="class_d_d_m_trial.html">DDMTrial</a> &gt; trials, vector&lt; float &gt; <a class="el" href="addm__mle_8cpp.html#a800d6969137d46bac6c127a9f70b7e51">rangeD</a>, vector&lt; float &gt; <a class="el" href="addm__mle_8cpp.html#a347dbb7726ce6ea89520f5980d686dd8">rangeSigma</a>, string computeMethod=&quot;basic&quot;, bool normalizePosteriors=false, float <a class="el" href="class_d_d_m.html#a0293f051d7889ee014fb55c4939e4783">barrier</a>=1, unsigned int <a class="el" href="class_d_d_m.html#a0821be8a65988df0004b4d9f4239a020">nonDecisionTime</a>=0, vector&lt; float &gt; <a class="el" href="class_d_d_m.html#a0cecc28e691846bce6dccb02f34aef07">bias</a>={0}, vector&lt; float &gt; <a class="el" href="class_d_d_m.html#aa5d70be71626890a4957eb5c59ba309d">decay</a>={0})</td></tr>
+<tr class="memdesc:af6f4cab6e2175c4864222709f0d6bad4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copmlete a grid-search based Maximum Likelihood Estimation of all possible paramters combinations (d, sigma) to determine which parameters are most likely to generate the provided DDMTrials. Each potential model generates an NLL value for the dataset and the method returns the model with the minimum NLL value.  <br /></td></tr>
+<tr class="separator:af6f4cab6e2175c4864222709f0d6bad4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -334,8 +337,45 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a5fb44afa5344b51d0eef6e9e49a0c905" name="a5fb44afa5344b51d0eef6e9e49a0c905"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5fb44afa5344b51d0eef6e9e49a0c905">&#9670;&#160;</a></span>fitModelMLE()</h2>
+<a id="aa24d1be1eb26549494f8cf0c6fa91587" name="aa24d1be1eb26549494f8cf0c6fa91587"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa24d1be1eb26549494f8cf0c6fa91587">&#9670;&#160;</a></span>exportTrial()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DDM::exportTrial </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_d_d_m_trial.html">DDMTrial</a>&#160;</td>
+          <td class="paramname"><em>dt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>filename</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Export the data pertaining to a single <a class="el" href="class_d_d_m.html" title="Implementation of the Drift Diffusion Model (DDM).">DDM</a> and <a class="el" href="class_d_d_m_trial.html" title="Implementation of a single DDMTrial object.">DDMTrial</a> to a JSON file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dt</td><td>Trial to export </td></tr>
+    <tr><td class="paramname">filename</td><td>File to store the trial information in. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af6f4cab6e2175c4864222709f0d6bad4" name="af6f4cab6e2175c4864222709f0d6bad4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6f4cab6e2175c4864222709f0d6bad4">&#9670;&#160;</a></span>fitModelMLE()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -364,12 +404,6 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>barrier</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>computeMethod</em> = <code>&quot;basic&quot;</code>, </td>
         </tr>
@@ -377,7 +411,31 @@ Public Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>normalizePosteriors</em> = <code>false</code>&#160;</td>
+          <td class="paramname"><em>normalizePosteriors</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>barrier</em> = <code>1</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>nonDecisionTime</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">vector&lt; float &gt;&#160;</td>
+          <td class="paramname"><em>bias</em> = <code>{0}</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">vector&lt; float &gt;&#160;</td>
+          <td class="paramname"><em>decay</em> = <code>{0}</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -398,8 +456,12 @@ Public Attributes</h2></td></tr>
     <tr><td class="paramname">trials</td><td>Vector of DDMTrials that each model should calculate the NLL for. </td></tr>
     <tr><td class="paramname">rangeD</td><td>Vector of floats representing possible values of d to dest for. </td></tr>
     <tr><td class="paramname">rangeSigma</td><td>Vector of floats representing possible values of sigma to test for. </td></tr>
-    <tr><td class="paramname">barrier</td><td>Positive magnitude of the sigmal threshold. </td></tr>
     <tr><td class="paramname">computeMethod</td><td>Computation method to calculate the NLL for each possible model. Allowed values are {basic, thread, gpu}. "basic" will compute each trial likelihood sequentially and compute the NLL as the sum of all negative log likelihoods. "thread" will use a thread pool to divide all trials into the maximum number of CPU threads and compute the NLL of each block of trials in parallel. "gpu" will call a CUDA kernel to compute the likelihood of each trial in parallel on the GPU. </td></tr>
+    <tr><td class="paramname">normalizePosteriors</td><td>true if the returned <a class="el" href="struct_m_l_einfo.html">MLEinfo</a> should contain a mapping of aDDMs to the normzlied posteriors distribution for each model; otherwise, the <a class="el" href="struct_m_l_einfo.html">MLEinfo</a> should containing a mapping of aDDMs to its corresponding NLL. </td></tr>
+    <tr><td class="paramname">barrier</td><td>Positive magnitude of the sigmal threshold. </td></tr>
+    <tr><td class="paramname">nonDecisionTime</td><td>Amount of time in milliseconds in which only noise is added to the decision variable. </td></tr>
+    <tr><td class="paramname">bias</td><td>Corresponds to the initial RDV. Must be smaller than the barrier. Possible input forms are: (1) No input - the standard bias of 0 is assumed for all potential <a class="el" href="class_d_d_m.html" title="Implementation of the Drift Diffusion Model (DDM).">DDM</a> models to check. (2) Single input (vector with one element) - i.e. {0.03} - the specified input bias is assumed for all potential models. (3) Range of inputs - i.e. {-0.12, 0, 0.12} - the input range is processed as another dimension to check and a new set of models will be tested with all possible combinations of biases. </td></tr>
+    <tr><td class="paramname">decay</td><td>Corresponds to the decay of the barriers over time. A decay of zero means that the barriers are constant. Similar to the <code>bias</code> argument, the three input forms of no input, a vector with single element, and a vector with a range of elements. </td></tr>
   </table>
   </dd>
 </dl>

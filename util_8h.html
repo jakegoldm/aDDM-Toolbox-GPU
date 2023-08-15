@@ -97,10 +97,10 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a3c70684bbd5c18365b967d158305e919"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="util_8h.html#a3c70684bbd5c18365b967d158305e919">probabilityDensityFunction</a> (float mean, float <a class="el" href="addm__nll_8cpp.html#ae11aeeb83e22b5b7f1e6b4347eb1daa6">sigma</a>, float x)</td></tr>
+<tr class="memitem:a3c70684bbd5c18365b967d158305e919"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="util_8h.html#a3c70684bbd5c18365b967d158305e919">probabilityDensityFunction</a> (float mean, float <a class="el" href="addm__simulate_8cpp.html#ae11aeeb83e22b5b7f1e6b4347eb1daa6">sigma</a>, float x)</td></tr>
 <tr class="memdesc:a3c70684bbd5c18365b967d158305e919"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the probability density function provided mean and standard deviation.  <br /></td></tr>
 <tr class="separator:a3c70684bbd5c18365b967d158305e919"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0c2fb4c0b02fabb15eeab9d6f73e5ab"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="util_8h.html#ab0c2fb4c0b02fabb15eeab9d6f73e5ab">cumulativeDensityFunction</a> (float mean, float <a class="el" href="addm__nll_8cpp.html#ae11aeeb83e22b5b7f1e6b4347eb1daa6">sigma</a>, float x)</td></tr>
+<tr class="memitem:ab0c2fb4c0b02fabb15eeab9d6f73e5ab"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="util_8h.html#ab0c2fb4c0b02fabb15eeab9d6f73e5ab">cumulativeDensityFunction</a> (float mean, float <a class="el" href="addm__simulate_8cpp.html#ae11aeeb83e22b5b7f1e6b4347eb1daa6">sigma</a>, float x)</td></tr>
 <tr class="memdesc:ab0c2fb4c0b02fabb15eeab9d6f73e5ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the cumulative density function provided mean and standard deviation.  <br /></td></tr>
 <tr class="separator:ab0c2fb4c0b02fabb15eeab9d6f73e5ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6b9c5e80a13d7b17e7617f31e47f156"><td class="memItemLeft" align="right" valign="top">std::map&lt; int, std::vector&lt; <a class="el" href="classa_d_d_m_trial.html">aDDMTrial</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="util_8h.html#ab6b9c5e80a13d7b17e7617f31e47f156">loadDataFromSingleCSV</a> (std::string filename)</td></tr>
@@ -109,15 +109,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a78fc1c7aadc9bd3f08e29b796632b49b"><td class="memItemLeft" align="right" valign="top">std::map&lt; int, std::vector&lt; <a class="el" href="classa_d_d_m_trial.html">aDDMTrial</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="util_8h.html#a78fc1c7aadc9bd3f08e29b796632b49b">loadDataFromCSV</a> (std::string expDataFilename, std::string fixDataFilename)</td></tr>
 <tr class="memdesc:a78fc1c7aadc9bd3f08e29b796632b49b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load experimental data from two CSV files: an experimental data file and a fixations file. Format expected for experimental data file:  <br /></td></tr>
 <tr class="separator:a78fc1c7aadc9bd3f08e29b796632b49b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab492700b8d4d51252d43590949ba1b6f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_fixation_data.html">FixationData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="util_8h.html#ab492700b8d4d51252d43590949ba1b6f">getEmpiricalDistributions</a> (std::map&lt; int, std::vector&lt; <a class="el" href="classa_d_d_m_trial.html">aDDMTrial</a> &gt; &gt; data, int timeStep=10, int MaxFixTime=3000, int numFixDists=3, std::vector&lt; int &gt; valueDiffs={-3,-2,-1, 0, 1, 2, 3}, std::vector&lt; int &gt; subjectIDs={}, bool useOddTrials=true, bool useEvenTrials=true, bool useCisTrials=true, bool useTransTrials=true)</td></tr>
-<tr class="memdesc:ab492700b8d4d51252d43590949ba1b6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create empirical distributions fro the data ot be used when generating model simulations.  <br /></td></tr>
-<tr class="separator:ab492700b8d4d51252d43590949ba1b6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1fc778f00048f198efadf0416137565"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="util_8h.html#aa1fc778f00048f198efadf0416137565">DDMexportTrial</a> (<a class="el" href="class_d_d_m.html">DDM</a> ddm, <a class="el" href="class_d_d_m_trial.html">DDMTrial</a> dt, std::string filename)</td></tr>
-<tr class="memdesc:aa1fc778f00048f198efadf0416137565"><td class="mdescLeft">&#160;</td><td class="mdescRight">Export the data pertaining to a single <a class="el" href="class_d_d_m.html" title="Implementation of the Drift Diffusion Model (DDM).">DDM</a> and <a class="el" href="class_d_d_m_trial.html" title="Implementation of a single DDMTrial object.">DDMTrial</a> to a JSON file.  <br /></td></tr>
-<tr class="separator:aa1fc778f00048f198efadf0416137565"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58bdc0d7b9b3d4ed1ba436074938d0c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="util_8h.html#a58bdc0d7b9b3d4ed1ba436074938d0c2">aDDMexportTrial</a> (<a class="el" href="classa_d_d_m.html">aDDM</a> addm, <a class="el" href="classa_d_d_m_trial.html">aDDMTrial</a> adt, std::string filename)</td></tr>
-<tr class="memdesc:a58bdc0d7b9b3d4ed1ba436074938d0c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Export the data pertaining to a single <a class="el" href="classa_d_d_m.html" title="Implementation of the attentional Drift Diffusion Model (aDDM).">aDDM</a> and <a class="el" href="classa_d_d_m_trial.html" title="Implementation of a single aDDMTrial object.">aDDMTrial</a> to a JSON file.  <br /></td></tr>
-<tr class="separator:a58bdc0d7b9b3d4ed1ba436074938d0c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10693cca86fb676af3f059a825e8052b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_fixation_data.html">FixationData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="util_8h.html#a10693cca86fb676af3f059a825e8052b">getEmpiricalDistributions</a> (std::map&lt; int, std::vector&lt; <a class="el" href="classa_d_d_m_trial.html">aDDMTrial</a> &gt; &gt; data, int timeStep=10, int maxFixTime=3000, int numFixDists=3, std::vector&lt; int &gt; valueDiffs={-3,-2,-1, 0, 1, 2, 3}, std::vector&lt; int &gt; subjectIDs={}, bool useOddTrials=true, bool useEvenTrials=true, bool useCisTrials=true, bool useTransTrials=true)</td></tr>
+<tr class="memdesc:a10693cca86fb676af3f059a825e8052b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create empirical distributions fro the data ot be used when generating model simulations.  <br /></td></tr>
+<tr class="separator:a10693cca86fb676af3f059a825e8052b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ebf560e5e3830defcb13f36787c446a"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:a7ebf560e5e3830defcb13f36787c446a"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="util_8h.html#a7ebf560e5e3830defcb13f36787c446a">pmat</a> (std::vector&lt; std::vector&lt; T &gt; &gt; mat, std::string name)</td></tr>
 <tr class="memdesc:a7ebf560e5e3830defcb13f36787c446a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print a matrix stored in nested-vector format. Utility function for debugging purposes.  <br /></td></tr>
@@ -146,50 +140,6 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a58bdc0d7b9b3d4ed1ba436074938d0c2" name="a58bdc0d7b9b3d4ed1ba436074938d0c2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a58bdc0d7b9b3d4ed1ba436074938d0c2">&#9670;&#160;</a></span>aDDMexportTrial()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void aDDMexportTrial </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classa_d_d_m.html">aDDM</a>&#160;</td>
-          <td class="paramname"><em>addm</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classa_d_d_m_trial.html">aDDMTrial</a>&#160;</td>
-          <td class="paramname"><em>adt</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>filename</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Export the data pertaining to a single <a class="el" href="classa_d_d_m.html" title="Implementation of the attentional Drift Diffusion Model (aDDM).">aDDM</a> and <a class="el" href="classa_d_d_m_trial.html" title="Implementation of a single aDDMTrial object.">aDDMTrial</a> to a JSON file. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">addm</td><td>Model to export. </td></tr>
-    <tr><td class="paramname">adt</td><td>Trial to export. </td></tr>
-    <tr><td class="paramname">filename</td><td>File to store the trial information in. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="ab0c2fb4c0b02fabb15eeab9d6f73e5ab" name="ab0c2fb4c0b02fabb15eeab9d6f73e5ab"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab0c2fb4c0b02fabb15eeab9d6f73e5ab">&#9670;&#160;</a></span>cumulativeDensityFunction()</h2>
 
@@ -235,52 +185,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="aa1fc778f00048f198efadf0416137565" name="aa1fc778f00048f198efadf0416137565"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1fc778f00048f198efadf0416137565">&#9670;&#160;</a></span>DDMexportTrial()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DDMexportTrial </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_d_d_m.html">DDM</a>&#160;</td>
-          <td class="paramname"><em>ddm</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="class_d_d_m_trial.html">DDMTrial</a>&#160;</td>
-          <td class="paramname"><em>dt</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>filename</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Export the data pertaining to a single <a class="el" href="class_d_d_m.html" title="Implementation of the Drift Diffusion Model (DDM).">DDM</a> and <a class="el" href="class_d_d_m_trial.html" title="Implementation of a single DDMTrial object.">DDMTrial</a> to a JSON file. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">ddm</td><td>Model to export </td></tr>
-    <tr><td class="paramname">dt</td><td>Trial to export </td></tr>
-    <tr><td class="paramname">filename</td><td>File to store the trial information in. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ab492700b8d4d51252d43590949ba1b6f" name="ab492700b8d4d51252d43590949ba1b6f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab492700b8d4d51252d43590949ba1b6f">&#9670;&#160;</a></span>getEmpiricalDistributions()</h2>
+<a id="a10693cca86fb676af3f059a825e8052b" name="a10693cca86fb676af3f059a825e8052b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10693cca86fb676af3f059a825e8052b">&#9670;&#160;</a></span>getEmpiricalDistributions()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -301,7 +207,7 @@ Variables</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>MaxFixTime</em> = <code>3000</code>, </td>
+          <td class="paramname"><em>maxFixTime</em> = <code>3000</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -358,7 +264,7 @@ Variables</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">data</td><td>A mapping of subject IDs to vectors of each subject's corresponding aDDMTrials. </td></tr>
     <tr><td class="paramname">timeStep</td><td>Minimum duration of a fixation to be considered in milliseconds. </td></tr>
-    <tr><td class="paramname">MaxFixTime</td><td>Maximum duration of a fixation to be considered, in milliseconds. </td></tr>
+    <tr><td class="paramname">maxFixTime</td><td>Maximum duration of a fixation to be considered, in milliseconds. </td></tr>
     <tr><td class="paramname">numFixDists</td><td>Integer indicating the number of fixation types to use in the fixation distributions. I.e. if set to 3, then three separate fixation typyes will be used, corresponding to the first, second, and third fixation in each trial. </td></tr>
     <tr><td class="paramname">valueDiffs</td><td>List of integers corresponding to the available value differences between item. </td></tr>
     <tr><td class="paramname">subjectIDs</td><td>List of subject IDs to consider in the empirical data. If left empty, all subjectIDs will be used. </td></tr>

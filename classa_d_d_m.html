@@ -91,10 +91,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3deca5544adba4e2ad8ec86a0efdbcfc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classa_d_d_m.html#a3deca5544adba4e2ad8ec86a0efdbcfc">aDDM</a> ()</td></tr>
 <tr class="memdesc:a3deca5544adba4e2ad8ec86a0efdbcfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an empty <a class="el" href="classa_d_d_m.html" title="Implementation of the attentional Drift Diffusion Model (aDDM).">aDDM</a> object.  <br /></td></tr>
 <tr class="separator:a3deca5544adba4e2ad8ec86a0efdbcfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a599960aca948e1c335a9ceeaacb37de6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classa_d_d_m.html#a599960aca948e1c335a9ceeaacb37de6">exportTrial</a> (<a class="el" href="classa_d_d_m_trial.html">aDDMTrial</a> adt, std::string filename)</td></tr>
+<tr class="memdesc:a599960aca948e1c335a9ceeaacb37de6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Export the data pertaining to a single <a class="el" href="classa_d_d_m.html" title="Implementation of the attentional Drift Diffusion Model (aDDM).">aDDM</a> and <a class="el" href="classa_d_d_m_trial.html" title="Implementation of a single aDDMTrial object.">aDDMTrial</a> to a JSON file.  <br /></td></tr>
+<tr class="separator:a599960aca948e1c335a9ceeaacb37de6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ccee0abe15711f09f8eee0a782f3e06"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classa_d_d_m.html#a9ccee0abe15711f09f8eee0a782f3e06">getTrialLikelihood</a> (<a class="el" href="classa_d_d_m_trial.html">aDDMTrial</a> trial, bool debug=false, int timeStep=10, float approxStateStep=0.1)</td></tr>
 <tr class="memdesc:a9ccee0abe15711f09f8eee0a782f3e06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the likelihood of the trial results provided the current parameters.  <br /></td></tr>
 <tr class="separator:a9ccee0abe15711f09f8eee0a782f3e06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2bff97cd2823b7e44e08af34351c6676"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classa_d_d_m_trial.html">aDDMTrial</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classa_d_d_m.html#a2bff97cd2823b7e44e08af34351c6676">simulateTrial</a> (int <a class="el" href="addm__mle_8cpp.html#a66ae2c9a86cab7b4970ecc123c799c45">valueLeft</a>, int valueRight, <a class="el" href="class_fixation_data.html">FixationData</a> fixationData, int timeStep=10, int numFixDists=3, <a class="el" href="addm_8cuh.html#ac73e0abca434ac872480feb6a7cf4c56">fixDists</a> fixationDist={}, vector&lt; int &gt; timeBins={}, int seed=-1)</td></tr>
+<tr class="memitem:a2bff97cd2823b7e44e08af34351c6676"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classa_d_d_m_trial.html">aDDMTrial</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classa_d_d_m.html#a2bff97cd2823b7e44e08af34351c6676">simulateTrial</a> (int valueLeft, int valueRight, <a class="el" href="class_fixation_data.html">FixationData</a> fixationData, int timeStep=10, int numFixDists=3, <a class="el" href="addm_8cuh.html#ac73e0abca434ac872480feb6a7cf4c56">fixDists</a> fixationDist={}, vector&lt; int &gt; timeBins={}, int seed=-1)</td></tr>
 <tr class="memdesc:a2bff97cd2823b7e44e08af34351c6676"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate simulated fixations provided item values and empirical fixation data.  <br /></td></tr>
 <tr class="separator:a2bff97cd2823b7e44e08af34351c6676"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9ff4c316f0c3ca0a4df3b2b4823e97d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_probability_data.html">ProbabilityData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classa_d_d_m.html#ab9ff4c316f0c3ca0a4df3b2b4823e97d">computeParallelNLL</a> (vector&lt; <a class="el" href="classa_d_d_m_trial.html">aDDMTrial</a> &gt; trials, bool debug=false, int timeStep=10, float approxStateStep=0.1)</td></tr>
@@ -112,10 +115,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5c65c29756565b1a6a9ca6605fa1c003 inherit pub_methods_class_d_d_m"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#a5c65c29756565b1a6a9ca6605fa1c003">DDM</a> ()</td></tr>
 <tr class="memdesc:a5c65c29756565b1a6a9ca6605fa1c003 inherit pub_methods_class_d_d_m"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an empty <a class="el" href="class_d_d_m.html" title="Implementation of the Drift Diffusion Model (DDM).">DDM</a> object.  <br /></td></tr>
 <tr class="separator:a5c65c29756565b1a6a9ca6605fa1c003 inherit pub_methods_class_d_d_m"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa24d1be1eb26549494f8cf0c6fa91587 inherit pub_methods_class_d_d_m"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#aa24d1be1eb26549494f8cf0c6fa91587">exportTrial</a> (<a class="el" href="class_d_d_m_trial.html">DDMTrial</a> dt, std::string filename)</td></tr>
+<tr class="memdesc:aa24d1be1eb26549494f8cf0c6fa91587 inherit pub_methods_class_d_d_m"><td class="mdescLeft">&#160;</td><td class="mdescRight">Export the data pertaining to a single <a class="el" href="class_d_d_m.html" title="Implementation of the Drift Diffusion Model (DDM).">DDM</a> and <a class="el" href="class_d_d_m_trial.html" title="Implementation of a single DDMTrial object.">DDMTrial</a> to a JSON file.  <br /></td></tr>
+<tr class="separator:aa24d1be1eb26549494f8cf0c6fa91587 inherit pub_methods_class_d_d_m"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a025072ab3fd16dee3a0b0f57c7585a06 inherit pub_methods_class_d_d_m"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#a025072ab3fd16dee3a0b0f57c7585a06">getTrialLikelihood</a> (<a class="el" href="class_d_d_m_trial.html">DDMTrial</a> trial, bool debug=false, int timeStep=10, float approxStateStep=0.1)</td></tr>
 <tr class="memdesc:a025072ab3fd16dee3a0b0f57c7585a06 inherit pub_methods_class_d_d_m"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the likelihood of the trial results provided the current parameters.  <br /></td></tr>
 <tr class="separator:a025072ab3fd16dee3a0b0f57c7585a06 inherit pub_methods_class_d_d_m"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3a9a7bb885ba0154347082eb81b3f91 inherit pub_methods_class_d_d_m"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_d_d_m_trial.html">DDMTrial</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#aa3a9a7bb885ba0154347082eb81b3f91">simulateTrial</a> (int <a class="el" href="addm__mle_8cpp.html#a66ae2c9a86cab7b4970ecc123c799c45">valueLeft</a>, int valueRight, int timeStep=10, int seed=-1)</td></tr>
+<tr class="memitem:aa3a9a7bb885ba0154347082eb81b3f91 inherit pub_methods_class_d_d_m"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_d_d_m_trial.html">DDMTrial</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#aa3a9a7bb885ba0154347082eb81b3f91">simulateTrial</a> (int valueLeft, int valueRight, int timeStep=10, int seed=-1)</td></tr>
 <tr class="memdesc:aa3a9a7bb885ba0154347082eb81b3f91 inherit pub_methods_class_d_d_m"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a simulated <a class="el" href="class_d_d_m.html" title="Implementation of the Drift Diffusion Model (DDM).">DDM</a> trial provided item values.  <br /></td></tr>
 <tr class="separator:aa3a9a7bb885ba0154347082eb81b3f91 inherit pub_methods_class_d_d_m"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d01bc6718c153538caa2fed7ea4c8b6 inherit pub_methods_class_d_d_m"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_probability_data.html">ProbabilityData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#a1d01bc6718c153538caa2fed7ea4c8b6">computeParallelNLL</a> (vector&lt; <a class="el" href="class_d_d_m_trial.html">DDMTrial</a> &gt; trials, bool debug=false, int timeStep=10, float approxStateStep=0.1)</td></tr>
@@ -131,9 +137,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a2b9be9ecd601d05d8d935a4902c2f473"><td class="mdescLeft">&#160;</td><td class="mdescRight">Complete a grid-search based Maximum Likelihood Estimation of all possible parameter combinations (d, theta, sigma) to determine which parameters are most likely to generate the provided aDDMTrials. Each potential model generates an NLL value for the dataset and the method returns the model with the minimum NLL value.  <br /></td></tr>
 <tr class="separator:a2b9be9ecd601d05d8d935a4902c2f473"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_methods_class_d_d_m"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_class_d_d_m')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="class_d_d_m.html">DDM</a></td></tr>
-<tr class="memitem:a5fb44afa5344b51d0eef6e9e49a0c905 inherit pub_static_methods_class_d_d_m"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="struct_m_l_einfo.html">MLEinfo</a>&lt; <a class="el" href="class_d_d_m.html">DDM</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#a5fb44afa5344b51d0eef6e9e49a0c905">fitModelMLE</a> (vector&lt; <a class="el" href="class_d_d_m_trial.html">DDMTrial</a> &gt; trials, vector&lt; float &gt; <a class="el" href="addm__mle_8cpp.html#a800d6969137d46bac6c127a9f70b7e51">rangeD</a>, vector&lt; float &gt; <a class="el" href="addm__mle_8cpp.html#a347dbb7726ce6ea89520f5980d686dd8">rangeSigma</a>, float <a class="el" href="class_d_d_m.html#a0293f051d7889ee014fb55c4939e4783">barrier</a>, string computeMethod=&quot;basic&quot;, bool normalizePosteriors=false)</td></tr>
-<tr class="memdesc:a5fb44afa5344b51d0eef6e9e49a0c905 inherit pub_static_methods_class_d_d_m"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copmlete a grid-search based Maximum Likelihood Estimation of all possible paramters combinations (d, sigma) to determine which parameters are most likely to generate the provided DDMTrials. Each potential model generates an NLL value for the dataset and the method returns the model with the minimum NLL value.  <br /></td></tr>
-<tr class="separator:a5fb44afa5344b51d0eef6e9e49a0c905 inherit pub_static_methods_class_d_d_m"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6f4cab6e2175c4864222709f0d6bad4 inherit pub_static_methods_class_d_d_m"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="struct_m_l_einfo.html">MLEinfo</a>&lt; <a class="el" href="class_d_d_m.html">DDM</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#af6f4cab6e2175c4864222709f0d6bad4">fitModelMLE</a> (vector&lt; <a class="el" href="class_d_d_m_trial.html">DDMTrial</a> &gt; trials, vector&lt; float &gt; <a class="el" href="addm__mle_8cpp.html#a800d6969137d46bac6c127a9f70b7e51">rangeD</a>, vector&lt; float &gt; <a class="el" href="addm__mle_8cpp.html#a347dbb7726ce6ea89520f5980d686dd8">rangeSigma</a>, string computeMethod=&quot;basic&quot;, bool normalizePosteriors=false, float <a class="el" href="class_d_d_m.html#a0293f051d7889ee014fb55c4939e4783">barrier</a>=1, unsigned int <a class="el" href="class_d_d_m.html#a0821be8a65988df0004b4d9f4239a020">nonDecisionTime</a>=0, vector&lt; float &gt; <a class="el" href="class_d_d_m.html#a0cecc28e691846bce6dccb02f34aef07">bias</a>={0}, vector&lt; float &gt; <a class="el" href="class_d_d_m.html#aa5d70be71626890a4957eb5c59ba309d">decay</a>={0})</td></tr>
+<tr class="memdesc:af6f4cab6e2175c4864222709f0d6bad4 inherit pub_static_methods_class_d_d_m"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copmlete a grid-search based Maximum Likelihood Estimation of all possible paramters combinations (d, sigma) to determine which parameters are most likely to generate the provided DDMTrials. Each potential model generates an NLL value for the dataset and the method returns the model with the minimum NLL value.  <br /></td></tr>
+<tr class="separator:af6f4cab6e2175c4864222709f0d6bad4 inherit pub_static_methods_class_d_d_m"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -366,6 +372,43 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_probability_data.html">ProbabilityData</a> containing NLL, sum of likelihoods, and a list of all computed likelihoods. </dd></dl>
+
+</div>
+</div>
+<a id="a599960aca948e1c335a9ceeaacb37de6" name="a599960aca948e1c335a9ceeaacb37de6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a599960aca948e1c335a9ceeaacb37de6">&#9670;&#160;</a></span>exportTrial()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void aDDM::exportTrial </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classa_d_d_m_trial.html">aDDMTrial</a>&#160;</td>
+          <td class="paramname"><em>adt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>filename</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Export the data pertaining to a single <a class="el" href="classa_d_d_m.html" title="Implementation of the attentional Drift Diffusion Model (aDDM).">aDDM</a> and <a class="el" href="classa_d_d_m_trial.html" title="Implementation of a single aDDMTrial object.">aDDMTrial</a> to a JSON file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">adt</td><td>Trial to export. </td></tr>
+    <tr><td class="paramname">filename</td><td>File to store the trial information in. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

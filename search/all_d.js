@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['operator_3c_0',['operator&lt;',['../classa_d_d_m.html#aa91c58ed9dadaf2fdb4c17390a2c22b4',1,'aDDM::operator&lt;()'],['../class_d_d_m.html#acd37ba5a2a2f6e45661df2516dabf267',1,'DDM::operator&lt;()']]],
-  ['optimal_1',['optimal',['../struct_m_l_einfo.html#a054f10abde01843cc1db0b07135edb0e',1,'MLEinfo']]]
+  ['n_0',['N',['../namespaceposteriors.html#a178770fecb7a8e8d063088b092438a27',1,'posteriors.N'],['../addm__simulate_8cpp.html#a7722c8ecbb62d99aee7ce68b1752f337',1,'N:&#160;addm_simulate.cpp'],['../ddm__simulate_8cpp.html#a7722c8ecbb62d99aee7ce68b1752f337',1,'N:&#160;ddm_simulate.cpp'],['../test_8cpp.html#a7722c8ecbb62d99aee7ce68b1752f337',1,'N:&#160;test.cpp']]],
+  ['ncols_1',['ncols',['../namespaceposteriors.html#a4203adec26ba439f39a7c446f5917b82',1,'posteriors']]],
+  ['nll_2',['NLL',['../class_probability_data.html#ac82874e15b2365db4ce1320aa2097055',1,'ProbabilityData']]],
+  ['nondecisiontime_3',['nonDecisionTime',['../class_d_d_m.html#a0821be8a65988df0004b4d9f4239a020',1,'DDM']]],
+  ['nrows_4',['nrows',['../namespaceposteriors.html#afa4470b5dd1104b5bd6e23257d829ef4',1,'posteriors']]]
 ];

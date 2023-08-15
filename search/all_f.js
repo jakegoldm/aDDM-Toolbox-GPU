@@ -1,11 +1,18 @@
 var searchData=
 [
-  ['ranged_0',['rangeD',['../addm__mle_8cpp.html#a800d6969137d46bac6c127a9f70b7e51',1,'rangeD:&#160;addm_mle.cpp'],['../addm__mle__thread_8cpp.html#a800d6969137d46bac6c127a9f70b7e51',1,'rangeD:&#160;addm_mle_thread.cpp'],['../benchmark_8cpp.html#a800d6969137d46bac6c127a9f70b7e51',1,'rangeD:&#160;benchmark.cpp'],['../ddm__mle_8cpp.html#a800d6969137d46bac6c127a9f70b7e51',1,'rangeD:&#160;ddm_mle.cpp'],['../ddm__mle__thread_8cpp.html#a800d6969137d46bac6c127a9f70b7e51',1,'rangeD:&#160;ddm_mle_thread.cpp']]],
-  ['rangesigma_1',['rangeSigma',['../ddm__mle__thread_8cpp.html#a347dbb7726ce6ea89520f5980d686dd8',1,'rangeSigma:&#160;ddm_mle_thread.cpp'],['../ddm__mle_8cpp.html#a347dbb7726ce6ea89520f5980d686dd8',1,'rangeSigma:&#160;ddm_mle.cpp'],['../addm__mle_8cpp.html#a347dbb7726ce6ea89520f5980d686dd8',1,'rangeSigma:&#160;addm_mle.cpp'],['../addm__mle__thread_8cpp.html#a347dbb7726ce6ea89520f5980d686dd8',1,'rangeSigma:&#160;addm_mle_thread.cpp'],['../benchmark_8cpp.html#a347dbb7726ce6ea89520f5980d686dd8',1,'rangeSigma:&#160;benchmark.cpp']]],
-  ['rangetheta_2',['rangeTheta',['../benchmark_8cpp.html#ad2aa7a364e6ed4961ee3bb151d523d2c',1,'rangeTheta:&#160;benchmark.cpp'],['../addm__mle__thread_8cpp.html#ad2aa7a364e6ed4961ee3bb151d523d2c',1,'rangeTheta:&#160;addm_mle_thread.cpp'],['../addm__mle_8cpp.html#ad2aa7a364e6ed4961ee3bb151d523d2c',1,'rangeTheta:&#160;addm_mle.cpp']]],
-  ['rdv_5ftime_3',['rdv_time',['../namespacerdv__time.html',1,'']]],
-  ['rdv_5ftime_2epy_4',['rdv_time.py',['../rdv__time_8py.html',1,'']]],
-  ['rdvs_5',['RDVs',['../class_d_d_m_trial.html#afe24a94d0425b430c2c1e4537091f35b',1,'DDMTrial']]],
-  ['readme_2emd_6',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
-  ['rt_7',['RT',['../class_d_d_m_trial.html#a1fed499f6f800dcf08331b0f08d4570b',1,'DDMTrial']]]
+  ['par1_5flabel_0',['par1_label',['../classposteriors_1_1___map_data.html#a7457013667406e417635d4ad1c77eb88',1,'posteriors::_MapData']]],
+  ['par1_5fsums_1',['par1_sums',['../classposteriors_1_1___map_data.html#a270c6272e3a97133e1c46ca4afafa24a',1,'posteriors::_MapData']]],
+  ['par2_5flabel_2',['par2_label',['../classposteriors_1_1___map_data.html#a0047cd14bdbd6571decea4d508144bf1',1,'posteriors::_MapData']]],
+  ['par2_5fsums_3',['par2_sums',['../classposteriors_1_1___map_data.html#ad8767765cd666ffc012b4335fcc6145d',1,'posteriors::_MapData']]],
+  ['param_5fdict_4',['param_dict',['../namespaceposteriors.html#a4ed1be909de7008ce6aca7c165c352b4',1,'posteriors']]],
+  ['param_5frow_5fval_5',['param_row_val',['../namespaceposteriors.html#adfce1cbad5929e38d38fb05de6ed9cdc',1,'posteriors']]],
+  ['param_5fsums_6',['param_sums',['../namespaceposteriors.html#ac7098979978316058ffbfbcfb5d65a47',1,'posteriors']]],
+  ['pmat_7',['pmat',['../util_8h.html#a7ebf560e5e3830defcb13f36787c446a',1,'util.h']]],
+  ['posteriors_8',['posteriors',['../namespaceposteriors.html',1,'']]],
+  ['posteriors_2epy_9',['posteriors.py',['../posteriors_8py.html',1,'']]],
+  ['prob_5flabel_10',['PROB_LABEL',['../namespaceposteriors.html#a622e6f5443716092dc8a7e885666c8db',1,'posteriors']]],
+  ['probabilitydata_11',['ProbabilityData',['../class_probability_data.html#a865aa89be661b2fd1926f922b31a5aa6',1,'ProbabilityData::ProbabilityData()'],['../class_probability_data.html',1,'ProbabilityData']]],
+  ['probabilitydensityfunction_12',['probabilityDensityFunction',['../util_8h.html#a3c70684bbd5c18365b967d158305e919',1,'probabilityDensityFunction(float mean, float sigma, float x):&#160;util.cpp'],['../util_8cpp.html#a3c70684bbd5c18365b967d158305e919',1,'probabilityDensityFunction(float mean, float sigma, float x):&#160;util.cpp']]],
+  ['probfixleftfirst_13',['probFixLeftFirst',['../class_fixation_data.html#ac94f66e2c75130b416982631f76580b8',1,'FixationData']]],
+  ['pybind11_5fmodule_14',['PYBIND11_MODULE',['../bindings_8cpp.html#aee41ca5a5ae0f248a1e895b6048c578a',1,'bindings.cpp']]]
 ];
