@@ -74,6 +74,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">bindings.cpp File Reference</div></div>
 </div><!--header-->
@@ -81,13 +82,67 @@ $(function() {
 <div class="textblock"><code>#include &lt;pybind11/pybind11.h&gt;</code><br />
 <code>#include &lt;pybind11/stl.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="gpu__toolbox_8h_source.html">../include/gpu_toolbox.h</a>&quot;</code><br />
+<code>#include &lt;string&gt;</code><br />
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a5fbc991384a035f0758be9091b13b437"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bindings_8cpp.html#a5fbc991384a035f0758be9091b13b437">Arg</a> = py::arg</td></tr>
+<tr class="separator:a5fbc991384a035f0758be9091b13b437"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a8423f05dd433e7389cbbd249e8a7a82b"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a8423f05dd433e7389cbbd249e8a7a82b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="bindings_8cpp.html#a8423f05dd433e7389cbbd249e8a7a82b">declareMLEinfo</a> (py::module &amp;m, const std::string &amp;typestr)</td></tr>
+<tr class="separator:a8423f05dd433e7389cbbd249e8a7a82b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee41ca5a5ae0f248a1e895b6048c578a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bindings_8cpp.html#aee41ca5a5ae0f248a1e895b6048c578a">PYBIND11_MODULE</a> (addm_toolbox_gpu, m)</td></tr>
 <tr class="separator:aee41ca5a5ae0f248a1e895b6048c578a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="a5fbc991384a035f0758be9091b13b437" name="a5fbc991384a035f0758be9091b13b437"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fbc991384a035f0758be9091b13b437">&#9670;&#160;</a></span>Arg</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="bindings_8cpp.html#a5fbc991384a035f0758be9091b13b437">Arg</a> =  py::arg</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a8423f05dd433e7389cbbd249e8a7a82b" name="a8423f05dd433e7389cbbd249e8a7a82b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8423f05dd433e7389cbbd249e8a7a82b">&#9670;&#160;</a></span>declareMLEinfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void declareMLEinfo </td>
+          <td>(</td>
+          <td class="paramtype">py::module &amp;&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>typestr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="aee41ca5a5ae0f248a1e895b6048c578a" name="aee41ca5a5ae0f248a1e895b6048c578a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aee41ca5a5ae0f248a1e895b6048c578a">&#9670;&#160;</a></span>PYBIND11_MODULE()</h2>
 

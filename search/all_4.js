@@ -19,6 +19,7 @@ var searchData=
   ['ddmexporttrial_16',['DDMexportTrial',['../util_8h.html#aa1fc778f00048f198efadf0416137565',1,'DDMexportTrial(DDM ddm, DDMTrial dt, std::string filename):&#160;util.cpp'],['../util_8cpp.html#aa1fc778f00048f198efadf0416137565',1,'DDMexportTrial(DDM ddm, DDMTrial dt, std::string filename):&#160;util.cpp']]],
   ['ddmtrial_17',['DDMTrial',['../class_d_d_m_trial.html',1,'DDMTrial'],['../class_d_d_m_trial.html#af10d4bb86bce4e000e19b3f6e3ad5c2f',1,'DDMTrial::DDMTrial()'],['../class_d_d_m_trial.html#a5be41ef13821a0ead3f044ca2350d19c',1,'DDMTrial::DDMTrial(unsigned int RT, int choice, int valueLeft, int valueRight)']]],
   ['decay_18',['decay',['../class_d_d_m.html#aa5d70be71626890a4957eb5c59ba309d',1,'DDM']]],
-  ['df_19',['df',['../namespaceposteriors.html#a21f7e6326043bd164d0995001e4ed3eb',1,'posteriors']]],
-  ['diag_5fidx_20',['diag_idx',['../namespaceposteriors.html#aaea87f0b1d5faf7b1d0f67a2ad848cc3',1,'posteriors']]]
+  ['declaremleinfo_19',['declareMLEinfo',['../bindings_8cpp.html#a8423f05dd433e7389cbbd249e8a7a82b',1,'bindings.cpp']]],
+  ['df_20',['df',['../namespaceposteriors.html#a21f7e6326043bd164d0995001e4ed3eb',1,'posteriors']]],
+  ['diag_5fidx_21',['diag_idx',['../namespaceposteriors.html#aaea87f0b1d5faf7b1d0f67a2ad848cc3',1,'posteriors']]]
 ];
