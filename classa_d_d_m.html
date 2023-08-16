@@ -133,9 +133,9 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a2b9be9ecd601d05d8d935a4902c2f473"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="struct_m_l_einfo.html">MLEinfo</a>&lt; <a class="el" href="classa_d_d_m.html">aDDM</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classa_d_d_m.html#a2b9be9ecd601d05d8d935a4902c2f473">fitModelMLE</a> (vector&lt; <a class="el" href="classa_d_d_m_trial.html">aDDMTrial</a> &gt; trials, vector&lt; float &gt; <a class="el" href="addm__mle_8cpp.html#a800d6969137d46bac6c127a9f70b7e51">rangeD</a>, vector&lt; float &gt; <a class="el" href="addm__mle_8cpp.html#a347dbb7726ce6ea89520f5980d686dd8">rangeSigma</a>, vector&lt; float &gt; <a class="el" href="addm__mle_8cpp.html#ad2aa7a364e6ed4961ee3bb151d523d2c">rangeTheta</a>, float <a class="el" href="class_d_d_m.html#a0293f051d7889ee014fb55c4939e4783">barrier</a>=1, string computeMethod=&quot;basic&quot;, bool normalizePosteriors=false)</td></tr>
-<tr class="memdesc:a2b9be9ecd601d05d8d935a4902c2f473"><td class="mdescLeft">&#160;</td><td class="mdescRight">Complete a grid-search based Maximum Likelihood Estimation of all possible parameter combinations (d, theta, sigma) to determine which parameters are most likely to generate the provided aDDMTrials. Each potential model generates an NLL value for the dataset and the method returns the model with the minimum NLL value.  <br /></td></tr>
-<tr class="separator:a2b9be9ecd601d05d8d935a4902c2f473"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab798056d5ea0636fa1cff32140067450"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="struct_m_l_einfo.html">MLEinfo</a>&lt; <a class="el" href="classa_d_d_m.html">aDDM</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classa_d_d_m.html#ab798056d5ea0636fa1cff32140067450">fitModelMLE</a> (vector&lt; <a class="el" href="classa_d_d_m_trial.html">aDDMTrial</a> &gt; trials, vector&lt; float &gt; <a class="el" href="addm__mle_8cpp.html#a800d6969137d46bac6c127a9f70b7e51">rangeD</a>, vector&lt; float &gt; <a class="el" href="addm__mle_8cpp.html#a347dbb7726ce6ea89520f5980d686dd8">rangeSigma</a>, vector&lt; float &gt; <a class="el" href="addm__mle_8cpp.html#ad2aa7a364e6ed4961ee3bb151d523d2c">rangeTheta</a>, string computeMethod=&quot;basic&quot;, bool normalizePosteriors=false, float <a class="el" href="class_d_d_m.html#a0293f051d7889ee014fb55c4939e4783">barrier</a>=1, unsigned int <a class="el" href="class_d_d_m.html#a0821be8a65988df0004b4d9f4239a020">nonDecisionTime</a>=0, vector&lt; float &gt; <a class="el" href="class_d_d_m.html#a0cecc28e691846bce6dccb02f34aef07">bias</a>={0}, vector&lt; float &gt; <a class="el" href="class_d_d_m.html#aa5d70be71626890a4957eb5c59ba309d">decay</a>={0})</td></tr>
+<tr class="memdesc:ab798056d5ea0636fa1cff32140067450"><td class="mdescLeft">&#160;</td><td class="mdescRight">Complete a grid-search based Maximum Likelihood Estimation of all possible parameter combinations (d, theta, sigma) to determine which parameters are most likely to generate the provided aDDMTrials. Each potential model generates an NLL value for the dataset and the method returns the model with the minimum NLL value.  <br /></td></tr>
+<tr class="separator:ab798056d5ea0636fa1cff32140067450"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_methods_class_d_d_m"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_class_d_d_m')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="class_d_d_m.html">DDM</a></td></tr>
 <tr class="memitem:af6f4cab6e2175c4864222709f0d6bad4 inherit pub_static_methods_class_d_d_m"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="struct_m_l_einfo.html">MLEinfo</a>&lt; <a class="el" href="class_d_d_m.html">DDM</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#af6f4cab6e2175c4864222709f0d6bad4">fitModelMLE</a> (vector&lt; <a class="el" href="class_d_d_m_trial.html">DDMTrial</a> &gt; trials, vector&lt; float &gt; <a class="el" href="addm__mle_8cpp.html#a800d6969137d46bac6c127a9f70b7e51">rangeD</a>, vector&lt; float &gt; <a class="el" href="addm__mle_8cpp.html#a347dbb7726ce6ea89520f5980d686dd8">rangeSigma</a>, string computeMethod=&quot;basic&quot;, bool normalizePosteriors=false, float <a class="el" href="class_d_d_m.html#a0293f051d7889ee014fb55c4939e4783">barrier</a>=1, unsigned int <a class="el" href="class_d_d_m.html#a0821be8a65988df0004b4d9f4239a020">nonDecisionTime</a>=0, vector&lt; float &gt; <a class="el" href="class_d_d_m.html#a0cecc28e691846bce6dccb02f34aef07">bias</a>={0}, vector&lt; float &gt; <a class="el" href="class_d_d_m.html#aa5d70be71626890a4957eb5c59ba309d">decay</a>={0})</td></tr>
 <tr class="memdesc:af6f4cab6e2175c4864222709f0d6bad4 inherit pub_static_methods_class_d_d_m"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copmlete a grid-search based Maximum Likelihood Estimation of all possible paramters combinations (d, sigma) to determine which parameters are most likely to generate the provided DDMTrials. Each potential model generates an NLL value for the dataset and the method returns the model with the minimum NLL value.  <br /></td></tr>
@@ -412,8 +412,8 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a2b9be9ecd601d05d8d935a4902c2f473" name="a2b9be9ecd601d05d8d935a4902c2f473"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b9be9ecd601d05d8d935a4902c2f473">&#9670;&#160;</a></span>fitModelMLE()</h2>
+<a id="ab798056d5ea0636fa1cff32140067450" name="ab798056d5ea0636fa1cff32140067450"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab798056d5ea0636fa1cff32140067450">&#9670;&#160;</a></span>fitModelMLE()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -448,12 +448,6 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>barrier</em> = <code>1</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>computeMethod</em> = <code>&quot;basic&quot;</code>, </td>
         </tr>
@@ -461,7 +455,31 @@ Public Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>normalizePosteriors</em> = <code>false</code>&#160;</td>
+          <td class="paramname"><em>normalizePosteriors</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>barrier</em> = <code>1</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>nonDecisionTime</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">vector&lt; float &gt;&#160;</td>
+          <td class="paramname"><em>bias</em> = <code>{0}</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">vector&lt; float &gt;&#160;</td>
+          <td class="paramname"><em>decay</em> = <code>{0}</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -483,9 +501,12 @@ Public Attributes</h2></td></tr>
     <tr><td class="paramname">rangeD</td><td>Vector of floats representing possible values of d to test for. </td></tr>
     <tr><td class="paramname">rangeSigma</td><td>Vector of floats representing possible values of sigma to test for. </td></tr>
     <tr><td class="paramname">rangeTheta</td><td>Vector of floats representing possible values of theta to test for. </td></tr>
-    <tr><td class="paramname">barrier</td><td>Positive magnitude of the signal threshold. </td></tr>
     <tr><td class="paramname">computeMethod</td><td>Computation method to calculate the NLL for each possible model. Allowed values are {basic, thread, gpu}. "basic" will compute each trial likelihood sequentially and compute the NLL as the sum of all negative log likelihoods. "thread" will use a thread pool to divide all trials into the maximum number of CPU threads and compute the NLL of each block in parallel. "gpu" will call a CUDA kernel to compute the likelihood of each trial in parallel on the GPU. </td></tr>
     <tr><td class="paramname">normalizePosteriors</td><td>true if the returned <a class="el" href="struct_m_l_einfo.html">MLEinfo</a> should contain a mapping of aDDMs to the normzlied posteriors distribution for each model; otherwise, the <a class="el" href="struct_m_l_einfo.html">MLEinfo</a> should containing a mapping of aDDMs to its corresponding NLL. </td></tr>
+    <tr><td class="paramname">barrier</td><td>Positive magnitude of the signal threshold. </td></tr>
+    <tr><td class="paramname">nonDecisionTime</td><td></td></tr>
+    <tr><td class="paramname">bias</td><td></td></tr>
+    <tr><td class="paramname">decay</td><td></td></tr>
   </table>
   </dd>
 </dl>
