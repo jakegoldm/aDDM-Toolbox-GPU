@@ -1,10 +1,10 @@
 #include <cuda.h>
 #include <cuda_runtime.h>
 #include <cassert>
-#include "../include/addm.cuh"
-#include "../include/ddm.cuh"
-#include "../include/cuda_util.cuh"
-#include "../include/util.h"
+#include "addm.h"
+#include "ddm.h"
+#include "cuda_util.cuh"
+#include "util.h"
 
 
 __global__

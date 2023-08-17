@@ -2,9 +2,9 @@
 #include <cuda_runtime.h>
 #include <cassert>
 #include <fstream>
-#include "../include/ddm.cuh"
-#include "../include/util.h"
-#include "../include/cuda_util.cuh"
+#include "ddm.h"
+#include "util.h"
+#include "cuda_util.cuh"
 
 
 __global__

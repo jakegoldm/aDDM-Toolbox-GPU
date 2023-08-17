@@ -8,9 +8,9 @@
 #include <time.h>
 #include <cstdlib>
 #include <random> 
-#include "ddm.cuh"
+#include "ddm.h"
 #include "util.h"
-#include "addm.cuh"
+#include "addm.h"
 
 
 FixationData::FixationData(float probFixLeftFirst, std::vector<int> latencies, 

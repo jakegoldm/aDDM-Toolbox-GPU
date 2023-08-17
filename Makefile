@@ -13,7 +13,7 @@ INC_DIR := include
 BUILD_DIR := bin
 SRC_DIR := src
 
-CXXFLAGS := -Ofast -msse4.2 -march=native -fPIC $(MACROS)
+CXXFLAGS := -Ofast -march=native -fPIC $(MACROS)
 NVCCFLAGS := -O3 -Xcompiler -fPIC
 SHAREDFLAGS = -I $(INC_DIR) -lpthread
 LDFLAGS := -shared
@@ -79,10 +79,10 @@ all: sim mle test
 
 install: $(CPP_OBJ_FILES) $(CU_OBJ_FILES)
 ifeq ($(MACROS),)
-	echo "" > include/macros.h
+	echo "" > $(INC_DIR)/macros.h
 	$(NVCC) $(LDFLAGS) $(MACROS) -o $(INSTALL_LIB_DIR)/libaddm.so $(CPP_OBJ_FILES) $(CU_OBJ_FILES)
 else 
-	echo "#define EXCLUDE_CUDA_CODE 1" > include/macros.h
+	echo "#define EXCLUDE_CUDA_CODE 1" > $(inc_DIR)/macros.h
 	$(CXX) $(LDFLAGS) $(MACROS) -o $(INSTALL_LIB_DIR)/libaddm.so $(CPP_OBJ_FILES)
 endif 
 	cp -TRv $(INC_DIR) $(INSTALL_INC_DIR)/addm

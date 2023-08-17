@@ -6,7 +6,7 @@
 #include <map>
 #include <tuple>
 #include <functional> 
-#include "ddm.cuh"
+#include "ddm.h"
 #include "mle_info.h"
 
 using namespace std;

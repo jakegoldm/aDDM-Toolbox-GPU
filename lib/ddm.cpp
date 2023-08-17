@@ -9,7 +9,7 @@
 #include <iomanip> 
 #include <BS_thread_pool.hpp>
 #include "util.h"
-#include "ddm.cuh"
+#include "ddm.h"
 
 
 DDMTrial::DDMTrial(unsigned int RT, int choice, int valueLeft, int valueRight) {

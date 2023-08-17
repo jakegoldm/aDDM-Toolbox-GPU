@@ -6,8 +6,8 @@
 #include <string>
 #include <BS_thread_pool.hpp>
 #include <nlohmann/json.hpp>
-#include "addm.cuh"
-#include "ddm.cuh"
+#include "addm.h"
+#include "ddm.h"
 
 using json = nlohmann::json;
 

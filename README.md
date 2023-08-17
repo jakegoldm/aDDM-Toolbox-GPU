@@ -117,7 +117,7 @@ choice = 1
 
 ## Examples ##
 
-For any data simulation and model fitting, the DDM and aDDM classes are going to be the most useful. The `addm.cuh` amd `ddm.cuh` files can be found in the include directory. Below are some examples that may give you an idea how to use these classes. Besides these examples, you may want to:
+For any data simulation and model fitting, the DDM and aDDM classes are going to be the most useful. The `addm.h` amd `ddm.h` files can be found in the include directory. Below are some examples that may give you an idea how to use these classes. Besides these examples, you may want to:
 
 * Check out the [documentation](https://jakegoldm.github.io/aDDM-Toolbox-GPU/).
 * See example use cases in the [source directory](src/)

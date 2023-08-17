@@ -1,11 +1,10 @@
 #ifndef ADDM_TOOLBOX_GPU_H
 #define ADDM_TOOLBOX_GPU_H
 
-#include "ddm.cuh"
-#include "addm.cuh"
+#include "ddm.h"
+#include "addm.h"
 #include "mle_info.h"
 #include "util.h"
-
 
 #if __has_include ("macros.h")
 #  include "macros.h"

@@ -150,6 +150,7 @@ PYBIND11_MODULE(addm_toolbox_gpu, m) {
             Arg("rangeD"), 
             Arg("rangeSigma"), 
             Arg("rangeTheta"),
+            Arg("computeMethod")="basic",
             Arg("normalizePosteriors")=false,
             Arg("barrier")=1, 
             Arg("nonDecisionTime")=0,

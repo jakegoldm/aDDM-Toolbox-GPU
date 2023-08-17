@@ -11,7 +11,7 @@
 #include <vector> 
 #include <boost/math/distributions/normal.hpp>
 #include "util.h"
-#include "addm.cuh"
+#include "addm.h"
 
 
 #ifdef EXCLUDE_GPU_CODE
