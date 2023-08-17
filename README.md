@@ -2,6 +2,29 @@
 
 This toolbox can be used to perform model fitting and data simulation for the Drift Diffusion Model (DDM) and the attentional Drift Diffusion Model (aDDM). It is aimed to provide computational speedup, employing GPU optimizations for parameter estimation. 
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Requirements](#requirements)
+- [Installation and Usage](#installation-and-usage)
+- [Examples](#examples)
+  - [N-Trial Simulation](#n-trial-simulation)
+    - [DDM](#ddm)
+    - [aDDM](#addm)
+  - [Trial Likelihood Compuation](#trial-likelihood-compuation)
+    - [DDM](#ddm-1)
+    - [aDDM](#addm-1)
+  - [Negative Log Likelihoods (NLL) and Maximum Likelihood Estimation (MLE)](#negative-log-likelihoods-nll-and-maximum-likelihood-estimation-mle)
+    - [DDM](#ddm-2)
+    - [aDDM](#addm-2)
+- [Python Bindings](#python-bindings)
+  - [Optional: Python Syntax Highlighting](#optional-python-syntax-highlighting)
+- [Built-in Scripts](#built-in-scripts)
+- [Authors](#authors)
+- [Acknowledgements](#acknowledgements)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Requirements ##
 
 This library requires NVCC and CUDA Toolkit versions 12.2 and g++ version 11.3.0. This library also uses three thrid-party C++ packages for thread pools, JSON processing, and statistical distributions: 
@@ -75,45 +98,6 @@ theta: 0.5
 ```
 
 *Note that __nvcc__ is assumed to be at least __version 12.2__. The compiler path may need to be modified to support this requirement.*
-
-## Python Bindings ## 
-
-Python bindings are also provided for users who prefer to work with a Python codebase over C++. The provided bindings are located in [lib/bindings.cpp](lib/bindings.cpp). Note that [pybind11](https://github.com/pybind/pybind11) and Python version 3.10 (at a minimum) are __strict__ prerequisites for installation and usage of the Python code. These can be installed with 
-
-```shell
-apt-get install python3.10
-pip3 install pybind11
-```
-
-Once `pybind11` and Python3.10 are installed, the module can be built with:
-
-```
-make pybind
-```
-
-This will create a shared library object in the repository's root directory containing the `addm_toolbox_gpu` module. Although function calls remain largely analogous with the original C++ code, an example is described below that can be used to ensure the code is working properly: 
-
-`main.py`: 
-
-```Python
-import addm_toolbox_gpu
-
-ddm = addm_toolbox_gpu.DDM(0.005, 0.07)
-print(f"d = {ddm.d}")
-print(f"sigma = {ddm.sigma}")
-
-trial = ddm.simulateTrial(3, 7, 10, 540)
-print(f"RT = {trial.RT}")
-print(f"choice = {trial.choice}")
-```
-To run the code: 
-```
-$ python3 main.py
-d = 0.005
-sigma = 0.07
-RT = 850
-choice = 1
-```
 
 ## Examples ##
 
@@ -208,7 +192,7 @@ trial,choice,rt,valueLeft,valueRight,fixItem,fixTime
 
 In the case of using two CSVs, such as with real experimental data, the first CSV should contain the experimental data including subject parcode, trial ID, RT, choice, and item values. The second CSV should contain fixation data pertaining to each trial. Sample CSV files in an acceptable format can be found in the data directory. 
 
-##### Experimental Data #####
+__Experimental Data__
 
 | parcode | trial | rt | choice | valueLeft | valueRight |  
 | :-:     | :-:   |:-: | :-:    | :-:       | :-:        | 
@@ -216,7 +200,7 @@ In the case of using two CSVs, such as with real experimental data, the first CS
 | 0       | 1     |873 | 1      | -15       | 5          |  
 | 0       | 2     |1345| 1      | 10        | -5         |  
 
-##### Fixation Data #####
+__Fixation Data__
 
 | parcode | trial | fixItem | fixTime |
 | :-:     | :-:   | :-:      | :-:      |
@@ -382,6 +366,61 @@ Optimal d=0.005 sigma=0.07 theta=0.5
 ```
 
 Both the `DDM` and  `aDDM` instances of `fitModelMLE` allow for the `bias` and `decay` fields of the model to be fit as well. See the documentation for instructionson how to do so. 
+
+
+## Python Bindings ## 
+
+Python bindings are also provided for users who prefer to work with a Python codebase over C++. The provided bindings are located in [lib/bindings.cpp](lib/bindings.cpp). Note that [pybind11](https://github.com/pybind/pybind11) and Python version 3.10 (at a minimum) are __strict__ prerequisites for installation and usage of the Python code. These can be installed with 
+
+```shell
+apt-get install python3.10
+pip3 install pybind11
+```
+
+Once `pybind11` and Python3.10 are installed, the module can be built with:
+
+```
+make pybind
+```
+
+This will create a shared library object in the repository's root directory containing the `addm_toolbox_gpu` module. Although function calls remain largely analogous with the original C++ code, an example is described below that can be used to ensure the code is working properly: 
+
+`main.py`: 
+
+```Python
+import addm_toolbox_gpu
+
+ddm = addm_toolbox_gpu.DDM(0.005, 0.07)
+print(f"d = {ddm.d}")
+print(f"sigma = {ddm.sigma}")
+
+trial = ddm.simulateTrial(3, 7, 10, 540)
+print(f"RT = {trial.RT}")
+print(f"choice = {trial.choice}")
+```
+To run the code: 
+```
+$ python3 main.py
+d = 0.005
+sigma = 0.07
+RT = 850
+choice = 1
+```
+
+### Optional: Python Syntax Highlighting ###
+
+For users working in a user interface, such as Visual Studio Code, a Python stub is provided to facilitate features including syntax highlighting, type-hinting, auto-complete. Although the `addm_toolbox_gpu.pyi` stub is built-in, the file can be dynamically generated using the [mypy stubgen](https://mypy.readthedocs.io/en/stable/stubgen.html) tool. The `mypy` module can be installed using: 
+
+```shell
+pip install mypy
+```
+
+For users who plan to modify the library for their own use and want the provided features, the stub file can be built as follows: 
+
+```shell
+stubgen -m addm_toolbox_gpu -o .
+```
+*Note that the `pybind11` shared library file should be built before running `stubgen`.*
 
 ## Built-in Scripts ##
 

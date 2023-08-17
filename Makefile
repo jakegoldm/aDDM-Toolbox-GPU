@@ -82,7 +82,7 @@ ifeq ($(MACROS),)
 	echo "" > $(INC_DIR)/macros.h
 	$(NVCC) $(LDFLAGS) $(MACROS) -o $(INSTALL_LIB_DIR)/libaddm.so $(CPP_OBJ_FILES) $(CU_OBJ_FILES)
 else 
-	echo "#define EXCLUDE_CUDA_CODE 1" > $(inc_DIR)/macros.h
+	echo "#define EXCLUDE_CUDA_CODE 1" > $(INC_DIR)/macros.h
 	$(CXX) $(LDFLAGS) $(MACROS) -o $(INSTALL_LIB_DIR)/libaddm.so $(CPP_OBJ_FILES)
 endif 
 	cp -TRv $(INC_DIR) $(INSTALL_INC_DIR)/addm
