@@ -73,6 +73,35 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md__r_e_a_d_m_e"></a> This toolbox can be used to perform model fitting and data simulation for the Drift Diffusion Model (<a class="el" href="class_d_d_m.html" title="Implementation of the Drift Diffusion Model (DDM).">DDM</a>) and the attentional Drift Diffusion Model (<a class="el" href="classa_d_d_m.html" title="Implementation of the attentional Drift Diffusion Model (aDDM).">aDDM</a>). It is aimed to provide computational speedup, employing GPU optimizations for parameter estimation.</p>
+<ul>
+<li>Requirements</li>
+<li>Installation and Usage</li>
+<li>Examples<ul>
+<li>N-Trial Simulation<ul>
+<li>DDM</li>
+<li>aDDM</li>
+</ul>
+</li>
+<li>Trial Likelihood Compuation<ul>
+<li>DDM</li>
+<li>aDDM</li>
+</ul>
+</li>
+<li>Negative Log Likelihoods (NLL) and Maximum Likelihood Estimation (MLE)<ul>
+<li>DDM</li>
+<li>aDDM</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Python Bindings<ul>
+<li>Optional: Python Syntax Highlighting</li>
+</ul>
+</li>
+<li>Built-in Scripts</li>
+<li>Authors</li>
+<li>Acknowledgements</li>
+</ul>
 <h1><a class="anchor" id="autotoc_md1"></a>
 Requirements</h1>
 <p>This library requires NVCC and CUDA Toolkit versions 12.2 and g++ version 11.3.0. This library also uses three thrid-party C++ packages for thread pools, JSON processing, and statistical distributions:</p>
@@ -126,39 +155,16 @@ Installation and Usage</h1>
 <div class="line">theta: 0.5</div>
 </div><!-- fragment --><p><em>Note that <b>nvcc</b> is assumed to be at least <b>version 12.2</b>. The compiler path may need to be modified to support this requirement.</em></p>
 <h1><a class="anchor" id="autotoc_md3"></a>
-Python Bindings</h1>
-<p>Python bindings are also provided for users who prefer to work with a Python codebase over C++. The provided bindings are located in <a href="lib/bindings.cpp">lib/bindings.cpp</a>. Note that <a href="https://github.com/pybind/pybind11">pybind11</a> and Python version 3.10 (at a minimum) are <b>strict</b> prerequisites for installation and usage of the Python code. These can be installed with</p>
-<div class="fragment"><div class="line">apt-get install python3.10</div>
-<div class="line">pip3 install pybind11</div>
-</div><!-- fragment --><p>Once <code>pybind11</code> and Python3.10 are installed, the module can be built with:</p>
-<div class="fragment"><div class="line">make pybind</div>
-</div><!-- fragment --><p>This will create a shared library object in the repository's root directory containing the <code>addm_toolbox_gpu</code> module. Although function calls remain largely analogous with the original C++ code, an example is described below that can be used to ensure the code is working properly:</p>
-<p><code>main.py</code>:</p>
-<div class="fragment"><div class="line"><span class="keyword">import</span> addm_toolbox_gpu</div>
-<div class="line"> </div>
-<div class="line">ddm = addm_toolbox_gpu.DDM(0.005, 0.07)</div>
-<div class="line">print(f<span class="stringliteral">&quot;d = {ddm.d}&quot;</span>)</div>
-<div class="line">print(f<span class="stringliteral">&quot;sigma = {ddm.sigma}&quot;</span>)</div>
-<div class="line"> </div>
-<div class="line">trial = ddm.simulateTrial(3, 7, 10, 540)</div>
-<div class="line">print(f<span class="stringliteral">&quot;RT = {trial.RT}&quot;</span>)</div>
-<div class="line">print(f<span class="stringliteral">&quot;choice = {trial.choice}&quot;</span>)</div>
-</div><!-- fragment --><p> To run the code: </p><div class="fragment"><div class="line">$ python3 main.py</div>
-<div class="line">d = 0.005</div>
-<div class="line">sigma = 0.07</div>
-<div class="line">RT = 850</div>
-<div class="line">choice = 1</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md4"></a>
 Examples</h1>
 <p>For any data simulation and model fitting, the <a class="el" href="class_d_d_m.html" title="Implementation of the Drift Diffusion Model (DDM).">DDM</a> and <a class="el" href="classa_d_d_m.html" title="Implementation of the attentional Drift Diffusion Model (aDDM).">aDDM</a> classes are going to be the most useful. The <code><a class="el" href="addm_8h.html">addm.h</a></code> amd <code><a class="el" href="ddm_8h.html">ddm.h</a></code> files can be found in the include directory. Below are some examples that may give you an idea how to use these classes. Besides these examples, you may want to:</p>
 <ul>
 <li>Check out the <a href="https://jakegoldm.github.io/aDDM-Toolbox-GPU/">documentation</a>.</li>
 <li>See example use cases in the <a href="src/">source directory</a></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md5"></a>
+<h2><a class="anchor" id="autotoc_md4"></a>
 N-Trial Simulation</h2>
 <p>Both the <code><a class="el" href="class_d_d_m.html" title="Implementation of the Drift Diffusion Model (DDM).">DDM</a></code> and <code><a class="el" href="classa_d_d_m.html" title="Implementation of the attentional Drift Diffusion Model (aDDM).">aDDM</a></code> classes provide methods for simulating mass amounts of trials. This can be done using the <code>simulateTrial</code> method defined in both classes:</p>
-<h3><a class="anchor" id="autotoc_md6"></a>
+<h3><a class="anchor" id="autotoc_md5"></a>
 DDM</h3>
 <div class="fragment"><div class="line"> ++</div>
 <div class="line"><span class="preprocessor">#include &lt;addm/gpu_toolbox.h&gt;</span></div>
@@ -190,7 +196,7 @@ DDM</h3>
 </div><!-- fragment --><p> <code>ddm_example.csv</code>: </p><div class="fragment"><div class="line">choice,rt,valueLeft,valueRight</div>
 <div class="line">1,850,3,7</div>
 <div class="line">...</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md7"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md6"></a>
 aDDM</h3>
 <p>Note that for generating <a class="el" href="classa_d_d_m.html" title="Implementation of the attentional Drift Diffusion Model (aDDM).">aDDM</a> trials, an existing set of empirical fixations is required. This data can be packaged in the form of 1-2 CSVs. The input format for a single CSV is identical to the output of <code>aDDMTrial::writeTrialsToCSV(...)</code>. This CSV should be formatted as follows:</p>
 <table class="markdownTable">
@@ -244,8 +250,7 @@ aDDM</h3>
 <div class="line">0,1,1850,3,7,0,70</div>
 <div class="line">...</div>
 </div><!-- fragment --><p>In the case of using two CSVs, such as with real experimental data, the first CSV should contain the experimental data including subject parcode, trial ID, RT, choice, and item values. The second CSV should contain fixation data pertaining to each trial. Sample CSV files in an acceptable format can be found in the data directory.</p>
-<h4><a class="anchor" id="autotoc_md8"></a>
-Experimental Data</h4>
+<p><b>Experimental Data</b></p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadCenter">parcode   </th><th class="markdownTableHeadCenter">trial   </th><th class="markdownTableHeadCenter">rt   </th><th class="markdownTableHeadCenter">choice   </th><th class="markdownTableHeadCenter">valueLeft   </th><th class="markdownTableHeadCenter">valueRight    </th></tr>
@@ -256,8 +261,7 @@ Experimental Data</h4>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">1345   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyCenter">-5   </td></tr>
 </table>
-<h4><a class="anchor" id="autotoc_md9"></a>
-Fixation Data</h4>
+<p><b>Fixation Data</b></p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadCenter">parcode   </th><th class="markdownTableHeadCenter">trial   </th><th class="markdownTableHeadCenter">fixItem   </th><th class="markdownTableHeadCenter">fixTime    </th></tr>
@@ -301,10 +305,10 @@ Fixation Data</h4>
 <div class="line">0,1,1510,3,7,2,280</div>
 <div class="line">0,1,1510,3,7,0,70</div>
 <div class="line">...</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md10"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md7"></a>
 Trial Likelihood Compuation</h2>
 <p>The <code><a class="el" href="class_d_d_m.html" title="Implementation of the Drift Diffusion Model (DDM).">DDM</a></code> and <code><a class="el" href="classa_d_d_m.html" title="Implementation of the attentional Drift Diffusion Model (aDDM).">aDDM</a></code> classes both provide functionality for estimating trial likelihoods. The <code>getTrialLikelihood(...)</code> method takes in a single trial object and returns the likelihood that the provided model will generate that trial. Examples are provided below:</p>
-<h3><a class="anchor" id="autotoc_md11"></a>
+<h3><a class="anchor" id="autotoc_md8"></a>
 DDM</h3>
 <div class="fragment"><div class="line"> ++</div>
 <div class="line"><span class="preprocessor">#include &lt;addm/gpu_toolbox.h&gt;</span></div>
@@ -320,7 +324,7 @@ DDM</h3>
 <div class="line">}</div>
 <div class="ttc" id="aclass_d_d_m_html_a025072ab3fd16dee3a0b0f57c7585a06"><div class="ttname"><a href="class_d_d_m.html#a025072ab3fd16dee3a0b0f57c7585a06">DDM::getTrialLikelihood</a></div><div class="ttdeci">double getTrialLikelihood(DDMTrial trial, bool debug=false, int timeStep=10, float approxStateStep=0.1)</div><div class="ttdoc">Compute the likelihood of the trial results provided the current parameters.</div><div class="ttdef"><b>Definition</b> ddm.cpp:54</div></div>
 </div><!-- fragment --><p> Output: </p><div class="fragment"><div class="line">Probability = 0.000166691</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md12"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md9"></a>
 aDDM</h3>
 <div class="fragment"><div class="line"> ++</div>
 <div class="line"><span class="preprocessor">#include &lt;addm/gpu_toolbox.h&gt;</span></div>
@@ -338,7 +342,7 @@ aDDM</h3>
 <div class="line">}</div>
 <div class="ttc" id="aclassa_d_d_m_html_a9ccee0abe15711f09f8eee0a782f3e06"><div class="ttname"><a href="classa_d_d_m.html#a9ccee0abe15711f09f8eee0a782f3e06">aDDM::getTrialLikelihood</a></div><div class="ttdeci">double getTrialLikelihood(aDDMTrial trial, bool debug=false, int timeStep=10, float approxStateStep=0.1)</div><div class="ttdoc">Compute the likelihood of the trial results provided the current parameters.</div><div class="ttdef"><b>Definition</b> addm.cpp:65</div></div>
 </div><!-- fragment --><p> Output: </p><div class="fragment"><div class="line">Probability = 0.000515395</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md13"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md10"></a>
 Negative Log Likelihoods (NLL) and Maximum Likelihood Estimation (MLE)</h2>
 <p>A useful application of the trial likelihood computation is determining the total <b>Negative Log Likelihood (NLL)</b> of an aggregation of trials. Each instance of the <code><a class="el" href="class_d_d_m.html" title="Implementation of the Drift Diffusion Model (DDM).">DDM</a></code> and <code><a class="el" href="classa_d_d_m.html" title="Implementation of the attentional Drift Diffusion Model (aDDM).">aDDM</a></code>classes can use the following methods to determine the sum of NLLs for the trials.</p>
 <ul>
@@ -352,7 +356,7 @@ Negative Log Likelihoods (NLL) and Maximum Likelihood Estimation (MLE)</h2>
 <li>Mapping of models to their normalized posteriors, taken as the sum of likelihoods.</li>
 </ol>
 <p>Examples of MLE calculations are described below:</p>
-<h3><a class="anchor" id="autotoc_md14"></a>
+<h3><a class="anchor" id="autotoc_md11"></a>
 DDM</h3>
 <div class="fragment"><div class="line"> ++</div>
 <div class="line"><span class="preprocessor">#include &lt;addm/gpu_toolbox.h&gt;</span></div>
@@ -380,7 +384,7 @@ DDM</h3>
 <div class="ttc" id="astruct_m_l_einfo_html_a054f10abde01843cc1db0b07135edb0e"><div class="ttname"><a href="struct_m_l_einfo.html#a054f10abde01843cc1db0b07135edb0e">MLEinfo::optimal</a></div><div class="ttdeci">T optimal</div><div class="ttdef"><b>Definition</b> mle_info.h:15</div></div>
 </div><!-- fragment --><p> Output: </p><div class="fragment"><div class="line">Counted 1000 trials.</div>
 <div class="line">Optimal d=0.005 sigma=0.07</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md15"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md12"></a>
 aDDM</h3>
 <div class="fragment"><div class="line"> ++</div>
 <div class="line"><span class="preprocessor">#include &lt;addm/gpu_toolbox.h&gt;</span></div>
@@ -410,12 +414,42 @@ aDDM</h3>
 </div><!-- fragment --><p> Output: </p><div class="fragment"><div class="line">Counted 1000 trials. </div>
 <div class="line">Optimal d=0.005 sigma=0.07 theta=0.5</div>
 </div><!-- fragment --><p>Both the <code><a class="el" href="class_d_d_m.html" title="Implementation of the Drift Diffusion Model (DDM).">DDM</a></code> and <code><a class="el" href="classa_d_d_m.html" title="Implementation of the attentional Drift Diffusion Model (aDDM).">aDDM</a></code> instances of <code>fitModelMLE</code> allow for the <code>bias</code> and <code>decay</code> fields of the model to be fit as well. See the documentation for instructionson how to do so.</p>
-<h1><a class="anchor" id="autotoc_md16"></a>
+<h1><a class="anchor" id="autotoc_md13"></a>
+Python Bindings</h1>
+<p>Python bindings are also provided for users who prefer to work with a Python codebase over C++. The provided bindings are located in <a href="lib/bindings.cpp">lib/bindings.cpp</a>. Note that <a href="https://github.com/pybind/pybind11">pybind11</a> and Python version 3.10 (at a minimum) are <b>strict</b> prerequisites for installation and usage of the Python code. These can be installed with</p>
+<div class="fragment"><div class="line">apt-get install python3.10</div>
+<div class="line">pip3 install pybind11</div>
+</div><!-- fragment --><p>Once <code>pybind11</code> and Python3.10 are installed, the module can be built with:</p>
+<div class="fragment"><div class="line">make pybind</div>
+</div><!-- fragment --><p>This will create a shared library object in the repository's root directory containing the <code>addm_toolbox_gpu</code> module. Although function calls remain largely analogous with the original C++ code, an example is described below that can be used to ensure the code is working properly:</p>
+<p><code>main.py</code>:</p>
+<div class="fragment"><div class="line"><span class="keyword">import</span> addm_toolbox_gpu</div>
+<div class="line"> </div>
+<div class="line">ddm = addm_toolbox_gpu.DDM(0.005, 0.07)</div>
+<div class="line">print(f<span class="stringliteral">&quot;d = {ddm.d}&quot;</span>)</div>
+<div class="line">print(f<span class="stringliteral">&quot;sigma = {ddm.sigma}&quot;</span>)</div>
+<div class="line"> </div>
+<div class="line">trial = ddm.simulateTrial(3, 7, 10, 540)</div>
+<div class="line">print(f<span class="stringliteral">&quot;RT = {trial.RT}&quot;</span>)</div>
+<div class="line">print(f<span class="stringliteral">&quot;choice = {trial.choice}&quot;</span>)</div>
+</div><!-- fragment --><p> To run the code: </p><div class="fragment"><div class="line">$ python3 main.py</div>
+<div class="line">d = 0.005</div>
+<div class="line">sigma = 0.07</div>
+<div class="line">RT = 850</div>
+<div class="line">choice = 1</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md14"></a>
+Optional: Python Syntax Highlighting</h2>
+<p>For users working in a user interface, such as Visual Studio Code, a Python stub is provided to facilitate features including syntax highlighting, type-hinting, auto-complete. Although the <code>addm_toolbox_gpu.pyi</code> stub is built-in, the file can be dynamically generated using the <a href="https://mypy.readthedocs.io/en/stable/stubgen.html">mypy stubgen</a> tool. The <code>mypy</code> module can be installed using:</p>
+<div class="fragment"><div class="line">pip install mypy</div>
+</div><!-- fragment --><p>For users who plan to modify the library for their own use and want the provided features, the stub file can be built as follows:</p>
+<div class="fragment"><div class="line">stubgen -m addm_toolbox_gpu -o .</div>
+</div><!-- fragment --><p> <em>Note that the <code>pybind11</code> shared library file should be built before running <code>stubgen</code>.</em></p>
+<h1><a class="anchor" id="autotoc_md15"></a>
 Built-in Scripts</h1>
-<h1><a class="anchor" id="autotoc_md17"></a>
+<h1><a class="anchor" id="autotoc_md16"></a>
 Authors</h1>
 <p>Jake Goldman - <a href="#" onclick="location.href='mai'+'lto:'+'jgo'+'ld'+'man'+'@c'+'alt'+'ec'+'h.e'+'du'; return false;">jgold<span class="obfuscator">.nosp@m.</span>man@<span class="obfuscator">.nosp@m.</span>calte<span class="obfuscator">.nosp@m.</span>ch.e<span class="obfuscator">.nosp@m.</span>du</a>, <a href="https://github.com/jakegoldm">jakegoldm</a></p>
-<h1><a class="anchor" id="autotoc_md18"></a>
+<h1><a class="anchor" id="autotoc_md17"></a>
 Acknowledgements</h1>
 <p>This toolbox was developed as part of a resarch project in the <a href="http://www.rnl.caltech.edu/">Rangel Neuroeconomics Lab</a> at the California Institute of Technology. </p>
 </div></div><!-- PageDoc -->
