@@ -80,6 +80,8 @@ $(function() {
 
 <p>Implementation of the attentional Drift Diffusion Model (<a class="el" href="classa_d_d_m.html" title="Implementation of the attentional Drift Diffusion Model (aDDM).">aDDM</a>).  
  <a href="classa_d_d_m.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="addm_8h_source.html">addm.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -97,7 +99,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9ccee0abe15711f09f8eee0a782f3e06"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classa_d_d_m.html#a9ccee0abe15711f09f8eee0a782f3e06">getTrialLikelihood</a> (<a class="el" href="classa_d_d_m_trial.html">aDDMTrial</a> trial, bool debug=false, int timeStep=10, float approxStateStep=0.1)</td></tr>
 <tr class="memdesc:a9ccee0abe15711f09f8eee0a782f3e06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the likelihood of the trial results provided the current parameters.  <br /></td></tr>
 <tr class="separator:a9ccee0abe15711f09f8eee0a782f3e06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2bff97cd2823b7e44e08af34351c6676"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classa_d_d_m_trial.html">aDDMTrial</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classa_d_d_m.html#a2bff97cd2823b7e44e08af34351c6676">simulateTrial</a> (int valueLeft, int valueRight, <a class="el" href="class_fixation_data.html">FixationData</a> fixationData, int timeStep=10, int numFixDists=3, <a class="el" href="addm_8cuh.html#ac73e0abca434ac872480feb6a7cf4c56">fixDists</a> fixationDist={}, vector&lt; int &gt; timeBins={}, int seed=-1)</td></tr>
+<tr class="memitem:a2bff97cd2823b7e44e08af34351c6676"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classa_d_d_m_trial.html">aDDMTrial</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classa_d_d_m.html#a2bff97cd2823b7e44e08af34351c6676">simulateTrial</a> (int valueLeft, int valueRight, <a class="el" href="class_fixation_data.html">FixationData</a> fixationData, int timeStep=10, int numFixDists=3, <a class="el" href="addm_8h.html#ac73e0abca434ac872480feb6a7cf4c56">fixDists</a> fixationDist={}, vector&lt; int &gt; timeBins={}, int seed=-1)</td></tr>
 <tr class="memdesc:a2bff97cd2823b7e44e08af34351c6676"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate simulated fixations provided item values and empirical fixation data.  <br /></td></tr>
 <tr class="separator:a2bff97cd2823b7e44e08af34351c6676"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9ff4c316f0c3ca0a4df3b2b4823e97d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_probability_data.html">ProbabilityData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classa_d_d_m.html#ab9ff4c316f0c3ca0a4df3b2b4823e97d">computeParallelNLL</a> (vector&lt; <a class="el" href="classa_d_d_m_trial.html">aDDMTrial</a> &gt; trials, bool debug=false, int timeStep=10, float approxStateStep=0.1)</td></tr>
@@ -319,7 +321,7 @@ Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_probability_data.html">ProbabilityData</a> containing NLL, sum of likelihoods, and a list of all computed likelihoods. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_probability_data.html" title="Information pertaining to the computation of likelihoods for a dataset of trials (either DDM or aDDM)...">ProbabilityData</a> containing NLL, sum of likelihoods, and a list of all computed likelihoods. </dd></dl>
 
 </div>
 </div>
@@ -371,7 +373,7 @@ Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_probability_data.html">ProbabilityData</a> containing NLL, sum of likelihoods, and a list of all computed likelihoods. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_probability_data.html" title="Information pertaining to the computation of likelihoods for a dataset of trials (either DDM or aDDM)...">ProbabilityData</a> containing NLL, sum of likelihoods, and a list of all computed likelihoods. </dd></dl>
 
 </div>
 </div>
@@ -502,7 +504,7 @@ Public Attributes</h2></td></tr>
     <tr><td class="paramname">rangeSigma</td><td>Vector of floats representing possible values of sigma to test for. </td></tr>
     <tr><td class="paramname">rangeTheta</td><td>Vector of floats representing possible values of theta to test for. </td></tr>
     <tr><td class="paramname">computeMethod</td><td>Computation method to calculate the NLL for each possible model. Allowed values are {basic, thread, gpu}. "basic" will compute each trial likelihood sequentially and compute the NLL as the sum of all negative log likelihoods. "thread" will use a thread pool to divide all trials into the maximum number of CPU threads and compute the NLL of each block in parallel. "gpu" will call a CUDA kernel to compute the likelihood of each trial in parallel on the GPU. </td></tr>
-    <tr><td class="paramname">normalizePosteriors</td><td>true if the returned <a class="el" href="struct_m_l_einfo.html">MLEinfo</a> should contain a mapping of aDDMs to the normzlied posteriors distribution for each model; otherwise, the <a class="el" href="struct_m_l_einfo.html">MLEinfo</a> should containing a mapping of aDDMs to its corresponding NLL. </td></tr>
+    <tr><td class="paramname">normalizePosteriors</td><td>true if the returned <a class="el" href="struct_m_l_einfo.html" title="Information returned by MLE computations containing the most optimal model and NLLs/marginalized post...">MLEinfo</a> should contain a mapping of aDDMs to the normzlied posteriors distribution for each model; otherwise, the <a class="el" href="struct_m_l_einfo.html" title="Information returned by MLE computations containing the most optimal model and NLLs/marginalized post...">MLEinfo</a> should containing a mapping of aDDMs to its corresponding NLL. </td></tr>
     <tr><td class="paramname">barrier</td><td>Positive magnitude of the signal threshold. </td></tr>
     <tr><td class="paramname">nonDecisionTime</td><td></td></tr>
     <tr><td class="paramname">bias</td><td></td></tr>
@@ -510,7 +512,7 @@ Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="struct_m_l_einfo.html">MLEinfo</a> containing the most optimal model and a mapping of models to floats determined by the normalizePosteriors argument. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="struct_m_l_einfo.html" title="Information returned by MLE computations containing the most optimal model and NLLs/marginalized post...">MLEinfo</a> containing the most optimal model and a mapping of models to floats determined by the normalizePosteriors argument. </dd></dl>
 
 </div>
 </div>
@@ -631,7 +633,7 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="addm_8cuh.html#ac73e0abca434ac872480feb6a7cf4c56">fixDists</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="addm_8h.html#ac73e0abca434ac872480feb6a7cf4c56">fixDists</a>&#160;</td>
           <td class="paramname"><em>fixationDist</em> = <code>{}</code>, </td>
         </tr>
         <tr>
@@ -689,7 +691,7 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>include/<a class="el" href="addm_8cuh_source.html">addm.cuh</a></li>
+<li>include/<a class="el" href="addm_8h_source.html">addm.h</a></li>
 <li>lib/<a class="el" href="addm_8cpp.html">addm.cpp</a></li>
 <li>lib/<a class="el" href="cuaddm_8cu.html">cuaddm.cu</a></li>
 </ul>

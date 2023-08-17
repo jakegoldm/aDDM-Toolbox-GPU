@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['_5fmapdata_0',['_MapData',['../classposteriors_1_1___map_data.html',1,'posteriors']]]
+  ['addm_0',['aDDM',['../classa_d_d_m.html',1,'']]],
+  ['addmtrial_1',['aDDMTrial',['../classa_d_d_m_trial.html',1,'']]]
 ];

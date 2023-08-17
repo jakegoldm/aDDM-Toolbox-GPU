@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['heatmaps_0',['heatmaps',['../namespaceposteriors.html#a0149b1ba7f65b2d24042bc5b716a0b63',1,'posteriors']]],
-  ['heatmaps_5fqueue_1',['heatmaps_queue',['../namespaceposteriors.html#a4e4c8712ab9d8d84b990b197b106d00a',1,'posteriors']]]
+  ['n_0',['N',['../addm__simulate_8cpp.html#a7722c8ecbb62d99aee7ce68b1752f337',1,'N:&#160;addm_simulate.cpp'],['../ddm__simulate_8cpp.html#a7722c8ecbb62d99aee7ce68b1752f337',1,'N:&#160;ddm_simulate.cpp'],['../test_8cpp.html#a7722c8ecbb62d99aee7ce68b1752f337',1,'N:&#160;test.cpp']]],
+  ['nll_1',['NLL',['../class_probability_data.html#ac82874e15b2365db4ce1320aa2097055',1,'ProbabilityData']]],
+  ['nondecisiontime_2',['nonDecisionTime',['../class_d_d_m.html#a0821be8a65988df0004b4d9f4239a020',1,'DDM']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['keys_5flabels_0',['keys_labels',['../namespaceposteriors.html#a462b811fef145f86e232ea7e51584f16',1,'posteriors']]]
+  ['optimal_0',['optimal',['../struct_m_l_einfo.html#a054f10abde01843cc1db0b07135edb0e',1,'MLEinfo']]]
 ];

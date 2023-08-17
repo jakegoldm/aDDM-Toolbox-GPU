@@ -77,11 +77,15 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Information pertaining to the computation of likelihoods for a dataset of trials (either <a class="el" href="class_d_d_m.html" title="Implementation of the Drift Diffusion Model (DDM).">DDM</a> or <a class="el" href="classa_d_d_m.html" title="Implementation of the attentional Drift Diffusion Model (aDDM).">aDDM</a>).  
+ <a href="class_probability_data.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="mle__info_8h_source.html">mle_info.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a865aa89be661b2fd1926f922b31a5aa6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_probability_data.html#a865aa89be661b2fd1926f922b31a5aa6">ProbabilityData</a> (double <a class="el" href="class_probability_data.html#a5be1c9f44c8addb85159a68db7345d79">likelihood</a>=0, double <a class="el" href="class_probability_data.html#ac82874e15b2365db4ce1320aa2097055">NLL</a>=0)</td></tr>
+<tr class="memdesc:a865aa89be661b2fd1926f922b31a5aa6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Probability Data object.  <br /></td></tr>
 <tr class="separator:a865aa89be661b2fd1926f922b31a5aa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -93,7 +97,10 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a34574072903da22d969799d75b15c242"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_probability_data.html#a34574072903da22d969799d75b15c242">trialLikelihoods</a></td></tr>
 <tr class="separator:a34574072903da22d969799d75b15c242"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Information pertaining to the computation of likelihoods for a dataset of trials (either <a class="el" href="class_d_d_m.html" title="Implementation of the Drift Diffusion Model (DDM).">DDM</a> or <a class="el" href="classa_d_d_m.html" title="Implementation of the attentional Drift Diffusion Model (aDDM).">aDDM</a>). </p>
+<p>The <a class="el" href="class_probability_data.html" title="Information pertaining to the computation of likelihoods for a dataset of trials (either DDM or aDDM)...">ProbabilityData</a> class provides a wrapper for information that may be returned after computing the likelihoods for a set of trials. The class is meant to provide output information that can be used when returning NLLs or marginalized posteriors in MLE. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a865aa89be661b2fd1926f922b31a5aa6" name="a865aa89be661b2fd1926f922b31a5aa6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a865aa89be661b2fd1926f922b31a5aa6">&#9670;&#160;</a></span>ProbabilityData()</h2>
 
@@ -128,6 +135,15 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Construct a new Probability Data object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">likelihood</td><td>Initial likelihood. </td></tr>
+    <tr><td class="paramname">NLL</td><td>Initial negative log likelihood; </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -142,6 +158,7 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Sum of likelihoods for all trials. </p>
 
 </div>
 </div>
@@ -156,6 +173,7 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Sum of negative log likelihoods for all trials. </p>
 
 </div>
 </div>
@@ -170,6 +188,7 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Vector containing all trial likelihoods in the order of the input trials. </p>
 
 </div>
 </div>

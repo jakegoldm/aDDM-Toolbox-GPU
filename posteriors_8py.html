@@ -73,83 +73,9 @@ $(function() {
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">posteriors.py File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classposteriors_1_1___map_data.html">posteriors._MapData</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:namespaceposteriors"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceposteriors.html">posteriors</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a622e6f5443716092dc8a7e885666c8db"><td class="memItemLeft" align="right" valign="top">str&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceposteriors.html#a622e6f5443716092dc8a7e885666c8db">posteriors.PROB_LABEL</a> = 'p'</td></tr>
-<tr class="separator:a622e6f5443716092dc8a7e885666c8db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c7f37a28c7431f1e1bb97f00d2c5871"><td class="memItemLeft" align="right" valign="top">str&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceposteriors.html#a5c7f37a28c7431f1e1bb97f00d2c5871">posteriors.FILENAME</a> = 'results/addm_posteriors.csv'</td></tr>
-<tr class="separator:a5c7f37a28c7431f1e1bb97f00d2c5871"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21f7e6326043bd164d0995001e4ed3eb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceposteriors.html#a21f7e6326043bd164d0995001e4ed3eb">posteriors.df</a> = pd.read_csv(<a class="el" href="namespaceposteriors.html#a5c7f37a28c7431f1e1bb97f00d2c5871">FILENAME</a>)</td></tr>
-<tr class="separator:a21f7e6326043bd164d0995001e4ed3eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a178770fecb7a8e8d063088b092438a27"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceposteriors.html#a178770fecb7a8e8d063088b092438a27">posteriors.N</a> = df.shape[1] - 1</td></tr>
-<tr class="separator:a178770fecb7a8e8d063088b092438a27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7098979978316058ffbfbcfb5d65a47"><td class="memItemLeft" align="right" valign="top">list&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceposteriors.html#ac7098979978316058ffbfbcfb5d65a47">posteriors.param_sums</a> = []</td></tr>
-<tr class="separator:ac7098979978316058ffbfbcfb5d65a47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ed1be909de7008ce6aca7c165c352b4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceposteriors.html#a4ed1be909de7008ce6aca7c165c352b4">posteriors.param_dict</a> = defaultdict(int)</td></tr>
-<tr class="separator:a4ed1be909de7008ce6aca7c165c352b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adfce1cbad5929e38d38fb05de6ed9cdc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceposteriors.html#adfce1cbad5929e38d38fb05de6ed9cdc">posteriors.param_row_val</a> = row[param]</td></tr>
-<tr class="separator:adfce1cbad5929e38d38fb05de6ed9cdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0149b1ba7f65b2d24042bc5b716a0b63"><td class="memItemLeft" align="right" valign="top">List&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceposteriors.html#a0149b1ba7f65b2d24042bc5b716a0b63">posteriors.heatmaps</a> = list()</td></tr>
-<tr class="separator:a0149b1ba7f65b2d24042bc5b716a0b63"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e4c8712ab9d8d84b990b197b106d00a"><td class="memItemLeft" align="right" valign="top">queue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceposteriors.html#a4e4c8712ab9d8d84b990b197b106d00a">posteriors.heatmaps_queue</a> = queue.Queue()</td></tr>
-<tr class="separator:a4e4c8712ab9d8d84b990b197b106d00a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a601a35fae26b35e07bdb94d55359198c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceposteriors.html#a601a35fae26b35e07bdb94d55359198c">posteriors.arr_data</a> = np.zeros((len(map_data.par1_sums), len(map_data.par2_sums)))</td></tr>
-<tr class="separator:a601a35fae26b35e07bdb94d55359198c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31ccc543e12306644e0a2f874ffeb122"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceposteriors.html#a31ccc543e12306644e0a2f874ffeb122">posteriors.curr_par1</a> = list(map_data.par1_sums.keys())[i]</td></tr>
-<tr class="separator:a31ccc543e12306644e0a2f874ffeb122"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83726de6d8d270c64128afc328a366c8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceposteriors.html#a83726de6d8d270c64128afc328a366c8">posteriors.curr_par2</a> = list(map_data.par2_sums.keys())[j]</td></tr>
-<tr class="separator:a83726de6d8d270c64128afc328a366c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4482ebba6c0d321a31e257e37fdc86ec"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceposteriors.html#a4482ebba6c0d321a31e257e37fdc86ec">posteriors.fig</a></td></tr>
-<tr class="separator:a4482ebba6c0d321a31e257e37fdc86ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f44fef2aaa7ca59ec0f7e0e70a79c14"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceposteriors.html#a8f44fef2aaa7ca59ec0f7e0e70a79c14">posteriors.axes</a></td></tr>
-<tr class="separator:a8f44fef2aaa7ca59ec0f7e0e70a79c14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb3df86375b05ca46130114c82da7c8f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceposteriors.html#abb3df86375b05ca46130114c82da7c8f">posteriors.figsize</a></td></tr>
-<tr class="separator:abb3df86375b05ca46130114c82da7c8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4203adec26ba439f39a7c446f5917b82"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceposteriors.html#a4203adec26ba439f39a7c446f5917b82">posteriors.ncols</a></td></tr>
-<tr class="separator:a4203adec26ba439f39a7c446f5917b82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa4470b5dd1104b5bd6e23257d829ef4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceposteriors.html#afa4470b5dd1104b5bd6e23257d829ef4">posteriors.nrows</a></td></tr>
-<tr class="separator:afa4470b5dd1104b5bd6e23257d829ef4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaea87f0b1d5faf7b1d0f67a2ad848cc3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceposteriors.html#aaea87f0b1d5faf7b1d0f67a2ad848cc3">posteriors.diag_idx</a> = 0</td></tr>
-<tr class="separator:aaea87f0b1d5faf7b1d0f67a2ad848cc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3317ed9a71467ecff67d037cfff37c75"><td class="memItemLeft" align="right" valign="top">list&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceposteriors.html#a3317ed9a71467ecff67d037cfff37c75">posteriors.curr</a> = <a class="el" href="namespaceposteriors.html#ac7098979978316058ffbfbcfb5d65a47">param_sums</a>[<a class="el" href="namespaceposteriors.html#aaea87f0b1d5faf7b1d0f67a2ad848cc3">diag_idx</a>]</td></tr>
-<tr class="separator:a3317ed9a71467ecff67d037cfff37c75"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1678f4322467144e243389430b26b1ac"><td class="memItemLeft" align="right" valign="top">list&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceposteriors.html#a1678f4322467144e243389430b26b1ac">posteriors.vals</a> = <a class="el" href="namespaceposteriors.html#a3317ed9a71467ecff67d037cfff37c75">curr</a>[1]</td></tr>
-<tr class="separator:a1678f4322467144e243389430b26b1ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b62d5333063944bd4a307c2d2dd76c4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceposteriors.html#a0b62d5333063944bd4a307c2d2dd76c4">posteriors.g</a></td></tr>
-<tr class="separator:a0b62d5333063944bd4a307c2d2dd76c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada56115895d2df2d9824599bd8240bbc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceposteriors.html#ada56115895d2df2d9824599bd8240bbc">posteriors.size</a></td></tr>
-<tr class="separator:ada56115895d2df2d9824599bd8240bbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a462b811fef145f86e232ea7e51584f16"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceposteriors.html#a462b811fef145f86e232ea7e51584f16">posteriors.keys_labels</a> = list(vals.keys())</td></tr>
-<tr class="separator:a462b811fef145f86e232ea7e51584f16"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0584c47c7fcd3cb0b181c1dc83293839"><td class="memItemLeft" align="right" valign="top">queue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceposteriors.html#a0584c47c7fcd3cb0b181c1dc83293839">posteriors.curr_heatmap</a> = heatmaps_queue.get()</td></tr>
-<tr class="separator:a0584c47c7fcd3cb0b181c1dc83293839"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a768027dc404490a7778be73b8116c2f7"><td class="memItemLeft" align="right" valign="top">queue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceposteriors.html#a768027dc404490a7778be73b8116c2f7">posteriors.data</a> = <a class="el" href="namespaceposteriors.html#a0584c47c7fcd3cb0b181c1dc83293839">curr_heatmap</a>[0]</td></tr>
-<tr class="separator:a768027dc404490a7778be73b8116c2f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3de7752762e31272fb1dfb8643e9f2f"><td class="memItemLeft" align="right" valign="top">queue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceposteriors.html#aa3de7752762e31272fb1dfb8643e9f2f">posteriors.arr</a> = <a class="el" href="namespaceposteriors.html#a0584c47c7fcd3cb0b181c1dc83293839">curr_heatmap</a>[1]</td></tr>
-<tr class="separator:aa3de7752762e31272fb1dfb8643e9f2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43e0b1598dd3aaa848d1122fff4e7b15"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceposteriors.html#a43e0b1598dd3aaa848d1122fff4e7b15">posteriors.minor</a></td></tr>
-<tr class="separator:a43e0b1598dd3aaa848d1122fff4e7b15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83d6ce32e92a4278e311b94c49fc3aca"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceposteriors.html#a83d6ce32e92a4278e311b94c49fc3aca">posteriors.currTime</a> = datetime.now().strftime(u&quot;%Y-%m-%d_%H:%M:%S&quot;)</td></tr>
-<tr class="separator:a83d6ce32e92a4278e311b94c49fc3aca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

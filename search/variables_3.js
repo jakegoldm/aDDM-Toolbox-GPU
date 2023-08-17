@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['d_0',['d',['../class_d_d_m.html#a15511d3cf0f7deb5de073dcdfd09bcc6',1,'DDM::d'],['../addm__simulate_8cpp.html#a3fbbd8a3959e76a2bc3455d3bade52dc',1,'d:&#160;addm_simulate.cpp'],['../ddm__simulate_8cpp.html#a3fbbd8a3959e76a2bc3455d3bade52dc',1,'d:&#160;ddm_simulate.cpp']]],
-  ['data_1',['data',['../namespaceposteriors.html#a768027dc404490a7778be73b8116c2f7',1,'posteriors']]],
-  ['decay_2',['decay',['../class_d_d_m.html#aa5d70be71626890a4957eb5c59ba309d',1,'DDM']]],
-  ['df_3',['df',['../namespaceposteriors.html#a21f7e6326043bd164d0995001e4ed3eb',1,'posteriors']]],
-  ['diag_5fidx_4',['diag_idx',['../namespaceposteriors.html#aaea87f0b1d5faf7b1d0f67a2ad848cc3',1,'posteriors']]]
+  ['fixations_0',['fixations',['../class_fixation_data.html#a47d55cea6c6a1ecaef33baa5e9a0f60c',1,'FixationData']]],
+  ['fixitem_1',['fixItem',['../classa_d_d_m_trial.html#a8b7e649ce0fded823e1191c2f9675cf2',1,'aDDMTrial']]],
+  ['fixrdv_2',['fixRDV',['../classa_d_d_m_trial.html#abd71cbec989e9c2e08ab0c516c829283',1,'aDDMTrial']]],
+  ['fixtime_3',['fixTime',['../classa_d_d_m_trial.html#adf04171bada997ac559e29629524da2f',1,'aDDMTrial']]],
+  ['fp_4',['fp',['../test_8cpp.html#ae3c7e522825338c52b9d66891f9642a5',1,'test.cpp']]]
 ];

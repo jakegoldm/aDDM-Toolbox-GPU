@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['fixationdata_0',['FixationData',['../class_fixation_data.html',1,'']]]
+  ['mleinfo_0',['MLEinfo',['../struct_m_l_einfo.html',1,'']]]
 ];
