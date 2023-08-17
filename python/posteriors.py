@@ -5,6 +5,8 @@ import numpy as np
 from collections import defaultdict
 from typing import Tuple, List
 import queue
+import sys
+from datetime import datetime
 
 PROB_LABEL = 'p'
 FILENAME = 'results/addm_posteriors.csv'
@@ -69,8 +71,8 @@ fig, axes = plt.subplots(figsize=(15, 10), ncols=N, nrows=N)
 
 # Iterate over each subplot and plot either a bar plot or a heatmap
 diag_idx = 0 
-for i in range(N):
-    for j in range(N):
+for j in range(N):
+    for i in range(N):
         if i < j:
             # Turn off axes for subplots above the diagonal 
             axes[i, j].axis('off')  
@@ -98,7 +100,7 @@ for i in range(N):
                 arr.T, 
                 annot=True, 
                 cbar=False, 
-                cmap="crest", 
+                cmap="crest_r", 
                 ax=axes[i, j]
                 )
             # Invert y-axis for heatmap to match the order of values
@@ -115,4 +117,9 @@ for i in range(N):
     axes[N - 1, i].set_xlabel(df.columns[i], size=16)
 
 plt.tight_layout()
+
+if (len(sys.argv) > 1 and "save" in sys.argv):
+    currTime = datetime.now().strftime(u"%Y-%m-%d_%H:%M:%S")
+    plt.savefig("imgs/posteriors_" + currTime + ".png")
+
 plt.show()

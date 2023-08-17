@@ -12,3 +12,5 @@ target
 __pycache__
 *.so
 example.py
+# macros.h should be dynamically generated
+include/macros.h

@@ -381,6 +381,8 @@ Counted 1000 trials.
 Optimal d=0.005 sigma=0.07 theta=0.5
 ```
 
+Both the `DDM` and  `aDDM` instances of `fitModelMLE` allow for the `bias` and `decay` fields of the model to be fit as well. See the documentation for instructionson how to do so. 
+
 ## Built-in Scripts ##
 
 
