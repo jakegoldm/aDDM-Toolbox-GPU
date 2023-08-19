@@ -140,15 +140,12 @@ Installation and Usage</h1>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> <a class="code hl_function" href="addm__mle_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
 <div class="line">    <a class="code hl_class" href="classa_d_d_m.html">aDDM</a> addm = <a class="code hl_class" href="classa_d_d_m.html">aDDM</a>(0.005, 0.07, 0.5, 1);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;d: &quot;</span> &lt;&lt; addm.<a class="code hl_variable" href="class_d_d_m.html#a15511d3cf0f7deb5de073dcdfd09bcc6">d</a> &lt;&lt; std::endl; </div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;sigma: &quot;</span> &lt;&lt; addm.<a class="code hl_variable" href="class_d_d_m.html#a17570a6c2378cdb363437f39a5fa3f00">sigma</a> &lt;&lt; std::endl; </div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;theta: &quot;</span> &lt;&lt; addm.<a class="code hl_variable" href="classa_d_d_m.html#a9c6c014066b0930baaa665b06dec9bb3">theta</a> &lt;&lt; std::endl; </div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;d: &quot;</span> &lt;&lt; addm.d &lt;&lt; std::endl; </div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;sigma: &quot;</span> &lt;&lt; addm.sigma &lt;&lt; std::endl; </div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;theta: &quot;</span> &lt;&lt; addm.theta &lt;&lt; std::endl; </div>
 <div class="line">}</div>
-<div class="ttc" id="aaddm__mle_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="addm__mle_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition</b> addm_mle.cpp:18</div></div>
-<div class="ttc" id="aclass_d_d_m_html_a15511d3cf0f7deb5de073dcdfd09bcc6"><div class="ttname"><a href="class_d_d_m.html#a15511d3cf0f7deb5de073dcdfd09bcc6">DDM::d</a></div><div class="ttdeci">float d</div><div class="ttdef"><b>Definition</b> ddm.h:88</div></div>
-<div class="ttc" id="aclass_d_d_m_html_a17570a6c2378cdb363437f39a5fa3f00"><div class="ttname"><a href="class_d_d_m.html#a17570a6c2378cdb363437f39a5fa3f00">DDM::sigma</a></div><div class="ttdeci">float sigma</div><div class="ttdef"><b>Definition</b> ddm.h:90</div></div>
+<div class="ttc" id="aaddm__mle_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="addm__mle_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition</b> addm_mle.cpp:17</div></div>
 <div class="ttc" id="aclassa_d_d_m_html"><div class="ttname"><a href="classa_d_d_m.html">aDDM</a></div><div class="ttdoc">Implementation of the attentional Drift Diffusion Model (aDDM).</div><div class="ttdef"><b>Definition</b> addm.h:128</div></div>
-<div class="ttc" id="aclassa_d_d_m_html_a9c6c014066b0930baaa665b06dec9bb3"><div class="ttname"><a href="classa_d_d_m.html#a9c6c014066b0930baaa665b06dec9bb3">aDDM::theta</a></div><div class="ttdeci">float theta</div><div class="ttdef"><b>Definition</b> addm.h:140</div></div>
 </div><!-- fragment --><p>When compiling any code using the toolbox, include the <code>-laddm</code> flag to link with the installed shared object library.</p>
 <div class="fragment"><div class="line">$ nvcc -o main main.cpp -laddm</div>
 <div class="line">$ ./main</div>
@@ -233,7 +230,7 @@ aDDM</h3>
 <div class="line">    <a class="code hl_class" href="classa_d_d_m.html">aDDM</a> addm = <a class="code hl_class" href="classa_d_d_m.html">aDDM</a>(0.005, 0.07, 0.5, 1);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="addm__simulate_8cpp.html#a7722c8ecbb62d99aee7ce68b1752f337">N</a>; i++) {</div>
-<div class="line">        <a class="code hl_class" href="classa_d_d_m_trial.html">aDDMTrial</a> trial = addm.<a class="code hl_function" href="classa_d_d_m.html#a2bff97cd2823b7e44e08af34351c6676">simulateTrial</a>(</div>
+<div class="line">        <a class="code hl_class" href="classa_d_d_m_trial.html">aDDMTrial</a> trial = addm.simulateTrial(</div>
 <div class="line">            valueLeft, valueRight, fixationData, 10, 3, {}, {}, SEED);</div>
 <div class="line">        trials.push_back(trial);</div>
 <div class="line">    }</div>
@@ -241,10 +238,9 @@ aDDM</h3>
 <div class="line">    <a class="code hl_function" href="classa_d_d_m_trial.html#aa3758e27194c6ae3def6abfb5ebb722e">aDDMTrial::writeTrialsToCSV</a>(trials, <span class="stringliteral">&quot;addm_example.csv&quot;</span>);</div>
 <div class="line">}</div>
 <div class="ttc" id="aclass_fixation_data_html"><div class="ttname"><a href="class_fixation_data.html">FixationData</a></div><div class="ttdoc">Record of empirical fixation data that is used for simulating new aDDMTrials.</div><div class="ttdef"><b>Definition</b> addm.h:20</div></div>
-<div class="ttc" id="aclassa_d_d_m_html_a2bff97cd2823b7e44e08af34351c6676"><div class="ttname"><a href="classa_d_d_m.html#a2bff97cd2823b7e44e08af34351c6676">aDDM::simulateTrial</a></div><div class="ttdeci">aDDMTrial simulateTrial(int valueLeft, int valueRight, FixationData fixationData, int timeStep=10, int numFixDists=3, fixDists fixationDist={}, vector&lt; int &gt; timeBins={}, int seed=-1)</div><div class="ttdoc">Generate simulated fixations provided item values and empirical fixation data.</div><div class="ttdef"><b>Definition</b> addm.cpp:379</div></div>
 <div class="ttc" id="aclassa_d_d_m_trial_html"><div class="ttname"><a href="classa_d_d_m_trial.html">aDDMTrial</a></div><div class="ttdoc">Implementation of a single aDDMTrial object.</div><div class="ttdef"><b>Definition</b> addm.h:55</div></div>
 <div class="ttc" id="aclassa_d_d_m_trial_html_aa3758e27194c6ae3def6abfb5ebb722e"><div class="ttname"><a href="classa_d_d_m_trial.html#aa3758e27194c6ae3def6abfb5ebb722e">aDDMTrial::writeTrialsToCSV</a></div><div class="ttdeci">static void writeTrialsToCSV(vector&lt; aDDMTrial &gt; trials, string filename)</div><div class="ttdoc">Write a vector of aDDMTrials to a CSV file.</div><div class="ttdef"><b>Definition</b> addm.cpp:582</div></div>
-<div class="ttc" id="autil_8h_html_a10693cca86fb676af3f059a825e8052b"><div class="ttname"><a href="util_8h.html#a10693cca86fb676af3f059a825e8052b">getEmpiricalDistributions</a></div><div class="ttdeci">FixationData getEmpiricalDistributions(std::map&lt; int, std::vector&lt; aDDMTrial &gt; &gt; data, int timeStep=10, int maxFixTime=3000, int numFixDists=3, std::vector&lt; int &gt; valueDiffs={-3,-2,-1, 0, 1, 2, 3}, std::vector&lt; int &gt; subjectIDs={}, bool useOddTrials=true, bool useEvenTrials=true, bool useCisTrials=true, bool useTransTrials=true)</div><div class="ttdoc">Create empirical distributions fro the data ot be used when generating model simulations.</div><div class="ttdef"><b>Definition</b> util.cpp:157</div></div>
+<div class="ttc" id="autil_8h_html_a10693cca86fb676af3f059a825e8052b"><div class="ttname"><a href="util_8h.html#a10693cca86fb676af3f059a825e8052b">getEmpiricalDistributions</a></div><div class="ttdeci">FixationData getEmpiricalDistributions(std::map&lt; int, std::vector&lt; aDDMTrial &gt; &gt; data, int timeStep=10, int maxFixTime=3000, int numFixDists=3, std::vector&lt; int &gt; valueDiffs={-3,-2,-1, 0, 1, 2, 3}, std::vector&lt; int &gt; subjectIDs={}, bool useOddTrials=true, bool useEvenTrials=true, bool useCisTrials=true, bool useTransTrials=true)</div><div class="ttdoc">Create empirical distributions fro the data ot be used when generating model simulations.</div><div class="ttdef"><b>Definition</b> util.cpp:172</div></div>
 <div class="ttc" id="autil_8h_html_ab6b9c5e80a13d7b17e7617f31e47f156"><div class="ttname"><a href="util_8h.html#ab6b9c5e80a13d7b17e7617f31e47f156">loadDataFromSingleCSV</a></div><div class="ttdeci">std::map&lt; int, std::vector&lt; aDDMTrial &gt; &gt; loadDataFromSingleCSV(std::string filename)</div><div class="ttdoc">Load experimental data from a single CSV file. Format expected is:</div><div class="ttdef"><b>Definition</b> util.cpp:38</div></div>
 </div><!-- fragment --><p> <code>addm_example.csv</code>: </p><div class="fragment"><div class="line">trial,choice,rt,valueLeft,valueRight,fixItem,fixTime</div>
 <div class="line">0,1,1850,3,7,0,280</div>
@@ -294,7 +290,7 @@ aDDM</h3>
 <div class="line">    <a class="code hl_class" href="classa_d_d_m.html">aDDM</a> addm = <a class="code hl_class" href="classa_d_d_m.html">aDDM</a>(0.005, 0.07, 0.5, 1);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="addm__simulate_8cpp.html#a7722c8ecbb62d99aee7ce68b1752f337">N</a>; i++) {</div>
-<div class="line">        <a class="code hl_class" href="classa_d_d_m_trial.html">aDDMTrial</a> trial = addm.<a class="code hl_function" href="classa_d_d_m.html#a2bff97cd2823b7e44e08af34351c6676">simulateTrial</a>(</div>
+<div class="line">        <a class="code hl_class" href="classa_d_d_m_trial.html">aDDMTrial</a> trial = addm.simulateTrial(</div>
 <div class="line">            valueLeft, valueRight, fixationData, 10, 3, {}, {}, SEED);</div>
 <div class="line">        trials.push_back(trial);</div>
 <div class="line">    }</div>
@@ -339,10 +335,10 @@ aDDM</h3>
 <div class="line">    <a class="code hl_class" href="classa_d_d_m_trial.html">aDDMTrial</a> trial = <a class="code hl_class" href="classa_d_d_m_trial.html">aDDMTrial</a>(</div>
 <div class="line">        240, 1, 3, 3, {0, -1}, {100, 140}</div>
 <div class="line">    );</div>
-<div class="line">    <span class="keywordtype">double</span> prob = addm.<a class="code hl_function" href="classa_d_d_m.html#a9ccee0abe15711f09f8eee0a782f3e06">getTrialLikelihood</a>(trial);</div>
+<div class="line">    <span class="keywordtype">double</span> prob = <a class="code hl_variable" href="namespacevd__dists.html#aafbcd251f7d80703a1b149951f735b1c">addm</a>.getTrialLikelihood(trial);</div>
 <div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;Probability = &quot;</span> &lt;&lt; prob &lt;&lt; endl; </div>
 <div class="line">}</div>
-<div class="ttc" id="aclassa_d_d_m_html_a9ccee0abe15711f09f8eee0a782f3e06"><div class="ttname"><a href="classa_d_d_m.html#a9ccee0abe15711f09f8eee0a782f3e06">aDDM::getTrialLikelihood</a></div><div class="ttdeci">double getTrialLikelihood(aDDMTrial trial, bool debug=false, int timeStep=10, float approxStateStep=0.1)</div><div class="ttdoc">Compute the likelihood of the trial results provided the current parameters.</div><div class="ttdef"><b>Definition</b> addm.cpp:65</div></div>
+<div class="ttc" id="anamespacevd__dists_html_aafbcd251f7d80703a1b149951f735b1c"><div class="ttname"><a href="namespacevd__dists.html#aafbcd251f7d80703a1b149951f735b1c">vd_dists.addm</a></div><div class="ttdeci">bool addm</div><div class="ttdef"><b>Definition</b> vd_dists.py:24</div></div>
 </div><!-- fragment --><p> Output: </p><div class="fragment"><div class="line">Probability = 0.000515395</div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md11"></a>
 Negative Log Likelihoods (NLL) and Maximum Likelihood Estimation (MLE)</h2>
@@ -378,7 +374,7 @@ DDM</h3>
 <div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;Optimal d=&quot;</span> &lt;&lt; info.<a class="code hl_variable" href="struct_m_l_einfo.html#a054f10abde01843cc1db0b07135edb0e">optimal</a>.d &lt;&lt; <span class="stringliteral">&quot; sigma=&quot;</span> &lt;&lt; info.<a class="code hl_variable" href="struct_m_l_einfo.html#a054f10abde01843cc1db0b07135edb0e">optimal</a>.sigma &lt;&lt; endl; </div>
 <div class="line">}</div>
 <div class="ttc" id="aaddm__mle_8cpp_html_a347dbb7726ce6ea89520f5980d686dd8"><div class="ttname"><a href="addm__mle_8cpp.html#a347dbb7726ce6ea89520f5980d686dd8">rangeSigma</a></div><div class="ttdeci">std::vector&lt; float &gt; rangeSigma</div><div class="ttdef"><b>Definition</b> addm_mle.cpp:12</div></div>
-<div class="ttc" id="aaddm__mle_8cpp_html_a7ae0aa3d3c3bd4dc2fd68df5f46bb05f"><div class="ttname"><a href="addm__mle_8cpp.html#a7ae0aa3d3c3bd4dc2fd68df5f46bb05f">barrier</a></div><div class="ttdeci">int barrier</div><div class="ttdef"><b>Definition</b> addm_mle.cpp:16</div></div>
+<div class="ttc" id="aaddm__mle_8cpp_html_a7ae0aa3d3c3bd4dc2fd68df5f46bb05f"><div class="ttname"><a href="addm__mle_8cpp.html#a7ae0aa3d3c3bd4dc2fd68df5f46bb05f">barrier</a></div><div class="ttdeci">int barrier</div><div class="ttdef"><b>Definition</b> addm_mle.cpp:15</div></div>
 <div class="ttc" id="aaddm__mle_8cpp_html_a800d6969137d46bac6c127a9f70b7e51"><div class="ttname"><a href="addm__mle_8cpp.html#a800d6969137d46bac6c127a9f70b7e51">rangeD</a></div><div class="ttdeci">std::vector&lt; float &gt; rangeD</div><div class="ttdef"><b>Definition</b> addm_mle.cpp:11</div></div>
 <div class="ttc" id="aclass_d_d_m_html_af6f4cab6e2175c4864222709f0d6bad4"><div class="ttname"><a href="class_d_d_m.html#af6f4cab6e2175c4864222709f0d6bad4">DDM::fitModelMLE</a></div><div class="ttdeci">static MLEinfo&lt; DDM &gt; fitModelMLE(vector&lt; DDMTrial &gt; trials, vector&lt; float &gt; rangeD, vector&lt; float &gt; rangeSigma, string computeMethod=&quot;basic&quot;, bool normalizePosteriors=false, float barrier=1, unsigned int nonDecisionTime=0, vector&lt; float &gt; bias={0}, vector&lt; float &gt; decay={0})</div><div class="ttdoc">Copmlete a grid-search based Maximum Likelihood Estimation of all possible paramters combinations (d,...</div><div class="ttdef"><b>Definition</b> ddm.cpp:435</div></div>
 <div class="ttc" id="aclass_d_d_m_trial_html_abe3d480e7f9dc0ad5c755db4e28e9f54"><div class="ttname"><a href="class_d_d_m_trial.html#abe3d480e7f9dc0ad5c755db4e28e9f54">DDMTrial::loadTrialsFromCSV</a></div><div class="ttdeci">static vector&lt; DDMTrial &gt; loadTrialsFromCSV(string filename)</div><div class="ttdoc">Load a dataset of DDMTrials into program memory.</div><div class="ttdef"><b>Definition</b> ddm.cpp:405</div></div>

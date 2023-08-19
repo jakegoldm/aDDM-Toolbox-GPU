@@ -70,28 +70,160 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">rdv_time Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:aa848eded64f45985c06ec49888621fee"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerdv__time.html#aa848eded64f45985c06ec49888621fee">main</a> ()</td></tr>
-<tr class="separator:aa848eded64f45985c06ec49888621fee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ade4e0f770ecf0e7cd7e948789ec22653"><td class="memItemLeft" align="right" valign="top">str&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerdv__time.html#ade4e0f770ecf0e7cd7e948789ec22653">FILE_PATH</a> = &quot;results/data.json&quot;</td></tr>
+<tr class="separator:ade4e0f770ecf0e7cd7e948789ec22653"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a5ab6ba77a528605f26f0b329309b85"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerdv__time.html#a7a5ab6ba77a528605f26f0b329309b85">data</a> = json.load(file)</td></tr>
+<tr class="separator:a7a5ab6ba77a528605f26f0b329309b85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13fff8eb6fce8153fde3b5fb511d860d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerdv__time.html#a13fff8eb6fce8153fde3b5fb511d860d">rdvs</a> = <a class="el" href="namespacerdv__time.html#a7a5ab6ba77a528605f26f0b329309b85">data</a>[&quot;RDVs&quot;]</td></tr>
+<tr class="separator:a13fff8eb6fce8153fde3b5fb511d860d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b6cac742095567d09b27f142120f0b1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerdv__time.html#a4b6cac742095567d09b27f142120f0b1">x</a> = np.arange(len(<a class="el" href="namespacerdv__time.html#a13fff8eb6fce8153fde3b5fb511d860d">rdvs</a>)) * <a class="el" href="namespacerdv__time.html#a7a5ab6ba77a528605f26f0b329309b85">data</a>[&quot;timeStep&quot;]</td></tr>
+<tr class="separator:a4b6cac742095567d09b27f142120f0b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6521a51309888e5b74d79f99751f7154"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerdv__time.html#a6521a51309888e5b74d79f99751f7154">label</a></td></tr>
+<tr class="separator:a6521a51309888e5b74d79f99751f7154"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac88bf7e5a3a5fa428aa4b2e315f07053"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerdv__time.html#ac88bf7e5a3a5fa428aa4b2e315f07053">barrier</a> = float(<a class="el" href="namespacerdv__time.html#a7a5ab6ba77a528605f26f0b329309b85">data</a>[&quot;barrier&quot;])</td></tr>
+<tr class="separator:ac88bf7e5a3a5fa428aa4b2e315f07053"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a423f020f499aa62c14850af2d2eb6e0b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerdv__time.html#a423f020f499aa62c14850af2d2eb6e0b">bias</a> = float(<a class="el" href="namespacerdv__time.html#a7a5ab6ba77a528605f26f0b329309b85">data</a>[&quot;bias&quot;])</td></tr>
+<tr class="separator:a423f020f499aa62c14850af2d2eb6e0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd64b57407e9d3a3c5279cc354291e7a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerdv__time.html#abd64b57407e9d3a3c5279cc354291e7a">color</a></td></tr>
+<tr class="separator:abd64b57407e9d3a3c5279cc354291e7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22da791a77a71276a5600a8eeaed679b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerdv__time.html#a22da791a77a71276a5600a8eeaed679b">currTime</a> = datetime.now().strftime(u&quot;%Y-%m-%d_%H:%M:%S&quot;)</td></tr>
+<tr class="separator:a22da791a77a71276a5600a8eeaed679b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="aa848eded64f45985c06ec49888621fee" name="aa848eded64f45985c06ec49888621fee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa848eded64f45985c06ec49888621fee">&#9670;&#160;</a></span>main()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><pre class="fragment">@brief Model the RDV over time for a single data trial. 
+
+Provided the JSON output from exportTrial(...) in the DDM or aDDM classes, this 
+script will plot the RDV value over time. To save the resulting graph, pass 
+'save' as a command line argument. The JSON file can be declared with the 
+FILE_PATH variable. 
+</pre> </div><h2 class="groupheader">Variable Documentation</h2>
+<a id="ac88bf7e5a3a5fa428aa4b2e315f07053" name="ac88bf7e5a3a5fa428aa4b2e315f07053"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac88bf7e5a3a5fa428aa4b2e315f07053">&#9670;&#160;</a></span>barrier</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">rdv_time.main </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">rdv_time.barrier = float(<a class="el" href="namespacerdv__time.html#a7a5ab6ba77a528605f26f0b329309b85">data</a>[&quot;barrier&quot;])</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a423f020f499aa62c14850af2d2eb6e0b" name="a423f020f499aa62c14850af2d2eb6e0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a423f020f499aa62c14850af2d2eb6e0b">&#9670;&#160;</a></span>bias</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">rdv_time.bias = float(<a class="el" href="namespacerdv__time.html#a7a5ab6ba77a528605f26f0b329309b85">data</a>[&quot;bias&quot;])</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abd64b57407e9d3a3c5279cc354291e7a" name="abd64b57407e9d3a3c5279cc354291e7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd64b57407e9d3a3c5279cc354291e7a">&#9670;&#160;</a></span>color</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">rdv_time.color</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a22da791a77a71276a5600a8eeaed679b" name="a22da791a77a71276a5600a8eeaed679b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22da791a77a71276a5600a8eeaed679b">&#9670;&#160;</a></span>currTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">rdv_time.currTime = datetime.now().strftime(u&quot;%Y-%m-%d_%H:%M:%S&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7a5ab6ba77a528605f26f0b329309b85" name="a7a5ab6ba77a528605f26f0b329309b85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a5ab6ba77a528605f26f0b329309b85">&#9670;&#160;</a></span>data</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">rdv_time.data = json.load(file)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ade4e0f770ecf0e7cd7e948789ec22653" name="ade4e0f770ecf0e7cd7e948789ec22653"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade4e0f770ecf0e7cd7e948789ec22653">&#9670;&#160;</a></span>FILE_PATH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">str rdv_time.FILE_PATH = &quot;results/data.json&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6521a51309888e5b74d79f99751f7154" name="a6521a51309888e5b74d79f99751f7154"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6521a51309888e5b74d79f99751f7154">&#9670;&#160;</a></span>label</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">rdv_time.label</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a13fff8eb6fce8153fde3b5fb511d860d" name="a13fff8eb6fce8153fde3b5fb511d860d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13fff8eb6fce8153fde3b5fb511d860d">&#9670;&#160;</a></span>rdvs</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">rdv_time.rdvs = <a class="el" href="namespacerdv__time.html#a7a5ab6ba77a528605f26f0b329309b85">data</a>[&quot;RDVs&quot;]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4b6cac742095567d09b27f142120f0b1" name="a4b6cac742095567d09b27f142120f0b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b6cac742095567d09b27f142120f0b1">&#9670;&#160;</a></span>x</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">rdv_time.x = np.arange(len(<a class="el" href="namespacerdv__time.html#a13fff8eb6fce8153fde3b5fb511d860d">rdvs</a>)) * <a class="el" href="namespacerdv__time.html#a7a5ab6ba77a528605f26f0b329309b85">data</a>[&quot;timeStep&quot;]</td>
         </tr>
       </table>
 </div><div class="memdoc">

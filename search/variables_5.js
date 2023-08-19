@@ -1,6 +1,12 @@
 var searchData=
 [
-  ['latencies_0',['latencies',['../class_fixation_data.html#a07031fd2270b2693fecfb8121d246a74',1,'FixationData']]],
-  ['likelihood_1',['likelihood',['../class_probability_data.html#a5be1c9f44c8addb85159a68db7345d79',1,'ProbabilityData']]],
-  ['likelihoods_2',['likelihoods',['../struct_m_l_einfo.html#a7a549d6373615fed5088f9ae98a7ac92',1,'MLEinfo']]]
+  ['fig_0',['fig',['../namespaceaddm__mle.html#ae6cacf56fe287c7a2fb29208b1c32333',1,'addm_mle.fig'],['../namespacevd__dists.html#afaf26550f82e532d3e09b4e7c57560ee',1,'vd_dists.fig']]],
+  ['figsize_1',['figsize',['../namespaceaddm__mle.html#a852250ff1a87f9191f5ade86af41a427',1,'addm_mle']]],
+  ['file_5fpath_2',['FILE_PATH',['../namespaceaddm__mle.html#ad666626a2ca46282009c128d23dc84d2',1,'addm_mle.FILE_PATH'],['../namespaceddm__mle.html#a5f3fd78a54575d3f0c20193bce02af4e',1,'ddm_mle.FILE_PATH'],['../namespacerdv__time.html#ade4e0f770ecf0e7cd7e948789ec22653',1,'rdv_time.FILE_PATH']]],
+  ['fixations_3',['fixations',['../class_fixation_data.html#a47d55cea6c6a1ecaef33baa5e9a0f60c',1,'FixationData']]],
+  ['fixitem_4',['fixItem',['../classa_d_d_m_trial.html#a8b7e649ce0fded823e1191c2f9675cf2',1,'aDDMTrial']]],
+  ['fixrdv_5',['fixRDV',['../classa_d_d_m_trial.html#abd71cbec989e9c2e08ab0c516c829283',1,'aDDMTrial']]],
+  ['fixtime_6',['fixTime',['../classa_d_d_m_trial.html#adf04171bada997ac559e29629524da2f',1,'aDDMTrial']]],
+  ['fontsize_7',['fontsize',['../namespaceaddm__mle.html#a1b3f900de987c7c919b1dd7449cc3f40',1,'addm_mle']]],
+  ['fp_8',['fp',['../test_8cpp.html#ae3c7e522825338c52b9d66891f9642a5',1,'test.cpp']]]
 ];

@@ -75,7 +75,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">ddm_mle.py File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -85,10 +85,32 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespaceddm__mle"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceddm__mle.html">ddm_mle</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:abd11aaa384a83643d451f1097c39f939"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceddm__mle.html#abd11aaa384a83643d451f1097c39f939">ddm_mle.main</a> ()</td></tr>
-<tr class="separator:abd11aaa384a83643d451f1097c39f939"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a5f3fd78a54575d3f0c20193bce02af4e"><td class="memItemLeft" align="right" valign="top">str&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceddm__mle.html#a5f3fd78a54575d3f0c20193bce02af4e">ddm_mle.FILE_PATH</a> = &quot;results/ddm_mle.csv&quot;</td></tr>
+<tr class="separator:a5f3fd78a54575d3f0c20193bce02af4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb2ee3604949f6fe83a4332359b0ee76"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceddm__mle.html#aeb2ee3604949f6fe83a4332359b0ee76">ddm_mle.data</a> = pd.read_csv(<a class="el" href="namespaceddm__mle.html#a5f3fd78a54575d3f0c20193bce02af4e">FILE_PATH</a>)</td></tr>
+<tr class="separator:aeb2ee3604949f6fe83a4332359b0ee76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fa6efd18427151da16741778cc5d292"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceddm__mle.html#a3fa6efd18427151da16741778cc5d292">ddm_mle.pivot_table</a> = pd.pivot_table(<a class="el" href="namespaceddm__mle.html#aeb2ee3604949f6fe83a4332359b0ee76">data</a>, values='NLL', index='<a class="el" href="addm__simulate_8cpp.html#ae11aeeb83e22b5b7f1e6b4347eb1daa6">sigma</a>', columns='<a class="el" href="addm__simulate_8cpp.html#a3fbbd8a3959e76a2bc3455d3bade52dc">d</a>')</td></tr>
+<tr class="separator:a3fa6efd18427151da16741778cc5d292"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab334d137d2c84a4d2eff27403b3f86c8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceddm__mle.html#ab334d137d2c84a4d2eff27403b3f86c8">ddm_mle.heatmap_data</a> = pivot_table.values</td></tr>
+<tr class="separator:ab334d137d2c84a4d2eff27403b3f86c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bc3540f875644f24aff844bb36cda3f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceddm__mle.html#a2bc3540f875644f24aff844bb36cda3f">ddm_mle.minimum</a> = heatmap_data.min()</td></tr>
+<tr class="separator:a2bc3540f875644f24aff844bb36cda3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add29cc2526bdb7631788efac4034bcc3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceddm__mle.html#add29cc2526bdb7631788efac4034bcc3">ddm_mle._</a> = ax.figure.colorbar(<a class="el" href="namespaceddm__mle.html#aac4bbaf26f35e637102d426daa452e15">im</a>, <a class="el" href="namespaceddm__mle.html#ac0c9f541ad4dca557340c6abc8d8e82f">ax</a>=<a class="el" href="namespaceddm__mle.html#ac0c9f541ad4dca557340c6abc8d8e82f">ax</a>)</td></tr>
+<tr class="separator:add29cc2526bdb7631788efac4034bcc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0c9f541ad4dca557340c6abc8d8e82f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceddm__mle.html#ac0c9f541ad4dca557340c6abc8d8e82f">ddm_mle.ax</a></td></tr>
+<tr class="separator:ac0c9f541ad4dca557340c6abc8d8e82f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac4bbaf26f35e637102d426daa452e15"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceddm__mle.html#aac4bbaf26f35e637102d426daa452e15">ddm_mle.im</a> = ax.imshow(<a class="el" href="namespaceddm__mle.html#ab334d137d2c84a4d2eff27403b3f86c8">heatmap_data</a>, cmap='cividis', aspect='auto', vmax=<a class="el" href="namespaceddm__mle.html#a2bc3540f875644f24aff844bb36cda3f">minimum</a> * 1.15)</td></tr>
+<tr class="separator:aac4bbaf26f35e637102d426daa452e15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d147ef3d871321b9496be536055017f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceddm__mle.html#a4d147ef3d871321b9496be536055017f">ddm_mle.xlabs</a> = set()</td></tr>
+<tr class="separator:a4d147ef3d871321b9496be536055017f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bd5a5580b9e037afa265cce66abc944"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceddm__mle.html#a3bd5a5580b9e037afa265cce66abc944">ddm_mle.ylabs</a> = set()</td></tr>
+<tr class="separator:a3bd5a5580b9e037afa265cce66abc944"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa867dd00a51b999a4d5c21b7f3c8ce29"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceddm__mle.html#aa867dd00a51b999a4d5c21b7f3c8ce29">ddm_mle.labels</a></td></tr>
+<tr class="separator:aa867dd00a51b999a4d5c21b7f3c8ce29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f8508bbaf934af7ba5f7690f23d607e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceddm__mle.html#a3f8508bbaf934af7ba5f7690f23d607e">ddm_mle.currTime</a> = datetime.now().strftime(u&quot;%Y-%m-%d_%H:%M:%S&quot;)</td></tr>
+<tr class="separator:a3f8508bbaf934af7ba5f7690f23d607e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

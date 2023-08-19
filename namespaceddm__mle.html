@@ -70,28 +70,226 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">ddm_mle Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:abd11aaa384a83643d451f1097c39f939"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceddm__mle.html#abd11aaa384a83643d451f1097c39f939">main</a> ()</td></tr>
-<tr class="separator:abd11aaa384a83643d451f1097c39f939"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a5f3fd78a54575d3f0c20193bce02af4e"><td class="memItemLeft" align="right" valign="top">str&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceddm__mle.html#a5f3fd78a54575d3f0c20193bce02af4e">FILE_PATH</a> = &quot;results/ddm_mle.csv&quot;</td></tr>
+<tr class="separator:a5f3fd78a54575d3f0c20193bce02af4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb2ee3604949f6fe83a4332359b0ee76"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceddm__mle.html#aeb2ee3604949f6fe83a4332359b0ee76">data</a> = pd.read_csv(<a class="el" href="namespaceddm__mle.html#a5f3fd78a54575d3f0c20193bce02af4e">FILE_PATH</a>)</td></tr>
+<tr class="separator:aeb2ee3604949f6fe83a4332359b0ee76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fa6efd18427151da16741778cc5d292"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceddm__mle.html#a3fa6efd18427151da16741778cc5d292">pivot_table</a> = pd.pivot_table(<a class="el" href="namespaceddm__mle.html#aeb2ee3604949f6fe83a4332359b0ee76">data</a>, values='NLL', index='<a class="el" href="addm__simulate_8cpp.html#ae11aeeb83e22b5b7f1e6b4347eb1daa6">sigma</a>', columns='<a class="el" href="addm__simulate_8cpp.html#a3fbbd8a3959e76a2bc3455d3bade52dc">d</a>')</td></tr>
+<tr class="separator:a3fa6efd18427151da16741778cc5d292"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab334d137d2c84a4d2eff27403b3f86c8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceddm__mle.html#ab334d137d2c84a4d2eff27403b3f86c8">heatmap_data</a> = pivot_table.values</td></tr>
+<tr class="separator:ab334d137d2c84a4d2eff27403b3f86c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bc3540f875644f24aff844bb36cda3f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceddm__mle.html#a2bc3540f875644f24aff844bb36cda3f">minimum</a> = heatmap_data.min()</td></tr>
+<tr class="separator:a2bc3540f875644f24aff844bb36cda3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add29cc2526bdb7631788efac4034bcc3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceddm__mle.html#add29cc2526bdb7631788efac4034bcc3">_</a> = ax.figure.colorbar(<a class="el" href="namespaceddm__mle.html#aac4bbaf26f35e637102d426daa452e15">im</a>, <a class="el" href="namespaceddm__mle.html#ac0c9f541ad4dca557340c6abc8d8e82f">ax</a>=<a class="el" href="namespaceddm__mle.html#ac0c9f541ad4dca557340c6abc8d8e82f">ax</a>)</td></tr>
+<tr class="separator:add29cc2526bdb7631788efac4034bcc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0c9f541ad4dca557340c6abc8d8e82f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceddm__mle.html#ac0c9f541ad4dca557340c6abc8d8e82f">ax</a></td></tr>
+<tr class="separator:ac0c9f541ad4dca557340c6abc8d8e82f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac4bbaf26f35e637102d426daa452e15"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceddm__mle.html#aac4bbaf26f35e637102d426daa452e15">im</a> = ax.imshow(<a class="el" href="namespaceddm__mle.html#ab334d137d2c84a4d2eff27403b3f86c8">heatmap_data</a>, cmap='cividis', aspect='auto', vmax=<a class="el" href="namespaceddm__mle.html#a2bc3540f875644f24aff844bb36cda3f">minimum</a> * 1.15)</td></tr>
+<tr class="separator:aac4bbaf26f35e637102d426daa452e15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d147ef3d871321b9496be536055017f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceddm__mle.html#a4d147ef3d871321b9496be536055017f">xlabs</a> = set()</td></tr>
+<tr class="separator:a4d147ef3d871321b9496be536055017f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bd5a5580b9e037afa265cce66abc944"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceddm__mle.html#a3bd5a5580b9e037afa265cce66abc944">ylabs</a> = set()</td></tr>
+<tr class="separator:a3bd5a5580b9e037afa265cce66abc944"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa867dd00a51b999a4d5c21b7f3c8ce29"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceddm__mle.html#aa867dd00a51b999a4d5c21b7f3c8ce29">labels</a></td></tr>
+<tr class="separator:aa867dd00a51b999a4d5c21b7f3c8ce29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f8508bbaf934af7ba5f7690f23d607e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceddm__mle.html#a3f8508bbaf934af7ba5f7690f23d607e">currTime</a> = datetime.now().strftime(u&quot;%Y-%m-%d_%H:%M:%S&quot;)</td></tr>
+<tr class="separator:a3f8508bbaf934af7ba5f7690f23d607e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="abd11aaa384a83643d451f1097c39f939" name="abd11aaa384a83643d451f1097c39f939"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abd11aaa384a83643d451f1097c39f939">&#9670;&#160;</a></span>main()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><pre class="fragment">@brief Create a heatmap for Maximum Likelihood Estimation on the DDM. 
+
+This script creates a heatmap representing the Negative Log Likelihoods 
+following a run of MLE on the DDM. The expected input data format in CSV is as
+follows: 
+
+|  d  | sigma | NLL | 
++-----+-------+-----+
+|  *  |   *   |  *  | 
+...
+
+The input [ath can be decalred in the FILE_PATH variable. To save the 
+resulting heatmap in the imgs directory, pass 'save' as a command line argument.
+Usage is as follows: 
+
+python3 analysis/ddm_mle.py [save]
+</pre> </div><h2 class="groupheader">Variable Documentation</h2>
+<a id="add29cc2526bdb7631788efac4034bcc3" name="add29cc2526bdb7631788efac4034bcc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add29cc2526bdb7631788efac4034bcc3">&#9670;&#160;</a></span>_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ddm_mle._ = ax.figure.colorbar(<a class="el" href="namespaceddm__mle.html#aac4bbaf26f35e637102d426daa452e15">im</a>, <a class="el" href="namespaceddm__mle.html#ac0c9f541ad4dca557340c6abc8d8e82f">ax</a>=<a class="el" href="namespaceddm__mle.html#ac0c9f541ad4dca557340c6abc8d8e82f">ax</a>)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac0c9f541ad4dca557340c6abc8d8e82f" name="ac0c9f541ad4dca557340c6abc8d8e82f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0c9f541ad4dca557340c6abc8d8e82f">&#9670;&#160;</a></span>ax</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">ddm_mle.main </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">ddm_mle.ax</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3f8508bbaf934af7ba5f7690f23d607e" name="a3f8508bbaf934af7ba5f7690f23d607e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f8508bbaf934af7ba5f7690f23d607e">&#9670;&#160;</a></span>currTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ddm_mle.currTime = datetime.now().strftime(u&quot;%Y-%m-%d_%H:%M:%S&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aeb2ee3604949f6fe83a4332359b0ee76" name="aeb2ee3604949f6fe83a4332359b0ee76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb2ee3604949f6fe83a4332359b0ee76">&#9670;&#160;</a></span>data</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ddm_mle.data = pd.read_csv(<a class="el" href="namespaceddm__mle.html#a5f3fd78a54575d3f0c20193bce02af4e">FILE_PATH</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5f3fd78a54575d3f0c20193bce02af4e" name="a5f3fd78a54575d3f0c20193bce02af4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f3fd78a54575d3f0c20193bce02af4e">&#9670;&#160;</a></span>FILE_PATH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">str ddm_mle.FILE_PATH = &quot;results/ddm_mle.csv&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab334d137d2c84a4d2eff27403b3f86c8" name="ab334d137d2c84a4d2eff27403b3f86c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab334d137d2c84a4d2eff27403b3f86c8">&#9670;&#160;</a></span>heatmap_data</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ddm_mle.heatmap_data = pivot_table.values</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aac4bbaf26f35e637102d426daa452e15" name="aac4bbaf26f35e637102d426daa452e15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac4bbaf26f35e637102d426daa452e15">&#9670;&#160;</a></span>im</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ddm_mle.im = ax.imshow(<a class="el" href="namespaceddm__mle.html#ab334d137d2c84a4d2eff27403b3f86c8">heatmap_data</a>, cmap='cividis', aspect='auto', vmax=<a class="el" href="namespaceddm__mle.html#a2bc3540f875644f24aff844bb36cda3f">minimum</a> * 1.15)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa867dd00a51b999a4d5c21b7f3c8ce29" name="aa867dd00a51b999a4d5c21b7f3c8ce29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa867dd00a51b999a4d5c21b7f3c8ce29">&#9670;&#160;</a></span>labels</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ddm_mle.labels</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2bc3540f875644f24aff844bb36cda3f" name="a2bc3540f875644f24aff844bb36cda3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bc3540f875644f24aff844bb36cda3f">&#9670;&#160;</a></span>minimum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ddm_mle.minimum = heatmap_data.min()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3fa6efd18427151da16741778cc5d292" name="a3fa6efd18427151da16741778cc5d292"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fa6efd18427151da16741778cc5d292">&#9670;&#160;</a></span>pivot_table</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ddm_mle.pivot_table = pd.pivot_table(<a class="el" href="namespaceddm__mle.html#aeb2ee3604949f6fe83a4332359b0ee76">data</a>, values='NLL', index='<a class="el" href="addm__simulate_8cpp.html#ae11aeeb83e22b5b7f1e6b4347eb1daa6">sigma</a>', columns='<a class="el" href="addm__simulate_8cpp.html#a3fbbd8a3959e76a2bc3455d3bade52dc">d</a>')</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4d147ef3d871321b9496be536055017f" name="a4d147ef3d871321b9496be536055017f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d147ef3d871321b9496be536055017f">&#9670;&#160;</a></span>xlabs</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ddm_mle.xlabs = set()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3bd5a5580b9e037afa265cce66abc944" name="a3bd5a5580b9e037afa265cce66abc944"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bd5a5580b9e037afa265cce66abc944">&#9670;&#160;</a></span>ylabs</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ddm_mle.ylabs = set()</td>
         </tr>
       </table>
 </div><div class="memdoc">

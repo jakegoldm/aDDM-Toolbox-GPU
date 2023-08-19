@@ -70,28 +70,337 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">vd_dists Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a119c91c6ffdd9c9135aaf017ecedd4ea"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevd__dists.html#a119c91c6ffdd9c9135aaf017ecedd4ea">main</a> ()</td></tr>
-<tr class="separator:a119c91c6ffdd9c9135aaf017ecedd4ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:aec45b40a35ab63ea894521540f49a4c8"><td class="memItemLeft" align="right" valign="top">str&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevd__dists.html#aec45b40a35ab63ea894521540f49a4c8">DDM_FILE_PATH</a> = &quot;results/ddm_simulations.csv&quot;</td></tr>
+<tr class="separator:aec45b40a35ab63ea894521540f49a4c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ef07195f8570e09748d150da3012649"><td class="memItemLeft" align="right" valign="top">str&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevd__dists.html#a6ef07195f8570e09748d150da3012649">ADDM_FILE_PATH</a> = &quot;results/addm_simulations.csv&quot;</td></tr>
+<tr class="separator:a6ef07195f8570e09748d150da3012649"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53b3c6a69811688b40c2e043015e36ad"><td class="memItemLeft" align="right" valign="top">dict&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevd__dists.html#a53b3c6a69811688b40c2e043015e36ad">val_diff_to_rts</a> = {}</td></tr>
+<tr class="separator:a53b3c6a69811688b40c2e043015e36ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afefba04ebca5b843b9996ea19a27ba33"><td class="memItemLeft" align="right" valign="top">dict&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevd__dists.html#afefba04ebca5b843b9996ea19a27ba33">choice_to_rts</a> = {-1 : list(), 1 : list()}</td></tr>
+<tr class="separator:afefba04ebca5b843b9996ea19a27ba33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafbcd251f7d80703a1b149951f735b1c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevd__dists.html#aafbcd251f7d80703a1b149951f735b1c">addm</a> = False</td></tr>
+<tr class="separator:aafbcd251f7d80703a1b149951f735b1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87a1cbbd403a4f6dea2532732192dd49"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevd__dists.html#a87a1cbbd403a4f6dea2532732192dd49">df</a> = pd.read_csv(<a class="el" href="namespacevd__dists.html#a6ef07195f8570e09748d150da3012649">ADDM_FILE_PATH</a>)</td></tr>
+<tr class="separator:a87a1cbbd403a4f6dea2532732192dd49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a6930cf4ef6f55bd57e29bb2de6e31f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevd__dists.html#a8a6930cf4ef6f55bd57e29bb2de6e31f">choice</a> = row['choice']</td></tr>
+<tr class="separator:a8a6930cf4ef6f55bd57e29bb2de6e31f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ecd3626136a8edb36a0260f6f52239b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevd__dists.html#a3ecd3626136a8edb36a0260f6f52239b">rt</a> = row['RT']</td></tr>
+<tr class="separator:a3ecd3626136a8edb36a0260f6f52239b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26b0dee6f9d7f8efff58219541de4d61"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevd__dists.html#a26b0dee6f9d7f8efff58219541de4d61">val_diff</a> = row['valueLeft'] - row['valueRight']</td></tr>
+<tr class="separator:a26b0dee6f9d7f8efff58219541de4d61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd22b45e65a182cdcb7b6612a16211bc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevd__dists.html#abd22b45e65a182cdcb7b6612a16211bc">keys</a> = list(val_diff_to_rts.keys())</td></tr>
+<tr class="separator:abd22b45e65a182cdcb7b6612a16211bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afaf26550f82e532d3e09b4e7c57560ee"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevd__dists.html#afaf26550f82e532d3e09b4e7c57560ee">fig</a></td></tr>
+<tr class="separator:afaf26550f82e532d3e09b4e7c57560ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6effea080f39a2bf4c16fe5eb8f0b7e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevd__dists.html#ac6effea080f39a2bf4c16fe5eb8f0b7e">axs</a></td></tr>
+<tr class="separator:ac6effea080f39a2bf4c16fe5eb8f0b7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac64533efdcc38a2407f6065c7f4955b9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevd__dists.html#ac64533efdcc38a2407f6065c7f4955b9">i</a> = 0</td></tr>
+<tr class="separator:ac64533efdcc38a2407f6065c7f4955b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a176587f158f5ffe9700d207563f48b56"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevd__dists.html#a176587f158f5ffe9700d207563f48b56">mean</a> = np.mean(<a class="el" href="namespacevd__dists.html#af7535b12c4d75592afb2f558a38a9b21">rts</a>)</td></tr>
+<tr class="separator:a176587f158f5ffe9700d207563f48b56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7535b12c4d75592afb2f558a38a9b21"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevd__dists.html#af7535b12c4d75592afb2f558a38a9b21">rts</a></td></tr>
+<tr class="separator:af7535b12c4d75592afb2f558a38a9b21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4891f6a61613a7bb1c6f62a5b43c6e78"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevd__dists.html#a4891f6a61613a7bb1c6f62a5b43c6e78">label</a></td></tr>
+<tr class="separator:a4891f6a61613a7bb1c6f62a5b43c6e78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5975aa4495775ba0e44c7e44a0fe3d11"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevd__dists.html#a5975aa4495775ba0e44c7e44a0fe3d11">vd</a></td></tr>
+<tr class="separator:a5975aa4495775ba0e44c7e44a0fe3d11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1ba157b2363c9daffbe728a182dc6d9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevd__dists.html#ac1ba157b2363c9daffbe728a182dc6d9">bins</a></td></tr>
+<tr class="separator:ac1ba157b2363c9daffbe728a182dc6d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a235caf40ef36777df0e6d73c0fa21324"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevd__dists.html#a235caf40ef36777df0e6d73c0fa21324">color</a></td></tr>
+<tr class="separator:a235caf40ef36777df0e6d73c0fa21324"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37804fd2d5b1c9d56b7d6ca662a0b8a3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevd__dists.html#a37804fd2d5b1c9d56b7d6ca662a0b8a3">currTime</a> = datetime.now().strftime(u&quot;%Y-%m-%d_%H:%M:%S&quot;)</td></tr>
+<tr class="separator:a37804fd2d5b1c9d56b7d6ca662a0b8a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="a119c91c6ffdd9c9135aaf017ecedd4ea" name="a119c91c6ffdd9c9135aaf017ecedd4ea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a119c91c6ffdd9c9135aaf017ecedd4ea">&#9670;&#160;</a></span>main()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><pre class="fragment">@brief Plot reaction time against frequency for each value difference or choice. 
+
+Plot the reaction time against frequency for each possible value difference. To 
+use for the aDDM, pass 'addm' as a command line argument. To save the image in
+the imgs directory, pass 'save' as a command line argument. Usage is as follows:
+
+python3 analysis/vd_dists.py [addm] [save]
+</pre> </div><h2 class="groupheader">Variable Documentation</h2>
+<a id="aafbcd251f7d80703a1b149951f735b1c" name="aafbcd251f7d80703a1b149951f735b1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafbcd251f7d80703a1b149951f735b1c">&#9670;&#160;</a></span>addm</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">vd_dists.main </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">bool vd_dists.addm = False</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6ef07195f8570e09748d150da3012649" name="a6ef07195f8570e09748d150da3012649"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ef07195f8570e09748d150da3012649">&#9670;&#160;</a></span>ADDM_FILE_PATH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">str vd_dists.ADDM_FILE_PATH = &quot;results/addm_simulations.csv&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac6effea080f39a2bf4c16fe5eb8f0b7e" name="ac6effea080f39a2bf4c16fe5eb8f0b7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6effea080f39a2bf4c16fe5eb8f0b7e">&#9670;&#160;</a></span>axs</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vd_dists.axs</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac1ba157b2363c9daffbe728a182dc6d9" name="ac1ba157b2363c9daffbe728a182dc6d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1ba157b2363c9daffbe728a182dc6d9">&#9670;&#160;</a></span>bins</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vd_dists.bins</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8a6930cf4ef6f55bd57e29bb2de6e31f" name="a8a6930cf4ef6f55bd57e29bb2de6e31f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a6930cf4ef6f55bd57e29bb2de6e31f">&#9670;&#160;</a></span>choice</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vd_dists.choice = row['choice']</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afefba04ebca5b843b9996ea19a27ba33" name="afefba04ebca5b843b9996ea19a27ba33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afefba04ebca5b843b9996ea19a27ba33">&#9670;&#160;</a></span>choice_to_rts</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">dict vd_dists.choice_to_rts = {-1 : list(), 1 : list()}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a235caf40ef36777df0e6d73c0fa21324" name="a235caf40ef36777df0e6d73c0fa21324"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a235caf40ef36777df0e6d73c0fa21324">&#9670;&#160;</a></span>color</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vd_dists.color</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a37804fd2d5b1c9d56b7d6ca662a0b8a3" name="a37804fd2d5b1c9d56b7d6ca662a0b8a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37804fd2d5b1c9d56b7d6ca662a0b8a3">&#9670;&#160;</a></span>currTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vd_dists.currTime = datetime.now().strftime(u&quot;%Y-%m-%d_%H:%M:%S&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aec45b40a35ab63ea894521540f49a4c8" name="aec45b40a35ab63ea894521540f49a4c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec45b40a35ab63ea894521540f49a4c8">&#9670;&#160;</a></span>DDM_FILE_PATH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">str vd_dists.DDM_FILE_PATH = &quot;results/ddm_simulations.csv&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a87a1cbbd403a4f6dea2532732192dd49" name="a87a1cbbd403a4f6dea2532732192dd49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87a1cbbd403a4f6dea2532732192dd49">&#9670;&#160;</a></span>df</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vd_dists.df = pd.read_csv(<a class="el" href="namespacevd__dists.html#a6ef07195f8570e09748d150da3012649">ADDM_FILE_PATH</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afaf26550f82e532d3e09b4e7c57560ee" name="afaf26550f82e532d3e09b4e7c57560ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afaf26550f82e532d3e09b4e7c57560ee">&#9670;&#160;</a></span>fig</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vd_dists.fig</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac64533efdcc38a2407f6065c7f4955b9" name="ac64533efdcc38a2407f6065c7f4955b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac64533efdcc38a2407f6065c7f4955b9">&#9670;&#160;</a></span>i</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int vd_dists.i = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abd22b45e65a182cdcb7b6612a16211bc" name="abd22b45e65a182cdcb7b6612a16211bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd22b45e65a182cdcb7b6612a16211bc">&#9670;&#160;</a></span>keys</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vd_dists.keys = list(val_diff_to_rts.keys())</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4891f6a61613a7bb1c6f62a5b43c6e78" name="a4891f6a61613a7bb1c6f62a5b43c6e78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4891f6a61613a7bb1c6f62a5b43c6e78">&#9670;&#160;</a></span>label</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vd_dists.label</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a176587f158f5ffe9700d207563f48b56" name="a176587f158f5ffe9700d207563f48b56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a176587f158f5ffe9700d207563f48b56">&#9670;&#160;</a></span>mean</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vd_dists.mean = np.mean(<a class="el" href="namespacevd__dists.html#af7535b12c4d75592afb2f558a38a9b21">rts</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3ecd3626136a8edb36a0260f6f52239b" name="a3ecd3626136a8edb36a0260f6f52239b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ecd3626136a8edb36a0260f6f52239b">&#9670;&#160;</a></span>rt</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vd_dists.rt = row['RT']</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af7535b12c4d75592afb2f558a38a9b21" name="af7535b12c4d75592afb2f558a38a9b21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7535b12c4d75592afb2f558a38a9b21">&#9670;&#160;</a></span>rts</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vd_dists.rts</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a26b0dee6f9d7f8efff58219541de4d61" name="a26b0dee6f9d7f8efff58219541de4d61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26b0dee6f9d7f8efff58219541de4d61">&#9670;&#160;</a></span>val_diff</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vd_dists.val_diff = row['valueLeft'] - row['valueRight']</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a53b3c6a69811688b40c2e043015e36ad" name="a53b3c6a69811688b40c2e043015e36ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53b3c6a69811688b40c2e043015e36ad">&#9670;&#160;</a></span>val_diff_to_rts</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">dict vd_dists.val_diff_to_rts = {}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5975aa4495775ba0e44c7e44a0fe3d11" name="a5975aa4495775ba0e44c7e44a0fe3d11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5975aa4495775ba0e44c7e44a0fe3d11">&#9670;&#160;</a></span>vd</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vd_dists.vd</td>
         </tr>
       </table>
 </div><div class="memdoc">

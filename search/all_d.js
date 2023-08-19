@@ -1,9 +1,12 @@
 var searchData=
 [
-  ['pmat_0',['pmat',['../util_8h.html#a7ebf560e5e3830defcb13f36787c446a',1,'util.h']]],
-  ['posteriors_2epy_1',['posteriors.py',['../posteriors_8py.html',1,'']]],
-  ['probabilitydata_2',['ProbabilityData',['../class_probability_data.html',1,'ProbabilityData'],['../class_probability_data.html#a865aa89be661b2fd1926f922b31a5aa6',1,'ProbabilityData::ProbabilityData()']]],
-  ['probabilitydensityfunction_3',['probabilityDensityFunction',['../util_8h.html#a3c70684bbd5c18365b967d158305e919',1,'probabilityDensityFunction(float mean, float sigma, float x):&#160;util.cpp'],['../util_8cpp.html#a3c70684bbd5c18365b967d158305e919',1,'probabilityDensityFunction(float mean, float sigma, float x):&#160;util.cpp']]],
-  ['probfixleftfirst_4',['probFixLeftFirst',['../class_fixation_data.html#ac94f66e2c75130b416982631f76580b8',1,'FixationData']]],
-  ['pybind11_5fmodule_5',['PYBIND11_MODULE',['../bindings_8cpp.html#aee41ca5a5ae0f248a1e895b6048c578a',1,'bindings.cpp']]]
+  ['main_0',['main',['../addm__mle_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;addm_mle.cpp'],['../addm__simulate_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;addm_simulate.cpp'],['../benchmark_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;benchmark.cpp'],['../ddm__mle_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;ddm_mle.cpp'],['../ddm__mle__bias_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;ddm_mle_bias.cpp'],['../ddm__simulate_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;ddm_simulate.cpp'],['../fit__example_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;fit_example.cpp'],['../test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;test.cpp']]],
+  ['mean_1',['mean',['../namespacevd__dists.html#a176587f158f5ffe9700d207563f48b56',1,'vd_dists']]],
+  ['min_5fd_2',['min_d',['../namespaceaddm__mle.html#a53e92352795005fd1fc73be01ffb047a',1,'addm_mle']]],
+  ['min_5fnll_5fidx_3',['min_nll_idx',['../namespaceaddm__mle.html#a25fca0cbbec6a115e2a6870b0d85875b',1,'addm_mle']]],
+  ['min_5fsigma_4',['min_sigma',['../namespaceaddm__mle.html#a4f98a94fe07bb4b01279b1eb6c92ae9e',1,'addm_mle']]],
+  ['min_5ftheta_5',['min_theta',['../namespaceaddm__mle.html#aa49d989d55f6d647dfa251e3024b1af4',1,'addm_mle']]],
+  ['minimum_6',['minimum',['../namespaceddm__mle.html#a2bc3540f875644f24aff844bb36cda3f',1,'ddm_mle']]],
+  ['mle_5finfo_2eh_7',['mle_info.h',['../mle__info_8h.html',1,'']]],
+  ['mleinfo_8',['MLEinfo',['../struct_m_l_einfo.html',1,'']]]
 ];

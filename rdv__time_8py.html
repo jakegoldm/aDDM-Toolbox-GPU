@@ -75,7 +75,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">rdv_time.py File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -85,10 +85,26 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespacerdv__time"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerdv__time.html">rdv_time</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:aa848eded64f45985c06ec49888621fee"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerdv__time.html#aa848eded64f45985c06ec49888621fee">rdv_time.main</a> ()</td></tr>
-<tr class="separator:aa848eded64f45985c06ec49888621fee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ade4e0f770ecf0e7cd7e948789ec22653"><td class="memItemLeft" align="right" valign="top">str&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerdv__time.html#ade4e0f770ecf0e7cd7e948789ec22653">rdv_time.FILE_PATH</a> = &quot;results/data.json&quot;</td></tr>
+<tr class="separator:ade4e0f770ecf0e7cd7e948789ec22653"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a5ab6ba77a528605f26f0b329309b85"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerdv__time.html#a7a5ab6ba77a528605f26f0b329309b85">rdv_time.data</a> = json.load(file)</td></tr>
+<tr class="separator:a7a5ab6ba77a528605f26f0b329309b85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13fff8eb6fce8153fde3b5fb511d860d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerdv__time.html#a13fff8eb6fce8153fde3b5fb511d860d">rdv_time.rdvs</a> = <a class="el" href="namespacerdv__time.html#a7a5ab6ba77a528605f26f0b329309b85">data</a>[&quot;RDVs&quot;]</td></tr>
+<tr class="separator:a13fff8eb6fce8153fde3b5fb511d860d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b6cac742095567d09b27f142120f0b1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerdv__time.html#a4b6cac742095567d09b27f142120f0b1">rdv_time.x</a> = np.arange(len(<a class="el" href="namespacerdv__time.html#a13fff8eb6fce8153fde3b5fb511d860d">rdvs</a>)) * <a class="el" href="namespacerdv__time.html#a7a5ab6ba77a528605f26f0b329309b85">data</a>[&quot;timeStep&quot;]</td></tr>
+<tr class="separator:a4b6cac742095567d09b27f142120f0b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6521a51309888e5b74d79f99751f7154"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerdv__time.html#a6521a51309888e5b74d79f99751f7154">rdv_time.label</a></td></tr>
+<tr class="separator:a6521a51309888e5b74d79f99751f7154"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac88bf7e5a3a5fa428aa4b2e315f07053"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerdv__time.html#ac88bf7e5a3a5fa428aa4b2e315f07053">rdv_time.barrier</a> = float(<a class="el" href="namespacerdv__time.html#a7a5ab6ba77a528605f26f0b329309b85">data</a>[&quot;barrier&quot;])</td></tr>
+<tr class="separator:ac88bf7e5a3a5fa428aa4b2e315f07053"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a423f020f499aa62c14850af2d2eb6e0b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerdv__time.html#a423f020f499aa62c14850af2d2eb6e0b">rdv_time.bias</a> = float(<a class="el" href="namespacerdv__time.html#a7a5ab6ba77a528605f26f0b329309b85">data</a>[&quot;bias&quot;])</td></tr>
+<tr class="separator:a423f020f499aa62c14850af2d2eb6e0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd64b57407e9d3a3c5279cc354291e7a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerdv__time.html#abd64b57407e9d3a3c5279cc354291e7a">rdv_time.color</a></td></tr>
+<tr class="separator:abd64b57407e9d3a3c5279cc354291e7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22da791a77a71276a5600a8eeaed679b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerdv__time.html#a22da791a77a71276a5600a8eeaed679b">rdv_time.currTime</a> = datetime.now().strftime(u&quot;%Y-%m-%d_%H:%M:%S&quot;)</td></tr>
+<tr class="separator:a22da791a77a71276a5600a8eeaed679b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->
