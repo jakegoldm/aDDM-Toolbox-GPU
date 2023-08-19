@@ -51,6 +51,7 @@ std::map<int, std::vector<aDDMTrial>> loadDataFromCSV(
     std::map<int, std::vector<expEntry>> IDtoEXP;
     std::set<int> subjectIDs;
 
+    std::hash<std::string> hashFn; 
     std::ifstream expFile(expDataFilename);
     std::vector<expEntry> expData;
     std::string eline;
@@ -59,9 +60,13 @@ std::map<int, std::vector<aDDMTrial>> loadDataFromCSV(
         std::stringstream ss(eline);
         std::string field;
         expEntry entry;
-        std::getline(ss, field, ',');
-        entry.parcode = std::stoi(field);
-        subjectIDs.insert(entry.parcode);
+        std::getline(ss, field, ',');        
+        try {
+            entry.parcode = std::stoi(field);
+        } 
+        catch (std::invalid_argument& e) {
+            entry.parcode = hashFn(field);
+        }
         std::getline(ss, field, ',');
         entry.trial = std::stoi(field);
         std::getline(ss, field, ',');
@@ -78,8 +83,11 @@ std::map<int, std::vector<aDDMTrial>> loadDataFromCSV(
         } else {
             IDtoEXP.insert({entry.parcode, {}});
         }
+        subjectIDs.insert(entry.parcode);
     }
     expFile.close();
+
+    std::cout << subjectIDs.size() << std::endl; 
 
     for (int subjectID : subjectIDs) {
         data.insert({subjectID, {}});
@@ -106,12 +114,19 @@ std::map<int, std::vector<aDDMTrial>> loadDataFromCSV(
     subjectIDs.clear();
     std::string fline;
     std::getline(fixFile, fline); 
+    
     while (std::getline(fixFile, fline)) {
         std::stringstream ss(fline);
         std::string field;
         fixEntry entry;
-        std::getline(ss, field, ',');
-        entry.parcode = std::stoi(field);
+        try {
+            std::getline(ss, field, ',');
+            entry.parcode = std::stoi(field);
+        } 
+        catch (std::invalid_argument& e) {
+            entry.parcode = hashFn(field); 
+        }
+        
         subjectIDs.insert(entry.parcode);
         std::getline(ss, field, ',');
         entry.trial = std::stoi(field);

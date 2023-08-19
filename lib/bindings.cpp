@@ -1,6 +1,6 @@
 #include <pybind11/pybind11.h>
 #include <pybind11/stl.h>
-#include "../include/gpu_toolbox.h"
+#include "gpu_toolbox.h"
 #include <string>
 
 namespace py = pybind11; 

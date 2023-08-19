@@ -14,3 +14,5 @@ __pycache__
 example.py
 # macros.h should be dynamically generated
 include/macros.h
+
+addm_code_and_data

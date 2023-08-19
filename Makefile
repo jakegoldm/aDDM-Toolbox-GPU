@@ -4,7 +4,7 @@ CXX := g++
 # MACROS := -DEXCLUDE_CUDA_CODE
 
 SIM_EXECS := addm_simulate ddm_simulate
-MLE_EXECS := addm_mle ddm_mle ddm_mle_bias
+MLE_EXECS := addm_mle ddm_mle ddm_mle_bias fit_example
 TEST_EXECS := test benchmark
 
 LIB_DIR := lib
