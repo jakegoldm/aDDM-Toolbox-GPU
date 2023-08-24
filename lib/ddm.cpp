@@ -511,6 +511,9 @@ MLEinfo<DDM> DDM::fitModelMLE(
         if (bias.size() > 1) {
             std::cout << " bias=" << ddm.bias; 
         } 
+        if (decay.size() > 1) {
+            std::cout << " decay=" << ddm.decay; 
+        }
         std::cout << " NLL=" << aux.NLL << std::endl; 
         if (aux.NLL < minNLL) {
             minNLL = aux.NLL; 

@@ -108,10 +108,9 @@ for j in range(N):
                 x=list(vals.keys()), 
                 y=list(vals.values()), 
                 ax=axes[i, j], 
-                color="grey"
+                color="grey", 
                 )
-            g.bar_label(g.containers[0], size=8)  
-
+            
             keys_labels = list(vals.keys())
             axes[i, j].set_xticks(np.arange(len(keys_labels)))
             axes[i, j].set_xticklabels(keys_labels)
@@ -124,7 +123,7 @@ for j in range(N):
             g = sns.heatmap(
                 arr.T, 
                 cbar=False, 
-                cmap=sns.color_palette("blend:#610,#FFE", as_cmap=True), 
+                cmap=sns.color_palette("blend:#510,#FFF", as_cmap=True), 
                 ax=axes[i, j]
                 )
             # Invert y-axis for heatmap to match the order of values
@@ -137,8 +136,8 @@ for j in range(N):
 
 # Set labels for x and y axes of plot
 for i in range(N):
-    axes[i, 0].set_ylabel(df.columns[i], size=16)
-    axes[N - 1, i].set_xlabel(df.columns[i], size=16)
+    axes[i, 0].set_ylabel(df.columns[i], size=24)
+    axes[N - 1, i].set_xlabel(df.columns[i], size=24)
 
 plt.tight_layout()
 

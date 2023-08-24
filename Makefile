@@ -4,14 +4,14 @@ CXX := g++
 # MACROS := -DEXCLUDE_CUDA_CODE
 
 SIM_EXECS := addm_simulate ddm_simulate
-MLE_EXECS := addm_mle ddm_mle ddm_mle_bias fit_example
+MLE_EXECS := addm_mle ddm_mle
 TEST_EXECS := test benchmark
 
 LIB_DIR := lib
 OBJ_DIR := obj
 INC_DIR := include
 BUILD_DIR := bin
-SRC_DIR := src
+SRC_DIR := sample
 
 CXXFLAGS := -Ofast -march=native -fPIC $(MACROS)
 NVCCFLAGS := -O3 -Xcompiler -fPIC
@@ -34,6 +34,11 @@ ifeq ($(MACROS),)
 	CU_OBJ_FILES := $(patsubst $(LIB_DIR)/%.cu,$(OBJ_DIR)/%.o,$(CU_FILES)) 
 endif
 
+$(OBJ_DIR): 
+	mkdir -p $(OBJ_DIR)
+
+$(BUILD_DIR): 
+	mkdir -p $(BUILD_DIR)
 
 $(OBJ_DIR)/%.o: $(LIB_DIR)/%.cpp
 	$(CXX) $(CXXFLAGS) -c $(SHAREDFLAGS) -o $@ $<
@@ -52,21 +57,21 @@ define compile_target_cpp_cpu
 endef
 
 
-sim: $(CPP_OBJ_FILES) $(CU_OBJ_FILES)
+sim: $(OBJ_DIR) $(BUILD_DIR) $(CPP_OBJ_FILES) $(CU_OBJ_FILES)
 ifeq ($(MACROS),)
 	$(foreach source, $(SIM_EXECS), $(call compile_target_cpp_nvcc, $(source));)
 else 
 	$(foreach source, $(SIM_EXECS), $(call compile_target_cpp_cpu, $(source));)
 endif 
 
-mle: $(CPP_OBJ_FILES) $(CU_OBJ_FILES)
+mle: $(OBJ_DIR) $(BUILD_DIR) $(CPP_OBJ_FILES) $(CU_OBJ_FILES)
 ifeq ($(MACROS),)
 	$(foreach source, $(MLE_EXECS), $(call compile_target_cpp_nvcc, $(source));)
 else 
 	$(foreach source, $(MLE_EXECS), $(call compile_target_cpp_cpu, $(source));)
 endif 
 
-test: $(CPP_OBJ_FILES) $(CU_OBJ_FILES)
+test: $(OBJ_DIR) $(BUILD_DIR) $(CPP_OBJ_FILES) $(CU_OBJ_FILES)
 ifeq ($(MACROS),)
 	$(foreach source, $(TEST_EXECS), $(call compile_target_cpp_nvcc, $(source));)
 else 
@@ -77,7 +82,7 @@ endif
 all: sim mle test
 
 
-install: $(CPP_OBJ_FILES) $(CU_OBJ_FILES)
+install: $(OBJ_DIR) $(BUILD_DIR) $(CPP_OBJ_FILES) $(CU_OBJ_FILES)
 ifeq ($(MACROS),)
 	echo "" > $(INC_DIR)/macros.h
 	$(NVCC) $(LDFLAGS) $(MACROS) -o $(INSTALL_LIB_DIR)/libaddm.so $(CPP_OBJ_FILES) $(CU_OBJ_FILES)
@@ -98,8 +103,6 @@ endif
 
 .PHONY: clean
 clean:
-	rm -rf $(OBJ_DIR)/*
-	rm -rf $(BUILD_DIR)/*
-	touch $(BUILD_DIR)/.gitkeep
-	touch $(OBJ_DIR)/.gitkeep
+	rm -rf $(OBJ_DIR)
+	rm -rf $(BUILD_DIR)
 	rm -rf docs

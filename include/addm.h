@@ -145,6 +145,10 @@ class aDDM: public DDM {
                 (rhs.d * 17) + (rhs.sigma * 31) + (rhs.theta * 43) + (rhs.bias * 59) + (rhs.decay * 73);
         }
 
+        bool operator ==( const aDDM &rhs ) const {
+            return (rhs.d == d) && (rhs.sigma == sigma) && (rhs.theta == theta);
+        }
+
         /**
          * @brief Construct a new aDDM object.
          * 

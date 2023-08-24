@@ -102,6 +102,10 @@ class DDM {
                 (rhs.d * 17) + (rhs.sigma * 31) + (rhs.bias * 43) + (rhs.decay * 59);
         }
 
+        bool operator ==( const DDM &rhs ) const {
+            return (rhs.d == d) && (rhs.sigma == sigma);
+        }
+
         /**
          * @brief Construct a new DDM object.
          * 

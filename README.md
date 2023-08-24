@@ -29,7 +29,7 @@ This toolbox can be used to perform model fitting and data simulation for the Dr
 
 ## Requirements ##
 
-This library requires NVCC and CUDA Toolkit versions 12.2 and g++ version 11.3.0. This library also uses three thrid-party C++ packages for thread pools, JSON processing, and statistical distributions: 
+This library requires NVCC and CUDA Toolkit versions 12.2 and g++ version 11.3.0. This library also uses three third-party C++ packages for thread pools, JSON processing, and statistical distributions: 
 
 * [BS::thread_pool](https://github.com/bshoshany/thread-pool)
 * [JSON for Modern C++](https://github.com/nlohmann/json)
@@ -39,6 +39,7 @@ These dependencies can be installed using the following commands:
 
 ```shell
 $ wget -O /usr/include/c++/11/BS_thread_pool.hpp https://raw.githubusercontent.com/bshoshany/thread-pool/master/include/BS_thread_pool.hpp
+$ mkdir -p /usr/include/c++/11/nlohmann
 $ wget -O /usr/include/c++/11/nlohmann/json.hpp https://raw.githubusercontent.com/nlohmann/json/develop/single_include/nlohmann/json.hpp
 $ apt-get install libboost-math-dev libboost-math1.74-dev
 ```
@@ -106,7 +107,7 @@ theta: 0.5
 For any data simulation and model fitting, the DDM and aDDM classes are going to be the most useful. The `addm.h` amd `ddm.h` files can be found in the include directory. Below are some examples that may give you an idea how to use these classes. Besides these examples, you may want to:
 
 * Check out the [documentation](https://jakegoldm.github.io/aDDM-Toolbox-GPU/).
-* See example use cases in the [source directory](src/)
+* See example use cases in the [sample directory](sample/).
 
 ### N-Trial Simulation ###
 
@@ -367,7 +368,7 @@ Counted 1000 trials.
 Optimal d=0.005 sigma=0.07 theta=0.5
 ```
 
-Both the `DDM` and  `aDDM` instances of `fitModelMLE` allow for the `bias` and `decay` fields of the model to be fit as well. See the documentation for instructionson how to do so. 
+Both the `DDM` and  `aDDM` instances of `fitModelMLE` allow for the `bias` and `decay` fields of the model to be fit as well. See the documentation for instructions on how to do so. 
 
 
 ## Python Bindings ## 
@@ -426,7 +427,31 @@ stubgen -m addm_toolbox_gpu -o .
 
 ## Built-in Scripts ##
 
+This repository provides a set of built-in scripts for running trial simulations and model-fitting. These scripts are provided in the [sample directory](sample/) and are described below: 
 
+* [`ddm_simulate.cpp`](sample/ddm_simulate.cpp): Simulate N trials using the ddm. Build using the `make sim` rule. Specify an output CSV file in the file constants. Usage: 
+
+```shell
+bin/ddm_simulate [numTrials] [d] [sigma]
+```
+
+* [`addm_simulate.cpp`](sample/addm_simulate.cpp): Simulate N trials using the addm. Build using the `make sim` rule. Specify an output CSV file in the file constants. Sample files for empirical fixation distributions are provided in the [data](data/) directory. However, these should be specified by the user as well in the file constants. Usage: 
+
+```shell
+bin/addm_simulate [numTrials] [d] [sigma] [theta]
+```
+
+* [`ddm_mle.cpp`](sample/ddm_mle.cpp): Fit a DDM model's parameters. Build using the `make mle` rule. CSV simulations, output location, and parameter ranges should be specified in the file constants. Usage: 
+
+```shell
+bin/ddm_mle
+```
+
+* [`addm_mle.cpp`](sample/addm_mle.cpp): Fit an aDDM model's paramters. Build using the `make mle` rule. CSV simulations, output location, and parameter ranges should be specified int he file constants. Usage: 
+
+```shell 
+bin/addm_mle
+```
 
 ## Authors ## 
 
@@ -434,4 +459,4 @@ Jake Goldman - jgoldman@caltech.edu, [jakegoldm](https://github.com/jakegoldm)
 
 ## Acknowledgements ##
 
-This toolbox was developed as part of a resarch project in the [Rangel Neuroeconomics Lab](http://www.rnl.caltech.edu/) at the California Institute of Technology. 
+This toolbox was developed as part of a resarch project in the [Rangel Neuroeconomics Lab](http://www.rnl.caltech.edu/) at the California Institute of Technology. Special thanks to Antonio Rangel and Zeynep Enkavi for your help with this project. 

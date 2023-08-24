@@ -737,7 +737,14 @@ MLEinfo<aDDM> aDDM::fitModelMLE(
             posteriors.insert({addm, aux.NLL});
         }
 
-        std::cout << "testing d=" << addm.d << " sigma=" << addm.sigma << " theta=" << addm.theta <<  " bias=" << addm.bias << " NLL=" << aux.NLL << std::endl; 
+        std::cout << "testing d=" << addm.d << " sigma=" << addm.sigma << " theta=" << addm.theta; 
+        if (bias.size() > 1) {
+            std::cout << " bias=" << addm.bias; 
+        } 
+        if (decay.size() > 1) {
+            std::cout << " decay=" << addm.decay; 
+        }
+        std::cout << " NLL=" << aux.NLL << std::endl; 
         if (aux.NLL < minNLL) {
             minNLL = aux.NLL; 
             optimal = addm; 
