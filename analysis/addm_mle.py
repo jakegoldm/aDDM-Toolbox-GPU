@@ -4,13 +4,17 @@
 This script creates a table of heatmaps for aDDM Maximum Likelihood Estimation
 Data NLLs. The expected input data format in CSV is as follows:  
 
-|  d  | sigma | theta | NLL |
+|  d  | sigma | theta |  p  |
 +-----+-------+-------+-----+
 |  *  |   *   |   *   |  *  |
 ... 
 
 The input file can be declared in the FILE_PATH variable. To save the resulting 
-heatmap in the imgs directory, pass 'save' as a command line argument. Usage is
+heatmap in the imgs directory, pass 'save' as a command line argument. Note 
+that the maximum for each heatmap should be toggled to allow for greater 
+contrast around the minimum NLL. The maximum for each heatmap is computed as a 
+percentage of the global minimum, specified by the MAX_PERCENTILE variable. 
+This constant should be adjusted on a case-by-case basis. Usage is
 as follows: 
 
 python3 analysis/addm_mle.py [save]
@@ -23,7 +27,8 @@ import sys
 from datetime import datetime
 
 FILE_PATH = "results/addm_mle.csv"
-
+MAX_PERCENTILE = 1.024
+PROB_LABEL = 'p'
 
 df = pd.read_csv(FILE_PATH)
 thetas = df['theta'].unique()
@@ -34,7 +39,7 @@ num_rows = (num_thetas - 1) // num_cols + 1  # Number of rows in the subplot gri
 
 fig, axes = plt.subplots(num_rows, num_cols, figsize=(12, 9))
 
-vmin = df['NLL'].min()
+vmin = df[PROB_LABEL].min()
 
 for i, theta in enumerate(thetas):
     data = df[df['theta'] == theta]
@@ -44,13 +49,13 @@ for i, theta in enumerate(thetas):
     ax = axes[row, col] if num_rows > 1 else axes[col]
 
     heatmap = ax.imshow(
-        np.reshape(data['NLL'], (-1, len(data['d'].unique()))),
+        np.reshape(data[PROB_LABEL], (-1, len(data['d'].unique()))),
         cmap='gist_heat_r',
         extent=[0, len(data['d'].unique()) - 1, 0, len(data['sigma'].unique()) - 1],
         origin='lower',
         aspect='auto',
         vmin=vmin,
-        vmax=6200
+        vmax=(MAX_PERCENTILE * vmin)
     )
     ax.set_title(f'theta = {theta}')
     ax.set_xlabel('d')
@@ -63,7 +68,7 @@ for i, theta in enumerate(thetas):
 
     fig.colorbar(heatmap, ax=ax)
 
-min_nll_idx = df['NLL'].idxmin()
+min_nll_idx = df[PROB_LABEL].idxmin()
 min_d = df.loc[min_nll_idx, 'd']
 min_sigma = df.loc[min_nll_idx, 'sigma']
 min_theta = df.loc[min_nll_idx, 'theta']
