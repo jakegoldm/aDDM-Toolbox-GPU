@@ -79,6 +79,8 @@ $(function() {
 Variables</h2></td></tr>
 <tr class="memitem:a5f3fd78a54575d3f0c20193bce02af4e"><td class="memItemLeft" align="right" valign="top">str&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceddm__mle.html#a5f3fd78a54575d3f0c20193bce02af4e">FILE_PATH</a> = &quot;results/ddm_mle.csv&quot;</td></tr>
 <tr class="separator:a5f3fd78a54575d3f0c20193bce02af4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af751100bcbad520c9b1b81416fb54d7c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceddm__mle.html#af751100bcbad520c9b1b81416fb54d7c">MAX_PERCENTILE</a> = 1.024</td></tr>
+<tr class="separator:af751100bcbad520c9b1b81416fb54d7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb2ee3604949f6fe83a4332359b0ee76"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceddm__mle.html#aeb2ee3604949f6fe83a4332359b0ee76">data</a> = pd.read_csv(<a class="el" href="namespaceddm__mle.html#a5f3fd78a54575d3f0c20193bce02af4e">FILE_PATH</a>)</td></tr>
 <tr class="separator:aeb2ee3604949f6fe83a4332359b0ee76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3fa6efd18427151da16741778cc5d292"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceddm__mle.html#a3fa6efd18427151da16741778cc5d292">pivot_table</a> = pd.pivot_table(<a class="el" href="namespaceddm__mle.html#aeb2ee3604949f6fe83a4332359b0ee76">data</a>, values='NLL', index='sigma', columns='d')</td></tr>
@@ -91,7 +93,7 @@ Variables</h2></td></tr>
 <tr class="separator:add29cc2526bdb7631788efac4034bcc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0c9f541ad4dca557340c6abc8d8e82f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceddm__mle.html#ac0c9f541ad4dca557340c6abc8d8e82f">ax</a></td></tr>
 <tr class="separator:ac0c9f541ad4dca557340c6abc8d8e82f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac4bbaf26f35e637102d426daa452e15"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceddm__mle.html#aac4bbaf26f35e637102d426daa452e15">im</a> = ax.imshow(<a class="el" href="namespaceddm__mle.html#ab334d137d2c84a4d2eff27403b3f86c8">heatmap_data</a>, cmap='cividis', aspect='auto', vmax=<a class="el" href="namespaceddm__mle.html#a2bc3540f875644f24aff844bb36cda3f">minimum</a> * 1.15)</td></tr>
+<tr class="memitem:aac4bbaf26f35e637102d426daa452e15"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceddm__mle.html#aac4bbaf26f35e637102d426daa452e15">im</a></td></tr>
 <tr class="separator:aac4bbaf26f35e637102d426daa452e15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d147ef3d871321b9496be536055017f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceddm__mle.html#a4d147ef3d871321b9496be536055017f">xlabs</a> = set()</td></tr>
 <tr class="separator:a4d147ef3d871321b9496be536055017f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -109,14 +111,18 @@ This script creates a heatmap representing the Negative Log Likelihoods
 following a run of MLE on the DDM. The expected input data format in CSV is as
 follows: 
 
-|  d  | sigma | NLL | 
+|  d  | sigma |  p  | 
 +-----+-------+-----+
 |  *  |   *   |  *  | 
 ...
 
-The input [ath can be decalred in the FILE_PATH variable. To save the 
-resulting heatmap in the imgs directory, pass 'save' as a command line argument.
-Usage is as follows: 
+The input path can be decalred in the FILE_PATH variable. To save the 
+resulting heatmap in the imgs directory, pass 'save' as a command line argument. 
+Note that the maximum for each heatmap should be toggled to allow for greater 
+contrast around the minimum NLL. The maximum for each heatmap is computed as a 
+percentage of the global minimum, specified by the MAX_PERCENTILE variable. 
+This constant should be adjusted on a case-by-case basis. Usage is
+as follows: 
 
 python3 analysis/ddm_mle.py [save]
 </pre> </div><h2 class="groupheader">Variable Documentation</h2>
@@ -219,11 +225,16 @@ python3 analysis/ddm_mle.py [save]
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">ddm_mle.im = ax.imshow(<a class="el" href="namespaceddm__mle.html#ab334d137d2c84a4d2eff27403b3f86c8">heatmap_data</a>, cmap='cividis', aspect='auto', vmax=<a class="el" href="namespaceddm__mle.html#a2bc3540f875644f24aff844bb36cda3f">minimum</a> * 1.15)</td>
+          <td class="memname">ddm_mle.im</td>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<b>Initial value:</b><div class="fragment"><div class="line"><span class="lineno">    1</span>=  ax.imshow(</div>
+<div class="line"><span class="lineno">    2</span>    heatmap_data, </div>
+<div class="line"><span class="lineno">    3</span>    cmap=<span class="stringliteral">&#39;cividis&#39;</span>, </div>
+<div class="line"><span class="lineno">    4</span>    aspect=<span class="stringliteral">&#39;auto&#39;</span>, </div>
+<div class="line"><span class="lineno">    5</span>    vmax=minimum * MAX_PERCENTILE)</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aa867dd00a51b999a4d5c21b7f3c8ce29" name="aa867dd00a51b999a4d5c21b7f3c8ce29"></a>
@@ -234,6 +245,20 @@ python3 analysis/ddm_mle.py [save]
       <table class="memname">
         <tr>
           <td class="memname">ddm_mle.labels</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af751100bcbad520c9b1b81416fb54d7c" name="af751100bcbad520c9b1b81416fb54d7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af751100bcbad520c9b1b81416fb54d7c">&#9670;&#160;</a></span>MAX_PERCENTILE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float ddm_mle.MAX_PERCENTILE = 1.024</td>
         </tr>
       </table>
 </div><div class="memdoc">

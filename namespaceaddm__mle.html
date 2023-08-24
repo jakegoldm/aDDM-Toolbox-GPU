@@ -79,6 +79,10 @@ $(function() {
 Variables</h2></td></tr>
 <tr class="memitem:ad666626a2ca46282009c128d23dc84d2"><td class="memItemLeft" align="right" valign="top">str&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceaddm__mle.html#ad666626a2ca46282009c128d23dc84d2">FILE_PATH</a> = &quot;results/addm_mle.csv&quot;</td></tr>
 <tr class="separator:ad666626a2ca46282009c128d23dc84d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adba2564b4b4edf3c584bd7bd13a5c840"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceaddm__mle.html#adba2564b4b4edf3c584bd7bd13a5c840">MAX_PERCENTILE</a> = 1.024</td></tr>
+<tr class="separator:adba2564b4b4edf3c584bd7bd13a5c840"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6dca526aa74b0ec229d0151436c3ceb7"><td class="memItemLeft" align="right" valign="top">str&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceaddm__mle.html#a6dca526aa74b0ec229d0151436c3ceb7">PROB_LABEL</a> = 'p'</td></tr>
+<tr class="separator:a6dca526aa74b0ec229d0151436c3ceb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a095be02cae4ce618668331b22f14a8d6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceaddm__mle.html#a095be02cae4ce618668331b22f14a8d6">df</a> = pd.read_csv(<a class="el" href="namespaceaddm__mle.html#ad666626a2ca46282009c128d23dc84d2">FILE_PATH</a>)</td></tr>
 <tr class="separator:a095be02cae4ce618668331b22f14a8d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad75d1486255474caede0d713427d2219"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceaddm__mle.html#ad75d1486255474caede0d713427d2219">thetas</a> = <a class="el" href="namespaceaddm__mle.html#a095be02cae4ce618668331b22f14a8d6">df</a>['theta'].unique()</td></tr>
@@ -95,7 +99,7 @@ Variables</h2></td></tr>
 <tr class="separator:a0b9cf6d4ed6304d656f26b8bd43c250c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a852250ff1a87f9191f5ade86af41a427"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceaddm__mle.html#a852250ff1a87f9191f5ade86af41a427">figsize</a></td></tr>
 <tr class="separator:a852250ff1a87f9191f5ade86af41a427"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a59b15026627c6e3daaf363a815d0004d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceaddm__mle.html#a59b15026627c6e3daaf363a815d0004d">vmin</a> = <a class="el" href="namespaceaddm__mle.html#a095be02cae4ce618668331b22f14a8d6">df</a>['NLL'].min()</td></tr>
+<tr class="memitem:a59b15026627c6e3daaf363a815d0004d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceaddm__mle.html#a59b15026627c6e3daaf363a815d0004d">vmin</a> = <a class="el" href="namespaceaddm__mle.html#a095be02cae4ce618668331b22f14a8d6">df</a>[<a class="el" href="namespaceaddm__mle.html#a6dca526aa74b0ec229d0151436c3ceb7">PROB_LABEL</a>].min()</td></tr>
 <tr class="separator:a59b15026627c6e3daaf363a815d0004d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45bb5f22de01ea20f39252f7d611df77"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceaddm__mle.html#a45bb5f22de01ea20f39252f7d611df77">data</a> = <a class="el" href="namespaceaddm__mle.html#a095be02cae4ce618668331b22f14a8d6">df</a>[<a class="el" href="namespaceaddm__mle.html#a095be02cae4ce618668331b22f14a8d6">df</a>['theta'] == theta]</td></tr>
 <tr class="separator:a45bb5f22de01ea20f39252f7d611df77"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -107,7 +111,7 @@ Variables</h2></td></tr>
 <tr class="separator:af00017da88aaf1b5ec6d37a5500c85db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5fb1fa222b49251d1c185556e53ec761"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceaddm__mle.html#a5fb1fa222b49251d1c185556e53ec761">heatmap</a></td></tr>
 <tr class="separator:a5fb1fa222b49251d1c185556e53ec761"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25fca0cbbec6a115e2a6870b0d85875b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceaddm__mle.html#a25fca0cbbec6a115e2a6870b0d85875b">min_nll_idx</a> = <a class="el" href="namespaceaddm__mle.html#a095be02cae4ce618668331b22f14a8d6">df</a>['NLL'].idxmin()</td></tr>
+<tr class="memitem:a25fca0cbbec6a115e2a6870b0d85875b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceaddm__mle.html#a25fca0cbbec6a115e2a6870b0d85875b">min_nll_idx</a> = <a class="el" href="namespaceaddm__mle.html#a095be02cae4ce618668331b22f14a8d6">df</a>[<a class="el" href="namespaceaddm__mle.html#a6dca526aa74b0ec229d0151436c3ceb7">PROB_LABEL</a>].idxmin()</td></tr>
 <tr class="separator:a25fca0cbbec6a115e2a6870b0d85875b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53e92352795005fd1fc73be01ffb047a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceaddm__mle.html#a53e92352795005fd1fc73be01ffb047a">min_d</a> = df.loc[<a class="el" href="namespaceaddm__mle.html#a25fca0cbbec6a115e2a6870b0d85875b">min_nll_idx</a>, 'd']</td></tr>
 <tr class="separator:a53e92352795005fd1fc73be01ffb047a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -132,13 +136,17 @@ Variables</h2></td></tr>
 This script creates a table of heatmaps for aDDM Maximum Likelihood Estimation
 Data NLLs. The expected input data format in CSV is as follows:  
 
-|  d  | sigma | theta | NLL |
+|  d  | sigma | theta |  p  |
 +-----+-------+-------+-----+
 |  *  |   *   |   *   |  *  |
 ... 
 
 The input file can be declared in the FILE_PATH variable. To save the resulting 
-heatmap in the imgs directory, pass 'save' as a command line argument. Usage is
+heatmap in the imgs directory, pass 'save' as a command line argument. Note 
+that the maximum for each heatmap should be toggled to allow for greater 
+contrast around the minimum NLL. The maximum for each heatmap is computed as a 
+percentage of the global minimum, specified by the MAX_PERCENTILE variable. 
+This constant should be adjusted on a case-by-case basis. Usage is
 as follows: 
 
 python3 analysis/addm_mle.py [save]
@@ -323,15 +331,29 @@ python3 analysis/addm_mle.py [save]
       </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line"><span class="lineno">    1</span>=  ax.imshow(</div>
-<div class="line"><span class="lineno">    2</span>        np.reshape(data[<span class="stringliteral">&#39;NLL&#39;</span>], (-1, len(data[<span class="stringliteral">&#39;d&#39;</span>].unique()))),</div>
+<div class="line"><span class="lineno">    2</span>        np.reshape(data[PROB_LABEL], (-1, len(data[<span class="stringliteral">&#39;d&#39;</span>].unique()))),</div>
 <div class="line"><span class="lineno">    3</span>        cmap=<span class="stringliteral">&#39;gist_heat_r&#39;</span>,</div>
 <div class="line"><span class="lineno">    4</span>        extent=[0, len(data[<span class="stringliteral">&#39;d&#39;</span>].unique()) - 1, 0, len(data[<span class="stringliteral">&#39;sigma&#39;</span>].unique()) - 1],</div>
 <div class="line"><span class="lineno">    5</span>        origin=<span class="stringliteral">&#39;lower&#39;</span>,</div>
 <div class="line"><span class="lineno">    6</span>        aspect=<span class="stringliteral">&#39;auto&#39;</span>,</div>
 <div class="line"><span class="lineno">    7</span>        vmin=vmin,</div>
-<div class="line"><span class="lineno">    8</span>        vmax=6200</div>
+<div class="line"><span class="lineno">    8</span>        vmax=(MAX_PERCENTILE * vmin)</div>
 <div class="line"><span class="lineno">    9</span>    )</div>
 </div><!-- fragment -->
+</div>
+</div>
+<a id="adba2564b4b4edf3c584bd7bd13a5c840" name="adba2564b4b4edf3c584bd7bd13a5c840"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adba2564b4b4edf3c584bd7bd13a5c840">&#9670;&#160;</a></span>MAX_PERCENTILE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float addm_mle.MAX_PERCENTILE = 1.024</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
 </div>
 </div>
 <a id="a53e92352795005fd1fc73be01ffb047a" name="a53e92352795005fd1fc73be01ffb047a"></a>
@@ -355,7 +377,7 @@ python3 analysis/addm_mle.py [save]
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">addm_mle.min_nll_idx = <a class="el" href="namespaceaddm__mle.html#a095be02cae4ce618668331b22f14a8d6">df</a>['NLL'].idxmin()</td>
+          <td class="memname">addm_mle.min_nll_idx = <a class="el" href="namespaceaddm__mle.html#a095be02cae4ce618668331b22f14a8d6">df</a>[<a class="el" href="namespaceaddm__mle.html#a6dca526aa74b0ec229d0151436c3ceb7">PROB_LABEL</a>].idxmin()</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -432,6 +454,20 @@ python3 analysis/addm_mle.py [save]
 
 </div>
 </div>
+<a id="a6dca526aa74b0ec229d0151436c3ceb7" name="a6dca526aa74b0ec229d0151436c3ceb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6dca526aa74b0ec229d0151436c3ceb7">&#9670;&#160;</a></span>PROB_LABEL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">str addm_mle.PROB_LABEL = 'p'</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="aafb31476985ae384e1a5d172fcf3011a" name="aafb31476985ae384e1a5d172fcf3011a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aafb31476985ae384e1a5d172fcf3011a">&#9670;&#160;</a></span>row</h2>
 
@@ -481,7 +517,7 @@ python3 analysis/addm_mle.py [save]
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">addm_mle.vmin = <a class="el" href="namespaceaddm__mle.html#a095be02cae4ce618668331b22f14a8d6">df</a>['NLL'].min()</td>
+          <td class="memname">addm_mle.vmin = <a class="el" href="namespaceaddm__mle.html#a095be02cae4ce618668331b22f14a8d6">df</a>[<a class="el" href="namespaceaddm__mle.html#a6dca526aa74b0ec229d0151436c3ceb7">PROB_LABEL</a>].min()</td>
         </tr>
       </table>
 </div><div class="memdoc">
