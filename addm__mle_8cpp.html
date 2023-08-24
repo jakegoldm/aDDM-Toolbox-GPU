@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>aDDM-Toolbox-GPU: src/addm_mle.cpp File Reference</title>
+<title>aDDM-Toolbox-GPU: sample/addm_mle.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,7 +69,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_c29eeb5af533606caea8a09e66794740.html">sample</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -81,9 +81,7 @@ $(function() {
 <div class="contents">
 <div class="textblock"><code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
-<code>#include &lt;random&gt;</code><br />
 <code>#include &lt;fstream&gt;</code><br />
-<code>#include &lt;ctime&gt;</code><br />
 <code>#include &lt;addm/gpu_toolbox.h&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
@@ -93,14 +91,16 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a800d6969137d46bac6c127a9f70b7e51"><td class="memItemLeft" align="right" valign="top">std::vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="addm__mle_8cpp.html#a800d6969137d46bac6c127a9f70b7e51">rangeD</a> = {0.0035, 0.005, 0.0065, 0.008}</td></tr>
-<tr class="separator:a800d6969137d46bac6c127a9f70b7e51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a347dbb7726ce6ea89520f5980d686dd8"><td class="memItemLeft" align="right" valign="top">std::vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="addm__mle_8cpp.html#a347dbb7726ce6ea89520f5980d686dd8">rangeSigma</a> = {0.06, 0.065, 0.07, 0.075}</td></tr>
-<tr class="separator:a347dbb7726ce6ea89520f5980d686dd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2aa7a364e6ed4961ee3bb151d523d2c"><td class="memItemLeft" align="right" valign="top">std::vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="addm__mle_8cpp.html#ad2aa7a364e6ed4961ee3bb151d523d2c">rangeTheta</a> = {0.35, 0.5, 0.65, 0.8}</td></tr>
-<tr class="separator:ad2aa7a364e6ed4961ee3bb151d523d2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ae0aa3d3c3bd4dc2fd68df5f46bb05f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="addm__mle_8cpp.html#a7ae0aa3d3c3bd4dc2fd68df5f46bb05f">barrier</a> = 1</td></tr>
-<tr class="separator:a7ae0aa3d3c3bd4dc2fd68df5f46bb05f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82b30bdf03d8d4f4499963ac4878b6ba"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="addm__mle_8cpp.html#a82b30bdf03d8d4f4499963ac4878b6ba">SIMS</a> = &quot;results/addm_simulations.csv&quot;</td></tr>
+<tr class="separator:a82b30bdf03d8d4f4499963ac4878b6ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20a47021dda28c74acf9031481d941c7"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="addm__mle_8cpp.html#a20a47021dda28c74acf9031481d941c7">SAVE</a> = &quot;results/addm_mle.csv&quot;</td></tr>
+<tr class="separator:a20a47021dda28c74acf9031481d941c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3153d45ff835a117b315bf1a5159a03"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="addm__mle_8cpp.html#af3153d45ff835a117b315bf1a5159a03">rangeD</a> = {0.0035, 0.005, 0.0065, 0.008}</td></tr>
+<tr class="separator:af3153d45ff835a117b315bf1a5159a03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad792ebe7df63e4421e474fbbea769e67"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="addm__mle_8cpp.html#ad792ebe7df63e4421e474fbbea769e67">rangeSigma</a> = {0.06, 0.065, 0.07, 0.075}</td></tr>
+<tr class="separator:ad792ebe7df63e4421e474fbbea769e67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e93197b123db31603861ceea3e79273"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="addm__mle_8cpp.html#a8e93197b123db31603861ceea3e79273">rangeTheta</a> = {0.35, 0.5, 0.65, 0.8}</td></tr>
+<tr class="separator:a8e93197b123db31603861ceea3e79273"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ae66f6b31b5ad750f1fe042a706a4e3d4" name="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
@@ -121,56 +121,70 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="a7ae0aa3d3c3bd4dc2fd68df5f46bb05f" name="a7ae0aa3d3c3bd4dc2fd68df5f46bb05f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7ae0aa3d3c3bd4dc2fd68df5f46bb05f">&#9670;&#160;</a></span>barrier</h2>
+<a id="af3153d45ff835a117b315bf1a5159a03" name="af3153d45ff835a117b315bf1a5159a03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3153d45ff835a117b315bf1a5159a03">&#9670;&#160;</a></span>rangeD</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int barrier = 1</td>
+          <td class="memname">const std::vector&lt;float&gt; rangeD = {0.0035, 0.005, 0.0065, 0.008}</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a800d6969137d46bac6c127a9f70b7e51" name="a800d6969137d46bac6c127a9f70b7e51"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a800d6969137d46bac6c127a9f70b7e51">&#9670;&#160;</a></span>rangeD</h2>
+<a id="ad792ebe7df63e4421e474fbbea769e67" name="ad792ebe7df63e4421e474fbbea769e67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad792ebe7df63e4421e474fbbea769e67">&#9670;&#160;</a></span>rangeSigma</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;float&gt; rangeD = {0.0035, 0.005, 0.0065, 0.008}</td>
+          <td class="memname">const std::vector&lt;float&gt; rangeSigma = {0.06, 0.065, 0.07, 0.075}</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a347dbb7726ce6ea89520f5980d686dd8" name="a347dbb7726ce6ea89520f5980d686dd8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a347dbb7726ce6ea89520f5980d686dd8">&#9670;&#160;</a></span>rangeSigma</h2>
+<a id="a8e93197b123db31603861ceea3e79273" name="a8e93197b123db31603861ceea3e79273"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e93197b123db31603861ceea3e79273">&#9670;&#160;</a></span>rangeTheta</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;float&gt; rangeSigma = {0.06, 0.065, 0.07, 0.075}</td>
+          <td class="memname">const std::vector&lt;float&gt; rangeTheta = {0.35, 0.5, 0.65, 0.8}</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="ad2aa7a364e6ed4961ee3bb151d523d2c" name="ad2aa7a364e6ed4961ee3bb151d523d2c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad2aa7a364e6ed4961ee3bb151d523d2c">&#9670;&#160;</a></span>rangeTheta</h2>
+<a id="a20a47021dda28c74acf9031481d941c7" name="a20a47021dda28c74acf9031481d941c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20a47021dda28c74acf9031481d941c7">&#9670;&#160;</a></span>SAVE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;float&gt; rangeTheta = {0.35, 0.5, 0.65, 0.8}</td>
+          <td class="memname">const std::string SAVE = &quot;results/addm_mle.csv&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a82b30bdf03d8d4f4499963ac4878b6ba" name="a82b30bdf03d8d4f4499963ac4878b6ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82b30bdf03d8d4f4499963ac4878b6ba">&#9670;&#160;</a></span>SIMS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string SIMS = &quot;results/addm_simulations.csv&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">

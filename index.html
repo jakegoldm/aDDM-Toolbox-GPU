@@ -106,7 +106,7 @@ Table of Contents</h1>
 </ul>
 <h1><a class="anchor" id="autotoc_md2"></a>
 Requirements</h1>
-<p>This library requires NVCC and CUDA Toolkit versions 12.2 and g++ version 11.3.0. This library also uses three thrid-party C++ packages for thread pools, JSON processing, and statistical distributions:</p>
+<p>This library requires NVCC and CUDA Toolkit versions 12.2 and g++ version 11.3.0. This library also uses three third-party C++ packages for thread pools, JSON processing, and statistical distributions:</p>
 <ul>
 <li><a href="https://github.com/bshoshany/thread-pool">BS::thread_pool</a></li>
 <li><a href="https://github.com/nlohmann/json">JSON for Modern C++</a></li>
@@ -114,6 +114,7 @@ Requirements</h1>
 </ul>
 <p>These dependencies can be installed using the following commands:</p>
 <div class="fragment"><div class="line">$ wget -O /usr/include/c++/11/BS_thread_pool.hpp https://raw.githubusercontent.com/bshoshany/thread-pool/master/include/BS_thread_pool.hpp</div>
+<div class="line">$ mkdir -p /usr/include/c++/11/nlohmann</div>
 <div class="line">$ wget -O /usr/include/c++/11/nlohmann/json.hpp https://raw.githubusercontent.com/nlohmann/json/develop/single_include/nlohmann/json.hpp</div>
 <div class="line">$ apt-get install libboost-math-dev libboost-math1.74-dev</div>
 </div><!-- fragment --><p><em>Note that the installation directory /usr/include/c++/11 may be modified to support newer versions of C++. In the event of a <b>Permission Denied</b> error, precede the above commands with <b>sudo</b>.</em></p>
@@ -144,7 +145,7 @@ Installation and Usage</h1>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;sigma: &quot;</span> &lt;&lt; addm.sigma &lt;&lt; std::endl; </div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;theta: &quot;</span> &lt;&lt; addm.theta &lt;&lt; std::endl; </div>
 <div class="line">}</div>
-<div class="ttc" id="aaddm__mle_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="addm__mle_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition</b> addm_mle.cpp:17</div></div>
+<div class="ttc" id="aaddm__mle_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="addm__mle_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition</b> addm_mle.cpp:15</div></div>
 <div class="ttc" id="aclassa_d_d_m_html"><div class="ttname"><a href="classa_d_d_m.html">aDDM</a></div><div class="ttdoc">Implementation of the attentional Drift Diffusion Model (aDDM).</div><div class="ttdef"><b>Definition</b> addm.h:128</div></div>
 </div><!-- fragment --><p>When compiling any code using the toolbox, include the <code>-laddm</code> flag to link with the installed shared object library.</p>
 <div class="fragment"><div class="line">$ nvcc -o main main.cpp -laddm</div>
@@ -158,7 +159,7 @@ Examples</h1>
 <p>For any data simulation and model fitting, the <a class="el" href="class_d_d_m.html" title="Implementation of the Drift Diffusion Model (DDM).">DDM</a> and <a class="el" href="classa_d_d_m.html" title="Implementation of the attentional Drift Diffusion Model (aDDM).">aDDM</a> classes are going to be the most useful. The <code><a class="el" href="addm_8h.html">addm.h</a></code> amd <code><a class="el" href="ddm_8h.html">ddm.h</a></code> files can be found in the include directory. Below are some examples that may give you an idea how to use these classes. Besides these examples, you may want to:</p>
 <ul>
 <li>Check out the <a href="https://jakegoldm.github.io/aDDM-Toolbox-GPU/">documentation</a>.</li>
-<li>See example use cases in the <a href="src/">source directory</a></li>
+<li>See example use cases in the <a href="sample/">sample directory</a>.</li>
 </ul>
 <h2><a class="anchor" id="autotoc_md5"></a>
 N-Trial Simulation</h2>
@@ -171,7 +172,7 @@ DDM</h3>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std; </div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">int</span> <a class="code hl_variable" href="addm__simulate_8cpp.html#a7722c8ecbb62d99aee7ce68b1752f337">N</a> = 1000; </div>
+<div class="line"><span class="keywordtype">int</span> <a class="code hl_variable" href="test_8cpp.html#a7722c8ecbb62d99aee7ce68b1752f337">N</a> = 1000; </div>
 <div class="line"><span class="keywordtype">int</span> valueLeft = 3; </div>
 <div class="line"><span class="keywordtype">int</span> valueRight = 7; </div>
 <div class="line"><span class="keywordtype">int</span> SEED = 540; </div>
@@ -180,18 +181,18 @@ DDM</h3>
 <div class="line">    vector&lt;DDMTrial&gt; trials;</div>
 <div class="line">    <a class="code hl_class" href="class_d_d_m.html">DDM</a> ddm = <a class="code hl_class" href="class_d_d_m.html">DDM</a>(0.005, 0.07, 1);</div>
 <div class="line"> </div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="addm__simulate_8cpp.html#a7722c8ecbb62d99aee7ce68b1752f337">N</a>; i++) {</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="test_8cpp.html#a7722c8ecbb62d99aee7ce68b1752f337">N</a>; i++) {</div>
 <div class="line">        <a class="code hl_class" href="class_d_d_m_trial.html">DDMTrial</a> trial = ddm.<a class="code hl_function" href="class_d_d_m.html#aa3a9a7bb885ba0154347082eb81b3f91">simulateTrial</a>(valueLeft, valueRight, 10, SEED);</div>
 <div class="line">        trials.push_back(trial);</div>
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">    <a class="code hl_function" href="class_d_d_m_trial.html#a8a3765f02f4f56a8504436a2c54fa01a">DDMTrial::writeTrialsToCSV</a>(trials, <span class="stringliteral">&quot;ddm_example.csv&quot;</span>);</div>
 <div class="line">}</div>
-<div class="ttc" id="aaddm__simulate_8cpp_html_a7722c8ecbb62d99aee7ce68b1752f337"><div class="ttname"><a href="addm__simulate_8cpp.html#a7722c8ecbb62d99aee7ce68b1752f337">N</a></div><div class="ttdeci">int N</div><div class="ttdef"><b>Definition</b> addm_simulate.cpp:9</div></div>
 <div class="ttc" id="aclass_d_d_m_html"><div class="ttname"><a href="class_d_d_m.html">DDM</a></div><div class="ttdoc">Implementation of the Drift Diffusion Model (DDM).</div><div class="ttdef"><b>Definition</b> ddm.h:75</div></div>
 <div class="ttc" id="aclass_d_d_m_html_aa3a9a7bb885ba0154347082eb81b3f91"><div class="ttname"><a href="class_d_d_m.html#aa3a9a7bb885ba0154347082eb81b3f91">DDM::simulateTrial</a></div><div class="ttdeci">DDMTrial simulateTrial(int valueLeft, int valueRight, int timeStep=10, int seed=-1)</div><div class="ttdoc">Generate a simulated DDM trial provided item values.</div><div class="ttdef"><b>Definition</b> ddm.cpp:327</div></div>
 <div class="ttc" id="aclass_d_d_m_trial_html"><div class="ttname"><a href="class_d_d_m_trial.html">DDMTrial</a></div><div class="ttdoc">Implementation of a single DDMTrial object.</div><div class="ttdef"><b>Definition</b> ddm.h:22</div></div>
 <div class="ttc" id="aclass_d_d_m_trial_html_a8a3765f02f4f56a8504436a2c54fa01a"><div class="ttname"><a href="class_d_d_m_trial.html#a8a3765f02f4f56a8504436a2c54fa01a">DDMTrial::writeTrialsToCSV</a></div><div class="ttdeci">static void writeTrialsToCSV(vector&lt; DDMTrial &gt; trials, string filename)</div><div class="ttdoc">Write a vector of DDMTrials to a CSV file.</div><div class="ttdef"><b>Definition</b> ddm.cpp:395</div></div>
+<div class="ttc" id="atest_8cpp_html_a7722c8ecbb62d99aee7ce68b1752f337"><div class="ttname"><a href="test_8cpp.html#a7722c8ecbb62d99aee7ce68b1752f337">N</a></div><div class="ttdeci">int N</div><div class="ttdef"><b>Definition</b> test.cpp:13</div></div>
 </div><!-- fragment --><p> <code>ddm_example.csv</code>: </p><div class="fragment"><div class="line">choice,rt,valueLeft,valueRight</div>
 <div class="line">1,850,3,7</div>
 <div class="line">...</div>
@@ -217,7 +218,7 @@ aDDM</h3>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std; </div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">int</span> <a class="code hl_variable" href="addm__simulate_8cpp.html#a7722c8ecbb62d99aee7ce68b1752f337">N</a> = 1000; </div>
+<div class="line"><span class="keywordtype">int</span> <a class="code hl_variable" href="test_8cpp.html#a7722c8ecbb62d99aee7ce68b1752f337">N</a> = 1000; </div>
 <div class="line"><span class="keywordtype">int</span> valueLeft = 3; </div>
 <div class="line"><span class="keywordtype">int</span> valueRight = 7; </div>
 <div class="line"><span class="keywordtype">int</span> SEED = 540; </div>
@@ -229,7 +230,7 @@ aDDM</h3>
 <div class="line">    vector&lt;aDDMTrial&gt; trials;</div>
 <div class="line">    <a class="code hl_class" href="classa_d_d_m.html">aDDM</a> addm = <a class="code hl_class" href="classa_d_d_m.html">aDDM</a>(0.005, 0.07, 0.5, 1);</div>
 <div class="line"> </div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="addm__simulate_8cpp.html#a7722c8ecbb62d99aee7ce68b1752f337">N</a>; i++) {</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="test_8cpp.html#a7722c8ecbb62d99aee7ce68b1752f337">N</a>; i++) {</div>
 <div class="line">        <a class="code hl_class" href="classa_d_d_m_trial.html">aDDMTrial</a> trial = addm.simulateTrial(</div>
 <div class="line">            valueLeft, valueRight, fixationData, 10, 3, {}, {}, SEED);</div>
 <div class="line">        trials.push_back(trial);</div>
@@ -277,7 +278,7 @@ aDDM</h3>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std; </div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">int</span> <a class="code hl_variable" href="addm__simulate_8cpp.html#a7722c8ecbb62d99aee7ce68b1752f337">N</a> = 1000; </div>
+<div class="line"><span class="keywordtype">int</span> <a class="code hl_variable" href="test_8cpp.html#a7722c8ecbb62d99aee7ce68b1752f337">N</a> = 1000; </div>
 <div class="line"><span class="keywordtype">int</span> valueLeft = 3; </div>
 <div class="line"><span class="keywordtype">int</span> valueRight = 7; </div>
 <div class="line"><span class="keywordtype">int</span> SEED = 540; </div>
@@ -289,7 +290,7 @@ aDDM</h3>
 <div class="line">    vector&lt;aDDMTrial&gt; trials;</div>
 <div class="line">    <a class="code hl_class" href="classa_d_d_m.html">aDDM</a> addm = <a class="code hl_class" href="classa_d_d_m.html">aDDM</a>(0.005, 0.07, 0.5, 1);</div>
 <div class="line"> </div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="addm__simulate_8cpp.html#a7722c8ecbb62d99aee7ce68b1752f337">N</a>; i++) {</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="test_8cpp.html#a7722c8ecbb62d99aee7ce68b1752f337">N</a>; i++) {</div>
 <div class="line">        <a class="code hl_class" href="classa_d_d_m_trial.html">aDDMTrial</a> trial = addm.simulateTrial(</div>
 <div class="line">            valueLeft, valueRight, fixationData, 10, 3, {}, {}, SEED);</div>
 <div class="line">        trials.push_back(trial);</div>
@@ -362,24 +363,24 @@ DDM</h3>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"> </div>
-<div class="line">vector&lt;float&gt; <a class="code hl_variable" href="addm__mle_8cpp.html#a800d6969137d46bac6c127a9f70b7e51">rangeD</a> = {0.003, 0.004, 0.005, 0.006, 0.007, 0.008, 0.009};</div>
-<div class="line">vector&lt;float&gt; <a class="code hl_variable" href="addm__mle_8cpp.html#a347dbb7726ce6ea89520f5980d686dd8">rangeSigma</a> = {0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09};</div>
+<div class="line">vector&lt;float&gt; <a class="code hl_variable" href="addm__mle_8cpp.html#af3153d45ff835a117b315bf1a5159a03">rangeD</a> = {0.003, 0.004, 0.005, 0.006, 0.007, 0.008, 0.009};</div>
+<div class="line">vector&lt;float&gt; <a class="code hl_variable" href="addm__mle_8cpp.html#ad792ebe7df63e4421e474fbbea769e67">rangeSigma</a> = {0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09};</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">int</span> <a class="code hl_variable" href="addm__mle_8cpp.html#a7ae0aa3d3c3bd4dc2fd68df5f46bb05f">barrier</a> = 1;</div>
+<div class="line"><span class="keywordtype">int</span> <a class="code hl_variable" href="test_8cpp.html#a377f3934c5a610474f63e322c88173ec">barrier</a> = 1;</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> <a class="code hl_function" href="addm__mle_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
 <div class="line">    vector&lt;DDMTrial&gt; trials = <a class="code hl_function" href="class_d_d_m_trial.html#abe3d480e7f9dc0ad5c755db4e28e9f54">DDMTrial::loadTrialsFromCSV</a>(<span class="stringliteral">&quot;data/ddm_sims.csv&quot;</span>); </div>
 <div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;Counted &quot;</span> &lt;&lt; trials.size() &lt;&lt; <span class="stringliteral">&quot; trials.&quot;</span> &lt;&lt; endl;</div>
-<div class="line">    <a class="code hl_struct" href="struct_m_l_einfo.html">MLEinfo&lt;DDM&gt;</a> info = <a class="code hl_function" href="class_d_d_m.html#af6f4cab6e2175c4864222709f0d6bad4">DDM::fitModelMLE</a>(trials, <a class="code hl_variable" href="addm__mle_8cpp.html#a800d6969137d46bac6c127a9f70b7e51">rangeD</a>, <a class="code hl_variable" href="addm__mle_8cpp.html#a347dbb7726ce6ea89520f5980d686dd8">rangeSigma</a>, <a class="code hl_variable" href="addm__mle_8cpp.html#a7ae0aa3d3c3bd4dc2fd68df5f46bb05f">barrier</a>, <span class="stringliteral">&quot;gpu&quot;</span>, <span class="keyword">true</span>);</div>
+<div class="line">    <a class="code hl_struct" href="struct_m_l_einfo.html">MLEinfo&lt;DDM&gt;</a> info = <a class="code hl_function" href="class_d_d_m.html#af6f4cab6e2175c4864222709f0d6bad4">DDM::fitModelMLE</a>(trials, <a class="code hl_variable" href="addm__mle_8cpp.html#af3153d45ff835a117b315bf1a5159a03">rangeD</a>, <a class="code hl_variable" href="addm__mle_8cpp.html#ad792ebe7df63e4421e474fbbea769e67">rangeSigma</a>, <a class="code hl_variable" href="test_8cpp.html#a377f3934c5a610474f63e322c88173ec">barrier</a>, <span class="stringliteral">&quot;gpu&quot;</span>, <span class="keyword">true</span>);</div>
 <div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;Optimal d=&quot;</span> &lt;&lt; info.<a class="code hl_variable" href="struct_m_l_einfo.html#a054f10abde01843cc1db0b07135edb0e">optimal</a>.d &lt;&lt; <span class="stringliteral">&quot; sigma=&quot;</span> &lt;&lt; info.<a class="code hl_variable" href="struct_m_l_einfo.html#a054f10abde01843cc1db0b07135edb0e">optimal</a>.sigma &lt;&lt; endl; </div>
 <div class="line">}</div>
-<div class="ttc" id="aaddm__mle_8cpp_html_a347dbb7726ce6ea89520f5980d686dd8"><div class="ttname"><a href="addm__mle_8cpp.html#a347dbb7726ce6ea89520f5980d686dd8">rangeSigma</a></div><div class="ttdeci">std::vector&lt; float &gt; rangeSigma</div><div class="ttdef"><b>Definition</b> addm_mle.cpp:12</div></div>
-<div class="ttc" id="aaddm__mle_8cpp_html_a7ae0aa3d3c3bd4dc2fd68df5f46bb05f"><div class="ttname"><a href="addm__mle_8cpp.html#a7ae0aa3d3c3bd4dc2fd68df5f46bb05f">barrier</a></div><div class="ttdeci">int barrier</div><div class="ttdef"><b>Definition</b> addm_mle.cpp:15</div></div>
-<div class="ttc" id="aaddm__mle_8cpp_html_a800d6969137d46bac6c127a9f70b7e51"><div class="ttname"><a href="addm__mle_8cpp.html#a800d6969137d46bac6c127a9f70b7e51">rangeD</a></div><div class="ttdeci">std::vector&lt; float &gt; rangeD</div><div class="ttdef"><b>Definition</b> addm_mle.cpp:11</div></div>
+<div class="ttc" id="aaddm__mle_8cpp_html_ad792ebe7df63e4421e474fbbea769e67"><div class="ttname"><a href="addm__mle_8cpp.html#ad792ebe7df63e4421e474fbbea769e67">rangeSigma</a></div><div class="ttdeci">const std::vector&lt; float &gt; rangeSigma</div><div class="ttdef"><b>Definition</b> addm_mle.cpp:12</div></div>
+<div class="ttc" id="aaddm__mle_8cpp_html_af3153d45ff835a117b315bf1a5159a03"><div class="ttname"><a href="addm__mle_8cpp.html#af3153d45ff835a117b315bf1a5159a03">rangeD</a></div><div class="ttdeci">const std::vector&lt; float &gt; rangeD</div><div class="ttdef"><b>Definition</b> addm_mle.cpp:11</div></div>
 <div class="ttc" id="aclass_d_d_m_html_af6f4cab6e2175c4864222709f0d6bad4"><div class="ttname"><a href="class_d_d_m.html#af6f4cab6e2175c4864222709f0d6bad4">DDM::fitModelMLE</a></div><div class="ttdeci">static MLEinfo&lt; DDM &gt; fitModelMLE(vector&lt; DDMTrial &gt; trials, vector&lt; float &gt; rangeD, vector&lt; float &gt; rangeSigma, string computeMethod=&quot;basic&quot;, bool normalizePosteriors=false, float barrier=1, unsigned int nonDecisionTime=0, vector&lt; float &gt; bias={0}, vector&lt; float &gt; decay={0})</div><div class="ttdoc">Copmlete a grid-search based Maximum Likelihood Estimation of all possible paramters combinations (d,...</div><div class="ttdef"><b>Definition</b> ddm.cpp:435</div></div>
 <div class="ttc" id="aclass_d_d_m_trial_html_abe3d480e7f9dc0ad5c755db4e28e9f54"><div class="ttname"><a href="class_d_d_m_trial.html#abe3d480e7f9dc0ad5c755db4e28e9f54">DDMTrial::loadTrialsFromCSV</a></div><div class="ttdeci">static vector&lt; DDMTrial &gt; loadTrialsFromCSV(string filename)</div><div class="ttdoc">Load a dataset of DDMTrials into program memory.</div><div class="ttdef"><b>Definition</b> ddm.cpp:405</div></div>
 <div class="ttc" id="astruct_m_l_einfo_html"><div class="ttname"><a href="struct_m_l_einfo.html">MLEinfo</a></div><div class="ttdoc">Information returned by MLE computations containing the most optimal model and NLLs/marginalized post...</div><div class="ttdef"><b>Definition</b> mle_info.h:14</div></div>
 <div class="ttc" id="astruct_m_l_einfo_html_a054f10abde01843cc1db0b07135edb0e"><div class="ttname"><a href="struct_m_l_einfo.html#a054f10abde01843cc1db0b07135edb0e">MLEinfo::optimal</a></div><div class="ttdeci">T optimal</div><div class="ttdef"><b>Definition</b> mle_info.h:15</div></div>
+<div class="ttc" id="atest_8cpp_html_a377f3934c5a610474f63e322c88173ec"><div class="ttname"><a href="test_8cpp.html#a377f3934c5a610474f63e322c88173ec">barrier</a></div><div class="ttdeci">float barrier</div><div class="ttdef"><b>Definition</b> test.cpp:14</div></div>
 </div><!-- fragment --><p> Output: </p><div class="fragment"><div class="line">Counted 1000 trials.</div>
 <div class="line">Optimal d=0.005 sigma=0.07</div>
 </div><!-- fragment --><h3><a class="anchor" id="autotoc_md13"></a>
@@ -390,28 +391,28 @@ aDDM</h3>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"> </div>
-<div class="line">vector&lt;float&gt; <a class="code hl_variable" href="addm__mle_8cpp.html#a800d6969137d46bac6c127a9f70b7e51">rangeD</a> = {0.003, 0.004, 0.005};</div>
-<div class="line">vector&lt;float&gt; <a class="code hl_variable" href="addm__mle_8cpp.html#a347dbb7726ce6ea89520f5980d686dd8">rangeSigma</a> = {0.06, 0.07, 0.08};</div>
-<div class="line">vector&lt;float&gt; <a class="code hl_variable" href="addm__mle_8cpp.html#ad2aa7a364e6ed4961ee3bb151d523d2c">rangeTheta</a> = {0.5, 0.6, 0.7};</div>
+<div class="line">vector&lt;float&gt; <a class="code hl_variable" href="addm__mle_8cpp.html#af3153d45ff835a117b315bf1a5159a03">rangeD</a> = {0.003, 0.004, 0.005};</div>
+<div class="line">vector&lt;float&gt; <a class="code hl_variable" href="addm__mle_8cpp.html#ad792ebe7df63e4421e474fbbea769e67">rangeSigma</a> = {0.06, 0.07, 0.08};</div>
+<div class="line">vector&lt;float&gt; <a class="code hl_variable" href="addm__mle_8cpp.html#a8e93197b123db31603861ceea3e79273">rangeTheta</a> = {0.5, 0.6, 0.7};</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">int</span> <a class="code hl_variable" href="addm__mle_8cpp.html#a7ae0aa3d3c3bd4dc2fd68df5f46bb05f">barrier</a> = 1;</div>
+<div class="line"><span class="keywordtype">int</span> <a class="code hl_variable" href="test_8cpp.html#a377f3934c5a610474f63e322c88173ec">barrier</a> = 1;</div>
 <div class="line"><span class="keywordtype">int</span> valueLeft = 3; </div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> <a class="code hl_function" href="addm__mle_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
 <div class="line">    vector&lt;aDDMTrial&gt; trials = <a class="code hl_function" href="classa_d_d_m_trial.html#a370280f496885eeb71c2530d77f5d889">aDDMTrial::loadTrialsFromCSV</a>(<span class="stringliteral">&quot;data/addm_sims.csv&quot;</span>);</div>
 <div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;Counted &quot;</span> &lt;&lt; trials.size() &lt;&lt; <span class="stringliteral">&quot; trials.&quot;</span> &lt;&lt; endl;</div>
-<div class="line">    <a class="code hl_struct" href="struct_m_l_einfo.html">MLEinfo</a> info = <a class="code hl_function" href="classa_d_d_m.html#ab798056d5ea0636fa1cff32140067450">aDDM::fitModelMLE</a>(trials, <a class="code hl_variable" href="addm__mle_8cpp.html#a800d6969137d46bac6c127a9f70b7e51">rangeD</a>, <a class="code hl_variable" href="addm__mle_8cpp.html#a347dbb7726ce6ea89520f5980d686dd8">rangeSigma</a>, <a class="code hl_variable" href="addm__mle_8cpp.html#ad2aa7a364e6ed4961ee3bb151d523d2c">rangeTheta</a>, <a class="code hl_variable" href="addm__mle_8cpp.html#a7ae0aa3d3c3bd4dc2fd68df5f46bb05f">barrier</a>, <span class="stringliteral">&quot;thread&quot;</span>, <span class="keyword">true</span>);</div>
+<div class="line">    <a class="code hl_struct" href="struct_m_l_einfo.html">MLEinfo</a> info = <a class="code hl_function" href="classa_d_d_m.html#ab798056d5ea0636fa1cff32140067450">aDDM::fitModelMLE</a>(trials, <a class="code hl_variable" href="addm__mle_8cpp.html#af3153d45ff835a117b315bf1a5159a03">rangeD</a>, <a class="code hl_variable" href="addm__mle_8cpp.html#ad792ebe7df63e4421e474fbbea769e67">rangeSigma</a>, <a class="code hl_variable" href="addm__mle_8cpp.html#a8e93197b123db31603861ceea3e79273">rangeTheta</a>, <a class="code hl_variable" href="test_8cpp.html#a377f3934c5a610474f63e322c88173ec">barrier</a>, <span class="stringliteral">&quot;thread&quot;</span>, <span class="keyword">true</span>);</div>
 <div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;Optimal d=&quot;</span> &lt;&lt; info.<a class="code hl_variable" href="struct_m_l_einfo.html#a054f10abde01843cc1db0b07135edb0e">optimal</a>.d &lt;&lt; </div>
 <div class="line">                 <span class="stringliteral">&quot; sigma=&quot;</span> &lt;&lt; info.<a class="code hl_variable" href="struct_m_l_einfo.html#a054f10abde01843cc1db0b07135edb0e">optimal</a>.sigma &lt;&lt; </div>
 <div class="line">                 <span class="stringliteral">&quot; theta=&quot;</span> &lt;&lt; info.<a class="code hl_variable" href="struct_m_l_einfo.html#a054f10abde01843cc1db0b07135edb0e">optimal</a>.theta &lt;&lt; </div>
 <div class="line">                 endl;    </div>
 <div class="line">}</div>
-<div class="ttc" id="aaddm__mle_8cpp_html_ad2aa7a364e6ed4961ee3bb151d523d2c"><div class="ttname"><a href="addm__mle_8cpp.html#ad2aa7a364e6ed4961ee3bb151d523d2c">rangeTheta</a></div><div class="ttdeci">std::vector&lt; float &gt; rangeTheta</div><div class="ttdef"><b>Definition</b> addm_mle.cpp:13</div></div>
+<div class="ttc" id="aaddm__mle_8cpp_html_a8e93197b123db31603861ceea3e79273"><div class="ttname"><a href="addm__mle_8cpp.html#a8e93197b123db31603861ceea3e79273">rangeTheta</a></div><div class="ttdeci">const std::vector&lt; float &gt; rangeTheta</div><div class="ttdef"><b>Definition</b> addm_mle.cpp:13</div></div>
 <div class="ttc" id="aclassa_d_d_m_html_ab798056d5ea0636fa1cff32140067450"><div class="ttname"><a href="classa_d_d_m.html#ab798056d5ea0636fa1cff32140067450">aDDM::fitModelMLE</a></div><div class="ttdeci">static MLEinfo&lt; aDDM &gt; fitModelMLE(vector&lt; aDDMTrial &gt; trials, vector&lt; float &gt; rangeD, vector&lt; float &gt; rangeSigma, vector&lt; float &gt; rangeTheta, string computeMethod=&quot;basic&quot;, bool normalizePosteriors=false, float barrier=1, unsigned int nonDecisionTime=0, vector&lt; float &gt; bias={0}, vector&lt; float &gt; decay={0})</div><div class="ttdoc">Complete a grid-search based Maximum Likelihood Estimation of all possible parameter combinations (d,...</div><div class="ttdef"><b>Definition</b> addm.cpp:660</div></div>
 <div class="ttc" id="aclassa_d_d_m_trial_html_a370280f496885eeb71c2530d77f5d889"><div class="ttname"><a href="classa_d_d_m_trial.html#a370280f496885eeb71c2530d77f5d889">aDDMTrial::loadTrialsFromCSV</a></div><div class="ttdeci">static vector&lt; aDDMTrial &gt; loadTrialsFromCSV(string filename)</div><div class="ttdoc">Load a dataset of aDDMTrials into program memory.</div><div class="ttdef"><b>Definition</b> addm.cpp:601</div></div>
 </div><!-- fragment --><p> Output: </p><div class="fragment"><div class="line">Counted 1000 trials. </div>
 <div class="line">Optimal d=0.005 sigma=0.07 theta=0.5</div>
-</div><!-- fragment --><p>Both the <code><a class="el" href="class_d_d_m.html" title="Implementation of the Drift Diffusion Model (DDM).">DDM</a></code> and <code><a class="el" href="classa_d_d_m.html" title="Implementation of the attentional Drift Diffusion Model (aDDM).">aDDM</a></code> instances of <code>fitModelMLE</code> allow for the <code>bias</code> and <code>decay</code> fields of the model to be fit as well. See the documentation for instructionson how to do so.</p>
+</div><!-- fragment --><p>Both the <code><a class="el" href="class_d_d_m.html" title="Implementation of the Drift Diffusion Model (DDM).">DDM</a></code> and <code><a class="el" href="classa_d_d_m.html" title="Implementation of the attentional Drift Diffusion Model (aDDM).">aDDM</a></code> instances of <code>fitModelMLE</code> allow for the <code>bias</code> and <code>decay</code> fields of the model to be fit as well. See the documentation for instructions on how to do so.</p>
 <h1><a class="anchor" id="autotoc_md14"></a>
 Python Bindings</h1>
 <p>Python bindings are also provided for users who prefer to work with a Python codebase over C++. The provided bindings are located in <a href="lib/bindings.cpp">lib/bindings.cpp</a>. Note that <a href="https://github.com/pybind/pybind11">pybind11</a> and Python version 3.10 (at a minimum) are <b>strict</b> prerequisites for installation and usage of the Python code. These can be installed with</p>
@@ -444,12 +445,29 @@ Optional: Python Syntax Highlighting</h2>
 </div><!-- fragment --><p> <em>Note that the <code>pybind11</code> shared library file should be built before running <code>stubgen</code>.</em></p>
 <h1><a class="anchor" id="autotoc_md16"></a>
 Built-in Scripts</h1>
-<h1><a class="anchor" id="autotoc_md17"></a>
+<p>This repository provides a set of built-in scripts for running trial simulations and model-fitting. These scripts are provided in the <a href="sample/">sample directory</a> and are described below:</p>
+<ul>
+<li><a href="sample/ddm_simulate.cpp"><code>ddm_simulate.cpp</code></a>: Simulate N trials using the ddm. Build using the <code>make sim</code> rule. Specify an output CSV file in the file constants. Usage:</li>
+</ul>
+<div class="fragment"><div class="line">bin/ddm_simulate [numTrials] [d] [sigma]</div>
+</div><!-- fragment --><ul>
+<li><a href="sample/addm_simulate.cpp"><code>addm_simulate.cpp</code></a>: Simulate N trials using the addm. Build using the <code>make sim</code> rule. Specify an output CSV file in the file constants. Sample files for empirical fixation distributions are provided in the <a href="data/">data</a> directory. However, these should be specified by the user as well in the file constants. Usage:</li>
+</ul>
+<div class="fragment"><div class="line">bin/addm_simulate [numTrials] [d] [sigma] [theta]</div>
+</div><!-- fragment --><ul>
+<li><a href="sample/ddm_mle.cpp"><code>ddm_mle.cpp</code></a>: Fit a <a class="el" href="class_d_d_m.html" title="Implementation of the Drift Diffusion Model (DDM).">DDM</a> model's parameters. Build using the <code>make mle</code> rule. CSV simulations, output location, and parameter ranges should be specified in the file constants. Usage:</li>
+</ul>
+<div class="fragment"><div class="line">bin/ddm_mle</div>
+</div><!-- fragment --><ul>
+<li><a href="sample/addm_mle.cpp"><code>addm_mle.cpp</code></a>: Fit an <a class="el" href="classa_d_d_m.html" title="Implementation of the attentional Drift Diffusion Model (aDDM).">aDDM</a> model's paramters. Build using the <code>make mle</code> rule. CSV simulations, output location, and parameter ranges should be specified int he file constants. Usage:</li>
+</ul>
+<div class="fragment"><div class="line">bin/addm_mle</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md17"></a>
 Authors</h1>
 <p>Jake Goldman - <a href="#" onclick="location.href='mai'+'lto:'+'jgo'+'ld'+'man'+'@c'+'alt'+'ec'+'h.e'+'du'; return false;">jgold<span class="obfuscator">.nosp@m.</span>man@<span class="obfuscator">.nosp@m.</span>calte<span class="obfuscator">.nosp@m.</span>ch.e<span class="obfuscator">.nosp@m.</span>du</a>, <a href="https://github.com/jakegoldm">jakegoldm</a></p>
 <h1><a class="anchor" id="autotoc_md18"></a>
 Acknowledgements</h1>
-<p>This toolbox was developed as part of a resarch project in the <a href="http://www.rnl.caltech.edu/">Rangel Neuroeconomics Lab</a> at the California Institute of Technology. </p>
+<p>This toolbox was developed as part of a resarch project in the <a href="http://www.rnl.caltech.edu/">Rangel Neuroeconomics Lab</a> at the California Institute of Technology. Special thanks to Antonio Rangel and Zeynep Enkavi for your help with this project. </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->

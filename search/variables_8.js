@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['i_0',['i',['../namespacevd__dists.html#ac64533efdcc38a2407f6065c7f4955b9',1,'vd_dists']]],
-  ['im_1',['im',['../namespaceddm__mle.html#aac4bbaf26f35e637102d426daa452e15',1,'ddm_mle']]]
+  ['ha_0',['ha',['../namespaceaddm__mle.html#aff87812c27ea02828864099e099c5b35',1,'addm_mle']]],
+  ['heatmap_1',['heatmap',['../namespaceaddm__mle.html#a5fb1fa222b49251d1c185556e53ec761',1,'addm_mle']]],
+  ['heatmap_5fdata_2',['heatmap_data',['../namespaceddm__mle.html#ab334d137d2c84a4d2eff27403b3f86c8',1,'ddm_mle']]]
 ];

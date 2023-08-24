@@ -87,6 +87,8 @@ $(function() {
 Public Member Functions</h2></td></tr>
 <tr class="memitem:acd37ba5a2a2f6e45661df2516dabf267"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#acd37ba5a2a2f6e45661df2516dabf267">operator&lt;</a> (const <a class="el" href="class_d_d_m.html">DDM</a> &amp;rhs) const</td></tr>
 <tr class="separator:acd37ba5a2a2f6e45661df2516dabf267"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71f6190810bcc363838261338263a01c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#a71f6190810bcc363838261338263a01c">operator==</a> (const <a class="el" href="class_d_d_m.html">DDM</a> &amp;rhs) const</td></tr>
+<tr class="separator:a71f6190810bcc363838261338263a01c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f83961c5d323afc64ed55489d4fb23d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#a2f83961c5d323afc64ed55489d4fb23d">DDM</a> (float <a class="el" href="class_d_d_m.html#a15511d3cf0f7deb5de073dcdfd09bcc6">d</a>, float <a class="el" href="class_d_d_m.html#a17570a6c2378cdb363437f39a5fa3f00">sigma</a>, float <a class="el" href="class_d_d_m.html#a0293f051d7889ee014fb55c4939e4783">barrier</a>=1, unsigned int <a class="el" href="class_d_d_m.html#a0821be8a65988df0004b4d9f4239a020">nonDecisionTime</a>=0, float <a class="el" href="class_d_d_m.html#a0cecc28e691846bce6dccb02f34aef07">bias</a>=0, float <a class="el" href="class_d_d_m.html#aa5d70be71626890a4957eb5c59ba309d">decay</a>=0)</td></tr>
 <tr class="memdesc:a2f83961c5d323afc64ed55489d4fb23d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="class_d_d_m.html" title="Implementation of the Drift Diffusion Model (DDM).">DDM</a> object.  <br /></td></tr>
 <tr class="separator:a2f83961c5d323afc64ed55489d4fb23d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -111,7 +113,7 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:af6f4cab6e2175c4864222709f0d6bad4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="struct_m_l_einfo.html">MLEinfo</a>&lt; <a class="el" href="class_d_d_m.html">DDM</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#af6f4cab6e2175c4864222709f0d6bad4">fitModelMLE</a> (vector&lt; <a class="el" href="class_d_d_m_trial.html">DDMTrial</a> &gt; trials, vector&lt; float &gt; <a class="el" href="addm__mle_8cpp.html#a800d6969137d46bac6c127a9f70b7e51">rangeD</a>, vector&lt; float &gt; <a class="el" href="addm__mle_8cpp.html#a347dbb7726ce6ea89520f5980d686dd8">rangeSigma</a>, string computeMethod=&quot;basic&quot;, bool normalizePosteriors=false, float <a class="el" href="class_d_d_m.html#a0293f051d7889ee014fb55c4939e4783">barrier</a>=1, unsigned int <a class="el" href="class_d_d_m.html#a0821be8a65988df0004b4d9f4239a020">nonDecisionTime</a>=0, vector&lt; float &gt; <a class="el" href="class_d_d_m.html#a0cecc28e691846bce6dccb02f34aef07">bias</a>={0}, vector&lt; float &gt; <a class="el" href="class_d_d_m.html#aa5d70be71626890a4957eb5c59ba309d">decay</a>={0})</td></tr>
+<tr class="memitem:af6f4cab6e2175c4864222709f0d6bad4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="struct_m_l_einfo.html">MLEinfo</a>&lt; <a class="el" href="class_d_d_m.html">DDM</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_d_m.html#af6f4cab6e2175c4864222709f0d6bad4">fitModelMLE</a> (vector&lt; <a class="el" href="class_d_d_m_trial.html">DDMTrial</a> &gt; trials, vector&lt; float &gt; <a class="el" href="addm__mle_8cpp.html#af3153d45ff835a117b315bf1a5159a03">rangeD</a>, vector&lt; float &gt; <a class="el" href="addm__mle_8cpp.html#ad792ebe7df63e4421e474fbbea769e67">rangeSigma</a>, string computeMethod=&quot;basic&quot;, bool normalizePosteriors=false, float <a class="el" href="class_d_d_m.html#a0293f051d7889ee014fb55c4939e4783">barrier</a>=1, unsigned int <a class="el" href="class_d_d_m.html#a0821be8a65988df0004b4d9f4239a020">nonDecisionTime</a>=0, vector&lt; float &gt; <a class="el" href="class_d_d_m.html#a0cecc28e691846bce6dccb02f34aef07">bias</a>={0}, vector&lt; float &gt; <a class="el" href="class_d_d_m.html#aa5d70be71626890a4957eb5c59ba309d">decay</a>={0})</td></tr>
 <tr class="memdesc:af6f4cab6e2175c4864222709f0d6bad4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copmlete a grid-search based Maximum Likelihood Estimation of all possible paramters combinations (d, sigma) to determine which parameters are most likely to generate the provided DDMTrials. Each potential model generates an NLL value for the dataset and the method returns the model with the minimum NLL value.  <br /></td></tr>
 <tr class="separator:af6f4cab6e2175c4864222709f0d6bad4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -534,6 +536,32 @@ Public Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">bool DDM::operator&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_d_d_m.html">DDM</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a71f6190810bcc363838261338263a01c" name="a71f6190810bcc363838261338263a01c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71f6190810bcc363838261338263a01c">&#9670;&#160;</a></span>operator==()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DDM::operator== </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_d_d_m.html">DDM</a> &amp;&#160;</td>
           <td class="paramname"><em>rhs</em></td><td>)</td>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>aDDM-Toolbox-GPU: src/addm_simulate.cpp File Reference</title>
+<title>aDDM-Toolbox-GPU: sample/addm_simulate.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,7 +69,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_c29eeb5af533606caea8a09e66794740.html">sample</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -82,34 +82,28 @@ $(function() {
 <div class="textblock"><code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &lt;random&gt;</code><br />
-<code>#include &lt;ctime&gt;</code><br />
 <code>#include &lt;fstream&gt;</code><br />
-<code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;addm/gpu_toolbox.h&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="addm__simulate_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
-<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="addm__simulate_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
+<tr class="separator:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a7722c8ecbb62d99aee7ce68b1752f337"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="addm__simulate_8cpp.html#a7722c8ecbb62d99aee7ce68b1752f337">N</a> = 1000</td></tr>
-<tr class="separator:a7722c8ecbb62d99aee7ce68b1752f337"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3fbbd8a3959e76a2bc3455d3bade52dc"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="addm__simulate_8cpp.html#a3fbbd8a3959e76a2bc3455d3bade52dc">d</a> = 0.005</td></tr>
-<tr class="separator:a3fbbd8a3959e76a2bc3455d3bade52dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae11aeeb83e22b5b7f1e6b4347eb1daa6"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="addm__simulate_8cpp.html#ae11aeeb83e22b5b7f1e6b4347eb1daa6">sigma</a> = 0.07</td></tr>
-<tr class="separator:ae11aeeb83e22b5b7f1e6b4347eb1daa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aadfc5c227ca658a29a59a0ce6fc15792"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="addm__simulate_8cpp.html#aadfc5c227ca658a29a59a0ce6fc15792">theta</a> = 0.5</td></tr>
-<tr class="separator:aadfc5c227ca658a29a59a0ce6fc15792"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a377f3934c5a610474f63e322c88173ec"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="addm__simulate_8cpp.html#a377f3934c5a610474f63e322c88173ec">barrier</a> = 1.0</td></tr>
-<tr class="separator:a377f3934c5a610474f63e322c88173ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a918c56381f398e42c3dc1d018b0016bd"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="addm__simulate_8cpp.html#a918c56381f398e42c3dc1d018b0016bd">valDiffs</a> = {-3, -2, -1, 0, 1, 2, 3}</td></tr>
-<tr class="separator:a918c56381f398e42c3dc1d018b0016bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a980505597a0a43e1ab56bcf65bda10a6"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="addm__simulate_8cpp.html#a980505597a0a43e1ab56bcf65bda10a6">EXP_DATA</a> = &quot;data/expdata.csv&quot;</td></tr>
+<tr class="separator:a980505597a0a43e1ab56bcf65bda10a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14544cf817cfc90eec9a440eefde3a6d"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="addm__simulate_8cpp.html#a14544cf817cfc90eec9a440eefde3a6d">FIX_DATA</a> = &quot;data/fixations.csv&quot;</td></tr>
+<tr class="separator:a14544cf817cfc90eec9a440eefde3a6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20a47021dda28c74acf9031481d941c7"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="addm__simulate_8cpp.html#a20a47021dda28c74acf9031481d941c7">SAVE</a> = &quot;results/addm_simulations.csv&quot;</td></tr>
+<tr class="separator:a20a47021dda28c74acf9031481d941c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e850d2075b9daa3d6b8d890d04c3a93"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="addm__simulate_8cpp.html#a7e850d2075b9daa3d6b8d890d04c3a93">valDiffs</a> = {-3, -2, -1, 0, 1, 2, 3}</td></tr>
+<tr class="separator:a7e850d2075b9daa3d6b8d890d04c3a93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ae66f6b31b5ad750f1fe042a706a4e3d4" name="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&#160;</a></span>main()</h2>
+<a id="a3c04138a5bfe5d72780bb7e82a18e627" name="a3c04138a5bfe5d72780bb7e82a18e627"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c04138a5bfe5d72780bb7e82a18e627">&#9670;&#160;</a></span>main()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -117,93 +111,78 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">int main </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>argv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Example Usage:</p>
+<p>bin/addm_simulate 1000 0.005 0.07 0.5 </p>
 
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="a377f3934c5a610474f63e322c88173ec" name="a377f3934c5a610474f63e322c88173ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a377f3934c5a610474f63e322c88173ec">&#9670;&#160;</a></span>barrier</h2>
+<a id="a980505597a0a43e1ab56bcf65bda10a6" name="a980505597a0a43e1ab56bcf65bda10a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a980505597a0a43e1ab56bcf65bda10a6">&#9670;&#160;</a></span>EXP_DATA</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float barrier = 1.0</td>
+          <td class="memname">const std::string EXP_DATA = &quot;data/expdata.csv&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a3fbbd8a3959e76a2bc3455d3bade52dc" name="a3fbbd8a3959e76a2bc3455d3bade52dc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3fbbd8a3959e76a2bc3455d3bade52dc">&#9670;&#160;</a></span>d</h2>
+<a id="a14544cf817cfc90eec9a440eefde3a6d" name="a14544cf817cfc90eec9a440eefde3a6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14544cf817cfc90eec9a440eefde3a6d">&#9670;&#160;</a></span>FIX_DATA</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float d = 0.005</td>
+          <td class="memname">const std::string FIX_DATA = &quot;data/fixations.csv&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a7722c8ecbb62d99aee7ce68b1752f337" name="a7722c8ecbb62d99aee7ce68b1752f337"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7722c8ecbb62d99aee7ce68b1752f337">&#9670;&#160;</a></span>N</h2>
+<a id="a20a47021dda28c74acf9031481d941c7" name="a20a47021dda28c74acf9031481d941c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20a47021dda28c74acf9031481d941c7">&#9670;&#160;</a></span>SAVE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int N = 1000</td>
+          <td class="memname">const std::string SAVE = &quot;results/addm_simulations.csv&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="ae11aeeb83e22b5b7f1e6b4347eb1daa6" name="ae11aeeb83e22b5b7f1e6b4347eb1daa6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae11aeeb83e22b5b7f1e6b4347eb1daa6">&#9670;&#160;</a></span>sigma</h2>
+<a id="a7e850d2075b9daa3d6b8d890d04c3a93" name="a7e850d2075b9daa3d6b8d890d04c3a93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e850d2075b9daa3d6b8d890d04c3a93">&#9670;&#160;</a></span>valDiffs</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float sigma = 0.07</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aadfc5c227ca658a29a59a0ce6fc15792" name="aadfc5c227ca658a29a59a0ce6fc15792"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aadfc5c227ca658a29a59a0ce6fc15792">&#9670;&#160;</a></span>theta</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float theta = 0.5</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a918c56381f398e42c3dc1d018b0016bd" name="a918c56381f398e42c3dc1d018b0016bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a918c56381f398e42c3dc1d018b0016bd">&#9670;&#160;</a></span>valDiffs</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;int&gt; valDiffs = {-3, -2, -1, 0, 1, 2, 3}</td>
+          <td class="memname">const std::vector&lt;int&gt; valDiffs = {-3, -2, -1, 0, 1, 2, 3}</td>
         </tr>
       </table>
 </div><div class="memdoc">
