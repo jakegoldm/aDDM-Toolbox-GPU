@@ -2,6 +2,7 @@
 
 This toolbox can be used to perform model fitting and data simulation for the Drift Diffusion Model (DDM) and the attentional Drift Diffusion Model (aDDM). It is aimed to provide computational speedup, employing GPU optimizations for parameter estimation. 
 
+<!-- Update TOC with `doctoc .`-->
 ## Table of Contents ## 
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
@@ -11,17 +12,12 @@ This toolbox can be used to perform model fitting and data simulation for the Dr
 - [Installation and Usage](#installation-and-usage)
 - [Examples](#examples)
   - [N-Trial Simulation](#n-trial-simulation)
-    - [DDM](#ddm)
-    - [aDDM](#addm)
   - [Trial Likelihood Compuation](#trial-likelihood-compuation)
-    - [DDM](#ddm-1)
-    - [aDDM](#addm-1)
   - [Negative Log Likelihoods (NLL) and Maximum Likelihood Estimation (MLE)](#negative-log-likelihoods-nll-and-maximum-likelihood-estimation-mle)
-    - [DDM](#ddm-2)
-    - [aDDM](#addm-2)
 - [Python Bindings](#python-bindings)
   - [Optional: Python Syntax Highlighting](#optional-python-syntax-highlighting)
-- [Built-in Scripts](#built-in-scripts)
+- [Sample C++ Scripts](#sample-c-scripts)
+- [Data Analysis Scripts](#data-analysis-scripts)
 - [Authors](#authors)
 - [Acknowledgements](#acknowledgements)
 
@@ -29,7 +25,7 @@ This toolbox can be used to perform model fitting and data simulation for the Dr
 
 ## Requirements ##
 
-This library requires NVCC and CUDA Toolkit versions 12.2 and g++ version 11.3.0. This library also uses three third-party C++ packages for thread pools, JSON processing, and statistical distributions: 
+This library requires __NVCC__ and CUDA Toolkit versions 12.2 and __g++__ version 11.3.0. This library also uses three third-party C++ packages for thread pools, JSON processing, and statistical distributions: 
 
 * [BS::thread_pool](https://github.com/bshoshany/thread-pool)
 * [JSON for Modern C++](https://github.com/nlohmann/json)
@@ -100,7 +96,7 @@ sigma: 0.07
 theta: 0.5
 ```
 
-*Note that __nvcc__ is assumed to be at least __version 12.2__. The compiler path may need to be modified to support this requirement.*
+*Note that __nvcc__ is assumed to be at least __version 12.2__. The compiler path may need to be modified to support this requirement. For this example, or if using the CPU-dependent build, __nvcc__ may be substituted with __g++__.*
 
 ## Examples ##
 
@@ -113,7 +109,7 @@ For any data simulation and model fitting, the DDM and aDDM classes are going to
 
 Both the `DDM` and `aDDM` classes provide methods for simulating mass amounts of trials. This can be done using the `simulateTrial` method defined in both classes: 
 
-#### DDM ####
+__DDM__
 ```C++
 #include <addm/gpu_toolbox.h>
 #include <vector>
@@ -144,7 +140,7 @@ choice,rt,valueLeft,valueRight
 ...
 ```
 
-#### aDDM #####
+__aDDM__
 
 Note that for generating aDDM trials, an existing set of empirical fixations is required. This data can be packaged in the form of 1-2 CSVs. The input format for a single CSV is identical to the output of `aDDMTrial::writeTrialsToCSV(...)`. This CSV should be formatted as follows: 
 
@@ -253,7 +249,7 @@ trial,choice,rt,valueLeft,valueRight,fixItem,fixTime
 
 The `DDM` and `aDDM` classes both provide functionality for estimating trial likelihoods. The `getTrialLikelihood(...)` method takes in a single trial object and returns the likelihood that the provided model will generate that trial. Examples are provided below: 
 
-#### DDM #### 
+__DDM__ 
 
 ```C++
 #include <addm/gpu_toolbox.h>
@@ -273,7 +269,7 @@ Output:
 Probability = 0.000166691
 ```
 
-#### aDDM ####
+__aDDM__
 
 ```C++
 #include <addm/gpu_toolbox.h>
@@ -311,7 +307,7 @@ These methods can be applied for model fitting and performing __Maximum Likeliho
 
 Examples of MLE calculations are described below: 
 
-#### DDM ####
+__DDM__
 
 ```C++
 #include <addm/gpu_toolbox.h>
@@ -337,7 +333,7 @@ Counted 1000 trials.
 Optimal d=0.005 sigma=0.07
 ```
 
-#### aDDM ####
+__aDDM__
 
 ```C++
 #include <addm/gpu_toolbox.h>
@@ -425,7 +421,7 @@ stubgen -m addm_toolbox_gpu -o .
 ```
 *Note that the `pybind11` shared library file should be built before running `stubgen`.*
 
-## Built-in Scripts ##
+## Sample C++ Scripts ##
 
 This repository provides a set of built-in scripts for running trial simulations and model-fitting. These scripts are provided in the [sample directory](sample/) and are described below: 
 
@@ -452,6 +448,18 @@ bin/ddm_mle
 ```shell 
 bin/addm_mle
 ```
+
+## Data Analysis Scripts ##
+
+A set of data analysis and visualization tools are provided in the [analysis](analysis/) directory. Current provided scripts include: 
+
+* DDM Heatmaps for MLE. 
+* aDDM Heatmap for MLE. 
+* Posterior Pair Plots.
+* Time vs RDV for individual trial.
+* Value Differences against Response Time Frequencies. 
+
+See the individual file documentation for usage instructions. 
 
 ## Authors ## 
 
