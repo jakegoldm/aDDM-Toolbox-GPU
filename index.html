@@ -79,34 +79,23 @@ Table of Contents</h1>
 <li>Requirements</li>
 <li>Installation and Usage</li>
 <li>Examples<ul>
-<li>N-Trial Simulation<ul>
-<li>DDM</li>
-<li>aDDM</li>
-</ul>
-</li>
-<li>Trial Likelihood Compuation<ul>
-<li>DDM</li>
-<li>aDDM</li>
-</ul>
-</li>
-<li>Negative Log Likelihoods (NLL) and Maximum Likelihood Estimation (MLE)<ul>
-<li>DDM</li>
-<li>aDDM</li>
-</ul>
-</li>
+<li>N-Trial Simulation</li>
+<li>Trial Likelihood Compuation</li>
+<li>Negative Log Likelihoods (NLL) and Maximum Likelihood Estimation (MLE)</li>
 </ul>
 </li>
 <li>Python Bindings<ul>
 <li>Optional: Python Syntax Highlighting</li>
 </ul>
 </li>
-<li>Built-in Scripts</li>
+<li>Sample C++ Scripts</li>
+<li>Data Analysis Scripts</li>
 <li>Authors</li>
 <li>Acknowledgements</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md2"></a>
 Requirements</h1>
-<p>This library requires NVCC and CUDA Toolkit versions 12.2 and g++ version 11.3.0. This library also uses three third-party C++ packages for thread pools, JSON processing, and statistical distributions:</p>
+<p>This library requires <b>NVCC</b> and CUDA Toolkit versions 12.2 and <b>g++</b> version 11.3.0. This library also uses three third-party C++ packages for thread pools, JSON processing, and statistical distributions:</p>
 <ul>
 <li><a href="https://github.com/bshoshany/thread-pool">BS::thread_pool</a></li>
 <li><a href="https://github.com/nlohmann/json">JSON for Modern C++</a></li>
@@ -153,7 +142,7 @@ Installation and Usage</h1>
 <div class="line">d: 0.005</div>
 <div class="line">sigma: 0.07</div>
 <div class="line">theta: 0.5</div>
-</div><!-- fragment --><p><em>Note that <b>nvcc</b> is assumed to be at least <b>version 12.2</b>. The compiler path may need to be modified to support this requirement.</em></p>
+</div><!-- fragment --><p><em>Note that <b>nvcc</b> is assumed to be at least <b>version 12.2</b>. The compiler path may need to be modified to support this requirement. For this example, or if using the CPU-dependent build, <b>nvcc</b> may be substituted with <b>g++</b>.</em></p>
 <h1><a class="anchor" id="autotoc_md4"></a>
 Examples</h1>
 <p>For any data simulation and model fitting, the <a class="el" href="class_d_d_m.html" title="Implementation of the Drift Diffusion Model (DDM).">DDM</a> and <a class="el" href="classa_d_d_m.html" title="Implementation of the attentional Drift Diffusion Model (aDDM).">aDDM</a> classes are going to be the most useful. The <code><a class="el" href="addm_8h.html">addm.h</a></code> amd <code><a class="el" href="ddm_8h.html">ddm.h</a></code> files can be found in the include directory. Below are some examples that may give you an idea how to use these classes. Besides these examples, you may want to:</p>
@@ -164,9 +153,7 @@ Examples</h1>
 <h2><a class="anchor" id="autotoc_md5"></a>
 N-Trial Simulation</h2>
 <p>Both the <code><a class="el" href="class_d_d_m.html" title="Implementation of the Drift Diffusion Model (DDM).">DDM</a></code> and <code><a class="el" href="classa_d_d_m.html" title="Implementation of the attentional Drift Diffusion Model (aDDM).">aDDM</a></code> classes provide methods for simulating mass amounts of trials. This can be done using the <code>simulateTrial</code> method defined in both classes:</p>
-<h3><a class="anchor" id="autotoc_md6"></a>
-DDM</h3>
-<div class="fragment"><div class="line"> ++</div>
+<p><b><a class="el" href="class_d_d_m.html" title="Implementation of the Drift Diffusion Model (DDM).">DDM</a></b> </p><div class="fragment"><div class="line"> ++</div>
 <div class="line"><span class="preprocessor">#include &lt;addm/gpu_toolbox.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"> </div>
@@ -196,8 +183,7 @@ DDM</h3>
 </div><!-- fragment --><p> <code>ddm_example.csv</code>: </p><div class="fragment"><div class="line">choice,rt,valueLeft,valueRight</div>
 <div class="line">1,850,3,7</div>
 <div class="line">...</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md7"></a>
-aDDM</h3>
+</div><!-- fragment --><p><b><a class="el" href="classa_d_d_m.html" title="Implementation of the attentional Drift Diffusion Model (aDDM).">aDDM</a></b></p>
 <p>Note that for generating <a class="el" href="classa_d_d_m.html" title="Implementation of the attentional Drift Diffusion Model (aDDM).">aDDM</a> trials, an existing set of empirical fixations is required. This data can be packaged in the form of 1-2 CSVs. The input format for a single CSV is identical to the output of <code>aDDMTrial::writeTrialsToCSV(...)</code>. This CSV should be formatted as follows:</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -304,11 +290,10 @@ aDDM</h3>
 <div class="line">0,1,1510,3,7,2,280</div>
 <div class="line">0,1,1510,3,7,0,70</div>
 <div class="line">...</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md8"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md6"></a>
 Trial Likelihood Compuation</h2>
 <p>The <code><a class="el" href="class_d_d_m.html" title="Implementation of the Drift Diffusion Model (DDM).">DDM</a></code> and <code><a class="el" href="classa_d_d_m.html" title="Implementation of the attentional Drift Diffusion Model (aDDM).">aDDM</a></code> classes both provide functionality for estimating trial likelihoods. The <code>getTrialLikelihood(...)</code> method takes in a single trial object and returns the likelihood that the provided model will generate that trial. Examples are provided below:</p>
-<h3><a class="anchor" id="autotoc_md9"></a>
-DDM</h3>
+<p><b><a class="el" href="class_d_d_m.html" title="Implementation of the Drift Diffusion Model (DDM).">DDM</a></b></p>
 <div class="fragment"><div class="line"> ++</div>
 <div class="line"><span class="preprocessor">#include &lt;addm/gpu_toolbox.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
@@ -323,8 +308,7 @@ DDM</h3>
 <div class="line">}</div>
 <div class="ttc" id="aclass_d_d_m_html_a025072ab3fd16dee3a0b0f57c7585a06"><div class="ttname"><a href="class_d_d_m.html#a025072ab3fd16dee3a0b0f57c7585a06">DDM::getTrialLikelihood</a></div><div class="ttdeci">double getTrialLikelihood(DDMTrial trial, bool debug=false, int timeStep=10, float approxStateStep=0.1)</div><div class="ttdoc">Compute the likelihood of the trial results provided the current parameters.</div><div class="ttdef"><b>Definition</b> ddm.cpp:54</div></div>
 </div><!-- fragment --><p> Output: </p><div class="fragment"><div class="line">Probability = 0.000166691</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md10"></a>
-aDDM</h3>
+</div><!-- fragment --><p><b><a class="el" href="classa_d_d_m.html" title="Implementation of the attentional Drift Diffusion Model (aDDM).">aDDM</a></b></p>
 <div class="fragment"><div class="line"> ++</div>
 <div class="line"><span class="preprocessor">#include &lt;addm/gpu_toolbox.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
@@ -341,7 +325,7 @@ aDDM</h3>
 <div class="line">}</div>
 <div class="ttc" id="anamespacevd__dists_html_aafbcd251f7d80703a1b149951f735b1c"><div class="ttname"><a href="namespacevd__dists.html#aafbcd251f7d80703a1b149951f735b1c">vd_dists.addm</a></div><div class="ttdeci">bool addm</div><div class="ttdef"><b>Definition</b> vd_dists.py:24</div></div>
 </div><!-- fragment --><p> Output: </p><div class="fragment"><div class="line">Probability = 0.000515395</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md11"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md7"></a>
 Negative Log Likelihoods (NLL) and Maximum Likelihood Estimation (MLE)</h2>
 <p>A useful application of the trial likelihood computation is determining the total <b>Negative Log Likelihood (NLL)</b> of an aggregation of trials. Each instance of the <code><a class="el" href="class_d_d_m.html" title="Implementation of the Drift Diffusion Model (DDM).">DDM</a></code> and <code><a class="el" href="classa_d_d_m.html" title="Implementation of the attentional Drift Diffusion Model (aDDM).">aDDM</a></code>classes can use the following methods to determine the sum of NLLs for the trials.</p>
 <ul>
@@ -355,8 +339,7 @@ Negative Log Likelihoods (NLL) and Maximum Likelihood Estimation (MLE)</h2>
 <li>Mapping of models to their normalized posteriors, taken as the sum of likelihoods.</li>
 </ol>
 <p>Examples of MLE calculations are described below:</p>
-<h3><a class="anchor" id="autotoc_md12"></a>
-DDM</h3>
+<p><b><a class="el" href="class_d_d_m.html" title="Implementation of the Drift Diffusion Model (DDM).">DDM</a></b></p>
 <div class="fragment"><div class="line"> ++</div>
 <div class="line"><span class="preprocessor">#include &lt;addm/gpu_toolbox.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
@@ -383,8 +366,7 @@ DDM</h3>
 <div class="ttc" id="atest_8cpp_html_a377f3934c5a610474f63e322c88173ec"><div class="ttname"><a href="test_8cpp.html#a377f3934c5a610474f63e322c88173ec">barrier</a></div><div class="ttdeci">float barrier</div><div class="ttdef"><b>Definition</b> test.cpp:14</div></div>
 </div><!-- fragment --><p> Output: </p><div class="fragment"><div class="line">Counted 1000 trials.</div>
 <div class="line">Optimal d=0.005 sigma=0.07</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md13"></a>
-aDDM</h3>
+</div><!-- fragment --><p><b><a class="el" href="classa_d_d_m.html" title="Implementation of the attentional Drift Diffusion Model (aDDM).">aDDM</a></b></p>
 <div class="fragment"><div class="line"> ++</div>
 <div class="line"><span class="preprocessor">#include &lt;addm/gpu_toolbox.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
@@ -413,7 +395,7 @@ aDDM</h3>
 </div><!-- fragment --><p> Output: </p><div class="fragment"><div class="line">Counted 1000 trials. </div>
 <div class="line">Optimal d=0.005 sigma=0.07 theta=0.5</div>
 </div><!-- fragment --><p>Both the <code><a class="el" href="class_d_d_m.html" title="Implementation of the Drift Diffusion Model (DDM).">DDM</a></code> and <code><a class="el" href="classa_d_d_m.html" title="Implementation of the attentional Drift Diffusion Model (aDDM).">aDDM</a></code> instances of <code>fitModelMLE</code> allow for the <code>bias</code> and <code>decay</code> fields of the model to be fit as well. See the documentation for instructions on how to do so.</p>
-<h1><a class="anchor" id="autotoc_md14"></a>
+<h1><a class="anchor" id="autotoc_md8"></a>
 Python Bindings</h1>
 <p>Python bindings are also provided for users who prefer to work with a Python codebase over C++. The provided bindings are located in <a href="lib/bindings.cpp">lib/bindings.cpp</a>. Note that <a href="https://github.com/pybind/pybind11">pybind11</a> and Python version 3.10 (at a minimum) are <b>strict</b> prerequisites for installation and usage of the Python code. These can be installed with</p>
 <div class="fragment"><div class="line">apt-get install python3.10</div>
@@ -436,15 +418,15 @@ Python Bindings</h1>
 <div class="line">sigma = 0.07</div>
 <div class="line">RT = 850</div>
 <div class="line">choice = 1</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md15"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md9"></a>
 Optional: Python Syntax Highlighting</h2>
 <p>For users working in a user interface, such as Visual Studio Code, a Python stub is provided to facilitate features including syntax highlighting, type-hinting, auto-complete. Although the <code>addm_toolbox_gpu.pyi</code> stub is built-in, the file can be dynamically generated using the <a href="https://mypy.readthedocs.io/en/stable/stubgen.html">mypy stubgen</a> tool. The <code>mypy</code> module can be installed using:</p>
 <div class="fragment"><div class="line">pip install mypy</div>
 </div><!-- fragment --><p>For users who plan to modify the library for their own use and want the provided features, the stub file can be built as follows:</p>
 <div class="fragment"><div class="line">stubgen -m addm_toolbox_gpu -o .</div>
 </div><!-- fragment --><p> <em>Note that the <code>pybind11</code> shared library file should be built before running <code>stubgen</code>.</em></p>
-<h1><a class="anchor" id="autotoc_md16"></a>
-Built-in Scripts</h1>
+<h1><a class="anchor" id="autotoc_md10"></a>
+Sample C++ Scripts</h1>
 <p>This repository provides a set of built-in scripts for running trial simulations and model-fitting. These scripts are provided in the <a href="sample/">sample directory</a> and are described below:</p>
 <ul>
 <li><a href="sample/ddm_simulate.cpp"><code>ddm_simulate.cpp</code></a>: Simulate N trials using the ddm. Build using the <code>make sim</code> rule. Specify an output CSV file in the file constants. Usage:</li>
@@ -462,10 +444,21 @@ Built-in Scripts</h1>
 <li><a href="sample/addm_mle.cpp"><code>addm_mle.cpp</code></a>: Fit an <a class="el" href="classa_d_d_m.html" title="Implementation of the attentional Drift Diffusion Model (aDDM).">aDDM</a> model's paramters. Build using the <code>make mle</code> rule. CSV simulations, output location, and parameter ranges should be specified int he file constants. Usage:</li>
 </ul>
 <div class="fragment"><div class="line">bin/addm_mle</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md17"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md11"></a>
+Data Analysis Scripts</h1>
+<p>A set of data analysis and visualization tools are provided in the <a href="analysis/">analysis</a> directory. Current provided scripts include:</p>
+<ul>
+<li><a class="el" href="class_d_d_m.html" title="Implementation of the Drift Diffusion Model (DDM).">DDM</a> Heatmaps for MLE.</li>
+<li><a class="el" href="classa_d_d_m.html" title="Implementation of the attentional Drift Diffusion Model (aDDM).">aDDM</a> Heatmap for MLE.</li>
+<li>Posterior Pair Plots.</li>
+<li>Time vs RDV for individual trial.</li>
+<li>Value Differences against Response Time Frequencies.</li>
+</ul>
+<p>See the individual file documentation for usage instructions.</p>
+<h1><a class="anchor" id="autotoc_md12"></a>
 Authors</h1>
 <p>Jake Goldman - <a href="#" onclick="location.href='mai'+'lto:'+'jgo'+'ld'+'man'+'@c'+'alt'+'ec'+'h.e'+'du'; return false;">jgold<span class="obfuscator">.nosp@m.</span>man@<span class="obfuscator">.nosp@m.</span>calte<span class="obfuscator">.nosp@m.</span>ch.e<span class="obfuscator">.nosp@m.</span>du</a>, <a href="https://github.com/jakegoldm">jakegoldm</a></p>
-<h1><a class="anchor" id="autotoc_md18"></a>
+<h1><a class="anchor" id="autotoc_md13"></a>
 Acknowledgements</h1>
 <p>This toolbox was developed as part of a resarch project in the <a href="http://www.rnl.caltech.edu/">Rangel Neuroeconomics Lab</a> at the California Institute of Technology. Special thanks to Antonio Rangel and Zeynep Enkavi for your help with this project. </p>
 </div></div><!-- PageDoc -->
