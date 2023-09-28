@@ -10,8 +10,4 @@
 #  include "macros.h"
 #endif
 
-#ifndef EXCLUDE_CUDA_CODE
-#   include "cuda_util.cuh"
-#endif
-
 #endif

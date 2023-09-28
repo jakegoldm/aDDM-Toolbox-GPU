@@ -16,7 +16,7 @@ int main() {
     // Load trials from a CSV. 
     std::vector<aDDMTrial> trials = aDDMTrial::loadTrialsFromCSV(SIMS);
     // Add additional arguments to specify computation mode, etc.. if desired. 
-    MLEinfo info = aDDM::fitModelMLE(trials, rangeD, rangeSigma, rangeTheta);
+    MLEinfo info = aDDM::fitModelMLE(trials, rangeD, rangeSigma, rangeTheta, "thread");
     std::cout << 
     "  Optimal Parameters  \n" << 
     "======================\n" <<
